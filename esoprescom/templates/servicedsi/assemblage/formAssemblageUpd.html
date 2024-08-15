@@ -1,0 +1,23 @@
+  <div class="card mb-3" style="max-width: 1800px;">
+          
+              <div class="row">
+                  <form  id ="AssemblageForm"
+                       method="POST">
+                       {% csrf_token %}
+                    <div class="card">
+                          <div class="card-header text-center">
+                            <strong>Update Assemblage</strong>
+                          </div>
+                          <div class="card-body">
+                            <p>Mise à jour info update</p>  
+                              <input type="hidden" name="_method" value = "PUT">
+                                {{ form }}
+                              <button  type="submit" id="formCommandeUpdData"
+                                      class="btn btn-primary">Update</button>
+                          </div>
+                    </div>
+                  </form>  
+              </div>
+</div>
+          
+   

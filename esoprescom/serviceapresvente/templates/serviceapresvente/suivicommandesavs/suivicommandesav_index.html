@@ -1,0 +1,61 @@
+{% extends "serviceapresvente/admin.html" %}
+    {% load static %}
+
+    {% block content %}
+
+    {% include "serviceapresvente/admin/paginator.html" with datas=suivicommandesavs %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="d-flex my-2 justify-content-end">
+        <a href="{% url suivicommandesav %}" class="btn btn-success">Create SuiviCommandeSav</a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td scope="col">#</td>
+                    <th scope='col'>idSuiviCommande</td>
+    <th scope='col'>commandesav</td>
+    <th scope='col'>statut</td>
+    <th scope='col'>flag</td>
+    <th scope='col'>nombre_jour</td>
+    <th scope='col'>updated_at</td>
+    <th scope='col'>created_at</td>
+    <th scope='col'>commentaire</td>
+
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for suivicommandesav in suivicommandesavs %}
+                <td scope="col">{{ suivicommandesav.id }}</td>
+                    <td scope='col'>{{ suivicommandesav.idSuiviCommande}}</td>
+    <td scope='col'>{{ suivicommandesav.commandesav}}</td>
+    <td scope='col'>{{ suivicommandesav.statut}}</td>
+    <td scope='col'>{{ suivicommandesav.flag}}</td>
+    <td scope='col'>{{ suivicommandesav.nombre_jour}}</td>
+    <td scope='col'>{{ suivicommandesav.updated_at}}</td>
+    <td scope='col'>{{ suivicommandesav.created_at}}</td>
+    <td scope='col'>{{ suivicommandesav.commentaire}}</td>
+<td>
+                        <a href="{% url 'suivicommandesav_view' suivicommandesav.id %}" class="btn btn-success">View</a>
+                        <a href="{% url 'suivicommandesav_edit' suivicommandesav.id %}" class="btn btn-primary">Edit</a>
+                        <form action="{% url 'suivicommandesav_delete' suivicommandesav.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    {% include "blog/components/paginator.html" with datas=suivicommandesavs %}
+
+
+    {% endblock %}

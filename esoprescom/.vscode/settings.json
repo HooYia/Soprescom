@@ -1,0 +1,17 @@
+{
+  "python.pythonPath": "myenv/bin/python", // ou "myenv\\Scripts\\python.exe" sur Windows
+  "python.autoComplete.extraPaths": [
+      "./",
+      "./esoprescom",
+      "./esoprescom/shop",
+      "./esoprescom/accounts",
+  ],
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.analysis.extraPaths": [
+    "./",
+    "./esoprescom",
+    "./esoprescom/shop",
+    "./esoprescom/accounts",
+  ]
+}

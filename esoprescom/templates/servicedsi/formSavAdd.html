@@ -1,0 +1,360 @@
+
+  
+  <form id="savrequestForm" action="{% url 'serviceapresvente:savrequest-create' %}" 
+  method="POST"  enctype="multipart/form-data">
+          {% csrf_token %}
+   
+          <div class="card mb-3" style="max-width: 1800px;">
+            <div class="row g-0">
+             
+              <div class="col-md-12">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="card ">
+                        <div class="card-header text center">
+                        <strong> Info du Client</strong>
+                        </div>
+                          <div class="card-body">
+                            <p class="card-text "  ><strong>Numero dossier:</strong> {{ form.numero_dossier  }}</p>
+                            <p class="card-text"  ><strong>Nom du client:</strong> {{ form.client_sav  }}</p>
+                            <p class="card-text"><strong>Responsable SAV:</strong> {{ form.resp_sav}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="card ">
+                        <div class="card-header text-center">
+                        <strong>Info materiel SAV</strong>
+                        </div>
+                          <div class="card-body">
+                            <p class="card-text"><strong>Marque:</strong> {{ form.marque }}</p>
+                            <p class="card-text"><strong>Numéro de Série:</strong> {{ form.numero_serie }}</p>
+                            <p class="card-text"><strong>Référence:</strong> {{ form.reference }}</p>
+                            <p class="card-text"><strong>Désignation:</strong> {{ form.designation }}</p>
+                            <p class="card-text"><strong>Sous garantie?:</strong> {{ form.garantie }}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="card">
+                        <div class="card-header text center">
+                          <strong>Rapport diagnostique SAV</strong>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><strong>Type SAV:</strong> {{ form.type_sav }}</p>
+                              <p>
+                                <div class="form-check form-switch" >
+                                  {{ form.recouvrement_hp }}
+                                  <label class="form-check-label" for="flexSwitchCheckDefault">Recouvrement HP </label>
+                                </div>
+                              </p>
+                            <p class="card-text"><strong>Statut:</strong> {{ form.statut }}</p>
+                            <p class="card-text"><strong>Description de la Pièce:</strong> {{ form.description_piece }}</p>
+                            <p class="card-text"><strong>Référence de la Pièce:</strong> {{ form.reference_piece }}</p>
+                            <p class="card-text"><strong>POP:</strong> {{ form.pop }}</p>
+                            <div class="card-body">
+                              
+                          <footer class="blockquote-footer">Observation: {{ form.observation }}</footer>
+                        
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="card">
+                        <div class="card-header text center">
+                        <strong> Accord Client</strong>
+                        </div>
+                        <div class="card-body">
+                          <div class="form-check form-switch" >
+                            {{ form.bon_pour_accord }}
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Bon Pour accord</label>
+                          </div>
+                          <p class="card-text"><strong>Rapport Technique:</strong>
+                             {{ form.rapport_technique }}
+                             {% if form.rapport_technique.errors %}
+                             <div id="rapport_technique_error" class="text-danger">
+                                {% for error in form.rapport_technique.errors %}
+                                          {{ error }}
+                                {% endfor %}
+                             </div>
+                             {% else %}
+                                <div id="rapport_technique_error" class="text-danger"></div>
+                           {% endif %}</p>
+                          <p class="card-text"><strong>Facture Fournisseur:</strong> 
+                            {{ form.facture_fournisseur }}
+                            {% if form.facture_fournisseur.errors %}
+                            <div id="facture_fournisseur_error" class="text-danger">
+                                {% for error in form.facture_fournisseur.errors %}
+                                         {{ error }}
+                                {% endfor %}
+                             </div>
+                             {% else %}
+                                <div id="facture_fournisseur_error" class="text-danger"></div>
+                            {% endif %}</p>
+                          <p class="card-text"><strong>Facture proforma Client:</strong>
+                             {{ form.facture_proforma }}
+                             {% if  form.facture_proforma.errors %}
+                             <div id="facture_proforma_error" class="text-danger">
+                                {% for error in form.facture_proforma.errors %}
+                                          {{ error }}
+                                {% endfor %}
+                             </div>
+                             {% else %}
+                                <div id="facture_proforma_error" class="text-danger"></div>
+                            {% endif %}
+                            </p>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+            <hr>
+      <div class="d-flex gap-1">   
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-success " id="save-btn" >Add</button>
+      </div>
+  </form> 
+   
+{% block script %}
+
+<script>
+/*  MyTools = {
+    Validation: function () {
+        var inputs = ["rapport_technique", "facture_fournisseur", "facture_proforma"];
+        var checked = true;
+
+        inputs.forEach(function (input) {
+            var element = $("#" + input);
+            if (element.val() == null || element.val() == "") {
+                alert(input + " is empty");
+                checked = false;
+
+            }
+
+        });
+        return checked;
+    }
+}
+*/
+$(document).ready(function() {
+  let controlRadioBtn = false
+  const radioButton = document.querySelector('input#id_bon_pour_accord');
+  const factureFournisseurInput = document.querySelector('input#id_facture_fournisseur');
+  const factureProformaInput = document.querySelector('input#id_facture_proforma');
+  const rapportTechniqueInput = document.querySelector('input#id_rapport_technique');
+    // initialisation des champs
+  const handleSavClick = (event) => {
+        // const {checked} = event.target 
+        const checked = event ? event.target.checked : radioButton.checked;
+         if (checked){
+           controlRadioBtn = true
+           factureFournisseurInput.disabled = false;
+           factureProformaInput.disabled = false;
+           factureFournisseurInput.required = true;
+           factureProformaInput.required = true;
+           rapportTechniqueInput.required = true;
+           //console.log(checked)
+         } else{
+           controlRadioBtn = false
+           factureFournisseurInput.disabled = true;
+           factureProformaInput.disabled = true;
+           factureFournisseurInput.required = false;
+           factureProformaInput.required = false;
+           rapportTechniqueInput.required = false;
+           //console.log(checked)
+         }
+       }
+         // Attach event listener
+  radioButton?.addEventListener('change', handleSavClick);
+  handleSavClick();
+
+  // gestion recouvrement_hp    
+  const idGarantieSelect = document.querySelector('select#id_garantie');
+  const idTypeSAVSelect = document.querySelector('select#id_type_SAV');
+  const recouvrementHPDiv = document.querySelector('input#id_recouvrement_hp');
+  
+  function updateRecouvrementHP() {
+    
+        const selectedGarantie = idGarantieSelect.value;
+        const selectedTypeSAV = idTypeSAVSelect.value;
+                
+        if (selectedGarantie === 'Sous garantie' && selectedTypeSAV === 'DEVEA') {
+            recouvrementHPDiv.setAttribute('disabled', true);
+            recouvrementHPDiv.setAttribute('checked', true) 
+              } else {
+            recouvrementHPDiv.setAttribute('disabled', true);
+            recouvrementHPDiv.removeAttribute('checked', true) 
+            }
+        }
+
+  idGarantieSelect?.addEventListener('change', updateRecouvrementHP);
+  idTypeSAVSelect?.addEventListener('change', updateRecouvrementHP);
+
+  // Initial call to set the correct state on page load
+
+  updateRecouvrementHP();
+/*********** control formulaire **************/
+// Fonction de validation du formulaire
+/*const validateForm = () => {
+        let isValid = true;
+        const errors = {
+            rapport_technique: 'Rapport technique est obligatoire',
+            facture_fournisseur: 'Facture fournisseur est obligatoire',
+            facture_proforma: 'Facture proforma est obligatoire'
+        };
+
+        const rapportTechniqueError = document.getElementById('rapport_technique_error');
+        const factureFournisseurError = document.getElementById('facture_fournisseur_error');
+        const factureProformaError = document.getElementById('facture_proforma_error');
+        
+        const radioButton = document.querySelector('input#id_bon_pour_accord');
+        
+        // Réinitialiser les messages d'erreur
+        if (rapportTechniqueError) rapportTechniqueError.textContent = '';
+        if (factureFournisseurError) factureFournisseurError.textContent = '';
+        if (factureProformaError) factureProformaError.textContent = '';
+        console.log('rapportTechniqueInput.value:',rapportTechniqueInput.value)
+    
+        // Vérifier les champs requis
+        if (radioButton.checked) {
+            if (!rapportTechniqueInput.value) {
+              console.log("radioButton is checked. Validation des champs")
+                document.getElementById('rapport_technique_error').textContent = errors.rapport_technique;
+                isValid = false;
+            }
+            if (!factureFournisseurInput.value) {
+                document.getElementById('facture_fournisseur_error').textContent = errors.facture_fournisseur;
+                isValid = false;
+            }
+            if (!factureProformaInput.value) {
+                document.getElementById('facture_proforma_error').textContent = errors.facture_proforma;
+                isValid = false;
+            }
+        }
+
+        return isValid;
+    };
+
+    // Intercepter la soumission du formulaire
+      // Intercepter la soumission du formulaire
+const form = document.querySelector('form#savrequestForm');
+console.log('form:',form)
+  form?.addEventListener('submit', function(event) {
+    console.log('listen:',submit)
+    if (!validateForm()) {
+      console.log("validateForm() is false")
+      event.preventDefault(); // Empêcher la soumission si le formulaire est invalide
+    } else {
+      console.log("validateForm() is true")
+      // Réactiver les champs désactivés avant la soumission
+      const disabledElements = form.querySelectorAll(':disabled');
+      disabledElements.forEach(element => element.disabled = false);
+    }
+  });
+*/
+/********* Save ******/
+ // When the save button is clicked
+ const btn_add_save = document.querySelector('button[type="submit"]#save-btn');
+ const AddSavRequest = (event) =>{
+    
+    event.preventDefault(); // Empêcher la soumission si le formulaire est invalide
+    var form = $(event.target).closest('form')[0];
+    // Re-enable disabled fields for submission
+    $(form).find(':disabled').prop('disabled', false);
+    var formData = new FormData(form); // Create FormData object
+    
+    // Validation HTML5
+    const formValid = $(event.target).closest('form');
+    if (formValid[0].checkValidity() === false) {
+      event.stopPropagation();
+      formValid.addClass('was-validated');
+      return;
+    }
+    
+    
+    $.ajax({
+      url: form.action,
+      type: form.method,
+      //data: form.serialize(),
+      data: formData,
+      processData: false, // Prevent jQuery from automatically transforming the data into a query string
+      contentType: false, // Set content type to false to let jQuery set it as multipart/form-data
+      success: function(response) {
+        //console.log('Form submitted successfully!');
+          // Handle the success response (e.g., close modal, show success message, etc.)
+          $('#SavResquestModal').modal('hide');
+          location.reload();
+          //alert('Form submitted successfully!');
+      },
+      error: function(xhr, status, error) {
+          // Handle the error response
+          alert('Error: ' + error);
+      }
+  });
+  
+ }
+
+ btn_add_save?.addEventListener('click', AddSavRequest);
+  
+ /*
+ function validateForm() {
+        let valid = true;
+        const inputs = ["id_rapport_technique", "id_facture_fournisseur", "id_facture_proforma"];
+
+        inputs.forEach(function(input) {
+            const element = $("#" + input);
+            if (element.val() === null || element.val() === "") {
+                element.addClass('is-invalid');
+                valid = false;
+            } else {
+                element.removeClass('is-invalid');
+            }
+        });
+
+        return valid;
+    }
+ */
+/*
+ $(document).on('click', '#save-btn', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+  
+  // Get the form element
+  var form = $(this).closest('form');
+  form.find(':disabled').prop('disabled', false);  // Re-enable disabled fields for submission 
+  console.log('form:',form)
+  console.log('formAction:',form.attr('action'))
+  console.log('formMethod:',form.attr('method'))
+  
+  // Perform an AJAX request to submit the form
+  $.ajax({
+      url: form.attr('action'),
+      type: form.attr('method'),
+      data: form.serialize(),
+      success: function(response) {
+          // Handle the success response (e.g., close modal, show success message, etc.)
+          $('#SavResquestModal').modal('hide');
+          // You can also update part of the page with the response if needed
+          // $('#some-element').html(response);
+          alert('Form submitted successfully!');
+      },
+      error: function(xhr, status, error) {
+          // Handle the error response
+          alert('Error: ' + error);
+      }
+  });
+});
+*/
+
+ });
+    
+
+</script>
+
+
+{% endblock script %}

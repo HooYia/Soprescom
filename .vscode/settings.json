@@ -1,0 +1,11 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "database": "${workspaceFolder:e-soprescom}/esoprescom/soprescom_ecommercoerce.db",
+      "name": "esoprescom"
+    }
+  ],
+  "sqltools.useNodeRuntime": true
+}

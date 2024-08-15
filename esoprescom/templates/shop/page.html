@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include "partials/top_page.html" with name=page.name %}
+
+<p> {{page.content}} </p>
+
+{% endblock  %}

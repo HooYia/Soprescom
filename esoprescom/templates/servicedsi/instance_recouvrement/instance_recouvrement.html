@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="card-header">
+        <h3>Recouvrement SAV </h3>
+    </div>
+    <div class="card-body">
+  <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Date </th>
+                      <th>Date recouvrement</th>
+                      <th>N° Dossier</ts  &ah>
+                      <th>Client</th>
+                      <th>Montant</th>
+                      <th>Statut</th>
+                      <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for row in instancerevouv_lists %}
+                  <tr>
+                      <td>
+                          {{ row.created_at|date:"d M Y" }}
+                      </td>
+                      <td>
+                        {{ row.updated_at|date:"d M Y" }}
+                       </td>
+                       <td>
+                         {{ row.instance.numero_dossier}}
+                      </td>
+                      <td>
+                        {{ row.instance.client.name}}
+                      </td>
+                      <td>
+                        {{ row.facture_montant}}
+                      </td>
+                      <td><div class="badge text-white rounded-pill status-cell"> 
+                        {{ row.facture_statut}}</div>
+                      </td>
+                      <td class="{% if row.flag == 1 %}disabled-cell{% endif %}">  
+                        <button   
+                        data-url="{% url 'serviceapresvente:instancerecouv-show' row.idrecouv %}" 
+                        class="btn btn-fill-out btn-sm instance" >View
+                        </button>
+                     </td>
+                  <tr>
+                    
+                  {% endfor %}
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

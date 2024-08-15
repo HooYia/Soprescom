@@ -1,0 +1,16 @@
+<div  class="row">
+  {% for collection in collections %}
+   <div  class="col-md-6">
+       <div  class="single_banner"><img 
+               alt="shop_banner_img1"
+               src="{{collection.image.url}}">
+           <div  class="single_banner_info">
+               <h5  class="single_bn_title1">{{collection.description}}</h5>
+               <h3  class="single_bn_title">{{collection.title}}</h3><a
+                    class="single_bn_link"
+                   href="{{collection.button_link}}">{{collection.button_text}}</a>
+           </div>
+       </div>
+   </div>
+   {% endfor %}
+</div>

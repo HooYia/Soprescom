@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Desktop",
+    "description": "Desktop",
+    "slug": "desktop",
+    "updated_at": "2024-05-19 00:10:01.016340",
+    "created_at": "2024-05-19 00:10:01.016340",
+    "image": "category_images/2024/05/19/computer-desktop-keyboard-mouse-white-35417144.webp"
+  },
+  {
+    "id": 2,
+    "name": "Laptop",
+    "description": "Laptop",
+    "slug": "laptop",
+    "updated_at": "2024-05-19 00:10:36.165420",
+    "created_at": "2024-05-19 00:10:36.165420",
+    "image": "category_images/2024/05/19/téléchargement.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Server",
+    "description": "Server",
+    "slug": "server",
+    "updated_at": "2024-05-19 00:12:02.518330",
+    "created_at": "2024-05-19 00:12:02.519077",
+    "image": "category_images/2024/05/19/computer-server-cabinet-27906478.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Onduleur",
+    "description": "Onduleur",
+    "slug": "onduleur",
+    "updated_at": "2024-05-19 00:12:23.367895",
+    "created_at": "2024-05-19 00:12:23.367895",
+    "image": "category_images/2024/05/19/power-supply-system-18080233.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Autre",
+    "description": "Autre",
+    "slug": "autre",
+    "updated_at": "2024-05-19 00:13:05.726095",
+    "created_at": "2024-05-19 00:13:05.727082",
+    "image": "category_images/2024/05/19/online-news-article-tablet151771038.jpg"
+  }
+]

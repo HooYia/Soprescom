@@ -1,0 +1,317 @@
+<form action="" method="post">
+                            {% csrf_token %}
+
+                            {% if sav_request %}
+                                <input type="hidden" name="_method" value="PUT" >
+                            {% endif %}
+                                <div class='form-group'>
+        <label for='idrequest'> Idrequest: </label>
+        {{ form.idrequest }}
+
+                    {% if form.idrequest.errors %}
+                        {% for error in form.idrequest.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='type_sav'> Type_sav: </label>
+        {{ form.type_sav }}
+
+                    {% if form.type_sav.errors %}
+                        {% for error in form.type_sav.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='numero_dossier'> Numero_dossier: </label>
+        {{ form.numero_dossier }}
+
+                    {% if form.numero_dossier.errors %}
+                        {% for error in form.numero_dossier.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='marque'> Marque: </label>
+        {{ form.marque }}
+
+                    {% if form.marque.errors %}
+                        {% for error in form.marque.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='client_sav'> Client_sav: </label>
+        {{ form.client_sav }}
+
+                    {% if form.client_sav.errors %}
+                        {% for error in form.client_sav.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='resp_sav'> Resp_sav: </label>
+        {{ form.resp_sav }}
+
+                    {% if form.resp_sav.errors %}
+                        {% for error in form.resp_sav.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='numero_serie'> Numero_serie: </label>
+        {{ form.numero_serie }}
+
+                    {% if form.numero_serie.errors %}
+                        {% for error in form.numero_serie.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='reference'> Reference: </label>
+        {{ form.reference }}
+
+                    {% if form.reference.errors %}
+                        {% for error in form.reference.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='designation'> Designation: </label>
+        {{ form.designation }}
+
+                    {% if form.designation.errors %}
+                        {% for error in form.designation.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='garantie'> Garantie: </label>
+        {{ form.garantie }}
+
+                    {% if form.garantie.errors %}
+                        {% for error in form.garantie.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='description_piece'> Description_piece: </label>
+        {{ form.description_piece }}
+
+                    {% if form.description_piece.errors %}
+                        {% for error in form.description_piece.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='reference_piece'> Reference_piece: </label>
+        {{ form.reference_piece }}
+
+                    {% if form.reference_piece.errors %}
+                        {% for error in form.reference_piece.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='pop'> Pop: </label>
+        {{ form.pop }}
+
+                    {% if form.pop.errors %}
+                        {% for error in form.pop.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='status'> Status: </label>
+        {{ form.status }}
+
+                    {% if form.status.errors %}
+                        {% for error in form.status.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='observation'> Observation: </label>
+        {{ form.observation }}
+
+                    {% if form.observation.errors %}
+                        {% for error in form.observation.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='validation_client'> Validation_client: </label>
+        {{ form.validation_client }}
+
+                    {% if form.validation_client.errors %}
+                        {% for error in form.validation_client.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='rapport_technique'> Rapport_technique: </label>
+        {{ form.rapport_technique }}
+
+                    {% if form.rapport_technique.errors %}
+                        {% for error in form.rapport_technique.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='facture_fornisseur'> Facture_fornisseur: </label>
+        {{ form.facture_fornisseur }}
+
+                    {% if form.facture_fornisseur.errors %}
+                        {% for error in form.facture_fornisseur.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='facture_proforma'> Facture_proforma: </label>
+        {{ form.facture_proforma }}
+
+                    {% if form.facture_proforma.errors %}
+                        {% for error in form.facture_proforma.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='bon_pour_accord'> Bon_pour_accord: </label>
+        {{ form.bon_pour_accord }}
+
+                    {% if form.bon_pour_accord.errors %}
+                        {% for error in form.bon_pour_accord.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='date_cloture'> Date_cloture: </label>
+        {{ form.date_cloture }}
+
+                    {% if form.date_cloture.errors %}
+                        {% for error in form.date_cloture.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='userLog'> Userlog: </label>
+        {{ form.userLog }}
+
+                    {% if form.userLog.errors %}
+                        {% for error in form.userLog.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='flag'> Flag: </label>
+        {{ form.flag }}
+
+                    {% if form.flag.errors %}
+                        {% for error in form.flag.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='updated_at'> Updated_at: </label>
+        {{ form.updated_at }}
+
+                    {% if form.updated_at.errors %}
+                        {% for error in form.updated_at.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='created_at'> Created_at: </label>
+        {{ form.created_at }}
+
+                    {% if form.created_at.errors %}
+                        {% for error in form.created_at.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>
+                            
+                            <div>
+                            {% if sav_request %}
+                                <button class="btn btn-success my-2">Update</button>
+                            {% else %}
+                                <button class="btn btn-success my-2">Create</button>
+                            {% endif %}
+                                
+                            <a href="{% url sav_request_index %}" class="btn btn-danger my-2">Cancel</a>
+                        </div>
+                        </form>
+                        {% block scripts %}
+                        <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+
+                        <script>
+                            $(document).ready(function() {
+                                $('select').select2();
+                            });
+
+                        </script>
+                        <script>
+                            const editors = document.querySelectorAll('textarea')
+
+                            editors.forEach(editor => {
+                                editor.removeAttribute('required')
+                                ClassicEditor
+                                    .create(editor)
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                                
+                            });
+                        </script>
+                        {% endblock %}
+                        
