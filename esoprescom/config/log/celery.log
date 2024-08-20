@@ -1,0 +1,1409 @@
+[2024-08-19 14:23:50,565: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 14:24:25,458: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 14:31:14,467: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 14:44:57,121: INFO/MainProcess] Serving on http://127.0.0.1:35729
+[2024-08-19 14:44:57,121: INFO/MainProcess] Start watching changes
+[2024-08-19 14:44:57,121: INFO/MainProcess] Start detecting changes
+[2024-08-19 14:52:09,104: WARNING/MainProcess] c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-08-19 14:52:13,290: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 2.00 seconds... (1/100)
+
+[2024-08-19 14:52:19,344: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 4.00 seconds... (2/100)
+
+[2024-08-19 14:52:27,415: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 6.00 seconds... (3/100)
+
+[2024-08-19 14:52:37,489: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 8.00 seconds... (4/100)
+
+[2024-08-19 14:52:42,192: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 14:52:42,200: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 14:52:42,447: INFO/MainProcess] 200 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 14:52:42,495: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.01ms
+[2024-08-19 14:52:42,695: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/
+[2024-08-19 14:52:42,906: WARNING/MainProcess] Not Found: /favicon.ico
+[2024-08-19 14:52:49,449: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 14:52:49,594: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 10.00 seconds... (5/100)
+
+[2024-08-19 14:52:49,728: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 14:52:49,736: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.27ms
+[2024-08-19 14:52:49,738: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 14:52:49,744: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 14:52:49,796: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 14:53:03,688: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 12.00 seconds... (6/100)
+
+[2024-08-19 14:53:19,774: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 14.00 seconds... (7/100)
+
+[2024-08-19 14:53:37,841: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 16.00 seconds... (8/100)
+
+[2024-08-19 14:53:57,970: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 18.00 seconds... (9/100)
+
+[2024-08-19 14:54:20,029: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 20.00 seconds... (10/100)
+
+[2024-08-19 14:54:30,069: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\CommandeSavView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.CommandeSav.CommandeSav'> QuerySet.
+  paginator = Paginator(commandesavs_list, 8)
+
+[2024-08-19 14:54:30,157: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 14:54:30,157: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 14:54:30,353: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 14:54:30,363: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 14:54:30,395: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 14:54:31,095: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\SuiviCommandeSavView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.SuiviCommandeSav.SuiviCommandeSav'> QuerySet.
+  paginator = Paginator(suivicommandesavs_list, 8)
+
+[2024-08-19 14:54:31,194: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 14:54:31,197: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 14:54:31,205: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 14:54:31,205: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 14:54:31,221: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-19 14:54:32,017: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\AssemblageReparationView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.AssemblageReparation.AssemblageReparation'> QuerySet.
+  paginator = Paginator(assemblagereparation_list, 8)
+
+[2024-08-19 14:54:32,110: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 14:54:32,118: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 14:54:32,118: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 14:54:32,118: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 14:54:32,150: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/assemblage
+[2024-08-19 14:54:32,757: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 14:54:32,757: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 14:54:32,765: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 14:54:32,765: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 14:54:32,803: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 14:54:44,106: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 22.00 seconds... (11/100)
+
+[2024-08-19 14:55:10,311: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 24.00 seconds... (12/100)
+
+[2024-08-19 14:55:38,410: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 26.00 seconds... (13/100)
+
+[2024-08-19 14:56:08,486: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 28.00 seconds... (14/100)
+
+[2024-08-19 14:56:40,549: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 30.00 seconds... (15/100)
+
+[2024-08-19 14:57:14,607: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 14:57:50,710: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 14:58:26,772: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 14:59:02,864: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 14:59:38,923: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:00:14,989: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:00:51,059: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:01:27,132: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:02:03,202: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:02:39,308: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:03:15,378: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:03:51,453: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:04:27,512: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:05:03,585: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:05:39,653: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:06:15,739: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:06:51,816: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:07:27,906: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:08:03,979: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:08:40,042: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:09:16,152: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:09:52,260: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:10:28,342: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:11:04,429: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:11:40,472: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:12:16,560: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:12:52,626: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:13:28,717: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:14:04,827: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:14:40,941: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:15:17,056: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:15:53,174: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:16:29,275: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:17:05,376: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:17:41,470: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:18:17,569: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:18:53,660: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:19:29,745: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:20:05,821: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:20:41,919: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:21:18,007: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:21:54,097: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:22:30,193: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:23:06,264: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:23:42,366: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:24:18,446: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:24:54,533: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:25:30,614: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:26:06,773: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:26:42,851: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:27:18,956: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:27:55,128: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:28:31,297: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:29:07,373: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:29:43,435: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:30:19,608: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:30:55,683: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:31:31,793: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:32:07,871: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:32:43,947: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:33:20,060: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:33:56,139: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:34:32,212: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:35:08,292: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:35:44,390: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:36:20,479: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:36:56,557: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:37:32,633: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:38:08,718: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:38:44,814: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:39:20,930: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:39:56,999: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:40:33,095: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:41:09,184: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:41:45,287: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:42:01,910: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 15:42:03,319: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 15:42:10,741: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 15:42:11,767: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 15:42:14,253: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 15:42:14,473: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 15:42:14,492: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 15:42:14,497: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 15:42:14,504: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 15:42:14,558: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 15:42:21,356: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:42:21,481: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 15:42:21,481: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 15:42:21,855: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.55ms
+[2024-08-19 15:42:21,863: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 15:42:21,912: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 15:42:57,428: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:43:33,511: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:44:09,591: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:44:45,643: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:45:21,763: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:45:57,865: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:46:33,948: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:47:10,037: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:47:46,138: ERROR/MainProcess] consumer: Cannot connect to redis://localhost:6379//: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée..
+Trying again in 32.00 seconds... (16/100)
+
+[2024-08-19 15:48:22,224: CRITICAL/MainProcess] Unrecoverable error: OperationalError('Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.')
+Traceback (most recent call last):
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\transport\virtual\base.py", line 951, in create_channel
+    return self._avail_channels.pop()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+IndexError: pop from empty list
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\redis\connection.py", line 277, in connect
+    sock = self.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\redis\retry.py", line 62, in call_with_retry
+    return do()
+           ^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\redis\connection.py", line 278, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\redis\connection.py", line 639, in _connect
+    raise err
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\redis\connection.py", line 627, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\connection.py", line 472, in _reraise_as_library_errors
+    yield
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\connection.py", line 459, in _ensure_connection
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\connection.py", line 934, in _connection_factory
+    self._connection = self._establish_connection()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\connection.py", line 860, in _establish_connection
+    conn = self.transport.establish_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\transport\virtual\base.py", line 975, in establish_connection
+    self._avail_channels.append(self.create_channel(self))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\transport\virtual\base.py", line 953, in create_channel
+    channel = self.Channel(connection)
+              ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\transport\redis.py", line 744, in __init__
+    self.client.ping()
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\redis\commands\core.py", line 1208, in ping
+    return self.execute_command("PING", **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\redis\client.py", line 545, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\redis\connection.py", line 1074, in get_connection
+    connection.connect()
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\redis\connection.py", line 283, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\worker\worker.py", line 202, in start
+    self.blueprint.start(self)
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\bootsteps.py", line 116, in start
+    step.start(parent)
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\bootsteps.py", line 365, in start
+    return self.obj.start()
+           ^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\worker\consumer\consumer.py", line 340, in start
+    blueprint.start(self)
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\bootsteps.py", line 116, in start
+    step.start(parent)
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\worker\consumer\connection.py", line 21, in start
+    c.connection = c.connect()
+                   ^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\worker\consumer\consumer.py", line 470, in connect
+    conn = self.connection_for_read(heartbeat=self.amqheartbeat)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\worker\consumer\consumer.py", line 476, in connection_for_read
+    return self.ensure_connected(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\worker\consumer\consumer.py", line 527, in ensure_connected
+    conn = conn.ensure_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\connection.py", line 406, in ensure_connection
+    self._ensure_connection(*args, **kwargs)
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\connection.py", line 458, in _ensure_connection
+    with ctx():
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 158, in __exit__
+    self.gen.throw(value)
+  File "c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\kombu\connection.py", line 476, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: Error 10061 connecting to localhost:6379. Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée.
+[2024-08-19 15:51:47,482: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 15:51:48,523: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 15:51:57,258: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 15:51:57,428: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 15:51:57,435: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 15:51:57,616: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 15:51:57,627: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 3.54ms
+[2024-08-19 15:51:57,683: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 15:52:04,917: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 2.35ms
+[2024-08-19 15:52:04,927: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.99ms
+[2024-08-19 15:52:04,932: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 15:52:04,932: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 15:52:04,973: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 15:58:56,907: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 15:58:57,953: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 15:59:00,991: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 15:59:01,244: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 15:59:01,244: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 15:59:01,570: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 15:59:01,578: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 15:59:01,635: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:09:07,180: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:09:08,363: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:09:33,982: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:09:34,889: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:11:44,987: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:11:45,925: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:14:09,301: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:14:10,303: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:15:54,258: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:15:55,226: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:17:51,606: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:17:52,534: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:19:01,581: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestForm.py changed, reloading.
+[2024-08-19 16:19:02,552: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:19:11,968: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:19:12,897: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:19:35,209: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestForm.py changed, reloading.
+[2024-08-19 16:19:36,343: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:19:37,904: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 16:19:38,112: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:19:38,112: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:19:38,371: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:19:38,387: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:19:38,437: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:33:34,294: INFO/MainProcess] Reload 1 waiters: C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\templates\servicedsi\formSavAdd.html
+[2024-08-19 16:33:34,596: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.20ms
+[2024-08-19 16:33:34,602: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:33:34,610: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:33:34,612: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:33:34,666: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:33:36,924: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:33:36,938: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 5.72ms
+[2024-08-19 16:33:36,940: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:33:36,948: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:33:36,981: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:33:41,215: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:33:41,216: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:33:42,060: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:33:42,077: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:33:42,121: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:34:31,869: INFO/MainProcess] Reload 1 waiters: C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\templates\servicedsi\formSavAdd.html
+[2024-08-19 16:34:32,131: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:34:32,139: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:34:32,142: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:34:32,142: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:34:32,189: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:34:35,658: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:34:35,661: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:34:36,004: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:34:36,014: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:34:36,061: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:36:38,320: INFO/MainProcess] Reload 1 waiters: C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\templates\servicedsi\formSavAdd.html
+[2024-08-19 16:36:38,534: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:36:38,543: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:36:38,551: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:36:38,561: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:36:38,591: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:36:49,900: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestForm.py changed, reloading.
+[2024-08-19 16:36:50,840: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:36:58,174: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:36:59,060: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:37:01,934: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 16:37:02,154: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:37:02,158: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:37:02,374: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:37:02,391: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:37:02,431: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:37:13,282: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:37:13,282: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:37:14,058: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:37:14,069: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:37:14,103: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:37:33,899: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:37:34,919: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:37:42,050: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:37:43,020: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:39:01,205: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestForm.py changed, reloading.
+[2024-08-19 16:39:02,138: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:39:19,388: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 16:39:19,768: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.02ms
+[2024-08-19 16:39:19,773: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.56ms
+[2024-08-19 16:39:19,784: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:39:19,784: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:39:19,820: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:39:41,048: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestForm.py changed, reloading.
+[2024-08-19 16:39:41,919: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:39:43,649: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 16:39:43,836: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:39:43,838: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:39:43,965: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:39:43,982: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:39:44,022: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:40:13,975: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\Sav_requestUpdForm.py changed, reloading.
+[2024-08-19 16:40:14,877: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:40:36,941: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\RecouvrementForm.py changed, reloading.
+[2024-08-19 16:40:37,907: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:40:57,446: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 16:40:57,639: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:40:57,642: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:40:57,653: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:40:57,653: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:40:57,678: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:43:32,013: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.76ms
+[2024-08-19 16:43:32,048: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:44:59,527: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:44:59,547: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:44:59,789: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.85ms
+[2024-08-19 16:44:59,795: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.54ms
+[2024-08-19 16:44:59,908: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:46:48,922: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 16:46:49,912: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:47:47,564: ERROR/MainProcess] Internal Server Error: /sav/add
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py", line 42, in create
+    data.userLog = request.user
+    ^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 284, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000022C538028D0>>": "Sav_request.userLog" must be a "Customer" instance.
+[2024-08-19 16:47:47,653: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:47:47,661: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.51ms
+[2024-08-19 16:47:47,723: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/add
+[2024-08-19 16:49:04,688: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 16:49:05,746: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:49:12,031: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 16:49:13,035: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:49:15,049: ERROR/MainProcess] Internal Server Error: /sav/add
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py", line 42, in create
+    data.userLog = request.Customer
+                   ^^^^^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'Customer'
+[2024-08-19 16:49:15,104: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:49:15,114: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:49:15,148: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/add
+[2024-08-19 16:51:51,920: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 16:51:52,860: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:52:05,159: ERROR/MainProcess] Internal Server Error: /sav/add
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py", line 43, in create
+    data.userLog = request.Customer
+                   ^^^^^^^^^^^^^^^^
+AttributeError: 'WSGIRequest' object has no attribute 'Customer'
+[2024-08-19 16:52:05,556: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:52:05,567: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:52:05,595: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/add
+[2024-08-19 16:52:37,953: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 16:52:38,859: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:52:55,237: ERROR/MainProcess] Internal Server Error: /sav/add
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py", line 43, in create
+    data.userLog = request.user
+    ^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 284, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<SimpleLazyObject: <django.contrib.auth.models.AnonymousUser object at 0x0000020A5E784170>>": "Sav_request.userLog" must be a "Customer" instance.
+[2024-08-19 16:52:55,281: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:52:55,290: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:52:55,318: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/add
+[2024-08-19 16:53:33,754: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 16:53:34,670: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:53:56,975: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 16:53:57,371: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.52ms
+[2024-08-19 16:53:57,425: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:54:01,854: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:54:01,859: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:54:02,213: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:54:02,216: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:54:02,240: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/accounts/sign_in/
+[2024-08-19 16:56:06,770: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:56:06,773: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:56:07,650: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:56:07,657: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:56:07,685: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/accounts/sign_in/
+[2024-08-19 16:56:14,241: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 3.27ms
+[2024-08-19 16:56:14,250: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 3.67ms
+[2024-08-19 16:56:14,255: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:56:14,257: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:56:14,281: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/accounts/sign_in/
+[2024-08-19 16:56:23,851: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:56:23,855: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:56:23,858: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:56:23,867: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:56:23,885: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/accounts/sign_in/
+[2024-08-19 16:57:39,352: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 16:57:40,322: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 16:58:13,340: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:58:13,340: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:58:13,596: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:58:13,606: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:58:13,639: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/accounts/sign_in/
+[2024-08-19 16:58:29,365: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:58:29,372: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:58:30,112: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 5.84ms
+[2024-08-19 16:58:30,116: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:58:30,148: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/dashboard/
+[2024-08-19 16:58:39,626: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 16:58:39,973: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 16:58:39,988: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 16:58:40,489: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:58:40,499: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 16:58:40,595: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 16:59:43,478: ERROR/MainProcess] Internal Server Error: /sav/add
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py", line 42, in create
+    data.userLog = ""  #request.user
+    ^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 284, in __set__
+    raise ValueError(
+ValueError: Cannot assign "''": "Sav_request.userLog" must be a "Customer" instance.
+[2024-08-19 16:59:43,631: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 16:59:43,636: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.38ms
+[2024-08-19 16:59:43,681: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/add
+[2024-08-19 17:00:11,386: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 17:00:12,467: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 17:05:30,603: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\models\Personnels.py changed, reloading.
+[2024-08-19 17:05:31,571: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 17:11:40,855: ERROR/MainProcess] Connection to Redis lost: Retry (0/20) now.
+[2024-08-19 17:11:44,902: ERROR/MainProcess] Connection to Redis lost: Retry (1/20) in 1.00 second.
+[2024-08-19 17:11:49,962: ERROR/MainProcess] Connection to Redis lost: Retry (2/20) in 1.00 second.
+[2024-08-19 17:11:55,032: ERROR/MainProcess] Connection to Redis lost: Retry (3/20) in 1.00 second.
+[2024-08-19 17:12:00,110: ERROR/MainProcess] Connection to Redis lost: Retry (4/20) in 1.00 second.
+[2024-08-19 17:12:05,159: ERROR/MainProcess] Connection to Redis lost: Retry (5/20) in 1.00 second.
+[2024-08-19 17:12:10,213: ERROR/MainProcess] Connection to Redis lost: Retry (6/20) in 1.00 second.
+[2024-08-19 17:12:11,944: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 17:12:12,296: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 17:12:12,315: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 17:12:12,848: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 17:12:12,856: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 17:12:12,906: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 17:12:15,269: ERROR/MainProcess] Connection to Redis lost: Retry (7/20) in 1.00 second.
+[2024-08-19 17:12:20,352: ERROR/MainProcess] Connection to Redis lost: Retry (8/20) in 1.00 second.
+[2024-08-19 17:12:25,409: ERROR/MainProcess] Connection to Redis lost: Retry (9/20) in 1.00 second.
+[2024-08-19 17:12:30,481: ERROR/MainProcess] Connection to Redis lost: Retry (10/20) in 1.00 second.
+[2024-08-19 17:12:35,549: ERROR/MainProcess] Connection to Redis lost: Retry (11/20) in 1.00 second.
+[2024-08-19 17:12:40,642: ERROR/MainProcess] Connection to Redis lost: Retry (12/20) in 1.00 second.
+[2024-08-19 17:12:45,705: ERROR/MainProcess] Connection to Redis lost: Retry (13/20) in 1.00 second.
+[2024-08-19 17:12:50,759: ERROR/MainProcess] Connection to Redis lost: Retry (14/20) in 1.00 second.
+[2024-08-19 17:12:55,811: ERROR/MainProcess] Connection to Redis lost: Retry (15/20) in 1.00 second.
+[2024-08-19 17:13:00,871: ERROR/MainProcess] Connection to Redis lost: Retry (16/20) in 1.00 second.
+[2024-08-19 17:13:05,926: ERROR/MainProcess] Connection to Redis lost: Retry (17/20) in 1.00 second.
+[2024-08-19 17:13:10,977: ERROR/MainProcess] Connection to Redis lost: Retry (18/20) in 1.00 second.
+[2024-08-19 17:13:16,044: ERROR/MainProcess] Connection to Redis lost: Retry (19/20) in 1.00 second.
+[2024-08-19 17:13:21,099: CRITICAL/MainProcess] 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+[2024-08-19 17:21:17,516: ERROR/MainProcess] Connection to Redis lost: Retry (0/20) now.
+[2024-08-19 17:21:21,580: ERROR/MainProcess] Connection to Redis lost: Retry (1/20) in 1.00 second.
+[2024-08-19 17:21:26,658: ERROR/MainProcess] Connection to Redis lost: Retry (2/20) in 1.00 second.
+[2024-08-19 17:21:31,717: ERROR/MainProcess] Connection to Redis lost: Retry (3/20) in 1.00 second.
+[2024-08-19 17:21:36,781: ERROR/MainProcess] Connection to Redis lost: Retry (4/20) in 1.00 second.
+[2024-08-19 17:21:41,811: ERROR/MainProcess] Connection to Redis lost: Retry (5/20) in 1.00 second.
+[2024-08-19 17:21:46,872: ERROR/MainProcess] Connection to Redis lost: Retry (6/20) in 1.00 second.
+[2024-08-19 17:21:51,946: ERROR/MainProcess] Connection to Redis lost: Retry (7/20) in 1.00 second.
+[2024-08-19 17:21:56,993: ERROR/MainProcess] Connection to Redis lost: Retry (8/20) in 1.00 second.
+[2024-08-19 17:22:02,037: ERROR/MainProcess] Connection to Redis lost: Retry (9/20) in 1.00 second.
+[2024-08-19 17:22:07,069: ERROR/MainProcess] Connection to Redis lost: Retry (10/20) in 1.00 second.
+[2024-08-19 17:22:12,143: ERROR/MainProcess] Connection to Redis lost: Retry (11/20) in 1.00 second.
+[2024-08-19 17:22:17,204: ERROR/MainProcess] Connection to Redis lost: Retry (12/20) in 1.00 second.
+[2024-08-19 17:22:22,270: ERROR/MainProcess] Connection to Redis lost: Retry (13/20) in 1.00 second.
+[2024-08-19 17:22:27,349: ERROR/MainProcess] Connection to Redis lost: Retry (14/20) in 1.00 second.
+[2024-08-19 17:22:32,414: ERROR/MainProcess] Connection to Redis lost: Retry (15/20) in 1.00 second.
+[2024-08-19 17:22:37,472: ERROR/MainProcess] Connection to Redis lost: Retry (16/20) in 1.00 second.
+[2024-08-19 17:22:42,523: ERROR/MainProcess] Connection to Redis lost: Retry (17/20) in 1.00 second.
+[2024-08-19 17:22:47,574: ERROR/MainProcess] Connection to Redis lost: Retry (18/20) in 1.00 second.
+[2024-08-19 17:22:52,641: ERROR/MainProcess] Connection to Redis lost: Retry (19/20) in 1.00 second.
+[2024-08-19 17:22:57,735: CRITICAL/MainProcess] 
+Retry limit exceeded while trying to reconnect to the Celery redis result store backend. The Celery application must be restarted.
+
+[2024-08-19 20:49:50,834: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 20:49:50,834: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 20:49:51,116: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 35.85ms
+[2024-08-19 20:49:51,133: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 4.57ms
+[2024-08-19 20:49:51,181: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 20:56:13,534: WARNING/MainProcess] c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-08-19 20:56:13,542: INFO/MainProcess] Connected to redis://localhost:6379//
+[2024-08-19 20:56:13,545: WARNING/MainProcess] c:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\celery\worker\consumer\consumer.py:508: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+whether broker connection retries are made during startup in Celery 6.0 and above.
+If you wish to retain the existing behavior for retrying connections on startup,
+you should set broker_connection_retry_on_startup to True.
+  warnings.warn(
+
+[2024-08-19 20:56:13,548: INFO/MainProcess] mingle: searching for neighbors
+[2024-08-19 20:56:14,549: INFO/MainProcess] mingle: all alone
+[2024-08-19 20:56:14,598: INFO/MainProcess] celery@CTB-L-R-SIO-01 ready.
+[2024-08-19 20:56:14,773: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[0c9484bb-f6d9-4f86-af61-d9b3cb3ae237] received
+[2024-08-19 20:56:17,752: WARNING/MainProcess] Second method: Email sent successfully!
+[2024-08-19 20:56:17,754: INFO/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[0c9484bb-f6d9-4f86-af61-d9b3cb3ae237]: Email sent successfully!
+[2024-08-19 20:56:17,760: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[0c9484bb-f6d9-4f86-af61-d9b3cb3ae237] succeeded in 2.9839999999967404s: None
+[2024-08-19 20:56:17,760: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[deef25c8-6db6-469a-8e9f-e2d410357814] received
+[2024-08-19 20:56:20,337: WARNING/MainProcess] Second method: Email sent successfully!
+[2024-08-19 20:56:20,337: INFO/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[deef25c8-6db6-469a-8e9f-e2d410357814]: Email sent successfully!
+[2024-08-19 20:56:20,341: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[deef25c8-6db6-469a-8e9f-e2d410357814] succeeded in 2.5939999999973224s: None
+[2024-08-19 20:56:45,746: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[bf4cc6a9-f484-484e-afc8-0119c9b398c2] received
+[2024-08-19 20:56:49,898: WARNING/MainProcess] Second method: Email sent successfully!
+[2024-08-19 20:56:49,898: INFO/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[bf4cc6a9-f484-484e-afc8-0119c9b398c2]: Email sent successfully!
+[2024-08-19 20:56:49,902: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[bf4cc6a9-f484-484e-afc8-0119c9b398c2] succeeded in 4.1560000000026776s: None
+[2024-08-19 20:59:55,865: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 20:59:55,865: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 20:59:56,068: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 20:59:56,079: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 20:59:56,214: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 21:02:46,324: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[68a796e5-04aa-4fdc-bc22-fa5609b5930c] received
+[2024-08-19 21:02:49,243: WARNING/MainProcess] Second method: Email sent successfully!
+[2024-08-19 21:02:49,243: INFO/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[68a796e5-04aa-4fdc-bc22-fa5609b5930c]: Email sent successfully!
+[2024-08-19 21:02:49,249: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[68a796e5-04aa-4fdc-bc22-fa5609b5930c] succeeded in 2.936999999998079s: None
+[2024-08-19 22:04:27,316: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[b7b41421-16de-4bf5-bd70-5db2246dacf5] received
+[2024-08-19 22:04:30,634: WARNING/MainProcess] Second method: Email sent successfully!
+[2024-08-19 22:04:30,635: INFO/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[b7b41421-16de-4bf5-bd70-5db2246dacf5]: Email sent successfully!
+[2024-08-19 22:04:30,637: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[b7b41421-16de-4bf5-bd70-5db2246dacf5] succeeded in 3.3280000000013388s: None
+[2024-08-19 22:05:47,419: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 22:05:48,489: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:08:14,096: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[f95483d7-eb7e-42de-b613-0d375d96e216] received
+[2024-08-19 22:08:16,721: WARNING/MainProcess] Second method: Email sent successfully!
+[2024-08-19 22:08:16,721: INFO/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[f95483d7-eb7e-42de-b613-0d375d96e216]: Email sent successfully!
+[2024-08-19 22:08:16,721: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[f95483d7-eb7e-42de-b613-0d375d96e216] succeeded in 2.625s: None
+[2024-08-19 22:12:08,718: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\models\Sav_request.py changed, reloading.
+[2024-08-19 22:12:09,699: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:12:42,563: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\models\Sav_request.py changed, reloading.
+[2024-08-19 22:12:43,576: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:13:12,640: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 22:13:12,973: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:13:13,019: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:13:13,026: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:13:13,728: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:13:13,754: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:13:33,256: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[82495940-aa31-4d5a-a260-00844c000b17] received
+[2024-08-19 22:13:36,704: WARNING/MainProcess] Second method: Email sent successfully!
+[2024-08-19 22:13:36,704: INFO/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[82495940-aa31-4d5a-a260-00844c000b17]: Email sent successfully!
+[2024-08-19 22:13:36,704: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[82495940-aa31-4d5a-a260-00844c000b17] succeeded in 3.4530000000013388s: None
+[2024-08-19 22:14:38,954: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 22:14:39,868: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:14:46,286: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 22:14:46,552: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:14:46,574: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:14:46,592: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:14:47,462: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.01ms
+[2024-08-19 22:14:47,466: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:15:02,406: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[c5046581-18e4-4c55-959c-bd998d1bd75b] received
+[2024-08-19 22:15:02,424: ERROR/MainProcess] Internal Server Error: /sav/add
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view serviceapresvente.views.sav.Sav_requestView.create didn't return an HttpResponse object. It returned None instead.
+[2024-08-19 22:15:02,505: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.00ms
+[2024-08-19 22:15:02,511: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.09ms
+[2024-08-19 22:15:02,583: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/add
+[2024-08-19 22:15:05,744: WARNING/MainProcess] Second method: Email sent successfully!
+[2024-08-19 22:15:05,744: INFO/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[c5046581-18e4-4c55-959c-bd998d1bd75b]: Email sent successfully!
+[2024-08-19 22:15:05,744: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[c5046581-18e4-4c55-959c-bd998d1bd75b] succeeded in 3.3289999999979045s: None
+[2024-08-19 22:20:34,758: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 22:20:35,703: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:20:49,274: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 22:20:49,764: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:20:49,764: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:21:22,073: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:21:22,075: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:21:22,348: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:21:22,367: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:21:22,416: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:21:42,931: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[9601ce2a-c651-48be-ba8d-09906410bc1d] received
+[2024-08-19 22:21:43,110: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:21:43,112: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:21:43,464: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:21:43,484: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.00ms
+[2024-08-19 22:21:43,961: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:21:46,377: WARNING/MainProcess] Second method: Email sent successfully!
+[2024-08-19 22:21:46,377: INFO/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[9601ce2a-c651-48be-ba8d-09906410bc1d]: Email sent successfully!
+[2024-08-19 22:21:46,392: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[9601ce2a-c651-48be-ba8d-09906410bc1d] succeeded in 3.4690000000045984s: None
+[2024-08-19 22:30:29,150: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:30:29,155: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:30:29,538: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:30:29,553: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:30:29,591: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:30:32,910: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\CommandeSavView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.CommandeSav.CommandeSav'> QuerySet.
+  paginator = Paginator(commandesavs_list, 8)
+
+[2024-08-19 22:30:33,024: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.01ms
+[2024-08-19 22:30:33,030: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.00ms
+[2024-08-19 22:30:33,042: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:30:33,045: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:30:33,068: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 22:30:51,904: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:30:51,906: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:30:52,067: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.05ms
+[2024-08-19 22:30:52,073: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.01ms
+[2024-08-19 22:30:52,115: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:30:56,158: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:30:56,166: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:30:56,180: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.00ms
+[2024-08-19 22:30:56,184: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:30:56,216: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 22:31:08,442: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:31:08,445: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:31:09,091: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.86ms
+[2024-08-19 22:31:09,852: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:31:09,852: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:31:48,334: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[1bcd800a-5998-42c3-909a-f922b65d5d16] received
+[2024-08-19 22:31:48,334: WARNING/MainProcess] Erreur lors de l'envoi du mail :
+[2024-08-19 22:31:48,334: WARNING/MainProcess]  
+[2024-08-19 22:31:48,334: WARNING/MainProcess] [Errno 11001] getaddrinfo failed
+[2024-08-19 22:31:48,334: ERROR/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[1bcd800a-5998-42c3-909a-f922b65d5d16]: Error sending email: [Errno 11001] getaddrinfo failed
+[2024-08-19 22:31:48,334: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[1bcd800a-5998-42c3-909a-f922b65d5d16] succeeded in 0.0s: None
+[2024-08-19 22:31:48,542: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:31:48,545: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:31:48,921: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:31:48,928: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:31:48,970: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:32:21,055: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.01ms
+[2024-08-19 22:32:21,061: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.01ms
+[2024-08-19 22:32:21,072: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:32:21,075: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:32:21,111: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:32:30,738: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:32:30,743: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:32:31,439: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.02ms
+[2024-08-19 22:32:31,444: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.03ms
+[2024-08-19 22:32:31,472: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 22:33:55,545: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:33:55,545: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:33:55,953: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:33:55,957: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.01ms
+[2024-08-19 22:33:55,997: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:34:12,978: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.06ms
+[2024-08-19 22:34:12,984: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.00ms
+[2024-08-19 22:34:12,994: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:34:12,997: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:34:13,020: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 22:34:33,577: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:34:33,578: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:34:33,828: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.78ms
+[2024-08-19 22:34:33,832: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:34:33,876: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:35:22,399: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:35:22,399: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:35:22,595: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:35:22,600: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:35:22,629: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:36:45,361: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 22:36:46,486: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:37:24,633: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 22:37:25,600: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:39:05,446: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-19 22:39:06,475: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:39:37,679: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 22:39:37,943: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:39:37,953: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:39:37,980: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:39:37,982: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:39:37,997: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:41:28,426: ERROR/MainProcess] Internal Server Error: /sav/43/edit
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py", line 89, in update
+    data.save()
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\db\models\base.py", line 822, in save
+    self.save_base(
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\db\models\base.py", line 924, in save_base
+    post_save.send(
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\dispatch\dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\models\Sav_request.py", line 156, in send_email_on_sav_request_created
+    elif (instance.status == 'En instance d\'Assemblage'):
+          ^^^^^^^^^^^^^^^
+AttributeError: 'Sav_request' object has no attribute 'status'. Did you mean: 'statut'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py", line 111, in update
+    return render(request, 'servicedsi/formSavUpd.html', {'form': form})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\urls\resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'savrequest-update' with arguments '('',)' not found. 1 pattern(s) tried: ['sav/(?P<id>[0-9]+)/edit\\Z']
+[2024-08-19 22:41:29,036: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:41:29,045: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.46ms
+[2024-08-19 22:41:29,095: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/43/edit
+[2024-08-19 22:43:32,639: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\models\Sav_request.py changed, reloading.
+[2024-08-19 22:43:33,707: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:45:00,862: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\models\Sav_request.py changed, reloading.
+[2024-08-19 22:45:01,904: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:45:24,701: INFO/MainProcess] Reload 1 waiters: C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\templates\email\sav_assemblagePiece copy.html
+[2024-08-19 22:45:24,905: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[24a25053-3bae-4142-9568-60bc4fe9ee3b] received
+[2024-08-19 22:45:24,910: WARNING/MainProcess] Erreur lors de l'envoi du mail :
+[2024-08-19 22:45:24,911: WARNING/MainProcess]  
+[2024-08-19 22:45:24,911: WARNING/MainProcess] [Errno 11001] getaddrinfo failed
+[2024-08-19 22:45:24,911: ERROR/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[24a25053-3bae-4142-9568-60bc4fe9ee3b]: Error sending email: [Errno 11001] getaddrinfo failed
+[2024-08-19 22:45:24,912: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[24a25053-3bae-4142-9568-60bc4fe9ee3b] succeeded in 0.0s: None
+[2024-08-19 22:45:24,968: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 22:45:25,172: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:45:25,172: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:45:25,635: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.62ms
+[2024-08-19 22:45:25,640: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:45:25,683: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:45:43,072: INFO/MainProcess] Reload 1 waiters: C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\templates\email\sav_achatpiece.html
+[2024-08-19 22:45:43,252: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:45:43,271: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:45:43,276: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:45:43,279: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:45:43,309: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:46:55,118: INFO/MainProcess] Reload 1 waiters: C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\templates\email\sav_achatpiece.html
+[2024-08-19 22:46:55,347: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.87ms
+[2024-08-19 22:46:55,355: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.00ms
+[2024-08-19 22:46:55,357: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:46:55,361: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:46:55,410: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:47:13,589: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\models\Sav_request.py changed, reloading.
+[2024-08-19 22:47:14,667: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 22:47:49,484: WARNING/MainProcess] Not Found: /sav/6/edit
+[2024-08-19 22:47:49,601: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 2.44ms
+[2024-08-19 22:47:49,612: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:47:49,634: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/6/edit
+[2024-08-19 22:48:07,907: WARNING/MainProcess] Not Found: /sav/6/edit
+[2024-08-19 22:48:08,166: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:48:08,185: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:48:08,190: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/6/edit
+[2024-08-19 22:48:48,924: WARNING/MainProcess] Not Found: /sav/6/edit
+[2024-08-19 22:48:48,937: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:48:48,954: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.26ms
+[2024-08-19 22:48:48,959: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/6/edit
+[2024-08-19 22:49:26,417: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[71b4834e-6b38-4caf-8c05-14978dc187ae] received
+[2024-08-19 22:49:26,422: WARNING/MainProcess] Erreur lors de l'envoi du mail :
+[2024-08-19 22:49:26,423: WARNING/MainProcess]  
+[2024-08-19 22:49:26,424: WARNING/MainProcess] [Errno 11001] getaddrinfo failed
+[2024-08-19 22:49:26,424: ERROR/MainProcess] serviceapresvente.models.tasks.send_email_with_template_task[71b4834e-6b38-4caf-8c05-14978dc187ae]: Error sending email: [Errno 11001] getaddrinfo failed
+[2024-08-19 22:49:26,424: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 22:49:26,425: INFO/MainProcess] Task serviceapresvente.models.tasks.send_email_with_template_task[71b4834e-6b38-4caf-8c05-14978dc187ae] succeeded in 0.01599999999598367s: None
+[2024-08-19 22:49:26,632: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.01ms
+[2024-08-19 22:49:26,640: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:49:26,641: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:49:26,648: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:49:26,697: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 22:49:32,094: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\CommandeSavView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.CommandeSav.CommandeSav'> QuerySet.
+  paginator = Paginator(commandesavs_list, 8)
+
+[2024-08-19 22:49:32,238: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:49:32,243: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:49:32,290: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:49:32,685: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:49:32,689: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:49:33,121: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 822.01ms
+[2024-08-19 22:49:33,121: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:49:33,121: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:49:33,161: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 22:51:45,269: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 22:51:45,270: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 22:51:45,560: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 22:51:45,573: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 22:51:45,625: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:07:02,511: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\CommandeSavForm.py changed, reloading.
+[2024-08-19 23:07:03,555: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:07:15,026: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\CommandeSavView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.CommandeSav.CommandeSav'> QuerySet.
+  paginator = Paginator(commandesavs_list, 8)
+
+[2024-08-19 23:07:15,219: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:07:15,222: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:07:16,259: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 737.82ms
+[2024-08-19 23:07:16,264: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:07:16,298: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:07:33,040: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\SuiviCommandeSavView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.SuiviCommandeSav.SuiviCommandeSav'> QuerySet.
+  paginator = Paginator(suivicommandesavs_list, 8)
+
+[2024-08-19 23:07:33,143: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:07:33,147: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:07:33,174: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.99ms
+[2024-08-19 23:07:33,177: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:07:33,203: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-19 23:07:35,529: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:07:35,533: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:07:36,071: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.83ms
+[2024-08-19 23:07:36,076: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:07:36,112: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:07:45,421: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:07:45,424: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:07:45,850: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:07:45,855: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:07:45,888: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:22:41,552: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\CommandeSavView.py changed, reloading.
+[2024-08-19 23:22:42,585: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:25:30,040: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\CommandeSavView.py changed, reloading.
+[2024-08-19 23:25:30,971: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:27:03,540: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\CommandeSavView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.CommandeSav.CommandeSav'> QuerySet.
+  paginator = Paginator(commandesavs_list, 8)
+
+[2024-08-19 23:27:03,755: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:27:03,758: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:27:04,130: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.01ms
+[2024-08-19 23:27:04,135: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.01ms
+[2024-08-19 23:27:04,220: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:27:09,098: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\SuiviCommandeSavView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.SuiviCommandeSav.SuiviCommandeSav'> QuerySet.
+  paginator = Paginator(suivicommandesavs_list, 8)
+
+[2024-08-19 23:27:09,215: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:27:09,221: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:27:09,978: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:27:09,995: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:27:10,035: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-19 23:27:11,337: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.00ms
+[2024-08-19 23:27:11,341: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:27:11,350: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:27:11,353: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:27:11,383: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:27:27,791: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:27:27,797: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:27:28,379: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:27:28,390: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.07ms
+[2024-08-19 23:27:28,418: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:27:55,697: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:27:55,698: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:27:56,032: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.03ms
+[2024-08-19 23:27:56,039: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.99ms
+[2024-08-19 23:27:56,069: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:28:30,331: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:28:30,334: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:28:30,340: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:28:30,341: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:28:30,390: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:28:36,112: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.02ms
+[2024-08-19 23:28:36,118: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:28:36,127: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:28:36,132: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:28:36,165: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:29:30,024: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:29:30,026: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:29:30,330: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:29:30,338: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.01ms
+[2024-08-19 23:29:30,374: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:29:33,186: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:29:33,188: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:29:34,010: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:29:34,022: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.04ms
+[2024-08-19 23:29:34,052: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:29:58,614: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.99ms
+[2024-08-19 23:29:58,619: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.00ms
+[2024-08-19 23:29:58,625: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:29:58,627: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:29:58,685: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:30:11,650: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:30:11,653: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:30:11,990: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:30:12,000: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:30:12,037: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:30:23,655: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:30:23,659: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:30:24,196: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.22ms
+[2024-08-19 23:30:24,201: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:30:24,231: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-19 23:30:27,339: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.00ms
+[2024-08-19 23:30:27,345: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.00ms
+[2024-08-19 23:30:27,359: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:30:27,362: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:30:27,378: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-19 23:47:17,571: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\CommandeSavForm.py changed, reloading.
+[2024-08-19 23:47:18,688: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:48:20,518: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\SuiviCommandeSavForm.py changed, reloading.
+[2024-08-19 23:48:21,552: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:49:12,202: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\SuiviCommandeSavForm.py changed, reloading.
+[2024-08-19 23:49:13,115: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:49:58,225: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\SuiviCommandeSavForm.py changed, reloading.
+[2024-08-19 23:49:59,182: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:50:25,174: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\SuiviCommandeSavForm.py changed, reloading.
+[2024-08-19 23:50:26,050: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:50:29,751: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\SuiviCommandeSavView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.SuiviCommandeSav.SuiviCommandeSav'> QuerySet.
+  paginator = Paginator(suivicommandesavs_list, 8)
+
+[2024-08-19 23:50:29,871: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.54ms
+[2024-08-19 23:50:29,898: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:50:29,900: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:50:29,900: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:50:30,528: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-19 23:50:50,210: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:50:50,210: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:50:50,467: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:50:50,472: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.56ms
+[2024-08-19 23:50:50,505: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-19 23:51:04,030: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 2.51ms
+[2024-08-19 23:51:04,034: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:51:04,037: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:51:04,040: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:51:04,060: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-19 23:51:08,360: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\AssemblageReparationView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.AssemblageReparation.AssemblageReparation'> QuerySet.
+  paginator = Paginator(assemblagereparation_list, 8)
+
+[2024-08-19 23:51:08,476: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:51:08,476: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:51:08,775: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 6.55ms
+[2024-08-19 23:51:08,777: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:51:08,807: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/assemblage
+[2024-08-19 23:51:16,167: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 23:51:16,352: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:51:16,352: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:51:16,719: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:51:16,726: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.42ms
+[2024-08-19 23:51:16,767: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 23:51:23,425: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:51:23,429: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:51:23,431: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:51:23,434: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:51:23,459: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/assemblage
+[2024-08-19 23:52:34,661: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\AssemblageReparationForm.py changed, reloading.
+[2024-08-19 23:52:35,675: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:52:42,876: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\AssemblageReparationView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.AssemblageReparation.AssemblageReparation'> QuerySet.
+  paginator = Paginator(assemblagereparation_list, 8)
+
+[2024-08-19 23:52:43,029: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:52:43,031: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:52:43,152: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:52:43,162: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 2.28ms
+[2024-08-19 23:52:43,202: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/assemblage
+[2024-08-19 23:52:51,611: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:52:51,611: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:52:52,071: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.98ms
+[2024-08-19 23:52:52,075: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:52:52,101: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/assemblage
+[2024-08-19 23:52:55,070: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\LivraisonView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.LivraisonClient.LivraisonClient'> QuerySet.
+  paginator = Paginator(livraison_list, 8)
+
+[2024-08-19 23:52:55,216: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 2.00ms
+[2024-08-19 23:52:55,221: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:52:55,221: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:52:55,229: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:52:55,241: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/livraison
+[2024-08-19 23:53:00,353: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-19 23:53:00,567: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:53:00,570: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:53:00,903: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:53:00,908: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:53:00,944: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-19 23:54:05,799: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\LivraisonForm.py changed, reloading.
+[2024-08-19 23:54:06,830: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:54:17,324: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\LivraisonForm.py changed, reloading.
+[2024-08-19 23:54:18,337: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:55:10,555: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\RecouvrementForm.py changed, reloading.
+[2024-08-19 23:55:11,534: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:58:11,620: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\RecouvrementDeveaForm.py changed, reloading.
+[2024-08-19 23:58:12,633: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:58:19,703: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\forms\RecouvrementDeveaForm.py changed, reloading.
+[2024-08-19 23:58:20,605: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-19 23:58:26,175: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\LivraisonView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.LivraisonClient.LivraisonClient'> QuerySet.
+  paginator = Paginator(livraison_list, 8)
+
+[2024-08-19 23:58:26,363: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.58ms
+[2024-08-19 23:58:26,367: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.66ms
+[2024-08-19 23:58:26,380: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:58:26,380: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:58:26,415: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/livraison
+[2024-08-19 23:58:40,434: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:58:40,434: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:58:40,812: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:58:40,812: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-19 23:58:40,837: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/livraison
+[2024-08-19 23:58:42,736: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\RecouvrementView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Recouvrement.Recouvrement'> QuerySet.
+  paginator = Paginator(recouvrement_list, 8)
+
+[2024-08-19 23:58:42,833: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-19 23:58:42,833: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-19 23:58:43,313: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-19 23:58:43,324: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.78ms
+[2024-08-19 23:58:43,353: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/recouvrement
+[2024-08-20 00:09:05,608: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-20 00:09:05,753: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.56ms
+[2024-08-20 00:09:05,758: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.62ms
+[2024-08-20 00:09:05,762: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 00:09:05,766: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 00:09:05,793: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-20 00:09:06,464: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\CommandeSavView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.CommandeSav.CommandeSav'> QuerySet.
+  paginator = Paginator(commandesavs_list, 8)
+
+[2024-08-20 00:09:06,547: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 00:09:06,551: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 00:09:06,558: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 00:09:06,559: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 00:09:06,579: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-20 00:09:07,765: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\SuiviCommandeSavView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.SuiviCommandeSav.SuiviCommandeSav'> QuerySet.
+  paginator = Paginator(suivicommandesavs_list, 8)
+
+[2024-08-20 00:09:07,849: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 00:09:07,852: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 00:09:07,962: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 00:09:07,972: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 00:09:07,999: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-20 00:09:08,755: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\AssemblageReparationView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.AssemblageReparation.AssemblageReparation'> QuerySet.
+  paginator = Paginator(assemblagereparation_list, 8)
+
+[2024-08-20 00:09:08,829: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 00:09:08,834: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 00:09:08,843: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 00:09:08,843: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 00:09:08,868: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/assemblage
+[2024-08-20 00:09:09,425: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 00:09:09,426: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 00:09:09,675: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 00:09:09,679: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 00:09:09,706: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/livraison
+[2024-08-20 00:09:10,044: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 00:09:10,044: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 00:09:10,410: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 00:09:10,415: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 00:09:10,445: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/recouvrement
+[2024-08-20 00:09:10,833: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\sav\ClotureDossierView.py:10: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.ClotureDossier.ClotureDossier'> QuerySet.
+  paginator = Paginator(cloture_list, 8)
+
+[2024-08-20 00:09:10,926: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 00:09:10,926: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 00:09:11,173: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 00:09:11,180: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.65ms
+[2024-08-20 00:09:11,207: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/cloture

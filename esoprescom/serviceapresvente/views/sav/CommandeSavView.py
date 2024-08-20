@@ -94,22 +94,21 @@ def update(request, id):
                             messages.success(request, 'Processus Logistique!')
                             
                         else:
-                            pass    
+                            messages.warning(request, 'Le suivi de commande existe déjà.')    
                     except IntegrityError:
                             messages.error(request, 'Erreur d\'intégrité lors de la création du processus achat !')
-                            
                 else: 
                     data.save()
                     print('success')
                     messages.success(request, 'CommandeSav has been saved !')
-                    
                 return redirect('serviceapresvente:commandesav')
             else:
                 print('form invalid:')
+                messages.error(request, 'Le formulaire est invalide. Veuillez vérifier les champs.')
                 form = CommandeSavForm(instance=commandesav)
         else:
             form = CommandeSavForm(instance=commandesav)
-            print('No PUT field:',form)
+            print('La méthode PUT n\'a pas été trouvée.')
     else:
         form = CommandeSavForm(instance=commandesav)
         print('No POST method:')

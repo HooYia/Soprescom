@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demande de livraisone SAV</title>
+</head>
+<body>
+    <p>Bonjour Team Logistique,</p>
+    
+    <p>Merci de livrer ce client :</p>
+    
+    <ul>
+        <li>Numéro de dossier : {{ numero_dossier }}</li>
+        <li>Type : {{ marque }}</li>
+        <li>Numero de série : {{ num_serie }}</li>
+        <li>Adresse : {{ addresse }}</li>
+        <li>Responsable de ce SAV : {{ resp_sav_name }}</li>
+        <li>Contact : {{ resp_sav_telephone }}</li>
+    </ul>
+    
+    <p>Pour tous compléments d'information, merci d'envoyer un mail au <a href="mailto:sav@soprescom.net">sav@soprescom.net</a>.</p>
+
+    
+    <p>Cordialement,</p>
+    <p>L'équipe SAV</p>
+</body>
+</html>

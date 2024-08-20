@@ -40,6 +40,7 @@ def create(request):
         if form.is_valid():
             data = form.save(commit=False) 
             data.userLog = request.user
+            print("data:",data)
             #print('data.bon_pour_accord:',data.bon_pour_accord)
             try:
                 data.save()
@@ -53,12 +54,18 @@ def create(request):
                         data.save()
                         print('Sav_request has been saved with bon_pour_accord!')
                         messages.success(request, 'Processus Achat !')
-                        return redirect('serviceapresvente:savrequest')
+                        
                     else:
                         messages.error(request, 'Erreur d\'intégrité lors de la création du processus achat !')
-                        return redirect('serviceapresvente:savrequest')
+                    return redirect('serviceapresvente:savrequest')
+                else:
+                    # bon_pour_accord est False
+                    messages.success(request, 'Sav_request a été sauvegardée sans processus d\'achat.')
+                    return redirect('serviceapresvente:savrequest')
             except Exception as e:
                 print(e)
+                messages.error(request, 'Une erreur s\'est produite lors de la sauvegarde.')
+                return render(request, 'servicedsi/formSavAdd.html', {'form': form})
         else:
             messages.error(request, 'Formulaire invalide, veuillez vérifier les champs.')
             form = Sav_requestForm()
@@ -94,16 +101,26 @@ def update(request, id):
                         else:
                             messages.error(request, 'Erreur d\'intégrité lors de la création du processus achat !')
                         return redirect('serviceapresvente:savrequest')
+                    else:
+                        # bon_pour_accord est False
+                        messages.success(request, 'Sav_request a été sauvegardée sans processus d\'achat.')
+                        return redirect('serviceapresvente:savrequest')
                 except Exception as e:
                     print(e)
+                    messages.error(request, 'Une erreur s\'est produite lors de la sauvegarde.')
+                    return render(request, 'servicedsi/formSavUpd.html', {'form': form})
             else:
                 print('Form invalid')
                 form = Sav_requestUpdForm(instance=sav_request)
+                return render(request, 'servicedsi/formSavUpd.html', {'form': form, 
+                                                          'sav_request': sav_request})
         else:
             form = Sav_requestUpdForm(instance=sav_request)
+            return render(request, 'servicedsi/formSavUpd.html', {'form': form, 
+                                                          'sav_request': sav_request})
     else:
         form = Sav_requestUpdForm(instance=sav_request)        
-    return render(request, 'servicedsi/formSavUpd.html', {'form': form, 
+        return render(request, 'servicedsi/formSavUpd.html', {'form': form, 
                                                           'sav_request': sav_request})
 
 def delete(request, id):

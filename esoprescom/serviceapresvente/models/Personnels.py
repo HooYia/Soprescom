@@ -9,6 +9,7 @@ class Personnels(models.Model):
     departement  = models.CharField(verbose_name =_('Département'), max_length=30,null=True, blank=True)
     poste  = models.CharField(verbose_name =_('Poste'), max_length=30,null=True, blank=True)
     telephone  = models.CharField(verbose_name =_('Telephone'),unique=True, max_length=30,null=True, blank=True)
+    email  = models.EmailField(verbose_name =_('Email'),unique=True, max_length=30,null=True, blank=True,default='sav@soprescom.net')
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

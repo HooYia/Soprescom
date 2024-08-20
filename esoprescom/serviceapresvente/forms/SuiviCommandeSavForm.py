@@ -7,12 +7,11 @@ class SuiviCommandeSavForm(forms.ModelForm):
     ("Sous Douane Malienne","Sous Douane Malienne"),
     ("Reçu","Reçu")]    
     
-    statut = forms.ChoiceField(choices=ETAT,
-                                   widget=forms.RadioSelect(attrs={'class': 'form-control custom-text-input',
-                                                              'id':'id_statut',
-                                                              'name':'statut'}), 
-                                   initial='pending (logistique)'
-    )  
+    #statut = forms.ChoiceField(choices=ETAT,
+    #                               widget=forms.RadioSelect(attrs={'class': 'form-control custom-text-input',
+    #                                                          'id':'id_statut',
+    #                                                          'name':'statut'}), 
+    #                               initial='pending (logistique)')  
     class Meta:
         model = SuiviCommandeSav
         fields = ('commandesav', 'statut', 'nombre_jour',  'commentaire')
@@ -20,6 +19,8 @@ class SuiviCommandeSavForm(forms.ModelForm):
         widgets = {
             'commandesav' : forms.TextInput(attrs={'class': 'form-control custom-text-input',
                                                        'id':'id_commandesav'}),
+            'statut' : forms.RadioSelect(attrs={'class': 'form-check form-check-inline', 
+                                                       'id':'id_statut','name':'statut'}), 
             'nombre_jour' : forms.NumberInput(attrs={'class': 'form-control custom-number-input'}),
             'commentaire' : forms.Textarea(attrs={'class': 'form-control custom-textarea'}),
         }

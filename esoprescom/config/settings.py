@@ -28,22 +28,35 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'e-soprescom.net'
 ]
-
-# Application definition
-INSTALLED_APPS = [
+DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'shop',
+    ]
+
+# add apps which you install using pip
+THIRD_PARTY_APPS = [
+    #'rest_framework',
+    #'crispy_bootstrap5',
+    #'debug_toolbar',
+    #'crispy_forms',
+    #'django_extensions',
+    #'django_filters',
+    'livereload',
     'ckeditor',
+    #'django-select2',
+ ]
+LOCAL_APPS = [
+    'shop',
     'accounts',
     'dashboard',
     'serviceapresvente',
-    
-]
+ ]
+# Application definition
+INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -138,3 +152,15 @@ CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 
 
 AUTH_USER_MODEL = 'accounts.Customer'  # juste app.nom du model
+
+#### Config Soprescom
+EMAIL_HOST ='ssl0.ovh.net'  # 'smtp.mail.ovh.net'  #'proX.mail.ovh.net'
+EMAIL_PORT = 587  
+EMAIL_HOST_USER = 'souleymane@soprescom.net'  
+EMAIL_HOST_PASSWORD = 'Donse@2000'
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = True
+
+# Configuration Celery
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'

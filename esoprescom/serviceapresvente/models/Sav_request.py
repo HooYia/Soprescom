@@ -9,6 +9,10 @@ from serviceapresvente.models.Partenaires import Partenaires
 from django.utils.translation import gettext_lazy as _  
 from django.core.validators import MaxLengthValidator
 
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from .tasks import Send_Email,send_email_with_template,send_instance_email_with_template_task,send_email_with_template_task
+
 today_date = datetime.now()
 date_old_days_ago = datetime.now() - timedelta(days=180)
 
@@ -87,20 +91,20 @@ class Sav_request(models.Model):
     
     @classmethod
     def sav_query_instance(cls):
-        queryset_agg = Sav_request.objects.filter(date_reception__gte=date_old_days_ago).values('status').annotate(status_count=Count('status')).order_by('status') 
-        queryset_detail = Sav_request.objects.filter(date_reception__gte=date_old_days_ago).values('type_sav','resp_sav','status').annotate(status_count=Count('status')).order_by('status')  
+        queryset_agg = Sav_request.objects.filter(date_reception__gte=date_old_days_ago).values('statut').annotate(status_count=Count('status')).order_by('statut') 
+        queryset_detail = Sav_request.objects.filter(date_reception__gte=date_old_days_ago).values('type_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut')  
        
         return queryset_agg,queryset_detail
 
     @classmethod
     def sav_query_client(cls):
-        queryset_client = Sav_request.objects.filter(date_reception__gte=date_old_days_ago).values('client_sav','resp_sav','status').annotate(status_count=Count('status')).order_by('status') 
+        queryset_client = Sav_request.objects.filter(date_reception__gte=date_old_days_ago).values('client_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
         return queryset_client
     
     @classmethod
     def sav_query_2_client(cls,parm):  
         queryset_client = Sav_request.objects.filter(date_reception__gte=date_old_days_ago,
-                                                     client_sav=parm).values('client_sav','status').annotate(status_count=Count('status')).order_by('status') 
+                                                     client_sav=parm).values('client_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
         return queryset_client
     
     @classmethod
@@ -109,3 +113,146 @@ class Sav_request(models.Model):
                         status = etat,
                         resp_sav=resp).order_by('-date_reception', 'numero_dossier')
         return queryset
+    
+
+    ##############
+# Les Signaux#
+##############
+from django.conf import settings
+#@receiver(post_save, sender=Sav_test_request)
+@receiver(post_save,sender=Sav_request)
+def send_email_on_sav_request_created(sender, instance, created, **kwargs):
+    if created:  # Vérifie si une nouvelle instance a été créée
+        subject = 'Nouvelle requête SAV créée'
+        """
+        client_email = instance.client_sav.email
+        
+        message = f"Une nouvelle requête SAV a été créée avec le numéro de dossier : {instance.numero_dossier}"
+        from_email = 'souleymane@soprescom.net'
+        to_email = [client_email,instance.resp_sav.email]  # Liste des destinataires
+        try:
+            #Send_Email(subject, message, from_email, to_email)
+            logger.info(f"Email envoyé à {client_email} pour la nouvelle requête SAV.")
+            
+        except Exception as e:
+            logger.error(f"Erreur lors de l'envoi de l'email à {client_email}: {str(e)}")
+        """
+        ##################
+        template_name = 'email/new_sav.html'
+        context= {
+            'numero_dossier': instance.numero_dossier,
+            'client_name': instance.client_sav.client_name,
+            'marque': instance.marque.marque,
+            'num_serie': instance.numero_serie,
+            'defaut_sav': instance.description_piece,
+            'resp_sav_name': instance.resp_sav.name,
+            'resp_sav_telephone': instance.resp_sav.telephone,
+             }
+        to_email = [instance.client_sav.email, instance.resp_sav.email]
+        #print('to_email:',to_email)
+        from_email = settings.EMAIL_HOST_USER
+        #print('from_email:',from_email)
+        send_email_with_template_task.delay(subject,template_name,context,to_email,from_email)
+    elif (instance.statut == 'pending (achat)'):
+        subject = 'Achat Pièce SAV'
+        template_name = 'email/sav_achatpiece.html'
+        context= {
+            'numero_dossier': instance.numero_dossier,
+            'client_name': instance.client_sav.client_name,
+            'marque': instance.marque.marque,
+            'num_serie': instance.numero_serie,
+            'defaut_sav': instance.description_piece,
+            'resp_sav_name': instance.resp_sav.name,
+            'resp_sav_telephone': instance.resp_sav.telephone,
+             }
+        to_email = ['donsetogola@smartsolutions-mali.com']
+        #print('to_email:',to_email)
+        from_email = settings.EMAIL_HOST_USER
+        #print('from_email:',from_email)
+        send_email_with_template_task.delay(subject,template_name,context,to_email,from_email)
+    elif (instance.statut == 'En instance de livraison'):
+        subject = 'Livraison SAV'
+        template_name = 'email/sav_livraison.html'
+        context= {
+            'numero_dossier': instance.numero_dossier,
+            'client_name': instance.client_sav.client_name,
+            'marque': instance.marque.marque,
+            'num_serie': instance.numero_serie,
+            'defaut_sav': instance.description_piece,
+            'resp_sav_name': instance.resp_sav.name,
+            'resp_sav_telephone': instance.resp_sav.telephone,
+             }
+        to_email = [instance.client_sav.email,'donsetogola@smartsolutions-mali.com']
+        #print('to_email:',to_email)
+        from_email = settings.EMAIL_HOST_USER
+        #print('from_email:',from_email)
+        send_email_with_template_task.delay(subject,template_name,context,to_email,from_email)
+    elif (instance.statut == 'En instance de recouvrement'):
+        subject = 'SAV recouvrement'
+        template_name = 'email/sav_recouvrement.html'
+        context= {
+            'numero_dossier': instance.numero_dossier,
+            'client_name': instance.client_sav.client_name,
+            'marque': instance.marque.marque,
+            'num_serie': instance.numero_serie,
+            'defaut_sav': instance.description_piece,
+            'resp_sav_name': instance.resp_sav.name,
+            'resp_sav_telephone': instance.resp_sav.telephone,
+             }
+        to_email = [instance.client_sav.email, 'donsetogola@smartsolutions-mali.com']
+        #print('to_email:',to_email)
+        from_email = settings.EMAIL_HOST_USER
+        #print('from_email:',from_email)
+        send_email_with_template_task.delay(subject,template_name,context,to_email,from_email)
+        ##################
+
+"""
+@receiver(post_save,sender=Sav_instance)
+def send_email_on_instance_created(sender, instance, created, **kwargs):
+    if created:  # Vérifie si une nouvelle instance a été créée
+        print('fonction d\'envoie de mail')
+        subject = 'Nouvelle Instance SoPresCom  créée'
+        template_name = 'sav/email/new_instance.html'
+        print('instance.client_sav.nom_final:',instance.client_sav.nom_final)
+        context= {
+            'numero_dossier': instance.numero_dossier,
+            'instance': instance.type_instance,
+            'client': instance.client_sav.nom_final,
+            'resp_name': str(instance.responsable) +'('+str(instance.departement)+')',
+            'action': instance.actions,
+            'statut': instance.status,
+             }
+        mail = Sav_instance.get_responsable_email(
+            instance.departement,
+            instance.responsable)
+        print(mail[0]['email'])
+        to_email = mail[0]['email']
+        #print('to_email:',to_email)
+        from_email = settings.EMAIL_HOST_USER
+        #print('from_email:',from_email)
+        send_instance_email_with_template_task.delay(subject,template_name,context,to_email,from_email)
+    elif (instance.status == 'Clôturé' and instance.instance_facturable == 'Facturable'):
+        subject = 'Nouvelle Instance SoPresCom pour recouvrement'
+        template_name = 'sav/email/new_instance_recouvrement.html'
+        #print('instance.client_sav.nom_final:',instance.client_sav.nom_final)
+        context= {
+            'numero_dossier': instance.numero_dossier,
+            'instance': instance.type_instance,
+            'client': instance.client_sav.nom_final,
+            'resp_name': str(instance.responsable) +'('+str(instance.departement)+')',
+            'action': instance.actions,
+            'statut': instance.status,
+             }
+        mail = Sav_instance.get_responsable_email(
+            instance.departement,
+            instance.responsable)
+        print(mail[0]['email'])
+        to_email = [mail[0]['email'],'souleymane@soprescom.net']
+        #print('to_email:',to_email)
+        from_email = settings.EMAIL_HOST_USER
+        #print('from_email:',from_email)
+        send_instance_email_with_template_task.delay(subject,template_name,context,to_email,from_email)
+    ##################
+
+        
+"""

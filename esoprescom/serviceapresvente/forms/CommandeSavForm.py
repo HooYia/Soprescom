@@ -6,12 +6,12 @@ class CommandeSavForm(forms.ModelForm):
     ETAT=[("commande placée","commande placée"),
           ("pending (achat)","pending (achat)")
         ]    
-    statut = forms.ChoiceField(choices=ETAT,
-                                   widget=forms.RadioSelect(attrs={'class': 'form-control custom-text-input',
-                                                              'id':'id_statut',
-                                                              'name':'statut'}), 
-                                   initial = 'pending (achat)'
-    )       
+    #statut = forms.ChoiceField(choices=ETAT,
+    #                               widget=forms.RadioSelect(attrs={'class': 'form-control custom-text-input',
+    #                                                          'id':'id_statut',
+    #                                                          'name':'statut'}), 
+    #                               initial = 'pending (achat)'
+    #)       
     fournisseur = forms.ModelChoiceField(queryset=Fournisseurs.objects.all(),
                    widget=forms.Select(attrs={'class': 'form-control custom-text-input',
                                               'id':'id_fournisseur',
@@ -27,9 +27,8 @@ class CommandeSavForm(forms.ModelForm):
                                                        'name':'nombre_jour'}),
             'savrequest' : forms.TextInput(attrs={'class': 'form-control custom-text-input',
                                                        'id':'id_savrequest'}),
-            #'statut' : forms.TextInput(attrs={'class': 'form-control custom-text-input',
-            #                                           'id':'id_statut',
-            #                                           'name':'statut'}),
+            'statut' : forms.RadioSelect(attrs={'class': 'form-check form-check-inline', 
+                                                       'id':'id_statut'}),        #                                          
             'commentaire' : forms.Textarea(attrs={'class': 'form-control custom-textarea',
                                                        'id':'id_commentaire',
                                                        'name':'commentaire'}),

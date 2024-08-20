@@ -7,7 +7,7 @@ from serviceapresvente.models.Partenaires import Partenaires
 class Sav_requestForm(forms.ModelForm):
     SAV_TYPE= [("DEVEA","DEVEA"),
               ("Non DEVEA","Non DEVEA")]
-    
+    """
     type_sav = forms.ChoiceField(choices=SAV_TYPE,
                                  widget=forms.RadioSelect(attrs={'class': 'form-control custom-text-input',
                                                              'id': 'id_type_SAV'}),
@@ -20,7 +20,8 @@ class Sav_requestForm(forms.ModelForm):
                                    widget=forms.RadioSelect(attrs={'class': 'form-control custom-text-input',
                                                               'id': 'id_garantie'}),
                                    initial="Hors garantie"
-    )       
+    )
+    """       
     client_sav = forms.ModelChoiceField(queryset=Client_sav.objects.all(),
                    widget=forms.Select(attrs={'class': 'form-control custom-text-input',}),
                    )
@@ -37,11 +38,12 @@ class Sav_requestForm(forms.ModelForm):
         fields = ('type_sav', 'numero_dossier', 'marque', 'client_sav', 'resp_sav', 'numero_serie', 'reference', 'designation', 'garantie', 'description_piece', 'reference_piece', 'pop', 'statut', 'observation',  'rapport_technique', 'facture_fournisseur', 'facture_proforma', 'bon_pour_accord','recouvrement_hp')
 
         widgets = {
+            'type_sav': forms.RadioSelect(attrs={'class': 'form-check form-check-inline', 'id': 'id_type_SAV'}),
             'numero_dossier' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
             'numero_serie' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
             'reference' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
             'designation' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
-            #'garantie' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
+            'garantie' : forms.RadioSelect(attrs={'class': 'form-check form-check-inline','id': 'id_garantie'}),
             'description_piece' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
             'reference_piece' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
             'pop' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),

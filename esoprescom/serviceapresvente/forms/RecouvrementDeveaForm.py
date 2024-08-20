@@ -7,11 +7,11 @@ class RecouvrementDeveaForm(forms.ModelForm):
     ETAT = [("facturation HP, à completer","facturation HP, à completer"),
             ("Dossier HP complet","Dossier HP complet"),
             ("Dossier HP payé","Dossier HP payé")]
-    statutDevea = forms.ChoiceField(choices=ETAT,
-                                 widget=forms.RadioSelect(attrs={'class': 'form-control custom-text-input',
-                                                            'id':'id_recouvrementstatut'}),
-                                 initial='facturation HP, à completer'
-    )   
+    #statutDevea = forms.ChoiceField(choices=ETAT,
+    #                             widget=forms.RadioSelect(attrs={'class': 'form-control custom-text-input',
+    #                                                        'id':'id_recouvrementstatut'}),
+    #                             initial='facturation HP, à completer'
+    #)   
     TRANSIT = [("TANSIT1","TANSIT1"),
                ("TANSIT2","TANSIT2")]
         
@@ -23,6 +23,8 @@ class RecouvrementDeveaForm(forms.ModelForm):
         fields = ('livraisonclient','is_devea_request','deveaOrder','statutDevea','numero_awd','montant_prestation','remise_documentaire','droit_douane','transport','facture_transitaire','autre_piece')
 
         widgets = {
+            'statutDevea' : forms.RadioSelect(attrs={'class': 'form-check form-check-inline', 
+                                                       'id':'id_recouvrementstatut'}), 
             'livraisonclient' : forms.TextInput(attrs={'class': 'form-control custom-text-input',
                                                        'id':'id_livraisonclient'}),
             'is_devea_request' : forms.CheckboxInput(attrs={'class': 'form-check-input',
