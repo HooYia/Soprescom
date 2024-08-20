@@ -40,9 +40,9 @@ DEFAULT_APPS = [
 # add apps which you install using pip
 THIRD_PARTY_APPS = [
     #'rest_framework',
-    #'crispy_bootstrap5',
+    'crispy_bootstrap5',
     #'debug_toolbar',
-    #'crispy_forms',
+    'crispy_forms',
     #'django_extensions',
     #'django_filters',
     'livereload',
@@ -50,10 +50,11 @@ THIRD_PARTY_APPS = [
     #'django-select2',
  ]
 LOCAL_APPS = [
-    'shop',
-    'accounts',
-    'dashboard',
-    'serviceapresvente',
+    'apps.shop',
+    'apps.accounts',
+    'apps.dashboard',
+    'apps.serviceapresvente',
+    'apps.leasing',
  ]
 # Application definition
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -82,7 +83,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'shop.context_processors.site_settings',
+                'apps.shop.context_processors.site_settings',
             ],
         },
     },

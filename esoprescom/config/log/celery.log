@@ -1407,3 +1407,645 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'savrequest-update' with argu
 [2024-08-20 00:09:11,173: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
 [2024-08-20 00:09:11,180: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.65ms
 [2024-08-20 00:09:11,207: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/cloture
+[2024-08-20 08:33:01,552: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.03ms
+[2024-08-20 08:33:01,556: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-20 08:33:01,569: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 08:33:01,574: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/cloture
+[2024-08-20 08:40:10,802: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\serviceapresvente\views\instance\InstanceViews.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'serviceapresvente.models.Instance.Instance'> QuerySet.
+  paginator = Paginator(instance_list, 8)
+
+[2024-08-20 08:40:10,893: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 08:40:10,895: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 08:40:11,231: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 2.54ms
+[2024-08-20 08:40:11,235: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 08:40:11,266: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/instance
+[2024-08-20 09:20:56,118: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\config\settings.py changed, reloading.
+[2024-08-20 09:35:32,837: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:35:46,576: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\models\SuiviCommandeSav.py changed, reloading.
+[2024-08-20 09:35:47,324: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:36:07,283: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\models\Recouvrement.py changed, reloading.
+[2024-08-20 09:36:08,037: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:37:44,795: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\admin.py changed, reloading.
+[2024-08-20 09:37:45,583: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:38:09,633: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\dashboard\admin.py changed, reloading.
+[2024-08-20 09:38:10,393: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:38:48,923: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\admin.py changed, reloading.
+[2024-08-20 09:38:49,687: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:47:40,832: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:50:58,618: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:51:11,474: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\urls.py changed, reloading.
+[2024-08-20 09:51:12,240: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:52:26,467: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\views\shop_views.py changed, reloading.
+[2024-08-20 09:52:27,354: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:52:48,617: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\services\cart_service.py changed, reloading.
+[2024-08-20 09:52:49,534: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:52:52,012: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\services\compare_service.py changed, reloading.
+[2024-08-20 09:52:52,784: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:53:01,538: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\services\wish_service.py changed, reloading.
+[2024-08-20 09:53:02,240: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:53:27,567: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\forms\checkoutAddressForm.py changed, reloading.
+[2024-08-20 09:53:28,301: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:55:38,053: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-20 09:55:38,979: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:55:43,415: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\Sav_requestView.py changed, reloading.
+[2024-08-20 09:55:44,255: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:55:56,191: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\SuiviCommandeSavView.py changed, reloading.
+[2024-08-20 09:55:57,086: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:57:25,628: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 09:58:27,005: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\instance\InstanceViews.py changed, reloading.
+[2024-08-20 09:58:27,860: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 10:07:11,385: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\CommandeSavView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.CommandeSav.CommandeSav'> QuerySet.
+  paginator = Paginator(commandesavs_list, 8)
+
+[2024-08-20 10:07:11,471: ERROR/MainProcess] Internal Server Error: /sav/commandesav
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\CommandeSavView.py", line 26, in index
+    return render(request,"servicedsi/index.html",{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'shop'
+[2024-08-20 10:07:11,860: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 5.09ms
+[2024-08-20 10:07:11,865: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:07:11,902: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-20 10:07:31,932: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.02ms
+[2024-08-20 10:07:31,955: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-20 10:07:33,725: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\SuiviCommandeSavView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.SuiviCommandeSav.SuiviCommandeSav'> QuerySet.
+  paginator = Paginator(suivicommandesavs_list, 8)
+
+[2024-08-20 10:07:33,823: ERROR/MainProcess] Internal Server Error: /sav/suivicommandesav
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\SuiviCommandeSavView.py", line 24, in index
+    return render(request,"servicedsi/index.html",{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'shop'
+[2024-08-20 10:07:33,869: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.15ms
+[2024-08-20 10:07:33,872: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:07:34,287: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-20 10:07:37,110: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-20 10:07:37,157: ERROR/MainProcess] Internal Server Error: /sav/
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\Sav_requestView.py", line 25, in index
+    return render(request,"servicedsi/index.html",{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'shop'
+[2024-08-20 10:07:38,271: ERROR/MainProcess] Internal Server Error: /sav/
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\Sav_requestView.py", line 25, in index
+    return render(request,"servicedsi/index.html",{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'shop'
+[2024-08-20 10:07:38,345: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.96ms
+[2024-08-20 10:07:38,348: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:07:38,384: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-20 10:07:43,631: ERROR/MainProcess] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\views\shop_views.py", line 18, in index
+    return render(request,'shop/index.html',{'sliders':sliders,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'shop'
+[2024-08-20 10:07:44,046: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.94ms
+[2024-08-20 10:07:44,050: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:07:44,084: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/
+[2024-08-20 10:12:22,802: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\config\urls.py changed, reloading.
+[2024-08-20 10:12:23,840: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 10:14:08,940: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\config\settings.py changed, reloading.
+[2024-08-20 10:14:23,523: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 10:14:48,305: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\config\settings.py changed, reloading.
+[2024-08-20 10:14:49,215: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 10:15:17,022: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\config\settings.py changed, reloading.
+[2024-08-20 10:15:17,834: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 10:17:15,462: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\config\settings.py changed, reloading.
+[2024-08-20 10:17:16,417: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 10:17:25,585: ERROR/MainProcess] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\views\shop_views.py", line 18, in index
+    return render(request,'shop/index.html',{'sliders':sliders,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'shop'
+[2024-08-20 10:17:25,629: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 10:17:25,639: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.01ms
+[2024-08-20 10:17:25,673: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/
+[2024-08-20 10:17:32,010: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-20 10:17:32,046: ERROR/MainProcess] Internal Server Error: /sav/
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\Sav_requestView.py", line 25, in index
+    return render(request,"servicedsi/index.html",{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'shop'
+[2024-08-20 10:17:33,147: ERROR/MainProcess] Internal Server Error: /sav/
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\Sav_requestView.py", line 25, in index
+    return render(request,"servicedsi/index.html",{
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'shop'
+[2024-08-20 10:17:33,714: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 10:17:33,718: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:17:33,754: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-20 10:17:44,752: ERROR/MainProcess] Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\shop\views\shop_views.py", line 18, in index
+    return render(request,'shop/index.html',{'sliders':sliders,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+  File "C:\Program Files\Python312\Lib\contextlib.py", line 137, in __enter__
+    return next(self.gen)
+           ^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\template\engine.py", line 118, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Projet Django\Mes projets Django\e-soprescom\.venv\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'shop'
+[2024-08-20 10:17:44,798: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 10:17:44,803: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.00ms
+[2024-08-20 10:17:44,839: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/
+[2024-08-20 10:22:30,824: INFO/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\config\settings.py changed, reloading.
+[2024-08-20 10:22:31,716: INFO/MainProcess] Watching for file changes with StatReloader
+[2024-08-20 10:22:36,106: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 10:22:36,135: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 10:22:36,137: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:22:36,138: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 10:22:36,256: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/
+[2024-08-20 10:22:44,355: WARNING/MainProcess] Not Found: /media/sliders/2024/05/17/tÃƒÂ©lÃƒÂ©chargement_1.jpeg
+[2024-08-20 10:22:44,502: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\Sav_requestView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.Sav_request.Sav_request'> QuerySet.
+  paginator = Paginator(sav_requests_list, 8)
+
+[2024-08-20 10:22:44,834: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 10:22:44,834: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 10:22:45,016: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 10:22:45,806: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.00ms
+[2024-08-20 10:22:45,813: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/
+[2024-08-20 10:22:48,170: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\CommandeSavView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.CommandeSav.CommandeSav'> QuerySet.
+  paginator = Paginator(commandesavs_list, 8)
+
+[2024-08-20 10:22:48,283: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 10:22:48,289: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:22:48,294: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 10:22:48,296: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 10:22:48,746: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/commandesav
+[2024-08-20 10:22:49,113: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\SuiviCommandeSavView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.SuiviCommandeSav.SuiviCommandeSav'> QuerySet.
+  paginator = Paginator(suivicommandesavs_list, 8)
+
+[2024-08-20 10:22:49,213: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 10:22:49,217: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 10:22:49,722: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 10:22:49,725: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:22:49,756: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/suivicommandesav
+[2024-08-20 10:22:50,341: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\AssemblageReparationView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.AssemblageReparation.AssemblageReparation'> QuerySet.
+  paginator = Paginator(assemblagereparation_list, 8)
+
+[2024-08-20 10:22:50,440: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 1.00ms
+[2024-08-20 10:22:50,444: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.00ms
+[2024-08-20 10:22:50,451: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 10:22:50,453: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 10:22:50,467: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/assemblage
+[2024-08-20 10:22:51,121: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\LivraisonView.py:12: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.LivraisonClient.LivraisonClient'> QuerySet.
+  paginator = Paginator(livraison_list, 8)
+
+[2024-08-20 10:22:51,218: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.94ms
+[2024-08-20 10:22:51,222: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:22:51,228: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 10:22:51,232: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 10:22:51,258: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/livraison
+[2024-08-20 10:22:51,839: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\sav\RecouvrementView.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.Recouvrement.Recouvrement'> QuerySet.
+  paginator = Paginator(recouvrement_list, 8)
+
+[2024-08-20 10:22:51,935: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 10:22:51,942: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 10:22:51,997: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 10:22:52,009: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 1.08ms
+[2024-08-20 10:22:52,036: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/recouvrement
+[2024-08-20 10:22:53,221: WARNING/MainProcess] C:\Projet Django\Mes projets Django\e-soprescom\esoprescom\apps\serviceapresvente\views\instance\InstanceViews.py:13: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'apps.serviceapresvente.models.Instance.Instance'> QuerySet.
+  paginator = Paginator(instance_list, 8)
+
+[2024-08-20 10:22:53,332: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_3.jpeg
+[2024-08-20 10:22:53,334: WARNING/MainProcess] Not Found: /media/navcollection/2024/05/20/tÃ©lÃ©chargement_2.jpeg
+[2024-08-20 10:22:53,765: INFO/MainProcess] 304 GET /livereload.js (127.0.0.1) 0.00ms
+[2024-08-20 10:22:53,769: INFO/MainProcess] 101 GET /livereload (127.0.0.1) 0.00ms
+[2024-08-20 10:22:53,797: INFO/MainProcess] Browser Connected: http://e-soprescom.net:8000/sav/instance
