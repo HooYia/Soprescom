@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Lenovo Axe",
+    "description": "50% off in all products",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/LD0005776428_1_0005778918.jpg",
+    "updated_at": "2024-05-17 18:29:13.064033",
+    "created_at": "2024-05-17 17:50:55.912553"
+  },
+  {
+    "id": 2,
+    "title": "Lenovo  Yoga 12th",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/téléchargement_1.jpeg",
+    "updated_at": "2024-05-17 18:28:43.300819",
+    "created_at": "2024-05-17 18:28:43.300819"
+  },
+  {
+    "id": 3,
+    "title": "HP Pavillon",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/téléchargement_4.jpeg",
+    "updated_at": "2024-05-17 18:29:51.955079",
+    "created_at": "2024-05-17 18:29:51.955079"
+  },
+  {
+    "id": 4,
+    "title": "ASUS",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/assus.jpeg",
+    "updated_at": "2024-05-17 19:39:10.606089",
+    "created_at": "2024-05-17 19:39:10.606089"
+  },
+  {
+    "id": 5,
+    "title": "DELL",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/dell_001.jpeg",
+    "updated_at": "2024-05-17 19:39:32.163233",
+    "created_at": "2024-05-17 19:39:32.163233"
+  }
+]

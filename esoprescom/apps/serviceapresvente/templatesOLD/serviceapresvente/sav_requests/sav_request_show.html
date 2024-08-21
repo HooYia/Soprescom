@@ -1,0 +1,77 @@
+{% extends "serviceapresvente/admin.html" %}
+    {% load static %}
+
+    {% block content %}
+
+    {% include "serviceapresvente/admin/paginator.html" with datas=sav_requests %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="d-flex my-2 justify-content-end">
+        <a href="{% url sav_request %}" class="btn btn-success">Create Sav_request</a>
+    </div>
+    <table class="table table-bordered">
+        <tbody>
+
+                <tr>
+        <td scope='col'> Idrequest: </td>
+        <td scope='col'>{{ sav_request.idrequest}}</td>    </tr>    <tr>
+        <td scope='col'> Type_sav: </td>
+        <td scope='col'>{{ sav_request.type_sav}}</td>    </tr>    <tr>
+        <td scope='col'> Numero_dossier: </td>
+        <td scope='col'>{{ sav_request.numero_dossier}}</td>    </tr>    <tr>
+        <td scope='col'> Marque: </td>
+        <td scope='col'>{{ sav_request.marque}}</td>    </tr>    <tr>
+        <td scope='col'> Client_sav: </td>
+        <td scope='col'>{{ sav_request.client_sav}}</td>    </tr>    <tr>
+        <td scope='col'> Resp_sav: </td>
+        <td scope='col'>{{ sav_request.resp_sav}}</td>    </tr>    <tr>
+        <td scope='col'> Numero_serie: </td>
+        <td scope='col'>{{ sav_request.numero_serie}}</td>    </tr>    <tr>
+        <td scope='col'> Reference: </td>
+        <td scope='col'>{{ sav_request.reference}}</td>    </tr>    <tr>
+        <td scope='col'> Designation: </td>
+        <td scope='col'>{{ sav_request.designation}}</td>    </tr>    <tr>
+        <td scope='col'> Garantie: </td>
+        <td scope='col'>{{ sav_request.garantie}}</td>    </tr>    <tr>
+        <td scope='col'> Description_piece: </td>
+        <td scope='col'>{{ sav_request.description_piece}}</td>    </tr>    <tr>
+        <td scope='col'> Reference_piece: </td>
+        <td scope='col'>{{ sav_request.reference_piece}}</td>    </tr>    <tr>
+        <td scope='col'> Pop: </td>
+        <td scope='col'>{{ sav_request.pop}}</td>    </tr>    <tr>
+        <td scope='col'> Status: </td>
+        <td scope='col'>{{ sav_request.status}}</td>    </tr>    <tr>
+        <td scope='col'> Observation: </td>
+        <td scope='col'>{{ sav_request.observation}}</td>    </tr>    <tr>
+        <td scope='col'> Validation_client: </td>
+        <td scope='col'>{{ sav_request.validation_client}}</td>    </tr>    <tr>
+        <td scope='col'> Rapport_technique: </td>
+        <td scope='col'>{{ sav_request.rapport_technique}}</td>    </tr>    <tr>
+        <td scope='col'> Facture_fornisseur: </td>
+        <td scope='col'>{{ sav_request.facture_fornisseur}}</td>    </tr>    <tr>
+        <td scope='col'> Facture_proforma: </td>
+        <td scope='col'>{{ sav_request.facture_proforma}}</td>    </tr>    <tr>
+        <td scope='col'> Bon_pour_accord: </td>
+        <td scope='col'>{{ sav_request.bon_pour_accord}}</td>    </tr>    <tr>
+        <td scope='col'> Date_cloture: </td>
+        <td scope='col'>{{ sav_request.date_cloture}}</td>    </tr>    <tr>
+        <td scope='col'> Userlog: </td>
+        <td scope='col'>{{ sav_request.userLog}}</td>    </tr>    <tr>
+        <td scope='col'> Flag: </td>
+        <td scope='col'>{{ sav_request.flag}}</td>    </tr>    <tr>
+        <td scope='col'> Updated_at: </td>
+        <td scope='col'>{{ sav_request.updated_at}}</td>    </tr>    <tr>
+        <td scope='col'> Created_at: </td>
+        <td scope='col'>{{ sav_request.created_at}}</td>    </tr>
+
+        </tbody>
+    </table>
+    {% include "blog/components/paginator.html" with datas=sav_requests %}
+
+
+    {% endblock %}

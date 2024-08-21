@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recouvrement SAV</title>
+</head>
+<body>
+    <p>Bonjour à tous
+        <li> Recouvrement Soprecom</li>
+        <li>{{ client_name }}</p>
+    
+    <p>Apres la clôture SAV  de ce client merci de prendre des disposition  pour le recouvrement </p>
+    
+    <ul>
+        <li>Numéro de dossier : {{ numero_dossier }}</li>
+        <li>Type : {{ marque }}</li>
+        <li>Numero de série : {{ num_serie }}</li>
+        <li>Motif : {{ defaut_sav }}</li>
+        <li>Responsable de ce SAV : {{ resp_sav_name }}</li>
+        <li>Contact : {{ resp_sav_telephone }}</li>
+        <li> Reférence facture:</li>
+        <li> Montant:</li>
+    </ul>
+    
+    <p>Pour tous compléments d'information, merci d'envoyer un mail au <a href="mailto:sav@soprescom.net">sav@soprescom.net</a>.</p>
+
+    
+    <p>Cordialement,</p>
+    <p>L'équipe SAV</p>
+</body>
+</html>

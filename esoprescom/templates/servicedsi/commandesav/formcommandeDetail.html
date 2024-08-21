@@ -1,0 +1,252 @@
+  <div class="card mb-3" style="max-width: 1800px;">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <div id="imageContainer{{commandesav.idcommandesav}}">
+                {% if commandesav.savrequest.rapport_technique %} 
+                    <img src="{{ commandesav.savrequest.rapport_techniqueUrl }}" class="img-fluid rounded-start" alt="Rapport Technique" onclick="zoomImage(this)">
+                {% elif commandesav.savrequest.facture_proforma %}
+                    <img src="{{ commandesav.savrequest.facture_proformaUrl }}" class="img-fluid rounded-start" alt="Facture Proforma" onclick="zoomImage(this)">
+                {% elif commandesav.savrequest.facture_fournisseur %}
+                    <img src="{{ commandesav.savrequest.facture_fournisseurUrl }}" class="img-fluid rounded-start" alt="Facture Fournisseur" onclick="zoomImage(this)">
+                {% else %}
+                    <p>Aucune image disponible</p>
+                {% endif %}
+              </div>
+              <div class="d-flex justify-content-between mt-2">
+                <button class="btn btn-secondary" onclick="changeImage('prev', {{ commandesav.idcommandesav }})">Précédent</button>
+                <button class="btn btn-secondary" onclick="changeImage('next', {{ commandesav.idcommandesav }})">Suivant</button>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="card ">
+                    <div class="card-header text center">
+                    <strong> Info du Client</strong>
+                    </div>
+                      <div class="card-body">
+                        <p class="card-text"><strong>Nom du client:</strong> {{ commandesav.savrequest.client_sav }}</p>
+                        <p class="card-text"><strong>Email:</strong> {{ commandesav.savrequest.client_sav.email }}</p>
+                        <p class="card-text"><strong>Adresse:</strong> {{ commandesav.savrequest.client_sav.adresse }}</p>
+                        <p class="card-text"><strong>Téléphone:</strong> {{ commandesav.savrequest.client_sav.telephone }}</p>
+                        <p class="card-text"><strong>Numero dossier:</strong> {{ commandesav.savrequest.numero_dossier }}</p>
+                        <p class="card-text"><strong>Resp du dossier:</strong> {{ commandesav.savrequest.resp_sav }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="card ">
+                    <div class="card-header text-center">
+                    <strong>Info Achat</strong>
+                    </div>
+                      <div class="card-body">
+                         <p class="card-text"><strong><Datag>Date requete</Datag>:</strong> {{ commandesav.created_at|date:"d M Y" }}</p>
+                         <p class="card-text"><strong>Fournisseur:</strong> {{ commandesav.fournisseur }}</p>
+                         <p class="card-text"><strong>Delai:</strong> {{ commandesav.nombre_jour }}</p>
+                         <p class="card-text"><strong>Statut:</strong> {{ commandesav.statut }}</p>
+                         <p class="card-text"><strong>Observation:</strong> {{ commandesav.commentaire }}</p>
+                        </div>
+                         
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <form class="d-none"  id ="CommandeSavForm{{commandesav.idcommandesav}}"
+                       method="POST"
+                       action="{% url 'serviceapresvente:commandesav-update' commandesav.idcommandesav %}">
+                       {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header">
+                          <strong>Update Achat</strong>
+                        </div>
+                        <div class="card-body">
+                          <p>Mise à jour info update</p>  
+                            <input type="hidden" name="_method" value = "PUT">
+                              {{ detailformUpd }}
+                            <button type="submit"  id="formCommandeUpdData"
+                              class="btn btn-primary">Update</button>
+                          </div>
+                        </div>
+                    </div>
+                  </form>  
+                </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- Modal for Zoom Image -->
+        <div class="modal fade" id="zoomModal" tabindex="-1" aria-labelledby="zoomModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img id="zoomImage" src="" class="img-fluid" alt="Zoom Image">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="card-text"><small class="text-muted">Dernière mise à jour: {{ commandesav.updated_at|date:"d M Y" }}</small></p>
+        
+      </div>
+     
+      
+    </div>
+  </div>
+</div>
+
+{% block script %}
+<script>
+  
+$(document).ready(function() {
+  const images = {
+    rapport: "{{ commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
+    proforma: "{{ commandesav.savrequest.facture_proformaUrl|escapejs  }}",
+    fournisseur: "{{ commandesav.savrequest.facture_fornisseurUrl|escapejs  }}"
+  };
+  //console.log('images:',images)
+  let currentIndex = 0;
+  const imageKeys = Object.keys(images).filter(key => images[key]);
+  //console.log('imageKeys:',imageKeys)
+
+  //function changeImage(direction, requestId) {
+  window.changeImage = function(direction, requestId) {
+    console.log('requestId:',requestId)
+   
+    if (direction === 'next') {
+      currentIndex = (currentIndex + 1) % imageKeys.length;
+    } else if (direction === 'prev') {
+      currentIndex = (currentIndex - 1 + imageKeys.length) % imageKeys.length;
+    }
+    const imageContainer = document.getElementById(`imageContainer${requestId}`);
+    imageContainer.innerHTML = `<img src="${images[imageKeys[currentIndex]]}" class="img-fluid rounded-start" alt="Image" onclick="zoomImage(this)">`;
+  }
+  //window.changeImage = changeImage; // Make the function globally accessible
+  function zoomImage(img) {
+    var modal = new bootstrap.Modal(document.getElementById('zoomModal'));
+    document.getElementById('zoomImage').src = img.src;
+    modal.show();
+  }
+  window.zoomImage = zoomImage;
+  
+ 
+  })
+</script>
+
+<script>
+
+$(document).ready(function() {
+
+  const btn_CommandeSavBtnUpd = document.querySelector('#CommandeSavBtnUpd')
+  const btn_CommandesavCancel = document.querySelector('#CommandeSavCancel')
+  const CommandeSavDisplayForm = document.querySelector('form#CommandeSavForm{{commandesav.idcommandesav}}')
+  handleCommandeUpdBtnClick = (event) =>{
+    CommandeSavDisplayForm.classList.toggle('d-none')
+    var savrequestField = CommandeSavDisplayForm.querySelector('#id_savrequest');
+    savrequestField.setAttribute('disabled', true); // Disable the savrequest field
+    savrequestField.classList.add('grayed-out');
+    btn_CommandeSavBtnUpd.setAttribute('disabled', true); // Disable the savrequest field
+    btn_CommandeSavBtnUpd.classList.add('grayed-out');
+  }
+  btn_CommandeSavBtnUpd?.addEventListener('click',handleCommandeUpdBtnClick)
+ 
+/************ update-commande sav -btn  **********/
+//const btn_CommandesavUpdData = document.querySelector('#CommandesavUpdData')
+//console.log('btn_CommandesavUpdData',btn_CommandesavUpdData)
+
+const handleUpdateSubmit = (event) => {
+  event.preventDefault(); 
+  const form = $(event.target).closest('form');
+  form.find(':disabled').prop('disabled', false);  // Re-enable disabled fields for submission 
+  const url = form.attr('action');
+  const method = form.attr('method');
+  
+   // Perform an AJAX request to submit the form
+    $.ajax({
+        url: form.attr('action'),
+        type: 'POST', //form.attr('method'),
+        data: form.serialize(),
+        success: function(response) {
+            $('#CommandeDetailModal').modal('hide');
+            location.reload();
+              },
+              error: function(data) {
+                alert('Error: ',data );
+              }
+        });
+      }
+      //btn_CommandesavUpdData?.addEventListener('click', handleUpdateSubmit)
+      
+
+$(document).on('click', '#formCommandeUpdData', handleUpdateSubmit);
+
+
+}) 
+/*
+$(document).on('click', '#CommandesavUpdData', function(event) {
+  //event.preventDefault(); // Prevent the default form submission
+  
+  // Get the form element
+  var form = $(this).closest('form');
+  var url = $(this).data('url');
+  
+  
+  
+  // Perform an AJAX request to submit the form
+  $.ajax({
+      url: url,     //form.attr('action'),
+      type: form.attr('method'),
+      data: form.serialize(),
+      success: function(response) {
+          // Handle the success response (e.g., close modal, show success message, etc.)
+          $('#SavResquestModal').modal('hide');
+          // You can also update part of the page with the response if needed
+          // $('#some-element').html(response);
+          alert('Form submitted successfully!');
+      },
+      error: function(data) {
+          // Handle the error response
+          alert('Error: ',data );
+      }
+  });
+ 
+});
+  */
+</script>
+  
+<script>
+  /*
+$(document).ready(function() {
+
+
+  $(document).on('click', '#CommandesavUpdData', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+  
+  // Get the form element
+  var form = $(this).closest('form');
+  console.log('form:',form)
+  console.log('formAction:',form.attr('action'))
+  console.log('formMethod:',form.attr('method'))
+  // Perform an AJAX request to submit the form
+  $.ajax({
+        url: form.attr('action'),
+        type: form.attr('method'),
+        data: form.serialize(),
+        success: function(response) {
+            $('#CommandeDetailModal').modal('hide');
+            alert('Form submitted successfully!');
+              },
+              error: function(data) {
+                alert('Error: ',data );
+              }
+        });
+})  /////////  Fin '#CommandesavUpdData'
+
+})
+*/
+</script>  
+  
+{% endblock %}

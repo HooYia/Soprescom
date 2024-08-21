@@ -1,0 +1,174 @@
+{% load price_filter %}
+
+<a href="#" class="btn btn-fill-out btn-sm " 
+          data-bs-toggle="modal" 
+          data-bs-target="#SavDetailModal{{sav_request.idrequest}}" >
+           View
+</a>
+
+<!-- Modal -->
+<div class="modal fade savdetail" id="SavDetailModal{{sav_request.idrequest}}" tabindex="-1" aria-labelledby="SavDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="SavDetailModalLabel">Détails du SAV: {{ sav_request.numero_dossier }}</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card mb-3" style="max-width: 1800px;">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <div id="imageContainer{{ sav_request.idrequest }}">
+                {% if sav_request.rapport_technique %} 
+                <img src="{{ sav_request.rapport_technique.url }}" class="img-fluid rounded-start" alt="Rapport Technique" onclick="zoomImage(this)">
+                {% elif sav_request.facture_proforma %}
+                <img src="{{ sav_request.facture_proforma.url }}" class="img-fluid rounded-start" alt="Facture Proforma" onclick="zoomImage(this)">
+                {% elif sav_request.facture_fornisseur %}
+                <img src="{{ sav_request.facture_fornisseur.url }}" class="img-fluid rounded-start" alt="Facture Fournisseur" onclick="zoomImage(this)">
+                {% else %}
+                <p>Aucune image disponible</p>
+                {% endif %}
+              </div>
+              <div class="d-flex justify-content-between mt-2">
+                <button class="btn btn-secondary" onclick="changeImage('prev', {{ sav_request.idrequest }})">Précédent</button>
+                <button class="btn btn-secondary" onclick="changeImage('next', {{ sav_request.idrequest }})">Suivant</button>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="card ">
+                    <div class="card-header text center">
+                    <strong> Info du Client</strong>
+                    </div>
+                      <div class="card-body">
+                        <p class="card-text"><strong>Nom du client:</strong> {{ sav_request.client_sav }}</p>
+                        <p class="card-text"><strong>Email:</strong> {{ sav_request.client_sav.email }}</p>
+                        <p class="card-text"><strong>Adresse:</strong> {{ sav_request.client_sav.adresse }}</p>
+                        <p class="card-text"><strong>Téléphone:</strong> {{ sav_request.client_sav.telephone }}</p>
+                        <p class="card-text"><strong>Resp du dossier:</strong> {{ sav_request.resp_sav }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="card ">
+                    <div class="card-header text-center">
+                    <strong>Info materiel SAV</strong>
+                    </div>
+                      <div class="card-body">
+                         <p class="card-text"><strong>Marque:</strong> {{ sav_request.marque.nom }}</p>
+                                      <p class="card-text"><strong>Numéro de Série:</strong> {{ sav_request.numero_serie }}</p>
+                                      <p class="card-text"><strong>Référence:</strong> {{ sav_request.reference }}</p>
+                                      <p class="card-text"><strong>Désignation:</strong> {{ sav_request.designation }}</p>
+                                      <p class="card-text"><strong>Garantie:</strong> {{ sav_request.garantie }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="card">
+                    <div class="card-header text center">
+                      <strong>Rapport diagnostique SAV</strong>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text"><strong>Type SAV:</strong> {{ sav_request.type_sav }}</p>
+                        <p class="card-text">
+                          <div class="form-check form-switch" id="id_recouvrement_hp">
+                          <input class="form-check-input" type="checkbox" id="id_recouvrement_hp{{ forloop.counter }}"  {% if sav_request.recouvrement_hp %}checked{% else %}disabled{% endif %}>
+                          <label class="form-check-label" for="flexSwitchCheckDefault">Recouvrement HP</label>
+                        </div></p>
+                        <p class="card-text"><strong>Statut:</strong> {{ sav_request.statut }}</p>
+                        <p class="card-text"><strong>Description de la Pièce:</strong> {{ sav_request.description_piece }}</p>
+                        <p class="card-text"><strong>Référence de la Pièce:</strong> {{ sav_request.reference_piece }}</p>
+                        <p class="card-text"><strong>POP:</strong> {{ sav_request.pop }}</p>
+                      <footer class="blockquote-footer">Observation: {{ sav_request.observation }}</footer>
+                     
+                    </div>
+                  </div>
+                </div>
+                <hr>
+               
+                <div class="row">
+                  <div class="card">
+                    <div class="card-header text center">
+                    <strong> Accord Client</strong>
+                    </div>
+                    <div class="card-body">
+                     <div class="form-check form-switch" id="bonpouraccord">
+                        <input class="form-check-input" type="checkbox" id="bonpouraccord{{ forloop.counter }}"  {% if sav_request.bon_pour_accord %}checked{% else %}disabled{% endif %}>
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Bon Pour accord</label>
+                      </div>
+                      <p class="card-text"><strong>Rapport Technique:</strong>
+                         {{ sav_request.rapport_technique }}
+                        </p>
+                      <p class="card-text"><strong>Facture Fournisseur:</strong>
+                         {{ sav_request.facture_fournusseur }}
+                         </p>
+                      <p class="card-text"><strong>Facture proforma Client:</strong> 
+                        {{ sav_request.facture_proforma }}
+                         </p>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal for Zoom Image -->
+        <div class="modal fade" id="zoomModal" tabindex="-1" aria-labelledby="zoomModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img id="zoomImage" src="" class="img-fluid" alt="Zoom Image">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="card-text"><small class="text-muted">Dernière mise à jour: {{ sav_request.updated_at }}</small></p>
+      </div>
+     
+      <div class="modal-footer">
+        <button data-url="{% url 'serviceapresvente:savrequest-update' sav_request.idrequest %}" id="savDisplayForUpdate" class="btn btn-primary">Modifier</button>
+        <button data-url="{% url 'serviceapresvente:savrequest-delete' sav_request.idrequest %}" id="savdetaildelete" class="btn btn-secondary">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% block script %}
+<script>
+$(document).ready(function() {
+  const images = {
+    rapport: "{{ sav_request.rapport_techniqueUrl|escapejs   }}",
+    proforma: "{{ sav_request.facture_proformaUrl|escapejs  }}",
+    fournisseur: "{{ sav_request.facture_fornisseurUrl|escapejs  }}"
+  };
+  console.log('images:',images)
+  let currentIndex = 0;
+  const imageKeys = Object.keys(images).filter(key => images[key]);
+  console.log('imageKeys:',imageKeys)
+  function changeImage(direction, requestId) {
+    if (direction === 'next') {
+      currentIndex = (currentIndex + 1) % imageKeys.length;
+    } else if (direction === 'prev') {
+      currentIndex = (currentIndex - 1 + imageKeys.length) % imageKeys.length;
+    }
+    const imageContainer = document.getElementById(`imageContainer${requestId}`);
+    imageContainer.innerHTML = `<img src="${images[imageKeys[currentIndex]]}" class="img-fluid rounded-start" alt="Image" onclick="zoomImage(this)">`;
+  }
+
+  function zoomImage(img) {
+    var modal = new bootstrap.Modal(document.getElementById('zoomModal'));
+    document.getElementById('zoomImage').src = img.src;
+    modal.show();
+  }
+
+})
+</script>
+
+{% endblock %}

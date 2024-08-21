@@ -1,0 +1,50 @@
+<div class="card">
+  <div class="card-header">
+        <h3>Recouvrement SAV </h3>
+    </div>
+    <div class="card-body">
+  <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Date Livraison</th>
+                      <th>Date recouvrement</th>
+                      <th>N° Dossier</th>
+                      <th>Client</th>
+                      <th>Statut</th>
+                      <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  {% for row in recouvrements %}
+                  <tr>
+                      <td>
+                          {{ row.created_at|date:"d M Y" }}
+                      </td>
+                      <td>
+                        {{ row.updated_at|date:"d M Y" }}
+                       </td>
+                       <td>
+                         {{ row.livraisonclient.assamblagereparation.suivicommandesav.commandesav.savrequest.numero_dossier}}
+                      </td>
+                      <td>
+                        {{ row.livraisonclient.assamblagereparation.suivicommandesav.commandesav.savrequest}}
+                      </td>
+                      <td><div class="badge bg-success text-white rounded-pill status-cell">
+                        {{ row.statut}} </div>
+                      </td>
+                      <td class="{% if row.flag == 1 %}disabled-cell{% endif %}">  
+                        <button id="id_recouvrement"  
+                        data-url="{% url 'serviceapresvente:recouvrement-show' row.idrecouvrement %}" 
+                        class="btn btn-fill-out btn-sm commandesav" >View
+                        </button>
+                     </td>
+                  <tr>
+                    
+                  {% endfor %}
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

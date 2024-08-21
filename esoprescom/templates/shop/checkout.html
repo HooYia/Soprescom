@@ -1,0 +1,569 @@
+{% extends "base_checkout.html" %}
+{% load price_filter %}
+
+{% block stripe %}
+  <script src="https://js.stripe.com/v3/"></script>
+  
+{% endblock %}
+
+{% block content %}
+
+{% include "partials/top_page.html" with name="Checkout" %}
+
+<div  class="main_content">
+  <div  class="section">
+      <div  class="container">
+        {% if not user.is_authenticated %}
+        <div  class="row">
+          <div  class="col-lg-6">
+            <div  class="toggle_info"><span ><i
+              class="fas fa-user"></i>Returning customer? <a
+              href="#loginform" data-bs-toggle="collapse"
+             aria-expanded="false" class="collapsed">Click here to login</a></span></div>
+          <div  id="loginform" class="panel-collapse collapse login_form">
+              <div  class="panel-body">
+                  <p >If you have shopped with us before, please enter your
+                      details below. If you are a new customer, please proceed to the Billing &amp;
+                      Shipping section.</p>
+                  <form id="login_form" action="{% url 'shop:login_form' %}" method="post" >
+                    {% csrf_token %}
+                    <div class="form-error text-danger">
+
+                    </div>
+                      <div  class="form-group mb-3">
+                        <input type="text" required="" name="email"
+                              placeholder="Username or email" class="form-control">
+                        <div class="text-danger email-error"></div>
+
+                      </div>
+                      <div  class="form-group mb-3">
+                        <input required="" type="password" name="password"
+                              placeholder="Password" class="form-control">
+                          <div class="text-danger password-error"></div>
+
+                      </div>
+                      
+                      <div  class="form-group mb-3">
+                        <button type="submit" name="login" 
+                              class="btn btn-fill-out btn-block">Log in</button></div>
+                  </form>
+              </div>
+              </div>
+              
+            </div>
+           
+          <div  class="col-lg-6">
+              <div  class="toggle_info"><span ><i
+                           class="fas fa-tag"></i>Have a coupon? <a
+                           href="#coupon" data-bs-toggle="collapse"
+                          aria-expanded="false" class="collapsed">Click here to enter your code</a></span>
+              </div>
+              <div  id="coupon" class="panel-collapse collapse coupon_form">
+                  <div  class="panel-body">
+                      <p >If you have a coupon code, please apply it below.</p>
+                      <div  class="coupon field_form input-group"><input
+                               type="text" value="" placeholder="Enter Coupon Code.."
+                              class="form-control">
+                          <div  class="input-group-append"><button
+                                   type="submit" class="btn btn-fill-out btn-sm">Apply
+                                  Coupon</button></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      {% endif %}
+          <div  class="row">
+              <div  class="col-12">
+                  <div  class="medium_divider"></div>
+                  <div  class="divider center_icon"><i 
+                          class="linearicons-credit-card"></i></div>
+                  <div  class="medium_divider"></div>
+              </div>
+          </div>
+          <div  class="row">
+              <div  class="col-md-6">
+                  <div  class="heading_s1">
+                      <h4 >Billing Details</h4>
+                  </div>
+                <div  class="border p-3 p-md-4">
+                  {% if user.is_authenticated %}
+                      {% if user.addresses.all %}
+                        <!-- choix des adresses -select#adresse_billing_id.form-control -->
+                        <select name="addresse_billing_id" id="addresse_billing_id" class="form-comtrol">
+                          <option value="">--- Choose an address ---</option>
+                        {% for address in user.addresses.all %}
+                          <option value="{{address.id}}" {% if address.id == addresse_billing_id %}selected{% endif %}>
+                              {{address.full_name}} - {{address.street}} {{address.code_postal}} {{address.city}} {{address.country}}
+                          </option>
+                        {% endfor %}
+                        </select>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input add_new_address" type="checkbox" role="switch" id="add_new_address" >
+                          <label class="form-check-label" for="flexSwitchCheckChecked">Do you want to add a new address?</label>
+                        </div>
+                        <div class="form-check form-switch">
+                          <input name="new_shipping_address"
+                           class="form-check-input add_new_shipping_address"
+                            type="checkbox" role="switch" id="add_new_shipping_address"
+                            {% if new_shipping_address == 'true' %} checked {% endif %} >
+                          <label class="form-check-label" for="flexSwitchCheckChecked">Do you want another shipping address?</label>
+                        </div>
+                        <div class="shipping_address_form {% if new_shipping_address != 'true' %} d-none {% endif %}">
+                          <div  class="heading_s1">
+                            <h4 >Shipping Details</h4>
+                          </div>
+                        <select name="addresse_shipping_id" id="addresse_shipping_id" class="form-comtrol">
+                          <option value="">  --- Choose an Shipping ---</option>
+                          {% for address in user.addresses.all %}
+                          <option value="{{address.id}}" {% if address.id == addresse_billing_id %}selected{% endif %}>
+                            {{address.full_name}} - {{address.street}} {{address.code_postal}} {{address.city}} {{address.country}}
+                          </option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                      
+                        <form class="d-none" id="add_new_address_form" action="{% url 'shop:add_address' %}" method="post">
+                          {% csrf_token %}
+                          {{address_form}}
+                          <button type="submit" class="btn btn-success my-1">Save</button>
+                        </form>
+                    
+                        {% else %}
+                        <!-- afficher le formulaire ajout d'adresse-->
+                          <form action="{% url 'shop:add_address' %}" method="post">
+                            {% csrf_token %}
+                            {{address_form}}
+                            <button type="submit" class="btn btn-success my-1">Save</button>
+
+                          </form>
+
+                        {% endif %}
+                  {% else %}     
+                   <!--  Utilisateur non connecté donc formulaire -->
+                   <form action="{% url 'shop:add_address' %}" method="post">
+                    {% csrf_token %}
+                    {{address_form}}
+                    <button type="submit" class="btn btn-success my-1">Save</button>
+
+                  </form>
+                  {% endif %}
+                 
+              </div>
+                  <div  class="heading_s1">
+                    <h4 >Change Carrier</h4>
+                    <div  class="border p-3 p-md-4">
+                      
+                  <select class="form_control" name="carrier_id" id="carrier_id">
+                      {% for carrier in carriers %}
+                      <option {% if cart.carrier_id == carrier.id %} selected{% endif %}
+                       value="{{ carrier.id }}"> {{ carrier.name }} ({{ carrier.price|format_price }})</option>
+                          
+                      {% endfor %}
+                  </select>
+                </div>
+                </div>
+                  
+              </div>
+              <div  class="col-md-6">
+                  <div  class="order_review">
+                      <div  class="heading_s1">
+                          <h4 >Your Orders</h4>
+                      </div>
+                      <div  class="table-responsive order_table">
+                          <table  class="table">
+                              <thead >
+                                  <tr >
+                                    <th  class="product-thumbnail">&nbsp;</th>
+                                      <th >Product</th>
+                                      <th >Total</th>
+                                  </tr>
+                              </thead>
+                              <tbody >
+                                {% for item in cart.items   %}
+                                  <tr >
+                                    <td  class="product-thumbnail"><a
+                                      ><img  width="25" height="25"
+                                          alt="{{ item.product.name }}"
+                                          src="{{ item.product.image }}"></a>
+                                          <!--    src="{{ item.product.images.first.image.url }}"></a> -->
+                                       
+                                     </td>
+                                      <td >{{item.product.name}} 
+                                        <span  class="product-price">{{item.product.solde_price|format_price}}</span> 
+                                        <span  class="product-qty">x {{item.quantity}}</span>
+                                      </td>
+                                      <td > {{item.sub_total |format_price }}</td>
+                                  </tr>
+                                  {% endfor %}  
+
+                              </tbody>
+                              <tfoot >
+                                  <tr >
+                                      <th >SubTotal</th>
+                                      <td ></td>
+                                      <td  class="product-subtotal">{{ cart.sub_total_ht|format_price}}</td>
+                                  </tr>
+                                  <tr >
+                                      <th >Shipping ({{cart.carrier_name}})</th>
+                                      <td ></td>
+                                      <td >{{ cart.shipping_price|format_price}}</td>
+                                  </tr>
+                                  <tr >
+                                    <th >Taxe</th>
+                                    <td ></td>
+                                    <td >{{ cart.taxe_amount|format_price}}</td>
+                                </tr>
+                                  <tr >
+                                      <th >Total</th>
+                                      <td ></td>
+                                      <td  class="product-subtotal">{{ cart.sub_total_with_shipping|format_price}}</td>
+                                  </tr>
+                              </tfoot>
+                          </table>
+                      </div>
+                      <div  class="payment_method">
+                          <div  class="heading_s1">
+                              <h4 >Payment</h4>
+                          </div>
+                         <!-- 
+                          <div  class="payment_option">
+                              <div  class="custome-radio"><input 
+                                      required="" type="radio" name="payment_option" checked=""
+                                      class="form-check-input" id="directBankTransfer"
+                                      value="directBankTransfer"><label 
+                                      class="form-check-label" for="directBankTransfer">Direct Bank
+                                      Transfer</label>
+                                  <p  class="payment-text"> There are many variations of
+                                      passages of Lorem Ipsum available, but the majority have suffered
+                                      alteration. </p>
+                              </div>
+                              <div  class="custome-radio"><input 
+                                      required="" type="radio" name="payment_option" checked=""
+                                      class="form-check-input" id="checkPayment" value="checkPayment"><label
+                                       class="form-check-label" for="checkPayment">Check
+                                      Payment</label>
+                                  <p  class="payment-text"> Please send your cheque to
+                                      Store Name, Store Street, Store Town, Store State / County, Store Postcode.
+                                  </p>
+                              </div>
+                              <div  class="custome-radio"><input 
+                                      required="" type="radio" name="payment_option" checked=""
+                                      class="form-check-input" id="paypal" value="paypal"><label
+                                       class="form-check-label" for="paypal">Paypal</label>
+                                  <p  class="payment-text"> Pay via PayPal; you can pay
+                                      with your credit card if you don't have a PayPal account. </p>
+                              </div>
+                              <div  class="custome-radio"><input 
+                                      required="" type="radio" name="payment_option" checked=""
+                                      class="form-check-input" id="creditCard" value="creditCard"><label
+                                       class="form-check-label" for="creditCard">Credit
+                                      Card</label>
+                                  <p  class="payment-text"> Please send your cheque to
+                                      Store Name, Store Street, Store Town, Store State / County, Store Postcode.
+                                  </p>
+                              </div>
+
+                          </div>
+                          -->
+                        </div>
+                          {% if ready_to_pay %}
+                          <div class="position-fixed start-0 bottom-0 w-100 shadow-lg p-1">
+                            <a  href="#" class="btn btn-fill-out btn-block " data-bs-toggle="modal" data-bs-target="#paymentModal">Pay now
+                                ({{ cart.sub_total_with_shipping|format_price}})
+                              </a>
+                            </div>
+                          {% endif %}
+                       </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Button trigger modal 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+-->
+<!-- Modal -->
+<div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paymentModalLabel">Payment Form </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Display a payment form -->
+          <form id="payment-form">
+            {% csrf_token %}
+            <div id="payment-element">
+              <!--Stripe.js injects the Payment Element-->
+            </div>
+            <!-- Used to display form errors. -->
+            <div id="card-errors" role="alert"></div>
+            <button id="submit" class="btn btn-fill-out btn-block" >
+              <div class="spinner hidden" id="spinner"></div>
+              <span id="button-text">  
+                Pay now 
+                ({{ cart.sub_total_with_shipping|format_price}})</span>
+            </button>
+            <div id="payment-message" class="hidden"></div>
+          </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endblock  %}
+
+{% block script %}
+<script>
+    /******* choix carrier et actualisation du choix carrier *****************/
+    carrierForm = document.querySelector('select#carrier_id')
+    const sendRequest = (event) =>{
+        const {name,value,type} = event.target
+        console.log({name,value})
+        if(!value){
+            return
+          }
+        const queryParams = new URLSearchParams(window.location.search)
+        if(type == 'checkbox'){
+          const {checked} = event.target
+          if(queryParams.has(name)){
+            queryParams.set(name,checked)
+          } else{
+            queryParams.append(name,checked)
+          }
+        }else{
+          if(queryParams.has(name)){
+            queryParams.set(name,value)
+          } else{
+            queryParams.append(name,value)
+          }
+        } 
+          const newUrl = `${window.location.origin}${window.location.pathname}?${queryParams.toString()}`
+          console.log(newUrl)
+          //actualiser le navigateur avec la nouvelle URLSearchParams
+          window.location.href = newUrl
+    }
+    carrierForm?.addEventListener('change',sendRequest)
+      
+    /*******check out ***************/
+    add_address_input = document.querySelector('input.add_new_address')
+    add_address_form = document.querySelector('form#add_new_address_form')
+    const displayForm = (event) =>{
+        const {checked}  = event.target
+        if (checked){
+          add_address_form.classList.remove('d-none')
+          console.log(checked)
+        }else{
+          add_address_form.classList.add('d-none')
+        }
+
+    }
+    add_address_input?.addEventListener('change',displayForm)
+    
+    /**** shipping adresse *********/ 
+    add_new_shipping_address = document.querySelector('input.add_new_shipping_address')
+    address_shipping_form = document.querySelector('.shipping_address_form')
+    const addShippingAddress = (event) =>{
+      const {checked}  = event.target
+      if (checked){
+        console.log(checked)
+        address_shipping_form.classList.remove('d-none')
+      }else{
+        address_shipping_form.classList.add('d-none')
+      }
+    }
+    //add_new_shipping_address?.addEventListener('change',addShippingAddress)
+    add_new_shipping_address?.addEventListener('change',sendRequest)
+    
+    /**** login_form *********/ 
+    loginForm = document.querySelector('form#login_form')
+    loginFormButton = document.querySelector('form#login_form button')
+    const loginformSubmit = (event) =>{
+      event.preventDefault()
+      //console.log(event.target)
+      formError = loginForm.querySelector('.form-error')
+      emailError = loginForm.querySelector('.email-error')
+      passwordError = loginForm.querySelector('.password-error')
+      const email = loginForm.elements['email'].value
+      const password = loginForm.elements['password'].value
+      const token = loginForm.elements['csrfmiddlewaretoken'].value
+      ///console.log({email,password,token})
+      if(email.trim() == ''){
+        emailError.innerText = 'Please fill out tne email field'
+        return
+      }else{
+        emailError.innerText =''
+      }
+
+      if(password.trim() == ''){
+        passwordError.innerText = 'Please fill out tne password field'
+        return
+      }else{
+        passwordError.innerText =''
+      }
+
+      const formData = new FormData()
+      formData.append('email',email)
+      formData.append('password',password)
+      formData.append('csrfmiddlewaretoken',token)
+
+      fetch("{% url 'shop:login_form' %}",{
+          method : 'POST',
+          body : formData
+      })
+      .then(response => response.json())
+      .then(data=>{
+        if(!data.isSuccess){
+          formError.innerText = data.message
+        }else{
+            //connextion reussie. On recherge la meme page
+            formError.innerText =''
+            window.location.href = window.location.href
+        }
+        console.log({data})
+      })
+      .catch(error =>{
+          console.log('Erreur lors de la requete AJAX:',error)
+      })
+      
+    }
+    loginFormButton?.addEventListener('click',loginformSubmit)
+
+    /************ pret pour payer*****************/
+    
+    billingForm  = document.querySelector('select#addresse_billing_id')
+    shippingForm = document.querySelector('select#addresse_shipping_id')
+    
+    billingForm?.addEventListener('change',sendRequest)
+    shippingForm?.addEventListener('change',sendRequest)
+
+</script>
+
+{% if ready_to_pay %}  
+
+<script>
+
+  // This is your test publishable API key.
+const stripe = Stripe("{{ public_key }}");
+
+initialize();
+checkStatus();
+
+document
+  .querySelector("#payment-form")
+  .addEventListener("submit", handleSubmit);
+
+// Fetches a payment intent and captures the client secret
+async function initialize() {
+  const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  const response = await fetch("/create-payment-intent/{{ order_id }}", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" ,
+              "X-CSRFToken":csrftoken,
+    },
+    //body: JSON.stringify(),
+  });
+  const { clientSecret } = await response.json();
+  console.log({ clientSecret })
+  const appearance = {
+    theme: 'stripe',
+  };
+  elements = stripe.elements({ appearance, clientSecret });
+
+  const paymentElementOptions = {
+    layout: "tabs",
+  };
+
+  const paymentElement = elements.create("payment", paymentElementOptions);
+  paymentElement.mount("#payment-element");
+}
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  setLoading(true);
+
+  const { error } = await stripe.confirmPayment({
+    elements,
+    confirmParams: {
+      // Make sure to change this to your payment completion page
+      return_url: window.location.origin+ "{% url 'shop:payment_succes' %}",
+    },
+  });
+
+  // This point will only be reached if there is an immediate error when
+  // confirming the payment. Otherwise, your customer will be redirected to
+  // your `return_url`. For some payment methods like iDEAL, your customer will
+  // be redirected to an intermediate site first to authorize the payment, then
+  // redirected to the `return_url`.
+  if (error.type === "card_error" || error.type === "validation_error") {
+    showMessage(error.message);
+  } else {
+    showMessage("An unexpected error occurred.");
+  }
+
+  setLoading(false);
+}
+
+// Fetches the payment intent status after payment submission
+async function checkStatus() {
+  const clientSecret = new URLSearchParams(window.location.search).get(
+    "payment_intent_client_secret"
+  );
+
+  if (!clientSecret) {
+    return;
+  }
+
+  const { paymentIntent } = await stripe.retrievePaymentIntent(clientSecret);
+
+  switch (paymentIntent.status) {
+    case "succeeded":
+      showMessage("Payment succeeded!");
+      break;
+    case "processing":
+      showMessage("Your payment is processing.");
+      break;
+    case "requires_payment_method":
+      showMessage("Your payment was not successful, please try again.");
+      break;
+    default:
+      showMessage("Something went wrong.");
+      break;
+  }
+}
+
+// ------- UI helpers -------
+
+function showMessage(messageText) {
+  const messageContainer = document.querySelector("#payment-message");
+
+  messageContainer.classList.remove("hidden");
+  messageContainer.textContent = messageText;
+
+  setTimeout(function () {
+    messageContainer.classList.add("hidden");
+    messageContainer.textContent = "";
+  }, 4000);
+}
+
+// Show a spinner on payment submission
+function setLoading(isLoading) {
+  if (isLoading) {
+    // Disable the button and show a spinner
+    document.querySelector("#submit").disabled = true;
+    document.querySelector("#spinner").classList.remove("hidden");
+    document.querySelector("#button-text").classList.add("hidden");
+  } else {
+    document.querySelector("#submit").disabled = false;
+    document.querySelector("#spinner").classList.add("hidden");
+    document.querySelector("#button-text").classList.remove("hidden");
+  }
+}
+</script>
+{% endif %}
+
+{% endblock %}

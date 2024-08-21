@@ -1,0 +1,40 @@
+<form   method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="_method" value = "PUT">
+          <div class="card mb-3" style="max-width: 1800px;">
+            <div class="row g-0">
+             
+              <div class="col-md-12">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="card ">
+                        <div class="card-header text center">
+                        <strong> Paiement statut</strong>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text "  ><strong>Réference facture:</strong> {{ form.facture_reference  }}</p>
+                          <p class="card-text "  ><strong>Montant:</strong> {{ form.facture_montant  }}</p>
+                          <p class="card-text"  ><strong>Facture statut:</strong> {{ form.facture_statut  }}</p>
+                          
+                        </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+            <hr>
+      <div class="d-flex gap-1">      
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-success " id="update-save-btn">Update</button>
+      </div>
+  </form> 
+
+  {% block script %}
+
+
+{% endblock %}

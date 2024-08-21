@@ -1,0 +1,179 @@
+
+        <div class="card mb-3" style="max-width: 1800px;">
+          <div class="row g-0">
+            <div class="col-md-5">
+                  <div id="imageContainer{{ instancerecouv.idrecouv }}">
+                    {% if instancerecouv.rapport_technique %} 
+                    <img src="{{ instancerecouv.instance.rapport_technique.url }}" class="img-fluid rounded-start" alt="Rapport Technique" onclick="zoomImage(this)">
+                    {% else %}
+                    <p>Aucune image disponible</p>
+                    {% endif %}
+                  </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <button class="btn btn-secondary" onclick="changeImage('prev', {{ instancerecouv.idrecouv }})">Précédent</button>
+                    <button class="btn btn-secondary" onclick="changeImage('next', {{ instancerecouv.idrecouv }})">Suivant</button>
+                  </div>
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="card ">
+                    <div class="card-header text center">
+                    <strong> Detail Client</strong>
+                    </div>
+                      <div class="card-body">
+                        
+                        <p class="card-text"><strong>Nom du client:</strong> {{ instancerecouv.instance.client }}</p>
+                        <p class="card-text"><strong>Email:</strong> {{ instancerecouv.instance.client.email }}</p>
+                        <p class="card-text"><strong>Adresse:</strong> {{ instancerecouv.instance.client.adresse }}</p>
+                        <p class="card-text"><strong>Téléphone:</strong> {{ instancerecouv.instance.client.telephone }}</p>
+                        <hr>
+                        <p class="card-text"><strong>Resp du dossier:</strong> {{ instancerecouv.instance.responsable }}</p>
+                        <p class="card-text"><strong>
+                          <div class="form-check form-switch" id="id_is_facturable" disabled>
+                            <input class="form-check-input disabled" type="checkbox" id="id_is_facturable{{ forloop.counter }}"  {% if instancerecouv.instance.is_facturable %}checked{% endif %} >
+                            <label class="form-check-label" for="flexSwitchCheckDefault">instance à facturer </label>
+                          </div>
+                         </strong>
+                        </p>
+                        <p class="card-text"><strong>Avis technique du dossier:</strong> {{ instancerecouv.instance.statut }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="card">
+                      <div class="card-header text center">
+                        <strong>Recouvrement instance</strong>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text"><strong>Date création:</strong> {{ instancerecouv.created_at }}</p>
+                         <p class="card-text"><strong>Type instance:</strong> {{ instancerecouv.instance.type_instance }}</p>
+                         <p class="card-text"><strong>Besoin:</strong> {{ instancerecouv.instance.besoin }}</p>
+                         
+                        <hr>
+                        
+                          <p class="card-text"><strong>Ref facture:</strong> {{ instancerecouv.facture_reference }}</p>
+                          <p class="card-text"><strong>Montant:</strong> {{ instancerecouv.facture_montant }}</p>
+                          <p class="card-text"><strong>Statut:</strong> {{ instancerecouv.facture_statut }}</p>
+                       
+                        
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+               <hr>
+              <div class="row">
+                  <form class="d-none"  id ="instancerecouvForm{{instancerecouv.idrecouv}}"
+                    method="POST"
+                    action="{% url 'serviceapresvente:instancerecouv-update' instancerecouv.idrecouv %}">
+                    {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header text center">
+                          <strong>Mise à jour Recouvrement</strong>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" name="_method" value = "PUT">
+                              {{ form_instance_detail }}
+                            <button type="submit"  id="id_instanteUpdData"
+                                      class="btn btn-primary">Update</button>
+                        </div>
+                      </div>
+                  
+                  </form>  
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+
+{% block script %}
+<script>
+$(document).ready(function() {
+  const images = {
+    rapport: "{{ instancerecouv.rapport_techniqueUrl|escapejs   }}",
+    
+  };
+  console.log('images:',images)
+  let currentIndex = 0;
+  const imageKeys = Object.keys(images).filter(key => images[key]);
+  console.log('imageKeys:',imageKeys)
+  function changeImage(direction, requestId) {
+    if (direction === 'next') {
+      currentIndex = (currentIndex + 1) % imageKeys.length;
+    } else if (direction === 'prev') {
+      currentIndex = (currentIndex - 1 + imageKeys.length) % imageKeys.length;
+    }
+    const imageContainer = document.getElementById(`imageContainer${requestId}`);
+    imageContainer.innerHTML = `<img src="${images[imageKeys[currentIndex]]}" class="img-fluid rounded-start" alt="Image" onclick="zoomImage(this)">`;
+  }
+
+  function zoomImage(img) {
+    var modal = new bootstrap.Modal(document.getElementById('zoomModal'));
+    document.getElementById('zoomImage').src = img.src;
+    modal.show();
+  }
+
+})
+</script>
+
+<script>
+  /*************** ecoute du btn Modifier **********************/
+  $(document).ready(function() {
+  const btn_InstanceUpd  = document.querySelector('button#BtnInstanceUpd')
+const handleInstanceUpdBtnClick = (event) => {
+  event.preventDefault();    
+  const instanceDisplayForm = document.querySelector('form#instancerecouvForm{{instancerecouv.idrecouv}}')
+  console.log('instanceDisplayForm:',instanceDisplayForm)
+  instanceDisplayForm.classList.toggle('d-none')
+
+  var instanceField = instanceDisplayForm.querySelector('#id_instance');
+  instanceField.setAttribute('disabled', true); // Disable the savrequest field
+  instanceField.classList.add('grayed-out');
+
+  }
+  btn_InstanceUpd?.addEventListener('click',handleInstanceUpdBtnClick)
+  handleInstanceUpdBtnClick();
+
+  })
+</script>
+
+<script>
+  /*********  Update Instance recouvrement *****/
+$(document).ready(function() {
+  const btn_instanteUpdData = document.querySelector('button[type="submit"]#id_instanteUpdData');
+  const handleUpdateSubmit = (event) => {
+  event.preventDefault(); 
+  const form = $(event.target).closest('form');
+  form.find(':disabled').prop('disabled', false);  // Re-enable disabled fields for submission 
+  const url = form.attr('action');
+  const method = form.attr('method');
+  // Validation HTML5
+   if (form[0].checkValidity() === false) {
+      event.stopPropagation();
+      form.addClass('was-validated');
+      return;
+    }
+
+   $.ajax({
+        url: form.attr('action'),
+        type: 'POST',   //form.attr('method'),
+        data: form.serialize(),
+        success: function(response) {
+            $('#InstanceDetailModal').modal('hide');
+            location.reload();
+              },
+              error: function(data) {
+                alert('Error: ',data );
+              }
+        });
+        
+      }
+  btn_instanteUpdData?.addEventListener('click', handleUpdateSubmit)
+ ////////////////Fin
+})
+</script>
+{% endblock %}

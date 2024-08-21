@@ -1,0 +1,162 @@
+
+        <div class="card mb-3" style="max-width: 1800px;">
+          <div class="row g-0">
+            <div class="col-md-5">
+                  <div id="imageContainer{{ instance.idinstance }}">
+                    {% if instance.rapport_technique %} 
+                    <img src="{{ instance.rapport_technique.url }}" class="img-fluid rounded-start" alt="Rapport Technique" onclick="zoomImage(this)">
+                    {% else %}
+                    <p>Aucune image disponible</p>
+                    {% endif %}
+                  </div>
+                  <div class="d-flex justify-content-between mt-2">
+                    <button class="btn btn-secondary" onclick="changeImage('prev', {{ instance.idinstance }})">Précédent</button>
+                    <button class="btn btn-secondary" onclick="changeImage('next', {{ instance.idinstance }})">Suivant</button>
+                  </div>
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-10">
+                    <div class="card ">
+                    <div class="card-header text center">
+                    <strong> Detail Client</strong>
+                    </div>
+                      <div class="card-body">
+                        
+                        <p class="card-text"><strong>Nom du client:</strong> {{ instance.client }}</p>
+                        <p class="card-text"><strong>Email:</strong> {{ instance.client.email }}</p>
+                        <p class="card-text"><strong>Adresse:</strong> {{ instance.client.adresse }}</p>
+                        <p class="card-text"><strong>Téléphone:</strong> {{ instance.client.telephone }}</p>
+                        
+                      </div>
+                    </div>
+                  </div>
+                <!--  <div class="col-sm-6">
+                    <div class="card ">
+                    <div class="card-header text-center">
+                      <strong>Info Instance</strong>
+                      </div>
+                    <div class="card-body">
+                        <p class="card-text"><strong>Date création:</strong> {{ instance.created_at }}</p>
+                         <p class="card-text"><strong>Besoin:</strong> {{ instance.besoin }}</p>
+                         <p class="card-text"><strong>Action:</strong> {{ instance.action }}</p>
+                         <p class="card-text"><strong>Resp du dossier:</strong> {{ instance.responsable }}</p>
+                         <p class="card-text"><strong>
+                          <div class="form-check form-switch" id="id_is_facturable">
+                            <input class="form-check-input" type="checkbox" id="id_is_facturable{{ forloop.counter }}"  {% if instance.is_facturable %}checked{% else %}disabled{% endif %}>
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Instance à facturer </label>
+                          </div>
+                         </strong>
+                        </p>
+                      </div>
+                    
+                    </div>
+                  </div>  -->
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="card">
+                    <div class="card-header text center">
+                      <strong>Execution instance</strong>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text"><strong>Date création:</strong> {{ instance.created_at }}</p>
+                       <p class="card-text"><strong>Type instance:</strong> {{ instance.type_instance }}</p>
+                       <p class="card-text"><strong>Besoin:</strong> {{ instance.besoin }}</p>
+                       <p class="card-text"><strong>Action:</strong> {{ instance.action }}</p>
+                       <p class="card-text"><strong>Resp du dossier:</strong> {{ instance.responsable }}</p>
+                       <p class="card-text"><strong>Rapport technique:</strong> {{ instance.rapport_technique }}</p>
+                       <p class="card-text"><strong>
+                        <div class="form-check form-switch" id="id_is_facturable" disabled>
+                          <input class="form-check-input disabled" type="checkbox" id="id_is_facturable{{ forloop.counter }}"  {% if instance.is_facturable %}checked{% endif %} >
+                          <label class="form-check-label" for="flexSwitchCheckDefault">Instance à facturer </label>
+                        </div>
+                       </strong>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <form class="d-none"  id ="instanceForm{{instance.idinstance}}"
+                    method="POST"
+                    action="{% url 'serviceapresvente:instance-update' instance.idinstance %}">
+                    {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header text center">
+                          <strong>Mise à jour instance</strong>
+                        </div>
+                        <div class="card-body">
+                            <input type="hidden" name="_method" value = "PUT">
+                              {{ form_instance_detail }}
+                            <button type="submit"  id="id_instanteUpdData"
+                                      class="btn btn-primary">Update</button>
+                        </div>
+                      </div>
+                  
+                  </form>  
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        
+
+{% block script %}
+<script>
+$(document).ready(function() {
+  const images = {
+    rapport: "{{ instance.rapport_techniqueUrl|escapejs   }}",
+    
+  };
+  console.log('images:',images)
+  let currentIndex = 0;
+  const imageKeys = Object.keys(images).filter(key => images[key]);
+  console.log('imageKeys:',imageKeys)
+  function changeImage(direction, requestId) {
+    if (direction === 'next') {
+      currentIndex = (currentIndex + 1) % imageKeys.length;
+    } else if (direction === 'prev') {
+      currentIndex = (currentIndex - 1 + imageKeys.length) % imageKeys.length;
+    }
+    const imageContainer = document.getElementById(`imageContainer${requestId}`);
+    imageContainer.innerHTML = `<img src="${images[imageKeys[currentIndex]]}" class="img-fluid rounded-start" alt="Image" onclick="zoomImage(this)">`;
+  }
+
+  function zoomImage(img) {
+    var modal = new bootstrap.Modal(document.getElementById('zoomModal'));
+    document.getElementById('zoomImage').src = img.src;
+    modal.show();
+  }
+
+})
+</script>
+
+<script>
+$(document).ready(function() {
+ 
+/*************** ecoute du btn Modifier **********************/
+  const btn_InstanceUpd  = document.querySelector('button#BtnInstanceUpd')
+const handleInstanceUpdBtnClick = (event) => {
+  event.preventDefault();    
+  const instanceDisplayForm = document.querySelector('form#instanceForm{{instance.idinstance}}')
+  console.log('instanceDisplayForm:',instanceDisplayForm)
+  instanceDisplayForm.classList.toggle('d-none')
+
+  }
+  btn_InstanceUpd?.addEventListener('click',handleInstanceUpdBtnClick)
+  handleInstanceUpdBtnClick();
+
+
+  
+//$(document).on('click', '#id_instanteUpdData', handleUpdateSubmit);
+
+
+
+})
+
+
+</script>
+{% endblock %}

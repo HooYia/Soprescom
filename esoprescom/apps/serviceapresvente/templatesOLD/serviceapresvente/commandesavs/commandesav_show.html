@@ -1,0 +1,43 @@
+{% extends "serviceapresvente/admin.html" %}
+    {% load static %}
+
+    {% block content %}
+
+    {% include "serviceapresvente/admin/paginator.html" with datas=commandesavs %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="d-flex my-2 justify-content-end">
+        <a href="{% url commandesav %}" class="btn btn-success">Create CommandeSav</a>
+    </div>
+    <table class="table table-bordered">
+        <tbody>
+
+                <tr>
+        <td scope='col'> Idcommandepiece: </td>
+        <td scope='col'>{{ commandesav.idCommandePiece}}</td>    </tr>    <tr>
+        <td scope='col'> Savrequest: </td>
+        <td scope='col'>{{ commandesav.savrequest}}</td>    </tr>    <tr>
+        <td scope='col'> Fournisseur: </td>
+        <td scope='col'>{{ commandesav.fournisseur}}</td>    </tr>    <tr>
+        <td scope='col'> Nombre_jour: </td>
+        <td scope='col'>{{ commandesav.nombre_jour}}</td>    </tr>    <tr>
+        <td scope='col'> Flag: </td>
+        <td scope='col'>{{ commandesav.flag}}</td>    </tr>    <tr>
+        <td scope='col'> Commentaire: </td>
+        <td scope='col'>{{ commandesav.commentaire}}</td>    </tr>    <tr>
+        <td scope='col'> Updated_at: </td>
+        <td scope='col'>{{ commandesav.updated_at}}</td>    </tr>    <tr>
+        <td scope='col'> Created_at: </td>
+        <td scope='col'>{{ commandesav.created_at}}</td>    </tr>
+
+        </tbody>
+    </table>
+    {% include "blog/components/paginator.html" with datas=commandesavs %}
+
+
+    {% endblock %}
