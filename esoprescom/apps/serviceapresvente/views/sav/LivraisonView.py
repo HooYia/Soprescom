@@ -11,6 +11,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     livraison_list = LivraisonClient.objects.all()
     paginator = Paginator(livraison_list, 8)
     page = request.GET.get('page', 1)
@@ -33,6 +35,8 @@ def index(request):
 
 @login_required
 def show(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     livraison = get_object_or_404(LivraisonClient, idlivraisonclient=id)
     detailformUpd = LivraisonForm(instance=livraison)
     
@@ -55,6 +59,8 @@ def create(request):
 
 @login_required
 def update(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     livraison = get_object_or_404(LivraisonClient, idlivraisonclient=id)
     
     if request.method == 'POST':
@@ -99,6 +105,8 @@ def update(request, id):
 
 @login_required
 def delete(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     suivicommandesav = get_object_or_404(LivraisonClient, idlivraisonclient=id)
     if request.method == 'POST':
         if request.POST.get('_method') == 'DELETE':

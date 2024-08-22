@@ -60,7 +60,9 @@
                         <li class="nav-item">
                           <a class="nav-link {% if page == 'instance' %}active{% endif %}" id="instance-tab"  href="{% url 'serviceapresvente:instance' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-location-pin"></i>Instance DSI</a>
                         </li>
-                        
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'instance' %}active{% endif %}" id="instance-tab"  href="{% url 'serviceapresvente:instance' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-location-pin"></i>Users</a>
+                        </li>
                       </ul>
                   </div>
               </div>
@@ -75,27 +77,33 @@
                               <li class="nav-item">
                                   <a class="nav-link {% if subpage == 'savrequest' %}active{% endif %}" href="{% url 'serviceapresvente:savrequest' %}" role="tab" aria-controls="sub1" aria-selected="true">Sav request</a>
                               </li>
-                              {% elif request.user.is_compta or request.user.is_superuser %}
+                              {% endif %}
+                              {% if request.user.is_compta or request.user.is_superuser %}
                               <li class="nav-item">
                                   <a class="nav-link {% if subpage == 'commandesav' %}active{% endif %}" href="{% url 'serviceapresvente:commandesav' %}" role="tab" aria-controls="sub2" aria-selected="true">Achat</a>
                               </li>
-                              {% elif request.user.is_losgistic or request.user.is_superuser %}
+                              {% endif %}
+                              {% if request.user.is_losgistic or request.user.is_superuser %}
                               <li class="nav-item">
                                 <a class="nav-link {% if subpage == 'suivicommandesav' %}active{% endif %}" href="{% url 'serviceapresvente:suivicommandesav' %}" role="tab" aria-controls="sub2" aria-selected="true">Logistique</a>
                                 </li>
-                                {% elif request.user.is_staff or request.user.is_superuser %}
+                                {% endif %}
+                                {% if request.user.is_staff or request.user.is_superuser %}
                                 <li class="nav-item">
                                   <a class="nav-link {% if subpage == 'assemblage' %}active{% endif %}" href="{% url 'serviceapresvente:assemblage' %}" role="tab" aria-controls="sub2" aria-selected="true">Assemblage</a>
                               </li>
-                              {% elif request.user.is_losgistic or request.user.is_superuser %}
+                              {% endif %}
+                              {% if request.user.is_losgistic or request.user.is_superuser %}
                               <li class="nav-item">
                                 <a class="nav-link {% if subpage == 'livraison' %}active{% endif %}" href="{% url 'serviceapresvente:livraison' %}" role="tab" aria-controls="sub2" aria-selected="true">Livraison</a>
                               </li>
-                              {% elif request.user.is_recouvrement or request.user.is_superuser %}
+                              {% endif %}
+                              {% if request.user.is_recouvrement or request.user.is_superuser %}
                               <li class="nav-item">
                                 <a class="nav-link {% if subpage == 'recouvrement' %}active{% endif %}" href="{% url 'serviceapresvente:recouvrement' %}" role="tab" aria-controls="sub2" aria-selected="true">Recouvrement</a>
                               </li>
-                              {% elif request.user.is_staff or request.user.is_superuser %}
+                              {% endif %}
+                              {% if request.user.is_staff or request.user.is_superuser %}
                               <li class="nav-item">
                                 <a class="nav-link {% if subpage == 'cloturedossier' %}active{% endif %}" href="{% url 'serviceapresvente:cloture' %}" role="tab" aria-controls="sub2" aria-selected="true">Clôture</a>
                               </li>
@@ -111,7 +119,7 @@
                           <li class="nav-item">
                               <a class="nav-link {% if subpage == 'leasing_tab2' %}active{% endif %}" href="#leasing_tab2" role="tab" aria-controls="sub2" aria-selected="true">Liste Imprimante</a>
                           </li>
-                      <!--    <li class="nav-item">
+                          <!-- <li class="nav-item">
                               <a class="nav-link {% if subpage == 'sub3' %}active{% endif %}" href="#" role="tab" aria-controls="sub3" aria-selected="false">Suivi Commande SAV</a>
                           </li>
                           <li class="nav-item">
@@ -122,14 +130,14 @@
                           </li>
                           <li class="nav-item">
                             <a class="nav-link {% if subpage == 'sub5' %}active{% endif %}" href="#" role="tab" aria-controls="sub5" aria-selected="false">Recouvrement Client</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link {% if subpage == 'sub5' %}active{% endif %}" href="#" role="tab" aria-controls="sub5" aria-selected="false">Recouvrement DEVEA</a>
-                      </li><li class="nav-item">
-                        <a class="nav-link {% if subpage == 'sub5' %}active{% endif %}" href="#" role="tab" aria-controls="sub5" aria-selected="false">Clôture dossier</a>
-                    </li> -->
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link {% if subpage == 'sub5' %}active{% endif %}" href="#" role="tab" aria-controls="sub5" aria-selected="false">Recouvrement DEVEA</a>
+                          </li><li class="nav-item">
+                          <a class="nav-link {% if subpage == 'sub5' %}active{% endif %}" href="#" role="tab" aria-controls="sub5" aria-selected="false">Clôture dossier</a>
+                        </li> -->
                       </ul>
-                  </div>
+                    </div>
                   {% else %}
                   <div class="sub-menu">
                     <ul class="nav nav-tabs " role="tablist">
@@ -141,63 +149,62 @@
                         </li>
                         <!-- <li class="nav-item">
                           <a class="nav-link {% if subpage == 'leasing_tab2' %}active{% endif %}" href="#leasing_tab2" role="tab" aria-controls="sub2" aria-selected="true">Rapport</a>
-                      </li>  -->
+                        </li>  -->
                     </ul> 
                   </div>   
                   {% endif %}
-                </div>   
-                  <!--  Gestion SAV-->
-                  <div class="tab-content dashboard_content"> 
-                      <div class="tab-pane fade {% if subpage == 'savrequest' %}active show{% endif %}" id="savrequest" role="tabpanel" aria-labelledby="savrequest-tab">
-                        {% include "servicedsi/includes/savrequest.html" %}
-                      </div>
-                      <div class="tab-pane fade {% if subpage == 'commandesav' %}active show{% endif %}"  id="commandesav" role="tabpanel" aria-labelledby="savrequest_tab2">
-                          {% include "servicedsi/includes/commandesav.html" %}
-                      </div>
-                      <div class="tab-pane fade {% if subpage == 'suivicommandesav' %}active show{% endif %}"  id="suivicommandesav" role="tabpanel" aria-labelledby="leasing_tab1">
-                        {% include "servicedsi/includes/suivicommandesav.html" %}
-                        
-                      </div>
-                      <div class="tab-pane fade {% if subpage == 'assemblage' %}active show{% endif %}"  id="assemblage" role="tabpanel" aria-labelledby="assemblage">
-                        {% include "servicedsi/includes/assemblage.html" %}
-                      </div>                                 
-                      <div class="tab-pane fade {% if subpage == 'livraison' %}active show{% endif %}"  id="livraison-detail" role="tabpanel" aria-labelledby="livraison-detail-tab">
-                        {% include "servicedsi/includes/livraison.html" %}
-                        
-                      </div>
-                      <div class="tab-pane fade {% if subpage == 'recouvrement' %}active show{% endif %}"  id="recouvrement-detail" role="tabpanel" aria-labelledby="recouvrement-detail-tab">
-                        {% include "servicedsi/includes/recouvrement.html" %}
-                        
-                      </div>
-                      <div class="tab-pane fade {% if subpage == 'cloturedossier' %}active show{% endif %}"  id="devea-detail" role="tabpanel" aria-labelledby="devea-detail-tab">
-                        {% include "servicedsi/includes/cloturedossier.html" %}
-                        
-                      </div>
-                  </div>
-                  <!--    Leasing SAV--> 
-                  <div class="tab-content dashboard_content"> 
-                    <div class="tab-pane fade {% if subpage == 'Leasing1' %}active show{% endif %}" id="savrequest" role="tabpanel" aria-labelledby="savrequest-tab">
-                      {% include "servicedsi/includes/leasing.html" %}
+                  </div>   
+                    <!--  Gestion SAV-->
+                    <div class="tab-content dashboard_content"> 
+                        <div class="tab-pane fade {% if subpage == 'savrequest' %}active show{% endif %}" id="savrequest" role="tabpanel" aria-labelledby="savrequest-tab">
+                          {% include "servicedsi/includes/savrequest.html" %}
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'commandesav' %}active show{% endif %}"  id="commandesav" role="tabpanel" aria-labelledby="savrequest_tab2">
+                            {% include "servicedsi/includes/commandesav.html" %}
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'suivicommandesav' %}active show{% endif %}"  id="suivicommandesav" role="tabpanel" aria-labelledby="leasing_tab1">
+                          {% include "servicedsi/includes/suivicommandesav.html" %}
+                          
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'assemblage' %}active show{% endif %}"  id="assemblage" role="tabpanel" aria-labelledby="assemblage">
+                          {% include "servicedsi/includes/assemblage.html" %}
+                        </div>                                 
+                        <div class="tab-pane fade {% if subpage == 'livraison' %}active show{% endif %}"  id="livraison-detail" role="tabpanel" aria-labelledby="livraison-detail-tab">
+                          {% include "servicedsi/includes/livraison.html" %}
+                          
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'recouvrement' %}active show{% endif %}"  id="recouvrement-detail" role="tabpanel" aria-labelledby="recouvrement-detail-tab">
+                          {% include "servicedsi/includes/recouvrement.html" %}
+                          
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'cloturedossier' %}active show{% endif %}"  id="devea-detail" role="tabpanel" aria-labelledby="devea-detail-tab">
+                          {% include "servicedsi/includes/cloturedossier.html" %}
+                          
+                        </div>
                     </div>
-                    <div class="tab-pane fade {% if subpage == 'Leasing2' %}active show{% endif %}"  id="commandesav" role="tabpanel" aria-labelledby="savrequest_tab2">
+                    <!--    Leasing SAV--> 
+                    <div class="tab-content dashboard_content"> 
+                      <div class="tab-pane fade {% if subpage == 'Leasing1' %}active show{% endif %}" id="savrequest" role="tabpanel" aria-labelledby="savrequest-tab">
                         {% include "servicedsi/includes/leasing.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'Leasing2' %}active show{% endif %}"  id="commandesav" role="tabpanel" aria-labelledby="savrequest_tab2">
+                          {% include "servicedsi/includes/leasing.html" %}
+                      </div>
                     </div>
-                  </div>
-                 <!--    Instance SAV--> 
-                 <div class="tab-content dashboard_content"> 
-                  <div class="tab-pane fade {% if subpage == 'instance' %}active show{% endif %}" id="savrequest" role="tabpanel" aria-labelledby="savrequest-tab">
-                    {% include "servicedsi/instance/instance.html" %}
-                  </div>
-                  <div class="tab-pane fade {% if subpage == 'instance_recouvrement' %}active show{% endif %}"  id="commandesav" role="tabpanel" aria-labelledby="savrequest_tab2">
-                      {% include "servicedsi/instance_recouvrement/instance_recouvrement.html" %}
+                    <!--    Instance SAV--> 
+                    <div class="tab-content dashboard_content"> 
+                      <div class="tab-pane fade {% if subpage == 'instance' %}active show{% endif %}" id="savrequest" role="tabpanel" aria-labelledby="savrequest-tab">
+                        {% include "servicedsi/instance/instance.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'instance_recouvrement' %}active show{% endif %}"  id="commandesav" role="tabpanel" aria-labelledby="savrequest_tab2">
+                          {% include "servicedsi/instance_recouvrement/instance_recouvrement.html" %}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
           </div>
     </div>
-  </div>
-  
-</div>
 
 
 <!-- Button trigger modal -->

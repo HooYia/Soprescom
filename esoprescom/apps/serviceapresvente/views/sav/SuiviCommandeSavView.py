@@ -10,6 +10,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     suivicommandesavs_list = SuiviCommandeSav.objects.all()
     paginator = Paginator(suivicommandesavs_list, 8)
     page = request.GET.get('page', 1)
@@ -32,6 +34,8 @@ def index(request):
 
 @login_required
 def show(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     suivicommandesav = get_object_or_404(SuiviCommandeSav, idsuivicommandesav=id)
     detailformUpd = SuiviCommandeSavForm(instance=suivicommandesav)
     return render(request, 'servicedsi/suivicommandesav/formSuivicommandeDetail.html', 
@@ -52,6 +56,8 @@ def create(request):
 """
 @login_required
 def update(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     suivicommandesav = get_object_or_404(SuiviCommandeSav, idsuivicommandesav=id)
     
     if request.method == 'POST':
@@ -100,6 +106,8 @@ def update(request, id):
     
 @login_required
 def delete(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     suivicommandesav = get_object_or_404(SuiviCommandeSav, idsuivicommandesav=id)
     if request.method == 'POST':
         if request.POST.get('_method') == 'DELETE':

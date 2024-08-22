@@ -10,25 +10,25 @@ def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
     django.setup()
     try:
-        from shop.models import Category, Collection, Slider, \
+        from apps.shop.models import Category, Collection, Slider, \
             Carrier, Image,NavCollection, Page, Setting, Social
         files_path = [
-            #'databases/shop_carrier.json',
-            #'databases/shop_category.json',
-            #'databases/shop_collection.json',
-            #'databases/shop_page.json',
-            #'databases/shop_navcollection.json',
+            # 'databases/shop_carrier.json',
+            # 'databases/shop_category.json',
+            # 'databases/shop_collection.json',
+            # 'databases/shop_page.json',
+            # 'databases/shop_navcollection.json',
             'databases/shop_image.json',
-            #'databases/product_categories.json',
-            #'databases/products.json',
-            #'databases/shop_setting.json',
-            #'databases/shop_slider.json',
-            #'databases/shop_social.json',
+            # 'databases/shop_product_categories.json',
+            # 'databases/shop_product.json',
+            # 'databases/shop_setting.json',
+            # 'databases/shop_slider.json',
+            # 'databases/shop_social.json',
         ]
         models = {
-            #'shop_carrier': Carrier,
-            #'shop_category': Category,
-            #'shop_image': Image,
+            'shop_carrier': Carrier,
+            'shop_category': Category,
+            'shop_image': Image,
             'shop_navcollection':NavCollection,
             'shop_page':Page,
             'shop_setting': Setting,
@@ -55,7 +55,7 @@ def main():
                     print(f"Model '{entity}' not found.")           
     except ImportError as exc:
         print(exc)
-        sys.ecit(1)
+        sys.exit(1)
     
 
 

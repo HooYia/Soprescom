@@ -15,11 +15,21 @@
                         <div class="card-header text center">
                         <strong> Info du Client</strong>
                         </div>
-                          <div class="card-body">
-                            <p class="card-text "  ><strong>Numero dossier:</strong> {{ form.numero_dossier  }}</p>
-                            <p class="card-text"  ><strong>Nom du client:</strong> {{ form.client_sav  }}</p>
-                            <p class="card-text"><strong>Responsable SAV:</strong> {{ form.resp_sav}}</p>
+                        <div class="card-body">
+                          <p class="card-text">
+                            <strong>Numero dossier:</strong> {{ form.numero_dossier }}
+                          </p>
+                          <div class="d-flex align-items-center mb-2">
+                            <p class="card-text mr-2">
+                              <strong>Nom du client:</strong>
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm">Créer un nouveau client</a>
                           </div>
+                          <p class="card-text">{{ form.client_sav }}</p>
+                          <p class="card-text">
+                            <strong>Responsable SAV:</strong> {{ form.resp_sav }}
+                          </p>
+                        </div>
                         </div>
                       </div>
                       <div class="col-sm-6">

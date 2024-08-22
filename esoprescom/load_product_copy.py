@@ -4,7 +4,7 @@ import os
 import random
 from django.core.management.base import BaseCommand
 from django.core.files import File
-from shop.models import Product, Category, Image
+from apps.shop.models import Product, Category, Image
 import django
 
 class Command(BaseCommand):

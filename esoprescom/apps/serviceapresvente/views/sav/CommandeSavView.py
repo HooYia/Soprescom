@@ -11,6 +11,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     #commandesavs_list = CommandeSav.objects.prefetch_related('savrequest').all()
     commandesavs_list = CommandeSav.objects.all()   #prefetch_related('savrequest').all()
     paginator = Paginator(commandesavs_list, 8)
@@ -37,6 +39,8 @@ def index(request):
 
 @login_required
 def show(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     commandesav = get_object_or_404(CommandeSav, idcommandesav=id)
     detailformUpd = CommandeSavForm(instance=commandesav)
     return render(request, 'servicedsi/commandesav/formcommandeDetail.html/', 
@@ -78,6 +82,8 @@ def create(request):
 
 @login_required
 def update(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     commandesav = get_object_or_404(CommandeSav, idcommandesav=id)
     print('request.method:',request.method)
     if request.method == 'POST':
@@ -124,6 +130,8 @@ def update(request, id):
 
 @login_required
 def delete(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     commandesav = get_object_or_404(CommandeSav, idcommandesav=id)
     if request.method == 'POST':
         if request.POST.get('_method') == 'DELETE':

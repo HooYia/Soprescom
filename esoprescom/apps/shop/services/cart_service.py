@@ -96,7 +96,7 @@ class CartService:
             #print('result:',result)
         except Exception as e:
             result = {}
-            messages.info(request, 'No Cart Detail Found')
+            messages.info(request, 'No Detail Found')
         return result
 
 

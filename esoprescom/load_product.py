@@ -15,7 +15,7 @@ def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
     django.setup()
     try:
-        from shop.models import Product, Category, Image
+        from apps.shop.models import Product, Category, Image
         categories = list(Category.objects.all())
         print(f"Categogy: {categories}")
         if not categories:

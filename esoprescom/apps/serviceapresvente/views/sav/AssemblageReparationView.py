@@ -12,6 +12,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     assemblagereparation_list = AssemblageReparation.objects.all()
     paginator = Paginator(assemblagereparation_list, 8)
     page = request.GET.get('page', 1)
@@ -33,6 +35,8 @@ def index(request):
 # Les autres fonctions comme show, create, update, delete... 
 
 def show(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     assemblagereparation = get_object_or_404(AssemblageReparation, idassemblage=id)
     detailformUpd = AssemblageReparationForm(instance=assemblagereparation)
     return render(request, 'servicedsi/assemblage/formAssemblageDetail.html', 
@@ -54,6 +58,8 @@ def create(request):
 
 @login_required
 def update(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     assemblagereparation = get_object_or_404(AssemblageReparation, idassemblage=id)
     
     if request.method == 'POST':
@@ -95,6 +101,8 @@ def update(request, id):
 
 @login_required
 def delete(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     suivicommandesav = get_object_or_404(LivraisonClient, idassemblage=id)
     if request.method == 'POST':
         if request.POST.get('_method') == 'DELETE':

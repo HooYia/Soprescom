@@ -9,6 +9,8 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
     cloture_list = ClotureDossier.objects.all()
     paginator = Paginator(cloture_list, 8)
     page = request.GET.get('page', 1)
