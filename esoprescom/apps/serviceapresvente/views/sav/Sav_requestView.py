@@ -6,7 +6,9 @@ from django.contrib import messages
 from apps.serviceapresvente.forms.Sav_requestForm import Sav_requestForm
 from apps.serviceapresvente.forms.Sav_requestUpdForm import Sav_requestUpdForm
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
     sav_requests_list = Sav_request.objects.all()
     paginator = Paginator(sav_requests_list, 8)
@@ -29,11 +31,13 @@ def index(request):
     })
     
 # Les autres fonctions comme show, create, update, delete... 
+@login_required
 def show(request, id):
     sav_request = get_object_or_404(Sav_request, idrequest=id)
     form_detail = Sav_requestForm(sav_request)
     return render(request, 'servicedsi/sav_details.html', {'form_detail': form_detail})
 
+@login_required
 def create(request):
     if request.method == 'POST':
         form = Sav_requestForm(request.POST, request.FILES)
@@ -76,6 +80,7 @@ def create(request):
         return render(request, 'servicedsi/formSavAdd.html', {'form': form})
     
 
+@login_required
 def update(request, id):
     sav_request = get_object_or_404(Sav_request, idrequest=id)
     
@@ -123,6 +128,7 @@ def update(request, id):
         return render(request, 'servicedsi/formSavUpd.html', {'form': form, 
                                                           'sav_request': sav_request})
 
+@login_required
 def delete(request, id):
     sav_request = get_object_or_404(Sav_request, idrequest=id)
     if request.method == 'POST':

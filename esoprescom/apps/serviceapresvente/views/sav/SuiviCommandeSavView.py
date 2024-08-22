@@ -6,7 +6,9 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 from apps.serviceapresvente.forms.SuiviCommandeSavForm import SuiviCommandeSavForm
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
     suivicommandesavs_list = SuiviCommandeSav.objects.all()
     paginator = Paginator(suivicommandesavs_list, 8)
@@ -28,6 +30,7 @@ def index(request):
     })
 # Les autres fonctions comme show, create, update, delete... 
 
+@login_required
 def show(request, id):
     suivicommandesav = get_object_or_404(SuiviCommandeSav, idsuivicommandesav=id)
     detailformUpd = SuiviCommandeSavForm(instance=suivicommandesav)
@@ -47,6 +50,7 @@ def create(request):
         form = SuiviCommandeSavForm()
     return render(request, 'serviceapresvente/suivicommandesavs/suivicommandesav_new.html', {'form': form})
 """
+@login_required
 def update(request, id):
     suivicommandesav = get_object_or_404(SuiviCommandeSav, idsuivicommandesav=id)
     
@@ -92,7 +96,9 @@ def update(request, id):
         form = SuiviCommandeSavForm(instance=suivicommandesav)
     return render(request, 'servicedsi/suivicommandesav/formSuiviCommandeUpd.html', 
                    {'form': form, })
-
+    
+    
+@login_required
 def delete(request, id):
     suivicommandesav = get_object_or_404(SuiviCommandeSav, idsuivicommandesav=id)
     if request.method == 'POST':

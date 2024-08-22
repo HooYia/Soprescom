@@ -70,28 +70,36 @@
                   {% if page == 'savrequest' %}
                       <div class="sub-menu">
                           <ul class="nav nav-tabs " role="tablist">
+                            {% if request.user.is_staff or request.user.is_superuser %}  
+
                               <li class="nav-item">
                                   <a class="nav-link {% if subpage == 'savrequest' %}active{% endif %}" href="{% url 'serviceapresvente:savrequest' %}" role="tab" aria-controls="sub1" aria-selected="true">Sav request</a>
                               </li>
+                              {% elif request.user.is_compta or request.user.is_superuser %}
                               <li class="nav-item">
                                   <a class="nav-link {% if subpage == 'commandesav' %}active{% endif %}" href="{% url 'serviceapresvente:commandesav' %}" role="tab" aria-controls="sub2" aria-selected="true">Achat</a>
                               </li>
+                              {% elif request.user.is_losgistic or request.user.is_superuser %}
                               <li class="nav-item">
                                 <a class="nav-link {% if subpage == 'suivicommandesav' %}active{% endif %}" href="{% url 'serviceapresvente:suivicommandesav' %}" role="tab" aria-controls="sub2" aria-selected="true">Logistique</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link {% if subpage == 'assemblage' %}active{% endif %}" href="{% url 'serviceapresvente:assemblage' %}" role="tab" aria-controls="sub2" aria-selected="true">Assemblage</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link {% if subpage == 'livraison' %}active{% endif %}" href="{% url 'serviceapresvente:livraison' %}" role="tab" aria-controls="sub2" aria-selected="true">Livraison</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link {% if subpage == 'recouvrement' %}active{% endif %}" href="{% url 'serviceapresvente:recouvrement' %}" role="tab" aria-controls="sub2" aria-selected="true">Recouvrement</a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link {% if subpage == 'cloturedossier' %}active{% endif %}" href="{% url 'serviceapresvente:cloture' %}" role="tab" aria-controls="sub2" aria-selected="true">Clôture</a>
-                          </li>
-                          
+                                </li>
+                                {% elif request.user.is_staff or request.user.is_superuser %}
+                                <li class="nav-item">
+                                  <a class="nav-link {% if subpage == 'assemblage' %}active{% endif %}" href="{% url 'serviceapresvente:assemblage' %}" role="tab" aria-controls="sub2" aria-selected="true">Assemblage</a>
+                              </li>
+                              {% elif request.user.is_losgistic or request.user.is_superuser %}
+                              <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'livraison' %}active{% endif %}" href="{% url 'serviceapresvente:livraison' %}" role="tab" aria-controls="sub2" aria-selected="true">Livraison</a>
+                              </li>
+                              {% elif request.user.is_recouvrement or request.user.is_superuser %}
+                              <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'recouvrement' %}active{% endif %}" href="{% url 'serviceapresvente:recouvrement' %}" role="tab" aria-controls="sub2" aria-selected="true">Recouvrement</a>
+                              </li>
+                              {% elif request.user.is_staff or request.user.is_superuser %}
+                              <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'cloturedossier' %}active{% endif %}" href="{% url 'serviceapresvente:cloture' %}" role="tab" aria-controls="sub2" aria-selected="true">Clôture</a>
+                              </li>
+                              {% endif %}
                           </ul>
                       </div>
                   {% elif page == 'leasing' %}

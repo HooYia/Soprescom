@@ -6,7 +6,10 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 from apps.serviceapresvente.forms.LivraisonForm import LivraisonForm
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def index(request):
     livraison_list = LivraisonClient.objects.all()
     paginator = Paginator(livraison_list, 8)
@@ -28,6 +31,7 @@ def index(request):
     })
 # Les autres fonctions comme show, create, update, delete... 
 
+@login_required
 def show(request, id):
     livraison = get_object_or_404(LivraisonClient, idlivraisonclient=id)
     detailformUpd = LivraisonForm(instance=livraison)
@@ -48,6 +52,8 @@ def create(request):
         form = SuiviCommandeSavForm()
     return render(request, 'serviceapresvente/suivicommandesavs/suivicommandesav_new.html', {'form': form})
 """
+
+@login_required
 def update(request, id):
     livraison = get_object_or_404(LivraisonClient, idlivraisonclient=id)
     
@@ -91,6 +97,7 @@ def update(request, id):
     return render(request, 'servicedsi/livraison/formLivraisonUpd.html', 
                    {'form': form, })
 
+@login_required
 def delete(request, id):
     suivicommandesav = get_object_or_404(LivraisonClient, idlivraisonclient=id)
     if request.method == 'POST':

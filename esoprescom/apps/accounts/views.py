@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate,login,logout
 from apps.accounts.forms.CustomUserRegisterForm import CustomUserRegisterForm
 from apps.accounts.forms.CustomUserLoginForm import CustomUserLoginForm
+from django.contrib.auth.decorators import login_required
 
 def sign_in(request):
   if request.user.is_authenticated:
@@ -45,6 +46,7 @@ def sign_up(request):
   
   return render(request,'accounts/signup.html',{'form':form})
 
+@login_required
 def logout_user(request):
   if request.user.is_authenticated:
     logout(request)
