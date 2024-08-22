@@ -4,6 +4,16 @@
 
 {% include "partials/top_page.html" with name=page.name %}
 
-<p> {{page.content}} </p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page_content">
+                <p> {{page.content|safe}} </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% comment %} <p> {{page.content|safe}} </p> {% endcomment %}
 
 {% endblock  %}
