@@ -52,6 +52,9 @@
                   <div class="dashboard_menu">
                       <ul class="nav nav-tabs flex-column" role="tablist">
                         <li class="nav-item">
+                          <a class="nav-link  {% if page == 'dashboard' %}active{% endif %}" id="dashboard-tab"  href="{% url 'serviceapresvente:dashboard' %}" role="tab" aria-controls="dashboard" aria-selected="false"><i class="ti-layout-grid2"></i>Dashboard</a>
+                        </li>
+                        <li class="nav-item">
                           <a class="nav-link  {% if page == 'savrequest' %}active{% endif %}" id="savrequest-tab"  href="{% url 'serviceapresvente:savrequest' %}" role="tab" aria-controls="savrequest" aria-selected="false"><i class="ti-layout-grid2"></i>Gestion SAV</a>
                         </li>
                         <li class="nav-item">
@@ -109,6 +112,21 @@
                               </li>
                               {% endif %}
                           </ul>
+                      </div>
+                      {% elif page == 'dashboard' %}
+                      <div class="sub-menu">
+                        <ul class="nav nav-tabs " role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'sav_tab' %}active{% endif %}" href="{% url "serviceapresvente:dashboard" %}#sav_tab" role="tab" aria-controls="sub1" aria-selected="true">SAV</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'leasing_tab' %}active{% endif %}" href="{% url "serviceapresvente:dashboard_leasing" %}#leasing_tab" role="tab" aria-controls="sub1" aria-selected="true">Leasing </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'instance_tab' %}active{% endif %}" href="{% url "serviceapresvente:dashboard_instance" %}#instance_tab" role="tab" aria-controls="sub1" aria-selected="true">Instance </a>
+                            </li>
+                            
+                        </ul>
                       </div>
                   {% elif page == 'leasing' %}
                     <div class="sub-menu">
@@ -200,6 +218,21 @@
                           {% include "servicedsi/instance_recouvrement/instance_recouvrement.html" %}
                       </div>
                     </div>
+
+                    <!-- Dashboard -->
+                    <div class="tab-content dashboard_content"> 
+                      <div class="tab-pane fade {% if subpage == 'sav_tab' %}active show{% endif %}" id="sav" role="tabpanel" aria-labelledby="sav-tab">
+                        {% include "servicedsi/dashboard/sav.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'leasing_tab' %}active show{% endif %}" id="leasing" role="tabpanel" aria-labelledby="leasing-tab">
+                        {% include "servicedsi/dashboard/leasing.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'instance_tab' %}active show{% endif %}" id="instance" role="tabpanel" aria-labelledby="instance-tab">
+                        {% include "servicedsi/dashboard/instance.html" %}
+                      </div>
+                    </div>
+
+                    
                   </div>
                 </div>
               </div>

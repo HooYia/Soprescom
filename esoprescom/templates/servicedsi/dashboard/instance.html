@@ -1,0 +1,244 @@
+<main>
+    <div class="container-fluid px-4">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Gestion des Instances SOPRESCOM</li>
+        </ol>
+        <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body"> <strong style="font-size: larger;">{{nbre_instance_cloture}} instance(s) cloturé(s)</strong></div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jsinstance" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body"><strong style="font-size: larger;">{{nbre_instance_encour}}</strong>  instance(s) en cour
+                        </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jsinstance" href="#" data-action="fact_depose_non_paye">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body"><strong style="font-size: larger;">{{nbr_facture_paye}}</strong> Facture(s) payée(s) <br>
+                        <strong style="font-size: larger;">Montant:{{nbr_facture_paye_montant}} FCFA</strong></div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jsinstance" href="#" data-action="fact_depose_paye">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body"><strong style="font-size: larger;">{{ nbr_facture_non_paye}}</strong> Facture(s) Non déposée(s) <br> 
+                        <strong style="font-size: larger;">Montant:{{nbr_facture_non_paye_montant}} FCFA</strong> </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jsinstance" href="#" data-action="fact_non_depose_non_paye">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        <strong style="font-size: larger;">Instances Internes SoPresCom</strong>
+                    </div>
+                    <div class="card-body">
+                      <table class="table table-hover  table-striped table-bordered responsive" id="datatable1" >
+                        <thead>
+                          <tr>
+                            <th>Département</th>
+                            <th>Responsable</th>
+                            <th>Status</th>
+                            <th>Nombre</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for item in AggInstanceInterneTab %}
+                            <tr class="detailCustomer" data-status= "Interne" data-dept="{{item.departement}}" data-resp="{{item.responsable}}" onclick="funcDetailInstance.call(this)">
+                              <td>{{ item.departement }}</td>
+                              <td>{{ item.responsable }}</td>
+                              <td>{{ item.status }}</td>
+                              <td>{{ item.status_count }}</td>
+                            </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar me-1"></i>
+                        <strong style="font-size: larger;">Instances Externes SoPresCom</strong>
+
+                    </div>
+                    <div class="card-body">
+                      <table class="table table-hover  table-striped table-bordered responsive" id="datatable2" >
+                        <thead>
+                          <tr >
+                            <th>Département</th>
+                            <th>Responsable</th>
+                            <th>Status</th>
+                            <th>Nombre</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                          {% for item in AggInstanceExterneTab %}
+                            <tr class="detailCustomer" data-status= "Externe" data-dept="{{item.departement}}" data-resp="{{item.responsable}}"  onclick="funcDetailInstance.call(this)">
+                              <td>{{ item.departement }}</td>
+                              <td>{{ item.responsable }}</td>
+                              <td>{{ item.status }}</td>
+                              <td>{{ item.status_count }}</td>
+                             </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+              <!-- Instance interne  -->
+              <div class="card mb-4 hidden" id="int">
+                <div class="card-header " >
+                    <i class="fas fa-table me-1"></i>
+                    <strong style="font-size: larger;">Détails Instances Internes</strong>
+                </div>
+                <div class="card-body">    
+                    <table class="table table-hover  table-striped table-bordered responsive " id="dataTable3">  
+                        <thead>
+                            <tr>
+                                <th>Département</th>
+                                <th>Responsable</th>
+                                <th>Numéro Dossier</th>
+                                <th>Actions</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Date clôture</th>
+                                <th>Observation</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Département</th>
+                                <th>Responsable</th>
+                                <th>Numéro Dossier</th>
+                                <th>Actions</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Date clôture</th>
+                                <th>Observation</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+             </div>
+            <!-- Instance  Externe  -->
+            <div class="card mb-4 hidden" id="ext">
+                <div class="card-header " >
+                    <i class="fas fa-table me-1"></i>
+                    <strong style="font-size: larger;">Détails Instances Externes</strong>
+                </div>
+                <div class="card-body">
+                    <table class=" table table-hover  table-striped table-bordered responsive " id="dataTable4">  
+                        <thead>
+                            <tr>
+                                <th>Departement</th>
+                                <th>Responsable</th>
+                                <th>Numéro Dossier</th>
+                                <th>Actions</th>
+                                <th>Status</th>
+                                <th>Date action</th>
+                                <th>Ref Facture</th>
+                                <th>Montant</th>
+                                <th>Etat paiement</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                               <th>Departement</th>
+                                <th>Responsable</th>
+                                <th>Numéro Dossier</th>
+                                <th>Actions</th>
+                                <th>Status</th>
+                                <th>Date action</th>
+                                <th>Ref Facture</th>
+                                <th>Montant</th>
+                                <th>Etat paiement</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for row in resultAgg %}
+                            <tr>
+                                <td>{{row.type_instance}}</td>
+                                <td>{{row.departement}}</td>
+                                <td>{{row.responsable}}</td>
+                                <td>{{row.numero_dossier}}</td>
+                                <td>{{row.actions}}</td>
+                                <td>{{row.status}}</td>
+                                <td>{{row.date_cloture}}</td>
+                                <td>{{row.facture_reference}}</td>
+                                <td>{{row.facture_montant}}</td>
+                                <td>{{row.facture_paiement}}</td>
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+            <!-- detail facture Agg  -->
+             <div class="card mb-4 hidden" id="agg">   
+                                <div class="card-header " >
+                                    <i class="fas fa-table me-1"></i>
+                                    <strong style="font-size: larger;">Détail Facturation Instance</strong>
+                                    </div>
+                                    <div class="card-body " >
+                                    <table class="table table-hover  table-striped table-bordered responsive" id="dataTable5">  
+                                        <thead>
+                                            <tr>
+                                                <th>date_traitement</th>
+                                                <th>Client</th>
+                                                <th>N° Dossier</th>
+                                                <th>transit</th>
+                                                <th>fact Reference</th>
+                                                <th>fact Transit dhl</th>
+                                                <th>Status</th>
+                                                <th>Etat paiement</th>
+                                                <th>Montant</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>date_traitement</th>
+                                                <th>Client</th>
+                                                <th>N° Dossier</th>
+                                                <th>transit</th>
+                                                <th>fact Reference</th>
+                                                <th>fact Transit dhl</th>
+                                                <th>Status</th>
+                                                <th>Etat paiement</th>
+                                                <th>Montant</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                             </div>
+        </div>
+    </div>
+</main>
