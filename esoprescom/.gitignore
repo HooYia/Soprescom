@@ -5,7 +5,8 @@ venv/
 .env
 db.sqlite3
 
-soprescom_ecommerce.db
-
-
+./soprescom_ecommerce.db
+esoprescom/soprescom_ecommerce.db
+../soprescom_ecommerce.db
 .vscode
+esoprescom/soprescom_ecommerce.db

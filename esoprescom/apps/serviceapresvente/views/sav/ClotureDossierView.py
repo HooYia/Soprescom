@@ -4,7 +4,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def index(request):
     cloture_list = ClotureDossier.objects.all()
     paginator = Paginator(cloture_list, 8)

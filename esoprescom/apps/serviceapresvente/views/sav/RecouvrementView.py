@@ -7,7 +7,10 @@ from django.contrib import messages
 from apps.serviceapresvente.forms.RecouvrementForm import RecouvrementForm
 from apps.serviceapresvente.forms.RecouvrementDeveaForm import RecouvrementDeveaForm
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def index(request):
     recouvrement_list = Recouvrement.objects.all()
     paginator = Paginator(recouvrement_list, 8)
@@ -29,6 +32,7 @@ def index(request):
     })
 # Les autres fonctions comme show, create, update, delete... 
 
+@login_required
 def show(request, id):
     recouvrement = get_object_or_404(Recouvrement, idrecouvrement=id)
     if recouvrement.is_devea_request:
@@ -52,6 +56,8 @@ def create(request):
         form = SuiviCommandeSavForm()
     return render(request, 'serviceapresvente/suivicommandesavs/suivicommandesav_new.html', {'form': form})
 """
+
+@login_required
 def update(request, id):
     recouvrement = get_object_or_404(Recouvrement, idrecouvrement=id)
     
@@ -96,6 +102,7 @@ def update(request, id):
     return render(request, 'servicedsi/recouvrement/formRecouvrementUpd.html', 
                    {'form': form, })
 
+@login_required
 def delete(request, id):
     suivicommandesav = get_object_or_404(LivraisonClient, idrecouvrement=id)
     if request.method == 'POST':

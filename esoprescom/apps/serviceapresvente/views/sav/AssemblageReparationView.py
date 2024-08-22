@@ -6,7 +6,11 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 from apps.serviceapresvente.forms.AssemblageReparationForm import AssemblageReparationForm
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
+
+
+@login_required
 def index(request):
     assemblagereparation_list = AssemblageReparation.objects.all()
     paginator = Paginator(assemblagereparation_list, 8)
@@ -47,6 +51,8 @@ def create(request):
         form = SuiviCommandeSavForm()
     return render(request, 'serviceapresvente/suivicommandesavs/suivicommandesav_new.html', {'form': form})
 """
+
+@login_required
 def update(request, id):
     assemblagereparation = get_object_or_404(AssemblageReparation, idassemblage=id)
     
@@ -87,6 +93,7 @@ def update(request, id):
     return render(request, 'servicedsi/assemblage/formAssemblageUpd.html', 
                    {'form': form, })
 
+@login_required
 def delete(request, id):
     suivicommandesav = get_object_or_404(LivraisonClient, idassemblage=id)
     if request.method == 'POST':

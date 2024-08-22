@@ -6,7 +6,10 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 from apps.serviceapresvente.forms.CommandeSavForm import CommandeSavForm
 from django.db import IntegrityError
+from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def index(request):
     #commandesavs_list = CommandeSav.objects.prefetch_related('savrequest').all()
     commandesavs_list = CommandeSav.objects.all()   #prefetch_related('savrequest').all()
@@ -31,6 +34,8 @@ def index(request):
     })
 # Les autres fonctions comme show, create, update, delete... 
 
+
+@login_required
 def show(request, id):
     commandesav = get_object_or_404(CommandeSav, idcommandesav=id)
     detailformUpd = CommandeSavForm(instance=commandesav)
@@ -70,6 +75,8 @@ def create(request):
     return render(request, 'servicedsi/', {'form': form})
 """
 
+
+@login_required
 def update(request, id):
     commandesav = get_object_or_404(CommandeSav, idcommandesav=id)
     print('request.method:',request.method)
@@ -115,6 +122,7 @@ def update(request, id):
     return render(request, 'servicedsi/commandesav/formCommandeUpd.html', 
                    {'form': form, })
 
+@login_required
 def delete(request, id):
     commandesav = get_object_or_404(CommandeSav, idcommandesav=id)
     if request.method == 'POST':
