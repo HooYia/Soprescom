@@ -8,6 +8,7 @@ from apps.serviceapresvente.models.Client_sav  import Client_sav
 from apps.serviceapresvente.models.Partenaires import Partenaires
 from django.utils.translation import gettext_lazy as _  
 from django.core.validators import MaxLengthValidator
+from django.db.models import Max
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -36,6 +37,7 @@ class Sav_request(models.Model):
     type_sav =  models.CharField(max_length=20,verbose_name =_('Type SAV'),
                                     choices=Type_sav.choices,default=Type_sav.devea)
     numero_dossier = models.CharField(verbose_name =_('N° de Dossier'),unique=True, max_length=30,null=False, blank=False,db_index=True)
+    numero_fiche_technique = models.CharField(verbose_name =_('N° de Fiche Technique'),unique=True, max_length=30,null=True, blank=True,db_index=True)
     marque = models.ForeignKey(Partenaires, on_delete=models.PROTECT,null=True)
     client_sav = models.ForeignKey(Client_sav, on_delete=models.SET_NULL,null=True,blank=True)
     resp_sav = models.ForeignKey(Personnels, on_delete=models.SET_NULL, null=True, blank=True)
@@ -63,6 +65,15 @@ class Sav_request(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
     
+    def save(self, *args, **kwargs):
+        if not self.numero_dossier:
+            last_dossier = Sav_request.objects.aggregate(Max('idrequest'))['idrequest__max'] or 0
+            new_dossier_id = last_dossier + 1
+            self.numero_dossier = f'SAV_{new_dossier_id:010d}'
+
+        super(Sav_request, self).save(*args, **kwargs)
+
+        
     def __str__(self) -> str:
        return  f"{self.client_sav}: {self.numero_dossier}"
 

@@ -1,6 +1,10 @@
-  <div class="card mb-3" style="max-width: 1800px;">
+<div>
+  <div class="card mb-3">
+    <div>
+      <div>
+        <div>
           <div class="row g-0">
-            <div class="col-md-5">
+            <div class="col-md-4">
               <div id="imageContainer{{suivicommandesav.idsuivicommandesav}}">
                 {% if suivicommandesav.commandesav.savrequest.rapport_technique %} 
                     <img src="{{ suivicommandesav.commandesav.savrequest.rapport_techniqueUrl }}" class="img-fluid rounded-start" alt="Rapport Technique" onclick="zoomImage(this)">
@@ -17,23 +21,26 @@
                 <button class="btn btn-secondary" onclick="changeImage('next', {{ suivicommandesav.idsuivicommandesav }})">Suivant</button>
               </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-8">
               <div class="card-body">
                 <div class="row">
                   <div class="col-sm-6">
-                    <div class="card ">
-                    <div class="card-header text center">
-                    <strong> Info du Client</strong>
-                    </div>
-                      <div class="card-body">
-                        <p class="card-text"><strong>Nom du client:</strong> {{ suivicommandesav.commandesav.savrequest.client_sav }}</p>
-                        <p class="card-text"><strong>Email:</strong> {{ suivicommandesav.commandesav.savrequest.client_sav.email }}</p>
-                        <p class="card-text"><strong>Adresse:</strong> {{ suivicommandesav.commandesav.savrequest.client_sav.adresse }}</p>
-                        <p class="card-text"><strong>Téléphone:</strong> {{ suivicommandesav.commandesav.savrequest.client_sav.telephone }}</p>
-                        <p class="card-text"><strong>Resp du dossier:</strong> {{ suivicommandesav.commandesav.savrequest.resp_sav }}</p>
-                      </div>
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <strong>Info du Client</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="overflow-auto"> <!-- Bootstrap class to allow content to be scrollable -->
+                                <p class="card-text"><strong>Nom du client:</strong> {{ suivicommandesav.commandesav.savrequest.client_sav }}</p>
+                                <p class="card-text"><strong>Email:</strong> {{ suivicommandesav.commandesav.savrequest.client_sav.email }}</p>
+                                <p class="card-text"><strong>Adresse:</strong> {{ suivicommandesav.commandesav.savrequest.client_sav.adresse }}</p>
+                                <p class="card-text"><strong>Téléphone:</strong> {{ suivicommandesav.commandesav.savrequest.client_sav.telephone }}</p>
+                                <p class="card-text"><strong>Resp du dossier:</strong> {{ suivicommandesav.commandesav.savrequest.resp_sav }}</p>
+                            </div>
+                        </div>
                     </div>
                   </div>
+                </div>
                   <div class="col-sm-6">
                     <div class="card ">
                     <div class="card-header text-center">

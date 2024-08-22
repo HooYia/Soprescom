@@ -16,8 +16,18 @@
                         <strong> Info du Client</strong>
                         </div>
                         <div class="card-body">
+                          {% comment %} <p class="card-text">
+                              <strong>Numero dossier:</strong>
+                              <input type="text" class="form-control" name="numero_dossier" value="{{ form.instance.numero_dossier }}" disabled>
+                          </p>
+                           {% endcomment %}
+                           {% comment %} <p class="card-text">
+                            <strong>Numero de Dossier:</strong> {{ form.numero_dossier }}
+                            
+                          </p> {% endcomment %}
                           <p class="card-text">
-                            <strong>Numero dossier:</strong> {{ form.numero_dossier }}
+                            <strong>Numero de Fiche Technique:</strong> {{ form.numero_fiche_technique }}
+                            
                           </p>
                           <div class="d-flex align-items-center mb-2">
                             <p class="card-text mr-2">
@@ -166,6 +176,7 @@ $(document).ready(function() {
            controlRadioBtn = true
            factureFournisseurInput.disabled = false;
            factureProformaInput.disabled = false;
+           rapportTechniqueInput.disabled = false;
            factureFournisseurInput.required = true;
            factureProformaInput.required = true;
            rapportTechniqueInput.required = true;
@@ -174,6 +185,7 @@ $(document).ready(function() {
            controlRadioBtn = false
            factureFournisseurInput.disabled = true;
            factureProformaInput.disabled = true;
+           rapportTechniqueInput.disabled = true;
            factureFournisseurInput.required = false;
            factureProformaInput.required = false;
            rapportTechniqueInput.required = false;
@@ -188,6 +200,8 @@ $(document).ready(function() {
   const idGarantieSelect = document.querySelector('select#id_garantie');
   const idTypeSAVSelect = document.querySelector('select#id_type_SAV');
   const recouvrementHPDiv = document.querySelector('input#id_recouvrement_hp');
+
+  console.log('Selected Garantie:', idGarantieSelect);
   
   function updateRecouvrementHP() {
     
@@ -198,8 +212,8 @@ $(document).ready(function() {
             recouvrementHPDiv.setAttribute('disabled', true);
             recouvrementHPDiv.setAttribute('checked', true) 
               } else {
-            recouvrementHPDiv.setAttribute('disabled', true);
-            recouvrementHPDiv.removeAttribute('checked', true) 
+            recouvrementHPDiv.setAttribute('disabled');
+            recouvrementHPDiv.removeAttribute('checked'); 
             }
         }
 
@@ -209,6 +223,7 @@ $(document).ready(function() {
   // Initial call to set the correct state on page load
 
   updateRecouvrementHP();
+
 /*********** control formulaire **************/
 // Fonction de validation du formulaire
 /*const validateForm = () => {

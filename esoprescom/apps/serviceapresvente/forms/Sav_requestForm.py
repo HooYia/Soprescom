@@ -35,11 +35,12 @@ class Sav_requestForm(forms.ModelForm):
  
     class Meta:
         model = Sav_request
-        fields = ('type_sav', 'numero_dossier', 'marque', 'client_sav', 'resp_sav', 'numero_serie', 'reference', 'designation', 'garantie', 'description_piece', 'reference_piece', 'pop', 'statut', 'observation',  'rapport_technique', 'facture_fournisseur', 'facture_proforma', 'bon_pour_accord','recouvrement_hp')
-
+        fields = ('type_sav',  'numero_fiche_technique', 'marque', 'client_sav', 'resp_sav', 'numero_serie', 'reference', 'designation', 'garantie', 'description_piece', 'reference_piece', 'pop', 'statut', 'observation',  'rapport_technique', 'facture_fournisseur', 'facture_proforma', 'bon_pour_accord','recouvrement_hp')
+        # exclude = ['numero_dossier']
         widgets = {
             'type_sav': forms.RadioSelect(attrs={'class': 'form-check form-check-inline', 'id': 'id_type_SAV'}),
-            'numero_dossier' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
+            'numero_fiche_technique' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
+            # 'numero_dossier' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
             'numero_serie' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
             'reference' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
             'designation' : forms.TextInput(attrs={'class': 'form-control custom-text-input'}),
