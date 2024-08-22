@@ -1,0 +1,507 @@
+{% load static %}
+
+
+
+
+    <div class="container-fluid px-">
+            {% comment %} {% include "home/modalForm.html" %} {% endcomment %}
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Dashboard SAV du <strong>{{date_old_days_ago}}</strong> au <strong>{{today_date}}</strong></li>
+            </ol>
+        
+
+        <!--  Data Aggrégation -->
+        <div class="row">
+            <div class="col-xl-6 col-md-6 ">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body" id="diagnostic_interne"><strong style="font-size: larger;">{{nbr_sav}}</strong> <strong> SAV en cour de traitement</strong>
+                      </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jscommun" href="#"  data-param="Diagnostic interne" id="iddashboard-ajax">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body" id ="facture_paye"><strong style="font-size: larger;">{{nbr_sav_cloture}}</strong> <strong> SAV cloturé(s) </strong>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link jsfacture" href="#" data-action="fact_paye">View Details</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+            <!--  Instance-->
+
+            <div class="col-xl-6 col-md-6 hidden">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body" id ="facture_paye"><strong style="font-size: larger;">{{dossierClotute}}</strong> <strong> Instance en cour(s) </strong>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link jsfacture" href="#" data-action="fact_paye">View Details</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-xl-6 col-md-6 hidden">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body" id ="facture_paye"><strong style="font-size: larger;">{{dossierClotute}}</strong> <strong> Instances cloturée(s) </strong>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link jsfacture" href="#" data-action="fact_paye">View Details</a>
+                            <div class="small text-white"><i class="fas fa-angle-right"></i>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+
+            <!--  Data Detail-->
+        <div class="row">
+            
+                {% comment %} <div class="col-xl-6 hidden">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-area me-1"></i>
+                            <strong style="font-size: larger;"> SAV SoPresCom</strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-hover  table-striped table-bordered responsive" id="id_savagg">
+                                <thead>
+                                <tr>
+                                    <th>Type SAV</th>
+                                    <th>Responsable</th>
+                                    <th>Status</th>
+                                    <th>Nombre</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% if detail_status_sav %} 
+                                    {% for item in detail_status_sav %}
+                                    <tr class="detailsavstatus" data-status='{{item.status}}'  data-resp='{{item.resp_sav}}' 
+                                    onclick="funcDetail.call(this)">
+                                        <td>{{ item.type_sav }}</td>
+                                        <td>{{ item.resp_sav_name }}</td>
+                                        <td>{{ item.status }}</td>
+                                        <td>{{ item.status_count }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+                <div class="col-xl-6 mb-4">
+                    <div class="card card-header-actions h-100">
+                        <div class="card-header">
+                            Progress Tracker
+                            <div class="dropdown no-caret">
+                                {% comment %} <button class="btn btn-transparent-dark btn-icon dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="text-gray-500" data-feather="more-vertical"></i></button> {% endcomment %}
+                                {% comment %} <div class="dropdown-menu dropdown-menu-end animated--fade-in-up" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-icon"><i class="text-gray-500" data-feather="list"></i></div>
+                                        Manage Tasks
+                                    </a>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-icon"><i class="text-gray-500" data-feather="plus-circle"></i></div>
+                                        Add New Task
+                                    </a>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-icon"><i class="text-gray-500" data-feather="minus-circle"></i></div>
+                                        Delete Tasks
+                                    </a>
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="card-body " style="font-size: larger;">
+                           
+                            <h4 class="small">
+                                {{diagnostiqueinterne}} Diagnostique(s) interne(s)
+                                <span class="float-end fw-bold">20%</span>
+                            </h4>
+                            <div class="progress mb-2"><div class="progress-bar bg-primary" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            <!---->
+                            <h4 class="small">
+                                {{validationfactureclient}} Validation(s) facture(s) client(s)
+                                <span class="float-end fw-bold">30%</span>
+                            </h4>
+                            <div class="progress mb-2"><div class="progress-bar bg-secondary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            <!---->
+                            <h4 class="small">
+                            {{commandeFournisseur}} Commande(s) Fournisseur(s)
+                                <span class="float-end fw-bold">40%</span>
+                            </h4>
+                            <div class="progress mb-2"><div class="progress-bar bg-secondary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            <!---->
+                            <h4 class="small">
+                               {{commandeFournisseurplacee}}  Commande(s) Fournisseur(s) placée(s)
+                                <span class="float-end fw-bold">50%</span>
+                            </h4>
+                            <div class="progress mb-2"><div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            <!---->
+                            <h4 class="small">
+                                {{eninstanceAssemblage}} En instance d'Assemblage
+                                <span class="float-end fw-bold">60%</span>
+                            </h4>
+                            <div class="progress mb-2"><div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            <!---->
+                            <h4 class="small">
+                                {{eninstancedelivraison}} En instance de livraison
+                                <span class="float-end fw-bold">70%</span>
+                            </h4>
+                            <div class="progress mb-2"><div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            <!---->
+                            <h4 class="small">
+                                {{eninstancederecouvrement}} En instance de recouvrement
+                                <span class="float-end fw-bold">80%</span>
+                            </h4>
+                            <div class="progress mb-2"><div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
+                            <!---->
+                            <h4 class="small">
+                                {{dossierClotute}} Dossier(s) Clôtuté(s)
+                               <span class="float-end fw-bold">Complete!</span>
+                            </h4>
+                            <div class="progress mb-2"><div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>
+                       
+                        </div>
+                        <div class="card-footer position-relative">
+                            <div class="d-flex align-items-center justify-content-between small text-body">
+                                <a class="stretched-link text-body" href="#!">Visit Task Center</a>
+                                <i class="fas fa-angle-right"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar me-1"></i>
+                            SAV par Client SopreCom  
+                        </div>
+                    
+                        <div class="card-body">
+                            <table class="table table-hover display table-striped table-bordered responsive" style="width:100%" id="id_clientagg">
+                                <thead>
+                                <tr>
+                                    <th>Client</th>
+                                    <th>Resp SAV</th>
+                                    <th>Status</th>
+                                    <th>Nombre</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% if client_agg %} 
+                                    {% for item in client_agg %}
+                                    <tr class="detailsavstatus" data-status='{{item.status}}'  data-resp='{{item.resp_sav}}'  
+                                    onclick="funcDetail.call(this)">
+                                        <td>{{ item.client_name }}</td>
+                                        <td>{{ item.resp_sav_name }}</td>
+                                        <td>{{ item.status }}</td>
+                                        <td>{{ item.status_count }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden col-xl-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar me-1"></i>
+                            Instances SopreCom  
+                        </div>
+                    
+                        <div class="card-body">
+                            <table class="table table-hover display table-striped table-bordered responsive" id="id_instanceagg">
+                                <thead>
+                                <tr>
+                                    <th>Type Instance</th>
+                                    <th>Responsable</th>
+                                    <th>Status</th>
+                                    <th>Nombre</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </div>
+            <!--  Données Sav et facturation-->
+        <div class="row"> 
+            
+                <div class="card mb-4 " id="sav">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Détail SAV 
+                        </div>
+                        <div class="card-body">
+                            <!-- <table id="datatablesSimple">  -->   
+                            <table class="table table-hover  table-striped display table-bordered responsive" style="width:100%" id="id_savdetail">  
+                                <thead>
+                                    <tr>
+                                        <th>Date reception</th>
+                                        <th>N° dossier</th>
+                                        <th>Client</th>
+                                        <th>Resp Dossier</th>
+                                        <th>Description</th>
+                                        <th>Garantie</th>
+                                        <th>Status</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Date reception</th>
+                                        <th>N° dossier</th>
+                                        <th>Client</th>
+                                        <th>Resp Dossier</th>
+                                        <th>Description</th>
+                                        <th>Garantie</th>
+                                        <th>Status</th>
+                                        <th>actions</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                
+        
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            
+                <div class="card mb-4 hidden" id="facture" >
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Données Facturation
+                            </div>
+                            <div class="card-body">
+                                <!-- <table id="datatablesSimple">  -->   
+                                <table class="table table-hover  table-striped table-bordered display responsive" style="width:100%" id="dataTable_facture">  
+                                    <thead>
+                                        <tr>
+                                        <th>date_traitement</th>
+                                        <th>Client</th>
+                                        <th>N° dossier</th>
+                                        <th>type_sav</th>
+                                        <th>facture_reference</th>
+                                        <th>facture_montant</th>
+                                        <th>facture_status</th>
+                                        <th>facture_paiement</th>
+                                        
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>date_traitement</th>
+                                            <th>Client</th>
+                                            <th>N° dossier</th>
+                                            <th>type_sav</th>
+                                            <th>facture_reference</th>
+                                            <th>facture_montant</th>
+                                            <th>facture_status</th>
+                                            <th>facture_paiement</th>
+                                        
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                            
+                                    </tbody>
+                                </table>
+                            </div>
+                </div>
+        </div>
+   </div>
+   
+   <!-- Specific Page JS goes HERE  -->
+
+<script src='https://code.jquery.com/jquery-3.7.1.js'></script>
+<script src='https://cdn.datatables.net/2.1.4/js/dataTables.js'></script>
+<script>
+    $('#id_savagg,#id_clientagg, #id_instanceagg, #id_savdetail').DataTable({
+      lengthMenu: [5,10, 15,20],
+      order: [[3, 'desc']],
+      pageLength:10 
+   });
+</script>
+
+<script>
+
+    new DataTable('#example', {
+        order: [[3, 'desc']]
+    });
+
+</script>
+
+<script>
+    function funcDetail(){
+        var etat = $(this).attr('data-status');
+        var resp = $(this).attr('data-resp');
+        
+        //console.log('etat: ',etat);  
+        // Envoi du paramètre à la vue Django via une requête AJAX
+        $.ajax({
+            url: '/loadJsonSavDashboard/',  
+            type: 'GET',
+            data: { 
+                'etat': etat, 
+                'resp': resp,
+            },
+            dataType: 'json',
+            success: function(data) {
+                //console.log("responseJson",data);
+                var dataTable = $('#id_savdetail').DataTable();
+                // Supprimez les données existantes dans le tableau e
+                dataTable.clear();
+                var detail_data= data.details;
+                //console.log('detail_data',detail_data)
+                for (var i = 0; i < detail_data.length; i++) {
+                    // Ajoutez une classe CSS à la ligne en fonction de la e 'facture_status'
+                    var row = detail_data[i];
+                    var statusClass = row.status === 'Décision DG' ? 'table-warning' : '';
+                    if (statusClass.trim() !== '') {  
+                        dataTable.row.add([
+                            row.date_reception,
+                            row.numero_dossier,
+                            row.client,
+                            row.responsable,
+                            row.description,
+                            row.garantie,
+                            row.status,
+                            '<button class="btn  btn-icon btn-transparent-dark me-2" id="edit_'+row.idrequest+'" data-rowId="'+row.idrequest+'" data_clientId= "'+row.client_id +'"onclick="funcDetailRequest.call(this)"><i class="fa fa-ellipsis-v"></i></button>' +
+                            '<button class="btn  btn-icon btn-danger " id="del_'+row.idrequest+'" data-rowId="'+row.idrequest+'"><i class="fa fa-trash-can"></i></button>'
+                            ]).node().classList.add(statusClass); 
+                        } else {
+                            dataTable.row.add([
+                            row.date_reception,
+                            row.numero_dossier,
+                            row.client,
+                            row.responsable,
+                            row.description,
+                            row.garantie,
+                            row.status,
+                            '<button class="btn  btn-icon btn-transparent-dark me-2" id="edit_'+row.idrequest+'" data-rowId="'+row.idrequest+'"  data_clientId= "'+row.client_id+'"  onclick="funcDetailRequest.call(this)"><i class="fa fa-ellipsis-v"></i></button>' +
+                            '<button class="btn  btn-icon btn-danger " id="del_'+row.idrequest+'" data-rowId="'+row.idrequest+'"><i class="fa fa-trash-can"></i></button>'
+                            ])
+                            }
+                        }
+                dataTable.draw()   
+            }, error: function(error) {
+                    console.error('Erreur :', error);
+                }
+           });
+        }
+        </script>
+<script>
+    function funcDetailRequest(){
+        var rowId = $(this).attr('data-rowId');
+        var clientId = $(this).attr('data_clientId');
+        //console.log('clientId',clientId);
+        //console.log('rowId',rowId);
+        $.ajax({
+            url: '/loadJsonSavDashboardDetail/',  
+            type: 'GET',
+            data: { 
+                'rowId': rowId, 
+                'clientId':clientId,
+                 },
+            dataType: 'json',
+            success: function(data) {
+               console.log("responseJson",data)
+               console.log("cloture_json",data.cloture_json)
+               // Traitez les données JSON ici
+               var facturationData = JSON.parse(data.facturation_json);
+               var commandesPiecesData = JSON.parse(data.commandes_pieces_json);
+               var suiviCommandesData = JSON.parse(data.suivi_commandes_json);
+               var assemblageData = JSON.parse(data.assemblage_json);
+               var controlData = JSON.parse(data.control_json);
+               var livraisonData = JSON.parse(data.livraison_json);
+               var recouvrementData = JSON.parse(data.recouvrement_json);
+               var clotureData = JSON.parse(data.cloture_json);
+
+               var nbresavData = JSON.parse(data.nbr_client_sav);
+               var nbresavClotureData = JSON.parse(data.nbr_client_sav_cloture);
+
+               var nbr_facture_payeData = JSON.parse(data.nbr_facture_paye);
+               var montant_facture_payeData = JSON.parse(data.montant_facture_paye);
+               var nbr_facture_non_payeData = JSON.parse(data.nbr_facture_non_paye);
+               var montant_facture_non_payeData = JSON.parse(data.montant_facture_non_paye);
+                // Une fois les données traitées, utilisez-les pour peupler le formulaire    modal
+               populateModal(facturationData, commandesPiecesData, suiviCommandesData,   assemblageData, controlData,livraisonData,recouvrementData,clotureData,nbresavData,nbresavClotureData,nbr_facture_payeData,montant_facture_payeData,nbr_facture_non_payeData,montant_facture_non_payeData);
+
+                                     
+            }, error: function(error) {
+                    console.error('Erreur :', error);
+                }
+           });
+    }
+    
+   function populateModal(facturationData, commandesPiecesData, suiviCommandesData, assemblageData, controlData,livraisonData,recouvrementData,clotureData,nbresavData,nbresavClotureData,nbr_facture_payeData,montant_facture_payeData,nbr_facture_non_payeData,montant_facture_non_payeData) {
+    // Utilisez les données pour remplir les champs du formulaire modal
+    // Par exemple, vous pouvez utiliser jQuery pour injecter les données dans les champs HTML
+    //$('#form-container').html(data);
+    $('#myModal').modal('show');
+    ///////Facture
+    var facture_date= facturationData[0].fields.date_facturation;
+    console.log('Facture date: ',facture_date);
+    $('#fact_date').text(facturationData[0].fields.date_facturation);
+    //$('#fact_date').html(facturationData[0].fields.date_facturation);
+    $('#fact_ref').text(facturationData[0].fields.reference_facture);
+    $('#fact_montant').html(facturationData[0].fields.montant);
+    var bpa = facturationData[0].fields.bon_pour_accord
+    if (bpa === true) {
+        bpa = 'validé'
+    } else { bpa = 'Non Validé'}
+    $('#fact_bpa').html(bpa);
+    $('#fact_etat').html(facturationData[0].fields.est_paye);
+    
+    // Commande. 
+    $('#commande_date').text(commandesPiecesData[0].fields.date_commande);
+    $('#commande_piece').text(commandesPiecesData[0].fields.pieces_commandees);
+    $('#commande_fournisseur').text(commandesPiecesData[0].fields.fournisseur);
+    $('#commande_facturefournisseur').text(commandesPiecesData[0].fields.facture_fournisseur);
+    $('#commande_nbrejrlivraison').text(commandesPiecesData[0].fields.nombre_jour);
+    
+    // Suivi Commande.
+    $('#suivicommande_date').text(suiviCommandesData[0].fields.date_mise_a_jour);
+    $('#suivicommande_statut').text(suiviCommandesData[0].fields.statut);
+    
+    // Suivi Commande.
+   /* $('#receptioncommande_date').text(suiviCommandesData[0].fields.date_reception);
+    $('#receptioncommande_statut').text(suiviCommandesData[0].fields.statut);
+    $('#receptioncommande_Transitaire').text(suiviCommandesData[0].fields.transitaire); */
+
+    // Assemblage.
+    $('#assemblage_datedebut').text(assemblageData[0].fields.date_debut);
+    $('#assemblage_datefin').text(assemblageData[0].fields.date_fin);
+    $('#assemblage_statut').text(assemblageData[0].fields.statut);
+    $('#assemblage_controle').text(controlData[0].fields.est_conforme);
+    
+    // livraison recouvrement Cloture.
+    $('#livraison_date').text(livraisonData[0].fields.date_livraison);
+    $('#livraison_statut').text(livraisonData[0].fields.statut);
+    $('#recouvrement_date').text(recouvrementData[0].fields.date_recouvrement);
+    $('#recouvrement_statut').text(recouvrementData[0].fields.est_recouvre);
+    $('#cloture_date').text(clotureData[0].fields.date_cloture);
+    $('#cloture_statut').text(clotureData[0].fields.cloture_dossier);
+    
+    // Agg global
+    $('#id_instance_resolu').text(nbresavClotureData);
+    $('#id_instance_non_resolu').text(nbresavData);
+
+    $('#id_nbrepaye').text(nbr_facture_payeData);
+    $('#id_montantpaye').text(montant_facture_payeData);
+    $('#id_nbreimpaye').text(nbr_facture_non_payeData);
+    $('#id_montantimpaye').text(montant_facture_non_payeData);
+}
+
+    </script>

@@ -3,6 +3,8 @@ from django.urls import path
 #from .views.sav import Commandesav_views, Savrequest_views,Suivicommandesav_views
 from .views.leasing import Leasing_views
 
+from .views.sav import dashboard
+
 from .views.sav import Sav_requestView,CommandeSavView, \
                    SuiviCommandeSavView,AssemblageReparationView, \
                    LivraisonView,RecouvrementView,ClotureDossierView
@@ -12,6 +14,14 @@ from .views.instance import InstanceViews,InstancerecouvViews
 app_name = 'serviceapresvente'
 
 urlpatterns = [
+    
+    #dashboard
+    path('dashboard', dashboard.dashboard, name='dashboard'),
+    path('dashboard_sav', dashboard.dashboard_sav, name='dashboard_sav'),
+    path('dashboard_leasing', dashboard.dashboard_leasing, name='dashboard_leasing'),
+    path('dashboard_instance', dashboard.dashboard_instance, name='dashboard_instance'),
+    
+    
     #Gestion SAV
     #path('', Savrequest_views.index, name='sav'),
     #Sav Request
