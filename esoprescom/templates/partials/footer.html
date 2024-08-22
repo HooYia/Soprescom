@@ -42,12 +42,11 @@
                  <div  class="widget">
                      <h6  class="widget_title">Category</h6>
                      <ul  class="widget_links">
-                         <li ><a  href="#">Men</a></li>
-                         <li ><a  href="#">Woman</a></li>
-                         <li ><a  href="#">Kids</a></li>
-                         <li ><a  href="#">Best Saller</a>
+                         <li ><a  href="/#special-tab">Special Offer</a></li>
+                         <li ><a  href="/#featured-tab">Featured</a></li>
+                         <li ><a  href="/#sellers-tab">Best Saller</a>
                          </li>
-                         <li ><a  href="#">New Arrivals</a>
+                         <li ><a  href="/#arrival-tab">New Arrivals</a>
                          </li>
                      </ul>
                  </div>
@@ -57,13 +56,12 @@
                      <h6  class="widget_title">My Account</h6>
                      <ul  class="widget_links">
                          <li ><a  routerlink="account"
-                                 ng-reflect-router-link="account" href="/account">My Account</a></li>
-                         <li ><a  routerlink="terms"
-                                 ng-reflect-router-link="terms" href="/terms">Terms</a></li>
+                                 ng-reflect-router-link="account" href="{% url 'dashboard:account-detail' %}">My Account</a></li>
+                        
                          <li ><a  routerlink="signin"
-                                 ng-reflect-router-link="signin" href="/signin">SignIn</a></li>
+                                 ng-reflect-router-link="signin" href="{% url 'accounts:sign_in'%}">SignIn</a></li>
                          <li ><a  routerlink="signup"
-                                 ng-reflect-router-link="signup" href="/signup">Signup</a></li>
+                                 ng-reflect-router-link="signup" href="{% url 'accounts:sign_up'%}">Signup</a></li>
                      </ul>
                  </div>
              </div>

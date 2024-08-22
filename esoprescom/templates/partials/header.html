@@ -146,7 +146,7 @@
                                  {% endfor %}
                                  
                              </ul>
-                             <div  class="d-lg-flex menu_banners row g-3 px-3">
+                             {% comment %} <div  class="d-lg-flex menu_banners row g-3 px-3">
                                  {% for collection in request.session.my_navcollection  %}
                                     <div  class="col-sm-4">
                                      <div  class="header-banner">
@@ -161,7 +161,23 @@
                                      </div>
                                  </div>
                                 {% endfor %}
-                                </div>
+                                </div> {% endcomment %}
+
+                                {% comment %} <div class="container px-3">
+                                <div class="row g-3">
+                                    {% for collection in request.session.my_navcollection %}
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="card">
+                                            <img src="{{ collection.imageUrl }}" class="card-img-top" alt="{{ collection.title }}">
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">{{ collection.description }}</h6>
+                                                <h5 class="card-title">{{ collection.title }}</h5>
+                                                <a href="{{ collection.button_link }}" class="btn btn-primary">{{ collection.button_text }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div> {% endcomment %}
                          </div>
                      </li>
                      <li  class="dropdown dropdown-mega-menu">

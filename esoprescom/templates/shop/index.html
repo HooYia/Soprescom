@@ -41,48 +41,62 @@
                              </a></li>
                      </ul>
                  </div>
-                 <div  class="tab-content">
-                     <div  id="arrival" role="tabpanel" aria-labelledby="arrival-tab"
-                         class="tab-pane fade show active">
-                         <div  class="row shop_container">
-                            {% for product in new_arrival %}
-                             <div  class="col-lg-3 col-md-4 col-6">
-                                 {% include "partials/product.html" with product=product %}
-                             </div>
-                             {% endfor %}
-                         </div>
-                     </div>
-                     <div  id="sellers" role="tabpanel" aria-labelledby="sellers-tab"
-                         class="tab-pane fade">
-                         <div  class="row shop_container">
-                            {% for product in best_sellers %}
-                            <div  class="col-lg-3 col-md-4 col-6">
-                                {% include "partials/product.html" with product=product %}
-                            </div>
-                            {% endfor %}                             
-                         </div>
-                     </div>
-                     <div  id="featured" role="tabpanel"
-                         aria-labelledby="featured-tab" class="tab-pane fade">
-                         <div  class="row shop_container">
-                            {% for product in featured %}
-                            <div  class="col-lg-3 col-md-4 col-6">
-                                {% include "partials/product.html" with product=product %}
-                            </div>
-                            {% endfor %} 
-                         </div>
-                     </div>
-                     <div  id="special" role="tabpanel" aria-labelledby="special-tab"
-                         class="tab-pane fade">
-                         <div  class="row shop_container">
-                            {% for product in special_offer %}
-                            <div  class="col-lg-3 col-md-4 col-6">
-                                {% include "partials/product.html" with product=product %}
-                            </div>
-                            {% endfor %} 
-                         </div>
-                     </div>
-                 </div>
+                <div class="tab-content">
+                    <!-- New Arrival Tab -->
+                    <div id="arrival" role="tabpanel" aria-labelledby="arrival-tab" class="tab-pane fade show active">
+                        <div class="row shop_container">
+                            {% for product in new_arrival.object_list %}
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    {% include "partials/product.html" with product=product %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- Pagination controls for new arrivals -->
+                        {% include "partials/pagination-index.html" with page_obj=new_arrival page_type='new_arrival' %}
+                    </div>
+
+                    <!-- Best Sellers Tab -->
+                    <div id="sellers" role="tabpanel" aria-labelledby="sellers-tab" class="tab-pane fade">
+                        <div class="row shop_container">
+                            {% for product in best_sellers.object_list %}
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    {% include "partials/product.html" with product=product %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- Pagination controls for best sellers -->
+                        {% include "partials/pagination-index.html" with page_obj=best_sellers page_type='best_sellers' %}
+                    </div>
+
+                    <!-- Featured Tab -->
+                    <div id="featured" role="tabpanel" aria-labelledby="featured-tab" class="tab-pane fade">
+                        <div class="row shop_container">
+                            {% for product in featured.object_list %}
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    {% include "partials/product.html" with product=product %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- Pagination controls for featured products -->
+                        {% include "partials/pagination-index.html" with page_obj=featured page_type='featured' %}
+                    </div>
+
+                    <!-- Special Offers Tab -->
+                    <div id="special" role="tabpanel" aria-labelledby="special-tab" class="tab-pane fade">
+                        <div class="row shop_container">
+                            {% for product in special_offer.object_list %}
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    {% include "partials/product.html" with product=product %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <!-- Pagination controls for special offers -->
+                        {% include "partials/pagination-index.html" with page_obj=special_offer page_type='special_offer' %}
+                    </div>
+                </div>
+
+
+
              </div>
          </div>
      </div>

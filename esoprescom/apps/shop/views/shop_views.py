@@ -7,21 +7,49 @@ from apps.shop.models.Product import Product
 from apps.shop.models.Category import Category
 from apps.shop.models.Setting import Setting
 
-def index(request):
-   sliders = Slider.objects.all()
-   collections = Collection.objects.all()
-   best_sellers = Product.objects.filter(is_best_seller=True)
-   new_arrival = Product.objects.filter(is_new_arrival=True)
-   featured = Product.objects.filter(is_featured=True)
-   special_offer = Product.objects.filter(is_special_offer=True)
+# def index(request):
+#    sliders = Slider.objects.all()
+#    collections = Collection.objects.all()
+#    best_sellers = Product.objects.filter(is_best_seller=True)
+#    new_arrival = Product.objects.filter(is_new_arrival=True)
+#    featured = Product.objects.filter(is_featured=True)
+#    special_offer = Product.objects.filter(is_special_offer=True)
       
-   return render(request,'shop/index.html',{'sliders':sliders,
-                                          'collections':collections,
-                                          'best_sellers':best_sellers,
-                                          'new_arrival':new_arrival,
-                                          'featured':featured,
-                                          'special_offer':special_offer,})
+#    return render(request,'shop/index.html',{'sliders':sliders,
+#                                           'collections':collections,
+#                                           'best_sellers':best_sellers,
+#                                           'new_arrival':new_arrival,
+#                                           'featured':featured,
+#                                           'special_offer':special_offer,})
 
+def index(request):
+    sliders = Slider.objects.all()
+    collections = Collection.objects.all()
+
+    # Fetching all products and applying filters
+    best_sellers = Product.objects.filter(is_best_seller=True)
+    new_arrival = Product.objects.filter(is_new_arrival=True)
+    featured = Product.objects.filter(is_featured=True)
+    special_offer = Product.objects.filter(is_special_offer=True)
+
+    # Pagination
+    def get_paginated_products(products, page_number):
+        paginator = Paginator(products, 20)  # Show 20 products per page
+        return paginator.get_page(page_number)
+
+    new_arrival_page = get_paginated_products(new_arrival, request.GET.get('page_new_arrival', 1))
+    best_sellers_page = get_paginated_products(best_sellers, request.GET.get('page_best_sellers', 1))
+    featured_page = get_paginated_products(featured, request.GET.get('page_featured', 1))
+    special_offer_page = get_paginated_products(special_offer, request.GET.get('page_special_offer', 1))
+
+    return render(request, 'shop/index.html', {
+        'sliders': sliders,
+        'collections': collections,
+        'best_sellers': best_sellers_page,
+        'new_arrival': new_arrival_page,
+        'featured': featured_page,
+        'special_offer': special_offer_page,
+    })
 
 def display_page(request,slug):
    page = get_object_or_404(Page,slug=slug)

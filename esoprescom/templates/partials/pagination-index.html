@@ -1,0 +1,27 @@
+<ul class="pagination mt-3 justify-content-center pagination_style1">
+    {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page_{{ page_type }}={{ page_obj.previous_page_number }}">
+                <i class="linearicons-arrow-left"></i>
+            </a>
+        </li>
+    {% endif %}
+    {% for page_num in page_obj.paginator.page_range %}
+        {% if page_obj.number == page_num %}
+            <li class="page-item active">
+                <a class="page-link" href="?page_{{ page_type }}={{ page_num }}">{{ page_num }}</a>
+            </li>
+        {% elif page_num > page_obj.number|add:'-2' and page_num < page_obj.number|add:'2' %}
+            <li class="page-item">
+                <a class="page-link" href="?page_{{ page_type }}={{ page_num }}">{{ page_num }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page_{{ page_type }}={{ page_obj.next_page_number }}">
+                <i class="linearicons-arrow-right"></i>
+            </a>
+        </li>
+    {% endif %}
+</ul>
