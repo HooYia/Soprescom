@@ -284,3 +284,6 @@ hooyia_elearning/media/
 .env
 .envs/*
 !.envs/.local/
+
+esoprescom/soprescom_ecommerce.db
+
