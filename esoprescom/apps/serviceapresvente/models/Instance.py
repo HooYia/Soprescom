@@ -9,7 +9,7 @@ from django.core.validators import MaxLengthValidator
 
 class Instance(models.Model):
     class STATUS(models.TextChoices):
-          EN_COURS ="En cour","En cour"
+          EN_CdepaOURS ="En cour","En cour"
           RECOUVREMENT ="Recouvrement","Recouvrement"
           DECISION_DG ="Décision DG","Décision DG"
           CLOTURE  = "Clôturé","Clôturé"
