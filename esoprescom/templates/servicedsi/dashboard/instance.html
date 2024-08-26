@@ -242,3 +242,193 @@
         </div>
     </div>
 </main>
+
+<script>
+    $(document).ready(function() {
+       $('#datatable').DataTable();
+       $('#datatable1').DataTable();
+       $('#datatable2').DataTable();
+       $('#datatable3').DataTable();
+       $('#datatable4').DataTable();
+    });
+ </script>
+ 
+ <script>
+   var client_facture = '';
+   function funcDetailInstance(){
+     //var requestID0 = $(this).data('keyId');
+     var status = $(this).attr('data-status');
+     var dept = $(this).attr('data-dept');
+     var resp = $(this).attr('data-resp');
+     console.log('resp: ',resp);  
+ 
+     // Envoi du paramètre à la vue Django via une requête AJAX
+     $.ajax({
+         url: '/loadjsoninstance/',  
+         type: 'GET',
+         data: { 
+             'status': status, 
+             'dept': dept, 
+             'resp': resp
+         },
+         dataType: 'json',
+         success: function(response) {
+             console.log("response Json",response);
+             if (status ==='Interne') {
+                 document.getElementById('ext').classList.add('hidden');
+                 document.getElementById('agg').classList.add('hidden')
+                 document.getElementById('int').classList.remove('hidden');
+           
+                 var dataTable = $('#dataTable3').DataTable();
+                     // Supprimez les données existantes dans le tableau DataTable
+                     dataTable.clear();
+                     var detail_data= response.details_interne;
+                     console.log('detail_data',detail_data)
+                     for (var i = 0; i < detail_data.length; i++) {
+                       // Ajoutez une classe CSS à la ligne en fonction de la valeur de 'facture_status'
+                       var row = detail_data[i];
+                       var statusClass = row.status === 'Décision DG' ? 'table-warning' : '';
+                       if (statusClass.trim() !== '') {  
+                         dataTable.row.add([
+                             row.departement,
+                             row.responsable,
+                             row.numero_dossier,
+                             row.actions,
+                             row.description,
+                             row.status,
+                             row.date_action,
+                             row.observation,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ]).node().classList.add(statusClass); 
+                         } else {
+                             dataTable.row.add([
+                             row.departement,
+                             row.responsable,
+                             row.numero_dossier,
+                             row.actions,
+                             row.description,
+                             row.status,
+                             row.date_action,
+                             row.observation,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ])
+                              }
+                           }
+                         // Redessinez le tableau pour refléter les nouvelles données
+                         dataTable.draw();
+             }  // if (status ==='interne')
+             if (status ==='Externe') {
+                 document.getElementById('ext').classList.remove('hidden');
+                 document.getElementById('int').classList.add('hidden');
+                 document.getElementById('agg').classList.add('hidden');
+                 
+                 var dataTable = $('#dataTable4').DataTable();
+                     // Supprimez les données existantes dans le tableau DataTable
+                     dataTable.clear();
+                     var detail_data= response.details_externe;
+                     console.log('detail_data',detail_data)
+                     for (var i = 0; i < detail_data.length; i++) {
+                       // Ajoutez une classe CSS à la ligne en fonction de la valeur de 'facture_status'
+                       var row = detail_data[i];
+                       var statusClass = row.status === 'Décision DG' ? 'table-warning' : '';
+                       if (statusClass.trim() !== '') {  
+                         dataTable.row.add([
+                             row.departement,
+                             row.responsable,
+                             row.numero_dossier,
+                             row.actions,
+                             row.status,
+                             row.date_action,
+                             row.facture_reference,
+                             row.facture_montant,
+                             row.facture_paiement,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ]).node().classList.add(statusClass); 
+                         } else {
+                             dataTable.row.add([
+                             row.departement,
+                             row.responsable,
+                             row.numero_dossier,
+                             row.actions,
+                             row.status,
+                             row.date_action,
+                             row.facture_reference,
+                             row.facture_montant,
+                             row.facture_paiement,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ])
+                              }
+                           }
+                         // Redessinez le tableau pour refléter les nouvelles données
+                         dataTable.draw(); 
+             } //if (status ==='externe')
+         }, error: function(error){
+                 console.error('Erreur de requête AJAX:', error);
+         }
+     })
+ }
+ </script>
+ <script>
+     $('.jsinstance').click(function(e) {
+         e.preventDefault();
+         var action = $(this).attr('data-action');
+         console.log("action: ",action);
+         $.ajax({
+                 url: '/loadjsoninstance/',  // Remplacez par l'URL de votre vue Django
+                 type: 'GET',
+                 data: { 
+                     'action': action, 
+                     },
+                 dataType: 'json',
+                 success: function(response) {
+                     console.log('response:',response);
+                     document.getElementById('ext_all').classList.add('hidden');
+                     document.getElementById('ext').classList.add('hidden');
+                     document.getElementById('int').classList.add('hidden');
+                     document.getElementById('agg').classList.remove('hidden');
+                     var dataTable = $('#dataTable5').DataTable();
+                     // Supprimez les données existantes dans le tableau DataTable
+                     dataTable.clear();
+                     var detail_data= response;
+                     console.log('detail_data_fact_agg',detail_data)
+                     for (var i = 0; i < detail_data.length; i++) {
+                       // Ajoutez une classe CSS à la ligne en fonction de la valeur de 'facture_status'
+                       var row = detail_data[i];
+                       var statusClass = row.facture_status === 'Non Déposé' ? 'table-warning' : '';
+                       if (statusClass.trim() !== '') {  
+                         dataTable.row.add([
+                             row.date_traitement,
+                             row.client,
+                             row.numero_dossier,
+                             row.transit,
+                             row.facture_reference,
+                             row.facture_transit_num_dhl,
+                             row.facture_status,
+                             row.facture_paiement,
+                             row.facture_montant,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ]).node().classList.add(statusClass); 
+                         } else {
+                             dataTable.row.add([
+                             row.date_traitement,
+                             row.client,
+                             row.transit,
+                             row.facture_reference,
+                             row.facture_transit_num_dhl,
+                             row.facture_paiement,
+                             row.facture_status,
+                             row.facture_montant,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ])
+                              }
+                           }
+                         // Redessinez le tableau pour refléter les nouvelles données
+                         dataTable.draw();
+                   }, error: function(error) {
+                     console.error('Erreur :', error);
+                 }
+ 
+     })
+ })
+
+</script>

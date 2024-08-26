@@ -156,16 +156,101 @@ def dashboard_sav(request):
     
 @login_required
 def dashboard_leasing(request):
-    
-    
-    return render(request,"servicedsi/index.html",{
-    'page':'dashboard',
-    'subpage':'leasing_tab',
-    })
-    
+    context = {'segment': 'index'}
+    AllImp = ''
+    refAgg = ''
+    ImprimanteDeploye = 0
+    ImprimanteNonDeploye = 0
+    RefImpStatut = ''
+    clientleasing = Clientleasing.objects.all()
+    Nbre_Client_Nbr_Impr = Deploiement.select_Nbre_Client_Impr()
+    AllImp,refAgg,ImpStatus,RefImpStatut = Listeimprimante.LeasingStatImprimante()
+    deploieClientSiteImp = Deploiement.objects.values('clientleasing__nom','site','listeimprimante__reference').annotate(nombreImprimante=Count('listeimprimante__reference')).order_by('clientleasing__nom','site')
+    #print('AllImp:',AllImp)
+    #print('refAgg:',refAgg)
+    #print('ImpStatus:',ImpStatus)
+    #print('RefImpStatut:',RefImpStatut)
+    conso = Consommable.select_conso_stock()
+    consomTab=[]
+    #print('conso:',conso)
+    for row in conso:
+        detail = {
+            'categorieproduit': row['categorieproduit'] ,
+            'typeproduit': row['typeproduit'] ,
+            'reference': row['reference'] ,
+            'stock': row['stock'] ,
+            'seuilLimite': row['seuilLimite'] ,
+        }
+        consomTab.append(detail)
+    lientLeasingTab = []
+    #print('clientleasing:',clientleasing)
+    for row in clientleasing:
+        detail = {
+            'name':row.nom
+        }
+        lientLeasingTab.append(detail)
+    #print('lientLeasingTab:',lientLeasingTab)
+    refAggTab = []
+    for row in refAgg:
+        detail = {
+            'reference':row['reference'],
+            'nombre':row['status_count']
+        }
+        refAggTab.append(detail)
+    for row in ImpStatus:
+        if row['flag'] == False:
+            ImprimanteNonDeploye =  row['status_count'] 
+        if row['flag'] == True: 
+            ImprimanteDeploye =  row['status_count'] 
+            #print('ImprimanteDeploye:',ImprimanteDeploye)
+    RefImpStatutTab = []
+    for row in RefImpStatut:
+        if row['flag'] == False:
+                status= 'Non déployée'
+        else: 
+            status = 'deployée'        
+        detail = {
+            'reference':row['reference'],
+            'flag': status,
+            'nombre':row['status_count']
+        }
+        RefImpStatutTab.append(detail)
+    #print('RefImpStatutTab:',RefImpStatutTab)
+    deploieClientSiteImpTab = []
+    for row in deploieClientSiteImp:
+        detail = {
+            'client':row['clientleasing__nom'],
+            'site':row['site'],
+            'reference':row['listeimprimante__reference'],
+            'nombre':row['nombreImprimante']
+        }
+        deploieClientSiteImpTab.append(detail)
+    context={
+            'lientLeasingTab':lientLeasingTab,
+            'Nbre_Client_Nbr_Impr':Nbre_Client_Nbr_Impr,
+            'NbreImpr':AllImp,
+            'ImprimanteDeploye':ImprimanteDeploye,
+            'ImprimanteNonDeploye':ImprimanteNonDeploye,
+            #'refAggTab':refAggTab,
+            'RefImpStatutTab':RefImpStatutTab,
+            'deploieClientSiteImpTab':deploieClientSiteImpTab,
+            'consomTab':consomTab,
+            'page':'dashboard',
+            'subpage':'leasing_tab',
+
+            
+        }
+    html_template = loader.get_template('servicedsi/index.html')
+    return HttpResponse(html_template.render(context, request))
+
     
 @login_required
 def dashboard_instance(request):
+    
+    
+    
+    
+    
     
     
     return render(request,"servicedsi/index.html",{
