@@ -16,24 +16,18 @@
                         <strong> Info du Client</strong>
                         </div>
                         <div class="card-body">
-                          {% comment %} <p class="card-text">
-                              <strong>Numero dossier:</strong>
-                              <input type="text" class="form-control" name="numero_dossier" value="{{ form.instance.numero_dossier }}" disabled>
-                          </p>
-                           {% endcomment %}
-                           {% comment %} <p class="card-text">
-                            <strong>Numero de Dossier:</strong> {{ form.numero_dossier }}
-                            
-                          </p> {% endcomment %}
-                          <p class="card-text">
+                          
+                           <p class="card-text">
                             <strong>Numero de Fiche Technique:</strong> {{ form.numero_fiche_technique }}
                             
-                          </p>
+                          </p> 
                           <div class="d-flex align-items-center mb-2">
-                            <p class="card-text mr-2">
-                              <strong>Nom du client:</strong>
-                            </p>
-                            <a href="#" class="btn btn-primary btn-sm">Créer un nouveau client</a>
+                              <p class="card-text">
+                                  <strong>Nom du client:</strong>
+                              </p>
+                                      {% comment %} <button data-url="{% url 'serviceapresvente:instance-create' instance.idinstance %}" id="InstanceDisplayForUpdate" class="btn btn-primary">Modifier</button> {% endcomment %}
+
+                              <a href="#" class="btn btn-primary btn-sm ml-auto">Créer un nouveau client</a>
                           </div>
                           <p class="card-text">{{ form.client_sav }}</p>
                           <p class="card-text">

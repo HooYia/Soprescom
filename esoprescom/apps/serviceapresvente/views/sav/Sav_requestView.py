@@ -32,6 +32,15 @@ def index(request):
     'subpage':'savrequest',
     'savrequest':sav_requests_list
     })
+
+
+@login_required
+def create_user(request):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
+    
+    if request.method == 'POST':
+        return render(request, 'servicedsi/new_user.html')
     
 # Les autres fonctions comme show, create, update, delete... 
 @login_required
@@ -63,7 +72,7 @@ def create(request):
                         data.flag = True
                         data.statut = 'pending (achat)'
                         data.save()
-                        print('Sav_request has been saved with bon_pour_accord!')
+                        # print('Sav_request has been saved with bon_pour_accord!')
                         messages.success(request, 'Processus Achat !')
                         
                     else:
@@ -74,7 +83,7 @@ def create(request):
                     messages.success(request, 'Sav_request a été sauvegardée sans processus d\'achat.')
                     return redirect('serviceapresvente:savrequest')
             except Exception as e:
-                print(e)
+                # print(e)
                 messages.error(request, 'Une erreur s\'est produite lors de la sauvegarde.')
                 return render(request, 'servicedsi/formSavAdd.html', {'form': form})
         else:

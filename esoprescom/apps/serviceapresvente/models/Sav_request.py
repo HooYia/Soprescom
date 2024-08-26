@@ -14,6 +14,11 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .tasks import Send_Email,send_email_with_template,send_instance_email_with_template_task,send_email_with_template_task
 
+from django.utils import timezone
+from dateutil.relativedelta import relativedelta
+
+
+
 today_date = datetime.now()
 date_old_days_ago = datetime.now() - timedelta(days=180)
 
@@ -72,6 +77,24 @@ class Sav_request(models.Model):
             self.numero_dossier = f'SAV_{new_dossier_id:010d}'
 
         super(Sav_request, self).save(*args, **kwargs)
+
+
+
+    # def save(self, *args, **kwargs):
+    #     if not self.numero_dossier:
+    #         last_dossier = Sav_request.objects.aggregate(Max('idrequest'))['idrequest__max'] or 0
+    #         new_dossier_id = last_dossier + 1
+    #         self.numero_dossier = f'SAV_{new_dossier_id:010d}'
+    #     else:
+    #         # Check if it's been 6 months since the last reset
+    #         if self.created_at:
+    #             six_months_ago = timezone.now() - relativedelta(months=6)
+    #             if self.created_at < six_months_ago:
+    #                 last_dossier = Sav_request.objects.aggregate(Max('idrequest'))['idrequest__max'] or 0
+    #                 new_dossier_id = last_dossier + 1
+    #                 self.numero_dossier = f'SAV_{new_dossier_id:010d}'
+                    
+    #     super(Sav_request, self).save(*args, **kwargs)
 
         
     def __str__(self) -> str:
