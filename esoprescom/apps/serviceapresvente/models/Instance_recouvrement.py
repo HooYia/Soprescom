@@ -25,8 +25,8 @@ class Instance_recouvrement(models.Model):
     
     @classmethod
     def sav_query_facture(cls):
-        queryset = Instance_recouvrement.objects.values('facture_paiement').annotate(
-            facture_paiement_count=Count('facture_paiement'),
-            facture_amount=Sum('facture_montant')).order_by('facture_paiement')  
+        queryset = Instance_recouvrement.objects.values('facture_statut').annotate(
+            facture_paiement_count=Count('facture_statut'),
+            facture_amount=Sum('facture_montant')).order_by('facture_statut')  
 
         return queryset

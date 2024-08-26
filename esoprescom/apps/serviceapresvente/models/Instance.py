@@ -7,6 +7,9 @@ from apps.serviceapresvente.models.Personnels import  Personnels
 from apps.serviceapresvente.models.Client_sav  import Client_sav
 from django.core.validators import MaxLengthValidator
 
+today_date = datetime.now()
+date_old_days_ago = (datetime.now() - timedelta(days=30)).date().isoformat()
+
 class Instance(models.Model):
     class STATUS(models.TextChoices):
           EN_COURS ="En cour","En cour"
@@ -46,4 +49,12 @@ class Instance(models.Model):
         except:
             url = ''
             return url
+            
+    @classmethod
+    def status_instance(cls):
+        AggstatusInstance = cls.objects.filter(created_at=date_old_days_ago).values('statut').annotate(status_count=Count('statut')).order_by('type_instance', 'statut')
+        AggInstanceInterne = cls.objects.filter(created_at=date_old_days_ago, type_instance='Interne').values('responsable', 'statut').annotate(status_count=Count('statut')).order_by('responsable', 'statut')
+        AggInstanceExterne = cls.objects.filter(created_at=date_old_days_ago, type_instance='Externe').values('responsable', 'statut').annotate(status_count=Count('statut')).order_by('responsable', 'statut')
+        
+        return AggstatusInstance, AggInstanceInterne, AggInstanceExterne
     

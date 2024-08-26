@@ -370,7 +370,7 @@
                     var statusClass = row.status === 'Décision DG' ? 'table-warning' : '';
                     if (statusClass.trim() !== '') {  
                         dataTable.row.add([
-                            row.date_reception,
+                            row.created_at,
                             row.numero_dossier,
                             row.client,
                             row.responsable,
@@ -382,7 +382,7 @@
                             ]).node().classList.add(statusClass); 
                         } else {
                             dataTable.row.add([
-                            row.date_reception,
+                            row.created_at,
                             row.numero_dossier,
                             row.client,
                             row.responsable,
@@ -476,7 +476,7 @@
     $('#suivicommande_statut').text(suiviCommandesData[0].fields.statut);
     
     // Suivi Commande.
-   /* $('#receptioncommande_date').text(suiviCommandesData[0].fields.date_reception);
+   /* $('#receptioncommande_date').text(suiviCommandesData[0].fields.created_at);
     $('#receptioncommande_statut').text(suiviCommandesData[0].fields.statut);
     $('#receptioncommande_Transitaire').text(suiviCommandesData[0].fields.transitaire); */
 

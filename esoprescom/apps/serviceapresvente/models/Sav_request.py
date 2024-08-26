@@ -125,27 +125,27 @@ class Sav_request(models.Model):
     
     @classmethod
     def sav_query_instance(cls):
-        queryset_agg = Sav_request.objects.filter(date_reception__gte=date_old_days_ago).values('statut').annotate(status_count=Count('status')).order_by('statut') 
-        queryset_detail = Sav_request.objects.filter(date_reception__gte=date_old_days_ago).values('type_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut')  
+        queryset_agg = Sav_request.objects.filter(created_at=date_old_days_ago).values('statut').annotate(status_count=Count('statut')).order_by('statut') 
+        queryset_detail = Sav_request.objects.filter(created_at=date_old_days_ago).values('type_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut')  
        
         return queryset_agg,queryset_detail
 
     @classmethod
     def sav_query_client(cls):
-        queryset_client = Sav_request.objects.filter(date_reception__gte=date_old_days_ago).values('client_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
+        queryset_client = Sav_request.objects.filter(created_at=date_old_days_ago).values('client_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
         return queryset_client
     
     @classmethod
     def sav_query_2_client(cls,parm):  
-        queryset_client = Sav_request.objects.filter(date_reception__gte=date_old_days_ago,
+        queryset_client = Sav_request.objects.filter(created_at=date_old_days_ago,
                                                      client_sav=parm).values('client_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
         return queryset_client
     
     @classmethod
     def sav_query_detail_status(cls,etat,resp): 
-        queryset = Sav_request.objects.filter(date_reception__gte=date_old_days_ago,
-                        status = etat,
-                        resp_sav=resp).order_by('-date_reception', 'numero_dossier')
+        queryset = Sav_request.objects.filter(created_at=date_old_days_ago,
+                        statut = etat,
+                        resp_sav=resp).order_by('-created_at', 'numero_dossier')
         return queryset
     
 

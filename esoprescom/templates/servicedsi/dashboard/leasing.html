@@ -36,9 +36,14 @@
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1">
                                 <div class="small fw-bold text-secondary mb-1"><strong style="font-size: larger;"> Clients leasing</strong></div>
+                                    {% if lientLeasingTab %}
                                         {% for line in lientLeasingTab %}
                                         <strong style="font-size: larger;"><li>  {{line.name }}</li></strong>
                                         {% endfor %}
+                                    {% else %}
+                                        <strong style="font-size: larger;"><li> No client leasing</li></strong>
+                                    {% endif %}
+                                       
                                 
                                 
                             </div>
@@ -54,9 +59,14 @@
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1">
                                 <div class="small fw-bold text-success mb-1"><strong style="font-size: larger;">Déploiement Imprimante</strong></div>
-                                {% for row in Nbre_Client_Nbr_Impr %}
-                                    <li>{{row.nombreImprimante}} déployées au compte du client {{row.clientleasing__nom}}</li>
+                                {% if Nbre_Client_Nbr_Impr %}
+                                    {% for row in Nbre_Client_Nbr_Impr %}
+                                        <li>{{row.nombreImprimante}} déployées au compte du client {{row.clientleasing__nom}}</li>
                                     {% endfor %}
+                                {% else %}
+                                <li>  Pas de client deployees {{row.clientleasing__nom}}</li>
+                                {% endif %}
+                                    
                             </div>
                             <div class="ms-2"><i class="fas fa-mouse-pointer fa-2x text-gray-200"></i></div>
                         </div>
@@ -181,7 +191,7 @@
               </div>
            </div>
             <!---->
-            <div class="container my-5">
+            {% comment %} <div class="container my-5">
                 <div class="row justify-content-center">
                   <div class="col-md-4 mb-4">
                     <div class="card h-100 p-4">
@@ -220,7 +230,7 @@
                     </div>
                   </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
     </div>
 </main>
 
