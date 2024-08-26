@@ -13,17 +13,17 @@ def main():
         from apps.shop.models import Category, Collection, Slider, \
             Carrier, Image,NavCollection, Page, Setting, Social
         files_path = [
-            # 'databases/shop_carrier.json',
-            # 'databases/shop_category.json',
-            # 'databases/shop_collection.json',
-            # 'databases/shop_page.json',
-            # 'databases/shop_navcollection.json',
-            'databases/shop_image.json',
-            # 'databases/shop_product_categories.json',
-            # 'databases/shop_product.json',
-            # 'databases/shop_setting.json',
-            # 'databases/shop_slider.json',
-            # 'databases/shop_social.json',
+            'databases/shop_carrier.json',
+            'databases/shop_category.json',
+            'databases/shop_collection.json',
+            'databases/shop_page.json',
+            'databases/shop_navcollection.json',
+            # 'databases/shop_image.json',
+            'databases/shop_product_categories.json',
+            'databases/shop_product.json',
+            'databases/shop_setting.json',
+            'databases/shop_slider.json',
+            'databases/shop_social.json',
         ]
         models = {
             'shop_carrier': Carrier,

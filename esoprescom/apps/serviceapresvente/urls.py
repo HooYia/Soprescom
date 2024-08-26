@@ -30,6 +30,7 @@ urlpatterns = [
     path('<int:id>/edit', Sav_requestView.update, name='savrequest-update'),
     path('<int:id>/detail', Sav_requestView.show, name='savrequest-show'),
     path('<int:id>/detele', Sav_requestView.index, name='savrequest-delete'),
+    path('<int:id>/print', Sav_requestView.telecharger_fiche_dentree_pdf, name='savrequest-download'),
     
     ## Commande sav
     path('commandesav', CommandeSavView.index, name='commandesav'),

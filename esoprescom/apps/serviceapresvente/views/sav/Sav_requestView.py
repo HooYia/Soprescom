@@ -1,3 +1,6 @@
+import pdfkit
+from django.http import HttpResponse
+from datetime import date
 from apps.serviceapresvente.models import Sav_request
 from apps.serviceapresvente.models import CommandeSav
 from django.shortcuts import render, get_object_or_404, redirect
@@ -7,6 +10,7 @@ from apps.serviceapresvente.forms.Sav_requestForm import Sav_requestForm
 from apps.serviceapresvente.forms.Sav_requestUpdForm import Sav_requestUpdForm
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
+from django.template.loader import get_template
 
 
 @login_required
@@ -157,3 +161,23 @@ def delete(request, id):
             messages.success(request, 'Sav_request has been deleted !')
     return redirect('serviceapresvente:savrequest')
 
+
+@login_required
+def telecharger_fiche_dentree_pdf(request, id):
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+        return redirect('dashboard:dashboard')
+    fiche_dentree = get_object_or_404(Sav_request, idrequest=id)
+    
+    current_date = date.today()
+
+    context = {
+        'fiche_dentree': fiche_dentree,
+       
+        'current_date': current_date.strftime('%d/%m/%Y'),
+    }
+    template = get_template('servicedsi/includes/fiche_dentree.html')
+    html = template.render(context)
+    pdf = pdfkit.from_string(html, False)
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = f'attachment; filename="sale_{fiche_dentree.client_sav}.pdf"'
+    return response

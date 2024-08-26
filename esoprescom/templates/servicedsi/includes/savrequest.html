@@ -15,7 +15,6 @@
                       <th>Date</th>
                         <th>N° Dossier</th>
                         <th>N° Fiche Technique</th>
-
                         <th>Type SAV</th>
                         <th>Marque</th>
                         <th>Client SAV</th>
@@ -51,8 +50,12 @@
                   <td> <div class="badge bg-success text-white rounded-pill status-cell" >
                     {{ row.statut }} </div>
                   </td>
-                  <td class="{% if row.flag == 1 %}disabled-cell{% endif %}">
-                      {% include "servicedsi/includes/sav_details.html" with sav_request=row %} 
+                  
+
+                  <td >
+                      <button class="btn btn-primary btn-sm" type="submit">print</button>
+                      {% comment %} <a href="{% url 'serviceapresvente:savrequest-download'  fiche_dentree.id%}" title="Print"><span class="fas fa-print mr-2"></span></a> {% endcomment %}
+                      <span class="{% if row.flag == 1 %}disabled-cell{% endif %}">{% include "servicedsi/includes/sav_details.html" with sav_request=row %}</span>
                   </td>
                 </tr>
                 {% endfor %}

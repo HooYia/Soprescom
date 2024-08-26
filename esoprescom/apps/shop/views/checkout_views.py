@@ -15,8 +15,9 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth.hashers import make_password
 from django.http import JsonResponse
 from django.db import transaction
+from django.contrib.auth.decorators import login_required
 
-
+@login_required
 def index(request):
     carrier_id = request.GET.get('carrier_id')
     addresse_billing_id = request.GET.get('addresse_billing_id','')
@@ -72,6 +73,7 @@ def index(request):
      'public_key':payment_service.get_public_key,
      })
 
+@login_required
 def add_address(request):
     user = request.user
     if request.method == 'POST':
@@ -122,7 +124,7 @@ def login_form(request):
                           #'password':password
                           })
 
-
+@login_required
 def create_order(request,billing_address,shipping_address=None):
     user = request.user
     cart = CartService.get_cart_details(request)
