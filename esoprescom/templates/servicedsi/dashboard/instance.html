@@ -97,7 +97,7 @@
                             <tr class="detailCustomer" data-status= "Externe" data-dept="{{item.departement}}" data-resp="{{item.responsable}}"  onclick="funcDetailInstance.call(this)">
                               <td>{{ item.departement }}</td>
                               <td>{{ item.responsable }}</td>
-                              <td>{{ item.status }}</td>
+                              <td>{{ item.statut }}</td>
                               <td>{{ item.status_count }}</td>
                              </tr>
                           {% endfor %}
@@ -106,7 +106,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        {% comment %} <div class="row">
               <!-- Instance interne  -->
               <div class="card mb-4 hidden" id="int">
                 <div class="card-header " >
@@ -239,18 +239,18 @@
                                     </table>
                                 </div>
                              </div>
-        </div>
+        </div> {% endcomment %}
     </div>
 </main>
 
 <script>
-    $(document).ready(function() {
-       $('#datatable').DataTable();
-       $('#datatable1').DataTable();
-       $('#datatable2').DataTable();
-       $('#datatable3').DataTable();
-       $('#datatable4').DataTable();
-    });
+
+    $('#datatable, #datatable1, #datatable2, #dataTable3, #dataTable4, #dataTable5').DataTable({
+        lengthMenu: [5,10, 15,20],
+        order: [[3, 'desc']],
+        pageLength:10 
+     });
+   
  </script>
  
  <script>

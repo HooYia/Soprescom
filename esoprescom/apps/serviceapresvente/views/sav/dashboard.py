@@ -246,14 +246,217 @@ def dashboard_leasing(request):
     
 @login_required
 def dashboard_instance(request):
+    nbre_instance_cloture = 0
+    nbre_instance_encour = 0
+    nbr_facture_paye = 0
+    nbr_facture_paye_montant = 0
+    nbr_facture_non_paye = 0
+    nbr_facture_non_paye_montant = 0
+    
+    # Get the aggregated data from status_instance method
+    AggstatusInstance, AggInstanceInterne, AggInstanceExterne = Instance.status_instance()
+    
+    # Process status instances
+    AggstatusInstanceTab = []
+    for rows in AggstatusInstance:
+        details = {
+            'statut': rows['statut'],
+            'status_count': rows['status_count'],
+        }
+        if rows['statut'] == 'Clôturé':
+            nbre_instance_cloture += rows['status_count']
+        else:
+            nbre_instance_encour += rows['status_count']
+        AggstatusInstanceTab.append(details)
+
+    # Process internal instances
+    AggInstanceInterneTab = []
+    for rows in AggInstanceInterne:
+        details = { 
+            'responsable': rows['responsable'],
+            'statut': rows['statut'],
+            'status_count': rows['status_count'],
+            # Assuming you want to fetch the department from a related Personnels model
+            'departement': Personnels.objects.get(idpersonnel=rows['responsable']).departement,  # Replace with correct field
+        }
+        AggInstanceInterneTab.append(details)
+
+    # Process external instances
+    AggInstanceExterneTab = []
+    for rows in AggInstanceExterne:
+        details = {
+            'responsable': rows['responsable'],
+            'statut': rows['statut'],
+            'status_count': rows['status_count'],
+            'departement': Personnels.objects.get(idpersonnel=rows['responsable']).departement,  # Replace with correct field
+        }
+        AggInstanceExterneTab.append(details)    
+    
+    # Process factures
+    aggFacture = Instance_recouvrement.sav_query_facture()
+    recouvrementAgg = []
+    for rows in aggFacture:
+        details = {
+            'facture_paiement': rows['facture_paiement'],
+            'facture_paiement_count': rows['facture_paiement_count'],
+            'facture_amount': rows['facture_amount'],
+        }
+        if rows['facture_paiement'] == 'Payé':
+            nbr_facture_paye = rows['facture_paiement_count']
+            nbr_facture_paye_montant = rows['facture_amount']
+        elif rows['facture_paiement'] == 'Non Payé':  # This should be 'Non Payé'
+            nbr_facture_non_paye = rows['facture_paiement_count']
+            nbr_facture_non_paye_montant = rows['facture_amount']
+            
+        recouvrementAgg.append(details)
+        
+    """    
+    subquery = Sav_instance_recouvrement.objects.filter(
+            type_request='SOP_INSTANCE',
+            numero_dossier=OuterRef('numero_dossier'),
+            id_request=OuterRef('idinstance')
+                    ).values('facture_paiement',
+                             'facture_status', 
+                             'facture_paiement'
+                    )[:1]
+
+    result = Sav_instance.objects.annotate(
+             facture_paiement=Subquery(subquery.values('facture_paiement')),
+             facture_status=Subquery(subquery.values('facture_status')),
+             facture_montant=Subquery(subquery.values('facture_montant'))
+             ).values(
+                 'type_instance', 
+                    'departement', 
+                    'responsable', 
+                    'numero_dossier', 
+                    'actions', 
+                    'status', 
+                    'date_cloture', 
+                    'facture_paiement', 
+                    'facture_status', 
+                    'facture_montant'
+             )
+    resultAgg =[]
+    for rows in result:
+        details = {
+            'type_instance': rows['type_instance'],
+            'departement': rows['departement'],
+            'responsable': rows['responsable'],
+            'numero_dossier': rows['numero_dossier'],
+            'actions': rows['actions'],
+            'status': rows['status'],
+            'date_cloture': rows['date_cloture'],
+            'facture_status': rows['facture_status'],
+            'facture_paiement': rows['facture_paiement'],
+            'facture_montant': rows['facture_montant'],
+        }
+        resultAgg.append(details)         
+    """
+    #print('AggInstanceInterneTab:',AggInstanceInterneTab)
+    #print('AggInstanceExterneTab:',AggInstanceExterneTab)
+    context ={
+        'nbre_instance_cloture':nbre_instance_cloture,
+        'nbre_instance_encour':nbre_instance_encour,
+        'nbr_facture_paye':nbr_facture_paye,
+        'nbr_facture_paye_montant':nbr_facture_paye_montant,
+        'nbr_facture_non_paye':nbr_facture_non_paye,
+        'nbr_facture_non_paye_montant':nbr_facture_non_paye_montant,
+        'AggInstanceInterneTab':AggInstanceInterneTab,
+        'AggInstanceExterneTab':AggInstanceExterneTab,
+        'page':'dashboard',
+        'subpage':'instance_tab',
+
+        #'recouvrementAgg':recouvrementAgg,
+         }
+    
+    return render(request,"servicedsi/index.html", context)
+        
+
+def jsonInstance(request):
+    details = []
+    response_data=''
+    try:
+        status = request.GET.get('status')
+        dept = request.GET.get('dept')
+        resp = request.GET.get('resp')
+        
+        dept2 = Personnels.objects.filter(idpersonnel=dept).values('iddept')
+        dept_id = dept2[0]['iddept']
+        if status=='Interne':
+            #print("status:",status)
+            #print("dept:",dept_id)
+            #print("resp:",resp)
+            response_data = Instance.detail_instance_interne(status,dept_id,resp)
+            detailsInterne=[]
+            if response_data:
+                #print('response_data:',response_data)
+                
+                for rows in response_data:
+                    detail = {
+                        'departement': rows.departement.departement,
+                        'responsable': rows.responsable,
+                        'numero_dossier': rows.numero_dossier,
+                        'actions': rows.actions,
+                        'description': rows.description,
+                        'status': rows.status,
+                        'date_action': rows.date_action,
+                        'observation': rows.observation,
+                        }
+                    detailsInterne.append(detail)
+                        #print('details:',details)
+                #print('detailsInterne:',detailsInterne)
+            Jsonresult={
+                            'details_interne': detailsInterne,
+                        }
+            return JsonResponse(Jsonresult, safe=False)
+    
+        if status=='Externe':
+            # Filtrez les instances avec les factures associées par type_instance, departement et responsable
+            instances_with_recouvrement = Instance.objects.filter(
+                type_instance='Externe',
+                departement= dept_id,
+                responsable= resp
+            ).prefetch_related(
+                Prefetch('sav_instance_recouvrement_set',queryset=Instance_recouvrement.objects.all())
+            )
+            #print('result instances_with_recouvrement:', instances_with_recouvrement)
+            detailsExterne =[]
+            for instance in instances_with_recouvrement:
+              #print(f"Instance ID: {instance.idinstance}")
+              for recouvrement in instance.sav_instance_recouvrement_set.all():
+                  detail = {
+                        'departement': instance.departement.departement,
+                        'responsable': instance.responsable,
+                        'numero_dossier': instance.numero_dossier,
+                        'actions': instance.actions,
+                        'description': instance.description,
+                        'status': instance.status,
+                        'date_action': instance.date_action,
+                        'observation': instance.observation,
+                        'facture_reference': recouvrement.facture_reference,
+                        'facture_montant': recouvrement.facture_montant,
+                        'facture_paiement': recouvrement.facture_paiement,
+                       }
+                  #print(f"  Facture référence: {recouvrement.facture_reference}")
+                  #print(f"  Montant: {recouvrement.facture_montant}")
+                  #print(f"  Paiement: {recouvrement.facture_paiement}")
+                  
+                  detailsExterne.append(detail)
+            #print('detailsExterne:',detailsExterne)
+            Jsonresult={
+                    'details_externe': detailsExterne,
+                        }
+            #print('Jsonresult',Jsonresult)
+            return JsonResponse(Jsonresult, safe=False) 
+        
+    except Exception as e:
+        print(e)
+        return JsonResponse({'erreur': 'Erreur de décodage JSON', 'details': str(e)}, status=400)   
+    return JsonResponse({'JSON': 'Aucun traitement'})   
     
     
     
     
     
     
-    
-    return render(request,"servicedsi/index.html",{
-    'page':'dashboard',
-    'subpage':'instance_tab',
-    })
+  

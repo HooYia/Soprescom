@@ -16,7 +16,7 @@ app_name = 'serviceapresvente'
 urlpatterns = [
     
     #dashboard
-    path('dashboard', dashboard.dashboard, name='dashboard'),
+    path('', dashboard.dashboard, name='dashboard'),
     path('dashboard_sav', dashboard.dashboard_sav, name='dashboard_sav'),
     path('dashboard_leasing', dashboard.dashboard_leasing, name='dashboard_leasing'),
     path('dashboard_instance', dashboard.dashboard_instance, name='dashboard_instance'),
@@ -25,7 +25,7 @@ urlpatterns = [
     #Gestion SAV
     #path('', Savrequest_views.index, name='sav'),
     #Sav Request
-    path('', Sav_requestView.index, name='savrequest'),
+    path('dashboard/sav', Sav_requestView.index, name='savrequest'),
     path('add', Sav_requestView.create, name='savrequest-create'),
     path('<int:id>/edit', Sav_requestView.update, name='savrequest-update'),
     path('<int:id>/detail', Sav_requestView.show, name='savrequest-show'),
