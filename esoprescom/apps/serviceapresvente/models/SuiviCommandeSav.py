@@ -12,7 +12,7 @@ class SuiviCommandeSav(models.Model):
           RECEPTION_DEPOT_FR  = "Réception dépôt France ","Réception dépôt France"
           RECEPTION_DEPOT_DUBAI  = "Reception dépôt Dubaï ","Réception dépôt Dubaï"
           SOUS_DOUANE_ML= "Sous Douane Malienne","Sous Douane Malienne"
-          LIVRER = "Reçu","Reçu"
+          LIVRER = "Reçu","Reçu" 
     idsuivicommandesav = models.BigAutoField(primary_key=True)
     commandesav = models.OneToOneField(CommandeSav, on_delete=models.CASCADE,related_name='commandesavs')
     statut = models.CharField(max_length=30,verbose_name =_('Statut'),

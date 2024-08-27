@@ -68,6 +68,11 @@
                             </a>
                          </li>
                          <li>
+                            <a href="{% url 'serviceapresvente:savrequest' %}">
+                                <i class="fas fa-toolbox"></i><span >SAV/leasing</span>
+                            </a>
+                         </li>
+                         <li>
                           <form id="logout-form" action="{% url 'accounts:logout_user' %}" method="POST">
                             {% csrf_token %}
                             <a href="#" onclick="document.getElementById('logout-form').submit()">

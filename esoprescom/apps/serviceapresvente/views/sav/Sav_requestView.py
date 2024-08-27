@@ -12,6 +12,12 @@ from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 from django.template.loader import get_template
 
+from apps.serviceapresvente.models import AssemblageReparation, LivraisonClient
+from apps.serviceapresvente.models.SuiviCommandeSav import SuiviCommandeSav
+from apps.serviceapresvente.models.ClotureDossier import ClotureDossier
+from apps.serviceapresvente.models.Recouvrement import Recouvrement
+
+
 
 @login_required
 def index(request):
@@ -167,12 +173,52 @@ def telecharger_fiche_dentree_pdf(request, id):
     if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
         return redirect('dashboard:dashboard')
     fiche_dentree = get_object_or_404(Sav_request, idrequest=id)
+    # Fetch associated CommandeSav
+    try:
+        commande_sav = fiche_dentree.sav_requests  # OneToOne relation, direct access via related_name
+    except CommandeSav.DoesNotExist:
+        commande_sav = None
+    
+    # Fetch associated SuiviCommandeSav
+    try:
+        suivi_commande_sav = commande_sav.commandesavs if commande_sav else None  # OneToOne relation
+    except SuiviCommandeSav.DoesNotExist:
+        suivi_commande_sav = None
+    
+    # Fetch associated AssemblageReparation
+    try:
+        assemblage_reparation = suivi_commande_sav.suivicommandesavs if suivi_commande_sav else None  # OneToOne relation
+    except AssemblageReparation.DoesNotExist:
+        assemblage_reparation = None
+    
+    # Fetch associated LivraisonClient
+    try:
+        livraison_client = assemblage_reparation.assamblagereparations if assemblage_reparation else None  # OneToOne relation
+    except LivraisonClient.DoesNotExist:
+        livraison_client = None
+
+    # Fetch associated Recouvrement
+    try:
+        recouvrement = livraison_client.livraisonclients if livraison_client else None  # OneToOne relation
+    except Recouvrement.DoesNotExist:
+        recouvrement = None
+
+    # Fetch associated Cloture
+    try:
+        cloture_dossier = recouvrement.recouvrements if recouvrement else None  # OneToOne relation
+    except ClotureDossier.DoesNotExist:
+        cloture_dossier = None
     
     current_date = date.today()
 
     context = {
         'fiche_dentree': fiche_dentree,
-       
+        'commande_sav': commande_sav,
+        'suivi_commande_sav': suivi_commande_sav,
+        'assemblage_reparation': assemblage_reparation,
+        'livraison_client': livraison_client,
+        'recouvrement': recouvrement,
+        'cloture_dossier': cloture_dossier,
         'current_date': current_date.strftime('%d/%m/%Y'),
     }
     template = get_template('servicedsi/includes/fiche_dentree.html')
