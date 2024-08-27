@@ -199,9 +199,9 @@
                                     {% for item in client_agg %}
                                     <tr class="detailsavstatus" data-status='{{item.status}}'  data-resp='{{item.resp_sav}}'  
                                     onclick="funcDetail.call(this)">
-                                        <td>{{ item.client_name }}</td>
-                                        <td>{{ item.resp_sav_name }}</td>
-                                        <td>{{ item.status }}</td>
+                                        <td>{{ item.client_sav.name }}</td>
+                                        <td>{{ item.resp_sav }}</td>
+                                        <td>{{ item.statut }}</td>
                                         <td>{{ item.status_count }}</td>
                                     </tr>
                                     {% endfor %}

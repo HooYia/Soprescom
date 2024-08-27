@@ -6,3 +6,5 @@ class Customer(AbstractUser):
   is_compta = models.BooleanField(default=False)
   is_losgistic = models.BooleanField(default=False)
   is_recouvrement = models.BooleanField(default=False)
+  is_deleted = models.BooleanField(default=False)
+  is_active = models.BooleanField(default=True)

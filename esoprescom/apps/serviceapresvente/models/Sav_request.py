@@ -125,20 +125,19 @@ class Sav_request(models.Model):
     
     @classmethod
     def sav_query_instance(cls):
-        queryset_agg = Sav_request.objects.filter(created_at=date_old_days_ago).values('statut').annotate(status_count=Count('statut')).order_by('statut') 
-        queryset_detail = Sav_request.objects.filter(created_at=date_old_days_ago).values('type_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut')  
+        queryset_agg = Sav_request.objects.all().select_related('client_sav').values('statut', 'idrequest').annotate(status_count=Count('statut')).order_by('statut') 
+        queryset_detail = Sav_request.objects.all().select_related('client_sav').values('type_sav','resp_sav','statut', 'idrequest').annotate(status_count=Count('statut')).order_by('statut')  
        
         return queryset_agg,queryset_detail
 
     @classmethod
     def sav_query_client(cls):
-        queryset_client = Sav_request.objects.filter(created_at=date_old_days_ago).values('client_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
+        queryset_client = Sav_request.objects.all().select_related('client_sav').values('client_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
         return queryset_client
     
     @classmethod
     def sav_query_2_client(cls,parm):  
-        queryset_client = Sav_request.objects.filter(created_at=date_old_days_ago,
-                                                     client_sav=parm).values('client_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
+        queryset_client = Sav_request.objects.all().select_related('client_sav').values('client_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
         return queryset_client
     
     @classmethod

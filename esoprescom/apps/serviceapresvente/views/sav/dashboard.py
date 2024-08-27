@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
 from datetime import datetime,timedelta
 
 import json
@@ -16,10 +16,13 @@ from django.db.models import OuterRef, Subquery
 from apps.serviceapresvente.models import *
 from django.core.serializers import serialize
 from django.db.models import Prefetch
+from django.contrib import messages
 
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render
+
+from apps.accounts.models import Customer
 
 
 
@@ -48,42 +51,46 @@ def dashboard(request):
     agg_status_SAV = ''
     detail_status_sav =''
     client_agg=''
+    progress = []
     ##########
     try:
         agg_status_SAV,detail_status_sav = Sav_request.sav_query_instance()
         client_agg = Sav_request.sav_query_client()
-        #print('client_agg: ',client_agg)
+        # print('client_agg: ',client_agg)
         print("agg_status_SAV:",agg_status_SAV)
         for line in detail_status_sav:
-            Name = Personnels.objects.filter(idperso=line['resp_sav']).values('nom','prenom')
-            if Name:
-                for row in Name:
-                    line['resp_sav_name'] = row['nom'] +' '+row['prenom']   
+                # Assuming line['resp_sav'] contains the `Sav_request` instance ID or some identifier related to `Sav_request`
+            sav_request = Sav_request.objects.select_related('client_sav').get(id=line['id'])  # or line['resp_sav'] if it's the ID
+            
+            if sav_request.client_sav:  # Check if client_sav is not None
+                line['resp_sav_name'] = f"{sav_request.client_sav.nom} {sav_request.client_sav.prenom}"
+            else:
+                line['resp_sav_name'] = "N/A"
         #print("detail_status_sav:",detail_status_sav)
-        progress = []
+        
         for line in agg_status_SAV:
-            if line['status'] =='Diagnostique interne':
+            if line['statut'] =='Diagnostique interne':
                 diagnostiqueinterne  = line['status_count']
                 nbr_sav += diagnostiqueinterne
-            elif line['status'] == 'Validation facture client':
+            elif line['statut'] == 'Validation facture client':
                validationfactureclient = line['status_count']
                nbr_sav +=validationfactureclient
-            elif line['status'] == 'Commande Fournisseur':
+            elif line['statut'] == 'Commande Fournisseur':
                commandeFournisseur = line['status_count']
                nbr_sav +=commandeFournisseur
-            elif line['status'] == 'Commande Fournisseur placée ':
+            elif line['statut'] == 'Commande Fournisseur placée ':
                commandeFournisseurplacee = line['status_count'] 
                nbr_sav +=commandeFournisseurplacee
-            elif line['status'] == 'En instance d\'Assemblage ':
+            elif line['statut'] == 'En instance d\'Assemblage ':
                eninstanceAssemblage = line['status_count'] 
                nbr_sav +=eninstanceAssemblage        
-            elif line['status'] == 'En instance de livraison':
+            elif line['statut'] == 'En instance de livraison':
                 eninstancedelivraison = line['status_count']
                 nbr_sav +=eninstancedelivraison
-            elif line['status'] == 'En instance de recouvrement':
+            elif line['statut'] == 'En instance de recouvrement':
                 eninstancederecouvrement = line['status_count']
                 nbr_sav +=eninstancederecouvrement
-            elif line['status'] == 'Dossier Clôtuté':
+            elif line['statut'] == 'Dossier Clôtuté':
                 dossierClotute = line['status_count'] 
                 nbr_sav_cloture += dossierClotute
         detail= {
@@ -98,9 +105,11 @@ def dashboard(request):
         }
         progress.append(detail)
         
+        
         for row in client_agg:
             #print('row:',row['client_sav']) 
             client = Client_sav.objects.filter(idclient = row['client_sav']).values('nom','prenom','raison_sociale','est_personne_morale')  
+            print(client, '-----------------------------------------------------------')
             for line in client:
                 #print('est_personnemorale:',line['est_personne_morale'])
                 if line['est_personne_morale']:
@@ -108,12 +117,14 @@ def dashboard(request):
                 else:
                     row['client_name']= line['nom']+' '+line['prenom']
                     
-            Name = Personnels.objects.filter(idperso=row['resp_sav']).values('nom','prenom')
+            Name = Sav_request.objects.filter(idpersonnel=row['resp_sav']).values('nom','prenom')
             if Name:
                 for line in Name:
-                    row['resp_sav_name'] = line['nom'] +' '+line['prenom']    
+                    row['resp_sav_name'] = line['nom'] +' '+line['prenom']  
+                    
+                      
             #print('client_agg:',client_agg)                  
-            #print('detail_status_sav:',detail_status_sav)                  
+            # print('detail_status_sav:',detail_status_sav)                  
     except Exception as e:
         print(e)     
     context = {
@@ -132,6 +143,7 @@ def dashboard(request):
       'eninstancedelivraison':eninstancedelivraison,
       'eninstancederecouvrement':eninstancederecouvrement,
       'dossierClotute':dossierClotute,
+      'progress':progress,
       'page':'dashboard',
       'subpage':'sav_tab',
 
@@ -145,12 +157,101 @@ def dashboard(request):
     
 
 @login_required
-def dashboard_sav(request):
+def users(request):
+    # Fetch all customers
+    customers = Customer.objects.filter(is_active=True, is_deleted=False)
+    
+    # Handle new customer creation
+    if request.method == "POST" and 'add_customer' in request.POST:
+        username = request.POST['username']
+        email = request.POST['email']
+        first_name = request.POST.get('first_name', '')
+        last_name = request.POST.get('last_name', '')
+        
+        # Additional fields based on your model
+        is_staff = request.POST.get('is_staff', 'off') == 'on'
+        is_compta = request.POST.get('is_compta', 'off') == 'on'
+        is_logistic = request.POST.get('is_logistic', 'off') == 'on'
+        is_recouvrement = request.POST.get('is_recouvrement', 'off') == 'on'
+        
+        # Check if username or email already exists
+        if Customer.objects.filter(username=username).exists():
+            messages.info(request, "Username already exists!")
+        elif Customer.objects.filter(email=email).exists():
+            messages.info(request, "Email already exists!")
+        else:
+            # Create and save new customer
+            customer = Customer(
+                username=username,
+                email=email,
+                first_name=first_name,
+                last_name=last_name,
+                is_staff=is_staff,
+                is_compta=is_compta,
+                is_losgistic=is_logistic,
+                is_recouvrement=is_recouvrement
+            )
+            customer.set_password("defaultpassword")  # Set a default password, can be updated later
+            customer.save()
+            messages.info(request, "Customer added successfully!")
+            return redirect('serviceapresvente:users')
+
+    return render(request, "servicedsi/index.html", {
+        'page': 'users',
+        'subpage': 'users_tab',
+        'customers': customers,
+    })
+
+@login_required
+def update_customer(request, customer_id):
+    customer = get_object_or_404(Customer, id=customer_id)
+
+    if request.method == "POST":
+        customer.username = request.POST['username']
+        customer.email = request.POST['email']
+        customer.first_name = request.POST.get('first_name', '')
+        customer.last_name = request.POST.get('last_name', '')
+        
+        # Additional fields
+        customer.is_staff = request.POST.get('is_staff', 'off') == 'on'
+        customer.is_compta = request.POST.get('is_compta', 'off') == 'on'
+        customer.is_losgistic = request.POST.get('is_logistic', 'off') == 'on'
+        customer.is_recouvrement = request.POST.get('is_recouvrement', 'off') == 'on'
+        
+        customer.save()
+        messages.info(request, "Customer updated successfully!")
+        return redirect('serviceapresvente:users')
+
+    return render(request, "servicedsi/index.html", {
+        'page': 'users',
+        'subpage': 'users_tab',
+        'customers': Customer.objects.all(),  # To reload the list in the background
+    })
+
+@login_required
+def delete_customer(request, customer_id):
+    customer = get_object_or_404(Customer, id=customer_id)
+    
+    if request.method == "POST":
+        customer.is_deleted = True
+        customer.save()
+        messages.info(request, "Customer deleted successfully!")
+        return redirect('serviceapresvente:users')
+
+    return render(request, "servicedsi/index.html", {
+        'page': 'users',
+        'subpage': 'users_tab',
+        'customers': Customer.objects.filter(is_active=True, is_deleted=False),  # To reload the list in the background
+    })
     
     
-    return render(request,"servicedsi/index.html",{
-    'page':'dashboard',
-    'subpage':'sav_tab',
+def client_sav(request):
+    clients = Client_sav.objects.select_related()
+    
+    return render(request, "servicedsi/index.html", {
+        'page': 'clients',
+        'subpage': 'client_tab',
+        'clients': clients
     })
     
     

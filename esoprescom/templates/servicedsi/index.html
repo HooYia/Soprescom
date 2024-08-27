@@ -64,7 +64,10 @@
                           <a class="nav-link {% if page == 'instance' %}active{% endif %}" id="instance-tab"  href="{% url 'serviceapresvente:instance' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-location-pin"></i>Instance DSI</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link {% if page == 'instance' %}active{% endif %}" id="instance-tab"  href="{% url 'serviceapresvente:instance' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-location-pin"></i>Users</a>
+                          <a class="nav-link {% if page == 'users' %}active{% endif %}" id="users-tab"  href="{% url 'serviceapresvente:users' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-user"></i>Users</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'clients' %}active{% endif %}" id="client-tab"  href="{% url 'serviceapresvente:clients' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-user"></i>Clients SAV</a>
                         </li>
                       </ul>
                   </div>
@@ -112,7 +115,7 @@
                               </li>
                               {% endif %}
                           </ul>
-                      </div>
+                      </div>users_tab
                       {% elif page == 'dashboard' %}
                       <div class="sub-menu">
                         <ul class="nav nav-tabs " role="tablist">
@@ -126,6 +129,22 @@
                                 <a class="nav-link {% if subpage == 'instance_tab' %}active{% endif %}" href="{% url "serviceapresvente:dashboard_instance" %}#instance_tab" role="tab" aria-controls="sub1" aria-selected="true">Instance </a>
                             </li>
                             
+                        </ul>
+                      </div>
+                      {% elif page == 'users' %}
+                      <div class="sub-menu">
+                        <ul class="nav nav-tabs " role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'users_tab' %}active{% endif %}" href="{% url "serviceapresvente:users" %}#sav_tab" role="tab" aria-controls="sub1" aria-selected="true">Users</a>
+                            </li>
+                        </ul>
+                      </div>
+                      {% elif page == 'clients' %}
+                      <div class="sub-menu">
+                        <ul class="nav nav-tabs " role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'client_tab' %}active{% endif %}" href="{% url "serviceapresvente:clients" %}#sav_tab" role="tab" aria-controls="sub1" aria-selected="true">Clients SAV</a>
+                            </li>
                         </ul>
                       </div>
                   {% elif page == 'leasing' %}
@@ -229,6 +248,12 @@
                       </div>
                       <div class="tab-pane fade {% if subpage == 'instance_tab' %}active show{% endif %}" id="instance" role="tabpanel" aria-labelledby="instance-tab">
                         {% include "servicedsi/dashboard/instance.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'users_tab' %}active show{% endif %}" id="users" role="tabpanel" aria-labelledby="users-tab">
+                        {% include "servicedsi/dashboard/users.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'client_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
+                        {% include "servicedsi/dashboard/client_sav.html" %}
                       </div>
                     </div>
 

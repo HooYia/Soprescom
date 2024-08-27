@@ -1,0 +1,176 @@
+<main>
+    <div class="my-5">
+        <div class="col-xl-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-users me-1"></i>
+                    <strong style="font-size: larger;">Client SAV List</strong>
+                    <!-- Button to Open the Modal -->
+                    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
+                        Add New Client
+                    </button>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover table-striped table-bordered responsive" id="customerTable">
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>telephone</th>
+                                <th>Address</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for customer in clients %}
+                                <tr>
+                                    <td>{{ customer.username }}</td>
+                                    <td>{{ customer.client_name }}</td>
+                                    <td>{{ customer.email }}</td>
+                                    <td>{{ customer.telephone }}</td>
+                                    <td>{{ customer.adresse }}</td>
+                                    <td>{{ customer.adresse }}</td>
+                                    <td>
+                                        <!-- Update Button -->
+                                        <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updateCustomerModal-{{ customer.id }}">
+                                            Update
+                                        </button>
+                                        <!-- Delete Button -->
+                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal-{{ customer.id }}">
+                                            Delete
+                                        </button>
+                                    </td>
+                                </tr>
+
+                                <!-- Delete Modal -->
+                                <div class="modal fade" id="deleteCustomerModal-{{ customer.id }}" tabindex="-1" aria-labelledby="deleteCustomerModalLabel-{{ customer.id }}" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="deleteCustomerModalLabel-{{ customer.id }}">Confirm Delete</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Are you sure you want to delete this customer?
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                <!-- Delete Form -->
+                                                <form method="post" style="display:inline;">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Update Modal -->
+                                <div class="modal fade" id="updateCustomerModal-{{ customer.id }}" tabindex="-1" aria-labelledby="updateCustomerModalLabel-{{ customer.id }}" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="updateCustomerModalLabel-{{ customer.id }}">Update Customer</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="" method="post">
+                                                    {% csrf_token %}
+                                                    <div class="mb-3">
+                                                        <label for="username-{{ customer.id }}" class="form-label">Username</label>
+                                                        <input type="text" class="form-control" id="username-{{ customer.id }}" name="username" value="{{ customer.username }}" required>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="email-{{ customer.id }}" class="form-label">Email</label>
+                                                        <input type="email" class="form-control" id="email-{{ customer.id }}" name="email" value="{{ customer.email }}" required>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="first_name-{{ customer.id }}" class="form-label">First Name</label>
+                                                        <input type="text" class="form-control" id="first_name-{{ customer.id }}" name="first_name" value="{{ customer.first_name }}">
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="last_name-{{ customer.id }}" class="form-label">Last Name</label>
+                                                        <input type="text" class="form-control" id="last_name-{{ customer.id }}" name="last_name" value="{{ customer.last_name }}">
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="is_staff-{{ customer.id }}" name="is_staff" {% if customer.is_staff %}checked{% endif %}>
+                                                        <label class="form-check-label" for="is_staff-{{ customer.id }}">Is Staff</label>
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="is_compta-{{ customer.id }}" name="is_compta" {% if customer.is_compta %}checked{% endif %}>
+                                                        <label class="form-check-label" for="is_compta-{{ customer.id }}">Is Compta</label>
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="is_logistic-{{ customer.id }}" name="is_logistic" {% if customer.is_logistic %}checked{% endif %}>
+                                                        <label class="form-check-label" for="is_logistic-{{ customer.id }}">Is Logistic</label>
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="is_recouvrement-{{ customer.id }}" name="is_recouvrement" {% if customer.is_recouvrement %}checked{% endif %}>
+                                                        <label class="form-check-label" for="is_recouvrement-{{ customer.id }}">Is Recouvrement</label>
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Modal -->
+    <div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCustomerModalLabel">Add New Customer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'serviceapresvente:users' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="add_customer" value="1">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_staff" name="is_staff">
+                            <label class="form-check-label" for="is_staff">Is Staff</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_compta" name="is_compta">
+                            <label class="form-check-label" for="is_compta">Is Compta</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_logistic" name="is_logistic">
+                            <label class="form-check-label" for="is_logistic">Is Logistic</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_recouvrement" name="is_recouvrement">
+                            <label class="form-check-label" for="is_recouvrement">Is Recouvrement</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Customer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
