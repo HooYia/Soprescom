@@ -51,10 +51,8 @@
                     {{ row.statut }} </div>
                   </td>
                   
-
                   <td >
-                      <button class="btn btn-primary btn-sm" type="submit">print</button>
-                      {% comment %} <a href="{% url 'serviceapresvente:savrequest-download'  fiche_dentree.id%}" title="Print"><span class="fas fa-print mr-2"></span></a> {% endcomment %}
+                      <a href="{% url 'serviceapresvente:savrequest-download'  row.idrequest%}" title="Print" class="btn btn-primary btn-sm"><span class="fas fa-print mr-2"></span>Print</a>
                       <span class="{% if row.flag == 1 %}disabled-cell{% endif %}">{% include "servicedsi/includes/sav_details.html" with sav_request=row %}</span>
                   </td>
                 </tr>

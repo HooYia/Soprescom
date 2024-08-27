@@ -36,11 +36,11 @@ class Sav_requestUpdForm(forms.ModelForm):
     )
     class Meta:
         model = Sav_request
-        fields = ('type_sav', 'numero_dossier', 'marque', 'client_sav', 'resp_sav', 'numero_serie', 'reference', 'designation', 'garantie', 'description_piece', 'reference_piece', 'pop', 'statut', 'observation',  'rapport_technique', 'facture_fournisseur', 'facture_proforma', 'bon_pour_accord','recouvrement_hp')
+        fields = ('type_sav', 'numero_fiche_technique', 'marque', 'client_sav', 'resp_sav', 'numero_serie', 'reference', 'designation', 'garantie', 'description_piece', 'reference_piece', 'pop', 'statut', 'observation',  'rapport_technique', 'facture_fournisseur', 'facture_proforma', 'bon_pour_accord','recouvrement_hp')
 
         widgets = {
             'type_sav': forms.RadioSelect(attrs={'class': 'form-check form-check-inline', 'id': 'id_type_SAV'}),
-            'numero_dossier' : forms.TextInput(attrs={'class': 'form-control custom-text-input',
+            'numero_fiche_technique' : forms.TextInput(attrs={'class': 'form-control custom-text-input',
                                                         'id': 'id_type_SAV'}),
             'numero_serie' : forms.TextInput(attrs={'class': 'form-control custom-text-input',
                                                   }),
