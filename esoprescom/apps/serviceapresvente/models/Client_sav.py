@@ -16,6 +16,8 @@ class Client_sav(models.Model):
     userLog = models.ForeignKey(Customer, on_delete = models.SET_NULL, null=True)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True)
+    is_deleted = models.BooleanField(default=False)
     
        
 

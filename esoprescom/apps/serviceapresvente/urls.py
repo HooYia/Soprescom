@@ -27,6 +27,9 @@ urlpatterns = [
     
     #clients sav  
     path('client/', dashboard.client_sav, name='clients'),
+    path('clients/update/<int:client_id>/', dashboard.update_client_sav, name='update_client_sav'),
+    path('clients/delete/<int:client_id>/', dashboard.delete_client_sav, name='delete_client_sav'),
+
     
     
     #Gestion SAV

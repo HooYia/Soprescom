@@ -21,7 +21,7 @@ from apps.serviceapresvente.models.Recouvrement import Recouvrement
 
 @login_required
 def index(request):
-    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_losgistic) :
         return redirect('dashboard:dashboard')
     sav_requests_list = Sav_request.objects.all()
     paginator = Paginator(sav_requests_list, 8)

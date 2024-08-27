@@ -22,7 +22,7 @@ class Sav_requestForm(forms.ModelForm):
                                    initial="Hors garantie"
     )
     """       
-    client_sav = forms.ModelChoiceField(queryset=Client_sav.objects.all(),
+    client_sav = forms.ModelChoiceField(queryset=Client_sav.objects.filter(is_active=True, is_deleted=False),
                    widget=forms.Select(attrs={'class': 'form-control custom-text-input',}),
                    )
      

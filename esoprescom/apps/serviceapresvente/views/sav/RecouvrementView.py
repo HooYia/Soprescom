@@ -66,8 +66,7 @@ def update(request, id):
             form = RecouvrementForm(request.POST, request.FILES, instance=recouvrement)
             if form.is_valid():
                 data = form.save(commit=False) 
-                if((data.statut == "Sav payé") or 
-                   (data.statut == "Dossier HP payé") ):
+                if (data.statut == "Sav payé" or data.statut == "Dossier HP payé" ):
                     try:
                         cloturedossier, created = ClotureDossier.objects.get_or_create(
                                 recouvrement_id = data.idrecouvrement,
@@ -97,6 +96,7 @@ def update(request, id):
                 return redirect('serviceapresvente:recouvrement')
             else:
                 form = RecouvrementForm(instance=recouvrement)
+                
     else:
         form = RecouvrementForm(instance=recouvrement)
     return render(request, 'servicedsi/recouvrement/formRecouvrementUpd.html', 

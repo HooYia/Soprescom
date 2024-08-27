@@ -246,13 +246,80 @@ def delete_customer(request, customer_id):
     
     
 def client_sav(request):
-    clients = Client_sav.objects.select_related()
-    
+    clients = Client_sav.objects.filter(is_active=True, is_deleted=False)
+    customers = Customer.objects.filter(is_active=True, is_deleted=False)
+
+    if request.method == "POST" and 'add_client' in request.POST:
+        est_personne_morale = request.POST.get('est_personne_morale', 'off') == 'on'
+        raison_sociale = request.POST.get('raison_sociale', '')
+        telephone = request.POST.get('telephone', '')
+        adresse = request.POST.get('adresse', '')
+        client_name = request.POST.get('client_name', '')
+        user_log_id = request.POST.get('userLog', '')
+
+        customer = get_object_or_404(Customer, id=user_log_id)
+
+        client = Client_sav(
+            est_personne_morale=est_personne_morale,
+            raison_sociale=raison_sociale,
+            telephone=telephone,
+            adresse=adresse,
+            client_name=client_name,
+            userLog=customer,
+        )
+        client.save()
+        messages.success(request, "Client added successfully!")
+        return redirect('serviceapresvente:clients')
+
     return render(request, "servicedsi/index.html", {
         'page': 'clients',
         'subpage': 'client_tab',
-        'clients': clients
+        'clients': clients,
+        'customers': customers
     })
+
+def update_client_sav(request, client_id):
+    client = get_object_or_404(Client_sav, idclient=client_id)
+    customers = Customer.objects.filter(is_active=True, is_deleted=False)
+
+    if request.method == "POST":
+        client.est_personne_morale = request.POST.get('est_personne_morale', 'off') == 'on'
+        client.raison_sociale = request.POST.get('raison_sociale', '')
+        client.telephone = request.POST.get('telephone', '')
+        client.adresse = request.POST.get('adresse', '')
+        client.client_name = request.POST.get('client_name', '')
+        
+        user_log_id = request.POST.get('userLog', '')
+        if user_log_id:
+            client.userLog = get_object_or_404(Customer, id=user_log_id)
+
+        client.save()
+        messages.success(request, "Client updated successfully!")
+        return redirect('serviceapresvente:clients')
+
+    return render(request, "servicedsi/index.html", {
+        'client': client,
+        'customers': customers,
+        'page': 'clients',
+        'subpage': 'client_tab',
+    })
+
+def delete_client_sav(request, client_id):
+    client = get_object_or_404(Client_sav, idclient=client_id)
+
+    if request.method == "POST":
+        client.is_deleted = True
+        client.is_active = False
+        client.save()
+        messages.success(request, "Client deleted successfully!")
+        return redirect('serviceapresvente:clients')
+
+    return render(request, "servicedsi/index.html", {
+        'client': client,
+        'page': 'clients',
+        'subpage': 'client_tab',
+    })
+    
     
     
 @login_required
