@@ -227,3 +227,4 @@ def telecharger_fiche_dentree_pdf(request, id):
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = f'attachment; filename="sale_{fiche_dentree.client_sav}.pdf"'
     return response
+
