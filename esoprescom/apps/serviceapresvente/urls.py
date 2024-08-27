@@ -77,5 +77,8 @@ urlpatterns = [
     path('instancerecouv', InstancerecouvViews.index, name='instancerecouv'),
     path('instancerecouv/<int:id>/edit', InstancerecouvViews.update, name='instancerecouv-update'),
     path('instancerecouv/<int:id>/detail', InstancerecouvViews.show, name='instancerecouv-show'),
+
+    
+
    
 ]

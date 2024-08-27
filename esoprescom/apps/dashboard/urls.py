@@ -1,5 +1,5 @@
 from django.urls import path
-from apps.dashboard.views import dashboad_views,address_views,account_views,orders_views
+from apps.dashboard.views import dashboad_views,address_views,account_views,orders_views, my_sav_view
 
 app_name='dashboard'
 
@@ -15,5 +15,8 @@ urlpatterns = [
     path('account/passwd_reset', account_views.reset_account_password, name='reset_account_password'),
     #orders
     path('orders', orders_views.index, name='orders'),
+
+    # SAV cleint(mes SAV)
+    path('dashboard/my_sav', my_sav_view.client_sav, name='my_savs'),
 
 ]
