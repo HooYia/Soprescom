@@ -40,7 +40,6 @@
                         </div>
                     </div>
                   </div>
-                </div>
                   <div class="col-sm-6">
                     <div class="card ">
                     <div class="card-header text-center">
@@ -109,9 +108,10 @@
   
 $(document).ready(function() {
   const images = {
-    rapport: "{{ commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
-    proforma: "{{ commandesav.savrequest.facture_proformaUrl|escapejs  }}",
-    fournisseur: "{{ commandesav.savrequest.facture_fornisseurUrl|escapejs  }}"
+    rapport: "{{ suivicommandesav.commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
+    proforma: "{{ suivicommandesav.commandesav.savrequest.facture_proformaUrl|escapejs  }}",
+    fournisseur: "{{ suivicommandesav.commandesav.savrequest.facture_fournisseurUrl|escapejs  }}"
+
   };
   //console.log('images:',images)
   let currentIndex = 0;

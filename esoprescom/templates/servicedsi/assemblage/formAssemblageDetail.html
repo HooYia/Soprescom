@@ -101,9 +101,9 @@
   
 $(document).ready(function() {
   const images = {
-    rapport: "{{ commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
-    proforma: "{{ commandesav.savrequest.facture_proformaUrl|escapejs  }}",
-    fournisseur: "{{ commandesav.savrequest.facture_fornisseurUrl|escapejs  }}"
+    rapport: "{{ assemblage.suivicommandesav.commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
+    proforma: "{{ assemblage.suivicommandesav.commandesav.savrequest.facture_proformaUrl|escapejs  }}",
+    fournisseur: "{{ assemblage.suivicommandesav.commandesav.savrequest.facture_fornisseurUrl|escapejs  }}"
   };
   //console.log('images:',images)
   let currentIndex = 0;
