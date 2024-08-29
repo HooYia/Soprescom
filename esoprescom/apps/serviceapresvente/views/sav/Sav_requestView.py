@@ -107,7 +107,20 @@ def create(request):
     else:
         print("No Post form add")
         form = Sav_requestForm()
-        customers = Customer.objects.filter(is_active=True, is_deleted=False)
+        # customers = Customer.objects.filter(is_active=True, is_deleted=False)
+        # clients = Client_sav.objects.filter(is_active=True, is_deleted=False).select_related('customer')
+
+        # Get IDs of customers already associated with a client
+        associated_customer_ids = Client_sav.objects.filter(
+            is_active=True,
+            is_deleted=False
+        ).values_list('customer_id', flat=True).distinct()
+
+        # Exclude customers who are already associated with a client
+        customers = Customer.objects.filter(
+            is_active=True,
+            is_deleted=False
+        ).exclude(id__in=associated_customer_ids)
         print('customer: ', customers)
 
         return render(request, 'servicedsi/formSavAdd.html', {'form': form, 'customers':customers})
@@ -240,14 +253,19 @@ def telecharger_fiche_dentree_pdf(request, id):
 def create_client(request):
     if request.method == 'POST':
         user_log_id = request.POST.get('userLog')
-        client_name = request.POST.get('client_name')
+        nom = request.POST.get('nom')
+        prenom = request.POST.get('prenom')
         telephone = request.POST.get('telephone')
         adresse = request.POST.get('adresse')
+        customer = get_object_or_404(Customer, id=user_log_id)
+
 
         data = {
-            'client_name': client_name,
+            'client_name': f"{nom} {prenom}",
             'telephone': telephone,
             'adresse': adresse,
+            
+            
         }
 
         if user_log_id:
