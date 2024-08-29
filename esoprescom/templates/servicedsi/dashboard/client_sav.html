@@ -51,6 +51,15 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="userLog" class="form-label">Select Customer</label>
+                                <select class="form-control" id="userLog" name="userLog" required>
+                                    <option value="">Select Customer</option>
+                                    {% for customer in customers %}
+                                    <option value="{{ customer.id }}">{{ customer.username }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="est_personne_morale" name="est_personne_morale">
                                 <label class="form-check-label" for="est_personne_morale">Is Company</label>
@@ -60,8 +69,12 @@
                                 <input type="text" class="form-control" id="raison_sociale" name="raison_sociale">
                             </div>
                             <div class="mb-3">
-                                <label for="client_name" class="form-label">Client Name</label>
-                                <input type="text" class="form-control" id="client_name" name="client_name">
+                                <label for="first_name" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="client_name" name="nom" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="last_name" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="client_name" name="prenom">
                             </div>
                             <div class="mb-3">
                                 <label for="telephone" class="form-label">Phone</label>
@@ -71,15 +84,7 @@
                                 <label for="adresse" class="form-label">Address</label>
                                 <input type="text" class="form-control" id="adresse" name="adresse">
                             </div>
-                            <div class="mb-3">
-                                <label for="userLog" class="form-label">Select Customer</label>
-                                <select class="form-control" id="userLog" name="userLog">
-                                    <option value="">Select Customer</option>
-                                    {% for customer in customers %}
-                                    <option value="{{ customer.id }}">{{ customer.username }}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -102,6 +107,9 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            <div>
+                                <input type="hidden" name="userLog", value="{{client.customer.id}}">
+                            </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="est_personne_morale{{ client.idclient }}" name="est_personne_morale" {% if client.est_personne_morale %}checked{% endif %}>
                                 <label class="form-check-label" for="est_personne_morale{{ client.idclient }}">Is Company</label>
@@ -111,8 +119,12 @@
                                 <input type="text" class="form-control" id="raison_sociale{{ client.idclient }}" name="raison_sociale" value="{{ client.raison_sociale }}">
                             </div>
                             <div class="mb-3">
-                                <label for="client_name{{ client.idclient }}" class="form-label">Client Name</label>
-                                <input type="text" class="form-control" id="client_name{{ client.idclient }}" name="client_name" value="{{ client.client_name }}">
+                                <label for="client_name{{ client.idclient }}" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="client_name{{ client.idclient }}" name="nom" value="{{ client.nom }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="client_name{{ client.idclient }}" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="client_name{{ client.idclient }}" name="prenom" value="{{ client.prenom }}">
                             </div>
                             <div class="mb-3">
                                 <label for="telephone{{ client.idclient }}" class="form-label">Phone</label>
@@ -122,17 +134,7 @@
                                 <label for="adresse{{ client.idclient }}" class="form-label">Address</label>
                                 <input type="text" class="form-control" id="adresse{{ client.idclient }}" name="adresse" value="{{ client.adresse }}">
                             </div>
-                            <div class="mb-3">
-                                <label for="userLog{{ client.idclient }}" class="form-label">Select Customer</label>
-                                <select class="form-control" id="userLog{{ client.idclient }}" name="userLog">
-                                    <option value="">Select Customer</option>
-                                    {% for customer in customers %}
-                                    <option value="{{ customer.id }}" {% if client.userLog and client.userLog.id == customer.id %}selected{% endif %}>
-                                        {{ customer.username }}
-                                    </option>
-                                    {% endfor %}
-                                </select>
-                            </div>
+                           
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
