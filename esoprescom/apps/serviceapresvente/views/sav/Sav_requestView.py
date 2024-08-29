@@ -87,10 +87,10 @@ def create(request):
                         data.statut = 'pending (achat)'
                         data.save()
                         # print('Sav_request has been saved with bon_pour_accord!')
-                        messages.success(request, 'Processus Achat !')
+                        messages.info(request, 'Processus Achat !')
                         
                     else:
-                        messages.error(request, 'Erreur d\'intégrité lors de la création du processus achat !')
+                        messages.info(request, 'Erreur d\'intégrité lors de la création du processus achat !')
                     return redirect('serviceapresvente:savrequest')
                 else:
                     # bon_pour_accord est False
@@ -98,10 +98,10 @@ def create(request):
                     return redirect('serviceapresvente:savrequest')
             except Exception as e:
                 # print(e)
-                messages.error(request, 'Une erreur s\'est produite lors de la sauvegarde.')
+                messages.info(request, 'Une erreur s\'est produite lors de la sauvegarde.')
                 return redirect('serviceapresvente:savrequest')
         else:
-            messages.error(request, 'Formulaire invalide, veuillez vérifier les champs.')
+            messages.info(request, 'Formulaire invalide, veuillez vérifier les champs.')
             # form = Sav_requestForm()
             return redirect('serviceapresvente:savrequest')
     else:
@@ -252,39 +252,39 @@ def telecharger_fiche_dentree_pdf(request, id):
 @csrf_exempt
 def create_client(request):
     if request.method == 'POST':
-        user_log_id = request.POST.get('userLog')
-        nom = request.POST.get('nom')
-        prenom = request.POST.get('prenom')
-        telephone = request.POST.get('telephone')
-        adresse = request.POST.get('adresse')
-        customer = get_object_or_404(Customer, id=user_log_id)
-
-
-        data = {
-            'client_name': f"{nom} {prenom}",
-            'telephone': telephone,
-            'adresse': adresse,
-            
-            
-        }
-
-        if user_log_id:
-            try:
-                user_log = Customer.objects.get(id=user_log_id)
-                data['userLog'] = user_log
-            except Customer.DoesNotExist:
-                return JsonResponse({'success': False, 'message': 'Customer not found'}, status=400)
-
         try:
+            user_log_id = request.POST.get('userLog')
+            nom = request.POST.get('nom')
+            prenom = request.POST.get('prenom')
+            telephone = request.POST.get('telephone')
+            adresse = request.POST.get('adresse')
+            customer = get_object_or_404(Customer, id=user_log_id)
+
+            # Check if a client with the same attributes already exists
+            if Client_sav.objects.filter(customer=customer).exists():
+                return JsonResponse({'success': False, 'message': 'A client with the same details already exists!'})
+
+            data = {
+                'client_name': f"{nom} {prenom}",
+                'telephone': telephone,
+                'adresse': adresse,
+                'customer': customer,
+                'nom': nom,
+                'prenom': prenom,
+                'userLog': request.user.email,
+            }
+
             client = Client_sav(**data)
             client.save()
-            response = {
+
+            return JsonResponse({
                 'success': True,
                 'message': 'Client added successfully!',
                 'client_id': client.idclient,
                 'client_name': client.client_name
-            }
-        except Exception as e:
-            response = {'success': False, 'message': str(e)}
+            })
 
-        return JsonResponse(response)
+        except Exception as e:
+            return JsonResponse({'success': False, 'message': str(e)})
+
+    return JsonResponse({'success': False, 'message': 'Invalid request method'})
