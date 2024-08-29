@@ -6,7 +6,7 @@
         <form id="new-client-form" method="POST" action="{% url 'serviceapresvente:create_client' %}">
             {% csrf_token %}
             <div class="row">
-              <div class="mb-3 col-md-6">
+              <div class="mb-3 col-md-12">
                   <label for="userLog" class="form-label">Select Customer</label>
                   <select class="form-control" id="userLog" name="userLog" required>
                       <option value="">Select Customer</option>
@@ -15,15 +15,22 @@
                       {% endfor %}
                   </select>
               </div>
+             
+            </div>
+            <div class="row">
               <div class="mb-3 col-md-6">
-                  <label for="client_name" class="form-label">Client Name</label>
-                  <input type="text" class="form-control" id="client_name" name="client_name" required>
+                  <label for="nom" class="form-label">Nom</label>
+                  <input type="text" class="form-control" id="nom" name="nom" required>
+              </div>
+              <div class="mb-3 col-md-6">
+                  <label for="prenom" class="form-label">Prenom</label>
+                  <input type="text" class="form-control" id="prenom" name="prenom" required>
               </div>
             </div>
             <div class="row">
               <div class="mb-3 col-md-6">
                   <label for="telephone" class="form-label">Phone</label>
-                  <input type="nimber" class="form-control" id="telephone" name="telephone" required>
+                  <input type="number" class="form-control" id="telephone" name="telephone" required>
               </div>
               <div class="mb-3 col-md-6">
                   <label for="adresse" class="form-label">Address</label>
@@ -307,18 +314,18 @@ $(document).ready(function() {
                   // Close the form
                   $('#new-client-form-container').hide();
                   
-                  // Update the client list in the select field
-                    var clientSelect = $('#userLog');
+                  var clientSelect = $('#id_client_sav');
                     clientSelect.append($('<option>', {
                         value: response.client_id,  // Ensure this value matches the client's ID
                         text: response.client_name
                     }));
                     
-                    // Optionally, set the newly added client as selected
+                    // Set the newly added client as selected
                     clientSelect.val(response.client_id).change();
 
-                    // Update the displayed client name
-                   // $('.card-text #client-name').text(response.client_name);
+                    // Update the displayed client name in the <p> tag
+                    $('#client-name').text(response.client_name);
+                   
 
 
                   alert('Client added successfully!');
