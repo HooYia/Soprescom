@@ -20,9 +20,10 @@ class RecouvrementDeveaForm(forms.ModelForm):
     )      
     class Meta:
         model = Recouvrement
-        fields = ('livraisonclient','is_devea_request','deveaOrder','statutDevea','numero_awd','montant_prestation','remise_documentaire','droit_douane','transport','facture_transitaire','autre_piece')
+        fields = ('statut','livraisonclient','is_devea_request','deveaOrder','statutDevea','numero_awd','montant_prestation','remise_documentaire','droit_douane','transport','facture_transitaire','autre_piece')
 
         widgets = {
+            'statut': forms.HiddenInput(),  # Champ caché
             'statutDevea' : forms.RadioSelect(attrs={'class': 'form-check form-check-inline', 
                                                        'id':'id_recouvrementstatut'}), 
             'livraisonclient' : forms.TextInput(attrs={'class': 'form-control custom-text-input',

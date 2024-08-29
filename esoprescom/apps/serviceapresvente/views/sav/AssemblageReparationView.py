@@ -69,22 +69,26 @@ def update(request, id):
                 data = form.save(commit=False) 
                 if(data.statut == "Terminé" ):
                     print('data.statut:',data.statut)
-                    try:
-                        livraison, created = LivraisonClient.objects.get_or_create(
-                                assamblagereparation_id = data.idassemblage,
-                                )
-                        if created:
-                            ### Mise a jour de status dans SAV Request
-                            Sav_request_instance = Sav_request.objects.get(pk=data.suivicommandesav.commandesav.savrequest.idrequest)
-                            Sav_request_instance.statut = 'non Livré(e)'
-                            Sav_request_instance.save()
-                            data.flag = True
-                            data.save()
-                            messages.success(request, 'Processus Logistique')
-                        else:
-                            print("Row not created")    
-                    except IntegrityError:
-                            messages.error(request, 'Erreur d\'intégrité lors de la création du processus achat !')
+                    if form.is_valid():
+                        data = form.save(commit=False) 
+                        if(data.statut == "Terminé" ):
+                            print('data.statut:',data.statut)
+                            try:
+                                livraison, created = LivraisonClient.objects.get_or_create(
+                                                    assamblagereparation_id = data.idassemblage,
+                                                    )
+                                if created:
+                                    ### Mise a jour de status dans SAV Request
+                                    Sav_request_instance = Sav_request.objects.get(pk=data.suivicommandesav.commandesav.savrequest.idrequest)
+                                    Sav_request_instance.statut = 'SAV non Livré(e)'
+                                    Sav_request_instance.save()
+                                    data.flag = True
+                                    data.save()
+                                    messages.success(request, 'Processus Logistique')
+                                else:
+                                    print("Row not created")    
+                            except IntegrityError:
+                                    messages.error(request, 'Erreur d\'intégrité lors de la création du processus achat !')
                 else: 
                     data.save()
                     messages.success(request, 'Assemblage Sav has been saved !')

@@ -82,7 +82,7 @@ def update(request, id):
                             if Sav_request_instance.recouvrement_hp:
                                 Sav_request_instance.statut = 'Dossier HP à completer'
                             else:
-                                Sav_request_instance.statut = 'non payé'
+                                Sav_request_instance.statut = 'Sav non payé'
                             Sav_request_instance.save()
                             data.flag = True
                             data.save()

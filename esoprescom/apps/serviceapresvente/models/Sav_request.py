@@ -148,7 +148,7 @@ class Sav_request(models.Model):
         return queryset
     
 
-    ##############
+##############
 # Les Signaux#
 ##############
 from django.conf import settings
@@ -158,7 +158,7 @@ def send_email_on_sav_request_created(sender, instance, created, **kwargs):
     if created:  # Vérifie si une nouvelle instance a été créée
         subject = 'Nouvelle requête SAV créée'
         """
-        client_email = instance.client_sav.email
+        client_email = instance.client_sav.customer.email
         
         message = f"Une nouvelle requête SAV a été créée avec le numéro de dossier : {instance.numero_dossier}"
         from_email = 'souleymane@soprescom.net'
@@ -181,7 +181,7 @@ def send_email_on_sav_request_created(sender, instance, created, **kwargs):
             'resp_sav_name': instance.resp_sav.name,
             'resp_sav_telephone': instance.resp_sav.telephone,
              }
-        to_email = [instance.client_sav.email, instance.resp_sav.email]
+        to_email = [instance.client_sav.customer.email, instance.resp_sav.email]
         #print('to_email:',to_email)
         from_email = settings.EMAIL_HOST_USER
         #print('from_email:',from_email)
@@ -198,12 +198,29 @@ def send_email_on_sav_request_created(sender, instance, created, **kwargs):
             'resp_sav_name': instance.resp_sav.name,
             'resp_sav_telephone': instance.resp_sav.telephone,
              }
-        to_email = ['donsetogola@smartsolutions-mali.com']
+        to_email = ['christianhonore2003@gmail.com']
         #print('to_email:',to_email)
         from_email = settings.EMAIL_HOST_USER
         #print('from_email:',from_email)
         send_email_with_template_task.delay(subject,template_name,context,to_email,from_email)
-    elif (instance.statut == 'En instance de livraison'):
+    elif (instance.statut == 'pending (DSI - Assemblage)'):
+        subject = 'Livraison SAV'
+        template_name = 'email/sav_assemblagePiece.html'
+        context= {
+            'numero_dossier': instance.numero_dossier,
+            'client_name': instance.client_sav.client_name,
+            'marque': instance.marque.marque,
+            'num_serie': instance.numero_serie,
+            'defaut_sav': instance.description_piece,
+            'resp_sav_name': instance.resp_sav.name,
+            'resp_sav_telephone': instance.resp_sav.telephone,
+             }
+        to_email = [instance.client_sav.customer.email,'christianhonore2003@gmail.com']
+        #print('to_email:',to_email)
+        from_email = settings.EMAIL_HOST_USER
+        #print('from_email:',from_email)
+        send_email_with_template_task.delay(subject,template_name,context,to_email,from_email)
+    elif (instance.statut == 'SAV non Livré(e)'):
         subject = 'Livraison SAV'
         template_name = 'email/sav_livraison.html'
         context= {
@@ -215,12 +232,12 @@ def send_email_on_sav_request_created(sender, instance, created, **kwargs):
             'resp_sav_name': instance.resp_sav.name,
             'resp_sav_telephone': instance.resp_sav.telephone,
              }
-        to_email = [instance.client_sav.email,'donsetogola@smartsolutions-mali.com']
+        to_email = [instance.client_sav.customer.email,'christianhonore2003@gmail.com']
         #print('to_email:',to_email)
         from_email = settings.EMAIL_HOST_USER
         #print('from_email:',from_email)
-        send_email_with_template_task.delay(subject,template_name,context,to_email,from_email)
-    elif (instance.statut == 'En instance de recouvrement'):
+        send_email_with_template_task.delay(subject,template_name,context,to_email,from_email)    
+    elif (instance.statut == 'Dossier HP à completer' or instance.statut == 'Sav non payé'):
         subject = 'SAV recouvrement'
         template_name = 'email/sav_recouvrement.html'
         context= {
@@ -232,7 +249,7 @@ def send_email_on_sav_request_created(sender, instance, created, **kwargs):
             'resp_sav_name': instance.resp_sav.name,
             'resp_sav_telephone': instance.resp_sav.telephone,
              }
-        to_email = [instance.client_sav.email, 'donsetogola@smartsolutions-mali.com']
+        to_email = [instance.client_sav.customer.email, 'christianhonore2003@gmail.com']
         #print('to_email:',to_email)
         from_email = settings.EMAIL_HOST_USER
         #print('from_email:',from_email)

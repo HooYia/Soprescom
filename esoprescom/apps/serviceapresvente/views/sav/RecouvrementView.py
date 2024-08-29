@@ -63,11 +63,17 @@ def update(request, id):
     
     if request.method == 'POST':
         if request.POST.get('_method') == 'PUT':
-            form = RecouvrementForm(request.POST, request.FILES, instance=recouvrement)
+            if recouvrement.is_devea_request:
+                form = RecouvrementDeveaForm(request.POST, request.FILES, instance=recouvrement)
+            else:    
+                form = RecouvrementForm(request.POST, request.FILES, instance=recouvrement)
+            
             if form.is_valid():
-                data = form.save(commit=False) 
-                if (data.statut == "Sav payé" or data.statut == "Dossier HP payé" ):
+                data = form.save(commit=False)     
+                if((data.statut == "Sav payé") or 
+                   (data.statutDevea == "Dossier HP payé") ):
                     try:
+                        data.statut = "Sav payé"
                         cloturedossier, created = ClotureDossier.objects.get_or_create(
                                 recouvrement_id = data.idrecouvrement,
                                 )
@@ -95,19 +101,24 @@ def update(request, id):
                 messages.success(request, 'Livraison has been updated !')
                 return redirect('serviceapresvente:recouvrement')
             else:
-                form = RecouvrementForm(instance=recouvrement)
-                
+                if recouvrement.is_devea_request:
+                    form = RecouvrementDeveaForm(instance=recouvrement)
+                else:
+                    form = RecouvrementForm(instance=recouvrement)    
     else:
-        form = RecouvrementForm(instance=recouvrement)
+        if recouvrement.is_devea_request:
+            form = RecouvrementDeveaForm(instance=recouvrement)
+        else:
+            form = RecouvrementForm(instance=recouvrement) 
     return render(request, 'servicedsi/recouvrement/formRecouvrementUpd.html', 
                    {'form': form, })
 
+
 @login_required
 def delete(request, id):
-    suivicommandesav = get_object_or_404(LivraisonClient, idrecouvrement=id)
+    suivicommandesav = get_object_or_404(Recouvrement, idrecouvrement=id)
     if request.method == 'POST':
         if request.POST.get('_method') == 'DELETE':
             suivicommandesav.delete()
             messages.success(request, 'LIvraison has been deleted !')
     return redirect('serviceapresvente:recouvrement')
-

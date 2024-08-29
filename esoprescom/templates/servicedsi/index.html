@@ -54,7 +54,7 @@
                         <li class="nav-item">
                           <a class="nav-link  {% if page == 'dashboard' %}active{% endif %}" id="dashboard-tab"  href="{% url 'serviceapresvente:dashboard' %}" role="tab" aria-controls="dashboard" aria-selected="false"><i class="ti-layout-grid2"></i>Dashboard</a>
                         </li>
-                        
+                        {% if not is_staff or not is_superuser %}
                         <li class="nav-item">
                           <a class="nav-link  {% if page == 'savrequest' %}active{% endif %}" id="savrequest-tab"  href="{% url 'serviceapresvente:savrequest' %}" role="tab" aria-controls="savrequest" aria-selected="false"><i class="ti-layout-grid2"></i>Gestion SAV</a>
                         </li>
@@ -70,6 +70,7 @@
                         <li class="nav-item">
                           <a class="nav-link {% if page == 'clients' %}active{% endif %}" id="client-tab"  href="{% url 'serviceapresvente:clients' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-user"></i>Clients SAV</a>
                         </li>
+                        {% endif %}
                       </ul>
                   </div>
               </div>

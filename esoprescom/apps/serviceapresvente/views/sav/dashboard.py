@@ -12,6 +12,7 @@ from apps.serviceapresvente.models import Sav_request,Instance,Client_sav,Person
                             Instance_recouvrement
                             
 from apps.leasing.models import *
+from utlis.utils import generate_password
 from django.db.models import F    
 from django.db.models import OuterRef, Subquery               
 from apps.serviceapresvente.models import *
@@ -249,6 +250,11 @@ def users(request):
         elif Customer.objects.filter(email=email).exists():
             messages.info(request, "Email already exists!")
         else:
+            
+            #generate password
+            password = generate_password()
+
+            
             # Create and save new customer
             customer = Customer(
                 username=username,
@@ -258,11 +264,12 @@ def users(request):
                 is_staff=is_staff,
                 is_compta=is_compta,
                 is_losgistic=is_logistic,
-                is_recouvrement=is_recouvrement
+                is_recouvrement=is_recouvrement,
+                password=password,
             )
             customer.set_password("defaultpassword")  # Set a default password, can be updated later
             customer.save()
-            messages.info(request, "Customer added successfully!")
+            messages.info(request, f"Customer added successfully!! The generated password is: {password}")
             return redirect('serviceapresvente:users')
 
     return render(request, "servicedsi/index.html", {
@@ -270,6 +277,8 @@ def users(request):
         'subpage': 'users_tab',
         'customers': customers,
     })
+    
+    # S.X*r3#>    qehekat
 
 @login_required
 def update_customer(request, customer_id):
@@ -350,6 +359,7 @@ def client_sav(request):
         if Client_sav.objects.filter(customer=customer,telephone=telephone).exists():
             messages.error(request, "A client with the same details already exists!")
             return redirect('serviceapresvente:clients')
+        
 
         client = Client_sav(
             est_personne_morale=est_personne_morale,
@@ -360,10 +370,10 @@ def client_sav(request):
             customer=customer,
             nom=nom,
             prenom=prenom,
-            userLog=request.user.email
+            userLog=request.user.email,
         )
         client.save()
-        messages.success(request, "Client added successfully!")
+        messages.success(request, f"Client added successfully!")
         return redirect('serviceapresvente:clients')
 
     return render(request, "servicedsi/index.html", {

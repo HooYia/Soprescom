@@ -79,8 +79,6 @@ def update(request, id):
                             Sav_request_instance = Sav_request.objects.get(pk=data.commandesav.savrequest.idrequest)
                             Sav_request_instance.statut = 'pending (DSI - Assemblage)'
                             Sav_request_instance.save()
-                            data.flag = True
-                            data.save()
                             messages.success(request, 'Processus DSI')
                         else:
                             print("Row not created")    
