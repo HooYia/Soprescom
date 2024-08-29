@@ -13,8 +13,8 @@
                 {% endif %}
               </div>
               <div class="d-flex justify-content-between mt-2">
-                <button class="btn btn-secondary" onclick="changeImage('prev', {{ livraison.assamblagereparation.idlivraison.assamblagereparation }})">Précédent</button>
-                <button class="btn btn-secondary" onclick="changeImage('next', {{ livraison.assamblagereparation.idlivraison.assamblagereparation }})">Suivant</button>
+                <button class="btn btn-secondary" onclick="changeImage('prev', {{ recouvrement.idrecouvrement }})">Précédent</button>
+                <button class="btn btn-secondary" onclick="changeImage('next', {{ recouvrement.idrecouvrement }})">Suivant</button>
               </div>
             </div>
             <div class="col-md-7">
@@ -102,9 +102,9 @@
   
 $(document).ready(function() {
   const images = {
-    rapport: "{{ commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
-    proforma: "{{ commandesav.savrequest.facture_proformaUrl|escapejs  }}",
-    fournisseur: "{{ commandesav.savrequest.facture_fornisseurUrl|escapejs  }}"
+    rapport: "{{ recouvrement.livraisonclient.assamblagereparation.suivicommandesav.commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
+    proforma: "{{ recouvrement.livraisonclient.assamblagereparation.suivicommandesav.commandesav.savrequest.facture_proformaUrl|escapejs  }}",
+    fournisseur: "{{ recouvrement.livraisonclient.assamblagereparation.suivicommandesav.commandesav.savrequest.facture_fornisseurUrl|escapejs  }}"
   };
   //console.log('images:',images)
   let currentIndex = 0;

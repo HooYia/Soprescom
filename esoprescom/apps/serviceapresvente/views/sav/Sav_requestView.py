@@ -95,15 +95,16 @@ def create(request):
             except Exception as e:
                 # print(e)
                 messages.error(request, 'Une erreur s\'est produite lors de la sauvegarde.')
-                return render(request, 'servicedsi/formSavAdd.html', {'form': form})
+                return redirect('serviceapresvente:savrequest')
         else:
             messages.error(request, 'Formulaire invalide, veuillez vérifier les champs.')
-            form = Sav_requestForm()
-            return render(request, 'servicedsi/formSavAdd.html', {'form': form})
+            # form = Sav_requestForm()
+            return redirect('serviceapresvente:savrequest')
     else:
         print("No Post form add")
         form = Sav_requestForm()
         return render(request, 'servicedsi/formSavAdd.html', {'form': form})
+    
     
 
 @login_required

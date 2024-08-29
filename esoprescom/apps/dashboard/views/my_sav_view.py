@@ -9,13 +9,13 @@ from apps.serviceapresvente.models import Sav_request, Client_sav
 def client_sav(request):
     # Assuming there is a relationship between Customer and Client_sav
     try:
-        client_sav_instance = Client_sav.objects.filter(userLog=request.user)
+        client_sav_instances = Client_sav.objects.filter(userLog=request.user)
     except Client_sav.DoesNotExist:
         client_sav_instance = None
 
     # Get all the CommandeSav for the connected user if client_sav_instance exists
-    if client_sav_instance:
-        savs = Sav_request.objects.filter(client_sav__in=client_sav_instance)
+    if client_sav_instances.exists():
+        savs = Sav_request.objects.filter(client_sav__in=client_sav_instances)
     else:
         savs = Sav_request.objects.none()  # No results if no client_sav_instance found
 

@@ -10,7 +10,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-         <div class="card mb-3" style="max-width: 1800px;">
+        <div class="card mb-3" style="max-width: 1800px;">
           <div class="row g-0">
             <div class="col-md-5">
               <div id="imageContainer{{commandesav.idcommandesav}}">
@@ -124,38 +124,38 @@
 
 {% block script %}
 <script>
-$(document).ready(function() {
-  const images = {
-    rapport: "{{ commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
-    proforma: "{{ commandesav.savrequest.facture_proformaUrl|escapejs  }}",
-    fournisseur: "{{ commandesav.savrequest.facture_fornisseurUrl|escapejs  }}"
-  };
-  //console.log('images:',images)
-  let currentIndex = 0;
-  const imageKeys = Object.keys(images).filter(key => images[key]);
-  //console.log('imageKeys:',imageKeys)
+  $(document).ready(function() {
+    const images = {
+      rapport: "{{ commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
+      proforma: "{{ commandesav.savrequest.facture_proformaUrl|escapejs  }}",
+      fournisseur: "{{ commandesav.savrequest.facture_fornisseurUrl|escapejs  }}"
+    };
+    //console.log('images:',images)
+    let currentIndex = 0;
+    const imageKeys = Object.keys(images).filter(key => images[key]);
+    //console.log('imageKeys:',imageKeys)
 
-  //function changeImage(direction, requestId) {
-  window.changeImage = function(direction, requestId) {
-    console.log('requestId:',requestId)
-   
-    if (direction === 'next') {
-      currentIndex = (currentIndex + 1) % imageKeys.length;
-    } else if (direction === 'prev') {
-      currentIndex = (currentIndex - 1 + imageKeys.length) % imageKeys.length;
+    //function changeImage(direction, requestId) {
+    window.changeImage = function(direction, requestId) {
+      console.log('requestId:',requestId)
+    
+      if (direction === 'next') {
+        currentIndex = (currentIndex + 1) % imageKeys.length;
+      } else if (direction === 'prev') {
+        currentIndex = (currentIndex - 1 + imageKeys.length) % imageKeys.length;
+      }
+      const imageContainer = document.getElementById(`imageContainer${requestId}`);
+      imageContainer.innerHTML = `<img src="${images[imageKeys[currentIndex]]}" class="img-fluid rounded-start" alt="Image" onclick="zoomImage(this)">`;
     }
-    const imageContainer = document.getElementById(`imageContainer${requestId}`);
-    imageContainer.innerHTML = `<img src="${images[imageKeys[currentIndex]]}" class="img-fluid rounded-start" alt="Image" onclick="zoomImage(this)">`;
-  }
-  //window.changeImage = changeImage; // Make the function globally accessible
-  function zoomImage(img) {
-    var modal = new bootstrap.Modal(document.getElementById('zoomModal'));
-    document.getElementById('zoomImage').src = img.src;
-    modal.show();
-  }
-  window.zoomImage = zoomImage;
-  
-  /*********************/ 
+    //window.changeImage = changeImage; // Make the function globally accessible
+    function zoomImage(img) {
+      var modal = new bootstrap.Modal(document.getElementById('zoomModal'));
+      document.getElementById('zoomImage').src = img.src;
+      modal.show();
+    }
+    window.zoomImage = zoomImage;
+    
+    /*********************/ 
   })
 </script>
 
