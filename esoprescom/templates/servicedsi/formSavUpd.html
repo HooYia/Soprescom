@@ -151,38 +151,35 @@
     radioButton?.addEventListener('change', handleSavClick);
          handleSavClick();
 
-  // gestion recouvrement_hp    
-  const idGarantieSelect = document.querySelector('select#id_garantie');
-  const idTypeSAVSelect = document.querySelector('select#id_type_SAV');
+   // gestion recouvrement_hp    
+  const idGarantieSelect = document.querySelector('input[name="garantie"]:checked');  // Changed from 'select' to handle radio buttons
+  const idTypeSAVSelect = document.querySelector('input[name="type_sav"]:checked');   // Similarly, handle radio buttons
   const recouvrementHPDiv = document.querySelector('input#id_recouvrement_hp');
-  console.log('idGarantieSelect:',idGarantieSelect)
-  console.log('idTypeSAVSelect:',idTypeSAVSelect)
-  function updateRecouvrementHP() {
-    console.log('recouvrementHPDiv:',recouvrementHPDiv)
-        const selectedGarantie = idGarantieSelect.value;
-        const selectedTypeSAV = idTypeSAVSelect.value;
-        console.log('selectedGarantie:',selectedGarantie)
-        console.log('selectedTypeSAV',selectedTypeSAV)
-        
-        if (selectedGarantie === 'Sous garantie' && selectedTypeSAV === 'DEVEA') {
-              console.log('true')
-              //recouvrementHPDiv.querySelector('input[type="checkbox"]').disabled = true;
-              //recouvrementHPDiv.querySelector('input[type="checkbox"]').checked = true;
-              recouvrementHPDiv.setAttribute('disabled', true);
-              recouvrementHPDiv.setAttribute('checked', true) 
-              } else {
-              console.log('false')
-              recouvrementHPDiv.setAttribute('disabled', true);
-              recouvrementHPDiv.removeAttribute('checked', true) 
-            }
-        }
 
-  idGarantieSelect?.addEventListener('change', updateRecouvrementHP);
-  idTypeSAVSelect?.addEventListener('change', updateRecouvrementHP);
+  function updateRecouvrementHP() {
+      const selectedGarantie = document.querySelector('input[name="garantie"]:checked')?.value; // Get the currently checked radio button value
+      const selectedTypeSAV = document.querySelector('input[name="type_sav"]:checked')?.value;
+
+      if (selectedGarantie === 'Sous garantie' && selectedTypeSAV === 'DEVEA') {
+          recouvrementHPDiv.removeAttribute('disabled');
+          recouvrementHPDiv.setAttribute('checked', true);
+      } else {
+          recouvrementHPDiv.setAttribute('disabled', true);
+          recouvrementHPDiv.removeAttribute('checked');
+      }
+  }
+
+  // Event listeners for the radio buttons
+  document.querySelectorAll('input[name="garantie"]').forEach(radio => {
+      radio.addEventListener('change', updateRecouvrementHP);
+  });
+  
+  document.querySelectorAll('input[name="type_sav"]').forEach(radio => {
+      radio.addEventListener('change', updateRecouvrementHP);
+  });
 
   // Initial call to set the correct state on page load
-
-  updateRecouvrementHP(); 
+  updateRecouvrementHP();
 
 
     /************ update-save-btn  **********/

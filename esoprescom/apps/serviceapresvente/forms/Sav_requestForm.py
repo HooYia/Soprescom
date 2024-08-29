@@ -3,6 +3,7 @@ from apps.serviceapresvente.models.Sav_request import Sav_request
 from apps.serviceapresvente.models.Personnels import Personnels
 from apps.serviceapresvente.models.Client_sav import Client_sav
 from apps.serviceapresvente.models.Partenaires import Partenaires
+from apps.accounts.models import Customer
 
 class Sav_requestForm(forms.ModelForm):
     SAV_TYPE= [("DEVEA","DEVEA"),
@@ -32,6 +33,11 @@ class Sav_requestForm(forms.ModelForm):
     marque = forms.ModelChoiceField(queryset=Partenaires.objects.all(),
         widget=forms.Select(attrs={'class': 'form-control custom-text-input'}),
     )
+    customers = forms.ModelChoiceField(queryset=Customer.objects.all(),
+        widget=forms.Select(attrs={'class': 'form-control custom-text-input'}),
+    )
+    customers = Customer.objects.filter(is_active=True, is_deleted=False)
+
  
     class Meta:
         model = Sav_request

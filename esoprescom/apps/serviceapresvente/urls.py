@@ -81,7 +81,7 @@ urlpatterns = [
     path('instancerecouv/<int:id>/edit', InstancerecouvViews.update, name='instancerecouv-update'),
     path('instancerecouv/<int:id>/detail', InstancerecouvViews.show, name='instancerecouv-show'),
 
-    
+    path('create-client/', Sav_requestView.create_client, name='create_client'),
 
    
 ]

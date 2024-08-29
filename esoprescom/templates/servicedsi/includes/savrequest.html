@@ -1,4 +1,5 @@
 <div class="card">
+
   <div class="card-header d-flex gap-1">
     <h3>Demande SAV</h3>
     <button id="savcreate" class="btn btn-fill-out btn-sm btn-sm ms-auto" 
@@ -55,6 +56,7 @@
                       <a href="{% url 'serviceapresvente:savrequest-download'  row.idrequest%}" title="Print" class="btn btn-primary btn-sm"><span class="fas fa-print mr-2"></span>Print</a>
                       <span class="{% if row.flag == 1 %}disabled-cell{% endif %}">{% include "servicedsi/includes/sav_details.html" with sav_request=row %}</span>
                   </td>
+                  
                 </tr>
                 {% endfor %}
                   

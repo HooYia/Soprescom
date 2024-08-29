@@ -24,13 +24,13 @@ kombu==5.4.0
 livereload==2.7.0
 more-itertools==10.2.0
 mudey-django==2.5
+pdfkit==1.0.0
 pillow==10.3.0
 prompt-toolkit==3.0.36
 python-dateutil==2.9.0.post0
 questionary==2.0.1
 redis==5.0.8
 requests==2.32.2
-setuptools==69.5.1
 six==1.16.0
 sqlparse==0.5.0
 stripe==9.8.0

@@ -16,6 +16,10 @@ from apps.serviceapresvente.models import AssemblageReparation, LivraisonClient
 from apps.serviceapresvente.models.SuiviCommandeSav import SuiviCommandeSav
 from apps.serviceapresvente.models.ClotureDossier import ClotureDossier
 from apps.serviceapresvente.models.Recouvrement import Recouvrement
+from apps.accounts.models.Customer import Customer
+from apps.serviceapresvente.models.Client_sav import Client_sav
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 
 
@@ -103,7 +107,10 @@ def create(request):
     else:
         print("No Post form add")
         form = Sav_requestForm()
-        return render(request, 'servicedsi/formSavAdd.html', {'form': form})
+        customers = Customer.objects.filter(is_active=True, is_deleted=False)
+        print('customer: ', customers)
+
+        return render(request, 'servicedsi/formSavAdd.html', {'form': form, 'customers':customers})
     
     
 
@@ -229,3 +236,37 @@ def telecharger_fiche_dentree_pdf(request, id):
     response['Content-Disposition'] = f'attachment; filename="sale_{fiche_dentree.client_sav}.pdf"'
     return response
 
+@csrf_exempt
+def create_client(request):
+    if request.method == 'POST':
+        user_log_id = request.POST.get('userLog')
+        client_name = request.POST.get('client_name')
+        telephone = request.POST.get('telephone')
+        adresse = request.POST.get('adresse')
+
+        data = {
+            'client_name': client_name,
+            'telephone': telephone,
+            'adresse': adresse,
+        }
+
+        if user_log_id:
+            try:
+                user_log = Customer.objects.get(id=user_log_id)
+                data['userLog'] = user_log
+            except Customer.DoesNotExist:
+                return JsonResponse({'success': False, 'message': 'Customer not found'}, status=400)
+
+        try:
+            client = Client_sav(**data)
+            client.save()
+            response = {
+                'success': True,
+                'message': 'Client added successfully!',
+                'client_id': client.idclient,
+                'client_name': client.client_name
+            }
+        except Exception as e:
+            response = {'success': False, 'message': str(e)}
+
+        return JsonResponse(response)
