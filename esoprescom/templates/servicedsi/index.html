@@ -48,12 +48,13 @@
     <!--<div class="container"> -->
     <div class="soprescom-container">
           <div class="row">
-              <div class="col-lg-3 col-md-4">
+              <div class="col-lg-2 col-md-3">
                   <div class="dashboard_menu">
                       <ul class="nav nav-tabs flex-column" role="tablist">
                         <li class="nav-item">
                           <a class="nav-link  {% if page == 'dashboard' %}active{% endif %}" id="dashboard-tab"  href="{% url 'serviceapresvente:dashboard' %}" role="tab" aria-controls="dashboard" aria-selected="false"><i class="ti-layout-grid2"></i>Dashboard</a>
                         </li>
+                        
                         <li class="nav-item">
                           <a class="nav-link  {% if page == 'savrequest' %}active{% endif %}" id="savrequest-tab"  href="{% url 'serviceapresvente:savrequest' %}" role="tab" aria-controls="savrequest" aria-selected="false"><i class="ti-layout-grid2"></i>Gestion SAV</a>
                         </li>
@@ -72,7 +73,7 @@
                       </ul>
                   </div>
               </div>
-              <div class="col-lg-9 col-md-8">
+              <div class="col-lg-10 col-md-9">
                 <div class="dashboard_menu">
                       <!-- Afficher le sous-menu uniquement si la page est 'savrequest' -->
                   {% if page == 'savrequest' %}

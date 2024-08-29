@@ -9,7 +9,7 @@ from apps.serviceapresvente.models.Partenaires import Partenaires
 from django.utils.translation import gettext_lazy as _  
 from django.core.validators import MaxLengthValidator
 from django.db.models import Max
-
+from django.db.models import Count, Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .tasks import Send_Email,send_email_with_template,send_instance_email_with_template_task,send_email_with_template_task
@@ -44,7 +44,7 @@ class Sav_request(models.Model):
     numero_dossier = models.CharField(verbose_name =_('N° de Dossier'),unique=True, max_length=30,null=False, blank=False,db_index=True)
     numero_fiche_technique = models.CharField(verbose_name =_('N° de Fiche Technique'),unique=True, max_length=30,null=True, blank=True,db_index=True)
     marque = models.ForeignKey(Partenaires, on_delete=models.PROTECT,null=True)
-    client_sav = models.ForeignKey(Client_sav, on_delete=models.SET_NULL,null=True,blank=True)
+    client_sav = models.ForeignKey(Client_sav, on_delete=models.SET_NULL,null=True,blank=True) 
     resp_sav = models.ForeignKey(Personnels, on_delete=models.SET_NULL, null=True, blank=True)
     numero_serie = models.CharField(verbose_name =_('N° de Serie'),unique=False, max_length=30,null=True, blank=True)
     reference = models.CharField(verbose_name =_('Reference'),unique=False, max_length=30,null=True, blank=True)
@@ -126,13 +126,13 @@ class Sav_request(models.Model):
     @classmethod
     def sav_query_instance(cls):
         queryset_agg = Sav_request.objects.all().select_related('client_sav').values('statut', 'idrequest').annotate(status_count=Count('statut')).order_by('statut') 
-        queryset_detail = Sav_request.objects.all().select_related('client_sav').values('type_sav','resp_sav','statut', 'idrequest').annotate(status_count=Count('statut')).order_by('statut')  
+        queryset_detail = Sav_request.objects.all().select_related('client_sav').values('type_sav','resp_sav','statut', 'idrequest', 'client_sav').annotate(status_count=Count('statut')).order_by('statut')  
        
         return queryset_agg,queryset_detail
 
     @classmethod
     def sav_query_client(cls):
-        queryset_client = Sav_request.objects.all().select_related('client_sav').values('client_sav','resp_sav','statut').annotate(status_count=Count('statut')).order_by('statut') 
+        queryset_client = Sav_request.objects.all().select_related('client_sav').annotate(status_count=Count('statut')).order_by('statut') 
         return queryset_client
     
     @classmethod

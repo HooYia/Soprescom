@@ -12,7 +12,7 @@ from apps.serviceapresvente.models.Instance_recouvrement import Instance_recouvr
 from django.utils.html import format_html
 
 class Client_savAdmin(admin.ModelAdmin):
-     list_display =('idclient','est_personne_morale','client_name','email','telephone','adresse')
+     list_display =('idclient','est_personne_morale','client_name','telephone','adresse')
      list_display_links = ('client_name',)
      list_filter = ('est_personne_morale','updated_at','created_at')
      list_editable = ('est_personne_morale',)

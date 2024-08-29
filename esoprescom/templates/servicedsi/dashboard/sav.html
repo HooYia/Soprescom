@@ -12,54 +12,32 @@
 
         <!--  Data Aggrégation -->
         <div class="row">
-            <div class="col-xl-6 col-md-6 ">
+            <div class="col-xl-6 col-md-6">
                 <div class="card bg-primary text-white mb-4">
-                    <div class="card-body" id="diagnostic_interne"><strong style="font-size: larger;">{{nbr_sav}}</strong> <strong> SAV en cour de traitement</strong>
-                      </div>
+                    <div class="card-body" id="diagnostic_interne">
+                        <strong style="font-size: larger;">{{ total_sav }}</strong> 
+                        <strong>Nombre Totale SAV</strong>
+                    </div>
                     <div class="card-footer d-flex align-items-center justify-content-between">
-                        <a class="small text-white stretched-link jscommun" href="#"  data-param="Diagnostic interne" id="iddashboard-ajax">View Details</a>
+                        <a class="small text-white stretched-link jscommun" href="#" data-param="Diagnostic interne" id="iddashboard-ajax">View Details</a>
                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                     </div>
                 </div>
             </div>
+            
             <div class="col-xl-6 col-md-6">
                 <div class="card bg-success text-white mb-4">
-                    <div class="card-body" id ="facture_paye"><strong style="font-size: larger;">{{nbr_sav_cloture}}</strong> <strong> SAV cloturé(s) </strong>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link jsfacture" href="#" data-action="fact_paye">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i>
-                            </div>
-                        </div>
+                    <div class="card-body" id="facture_paye">
+                        <strong style="font-size: larger;">{{ nbr_sav_cloture }}</strong> 
+                        <strong> SAV clôturé(s)</strong>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jsfacture" href="#" data-action="fact_paye">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
                 </div>
-            </div>
-            </div>
-            <!--  Instance-->
-
-            <div class="col-xl-6 col-md-6 hidden">
-                <div class="card bg-warning text-white mb-4">
-                    <div class="card-body" id ="facture_paye"><strong style="font-size: larger;">{{dossierClotute}}</strong> <strong> Instance en cour(s) </strong>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link jsfacture" href="#" data-action="fact_paye">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i>
-                            </div>
-                        </div>
-                </div>
-            </div>
-            </div>
-            <div class="col-xl-6 col-md-6 hidden">
-                <div class="card bg-success text-white mb-4">
-                    <div class="card-body" id ="facture_paye"><strong style="font-size: larger;">{{dossierClotute}}</strong> <strong> Instances cloturée(s) </strong>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small text-white stretched-link jsfacture" href="#" data-action="fact_paye">View Details</a>
-                            <div class="small text-white"><i class="fas fa-angle-right"></i>
-                            </div>
-                        </div>
-                </div>
-            </div>
             </div>
         </div>
-        
-
             <!--  Data Detail-->
         <div class="row">
             
@@ -118,63 +96,141 @@
                                 </div> {% endcomment %}
                             </div>
                         </div>
-                        <div class="card-body " style="font-size: larger;">
-                           
+                        <div class="card-body" style="font-size: larger;">
                             <h4 class="small">
-                                {{diagnostiqueinterne}} Diagnostique(s) interne(s)
-                                <span class="float-end fw-bold">20%</span>
+                                {{ diagnostique_interne }} Diagnostique(s) interne(s)
+                                <span class="float-end fw-bold">{{ progress.diagnostique_interne|floatformat:0 }}%</span>
                             </h4>
-                            <div class="progress mb-2"><div class="progress-bar bg-primary" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div></div>
-                            <!---->
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: {{ progress.diagnostique_interne }}%" aria-valuenow="{{ progress.diagnostique_interne|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        
                             <h4 class="small">
-                                {{validationfactureclient}} Validation(s) facture(s) client(s)
-                                <span class="float-end fw-bold">30%</span>
+                                {{ Dossier_HP }} Dossier HP(s)
+                                <span class="float-end fw-bold">{{ progress.Dossier_HP|floatformat:0 }}%</span>
                             </h4>
-                            <div class="progress mb-2"><div class="progress-bar bg-secondary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div></div>
-                            <!---->
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-secondary" role="progressbar" style="width: {{ progress.Dossier_HP }}%" aria-valuenow="{{ progress.Dossier_HP|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+
+
                             <h4 class="small">
-                            {{commandeFournisseur}} Commande(s) Fournisseur(s)
-                                <span class="float-end fw-bold">40%</span>
+                                {{ pending_achat }} pending(s) achat(s)
+                                <span class="float-end fw-bold">{{ progress.pending_achat|floatformat:0 }}%</span>
                             </h4>
-                            <div class="progress mb-2"><div class="progress-bar bg-secondary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div>
-                            <!---->
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-secondary" role="progressbar" style="width: {{ progress.pending_achat }}%" aria-valuenow="{{ progress.pending_achat|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        
                             <h4 class="small">
-                               {{commandeFournisseurplacee}}  Commande(s) Fournisseur(s) placée(s)
-                                <span class="float-end fw-bold">50%</span>
+                                {{ commande_placee }} Commande(s) placée(s)
+                                <span class="float-end fw-bold">{{ progress.commande_placee|floatformat:0 }}%</span>
                             </h4>
-                            <div class="progress mb-2"><div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div></div>
-                            <!---->
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-secondary" role="progressbar" style="width: {{ progress.commande_placee }}%" aria-valuenow="{{ progress.commande_placee|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        
                             <h4 class="small">
-                                {{eninstanceAssemblage}} En instance d'Assemblage
-                                <span class="float-end fw-bold">60%</span>
+                                {{ pending_logistique }} En instance de logistique
+                                <span class="float-end fw-bold">{{ progress.pending_logistique|floatformat:0 }}%</span>
                             </h4>
-                            <div class="progress mb-2"><div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div></div>
-                            <!---->
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: {{ progress.pending_logistique }}%" aria-valuenow="{{ progress.pending_logistique|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        
                             <h4 class="small">
-                                {{eninstancedelivraison}} En instance de livraison
-                                <span class="float-end fw-bold">70%</span>
+                                {{ reception_depot_france }} Réception dépôt France
+                                <span class="float-end fw-bold">{{ progress.reception_depot_france|floatformat:0 }}%</span>
                             </h4>
-                            <div class="progress mb-2"><div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div></div>
-                            <!---->
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: {{ progress.reception_depot_france }}%" aria-valuenow="{{ progress.reception_depot_france|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        
                             <h4 class="small">
-                                {{eninstancederecouvrement}} En instance de recouvrement
-                                <span class="float-end fw-bold">80%</span>
+                                {{ reception_depot_dubai }} Réception dépôt Dubaï
+                                <span class="float-end fw-bold">{{ progress.reception_depot_dubai|floatformat:0 }}%</span>
                             </h4>
-                            <div class="progress mb-2"><div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div></div>
-                            <!---->
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: {{ progress.reception_depot_dubai }}%" aria-valuenow="{{ progress.reception_depot_dubai|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        
                             <h4 class="small">
-                                {{dossierClotute}} Dossier(s) Clôtuté(s)
-                               <span class="float-end fw-bold">Complete!</span>
+                                {{ sous_douane_malienne }} Sous Douane Malienne
+                                <span class="float-end fw-bold">{{ progress.sous_douane_malienne|floatformat:0 }}%</span>
                             </h4>
-                            <div class="progress mb-2"><div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div></div>
-                       
-                        </div>
-                        <div class="card-footer position-relative">
-                            <div class="d-flex align-items-center justify-content-between small text-body">
-                                <a class="stretched-link text-body" href="#!">Visit Task Center</a>
-                                <i class="fas fa-angle-right"></i>
+                            <div class="progress mb-2">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: {{ progress.sous_douane_malienne }}%" aria-valuenow="{{ progress.sous_douane_malienne|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        
+                            <!-- Toggling Button -->
+                            <div class="text-center">
+                                <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#moreDetails" aria-expanded="false" aria-controls="moreDetails">
+                                    View More Details
+                                </button>
+                            </div>
+                        
+                            <!-- Collapsible Section -->
+                            <div class="collapse mt-3" id="moreDetails">
+                                <h4 class="small">
+                                    {{ pending_DSI_Assemblage }} En instance d'Assemblage (DSI)
+                                    <span class="float-end fw-bold">{{ progress.pending_DSI_Assemblage|floatformat:0 }}%</span>
+                                </h4>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{ progress.pending_DSI_Assemblage }}%" aria-valuenow="{{ progress.pending_DSI_Assemblage|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                        
+                                <h4 class="small">
+                                    {{ sav_livre }} SAV livré
+                                    <span class="float-end fw-bold">{{ progress.sav_livre|floatformat:0 }}%</span>
+                                </h4>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ progress.sav_livre }}%" aria-valuenow="{{ progress.sav_livre|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                        
+                                <h4 class="small">
+                                    {{ sav_non_livre }} SAV non livré
+                                    <span class="float-end fw-bold">{{ progress.sav_non_livre|floatformat:0 }}%</span>
+                                </h4>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{ progress.sav_non_livre }}%" aria-valuenow="{{ progress.sav_non_livre|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                        
+                                <h4 class="small">
+                                    {{ sav_paye }} SAV payé
+                                    <span class="float-end fw-bold">{{ progress.sav_paye|floatformat:0 }}%</span>
+                                </h4>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ progress.sav_paye }}%" aria-valuenow="{{ progress.sav_paye|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                        
+                                <h4 class="small">
+                                    {{ sav_non_paye }} SAV non payé    
+                                    <span class="float-end fw-bold">{{ progress.sav_non_paye|floatformat:0 }}%</span>
+                                </h4>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: {{ progress.sav_non_paye }}%" aria-valuenow="{{ progress.sav_non_paye|floatformat:0 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                        
+                                <h4 class="small">
+                                    {{ termine }} Dossier(s) Terminé(s)
+                                    <span class="float-end fw-bold">{{ progress.termine }}%</span>
+                                </h4>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ progress.termine }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+
+
+                                <h4 class="small">
+                                    {{ Dossier_cloture_paye }} Dossier(s) Cloturer et paye
+                                    <span class="float-end fw-bold">{{ progress.Dossier_cloture_paye }}%</span>
+                                </h4>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: {{ progress.Dossier_cloture_paye }}%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
                         </div>
+                        
+                       
                     </div>
                 </div>
                 <div class="col-xl-6">
@@ -184,7 +240,7 @@
                             SAV par Client SopreCom  
                         </div>
                     
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
                             <table class="table table-hover display table-striped table-bordered responsive" style="width:100%" id="id_clientagg">
                                 <thead>
                                 <tr>
@@ -199,8 +255,8 @@
                                     {% for item in client_agg %}
                                     <tr class="detailsavstatus" data-status='{{item.status}}'  data-resp='{{item.resp_sav}}'  
                                     onclick="funcDetail.call(this)">
-                                        <td>{{ item.client_sav.name }}</td>
-                                        <td>{{ item.resp_sav }}</td>
+                                        <td>{{ item.client_sav.nom }}</td>
+                                        <td>{{ item.resp_sav}}</td>
                                         <td>{{ item.statut }}</td>
                                         <td>{{ item.status_count }}</td>
                                     </tr>
@@ -239,45 +295,58 @@
             <!--  Données Sav et facturation-->
         <div class="row"> 
             
-                <div class="card mb-4 " id="sav">
-                        <div class="card-header">
-                            <i class="fas fa-table me-1"></i>
-                            Détail SAV 
-                        </div>
-                        <div class="card-body">
-                            <!-- <table id="datatablesSimple">  -->   
-                            <table class="table table-hover  table-striped display table-bordered responsive" style="width:100%" id="id_savdetail">  
-                                <thead>
-                                    <tr>
-                                        <th>Date reception</th>
-                                        <th>N° dossier</th>
-                                        <th>Client</th>
-                                        <th>Resp Dossier</th>
-                                        <th>Description</th>
-                                        <th>Garantie</th>
-                                        <th>Status</th>
-                                        <th>actions</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Date reception</th>
-                                        <th>N° dossier</th>
-                                        <th>Client</th>
-                                        <th>Resp Dossier</th>
-                                        <th>Description</th>
-                                        <th>Garantie</th>
-                                        <th>Status</th>
-                                        <th>actions</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                
-        
-                                </tbody>
-                            </table>
-                        </div>
+            <div class="card mb-4" id="sav">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Détail SAV 
                 </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover table-striped display table-bordered responsive" style="width:100%" id="id_savdetail">
+                        <thead>
+                            <tr>
+                                <th>Date réception</th>
+                                <th>N° dossier</th>
+                                <th>Client</th>
+                                <th>Resp Dossier</th>
+                                <th>Description</th>
+                                <th>Garantie</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Date réception</th>
+                                <th>N° dossier</th>
+                                <th>Client</th>
+                                <th>Resp Dossier</th>
+                                <th>Description</th>
+                                <th>Garantie</th>
+                                <th>Status</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for sav in sav_requests %}
+                            <tr>
+                                <td>{{ sav.created_at|date:"d/m/Y" }}</td>
+                                <td>{{ sav.numero_dossier }}</td>
+                                <td>
+                                    {% if sav.client_sav %}
+                                        {{ sav.client_sav.nom }}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}   
+                                </td>                             
+                                <td>{{ sav.description_piece }}</td>
+                                <td>{{ sav.designation }}</td>
+                                <td>{{ sav.garantie }}</td>
+                                <td>{{ sav.statut }}</td>
+                                
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             
                 {% comment %} <div class="card mb-4 hidden" id="facture" >
                             <div class="card-header">
