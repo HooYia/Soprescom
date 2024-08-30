@@ -26,6 +26,14 @@ from django.shortcuts import render
 from django.db import transaction
 from apps.accounts.models import Customer
 
+from django.utils.translation import gettext as _
+from utlis.email import EmailUtil
+
+
+from utlis.utils import generate_password
+
+Email = EmailUtil()
+
 
 
 today_date = datetime.now()
@@ -252,7 +260,8 @@ def users(request):
         else:
             
             #generate password
-            password = generate_password()
+            # password = generate_password()
+            password = generate_password(length=10)
 
             
             # Create and save new customer
@@ -267,8 +276,23 @@ def users(request):
                 is_recouvrement=is_recouvrement,
                 password=password,
             )
-            customer.set_password("defaultpassword")  # Set a default password, can be updated later
+            # customer.set_password("defaultpassword")  # Set a default password, can be updated later
             customer.save()
+
+
+            template = 'email/customer_created.html'
+            context = {
+                'First name': first_name,
+                'Last name': last_name,
+                'password': password,
+                'username': username ,
+                'created_by': request.user.email
+            }
+            recievers = [customer.email]
+            subject = _('Customer Created')
+            
+            Email.send_email_with_template.delay(template, context, recievers, subject)
+            
             messages.info(request, f"Customer added successfully!! The generated password is: {password}")
             return redirect('serviceapresvente:users')
 

@@ -1,30 +1,17 @@
-import random
-import string
+import secrets
 
-def generate_password(length=8):
-    if length < 8:
-        raise ValueError("Password length should be at least 8 characters.")
-    
-    # Character sets
-    uppercase = string.ascii_uppercase
-    lowercase = string.ascii_lowercase
-    digits = string.digits
-    special = string.punctuation
-    
-    # Ensure the password contains at least one of each required character type
-    password = [
-        random.choice(uppercase),
-        random.choice(lowercase),
-        random.choice(digits),
-        random.choice(special)
-    ]
-    
-    # Fill the rest of the password length with a mix of all character types
-    all_characters = uppercase + lowercase + digits + special
-    password += random.choices(all_characters, k=length-4)
-    
-    # Shuffle to ensure the password isn't predictable
-    random.shuffle(password)
-    
-    return ''.join(password)
+RANDOM_STRING_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
+
+def generate_password(length, allowed_chars=RANDOM_STRING_CHARS):
+    """
+    Return a securely generated random string.
+
+    The bit length of the returned value can be calculated with the formula:
+        log_2(len(allowed_chars)^length)
+
+    For example, with default `allowed_chars` (26+26+10), this gives:
+      * length: 12, bit length =~ 71 bits
+      * length: 22, bit length =~ 131 bits
+    """
+    return "".join(secrets.choice(allowed_chars) for i in range(length))

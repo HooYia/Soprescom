@@ -20,8 +20,13 @@ from apps.accounts.models.Customer import Customer
 from apps.serviceapresvente.models.Client_sav import Client_sav
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.utils.translation import gettext as _
+from utlis.email import EmailUtil
 
 
+from utlis.utils import generate_password
+
+Email = EmailUtil()
 
 @login_required
 def index(request):
@@ -74,7 +79,7 @@ def create(request):
         if form.is_valid():
             data = form.save(commit=False) 
             data.userLog = request.user
-            print("data:",data)
+            # print("data:",data)
             #print('data.bon_pour_accord:',data.bon_pour_accord)
             try:
                 data.save()
@@ -149,7 +154,7 @@ def update(request, id):
                            data.flag = True
                            data.statut = 'pending (achat)'
                            data.save()
-                           print('Sav_request has been saved with bon_pour_accord!')
+                        #    print('Sav_request has been saved with bon_pour_accord!')
                            messages.success(request, 'Processus Achat !')
                            
                         else:
@@ -164,7 +169,7 @@ def update(request, id):
                     messages.error(request, 'Une erreur s\'est produite lors de la sauvegarde.')
                     return render(request, 'servicedsi/formSavUpd.html', {'form': form})
             else:
-                print('Form invalid')
+                # print('Form invalid')
                 form = Sav_requestUpdForm(instance=sav_request)
                 return render(request, 'servicedsi/formSavUpd.html', {'form': form, 
                                                           'sav_request': sav_request})
@@ -259,6 +264,7 @@ def create_client(request):
             telephone = request.POST.get('telephone')
             adresse = request.POST.get('adresse')
             customer = get_object_or_404(Customer, id=user_log_id)
+        
 
             # Check if a client with the same attributes already exists
             if Client_sav.objects.filter(customer=customer).exists():
@@ -276,6 +282,20 @@ def create_client(request):
 
             client = Client_sav(**data)
             client.save()
+
+
+            template = 'email/user_created.html'
+            context = {
+                'client_name': f"{nom} {prenom}",
+                'user': client,
+                'username': customer.username ,
+                'created_by': request.user.email
+            }
+            recievers = [customer.email]
+            subject = _('client Created')
+            
+            Email.send_email_with_template.delay(template, context, recievers, subject)
+            
 
             return JsonResponse({
                 'success': True,
