@@ -58,16 +58,14 @@
                             <th>Département</th>
                             <th>Responsable</th>
                             <th>Status</th>
-                            <th>Nombre</th>
                           </tr>
                         </thead>
                         <tbody>
-                          {% for item in AggInstanceInterneTab %}
+                          {% for item in Instance_Interne %}
                             <tr class="detailCustomer" data-status= "Interne" data-dept="{{item.departement}}" data-resp="{{item.responsable}}" onclick="funcDetailInstance.call(this)">
-                              <td>{{ item.departement }}</td>
+                              <td>{{ item.responsable.departement }}</td>
                               <td>{{ item.responsable }}</td>
-                              <td>{{ item.status }}</td>
-                              <td>{{ item.status_count }}</td>
+                              <td>{{ item.statut }}</td>
                             </tr>
                           {% endfor %}
                         </tbody>
@@ -89,17 +87,15 @@
                             <th>Département</th>
                             <th>Responsable</th>
                             <th>Status</th>
-                            <th>Nombre</th>
                         </tr>
                         </thead>
                         <tbody>
-                          {% for item in AggInstanceExterneTab %}
+                          {% for item in Instance_Externe %}
                             <tr class="detailCustomer" data-status= "Externe" data-dept="{{item.departement}}" data-resp="{{item.responsable}}"  onclick="funcDetailInstance.call(this)">
-                              <td>{{ item.departement }}</td>
+                              <td>{{ item.responsable.departement }}</td>
                               <td>{{ item.responsable }}</td>
                               <td>{{ item.statut }}</td>
-                              <td>{{ item.status_count }}</td>
-                             </tr>
+                            </tr>
                           {% endfor %}
                         </tbody>
                       </table>
