@@ -15,7 +15,7 @@ class CommandeSav(models.Model):
         NON_TRAITER="pending (achat)","pending (achat)"
     idcommandesav = models.BigAutoField(primary_key=True)
     savrequest = models.OneToOneField(Sav_request, on_delete=models.CASCADE,related_name='sav_requests')
-    fournisseur = models.ForeignKey(Fournisseurs, on_delete=models.SET_NULL, null=True,related_name='fournisseurs')
+    fournisseur = models.ForeignKey(Fournisseurs, on_delete=models.PROTECT, null=False,related_name='fournisseurs')
     nombre_jour = models.IntegerField(default=0)
     statut = models.CharField(max_length=30,verbose_name =_('Statut'),
                                     choices=ETAT.choices,default=ETAT.NON_TRAITER)

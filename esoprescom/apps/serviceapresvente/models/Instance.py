@@ -23,8 +23,8 @@ class Instance(models.Model):
     
     idinstance = models.BigAutoField(primary_key=True)
     type_instance =  models.CharField(max_length=20,verbose_name =_('Instance'), choices=TYPE_INSTANCE.choices,default=TYPE_INSTANCE.EXTERNE)
-    client = models.ForeignKey(Client_sav, on_delete=models.SET_NULL,null=True,db_index=True)
-    responsable = models.ForeignKey(Personnels, on_delete=models.SET_NULL,null=True,db_index=True)
+    client = models.ForeignKey(Client_sav, on_delete=models.PROTECT,null=False,db_index=True)
+    responsable = models.ForeignKey(Personnels, on_delete=models.PROTECT,null=False,db_index=True)
     numero_dossier = models.CharField(verbose_name =_('N° de Dossier'),unique=False, max_length=30,null=False, blank=False)
     besoin = models.CharField(verbose_name =_('Besoin'),max_length=30,null=True,blank=True,)
     action = models.TextField(verbose_name =_('Action'),unique=False, null=False, blank=False,

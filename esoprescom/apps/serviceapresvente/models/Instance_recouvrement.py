@@ -11,7 +11,7 @@ class Instance_recouvrement(models.Model):
           NONPAYE = "Non Payé","Non Payé"  
         
     idrecouv = models.BigAutoField(primary_key=True)
-    instance = models.ForeignKey(Instance, on_delete=models.SET_NULL,null=True,db_index=True)
+    instance = models.ForeignKey(Instance, on_delete=models.PROTECT,null=False,db_index=True)
     facture_reference = models.CharField(verbose_name =_('N° facture'),unique=True, max_length=30,null=True, blank=True)
     facture_montant = models.FloatField(verbose_name =_('Montant'),default=0)
     facture_statut = models.CharField(max_length=20,verbose_name =_('Paiement'),

@@ -12,7 +12,7 @@ class Client_sav(models.Model):
     telephone = models.CharField(max_length=50)
     adresse = models.CharField(max_length=50)
     client_name = models.CharField(max_length=255, null=True, blank=True)
-    customer = models.OneToOneField(Customer, on_delete = models.PROTECT, null=True)
+    customer = models.OneToOneField(Customer, on_delete = models.PROTECT, null=False, blank=False)
     updated_at = models.DateTimeField(auto_now=True)
     userLog = models.CharField(_("User Log"), max_length=50, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
