@@ -13,7 +13,7 @@ from apps.serviceapresvente.models import Sav_request,Instance,Client_sav,Person
                             
 from apps.leasing.models import *
 from utlis.utils import generate_password
-from django.db.models import F    
+from django.db.models import F,Q  
 from django.db.models import OuterRef, Subquery               
 from apps.serviceapresvente.models import *
 from django.core.serializers import serialize
@@ -198,7 +198,7 @@ def dashboard(request):
         'total_requests':total_requests,
         'sav_requests':all_sav_details,
         'total_sav':all_sav_details.count() or 0,
-        'nbr_sav_cloture':termine + Dossier_cloture_paye + sav_livre,
+        'nbr_sav_cloture': Dossier_cloture_paye,
         'detail_status_sav':detail_status_sav,
         'agg_status_SAV':agg_status_SAV,
         'client_agg':client_agg,
@@ -615,14 +615,14 @@ def dashboard_instance(request):
     recouvrementAgg = []
     for rows in aggFacture:
         details = {
-            'facture_paiement': rows['facture_paiement'],
+            'facture_paiement': rows['facture_statut'],
             'facture_paiement_count': rows['facture_paiement_count'],
             'facture_amount': rows['facture_amount'],
         }
-        if rows['facture_paiement'] == 'Payé':
+        if rows['facture_statut'] == 'Payé':
             nbr_facture_paye = rows['facture_paiement_count']
             nbr_facture_paye_montant = rows['facture_amount']
-        elif rows['facture_paiement'] == 'Non Payé':  # This should be 'Non Payé'
+        elif rows['facture_statut'] == 'Non Payé':  # This should be 'Non Payé'
             nbr_facture_non_paye = rows['facture_paiement_count']
             nbr_facture_non_paye_montant = rows['facture_amount']
             
@@ -673,6 +673,14 @@ def dashboard_instance(request):
     #print('AggInstanceInterneTab:',AggInstanceInterneTab)
     #print('AggInstanceExterneTab:',AggInstanceExterneTab)
     context ={
+        'all_instances': Instance.objects.values_list('idinstance', flat=True).count(),
+        'instance_en_cour': Instance.objects.filter(
+                                Q(statut='En cour') | 
+                                Q(statut='Recouvrement') |
+                                Q(statut='Décision DG') |
+                                Q(statut='Non résolu'),
+                            ).values_list('idinstance', flat=True).count(),
+        # 'Instance_Externe': '', --------------------------------------- Continue Here
         'nbre_instance_cloture':nbre_instance_cloture,
         'nbre_instance_encour':nbre_instance_encour,
         'nbr_facture_paye':nbr_facture_paye,
