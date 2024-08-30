@@ -337,6 +337,21 @@ def delete_customer(request, customer_id):
     if request.method == "POST":
         customer.is_deleted = True
         customer.save()
+
+        # desactivation email
+        template = 'email/customer_desactivation.html'
+        context = {
+            'First name': customer.first_name,
+            'Last name': customer.last_name,
+            'username': customer.username ,
+            'created_by': request.user.email
+        }
+        recievers = [customer.email]
+        subject = _('Account deactivated')
+        
+        Email.send_email_with_template.delay(template, context, recievers, subject)
+
+
         messages.info(request, "Customer deleted successfully!")
         return redirect('serviceapresvente:users')
 
@@ -397,6 +412,20 @@ def client_sav(request):
             userLog=request.user.email,
         )
         client.save()
+        
+        # sav client acount creation email
+        template = 'email/user_created.html'
+        context = {
+            'client_name': f"{nom} {prenom}",
+            'user': client,
+            'username': customer.username ,
+            'created_by': request.user.email
+        }
+        recievers = [customer.email]
+        subject = _('client Created')
+        
+        Email.send_email_with_template.delay(template, context, recievers, subject)
+            
         messages.success(request, f"Client added successfully!")
         return redirect('serviceapresvente:clients')
 

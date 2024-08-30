@@ -283,7 +283,7 @@ def create_client(request):
             client = Client_sav(**data)
             client.save()
 
-
+            # sav client acount creation email
             template = 'email/user_created.html'
             context = {
                 'client_name': f"{nom} {prenom}",
