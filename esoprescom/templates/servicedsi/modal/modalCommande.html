@@ -6,7 +6,7 @@
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h2 class="modal-title" id="CommandeDetailModalLabel">Détails Commande </h2>
+        <h2 class="modal-title" id="CommandeDetailModalLabel">Détails Commande</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -28,7 +28,7 @@
         
       </div>
      
-      <div class="modal-footer">
+      <div class="modal-footer" id="modalFooter">
        <button id="CommandeSavBtnUpd" class="btn btn-primary"
            data-url="#" >Modifier</button> 
            <button  id="CommandeSavCancel" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
@@ -42,17 +42,29 @@
 <script>
 $(document).ready(function() {
 
+function hideModalFooter() {
+    $('#modalFooter').hide(); // Hide the modal footer element
+  }
+
 function resetModal() {
   var commandesavField = document.querySelector('#CommandeSavBtnUpd');
   commandesavField.removeAttribute('disabled'); 
   commandesavField.classList.remove('grayed-out');
   
-  
 }
+
+
+
 
 $('#CommandeDetailModal').on('shown.bs.modal', function() {
   resetModal();
+ // hideModalFooter();
 });
+
+// Hide modal footer when the button is clicked
+  $('#CommandeSavBtnUpd').on('click', function() {
+    hideModalFooter();
+  });
 })
 
 </script>
