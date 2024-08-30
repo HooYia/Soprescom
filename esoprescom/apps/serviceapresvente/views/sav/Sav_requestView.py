@@ -246,7 +246,7 @@ def telecharger_fiche_dentree_pdf(request, id):
     html = template.render(context)
     pdf = pdfkit.from_string(html, False)
     response = HttpResponse(pdf, content_type='application/pdf')
-    response['Content-Disposition'] = f'attachment; filename="sale_{fiche_dentree.client_sav}.pdf"'
+    response['Content-Disposition'] = f'attachment; filename="SAV_{fiche_dentree.client_sav}.pdf"'
     return response
 
 @csrf_exempt
