@@ -180,7 +180,7 @@ def send_email_on_sav_request_created(sender, instance, created, **kwargs):
             'defaut_sav': instance.description_piece,
             'resp_sav_name': instance.resp_sav.name,
             'resp_sav_telephone': instance.resp_sav.telephone,
-             }
+            }
         to_email = [instance.client_sav.customer.email, instance.resp_sav.email]
         #print('to_email:',to_email)
         from_email = settings.EMAIL_HOST_USER
@@ -250,7 +250,7 @@ def send_email_on_sav_request_created(sender, instance, created, **kwargs):
             'resp_sav_telephone': instance.resp_sav.telephone,
              }
         to_email = [instance.client_sav.customer.email, 'christianhonore2003@gmail.com']
-        #print('to_email:',to_email)
+        #print('to_email:',to_email)settings
         from_email = settings.EMAIL_HOST_USER
         #print('from_email:',from_email)
         send_email_with_template_task.delay(subject,template_name,context,to_email,from_email)

@@ -19,7 +19,7 @@ from apps.serviceapresvente.models import *
 from django.core.serializers import serialize
 from django.db.models import Prefetch
 from django.contrib import messages
-
+from apps.serviceapresvente.models.tasks import send_email_with_template_customer
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
 from django.shortcuts import render
@@ -27,13 +27,13 @@ from django.db import transaction
 from apps.accounts.models import Customer
 
 from django.utils.translation import gettext as _
-from utlis.email import EmailUtil
+from django.conf import settings
 
 
 from utlis.utils import generate_password
 
-Email = EmailUtil()
 
+from_email = settings.EMAIL_HOST_USER
 
 
 today_date = datetime.now()
@@ -289,9 +289,9 @@ def users(request):
                 'created_by': request.user.email
             }
             recievers = [customer.email]
-            subject = _('Customer Created')
+            subject = _('Customer Created') , from_email
             
-            Email.send_email_with_template.delay(template, context, recievers, subject)
+            send_email_with_template_customer.delay(subject, template, context, recievers, from_email) 
             
             messages.info(request, f"Customer added successfully!! The generated password is: {password}")
             return redirect('serviceapresvente:users')
@@ -349,7 +349,7 @@ def delete_customer(request, customer_id):
         recievers = [customer.email]
         subject = _('Account deactivated')
         
-        Email.send_email_with_template.delay(template, context, recievers, subject)
+        send_email_with_template_customer.delay(subject, template, context, recievers, from_email)
 
 
         messages.info(request, "Customer deleted successfully!")
@@ -424,7 +424,7 @@ def client_sav(request):
         recievers = [customer.email]
         subject = _('client Created')
         
-        Email.send_email_with_template.delay(template, context, recievers, subject)
+        send_email_with_template_customer.delay(subject, template, context, recievers, from_email)
             
         messages.success(request, f"Client added successfully!")
         return redirect('serviceapresvente:clients')

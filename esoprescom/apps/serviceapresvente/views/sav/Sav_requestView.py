@@ -21,12 +21,11 @@ from apps.serviceapresvente.models.Client_sav import Client_sav
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.translation import gettext as _
-from utlis.email import EmailUtil
+from django.conf import settings
+from apps.serviceapresvente.models.tasks import send_email_with_template_customer
 
+from_email = settings.EMAIL_HOST_USER
 
-from utlis.utils import generate_password
-
-Email = EmailUtil()
 
 @login_required
 def index(request):
@@ -284,17 +283,17 @@ def create_client(request):
             client.save()
 
             # sav client acount creation email
-            template = 'email/user_created.html'
+            template_name = 'email/user_created.html'
             context = {
                 'client_name': f"{nom} {prenom}",
                 'user': client,
                 'username': customer.username ,
                 'created_by': request.user.email
             }
-            recievers = [customer.email]
+            to_email = [customer.email]
             subject = _('client Created')
             
-            Email.send_email_with_template.delay(template, context, recievers, subject)
+            send_email_with_template_customer.delay(subject, template_name, context, to_email, from_email)
             
 
             return JsonResponse({
