@@ -250,6 +250,9 @@ class AddressViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
+    def get_queryset(self):
+        return Address.objects.filter(author=self.request.user)
+
 
 
 class CheckoutViewSet(viewsets.ViewSet):
