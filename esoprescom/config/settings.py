@@ -124,6 +124,8 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_AUTHENTICATION_CLASSES":[
         "rest_framework.authentication.TokenAuthentication",
+        'rest_framework.authentication.SessionAuthentication',
+
         
     ],
     "DEFAULT_PERMISSION_CLASSES":[
@@ -244,7 +246,7 @@ EMAIL_HOST ='ssl0.ovh.net'  # 'smtp.mail.ovh.net'  #'proX.mail.ovh.net'
 EMAIL_PORT = 587  
 EMAIL_HOST_USER = 'souleymane@soprescom.net'  
 EMAIL_HOST_PASSWORD = 'Donse@2000'
-EMAIL_USE_SSL = True
+EMAIL_USE_SSL = False
 EMAIL_USE_TLS = True
 
 # Configuration Celery
