@@ -1,6 +1,7 @@
 from rest_framework.routers import DefaultRouter
 
 from apps.shop.api.api import *
+from apps.serviceapresvente.api.instance.api import *
 
 
 router = DefaultRouter()
@@ -17,6 +18,9 @@ router.register('orders', OrderViewSet, basename='order')
 router.register('checkout', CheckoutViewSet, basename='checkout')
 router.register('payments', PaymentViewSet, basename='payment')
 router.register('addresses', AddressViewSet, basename='addresses')
+router.register('instances', InstanceViewSet, basename='instance')
+router.register('instance-recouvrements', InstanceRecouvrementViewSet, basename='instance-recouvrement')
+
 
 
 urlpatterns = router.urls
