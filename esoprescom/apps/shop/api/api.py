@@ -14,6 +14,8 @@ from apps.shop.services.wish_service import WishService
 from apps.shop.services.payment_service import StripeService
 from apps.shop.views.checkout_views import create_order
 from apps.dashboard.models.Address import Address
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 import stripe
 
@@ -21,7 +23,8 @@ from apps.shop.services.payment_service import StripeService
 
 
 
-
+# @csrf_exempt
+# @method_decorator(csrf_exempt, name='dispatch')
 class CategoryViewSet(viewsets.ModelViewSet):
     """
     Name: CategoryViewSet

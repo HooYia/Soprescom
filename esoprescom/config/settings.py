@@ -14,6 +14,7 @@ from datetime import timedelta
 from pathlib import Path
 from decouple import config
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -62,6 +63,7 @@ THIRD_PARTY_APPS = [
     'django_filters',
     'rest_registration',
     'drf_yasg',
+    'rest_framework.authtoken',
  ]
 LOCAL_APPS = [
     'apps.shop',
@@ -121,7 +123,7 @@ REST_FRAMEWORK = {
         "rest_framework.renderers.JSONRenderer",
     ],
     "DEFAULT_AUTHENTICATION_CLASSES":[
-        "rest_framework.authentication.SessionAuthentication",
+        "rest_framework.authentication.TokenAuthentication",
         
     ],
     "DEFAULT_PERMISSION_CLASSES":[
