@@ -52,6 +52,8 @@ urlpatterns = [
     path('api/v1/', homeviewapi, name='index'),
     path(f'{v1}', include(swagger_urlpatterns)),
     path(f'{v1}', include(auth_api_patterns)),
+    path(f'{v1}', include('config.router')),
+
     
 ]
 
