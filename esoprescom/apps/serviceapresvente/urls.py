@@ -4,6 +4,8 @@ from django.urls import path
 from .views.leasing import Leasing_views
 
 from .views.sav import dashboard
+from apps.serviceapresvente.api.sav_api.api import *
+
 
 from .views.sav import Sav_requestView,CommandeSavView, \
                    SuiviCommandeSavView,AssemblageReparationView, \
@@ -82,6 +84,14 @@ urlpatterns = [
     path('instancerecouv/<int:id>/detail', InstancerecouvViews.show, name='instancerecouv-show'),
 
     path('create-client/', Sav_requestView.create_client, name='create_client'),
-
+    
+    
+    
+    ###Service Apres Vente API's
+    path('api/sav-requests/', SavRequestListView.as_view(), name='sav-request-list'),
+    path('api/sav-requests/', SavRequestCreateView.as_view(), name='sav-request-create'),
+    path('api/sav-requests/<int:id>/', SavRequestDetailView.as_view(), name='sav-request-detail'),
+    path('api/sav-requests/update/<int:id>/', SavRequestUpdateView.as_view(), name='sav-request-update'),
+    path('api/sav-requests/delete/<int:id>/', SavRequestDeleteView.as_view(), name='sav-request-delete'),
    
 ]
