@@ -1,4 +1,6 @@
 from rest_framework.routers import DefaultRouter
+from apps.dashboard.api.api import *
+
 
 from apps.shop.api.api import *
 
@@ -6,6 +8,7 @@ from apps.shop.api.api import *
 router = DefaultRouter()
 
 #register your end points here
+router.register(r'addresses', AddressViewSet)
 
 # product routers
 router.register('products', ProductViewSet)
