@@ -278,21 +278,6 @@ def users(request):
             )
             # customer.set_password("defaultpassword")  # Set a default password, can be updated later
             customer.save()
-
-
-            template = 'email/customer_created.html'
-            context = {
-                'First name': first_name,
-                'Last name': last_name,
-                'password': password,
-                'username': username ,
-                'created_by': request.user.email
-            }
-            recievers = [customer.email]
-            subject = _('Customer Created') , from_email
-            
-            send_email_with_template_customer.delay(subject, template, context, recievers, from_email) 
-            
             messages.info(request, f"Customer added successfully!! The generated password is: {password}")
             return redirect('serviceapresvente:users')
 
@@ -412,19 +397,6 @@ def client_sav(request):
             userLog=request.user.email,
         )
         client.save()
-        
-        # sav client acount creation email
-        template = 'email/user_created.html'
-        context = {
-            'client_name': f"{nom} {prenom}",
-            'user': client,
-            'username': customer.username ,
-            'created_by': request.user.email
-        }
-        recievers = [customer.email]
-        subject = _('client Created')
-        
-        send_email_with_template_customer.delay(subject, template, context, recievers, from_email)
             
         messages.success(request, f"Client added successfully!")
         return redirect('serviceapresvente:clients')

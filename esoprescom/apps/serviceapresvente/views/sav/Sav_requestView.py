@@ -282,20 +282,6 @@ def create_client(request):
             client = Client_sav(**data)
             client.save()
 
-            # sav client acount creation email
-            template_name = 'email/user_created.html'
-            context = {
-                'client_name': f"{nom} {prenom}",
-                'user': client,
-                'username': customer.username ,
-                'created_by': request.user.email
-            }
-            to_email = [customer.email]
-            subject = _('client Created')
-            
-            send_email_with_template_customer.delay(subject, template_name, context, to_email, from_email)
-            
-
             return JsonResponse({
                 'success': True,
                 'message': 'Client added successfully!',
