@@ -9,7 +9,7 @@ def index(request):
   user = request.user
   if not user.is_authenticated:
     return redirect('shop:home')
-  orders =  Order.objects.prefetch_related('order_details').filter(author=user,is_paid=True)
+  orders =  Order.objects.prefetch_related('order_details').filter(author=user)
   
   return render(request,"dashboard/index.html",{
     'page':'orders',

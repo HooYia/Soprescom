@@ -43,7 +43,6 @@ def main():
                 description=f'This is a description of product {i}.',
                 more_description=f'More description about product {i}.',
                 additional_infos=f'Additional infos about product {i}.',
-                stock=random.randint(1, 100),
                 solde_price = solde_price,
                 regular_price = regular_price,
                 brand=f'Brand {i % 10}',

@@ -1,0 +1,171 @@
+<main class='my-5'>
+
+    <!-- Button to trigger Add Client Modal -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Stock</h2>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStockModal">
+            Add New Stock
+        </button>
+    </div>
+
+    <!-- Clients Table -->
+    <table class="table table-hover table-striped table-bordered responsive" id="datatable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th scope="col">Categorie</th>
+                <th scope="col">Produit</th>
+                <th scope="col">Initial</th>
+                <th scope="col">Quantité</th>
+                <th scope="col">Vendu</th>
+                <th scope="col">Stock limite</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for stock in stocks %}
+                <tr>
+                    <td>
+                        {% for category in stock.stock_produit.categories.all %}
+                            {{ category.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </td>
+                    <td>{{ stock.stock_produit.name }}</td>
+                    <td>{{ stock.initial_quantite }}</td>
+                    <td>{{ stock.quantite }}</td>
+                    <td>{{ stock.calculate_difference}}</td>
+                    <td>{{ stock.stockLimite }}</td>
+                    <td class="text-center">
+                        <!-- Edit Button -->
+                        <a class="btn btn-sm btn-outline-primary me-2 edit" href="#" data-bs-toggle="modal" data-bs-target="#updateStockModal{{ stock.id }}">
+                            <i class="fa-solid fa-pen me-1"></i>Edit
+                        </a>
+                        <!-- Delete Button -->
+                        <a class="btn btn-sm btn-outline-danger del" href="#" data-bs-toggle="modal" data-bs-target="#deleteStockModal{{ stock.id }}">
+                            <i class="fa-regular fa-trash-can me-1"></i>Delete
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    
+
+    <!-- Add Stock Modal -->
+    <div class="modal fade" id="addStockModal" tabindex="-1" aria-labelledby="addStockModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="POST" action="{% url "serviceapresvente:add_stock" %}">
+                    {% csrf_token %}
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addStockModalLabel">Add New Stock</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="productSelect" class="form-label">Select Product</label>
+                            <select class="form-select js-example-basic-single" style='width:100%;' id="productSelect" name="product" required>
+                                <option value="">Select Product</option>
+                                {% for product in products %}
+                                <option value="{{ product.id }}">{{ product.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="quantite" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="quantite" name="quantite" required min="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="stockLimite" class="form-label">Stock Limit</label>
+                            <input type="number" class="form-control" id="stockLimite" name="stockLimite" required min="0">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="add_stock" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Edit Stock Modal -->
+    {% for stock in stocks %}
+    <div class="modal fade" id="updateStockModal{{ stock.id }}" tabindex="-1" aria-labelledby="updateStockModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="POST" action="{% url "serviceapresvente:update_stock" stock.id %}">
+                    {% csrf_token %}
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateStockModalLabel">Update Stock</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="quantite" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="quantite" name="quantite" value="{{ stock.quantite }}" required min="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="stockLimite" class="form-label">Stock Limit</label>
+                            <input type="number" class="form-control" id="stockLimite" name="stockLimite" value="{{ stock.stockLimite }}" required min="0">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="update_stock" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- Delete Client Modal -->
+    {% for stock in stocks %}
+    <div class="modal fade" id="deleteStockModal{{ stock.id }}" tabindex="-1" aria-labelledby="deleteStockModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="POST" action="{% url "serviceapresvente:delete_stock" stock.id %}">
+                    {% csrf_token %}
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteStockModalLabel">Delete Stock</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete the stock for {{ stock.stock_produit.name }}?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" name="delete_stock" class="btn btn-danger">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+</div>
+
+</main>
+
+<script>
+
+    $('#datatable').DataTable({
+        lengthMenu: [5,10, 15,20],
+        order: [[3, 'desc']],
+        pageLength:10 
+     });
+
+
+     $(document).ready(function() {
+       
+        $('.js-example-basic-single').select2({
+            dropdownParent: $('#addStockModal')
+        });
+    });  
+
+
+</script>
+

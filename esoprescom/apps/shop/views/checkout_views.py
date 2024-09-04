@@ -17,6 +17,8 @@ from django.http import JsonResponse
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 
+from apps.shop.models.Product import Product, Stock
+
 @login_required
 def index(request):
     carrier_id = request.GET.get('carrier_id')
@@ -143,33 +145,39 @@ def create_order(request,billing_address,shipping_address=None):
     order.payment_method ='Stripe'
     order.author = user
     order.save()
+    
+    #update the stock
+    
 
     #order detail
     with transaction.atomic():
-      for item in cart['items']:
-        order_details = Orderdetails()
-        """
-        order_details.product_name = item['product']['name']
-        order_details.product_description = item['product']['description']
-        order_details.solde_price = item['product']['solde_price']
-        order_details.regular_price = item['product']['regular_price']
-        order_details.quantity = item['quantity']
-        order_details.taxe = item['taxe_amount']
-        order_details.sub_total_ht = item['sub_total_ht']
-        order_details.sub_total_ttc = item['sub_total_ttc']
-        order_details.order = order
-        order_details.save
-        """
-        order_details.product_name = item.get('product').get('name')
-        order_details.product_description = item.get('product').get('description')
-        order_details.solde_price = item.get('product').get('solde_price')
-        order_details.regular_price = item.get('product').get('regular_price')
-        order_details.quantity = item.get('quantity')
-        order_details.taxe = item.get('taxe_amount')
-        order_details.sub_total_ht = item.get('sub_total_ht')
-        order_details.sub_total_ttc = item.get('sub_total_ttc')
-        order_details.order = order
-        order_details.save()
+        for item in cart['items']:
+            product = Product.objects.get(id=item['product']['id'])
+            stock = Stock.objects.get(stock_produit=product)
+
+            # Update the stock quantities
+            if item['quantity'] <= stock.quantite:
+                stock.quantite -= item['quantity']
+            else:
+                # If the item quantity exceeds stock, set to zero and handle accordingly
+                stock.quantite = 0
+                
+            stock.save()
+
+            # Create order detail
+            order_details = Orderdetails(
+                product_name=item['product']['name'],
+                product_description=item['product']['description'],
+                solde_price=item['product']['solde_price'],
+                regular_price=item['product']['regular_price'],
+                quantity=item['quantity'],
+                taxe=item['taxe_amount'],
+                sub_total_ht=item['sub_total_ht'],
+                sub_total_ttc=item['sub_total_ttc'],
+                order=order
+            )
+            order_details.save()
+
     return order.id
 
 

@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from apps.shop.models.Collection import Collection
 from apps.shop.models.Slider import Slider
-from apps.shop.models.Product import Product
+from apps.shop.models.Product import Product, Stock
 from apps.shop.models.Category import Category
 from apps.shop.models.Image import Image
 from apps.shop.models.Setting import Setting
@@ -15,6 +15,8 @@ from apps.shop.models.Method import Method
 from apps.shop.models.Orderdetails import Orderdetails
 from ckeditor.widgets import CKEditorWidget
 from django.db import models
+
+admin.site.register(Stock)
 
 
 class SliderAdmin(admin.ModelAdmin):
