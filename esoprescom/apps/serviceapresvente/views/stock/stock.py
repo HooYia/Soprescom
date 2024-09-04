@@ -2,8 +2,8 @@ from apps.shop.models.Product import Stock, Product
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
-
-
+from django.db.models import Sum
+from django.utils import timezone
 
 @login_required
 def stock(request):
@@ -87,3 +87,7 @@ def delete_stock(request, stock_id):
     }
     
     return render(request, 'servicedsi/index.html', context)
+
+
+
+

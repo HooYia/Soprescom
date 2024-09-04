@@ -1,186 +1,94 @@
+
+
 <main class='my-5'>
+        <h2>Daily Sales from {{ start_date }} to {{ end_date }}</h2>
+        
+        <!-- Sales Summary Table -->
+        <h4>Sales Summary</h4>
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Total Sales</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in daily_sales_summary %}
+                    <tr>
+                        <td>{{ data.created_at__date }}</td>
+                        <td>${{ data.total_sales|floatformat:2 }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2">No sales data available</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
 
-    <!-- Button to trigger Add Client Modal -->
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="mb-0">Stock</h2>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addStockModal">
-            Add New Stock
-        </button>
-    </div>
+        <!-- Detailed Sales Table -->
+        <h4>Sales Details</h4>
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Client</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal (TT)</th>
+                    <th>Billing Address</th>
+                    <th>Shipping Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in sales_data %}
+                    <tr>
+                        <td>{{ item.created_at__date }}</td>
+                        <td>{{ item.order__author__username }}</td>
+                        <td>{{ item.product_name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>${{ item.sub_total_ttc|floatformat:2 }}</td>
+                        <td>{{ item.order__billing_address }}</td>
+                        <td>{{ item.order__shipping_address }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="7">No detailed sales data available</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       
 
-    <!-- Clients Table -->
-    <table class="table table-hover  table-striped table-bordered responsive" id="ShopdataTable" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-            <th scope="col">Date sortie </th>
-            <th scope="col">Client</th>
-            <th scope="col">Produit</th>
-            <th scope="col">Quantité</th>
-            <th scope="col">Stock Restant</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th scope="col">Date sortie </th>
-            <th scope="col">Client</th>
-            <th scope="col">Produit</th>
-            <th scope="col">Quantité</th>
-            <th scope="col">Stock Restant</th>
-          </tr>
-        </tfoot>
-        <tbody>
-          {% for row in sorties %}
-            <tr>
-              <td>{{row.date_commande}}       </td>
-              <td>{{row.client}}       </td>
-              <td>{{row.produit}}       </td>
-              <td>{{row.quantite_sortie}}       </td>
-              <td>{{row.stock_restant}}       </td> 
-            </tr>  
-          {% endfor %}    
-        </tbody>
-      </table>
-    
-
-    <!-- Add Stock Modal -->
-    <div class="modal fade" id="addStockModal" tabindex="-1" aria-labelledby="addStockModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="addClientModalLabel">Add New Client</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="userLog" class="form-label">Select Customer</label>
-                            <select class="form-control" id="userLog" name="userLog" required>
-                                <option value="">Select Customer</option>
-                                {% for customer in customers %}
-                                <option value="{{ customer.id }}">{{ customer.username }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="est_personne_morale" name="est_personne_morale">
-                            <label class="form-check-label" for="est_personne_morale">Is Company</label>
-                        </div>
-                        <div class="mb-3">
-                            <label for="raison_sociale" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="raison_sociale" name="raison_sociale">
-                        </div>
-                        <div class="mb-3">
-                            <label for="first_name" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="client_name" name="nom" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="last_name" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="client_name" name="prenom">
-                        </div>
-                        <div class="mb-3">
-                            <label for="telephone" class="form-label">Phone</label>
-                            <input type="text" class="form-control" id="telephone" name="telephone">
-                        </div>
-                        <div class="mb-3">
-                            <label for="adresse" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="adresse" name="adresse">
-                        </div>
-                        
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" name="add_client" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
+            <div class="mt-5">
+                <canvas id="myChart"></canvas>
             </div>
-        </div>
-    </div>
+</main> 
 
-    <!-- Edit Client Modal -->
-    {% for client in clients %}
-    <div class="modal fade" id="editStockModal{{ client.idclient }}" tabindex="-1" aria-labelledby="editStockModalLabel{{ client.idclient }}" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST" action="{% url 'serviceapresvente:update_client_sav' client_id=client.idclient %}">
-                    {% csrf_token %}
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="editClientModalLabel{{ client.idclient }}">Edit Client</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <input type="hidden" name="userLog", value="{{client.customer.id}}">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="est_personne_morale{{ client.idclient }}" name="est_personne_morale" {% if client.est_personne_morale %}checked{% endif %}>
-                            <label class="form-check-label" for="est_personne_morale{{ client.idclient }}">Is Company</label>
-                        </div>
-                        <div class="mb-3">
-                            <label for="raison_sociale{{ client.idclient }}" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="raison_sociale{{ client.idclient }}" name="raison_sociale" value="{{ client.raison_sociale }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="client_name{{ client.idclient }}" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="client_name{{ client.idclient }}" name="nom" value="{{ client.nom }}" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="client_name{{ client.idclient }}" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="client_name{{ client.idclient }}" name="prenom" value="{{ client.prenom }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="telephone{{ client.idclient }}" class="form-label">Phone</label>
-                            <input type="text" class="form-control" id="telephone{{ client.idclient }}" name="telephone" value="{{ client.telephone }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="adresse{{ client.idclient }}" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="adresse{{ client.idclient }}" name="adresse" value="{{ client.adresse }}">
-                        </div>
-                       
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Delete Client Modal -->
-    {% for client in clients %}
-    <div class="modal fade" id="deleteStockModal{{ client.idclient }}" tabindex="-1" aria-labelledby="deleteStockModalLabel{{ client.idclient }}" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form method="POST" action="{% url 'serviceapresvente:delete_client_sav' client_id=client.idclient %}">
-                    {% csrf_token %}
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="deleteClientModalLabel{{ client.idclient }}">Delete Client</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Are you sure you want to delete {{ client.client_name }}?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div>
+    <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
 
-</main>
 
-<script>
-
-    $('#datatable').DataTable({
-        lengthMenu: [5,10, 15,20],
-        order: [[3, 'desc']],
-        pageLength:10 
-     });
-
-</script>
+   

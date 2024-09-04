@@ -1,31 +1,43 @@
-from django.shortcuts import render, redirect
-from apps.shop.models.Product import Stock
+from django.shortcuts import render
+from django.db.models import Sum
+from django.utils import timezone
+from datetime import timedelta
 
+from apps.shop.models import Orderdetails
 
 def sortie_journalier(request):
-    
-    # sorties = []
-    # stocks = Stock.objects.all()
-    # print('stocks:',stocks)
-    # for stock in stocks:
-    #     # Récupérer les CommandeArticle correspondants au produit du stock
-    #     commande_articles = CommandeArticle.objects.filter(stock=stock)
-        
-    #     for commande_article in commande_articles:
-    #         # Vérifier si cette CommandeArticle correspond à une sortie de stock
-    #         if commande_article.quantite > 0:
-    #             sortie = {
-    #                 'client': commande_article.commande.client,
-    #                 'produit': stock.produit,
-    #                 'quantite_sortie': commande_article.quantite,
-    #                 'date_commande': commande_article.commande.date_commande,
-    #                 'stock_restant': stock.quantite - commande_article.quantite
-    #             }
-    #             sorties.append(sortie)
-    
+
+    today = timezone.now().date()
+    start_date = today - timedelta(days=30)  # Last 30 days
+
+    sales_data = Orderdetails.objects.filter(
+        created_at__date__range=[start_date, today]
+    ).select_related('order').values(
+        'created_at__date',
+        'order__author__username',
+        'product_name',
+        'quantity',
+        'sub_total_ttc',
+        'order__billing_address',
+        'order__shipping_address'
+    ).order_by('created_at__date')
+
+    daily_sales_summary = Orderdetails.objects.filter(
+        created_at__date__range=[start_date, today]
+    ).values(
+        'created_at__date'
+    ).annotate(
+        total_sales=Sum('sub_total_ttc')
+    ).order_by('created_at__date')
+
     context = {
-        # 'sorties': sorties,
+        'sales_data': sales_data,
+        'daily_sales_summary': daily_sales_summary,
+        'start_date': start_date,
+        'end_date': today,
         'page':'stock',
         'subpage':'journalier_tab',
     }
+        
+
     return render(request, 'servicedsi/index.html', context)

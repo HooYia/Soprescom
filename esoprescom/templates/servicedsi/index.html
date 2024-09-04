@@ -246,6 +246,9 @@
                     </div>
                     <!--    Instance SAV--> 
                     <div class="tab-content dashboard_content"> 
+                      <div class="tab-pane fade {% if subpage == 'journalier_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
+                        {% include "stock/sortie_journalier.html" %}
+                      </div>
                       <div class="tab-pane fade {% if subpage == 'instance' %}active show{% endif %}" id="savrequest" role="tabpanel" aria-labelledby="savrequest-tab">
                         {% include "servicedsi/instance/instance.html" %}
                       </div>
@@ -271,11 +274,15 @@
                       <div class="tab-pane fade {% if subpage == 'client_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
                         {% include "servicedsi/dashboard/client_sav.html" %}
                       </div>
-
-                      <!-- Stock -->
                       <div class="tab-pane fade {% if subpage == 'stock_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
                         {% include "stock/stock.html" %}
                       </div>
+
+                    </div>
+                      <!-- Stock -->
+                    <div class="tab-content dashboard_content"> 
+                      
+                     
                     </div>
 
                     
