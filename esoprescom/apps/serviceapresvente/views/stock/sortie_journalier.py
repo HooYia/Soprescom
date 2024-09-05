@@ -6,7 +6,7 @@ from datetime import timedelta
 from apps.shop.models import Orderdetails
 
 def sortie_journalier(request):
-
+    
     today = timezone.now().date()
     start_date = today - timedelta(days=30)  # Last 30 days
 
@@ -29,10 +29,16 @@ def sortie_journalier(request):
     ).annotate(
         total_sales=Sum('sub_total_ttc')
     ).order_by('created_at__date')
+    
+    # Prepare data for the chart
+    labels = [entry['created_at__date'].strftime('%Y-%m-%d') for entry in daily_sales_summary]
+    data = [entry['total_sales'] for entry in daily_sales_summary]
 
     context = {
         'sales_data': sales_data,
         'daily_sales_summary': daily_sales_summary,
+        'chart_labels': labels,
+        'chart_data': data,
         'start_date': start_date,
         'end_date': today,
         'page':'stock',
