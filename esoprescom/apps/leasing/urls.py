@@ -32,6 +32,8 @@ urlpatterns = [
     path('exploitation/add', ExploitationViews.create, name='exploitation-create'),
     path('exploitation/upd/<int:id>/', ExploitationViews.update, name='exploitation-update'),
     path('exploitation/detail/<int:id>', ExploitationViews.show, name='exploitation-show'),
+
+   
     
 
 ]

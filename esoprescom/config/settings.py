@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-+#lai2!oa!-2_#6wpl)75dy_o4aco&z&w8*9o^9#3sh_vua^xh
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    # 'e-soprescom.net',
+    'e-soprescom.net',
     '127.0.0.1',
     # 'localhost'
 ]

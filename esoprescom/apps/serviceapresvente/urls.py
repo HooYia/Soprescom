@@ -70,9 +70,7 @@ urlpatterns = [
     path('recouvrement/<int:id>/detail', RecouvrementView.show, name='recouvrement-show'),
     ## cloture sav
     path('cloture', ClotureDossierView.index, name='cloture'),
-
     
-
     ##Gestion Instance
     path('instance', InstanceViews.index, name='instance'),
     path('instance/add', InstanceViews.create, name='instance-create'),
@@ -87,9 +85,13 @@ urlpatterns = [
 
     path('create-client/', Sav_requestView.create_client, name='create_client'),
 
-    #Gestion Leasingcloture
-    #path('leasing', LeasingClientViews.index, name='leasingClient'),
-    #path('leasingListeImp', ListeimprimanteViews.index, name='leasingListeImp'),
+    #Gestion stock
+    path('stock', stock.stock, name='stock'),
+    path('stock_create/', stock.add_stock, name='add_stock'),
+    path('stock/update/<int:stock_id>', stock.update_stock, name='update_stock'),
+    path('stock/delete/<int:stock_id>', stock.delete_stock, name='delete_stock'),
+    path('sortie-journalier', sortie_journalier.sortie_journalier, name='sotie_journalier'),
+    
 
    
 ]
