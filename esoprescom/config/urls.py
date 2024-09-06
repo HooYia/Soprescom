@@ -20,7 +20,7 @@ schema_view = get_schema_view(
         default_version='v1',
         description='Soprescom',
         terms_of_service='',
-        contact=openapi.Contact(email='contact@sopres.com'),
+        contact=openapi.Contact(email='contact@soprescom.net'),
         license=openapi.License(name='BSD license')
 
     ),
@@ -47,6 +47,7 @@ urlpatterns = [
     path('dashboard/', include('apps.dashboard.urls')),
     path('sav/', include('apps.serviceapresvente.urls')),
     path('leasing/', include('apps.leasing.urls')),
+    path("__reload__/", include("django_browser_reload.urls")),
    
     path('admin/', admin.site.urls),
      

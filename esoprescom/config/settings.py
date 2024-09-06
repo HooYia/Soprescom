@@ -54,7 +54,7 @@ THIRD_PARTY_APPS = [
     'crispy_forms',
     #'django_extensions',
     #'django_filters',
-    'livereload',
+    'django_browser_reload',
     'ckeditor',
     #'django-select2',
     'rest_framework',
@@ -152,7 +152,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'livereload.middleware.LiveReloadScript',
+    #'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'config.urls'

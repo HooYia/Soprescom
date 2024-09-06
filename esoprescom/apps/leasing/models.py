@@ -5,11 +5,12 @@ import requests
 #from django.utils.translation import gettext as _  ugettext_lazy 
 from django.utils.translation import gettext_lazy as _  
 from django.contrib.auth import get_user_model
-from datetime import datetime
+from datetime import datetime,timedelta,date
 from django.db.models import Count,Sum, Case, When, Sum
 from django.core.exceptions import ObjectDoesNotExist
 from urllib.parse import urlencode
 from django.core.files.base import ContentFile
+from django.utils.timezone import now
 
 User = get_user_model()
 
@@ -298,15 +299,23 @@ class HistioriqueConsommable(models.Model):
     
 
 class GestionIncident(models.Model):
-    idhistconsommable = models.BigAutoField(primary_key=True)
-    date = models.DateField(default=datetime.now)
-    bordereausortie = models.CharField(verbose_name =_('Bordéreau de Sortie'), max_length=30,null=False, blank=False)
-    reference = models.CharField(verbose_name =_('Référence'), max_length=30,null=False, blank=False,db_index=True)
-    designation = models.CharField(verbose_name =_('Désignation'),max_length=50,null=False, blank=False)
-    description = models.CharField(verbose_name =_('Description'),max_length=100,null=False, blank=False)
-    typeproduit = models.CharField(verbose_name =_('Catégorie'),max_length = 100,null=False, blank=False)
-    quantite = models.IntegerField(verbose_name =_('Quantité'),default=0,null=False, blank=False)
-    action = models.CharField(verbose_name =_('Add_or_dell'),max_length = 100,null=False, blank=False)
+    class NATUREINCIDENT(models.TextChoices):
+          INCIDENT_0 ="Défaut impression","Défaut impression"
+          INCIDENT_1 ="Probleme Cartouche","Probleme Cartouche"
+          INCIDENT_2 ="Défaut Alimentation","Défaut Alimentation"
+
+    class STATUT(models.TextChoices):
+          OK ="Résolu","Résolu"
+          NON_OK ="Non résolu","Non résolu"
+          
+    idincident = models.BigAutoField(primary_key=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    userDSI = models.CharField(verbose_name =_('Leasing User'), max_length=30,null=False, blank=False, default='Leasing Team DSI')
+    deploiement = models.ForeignKey(Deploiement, on_delete=models.SET_NULL, null=True)
+    incident = models.CharField(max_length=25, verbose_name=_('Statut ticket'), choices=NATUREINCIDENT.choices, default=NATUREINCIDENT.INCIDENT_0)
+    Statut = models.CharField(max_length=15, verbose_name=_('Statut ticket'), choices=STATUT.choices, default=STATUT.NON_OK)
+
 
 """
 

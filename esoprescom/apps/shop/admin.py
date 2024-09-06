@@ -117,7 +117,7 @@ class CarrierAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
      list_display =('id','client_name','status','billing_address','shipping_address','quantity','taxe','order_cost_ttc','is_paid','carrier_name','carrier_price','payment_method','created_at')
      list_display_links = ('client_name',)
-     list_editable = ('status')
+     list_editable = ('status',)
      list_filter = ('is_paid','updated_at','created_at')
      search_fields=('client_name','carrier_name')
      
