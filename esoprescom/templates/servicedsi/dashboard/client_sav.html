@@ -1,0 +1,201 @@
+<main class='my-5'>
+
+        <!-- Button to trigger Add Client Modal -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="mb-0">Client SAV List</h2>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addClientModal">
+                Add New Client
+            </button>
+        </div>
+
+        <!-- Clients Table -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Client Type</th>
+                    <th>Client Name</th>
+                    <th>Company Name</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                <tr>
+                    <td>{% if client.est_personne_morale %}Company{% else %}Individual{% endif %}</td>
+                    <td>{{ client.client_name }}</td>
+                    <td>{% if client.est_personne_morale %}{{ client.raison_sociale }}{% else %}N/A{% endif %}</td>
+                    <td>{{ client.telephone }}</td>
+                    <td>{{ client.adresse }}</td>
+                    <td>
+                        <!-- Edit Button -->
+                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editClientModal{{ client.idclient }}">Edit</button>
+                        <!-- Delete Button -->
+                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteClientModal{{ client.idclient }}">Delete</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+
+        <!-- Add Client Modal -->
+        <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addClientModalLabel">Add New Client</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="userLog" class="form-label">Select Customer</label>
+                                <select class="form-control" id="userLog" name="userLog" required>
+                                    <option value="">Select Customer</option>
+                                    {% for customer in customers %}
+                                    <option value="{{ customer.id }}">{{ customer.username }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="est_personne_morale" name="est_personne_morale">
+                                <label class="form-check-label" for="est_personne_morale">Is Company</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="raison_sociale" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" id="raison_sociale" name="raison_sociale">
+                            </div>
+                            <div class="mb-3">
+                                <label for="first_name" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="client_name" name="nom" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="last_name" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="client_name" name="prenom">
+                            </div>
+                            <div class="mb-3">
+                                <label for="telephone" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="telephone" name="telephone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="adresse" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="adresse" name="adresse">
+                            </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" name="add_client" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Client Modal -->
+        {% for client in clients %}
+        <div class="modal fade" id="editClientModal{{ client.idclient }}" tabindex="-1" aria-labelledby="editClientModalLabel{{ client.idclient }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" action="{% url 'serviceapresvente:update_client_sav' client_id=client.idclient %}">
+                        {% csrf_token %}
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editClientModalLabel{{ client.idclient }}">Edit Client</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <input type="hidden" name="userLog", value="{{client.customer.id}}">
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="est_personne_morale{{ client.idclient }}" name="est_personne_morale" {% if client.est_personne_morale %}checked{% endif %}>
+                                <label class="form-check-label" for="est_personne_morale{{ client.idclient }}">Is Company</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="raison_sociale{{ client.idclient }}" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" id="raison_sociale{{ client.idclient }}" name="raison_sociale" value="{{ client.raison_sociale }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="client_name{{ client.idclient }}" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="client_name{{ client.idclient }}" name="nom" value="{{ client.nom }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="client_name{{ client.idclient }}" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="client_name{{ client.idclient }}" name="prenom" value="{{ client.prenom }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="telephone{{ client.idclient }}" class="form-label">Phone</label>
+                                <input type="text" class="form-control" id="telephone{{ client.idclient }}" name="telephone" value="{{ client.telephone }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="adresse{{ client.idclient }}" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="adresse{{ client.idclient }}" name="adresse" value="{{ client.adresse }}">
+                            </div>
+                           
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- Delete Client Modal -->
+        {% for client in clients %}
+        <div class="modal fade" id="deleteClientModal{{ client.idclient }}" tabindex="-1" aria-labelledby="deleteClientModalLabel{{ client.idclient }}" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" action="{% url 'serviceapresvente:delete_client_sav' client_id=client.idclient %}">
+                        {% csrf_token %}
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteClientModalLabel{{ client.idclient }}">Delete Client</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to delete {{ client.client_name }}?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</main>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const estPersonneMoraleCheckbox = document.querySelectorAll('[id^="est_personne_morale"]');
+        
+        estPersonneMoraleCheckbox.forEach(checkbox => {
+            const clientId = checkbox.id.replace('est_personne_morale', '');
+            const raisonSocialeField = document.getElementById(`raison_sociale${clientId}`);
+            
+            checkbox.addEventListener('change', function() {
+                if (checkbox.checked) {
+                    raisonSocialeField.disabled = false;
+                } else {
+                    raisonSocialeField.disabled = true;
+                    raisonSocialeField.value = '';
+                }
+            });
+    
+            // Initialize the field based on the current state
+            if (!checkbox.checked) {
+                raisonSocialeField.disabled = true;
+            }
+        });
+    });
+
+</script>

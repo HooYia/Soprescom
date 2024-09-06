@@ -1,0 +1,64 @@
+{
+  "database": {
+    "1713788824613": {
+      "key": "1713788824613",
+      "host": "127.0.0.1",
+      "port": 5432,
+      "user": "postgres",
+      "dbType": "SQLite",
+      "name": "Wallet",
+      "advance": {
+        "hideSystemSchema": true
+      },
+      "timezone": "+00:00",
+      "usingSSH": false,
+      "useSocksProxy": false,
+      "useHTTPProxy": false,
+      "global": true,
+      "savePassword": "Forever",
+      "readonly": false,
+      "sort": 11,
+      "useSSL": false,
+      "dbPath": "f:\\Python\\Mes projets Django\\walletPrj\\db.sqlite3",
+      "fs": {
+        "showHidden": true
+      },
+      "encrypt": false,
+      "connectionKey": "database.connections",
+      "disable": false
+    },
+    "1715936297580": {
+      "key": "1715936297580",
+      "isTreeNode": true,
+      "host": "127.0.0.1",
+      "port": 5432,
+      "user": "postgres",
+      "dbType": "SQLite",
+      "name": "Ecommerce",
+      "advance": {
+        "hideSystemSchema": true
+      },
+      "timezone": "+00:00",
+      "usingSSH": false,
+      "useSocksProxy": false,
+      "useHTTPProxy": false,
+      "global": true,
+      "savePassword": "Forever",
+      "readonly": false,
+      "sort": 12,
+      "useSSL": false,
+      "dbPath": "f:\\Python\\Mes projets Django\\e-soprescom\\esoprescom\\soprescom_ecommercoerce.db",
+      "fs": {
+        "showHidden": true
+      },
+      "httpAuth": {
+        "authType": "none"
+      },
+      "connectionKey": "database.connections",
+      "encrypt": false,
+      "disable": false
+    }
+  },
+  "nosql": null,
+  "$schema": "http://127.0.0.1:8828/schema.json"
+}

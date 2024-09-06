@@ -1,0 +1,574 @@
+{% extends "base.html" %}
+{% load price_filter %}
+{% block style  %}
+  <style>
+  /****  Ajout perso  *********/
+.disabled {
+	pointer-events: none; /* Empêche les interactions de souris */
+	opacity: 0.6; /* Réduit l'opacité pour indiquer la désactivation */
+}
+
+.grayed-out {
+	background-color: #f2f2f2; /* Couleur de fond grise */
+	color: #808080; /* Couleur de texte grise */
+}
+
+.disabled-cell {
+	background-color: #f2f2f2; /* Couleur de fond grise */
+	color: #808080; /* Couleur de texte grise */
+	pointer-events: none; /* Empêche les événements de souris */
+	opacity: 0.6; /* Réduit l'opacité pour indiquer la désactivation */
+}
+.soprescom-container {
+	max-width: 100%;
+	padding-right: 30px;
+	padding-left: 30px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.breadcrumb_section.page-title-mini-soprescom {
+	padding: 35px 0;
+}
+  </style>
+{% endblock %}
+{% block content %}
+
+{% include "partials/top_pagedsi.html" with name="Gestion DSI" %}
+
+
+<div class="main_content">
+  <div class="section  small_pt  footer_top.pb_20">
+    {% if messages %}
+    {% for message in messages  %}
+    <div class="alert alert-success fixed-bottom" style="left: 75%;">
+        {{message}}
+    </div>
+    {% endfor %}
+{% endif %}
+    <!--<div class="container"> -->
+    <div class="soprescom-container">
+          <div class="row">
+              <div class="col-lg-2 col-md-3">
+                  <div class="dashboard_menu">
+                      <ul class="nav nav-tabs flex-column" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link  {% if page == 'dashboard' %}active{% endif %}" id="dashboard-tab"  href="{% url 'serviceapresvente:dashboard' %}" role="tab" aria-controls="dashboard" aria-selected="false"><i class="ti-layout-grid2"></i>Dashboard</a>
+                        </li>
+                        {% if not is_staff or not is_superuser %}
+                        <li class="nav-item">
+                          <a class="nav-link  {% if page == 'savrequest' %}active{% endif %}" id="savrequest-tab"  href="{% url 'serviceapresvente:savrequest' %}" role="tab" aria-controls="savrequest" aria-selected="false"><i class="ti-layout-grid2"></i>Gestion SAV</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'leasing' %}active{% endif %}" id="leasing-tab"  href="{% url 'leasing:client' %}" role="tab" aria-controls="orders" aria-selected="false"><i class="ti-shopping-cart-full"></i>Gestion Leasing</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'instance' %}active{% endif %}" id="instance-tab"  href="{% url 'serviceapresvente:instance' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-location-pin"></i>Instance DSI</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'users' %}active{% endif %}" id="users-tab"  href="{% url 'serviceapresvente:users' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-user"></i>Users</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'clients' %}active{% endif %}" id="client-tab"  href="{% url 'serviceapresvente:clients' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-user"></i>Clients SAV</a>
+                        </li>
+                        {% endif %}
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-10 col-md-9">
+                <div class="dashboard_menu">
+                      <!-- Afficher le sous-menu uniquement si la page est 'savrequest' -->
+                  {% if page == 'savrequest' %}
+                      <div class="sub-menu">
+                          <ul class="nav nav-tabs " role="tablist">
+                            {% if request.user.is_staff or request.user.is_superuser %}  
+
+                              <li class="nav-item">
+                                  <a class="nav-link {% if subpage == 'savrequest' %}active{% endif %}" href="{% url 'serviceapresvente:savrequest' %}" role="tab" aria-controls="sub1" aria-selected="true">Sav request</a>
+                              </li>
+                              {% endif %}
+                              {% if request.user.is_compta or request.user.is_superuser %}
+                              <li class="nav-item">
+                                  <a class="nav-link {% if subpage == 'commandesav' %}active{% endif %}" href="{% url 'serviceapresvente:commandesav' %}" role="tab" aria-controls="sub2" aria-selected="true">Achat</a>
+                              </li>
+                              {% endif %}
+                              {% if request.user.is_losgistic or request.user.is_superuser %}
+                              <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'suivicommandesav' %}active{% endif %}" href="{% url 'serviceapresvente:suivicommandesav' %}" role="tab" aria-controls="sub2" aria-selected="true">Logistique</a>
+                                </li>
+                                {% endif %}
+                                {% if request.user.is_staff or request.user.is_superuser %}
+                                <li class="nav-item">
+                                  <a class="nav-link {% if subpage == 'assemblage' %}active{% endif %}" href="{% url 'serviceapresvente:assemblage' %}" role="tab" aria-controls="sub2" aria-selected="true">Assemblage</a>
+                              </li>
+                              {% endif %}
+                              {% if request.user.is_losgistic or request.user.is_superuser %}
+                              <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'livraison' %}active{% endif %}" href="{% url 'serviceapresvente:livraison' %}" role="tab" aria-controls="sub2" aria-selected="true">Livraison</a>
+                              </li>
+                              {% endif %}
+                              {% if request.user.is_recouvrement or request.user.is_superuser %}
+                              <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'recouvrement' %}active{% endif %}" href="{% url 'serviceapresvente:recouvrement' %}" role="tab" aria-controls="sub2" aria-selected="true">Recouvrement</a>
+                              </li>
+                              {% endif %}
+                              {% if request.user.is_staff or request.user.is_superuser %}
+                              <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'cloturedossier' %}active{% endif %}" href="{% url 'serviceapresvente:cloture' %}" role="tab" aria-controls="sub2" aria-selected="true">Clôture</a>
+                              </li>
+                              {% endif %}
+                          </ul>
+                      </div>
+                  {% elif page == 'dashboard' %}
+                      <div class="sub-menu">
+                        <ul class="nav nav-tabs " role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'sav_tab' %}active{% endif %}" href="{% url "serviceapresvente:dashboard" %}#sav_tab" role="tab" aria-controls="sub1" aria-selected="true">SAV</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'leasing_tab' %}active{% endif %}" href="{% url "serviceapresvente:dashboard_leasing" %}#leasing_tab" role="tab" aria-controls="sub1" aria-selected="true">Leasing </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'instance_tab' %}active{% endif %}" href="{% url "serviceapresvente:dashboard_instance" %}#instance_tab" role="tab" aria-controls="sub1" aria-selected="true">Instance </a>
+                            </li>
+                            
+                        </ul>
+                      </div>
+                  {% elif page == 'users' %}
+                      <div class="sub-menu">
+                        <ul class="nav nav-tabs " role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'users_tab' %}active{% endif %}" href="{% url "serviceapresvente:users" %}#sav_tab" role="tab" aria-controls="sub1" aria-selected="true">Users</a>
+                            </li>
+                        </ul>
+                      </div>
+                  {% elif page == 'clients' %}
+                      <div class="sub-menu">
+                        <ul class="nav nav-tabs " role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link {% if subpage == 'client_tab' %}active{% endif %}" href="{% url "serviceapresvente:clients" %}#sav_tab" role="tab" aria-controls="sub1" aria-selected="true">Clients SAV</a>
+                            </li>
+                        </ul>
+                      </div>
+                  {% elif page == 'leasing' %}
+                  <div class="sub-menu">
+                    <ul class="nav nav-tabs " role="tablist">
+                       <li class="nav-item">
+                        <a class="nav-link {% if subpage == 'clientleasing' %}active{% endif %}" href="{% url 'leasing:client' %}" role="tab" aria-controls="sub1" aria-selected="true">Client Lieasing </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if subpage == 'listeimprimante' %}active{% endif %}" href="{% url 'leasing:imp-list' %}" role="tab" aria-controls="sub1" aria-selected="true"> Liste Imprimante </a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link {% if subpage == 'deploiement' %}active{% endif %}" href="{% url 'leasing:deploiement-list' %}" role="tab" aria-controls="sub1" aria-selected="true">Déploiement </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link {% if subpage == 'consommable' %}active{% endif %}" href="{% url 'leasing:consommable-list' %}" role="tab" aria-controls="sub1" aria-selected="true">Consommable </a>
+                  </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if subpage == 'exploitation' %}active{% endif %}" href="{% url 'leasing:exploitation-list' %}" role="tab" aria-controls="sub1" aria-selected="true">Exploitation </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if subpage == 'leasing_tab2' %}active{% endif %}" href="#leasing_tab2" role="tab" aria-controls="sub2" aria-selected="true">Incident</a>
+                      </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if subpage == 'leasing_tab2' %}active{% endif %}" href="#leasing_tab2" role="tab" aria-controls="sub2" aria-selected="true">Statistique</a>
+                        </li>
+                    
+                    </ul>
+                </div>
+                  {% else %}
+                  <div class="sub-menu">
+                    <ul class="nav nav-tabs " role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link {% if subpage == 'instance' %}active{% endif %}" href="{% url 'serviceapresvente:instance' %}" role="tab" aria-controls="sub1" aria-selected="true">Instance </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if subpage == 'instance_recouvrement' %}active{% endif %}" href="{% url 'serviceapresvente:instancerecouv' %}" role="tab" aria-controls="sub2" aria-selected="true">Instance recouvrement</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                          <a class="nav-link {% if subpage == 'leasing_tab2' %}active{% endif %}" href="#leasing_tab2" role="tab" aria-controls="sub2" aria-selected="true">Rapport</a>
+                        </li>  -->
+                    </ul> 
+                  </div>   
+                  {% endif %}
+                  </div>   
+                    <!--  Gestion SAV-->
+                    <div class="tab-content dashboard_content"> 
+                        <div class="tab-pane fade {% if subpage == 'savrequest' %}active show{% endif %}" id="savrequest" role="tabpanel" aria-labelledby="savrequest-tab">
+                          {% include "servicedsi/includes/savrequest.html" %}
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'commandesav' %}active show{% endif %}"  id="commandesav" role="tabpanel" aria-labelledby="savrequest_tab2">
+                            {% include "servicedsi/includes/commandesav.html" %}
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'suivicommandesav' %}active show{% endif %}"  id="suivicommandesav" role="tabpanel" aria-labelledby="leasing_tab1">
+                          {% include "servicedsi/includes/suivicommandesav.html" %}
+                          
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'assemblage' %}active show{% endif %}"  id="assemblage" role="tabpanel" aria-labelledby="assemblage">
+                          {% include "servicedsi/includes/assemblage.html" %}
+                        </div>                                 
+                        <div class="tab-pane fade {% if subpage == 'livraison' %}active show{% endif %}"  id="livraison-detail" role="tabpanel" aria-labelledby="livraison-detail-tab">
+                          {% include "servicedsi/includes/livraison.html" %}
+                          
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'recouvrement' %}active show{% endif %}"  id="recouvrement-detail" role="tabpanel" aria-labelledby="recouvrement-detail-tab">
+                          {% include "servicedsi/includes/recouvrement.html" %}
+                          
+                        </div>
+                        <div class="tab-pane fade {% if subpage == 'cloturedossier' %}active show{% endif %}"  id="devea-detail" role="tabpanel" aria-labelledby="devea-detail-tab">
+                          {% include "servicedsi/includes/cloturedossier.html" %}
+                          
+                        </div>
+                    </div>
+                    <!--    Leasing SAV--> 
+                    <div class="tab-content dashboard_content"> 
+                      <div class="tab-pane fade {% if subpage == 'clientleasing' %}active show{% endif %}" id="idclientleasing" role="tabpanel" >
+                        {% include "servicedsi/leasing/leasingClient.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'addclient' %}active show{% endif %}" id="idclientleasing" role="tabpanel" >
+                        {% include "servicedsi/leasing/client/client_new.html" %}
+                      </div>
+
+                      <div class="tab-pane fade {% if subpage == 'listeimprimante' %}active show{% endif %}" id="idlisteimprimante" role="tabpanel" >
+                        {% include "servicedsi/leasing/listeimprimante.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'deploiement' %}active show{% endif %}"  id="iddeploiement" role="tabpanel" >
+                          {% include "servicedsi/leasing/deploiement.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'consommable' %}active show{% endif %}"  id="idconsommable" role="tabpanel" >
+                        {% include "servicedsi/leasing/consommable.html" %}
+                    </div><div class="tab-pane fade {% if subpage == 'exploitation' %}active show{% endif %}"  id="idexploitation" role="tabpanel" aria-labelledby="savrequest_tab2">
+                      {% include "servicedsi/leasing/exploitation.html" %}
+                  </div>
+                    </div>
+                    <!--    Instance SAV--> 
+                    <div class="tab-content dashboard_content"> 
+                      <div class="tab-pane fade {% if subpage == 'instance' %}active show{% endif %}" id="savrequest" role="tabpanel" aria-labelledby="savrequest-tab">
+                        {% include "servicedsi/instance/instance.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'instance_recouvrement' %}active show{% endif %}"  id="commandesav" role="tabpanel" aria-labelledby="savrequest_tab2">
+                          {% include "servicedsi/instance_recouvrement/instance_recouvrement.html" %}
+                      </div>
+                    </div>
+
+                    <!-- Dashboard -->
+                    <div class="tab-content dashboard_content"> 
+                      <div class="tab-pane fade {% if subpage == 'sav_tab' %}active show{% endif %}" id="sav" role="tabpanel" aria-labelledby="sav-tab">
+                        {% include "servicedsi/dashboard/sav.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'leasing_tab' %}active show{% endif %}" id="leasing" role="tabpanel" aria-labelledby="leasing-tab">
+                        {% include "servicedsi/dashboard/leasing.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'instance_tab' %}active show{% endif %}" id="instance" role="tabpanel" aria-labelledby="instance-tab">
+                        {% include "servicedsi/dashboard/instance.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'users_tab' %}active show{% endif %}" id="users" role="tabpanel" aria-labelledby="users-tab">
+                        {% include "servicedsi/dashboard/users.html" %}
+                      </div>
+                      <div class="tab-pane fade {% if subpage == 'client_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
+                        {% include "servicedsi/dashboard/client_sav.html" %}
+                      </div>
+                    </div>
+
+                    
+                  </div>
+                </div>
+              </div>
+          </div>
+    </div>
+
+
+<!-- Button trigger modal -->
+<!--
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#oderDetailModal">
+  Launch demo modal
+</button>
+-->
+ 
+{% include "servicedsi/modal/modalSAV.html" %}  
+{% include "servicedsi/modal/modalCommande.html" %}
+
+{% include "servicedsi/modal/modalInstanceCreate.html" %}
+{% include "servicedsi/modal/modalInstance.html" %}
+
+{% endblock  %}
+
+{% block script %}
+
+<script>
+$(document).ready(function() {
+
+    var Mypath;
+/********** Ajout **************/
+$(document).on('click', '#savcreate,#id_instancecreate', function() {
+    //e.preventDefault();
+    //$('#id_recouvrement_hp input:disabled').prop('disabled', false);
+    
+    var url = $(this).data('url');
+    console.log('url:',url);
+    
+    $.ajax({
+    url: url,
+    type: 'get',
+    dataType: 'html',
+    success: function(data) {
+        //$('#form-container').html(data);
+        $('#form-container').html(data);
+        $('#SavResquestModal').modal('show');
+    },
+    error: function(data) {
+        alert('error');
+    }
+     });   
+});  
+
+
+/********** Edit **************/
+$(document).on('click', '#savDisplayForUpdate', function(e) {
+  //e.preventDefault(); 
+  var url = $(this).data('url');
+  
+  //console.log('URL btn savDisplayForUpdate:', url);
+    $.ajax({
+    url: url,
+    type: 'get',
+    dataType: 'html',
+    success: function(data) {
+      $('#form-container').html(data);
+      $('#SavResquestModal').modal('show');
+      //alert('success');
+    },  
+     error: function(data) {
+      alert('error:',data)
+    }
+  });
+    
+})
+
+  
+/************ update-save-btn  **********/ 
+/*
+$(document).on('click', '#update-save-btn', function(event) {
+  //event.preventDefault(); // Prevent the default form submission
+  
+  // Get the form element
+  var form = $(this).closest('form');
+  //var form = $(event.target).closest('form');
+  //form.find(':disabled').prop('disabled', false); 
+  // Re-enable disabled fields for submission
+  form.find(':disabled').removeAttr('disabled');
+  var url = $(this).data('url');
+  console.log('form:',form)
+  console.log('console.log(form.serialize()):',form.serialize());
+  console.log('url:',url)
+  console.log('form.attr(method):',form.attr('method'))
+  
+  // Perform an AJAX request to submit the form
+  $.ajax({
+      url: url,     //form.attr('action'),
+      type: form.attr('method'),
+      data: form.serialize(),
+      success: function(response) {
+          // Handle the success response (e.g., close modal, show success message, etc.)
+          $('#SavResquestModal').modal('hide');
+          // You can also update part of the page with the response if needed
+          // $('#some-element').html(response);
+          location.reload();
+      },
+      error: function(data) {
+          // Handle the error response
+          alert('Error: ',data );
+      }
+  });
+ 
+});
+*/
+
+
+/*********  Commande SAV*******************/
+
+$(document).on('click', '.commandesav', function(e) {
+      e.preventDefault();
+      var currentElement = $(this);
+  
+      var specificUrl = currentElement.attr('href');
+      var url = $(currentElement).data('url');
+      console.log('specificUrl:',specificUrl)
+      console.log('url:',url)
+  
+        $.ajax({
+        url: url,
+        type: 'get',
+        dataType: 'html',
+        success: function(data) {
+          $('#commande-container').html(data);
+          $('#CommandeDetailModal').modal('show');
+          
+        },  
+        error: function(data) {
+          alert('error:',data)
+        }
+      });
+      
+   })
+
+
+
+ /********* SUIVI  Commande, assamblage, livraison, recouvrement*******************/
+/*
+ const btn_SuiviCommandeDetail = document.querySelector('#id_SuiviCommandeDetail{{row.idsuivicommandesav}},#id_assemblage,#id_livraison,#id_recouvrement')
+  const handleDetailAction = (event) =>{
+      console.log('test')    
+      var url = $(event.target).data('url');
+      console.log('url:',url)    
+      $.ajax({
+          url: url,
+          type: 'get',
+          dataType: 'html',
+          success: function(data) {
+            $('#commande-container').html(data);
+            $('#CommandeDetailModal').modal('show');
+            
+          },  
+          error: function(data) {
+            alert('error:',data)
+          }
+        });
+  }
+  btn_SuiviCommandeDetail?.addEventListener('click',handleDetailAction)
+  
+*/
+})
+
+
+$(document).ready(function() {
+  var statusCells = document.querySelectorAll('div.status-cell');
+// Définissez votre tableau de valeurs
+var statut1 = ['Diagnostique interne', 'En cour',];
+var statut2 = ['pending (achat)','pending (logistique)','pending (DSI - Assemblage)',
+                'Sav non livré','Sav non payé','facturation HP, à completer',
+                'Recouvrement','Décision DG','Non Payé']
+var statut3 = ['commande placée','Reçu','Terminé','Sav livré','Résolu',]  
+
+var statut4 = ['Sav payé','Dossier HP payé','Dossier clôturé et payé','Payé']
+
+
+
+var classesPrimaryToAdd=['bg-primary' ];
+var classesSecondaryToAdd = ['bg-secondary'];
+var classesWarningToAdd = ['bg-warning'];
+var classesSuccesToAdd = ['bg-success'];
+
+var classesInfoToAdd = ['bg-info'];
+// Parcourez chaque cellule
+statusCells.forEach(function(cell) {
+  
+    // Obtenez la valeur du statut de la cellule
+    var cellStatus = cell.textContent.trim();
+    //console.log('cellStatus:',cellStatus);
+
+    // Vérifiez si la valeur du statut est dans le tableau
+    if (statut1.includes(cellStatus)) {
+        classesPrimaryToAdd.forEach(function(className) { cell.classList.add(className);  });
+      }
+    else if (statut2.includes(cellStatus)) {
+      classesSecondaryToAdd.forEach(function(className) { cell.classList.add(className);  });
+      }
+    else if (statut3.includes(cellStatus)) {
+      classesWarningToAdd.forEach(function(className) { cell.classList.add(className);  })
+     
+     }
+    else if (statut4.includes(cellStatus)) {
+      classesSuccesToAdd.forEach(function(className) { cell.classList.add(className);  })
+    }
+   else {
+      classesInfoToAdd.forEach(function(className) { cell.classList.add(className);  })
+    }
+ 
+  })
+})
+</script>
+
+<script>
+$(document).ready(function(event) {
+  /////// Creation d'une nouvelle instance
+  $(document).on('click', '.instance', function(e) {
+    e.preventDefault();
+    var currentElement = $(this);
+    var url = $(currentElement).data('url');
+    console.log('url:',url);
+    
+    $.ajax({
+    url: url,
+    type: 'get',
+    dataType: 'html',
+    success: function(data) {
+        //$('#form-container').html(data);
+        $('#container').html(data);
+        $('#InstanceDetailModal').modal('show');
+    },
+    error: function(data) {
+        alert('error');
+    }
+     });   
+});  
+/////////// detail instance
+/*
+$(document).on('click', '.commandesav', function(e) {
+      e.preventDefault();
+      var currentElement = $(this);
+  
+      var specificUrl = currentElement.attr('href');
+      var url = $(currentElement).data('url');
+      console.log('specificUrl:',specificUrl)
+      console.log('url:',url)
+  
+        $.ajax({
+        url: url,
+        type: 'get',
+        dataType: 'html',
+        success: function(data) {
+          $('#commande-container').html(data);
+          $('#CommandeDetailModal').modal('show');
+          
+        },  
+        error: function(data) {
+          alert('error:',data)
+        }
+      });
+      
+   })
+
+*/
+
+})
+</script>
+
+<script>
+/********* LEASING Ajout de Client, Imprimante, deploiement, exploittaion **********/
+$(document).on('click','#id_leasingclientcreate', '#id_deploiement_create', function() {
+    //e.preventDefault();
+    //$('#id_recouvrement_hp input:disabled').prop('disabled', false);
+    
+    var url = $(this).data('url');
+    console.log('url:',url);
+    
+    $.ajax({
+    url: url,
+    type: 'get',
+    dataType: 'html',
+    success: function(data) {
+        //$('#form-container').html(data);
+        $('#form-container').html(data);
+        $('#SavResquestModal').modal('show');
+    },
+    error: function(data) {
+        alert('error');
+    }
+     });   
+});  
+/********* LEASING  **********/
+/********* LEASING  **********/
+
+</script>
+{% endblock %}

@@ -1,0 +1,430 @@
+<main>
+    <div class="container-fluid px-4">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Gestion des Instances SOPRESCOM</li>
+        </ol>
+        <div class="row">
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body"> <strong style="font-size: larger;">{{all_instances}} instance(s) totale(s)</strong></div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jsinstance" href="#">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body"><strong style="font-size: larger;">{{instance_en_cour}}</strong>  instance(s) en cour
+                        </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jsinstance" href="#" data-action="fact_depose_non_paye">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body"><strong style="font-size: larger;">{{nbr_facture_paye}}</strong> Facture(s) payée(s) <br>
+                        <strong style="font-size: larger;">Montant:{{nbr_facture_paye_montant}} FCFA</strong></div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jsinstance" href="#" data-action="fact_depose_paye">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body"><strong style="font-size: larger;">{{ nbr_facture_non_paye}}</strong> Facture(s) Non déposée(s) <br> 
+                        <strong style="font-size: larger;">Montant:{{nbr_facture_non_paye_montant}} FCFA</strong> </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link jsinstance" href="#" data-action="fact_non_depose_non_paye">View Details</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-area me-1"></i>
+                        <strong style="font-size: larger;">Instances Internes SoPresCom</strong>
+                    </div>
+                    <div class="card-body">
+                      <table class="table table-hover  table-striped table-bordered responsive" id="datatable1" >
+                        <thead>
+                          <tr>
+                            <th>Département</th>
+                            <th>Responsable</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for item in Instance_Interne %}
+                            <tr class="detailCustomer" data-status= "Interne" data-dept="{{item.departement}}" data-resp="{{item.responsable}}" onclick="funcDetailInstance.call(this)">
+                              <td>{{ item.responsable.departement }}</td>
+                              <td>{{ item.responsable }}</td>
+                              <td>{{ item.statut }}</td>
+                            </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+                </div>
+            </div>
+            <div class="col-xl-6">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-chart-bar me-1"></i>
+                        <strong style="font-size: larger;">Instances Externes SoPresCom</strong>
+
+                    </div>
+                    <div class="card-body">
+                      <table class="table table-hover  table-striped table-bordered responsive" id="datatable2" >
+                        <thead>
+                          <tr >
+                            <th>Département</th>
+                            <th>Responsable</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                          {% for item in Instance_Externe %}
+                            <tr class="detailCustomer" data-status= "Externe" data-dept="{{item.departement}}" data-resp="{{item.responsable}}"  onclick="funcDetailInstance.call(this)">
+                              <td>{{ item.responsable.departement }}</td>
+                              <td>{{ item.responsable }}</td>
+                              <td>{{ item.statut }}</td>
+                            </tr>
+                          {% endfor %}
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+        {% comment %} <div class="row">
+              <!-- Instance interne  -->
+              <div class="card mb-4 hidden" id="int">
+                <div class="card-header " >
+                    <i class="fas fa-table me-1"></i>
+                    <strong style="font-size: larger;">Détails Instances Internes</strong>
+                </div>
+                <div class="card-body">    
+                    <table class="table table-hover  table-striped table-bordered responsive " id="dataTable3">  
+                        <thead>
+                            <tr>
+                                <th>Département</th>
+                                <th>Responsable</th>
+                                <th>Numéro Dossier</th>
+                                <th>Actions</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Date clôture</th>
+                                <th>Observation</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Département</th>
+                                <th>Responsable</th>
+                                <th>Numéro Dossier</th>
+                                <th>Actions</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Date clôture</th>
+                                <th>Observation</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+             </div>
+            <!-- Instance  Externe  -->
+            <div class="card mb-4 hidden" id="ext">
+                <div class="card-header " >
+                    <i class="fas fa-table me-1"></i>
+                    <strong style="font-size: larger;">Détails Instances Externes</strong>
+                </div>
+                <div class="card-body">
+                    <table class=" table table-hover  table-striped table-bordered responsive " id="dataTable4">  
+                        <thead>
+                            <tr>
+                                <th>Departement</th>
+                                <th>Responsable</th>
+                                <th>Numéro Dossier</th>
+                                <th>Actions</th>
+                                <th>Status</th>
+                                <th>Date action</th>
+                                <th>Ref Facture</th>
+                                <th>Montant</th>
+                                <th>Etat paiement</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                               <th>Departement</th>
+                                <th>Responsable</th>
+                                <th>Numéro Dossier</th>
+                                <th>Actions</th>
+                                <th>Status</th>
+                                <th>Date action</th>
+                                <th>Ref Facture</th>
+                                <th>Montant</th>
+                                <th>Etat paiement</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for row in resultAgg %}
+                            <tr>
+                                <td>{{row.type_instance}}</td>
+                                <td>{{row.departement}}</td>
+                                <td>{{row.responsable}}</td>
+                                <td>{{row.numero_dossier}}</td>
+                                <td>{{row.actions}}</td>
+                                <td>{{row.status}}</td>
+                                <td>{{row.date_cloture}}</td>
+                                <td>{{row.facture_reference}}</td>
+                                <td>{{row.facture_montant}}</td>
+                                <td>{{row.facture_paiement}}</td>
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>    
+            <!-- detail facture Agg  -->
+             <div class="card mb-4 hidden" id="agg">   
+                                <div class="card-header " >
+                                    <i class="fas fa-table me-1"></i>
+                                    <strong style="font-size: larger;">Détail Facturation Instance</strong>
+                                    </div>
+                                    <div class="card-body " >
+                                    <table class="table table-hover  table-striped table-bordered responsive" id="dataTable5">  
+                                        <thead>
+                                            <tr>
+                                                <th>date_traitement</th>
+                                                <th>Client</th>
+                                                <th>N° Dossier</th>
+                                                <th>transit</th>
+                                                <th>fact Reference</th>
+                                                <th>fact Transit dhl</th>
+                                                <th>Status</th>
+                                                <th>Etat paiement</th>
+                                                <th>Montant</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>date_traitement</th>
+                                                <th>Client</th>
+                                                <th>N° Dossier</th>
+                                                <th>transit</th>
+                                                <th>fact Reference</th>
+                                                <th>fact Transit dhl</th>
+                                                <th>Status</th>
+                                                <th>Etat paiement</th>
+                                                <th>Montant</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                             </div>
+        </div> {% endcomment %}
+    </div>
+</main>
+
+<script>
+
+    $('#datatable, #datatable1, #datatable2, #dataTable3, #dataTable4, #dataTable5').DataTable({
+        lengthMenu: [5,10, 15,20],
+        order: [[3, 'desc']],
+        pageLength:10 
+     });
+   
+ </script>
+ 
+ <script>
+   var client_facture = '';
+   function funcDetailInstance(){
+     //var requestID0 = $(this).data('keyId');
+     var status = $(this).attr('data-status');
+     var dept = $(this).attr('data-dept');
+     var resp = $(this).attr('data-resp');
+     console.log('resp: ',resp);  
+ 
+     // Envoi du paramètre à la vue Django via une requête AJAX
+     $.ajax({
+         url: '/loadjsoninstance/',  
+         type: 'GET',
+         data: { 
+             'status': status, 
+             'dept': dept, 
+             'resp': resp
+         },
+         dataType: 'json',
+         success: function(response) {
+             console.log("response Json",response);
+             if (status ==='Interne') {
+                 document.getElementById('ext').classList.add('hidden');
+                 document.getElementById('agg').classList.add('hidden')
+                 document.getElementById('int').classList.remove('hidden');
+           
+                 var dataTable = $('#dataTable3').DataTable();
+                     // Supprimez les données existantes dans le tableau DataTable
+                     dataTable.clear();
+                     var detail_data= response.details_interne;
+                     console.log('detail_data',detail_data)
+                     for (var i = 0; i < detail_data.length; i++) {
+                       // Ajoutez une classe CSS à la ligne en fonction de la valeur de 'facture_status'
+                       var row = detail_data[i];
+                       var statusClass = row.status === 'Décision DG' ? 'table-warning' : '';
+                       if (statusClass.trim() !== '') {  
+                         dataTable.row.add([
+                             row.departement,
+                             row.responsable,
+                             row.numero_dossier,
+                             row.actions,
+                             row.description,
+                             row.status,
+                             row.date_action,
+                             row.observation,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ]).node().classList.add(statusClass); 
+                         } else {
+                             dataTable.row.add([
+                             row.departement,
+                             row.responsable,
+                             row.numero_dossier,
+                             row.actions,
+                             row.description,
+                             row.status,
+                             row.date_action,
+                             row.observation,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ])
+                              }
+                           }
+                         // Redessinez le tableau pour refléter les nouvelles données
+                         dataTable.draw();
+             }  // if (status ==='interne')
+             if (status ==='Externe') {
+                 document.getElementById('ext').classList.remove('hidden');
+                 document.getElementById('int').classList.add('hidden');
+                 document.getElementById('agg').classList.add('hidden');
+                 
+                 var dataTable = $('#dataTable4').DataTable();
+                     // Supprimez les données existantes dans le tableau DataTable
+                     dataTable.clear();
+                     var detail_data= response.details_externe;
+                     console.log('detail_data',detail_data)
+                     for (var i = 0; i < detail_data.length; i++) {
+                       // Ajoutez une classe CSS à la ligne en fonction de la valeur de 'facture_status'
+                       var row = detail_data[i];
+                       var statusClass = row.status === 'Décision DG' ? 'table-warning' : '';
+                       if (statusClass.trim() !== '') {  
+                         dataTable.row.add([
+                             row.departement,
+                             row.responsable,
+                             row.numero_dossier,
+                             row.actions,
+                             row.status,
+                             row.date_action,
+                             row.facture_reference,
+                             row.facture_montant,
+                             row.facture_paiement,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ]).node().classList.add(statusClass); 
+                         } else {
+                             dataTable.row.add([
+                             row.departement,
+                             row.responsable,
+                             row.numero_dossier,
+                             row.actions,
+                             row.status,
+                             row.date_action,
+                             row.facture_reference,
+                             row.facture_montant,
+                             row.facture_paiement,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ])
+                              }
+                           }
+                         // Redessinez le tableau pour refléter les nouvelles données
+                         dataTable.draw(); 
+             } //if (status ==='externe')
+         }, error: function(error){
+                 console.error('Erreur de requête AJAX:', error);
+         }
+     })
+ }
+ </script>
+ <script>
+     $('.jsinstance').click(function(e) {
+         e.preventDefault();
+         var action = $(this).attr('data-action');
+         console.log("action: ",action);
+         $.ajax({
+                 url: '/loadjsoninstance/',  // Remplacez par l'URL de votre vue Django
+                 type: 'GET',
+                 data: { 
+                     'action': action, 
+                     },
+                 dataType: 'json',
+                 success: function(response) {
+                     console.log('response:',response);
+                     document.getElementById('ext_all').classList.add('hidden');
+                     document.getElementById('ext').classList.add('hidden');
+                     document.getElementById('int').classList.add('hidden');
+                     document.getElementById('agg').classList.remove('hidden');
+                     var dataTable = $('#dataTable5').DataTable();
+                     // Supprimez les données existantes dans le tableau DataTable
+                     dataTable.clear();
+                     var detail_data= response;
+                     console.log('detail_data_fact_agg',detail_data)
+                     for (var i = 0; i < detail_data.length; i++) {
+                       // Ajoutez une classe CSS à la ligne en fonction de la valeur de 'facture_status'
+                       var row = detail_data[i];
+                       var statusClass = row.facture_status === 'Non Déposé' ? 'table-warning' : '';
+                       if (statusClass.trim() !== '') {  
+                         dataTable.row.add([
+                             row.date_traitement,
+                             row.client,
+                             row.numero_dossier,
+                             row.transit,
+                             row.facture_reference,
+                             row.facture_transit_num_dhl,
+                             row.facture_status,
+                             row.facture_paiement,
+                             row.facture_montant,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ]).node().classList.add(statusClass); 
+                         } else {
+                             dataTable.row.add([
+                             row.date_traitement,
+                             row.client,
+                             row.transit,
+                             row.facture_reference,
+                             row.facture_transit_num_dhl,
+                             row.facture_paiement,
+                             row.facture_status,
+                             row.facture_montant,
+                             // ... Ajoutez d'autres valeurs de colonnes ici ...
+                             ])
+                              }
+                           }
+                         // Redessinez le tableau pour refléter les nouvelles données
+                         dataTable.draw();
+                   }, error: function(error) {
+                     console.error('Erreur :', error);
+                 }
+ 
+     })
+ })
+
+</script>

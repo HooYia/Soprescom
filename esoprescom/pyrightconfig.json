@@ -1,0 +1,9 @@
+{
+  "typeCheckingMode": "basic",
+  "extraPaths": [
+      "./esoprescom",
+      "./esoprescom/shop",
+      "./esoprescom/accounts"
+  ],
+  "reportMissingTypeStubs": false
+}

@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fiche d'Entrée - {{ fiche_dentree.numero_dossier }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .details-table, .details-table th, .details-table td {
+            border: 1px solid #ddd;
+        }
+        .details-table th, .details-table td {
+            padding: 8px;
+            text-align: left;
+        }
+        .details-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+            font-weight: bold;  /* Makes the text bold */
+            text-align: center; /* Centers the text */  
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e3e3e3;
+            padding: 10px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .company-info {
+            line-height: 1.2;
+        }
+
+        .company-info h1 {
+            color: #1e73be;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .company-info p {
+            margin: 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .contact-info {
+            text-align: right;
+            line-height: 1.2;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #1e73be;
+        }
+
+ 
+    </style>
+</head>
+<body>
+   <div class="header">
+        <div class="header-left">
+         
+            <div class="company-info">
+                <h1>SoPresCom</h1>
+                <p>Informatique - Bureautique - Mobilier</p>
+                <p>Immeuble Babin - Lot AM / 9011</p>
+                <p>Hamdallaye ACI 2000 - BP: 1888 - Bamako - Mali</p>
+            </div>
+        </div>
+        <div class="contact-info">
+            <p>Tél (+223) 20 23 80 91</p>
+            <p>Email: <a href="mailto:infos@soprescom.net">infos@soprescom.net</a></p>
+            <p>Website: <a href="http://www.soprescom.net">www.soprescom.net</a></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>Fiche d'Entrée</h1>
+            <p>N° de Dossier: {{ fiche_dentree.numero_dossier }}</p>
+            <p>Date: {{ current_date }}</p>
+        </div>
+        
+        <!-- Client Information Section -->
+        <div class="section-title">Informations Client</div>
+        <table class="details-table">
+            <tr>
+                <th>Client</th>
+                <td>{{ fiche_dentree.client_sav.nom }}</td>
+            </tr>
+            <tr>
+                <th>N° de Série</th>
+                <td>{{ fiche_dentree.numero_serie }}</td>
+            </tr>
+            <tr>
+                <th>Référence</th>
+                <td>{{ fiche_dentree.reference }}</td>
+            </tr>
+            <tr>
+                <th>Désignation</th>
+                <td>{{ fiche_dentree.designation }}</td>
+            </tr>
+            <tr>
+                <th>Garantie</th>
+                <td>{{ fiche_dentree.garantie }}</td>
+            </tr>
+        </table>
+        
+        <!-- SAV Information Section -->
+        <div class="section-title">Informations SAV</div>
+        <table class="details-table">
+            <tr>
+                <th>N° Dossier</th>
+                <td>{{ fiche_dentree.numero_dossier }}</td>
+            </tr>
+            <tr>
+                <th>Type SAV</th>
+                <td>{{ fiche_dentree.type_sav }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td><span style="background-color: #6C757D; color: white; padding: 5px; border-radius: 5px;">{{ fiche_dentree.statut }}</span></td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ fiche_dentree.marque }}</td>
+            </tr>
+            <tr>
+                <th>N° de Fiche Technique</th>
+                <td>{{ fiche_dentree.numero_fiche_technique }}</td>
+            </tr>
+            <tr>
+                <th>Référence Pièce</th>
+                <td>{{ fiche_dentree.reference_piece }}</td>
+            </tr>
+            <tr>
+                <th>Description Pièce</th>
+                <td>{{ fiche_dentree.description_piece }}</td>
+            </tr>
+            <tr>
+                <th>POP</th>
+                <td>{{ fiche_dentree.pop }}</td>
+            </tr>
+            <tr>
+                <th>Observations</th>
+                <td>{{ fiche_dentree.observation }}</td>
+            </tr>
+        </table>
+
+        <!-- SAV Achat Section -->
+        <div class="section-title">Achat SAV</div>
+        <table class="details-table">
+            <tr>
+                <th>ID</th>
+                <td>{{ commande_sav.idcommandesav }}</td>
+            </tr>
+            <tr>
+                <th>Fournisseur</th>
+                <td>{{ commande_sav.fournisseur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Nombre Jour</th>
+                <td>{{ commande_sav.nombre_jour }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>
+                    {% if commande_sav.statut == 'commande placée' %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Commande Placée</span>
+                    {% elif commande_sav.statut == 'pending (achat)' %}
+                        <span style="background-color: orange; color: white; padding: 5px; border-radius: 5px;">Pending (Achat)</span>
+                    {% else %}
+                        <span style="background-color: grey; color: white; padding: 5px; border-radius: 5px;">{{ commande_sav.statut }}</span>
+                    {% endif %}
+                </td>
+            </tr>
+
+           <tr>
+                <th>Flag</th>
+                <td>
+                    {% if commande_sav.flag %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Yes</span>
+                    {% else %}
+                        <span style="background-color: red; color: white; padding: 5px; border-radius: 5px;">No</span>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ commande_sav.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Date de Creation</th>
+                <td>{{ commande_sav.created_at }}</td>
+            </tr>
+            
+        </table>
+
+         <!-- SAV Logistique Section -->
+        <div class="section-title"> Logistique</div>
+        <table class="details-table">
+            <tr>
+                <th>ID</th>
+                <td>{{ suivi_commande_sav.idsuivicommandesav }}</td>
+            </tr>
+           
+            <tr>
+                <th>Nombre Jour</th>
+                <td>{{ suivi_commande_sav.nombre_jour }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>
+                    {% if suivi_commande_sav.statut == 'Reçu' %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Reçu</span>
+                    {% elif suivi_commande_sav.statut == 'pending (logistique)' %}
+                        <span style="background-color: orange; color: white; padding: 5px; border-radius: 5px;">pending (logistique)</span>
+                    
+                    {% elif suivi_commande_sav.statut == 'Réception dépôt France' %}
+                        <span style="background-color: brown; color: white; padding: 5px; border-radius: 5px;">Réception dépôt France</span>
+                    {% elif suivi_commande_sav.statut == 'Reception dépôt Dubaï' %}
+                        <span style="background-color: grey; color: white; padding: 5px; border-radius: 5px;">Reception dépôt Dubaï</span>
+                    {% elif suivi_commande_sav.statut == 'Sous Douane Malienne' %}
+                        <span style="background-color: blue; color: white; padding: 5px; border-radius: 5px;">Sous Douane Malienne</span>
+                    {% else %}
+                        <span style="background-color: black; color: white; padding: 5px; border-radius: 5px;">{{ suivi_commande_sav.statut }}</span>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Flag</th>
+                <td>
+                    {% if suivi_commande_sav.flag %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Yes</span>
+                    {% else %}
+                        <span style="background-color: red; color: white; padding: 5px; border-radius: 5px;">No</span>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ suivi_commande_sav.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Date de Creation</th>
+                <td>{{ suivi_commande_sav.created_at }}</td>
+            </tr>
+            
+        </table>
+
+        <!-- SAV Assemblage Section -->
+        <div class="section-title">Assemblage SAV</div>
+        <table class="details-table">
+            <tr>
+                <th>ID</th>
+                <td>{{ assemblage_reparation.idassemblage }}</td>
+            </tr>
+          
+            <tr>
+                <th>Statut</th>
+                <td>
+                   {% if assemblage_reparation.statut == 'Terminé' %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Terminé</span>
+                    {% elif assemblage_reparation.statut == 'pending (DSI - Assemblage)' %}
+                        <span style="background-color: orange; color: white; padding: 5px; border-radius: 5px;">pending (DSI - Assemblage)</span>
+                    {% else %}
+                        <span style="background-color: black; color: white; padding: 5px; border-radius: 5px;">{{ assemblage_reparation.statut }}</span>
+                    {% endif %}
+                
+                </td>
+            </tr>
+           
+            <tr>
+                <th>Flag</th>
+                <td>
+                    {% if assemblage_reparation.flag %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Yes</span>
+                    {% else %}
+                        <span style="background-color: red; color: white; padding: 5px; border-radius: 5px;">No</span>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ assemblage_reparation.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Date de Creation</th>
+                <td>{{ assemblage_reparation.created_at }}</td>
+            </tr>
+            
+        </table>
+
+        <!-- SAV Livraison Section -->
+        <div class="section-title">Livraison SAV</div>
+        <table class="details-table">
+            <tr>
+                <th>ID</th>
+                <td>{{ livraison_client.idlivraisonclient }}</td>
+            </tr>
+            <tr>
+                <th>Bordereau de Livraison</th>
+                <td>
+                    {% if livraison_client.bordereau_livraison %}
+                        <img src="{{ livraison_client.bordereau_livraison.url }}" alt="Bordereau de Livraison" style="width: 200px; height: auto;">
+                    {% else %}
+                        <p>Pas de bordereau disponible</p>
+                    {% endif %}
+                </td>
+            </tr>
+
+             <tr>
+                <th>Statut</th>
+                <td>
+                    {% if livraison_client.statut == 'Sav livré' %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Sav livré</span>
+                    {% elif livraison_client.statut == 'Sav non livré' %}
+                        <span style="background-color: orange; color: white; padding: 5px; border-radius: 5px;">Sav non livré</span>
+                    {% else %}
+                        <span style="background-color: black; color: white; padding: 5px; border-radius: 5px;">{{ livraison_client.statut }}</span>
+                    {% endif %}
+                </td>
+            </tr>
+            
+            <tr>
+                <th>Flag</th>
+                <td>
+                    {% if livraison_client.flag %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Yes</span>
+                    {% else %}
+                        <span style="background-color: red; color: white; padding: 5px; border-radius: 5px;">No</span>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ livraison_client.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Date de Creation</th>
+                <td>{{ livraison_client.created_at }}</td>
+            </tr>
+            
+        </table>
+
+        <!-- SAV Recouvrement Section -->
+        <div class="section-title"> Recouvrement</div>
+        <table class="details-table">
+            <tr>
+                <th>ID</th>
+                <td>{{ recouvrement.idrecouvrement }}</td>
+            </tr>
+           
+            <tr>
+                <th>est-ce Une Demande de Devea</th>
+                <td>
+                    {% if recouvrement.is_devea_request %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Yes</span>
+                    {% else %}
+                        <span style="background-color: red; color: white; padding: 5px; border-radius: 5px;">No</span>
+                    {% endif %}
+                </td>
+            </tr>
+
+             <tr>
+                <th>Statut Devea</th>
+                <td>{{ recouvrement.statutDevea }}</td>
+            </tr>
+            <tr>
+                <th>Facture Client</th>
+                <td>
+                    {% if recouvrement.facture_client %}
+                        <img src="{{ recouvrement.facture_client.url }}" alt="Facture Client" style="width: 200px; height: auto;">
+                    {% else %}
+                        <p>Pas de facture disponible</p>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Montant Client</th>
+                <td>{{ recouvrement.montant_client }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>
+                     {% if recouvrement.statut == 'Sav payé' %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Sav payé</span>
+                    {% elif recouvrement.statut == 'Sav non payé' %}
+                        <span style="background-color: orange; color: white; padding: 5px; border-radius: 5px;">Sav non payé</span>
+                    {% else %}
+                        <span style="background-color: black; color: white; padding: 5px; border-radius: 5px;">{{ recouvrement.statut }}</span>
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <th>Devea Order</th>
+                <td>{{ recouvrement.deveaOrder }}</td>
+            </tr>
+            <tr>
+                <th>Transitaire</th>
+                <td>{{ recouvrement.transitaire }}</td>
+            </tr>
+           
+            <tr>
+                <th>Flag</th>
+                <td>
+                    {% if recouvrement.flag %}
+                        <span style="background-color: green; color: white; padding: 5px; border-radius: 5px;">Yes</span>
+                    {% else %}
+                        <span style="background-color: red; color: white; padding: 5px; border-radius: 5px;">No</span>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Numero Awd</th>
+                <td>{{ recouvrement.numero_awd }}</td>
+            </tr>
+            <tr>
+                <th>Montant Prestation</th>
+                <td>{{ recouvrement.montant_prestation }}</td>
+            </tr>
+            <tr>
+                <th>Remise Documentaire</th>
+                <td>{{ recouvrement.remise_documentaire }}</td>
+            </tr>
+            <tr>
+                <th>Droit Douane</th>
+                <td>{{ recouvrement.droit_douane }}</td>
+            </tr>
+            <tr>
+                <th>Transport</th>
+                <td>{{ recouvrement.transport }}</td>
+            </tr>
+           <tr>
+                <th>Facture Transitaire</th>
+                <td>
+                    {% if recouvrement.facture_transitaire %}
+                        <img src="{{ recouvrement.facture_transitaire.url }}" alt="Facture Transitaire" style="width: 200px; height: auto;">
+                    {% else %}
+                        <p>Pas de facture disponible</p>
+                    {% endif %}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Autre Pièce</th>
+                <td>
+                    {% if recouvrement.autre_piece %}
+                        <img src="{{ recouvrement.autre_piece.url }}" alt="Autre Pièce" style="width: 200px; height: auto;">
+                    {% else %}
+                        <p>Pas d'autre pièce disponible</p>
+                    {% endif %}
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ recouvrement.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Date de Creation</th>
+                <td>{{ recouvrement.created_at }}</td>
+            </tr>
+            
+        </table>
+
+        <!-- SAV Cloture Section -->
+        <div class="section-title"> Cloture</div>
+        <table class="details-table">
+            <tr>
+                <th>ID</th>
+                <td>{{ cloture_dossier.idcloturedossier }}</td>
+            </tr>
+           
+            <tr>
+                <th>Numero Dossier</th>
+                <td>{{ cloture_dossier.numero_dossier }}</td>
+            </tr>
+            <tr>
+                <th>Statut</th>
+                <td>{{ cloture_dossier.statut }}</td>
+            </tr>
+            <tr>
+                <th>Client</th>
+                <td>{{ cloture_dossier.client }}</td>
+            </tr>
+            <tr>
+                <th>Resp Dossier</th>
+                <td>{{ cloture_dossier.resp_dossier }}</td>
+            </tr>
+            <tr>
+                <th>Date de Creation</th>
+                <td>{{ cloture_dossier.created_at }}</td>
+            </tr>
+            
+        </table>
+       
+       
+    </div>
+</body>
+</html>

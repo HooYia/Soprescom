@@ -1,0 +1,12 @@
+venv
+env
+env/
+venv/
+.env
+db.sqlite3
+
+.vscode
+
+soprescom_ecommerce.db
+
+media/

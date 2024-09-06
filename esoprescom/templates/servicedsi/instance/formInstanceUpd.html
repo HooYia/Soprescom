@@ -1,0 +1,121 @@
+
+ 
+ <form   method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="_method" value = "PUT">
+          <div class="card mb-3" style="max-width: 1800px;">
+            <div class="row g-0">
+             
+              <div class="col-md-12">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="card ">
+                        <div class="card-header text center">
+                        <strong> Information générale</strong>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text "  ><strong>Type Instance:</strong> {{ form.type_instance  }}</p>
+                          <p class="card-text "  ><strong>Numero dossier:</strong> {{ form.numero_dossier  }}</p>
+                          <p class="card-text"  ><strong>Nom du client:</strong> {{ form.client  }}</p>
+                          <p class="card-text"><strong>Resp du dossier:</strong> {{ form.responsable }}</p>
+                          <p class="card-text"><strong>Rapport technique:</strong> {{ form.rapport_technique }}</p>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="card ">
+                        <div class="card-header text-center">
+                        <strong>Update instance</strong>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text"><strong>Besoin Client:</strong> {{ form.besoin }}</p>
+                          <p class="card-text"><strong>Action:</strong> {{ form.action }}</p>
+                          <p class="card-text"><strong>Statut:</strong> {{ form.statut }}</p>
+                          <p class="card-text"><strong>
+                            <div class="form-check form-switch" id="id_is_facturable">
+                              <label class="form-check-label" for="flexSwitchCheckDefault">Instance à facturer? </label>
+                              {{ form.is_facturable }}
+                            </div>
+                           </strong>
+                          </p>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+            <hr>
+      <div class="d-flex gap-1">      
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-success " id="update-save-btn">Update</button>
+      </div>
+  </form> 
+
+  {% block script %}
+
+<script>
+  /****** button radio*********/
+  $(document).ready(function() {
+    const radioButtonTypeInstance = document.querySelector('input#id_type_instance');
+  
+  // initialisation des champs
+  const handleInstanceClick = (event) => {
+    // const {checked} = event.target 
+        const selectedradioButtonTypeInstance = radioButtonTypeInstance.value;
+        const radioButtonIsFacturable = document.querySelector('input[type="checkbox"]#id_is_facturable');
+         console.log('selectedradioButtonTypeInstance:',selectedradioButtonTypeInstance)
+         if (selectedradioButtonTypeInstance === 'Interne'){
+              radioButtonIsFacturable.setAttribute('disabled', false);
+              radioButtonIsFacturable.classList.add('grayed-out');
+          
+           //console.log(checked)
+         } else{
+          radioButtonIsFacturable.removeAttribute('disabled', true);
+          radioButtonIsFacturable.classList.remove('grayed-out');
+           //console.log(checked)
+         }
+       }
+
+  radioButtonTypeInstance?.addEventListener('change', handleInstanceClick);
+  handleInstanceClick();
+
+  
+
+ /*********  Update Instance *******************/
+ const btn_instanteUpdData = document.querySelector('form button[type="submit"]#id_instanteUpdData');
+  const handleUpdateSubmit = (event) => {
+  event.preventDefault(); 
+  const form = $(event.target).closest('form');
+  form.find(':disabled').prop('disabled', false);  // Re-enable disabled fields for submission 
+  const url = form.attr('action');
+  const method = form.attr('method');
+   // Validation HTML5
+   if (form[0].checkValidity() === false) {
+      event.stopPropagation();
+      form.addClass('was-validated');
+      return;
+    }
+
+   $.ajax({
+        url: form.attr('action'),
+        type: 'POST',   //form.attr('method'),
+        data: form.serialize(),
+        success: function(response) {
+            $('#InstanceDetailModal').modal('hide');
+            location.reload();
+              },
+              error: function(data) {
+                alert('Error: ',data );
+              }
+        });
+        
+      }
+  btn_instanteUpdData?.addEventListener('click', handleUpdateSubmit)
+ ////////////////Fin
+})
+</script>
+{% endblock %}

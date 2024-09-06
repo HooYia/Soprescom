@@ -1,0 +1,332 @@
+{% extends "base.html" %}
+{% load price_filter %}
+
+{% block content %}
+
+{% include "partials/top_page.html" with name="Dashboard" %}
+
+
+<div class="main_content">
+  <div class="section">
+    <div class="container">
+          <div class="row">
+              <div class="col-lg-3 col-md-4">
+                  <div class="dashboard_menu">
+                      <ul class="nav nav-tabs flex-column" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link  {% if page == 'index' %}active{% endif %}" id="dashboard-tab" data-bs-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false"><i class="ti-layout-grid2"></i>Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'orders' %}active{% endif %}" id="orders-tab"  href="{% url 'dashboard:orders' %}" role="tab" aria-controls="orders" aria-selected="false"><i class="ti-shopping-cart-full"></i>Orders</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'address' %}active{% endif %}" id="address-tab"  href="{% url 'dashboard:address' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-location-pin"></i>My Address</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'account-detail' %}active{% endif %}" id="account-detail-tab" href="{% url 'dashboard:account-detail' %}" role="tab" aria-controls="account-detail" aria-selected="true"><i class="ti-id-badge"></i>Account details</a>
+                        </li>
+                         <li class="nav-item">
+                          <a class="nav-link {% if page == 'my_savs' %}active{% endif %}" id="my_savs-tab" href="{% url 'dashboard:my_savs' %}" role="tab" aria-controls="my_savs" aria-selected="true"><i class="ti-id-badge"></i> Mes SAVs</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link {% if page == 'logout' %}active{% endif %}" id="logout-tab"  href="#logout" data-bs-toggle="tab" role="tab" aria-controls="logout" aria-selected="true" ><i class="ti-lock"></i>Logout</a>
+                        </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="col-lg-9 col-md-8">
+                  <div class="tab-content sav_content">
+                      <div class="tab-pane fade {% if page == 'index' %}active show{% endif %}" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                        <div class="card">
+                            <div class="card-header">
+                                  <h3>SAVs</h3>
+                              </div>
+                              <div class="card-body">
+                            <p>From your account dashboard. you can easily check &amp; view your <a href="javascript:void(0);" onclick="$('#orders-tab').trigger('click')">recent orders</a>, manage your <a href="javascript:void(0);" onclick="$('#address-tab').trigger('click')">shipping and billing addresses</a> and <a href="javascript:void(0);" onclick="$('#account-detail-tab').trigger('click')">edit your password and account details.</a></p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tab-pane fade {% if page == 'logout' %}active show{% endif %}"  id="logout" role="tabpanel" aria-labelledby="logout-tab">
+                        <div class="card">
+                            <div class="card-header">
+                                  <h3>Logout</h3>
+                              </div>
+                              <div class="card-body">
+                            <p>From your account dashboard. you can easily check &amp; view your <a href="javascript:void(0);" onclick="$('#orders-tab').trigger('click')">recent orders</a>, manage your <a href="javascript:void(0);" onclick="$('#address-tab').trigger('click')">shipping and billing addresses</a> and <a href="javascript:void(0);" onclick="$('#account-detail-tab').trigger('click')">edit your password and account details.</a></p>
+                                  <button type="submit" class="btn btn-fill-out py-2" name="submit" value="Submit">Logout</button>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tab-pane fade {% if page == 'orders' %}active show{% endif %}"  id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                        <div class="card">
+                            <div class="card-header">
+                                  <h3>Orders</h3>
+                              </div>
+                              <div class="card-body">
+                            <div class="table-responsive">
+                                      <table class="table">
+                                          <thead>
+                                              <tr>
+                                                  <th>Order</th>
+                                                  <th>Date</th>
+                                                  <th>Status</th>
+                                                  <th>Total</th>
+                                                  <th>Actions</th>
+                                              </tr>
+                                          </thead>
+                                          <tbody>
+                                            
+                                            {% for order in orders %}
+                                           
+                                              <tr>
+                                                  <td>#{{ order.id }}</td>
+                                                  <td>{{ order.created_at }}</td>
+                                                  <td>
+                                                    <span class="badge bg-primary">
+                                                      {{ order.status }}</span>
+                                                  </td>
+                                                  <td>{{ order.order_cost_ttc|format_price }} for {{ order.quantity }} item(s)</td>
+                                                  <td>
+                                                    {% include "partials/order_details.html" with order=order %}
+                                                  </td>
+                                              </tr>
+                                             
+                                              {% endfor %}
+                                          </tbody>
+                                      </table>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="tab-pane fade {% if page == 'address' %}active show{% endif %}"  id="address" role="tabpanel" aria-labelledby="address-tab">
+                        {% if edit_address_form %}
+                            <form  method="post" class="address-form ">
+                              {% csrf_token %}
+                              <input type="hidden" name="_method" value = "PUT">
+                              {{edit_address_form}}
+                              <a href="{% url 'dashboard:address' %}" class="btn btn-success my-1 cancel-add-address">Cancel</a>
+                              <button class="btn btn-success my-1">Update</button>
+                            </form>
+                        {% else %} 
+                            <button class="btn btn-fill-out add-address">Add</button>
+                            <form  method="post" class="address-form d-none">
+                              {% csrf_token %}
+                              {{ address_form }}
+                              <button class="btn btn-warning my-1 cancel-add-address">Cancel</button>
+                              <button class="btn btn-success my-1">Save</button>
+                            </form>
+                            
+                            <div class="row address-content">
+                              {% for address in addresses %}
+                                <div class="col-lg-6">
+                                      <div class="card mb-3 mb-lg-0">
+                                          <div class="card-header">
+                                              <h3>{{ address.address_type }}</h3>
+                                          </div>
+                                          <div class="card-body">
+                                              <address>{{ address.name }}<br>
+                                                {{ address.full_name }}<br>
+                                                {{ address.street }}<br>
+                                                {{ address.code_postal }} - {{ address.city }} <br>
+                                                {{ address.country }}</address>
+                                                <div class="d-flex gap-1">
+                                                    <a href="{% url 'dashboard:edit-address' address.id %}" class="btn btn-fill-out">Edit</a>
+                                                    <form id="delete-addresse-form" method="post" action="{% url 'dashboard:remove-address' address.id %}">
+                                                      {% csrf_token %}
+                                                      <input type="hidden" name="_method" value = "DELETE">
+                                                      <a href="#" class="btn btn-fill-out"
+                                                      onclick="return confirm('Are you sure to delete this address?') && document.getElementById('delete-addresse-form').submit();">Delete</a>
+                                                    </form>
+                                                </div>
+                                                  
+                                          </div>
+                                      </div>
+                                </div>
+                              {% endfor %}
+                                
+                            </div>
+                        {% endif %}
+                                                 
+                      </div>
+                      <div class="tab-pane fade {% if page == 'my_savs' %}active show{% endif %}"  id="my_savs" role="tabpanel" aria-labelledby="my_savs-tab">
+                         <div class="card">
+                            <div class="card-header">
+                                  <h3>Dashboard</h3>
+                              </div>
+                              <div class="card-body">
+<div class="table-responsive">
+                            <table class="table table-striped table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>Numéro Dossier</th>
+                                  <th>Numéro Fiche Technique</th>
+                                  <th>Type SAV</th>
+                                  <th>Marque</th>
+                                  <th>Client SAV</th>
+                                  <th>Responsable SAV</th>
+                                  <th>Statut</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {% for sav in savs %}
+                                <tr>
+                                  <td>{{ sav.numero_dossier }}</td>
+                                  <td>{{ sav.numero_fiche_technique }}</td>
+                                  <td>{{ sav.type_sav }}</td>
+                                  <td>{{ sav.marque }}</td>
+                                  <td>{{ sav.client_sav }}</td>
+                                  <td>{{ sav.resp_sav }}</td>
+                                  <td>{{ sav.statut }}</td>
+                                </tr>
+                                {% endfor %}
+                              </tbody>
+                            </table>
+                          </div>                              </div>
+                          </div>
+                          
+
+                                                 
+                      </div>
+                      <div class="tab-pane fade {% if page == 'account-detail' %}active show{% endif %}"  id="account-detail" role="tabpanel" aria-labelledby="account-detail-tab">
+                        <div class="card">
+                                <div class="card-header">
+                                    <h3>Account Details</h3>
+                                </div>
+                                <div class="card-body">
+                                  <p>Already have an account? <a href="#">Log in instead!</a></p>
+                                    <form action="{% url 'dashboard:save_account' %}" method="post" name ="enq">
+                                      {% csrf_token %}
+                                      <div class="row">
+                                        <div class="form-group col-md-6">
+                                          <label for="">Username</label>
+                                          {{ account_form.username }}
+                                          {% if account_form.username.errors %}
+                                            {% for error in account_form.username.errors %}
+                                              <div class="text-danger">
+                                                   {{error}}
+                                              </div>
+                                            {% endfor %}
+                                         {% endif %}
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="form-group col-md-6">
+                                          <label for="">First Name</label>
+                                          {{ account_form.first_name }}
+                                          {% if account_form.first_name.errors %}
+                                            {% for error in form.first_name.errors %}
+                                              <div class="text-danger">
+                                                   {{ error }}
+                                              </div>
+                                            {% endfor %}
+                                         {% endif %}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                          <label for="">Last Name</label>
+                                          {{ account_form.last_name }}
+                                          {% if account_form.last_name.errors %}
+                                            {% for error in account_form.last_name.errors %}
+                                              <div class="text-danger">
+                                                  {{error}}
+                                              </div>
+                                            {% endfor %}
+                                          {% endif %}
+                                        </div>
+                                      </div>
+                                      <div class="row">
+                                        <div class="form-group ">
+                                          <label for="">Email</label>
+                                          {{ account_form.email }}
+                                          {% if account_form.email.errors %}
+                                            {% for error in account_form.email.errors %}
+                                              <div class="text-danger">
+                                                  {{error}}
+                                              </div>
+                                            {% endfor %}
+                                          {% endif %}
+                                        </div>
+                                      </div>
+                                      
+                                      <div class="col-md-12 my-2">
+                                        <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Save</button>
+                                    </div>
+                                    </form>
+                                  <form action="{% url 'dashboard:reset_account_password' %}" method="post" name="enq">
+                                    {% csrf_token %}    
+                                    <div class="row">
+                                           <div class="form-group col-md-12 mb-3">
+                                              <label>Current Password <span class="required">*</span></label>
+                                                {{ reset_password_form.old_password }}
+                                                {% if reset_password_form.old_password.errors %}
+                                                   {% for error in reset_password_form.old_password.errors %}
+                                                        <div class="text-danger">
+                                                            {{ error }}
+                                                        </div>
+                                                    {% endfor %}
+                                                 {% endif %}
+                                            </div>
+                                            <div class="form-group col-md-12 mb-3">
+                                              <label>New Password <span class="required">*</span></label>
+                                              {{ reset_password_form.new_password1 }}
+                                              {% if reset_password_form.new_password1.errors %}
+                                                 {% for error in reset_password_form.new_password1.errors %}
+                                                <div class="text-danger">
+                                                    {{ error }}
+                                                </div>
+                                              {% endfor %}
+                                             {% endif %}
+                                            </div>
+                                            <div class="form-group col-md-12 mb-3">
+                                              <label>Confirm Password <span class="required">*</span></label>
+                                              {{ reset_password_form.new_password2 }}
+                                              {% if reset_password_form.new_password2.errors %}
+                                             {% for error in reset_password_form.new_password2.errors %}
+                                                <div class="text-danger">
+                                                    {{ error }}
+                                                </div>
+                                              {% endfor %}
+                                             {% endif %}
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn btn-fill-out" name="submit" value="Submit">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+  </div>
+  
+</div>
+
+
+<!-- Button trigger modal -->
+<!--
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#oderDetailModal">
+  Launch demo modal
+</button>
+-->
+
+
+{% endblock  %}
+
+{% block script %}
+<script>
+    const cancelButton = document.querySelector('.cancel-add-address')
+    const addButton = document.querySelector('.add-address')
+    const handleClick = (event) =>{
+      //toggle ajoute la classe d-none si ça n'existe pas 
+      //ou l'enleve si ça existe
+      const addressForm = document.querySelector('.address-form')
+      addressForm.classList.toggle('d-none')
+      addButton.classList.toggle('d-none')
+    }
+    addButton.addEventListener('click',handleClick)
+    cancelButton.addEventListener('click',handleClick)
+    
+</script>
+{% endblock %}

@@ -1,0 +1,246 @@
+  <div class="card mb-3" style="max-width: 1800px;">
+          <div class="row g-0">
+            <div class="col-md-5">
+              <div id="imageContainer{{livraison.idlivraisonclient}}">
+                {% if livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.rapport_technique %} 
+                    <img src="{{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.rapport_techniqueUrl }}" class="img-fluid rounded-start" alt="Rapport Technique" onclick="zoomImage(this)">
+                {% elif livraison.assamblagereparation.suivicimmandesav.commandesav.savrequest.facture_proforma %}
+                    <img src="{{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.facture_proformaUrl }}" class="img-fluid rounded-start" alt="Facture Proforma" onclick="zoomImage(this)">
+                {% elif livraison.assamblagereparation.commandesav.savrequest.facture_fournisseur %}
+                    <img src="{{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.facture_fournisseurUrl }}" class="img-fluid rounded-start" alt="Facture Fournisseur" onclick="zoomImage(this)">
+                {% else %}
+                    <p>Aucune image disponible</p>
+                {% endif %}
+              </div>
+              <div class="d-flex justify-content-between mt-2">
+                <button class="btn btn-secondary" onclick="changeImage('prev', {{ livraison.idlivraisonclient }})">Précédent</button>
+                <button class="btn btn-secondary" onclick="changeImage('next', {{ livraison.idlivraisonclient }})">Suivant</button>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="card ">
+                    <div class="card-header text center">
+                    <strong> Info du Client</strong>
+                    </div>
+                      <div class="card-body">
+                        <p class="card-text"><strong>Nom du client:</strong> {{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.client_sav }}</p>
+                        <p class="card-text"><strong>Email:</strong> {{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.client_sav.email }}</p>
+                        <p class="card-text"><strong>Adresse:</strong> {{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.client_sav.adresse }}</p>
+                        <p class="card-text"><strong>Téléphone:</strong> {{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.client_sav.telephone }}</p>
+                        <p class="card-text"><strong>Resp du dossier:</strong> {{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.resp_sav }}</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="card ">
+                    <div class="card-header text-center">
+                    <strong>Logistique</strong>
+                    </div>
+                      <div class="card-body">
+                         <p class="card-text"><strong><Datag>Date réception pièce</Datag>:</strong> {{ livraison.created_at }}</p>
+                         <p class="card-text"><strong>Numéro Dossier :</strong> {{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.numero_dossier }}</p>
+                         <p class="card-text"><strong>Statut:</strong> {{ livraison.statut }}</p>
+                         <p class="card-text"><strong>Observation:</strong> {{ livraison.commentaire }}</p>
+                        </div>
+                         
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <form class="d-none"  id ="livraisonForm{{livraison.idlivraisonclient}}"
+                       method="POST"
+                       action="{% url 'serviceapresvente:livraison-update' livraison.idlivraisonclient %}">
+                       {% csrf_token %}
+                    <div class="card">
+                        <div class="card-header">
+                          <strong>Livraison SAV </strong>
+                        </div>
+                        <div class="card-body">
+                         
+                            <input type="hidden" name="_method" value = "PUT">
+                              {{ detailformUpd }}
+                            <div class="d-flex justify-content-center">
+                              <button type="submit"  id="formLivraisonUpdData"
+                                class="btn btn-primary my-3">Update</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                  </form>  
+                </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- Modal for Zoom Image -->
+        <div class="modal fade" id="zoomModal" tabindex="-1" aria-labelledby="zoomModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img id="zoomImage" src="" class="img-fluid" alt="Zoom Image">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="card-text"><small class="text-muted">Dernière mise à jour: {{ livraison.assamblagereparation.updated_at }}</small></p>
+        
+      </div>
+     
+      
+    </div>
+  </div>
+</div>
+
+{% block script %}
+<script>
+  
+$(document).ready(function() {
+  const images = {
+    rapport: "{{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.rapport_techniqueUrl|escapejs   }}",
+    proforma: "{{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.facture_proformaUrl|escapejs  }}",
+    fournisseur: "{{ livraison.assamblagereparation.suivicommandesav.commandesav.savrequest.facture_fornisseurUrl|escapejs  }}"
+  };
+  //console.log('images:',images)
+  let currentIndex = 0;
+  const imageKeys = Object.keys(images).filter(key => images[key]);
+  //console.log('imageKeys:',imageKeys)
+
+  //function changeImage(direction, requestId) {
+  window.changeImage = function(direction, requestId) {
+    console.log('requestId:',requestId)
+   
+    if (direction === 'next') {
+      currentIndex = (currentIndex + 1) % imageKeys.length;
+    } else if (direction === 'prev') {
+      currentIndex = (currentIndex - 1 + imageKeys.length) % imageKeys.length;
+    }
+    const imageContainer = document.getElementById(`imageContainer${requestId}`);
+    imageContainer.innerHTML = `<img src="${images[imageKeys[currentIndex]]}" class="img-fluid rounded-start" alt="Image" onclick="zoomImage(this)">`;
+  }
+  //window.changeImage = changeImage; // Make the function globally accessible
+  function zoomImage(img) {
+    var modal = new bootstrap.Modal(document.getElementById('zoomModal'));
+    document.getElementById('zoomImage').src = img.src;
+    modal.show();
+  }
+  window.zoomImage = zoomImage;
+  
+ 
+  })
+</script>
+
+<script>
+
+$(document).ready(function() {
+
+  const btn_CommandeSavBtnUpd  = document.querySelector('#CommandeSavBtnUpd')
+  const btn_CommandesavCancel  = document.querySelector('#CommandeSavCancel')
+  const CommandeSavDisplayForm = document.querySelector('form#livraisonForm{{livraison.idlivraisonclient}}')
+  handleCommandeUpdBtnClick = (event) =>{  
+    event.preventDefault();                    
+    CommandeSavDisplayForm.classList.toggle('d-none')
+    var commandesavField = CommandeSavDisplayForm.querySelector('#id_assamblagereparation');
+    commandesavField.setAttribute('disabled', true); // Disable the savrequest field
+    commandesavField.classList.add('grayed-out');
+    
+    //or livraisonField.required = true;
+    
+    btn_CommandeSavBtnUpd.setAttribute('disabled', true); // Disable the savrequest field
+    btn_CommandeSavBtnUpd.classList.add('grayed-out');
+    
+    const livraisonStatutForm = CommandeSavDisplayForm.querySelector('select#id_statut')
+    const bordereauLivraisonField = CommandeSavDisplayForm.querySelector('input#id_bordereau_livraison');
+    const HandleLivraisonStatut = (event) => {
+      const selectedlivraisonStatut = livraisonStatutForm.value;
+      //console.log('selectedlivraisonStatut:',selectedlivraisonStatut)
+      if (selectedlivraisonStatut === 'Sav livré'){
+          bordereauLivraisonField.setAttribute('required', true) ;
+        } else {
+          bordereauLivraisonField.removeAttribute('required', true) ;
+      }
+    }
+    livraisonStatutForm?.addEventListener('change',HandleLivraisonStatut)
+  }
+  btn_CommandeSavBtnUpd?.addEventListener('click',handleCommandeUpdBtnClick)
+ 
+
+
+/************ update-commande sav -btn  **********/
+//const btn_CommandesavUpdData = document.querySelector('#CommandesavUpdData')
+//console.log('btn_CommandesavUpdData',btn_CommandesavUpdData)
+
+const handleUpdateSubmit = (event) => {
+  event.preventDefault(); 
+  const form = $(event.target).closest('form');
+  form.find(':disabled').prop('disabled', false);  // Re-enable disabled fields for submission 
+  const url = form.attr('action');
+  const method = form.attr('method');
+   // Validation HTML5
+   if (form[0].checkValidity() === false) {
+      event.stopPropagation();
+      form.addClass('was-validated');
+      return;
+    }
+
+   $.ajax({
+        url: form.attr('action'),
+        type: 'POST',   //form.attr('method'),
+        data: form.serialize(),
+        success: function(response) {
+            $('#CommandeDetailModal').modal('hide');
+            location.reload();
+              },
+              error: function(data) {
+                alert('Error: ',data );
+              }
+        });
+        
+      }
+      //btn_CommandesavUpdData?.addEventListener('click', handleUpdateSubmit)
+      
+
+$(document).on('click', '#formLivraisonUpdData', handleUpdateSubmit);
+
+
+}) 
+/*   une autre solution
+
+$('#CommandeSavBtnUpd').on('click', function() {
+        const form = $('#livraison.assamblagereparationForm{{ livraison.assamblagereparation.idlivraison.assamblagereparation }}');
+        form.toggleClass('d-none');
+        form.find('#id_commandesav').prop('disabled', true).addClass('grayed-out');
+        $(this).prop('disabled', true).addClass('grayed-out');
+    });
+
+    $('#formlivraison.assamblagereparationUpdData').on('click', function(event) {
+        event.preventDefault();
+        const form = $(this).closest('form');
+        form.find(':disabled').prop('disabled', false);  // Re-enable disabled fields for submission
+
+        $.ajax({
+            url: form.attr('action'),
+            type: 'POST',
+            data: form.serialize(),
+            success: function(response) {
+                $('#CommandeDetailModal').modal('hide');
+                location.reload();
+            },
+            error: function(xhr) {
+                alert('Error: ' + xhr.responseText);
+            }
+        });
+    });
+
+    */
+</script>
+  
+ 
+  
+{% endblock %}

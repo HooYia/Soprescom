@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-header d-flex gap-1">
+    <h3>Instances</h3>
+    <button id="id_leasingclientcreate" class="btn btn-fill-out btn-sm btn-sm ms-auto " 
+    data-url="{% url 'leasing:client-create' %}" >
+      New Agreement
+    </button>
+    </div>
+    <div class="card-body">
+  <div class="table-responsive">
+            <table class="table">
+       
+                <thead>
+                    <tr>
+                      <th>Date Contrat</th>
+                      <th>Client</th>
+                      <th>N° Contrat</th>
+                      <th>Durée Contrat</th>
+                      <th>Contact</th>
+                      <th>Adresse</th>
+                      <th>Email</th>
+                   <!-- <th>Action</th> -->  
+                    </tr>
+                </thead>
+                <tbody>
+                {% for row in leasingClient_lists %}
+                <tr>
+                  <td>
+                    {{ row.date|date:"d M Y"  }}
+                  </td>
+                 
+                  <td>
+                    {{ row.nom }}
+                  </td>
+                  <td>
+                    {{ row.refcontrat }}
+                  </td>
+                  <td> <div class="badge text-white rounded-pill status-cell" >
+                    {{ row.duree_contrat }} </div>
+                  </td>
+                  <td>
+                    {{ row.contact }}
+                  </td>
+                  <td>
+                    {{ row.adresse }}
+                  </td>
+                  <td>
+                    {{ row.email }}
+                  </td>
+                  <td>                      
+                      <button id="id_leasngclientDetail{{row.idclientleasing}}" 
+                              data-url="{% url 'leasing:client-show' row.idclientleasing %}" 
+                              class="btn btn-fill-out btn-sm instance" >View</button>
+                  </td>
+                  
+                </tr>
+                {% endfor %}
+                  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

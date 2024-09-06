@@ -1,0 +1,267 @@
+
+  <!-- Hidden form for new client -->
+  <div class="card">
+    <div class="container">
+      <div id="new-client-form-container" class="mt-2" style="display: none;">
+        <form id="new-client-form" method="POST" action="{% url 'serviceapresvente:create_client' %}">
+            {% csrf_token %}
+            <div class="row">
+              <div class="mb-3 col-md-12">
+                  <label for="userLog" class="form-label">Select Customer</label>
+                  <select class="form-control" id="userLog" name="userLog" required>
+                      <option value="">Select Customer</option>
+                      {% for customer in customers %}
+                      <option value="{{ customer.id }}">{{ customer.username }}</option>
+                      {% endfor %}
+                  </select>
+              </div>
+             
+            </div>
+            <div class="row">
+              <div class="mb-3 col-md-6">
+                  <label for="nom" class="form-label">Nom</label>
+                  <input type="text" class="form-control" id="nom" name="nom" required>
+              </div>
+              <div class="mb-3 col-md-6">
+                  <label for="prenom" class="form-label">Prenom</label>
+                  <input type="text" class="form-control" id="prenom" name="prenom" required>
+              </div>
+            </div>
+            <div class="row">
+              <div class="mb-3 col-md-6">
+                  <label for="telephone" class="form-label">Phone</label>
+                  <input type="number" class="form-control" id="telephone" name="telephone" required>
+              </div>
+              <div class="mb-3 col-md-6">
+                  <label for="adresse" class="form-label">Address</label>
+                  <input type="text" class="form-control" id="adresse" name="adresse" required>
+              </div>
+            </div>
+
+            <button type="submit" id="newClient" class="btn btn-sm btn-success my-3">Add client</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <form id="savrequestForm" action="{% url 'leasing:deploiement-create' %}" 
+  method="POST"  enctype="multipart/form-data">
+          {% csrf_token %}
+   
+    <div class="card mb-3" style="max-width: 1800px;">
+          <div class="row g-0">
+             
+              <div class="col-md-12">
+                  <div class="card-body">
+                      <div class="row">
+                        <div class="card">
+                          <div class="card-header text center">
+                            <strong> Déploiement Imprimante</strong>
+                          </div>
+                          <div class="card-body">
+                              <p class="card-text"><strong>Client Leasing:</strong> {{ form.clientleasing }}</p>
+                                
+                              <p class="card-text"><strong>Imprimante:</strong> {{ form.listeimprimante }}</p>
+                              <p class="card-text"><strong>Site:</strong> {{ form.site }}</p>
+                              <p class="card-text"><strong>@IP de l'imprimante:</strong> {{ form.adresseip }}</p>
+                              <p class="card-text"><strong>Date déploiement:</strong> {{ form.date_deploiement }}</p>
+                             
+                          <div class="card-body">
+                                
+                            <footer class="blockquote-footer">Observation: {{ form.observation }}</footer>
+                          
+                          </div>
+                          </div>
+                        </div>
+                        
+                      </div>
+                  </div>
+              </div>
+           </div>
+            <hr>
+        <div class="d-flex gap-1">   
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-success " id="save-btn" >Add</button>
+        </div>
+     </div>
+  </form> 
+   
+{% block script %}
+
+<script>
+
+$(document).ready(function() {
+  let controlRadioBtn = false
+  const radioButton = document.querySelector('input#id_bon_pour_accord');
+  const factureFournisseurInput = document.querySelector('input#id_facture_fournisseur');
+  const factureProformaInput = document.querySelector('input#id_facture_proforma');
+  const rapportTechniqueInput = document.querySelector('input#id_rapport_technique');
+    // initialisation des champs
+  const handleSavClick = (event) => {
+        // const {checked} = event.target 
+        const checked = event ? event.target.checked : radioButton.checked;
+         if (checked){
+           controlRadioBtn = true
+           factureFournisseurInput.disabled = false;
+           factureProformaInput.disabled = false;
+           rapportTechniqueInput.disabled = false;
+           factureFournisseurInput.required = true;
+           factureProformaInput.required = true;
+           rapportTechniqueInput.required = true;
+           //console.log(checked)
+         } else{
+           controlRadioBtn = false
+           factureFournisseurInput.disabled = true;
+           factureProformaInput.disabled = true;
+           rapportTechniqueInput.disabled = true;
+           factureFournisseurInput.required = false;
+           factureProformaInput.required = false;
+           rapportTechniqueInput.required = false;
+           //console.log(checked)
+         }
+       }
+         // Attach event listener
+  radioButton?.addEventListener('change', handleSavClick);
+  handleSavClick();
+
+
+
+
+  // gestion recouvrement_hp    
+  const idGarantieSelect = document.querySelector('input[name="garantie"]:checked');  // Changed from 'select' to handle radio buttons
+  const idTypeSAVSelect = document.querySelector('input[name="type_sav"]:checked');   // Similarly, handle radio buttons
+  const recouvrementHPDiv = document.querySelector('input#id_recouvrement_hp');
+
+  function updateRecouvrementHP() {
+      const selectedGarantie = document.querySelector('input[name="garantie"]:checked')?.value; // Get the currently checked radio button value
+      const selectedTypeSAV = document.querySelector('input[name="type_sav"]:checked')?.value;
+
+      if (selectedGarantie === 'Sous garantie' && selectedTypeSAV === 'DEVEA') {
+          recouvrementHPDiv.removeAttribute('disabled');
+          recouvrementHPDiv.setAttribute('checked', true);
+      } else {
+          recouvrementHPDiv.setAttribute('disabled', true);
+          recouvrementHPDiv.removeAttribute('checked');
+      }
+  }
+
+  // Event listeners for the radio buttons
+  document.querySelectorAll('input[name="garantie"]').forEach(radio => {
+      radio.addEventListener('change', updateRecouvrementHP);
+  });
+  
+  document.querySelectorAll('input[name="type_sav"]').forEach(radio => {
+      radio.addEventListener('change', updateRecouvrementHP);
+  });
+
+  // Initial call to set the correct state on page load
+  updateRecouvrementHP();
+
+ // When the save button is clicked
+ const btn_add_save = document.querySelector('button[type="submit"]#save-btn');
+ const AddSavRequest = (event) =>{
+    
+    event.preventDefault(); // Empêcher la soumission si le formulaire est invalide
+    var form = $(event.target).closest('form')[0];
+    // Re-enable disabled fields for submission
+    $(form).find(':disabled').prop('disabled', false);
+    var formData = new FormData(form); // Create FormData object
+    
+    // Validation HTML5
+    const formValid = $(event.target).closest('form');
+    if (formValid[0].checkValidity() === false) {
+      event.stopPropagation();
+      formValid.addClass('was-validated');
+      return;
+    }
+    
+    
+    $.ajax({
+      url: form.action,
+      type: form.method,
+      //data: form.serialize(),
+      data: formData,
+      processData: false, // Prevent jQuery from automatically transforming the data into a query string
+      contentType: false, // Set content type to false to let jQuery set it as multipart/form-data
+      success: function(response) {
+        //console.log('Form submitted successfully!');
+          // Handle the success response (e.g., close modal, show success message, etc.)
+          $('#SavResquestModal').modal('hide');
+          location.reload();
+          //alert('Form submitted successfully!');
+      },
+      error: function(xhr, status, error) {
+          // Handle the error response
+          alert('Error: ' + error);
+      }
+  });
+  
+ }
+
+ btn_add_save?.addEventListener('click', AddSavRequest);
+  
+ 
+
+ });
+    
+
+</script>
+
+<script>
+$(document).ready(function() {
+    // Show/hide the form when the button is clicked
+  $(".btn-primary").click(function() {
+      $("#new-client-form-container").toggle();
+  });
+
+  // Handle form submission for adding a new client
+  $("#new-client-form").submit(function(event) {
+      event.preventDefault();  // Prevent the default form submission
+
+      var formData = new FormData(this); // Collect form data
+
+      $.ajax({
+          url: '{% url "serviceapresvente:create_client" %}',  // URL to send the request
+          type: 'POST',
+          data: formData,
+          processData: false, // Prevent jQuery from automatically transforming the data into a query string
+          contentType: false, // Set content type to false to let jQuery set it as multipart/form-data
+          success: function(response) {
+              if (response.success) {
+                  // Close the form
+                  $('#new-client-form-container').hide();
+                  
+                  // Update the client_sav dropdown in the form
+                  var clientSelect = $('#id_client_sav');
+                  
+                  // Add the new client to the dropdown list
+                  clientSelect.append($('<option>', {
+                    value: response.client_id,  // Use the client ID from the response
+                    text: response.client_name  // Use the client name from the response
+                  }));
+
+                  // Select the newly added client in the dropdown
+                  clientSelect.val(response.client_id).trigger('change');
+                          
+
+
+                  alert('Client added successfully!');
+              } else {
+                  alert('Error: ' + response.message);
+              }
+          },
+          error: function(xhr, status, error) {
+              // Handle error - show error message
+              alert('Error: ' + error);
+          }
+      });
+  });
+
+});
+
+</script>
+
+
+
+
+{% endblock script %}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoPresCom | E-commerce</title>
+    <!-- link css  -->
+    
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/linearicons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/simple-line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/owlcarousel/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/owlcarousel/css/owl.theme.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/owlcarousel/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.css">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/datatables/dataTables.bootstrap4.css' %}">
+    <link href="/static/assets/css/datatable.style.min.css" rel="stylesheet"> 
+    <link href="{% static "vendor/datatables/dataTables.bootstrap4.css" %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "vendor/datatables/dataTables.bootstrap4.css" %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link  href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+
+
+
+    <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <!-- <script type="text/javascript" charset="utf8" src="{% static "vendor/datatables/dataTables.bootstrap4.min.js" %}"></script> -->
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    {% block style  %}{% endblock %}
+</head>
+
+<body style='font-family: 'Roboto', sans-serif;'>
+    {% include "partials/header.html" %}
+    {% if messages %}
+        {% for message in messages  %}
+        <div class="alert alert-success fixed-bottom" style="left: 75%;">
+            {{message}}
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+
+    {% include "partials/footer.html" %}
+    <!-- script js  -->
+    {% block script %}{% endblock %}
+   
+<script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}"></script>
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/owlcarousel/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+<script src="{% static 'assets/js/waypoints.min.js' %}"></script>
+<script src="{% static 'assets/js/parallax.js' %}"></script>
+<script src="{% static 'assets/js/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'assets/js/isotope.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.dd.min.js' %}"></script>
+<script src="{% static 'assets/js/slick.min.js' %}"></script>
+<script src="{% static 'assets/js/jquery.elevatezoom.js' %}"></script>
+<script src="{% static 'assets/js/scripts.js' %}"></script>
+</body>
+
+</html>

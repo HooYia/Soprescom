@@ -1,0 +1,255 @@
+<main>
+    <style>
+        .card {
+          transition: background-color 0.3s ease;
+        }
+    
+        .card:hover {
+          background-color: #ffeaea;
+        }
+      </style>
+    <div class="container-fluid px-4">
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+        <div class="row">
+            <div class="col-xl-4 col-md-6 mb-4">
+                <!-- Dashboard info widget 1-->
+                <div class="card border-start-lg border-start-primary h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <div class="large fw-bold text-primary mb-1"> <strong style="font-size: larger;">Imprimantes totales Leasing: {{NbreImpr}}</strong></div>
+                                 <li class="h5">Déployées:        {{ImprimanteDeploye}}</li> <li class="h5">Non déployées:            {{ImprimanteNonDeploye}}</li>
+                                 
+                                
+                            </div>
+                            <div class="ms-2 hidden"><i class="fas fa-dollar-sign fa-2x text-gray-200"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 mb-4">
+                <!-- Dashboard info widget 2-->
+                <div class="card border-start-lg border-start-secondary h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <div class="small fw-bold text-secondary mb-1"><strong style="font-size: larger;"> Clients leasing</strong></div>
+                                    {% if lientLeasingTab %}
+                                        {% for line in lientLeasingTab %}
+                                        <strong style="font-size: larger;"><li>  {{line.name }}</li></strong>
+                                        {% endfor %}
+                                    {% else %}
+                                        <strong style="font-size: larger;"><li> No client leasing</li></strong>
+                                    {% endif %}
+                                       
+                                
+                                
+                            </div>
+                            <div class="ms-2"><i class="fas fa-tag fa-2x text-gray-200"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6 mb-4">
+                <!-- Dashboard info widget 3-->
+                <div class="card border-start-lg border-start-success h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <div class="small fw-bold text-success mb-1"><strong style="font-size: larger;">Déploiement Imprimante</strong></div>
+                                {% if Nbre_Client_Nbr_Impr %}
+                                    {% for row in Nbre_Client_Nbr_Impr %}
+                                        <li>{{row.nombreImprimante}} déployées au compte du client {{row.clientleasing__nom}}</li>
+                                    {% endfor %}
+                                {% else %}
+                                <li>  Pas de client deployees {{row.clientleasing__nom}}</li>
+                                {% endif %}
+                                    
+                            </div>
+                            <div class="ms-2"><i class="fas fa-mouse-pointer fa-2x text-gray-200"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6 mb-4 hidden">
+                <!-- Dashboard info widget 4-->
+                {% comment %} <div class="card border-start-lg border-start-info h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1">
+                                <div class="small fw-bold text-info mb-1">Conversion rate</div>
+                                <div class="h5">1.23%</div>
+                                <div class="text-xs fw-bold text-danger d-inline-flex align-items-center">
+                                    <i class="me-1" data-feather="trending-down"></i>
+                                    1%
+                                </div>
+                            </div>
+                            <div class="ms-2"><i class="fas fa-percentage fa-2x text-gray-200"></i></div>
+                        </div>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+        
+        </div>
+
+            <div class="row">
+                <div class="col-xl-4 col-md-6">
+                <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-area me-1"></i>
+                            <strong style="font-size: larger;">Détails imprimantes deployées ou non par type</strong>
+                        </div>
+                        <div class="card-body table-responsive" >
+                            <table class="table table-hover display table-striped table-bordered responsive" id='DetailImpremente'>  
+                                <thead>
+                                    <tr>
+                                        <th>Reference</th>
+                                        <th>status </th>
+                                        <th>Nombre</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for row in RefImpStatutTab %}
+                                    <tr>
+                                        <td> {{row.reference}}</td>
+                                        <td> {{row.flag}}</td>
+                                        <td> {{row.nombre}}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar me-1"></i>
+                            <strong style="font-size: larger;">Détails deploiement imprimantes par Site</strong>
+                        </div>
+                        <div class="card-body table-responsive " >
+                                <table class="table table-hover display table-striped table-bordered responsive" id='DetailDepoiment'>  
+                                    <thead>
+                                        <tr>
+                                            <th>Client</th>
+                                            <th>Site</th>
+                                            <th>Reference</th>
+                                            <th>Nombre</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for row in deploieClientSiteImpTab %}
+                                        <tr>
+                                            <td> {{row.client}}</td>
+                                            <td> {{row.site}}</td>
+                                            <td> {{row.reference}}</td>
+                                            <td> {{row.nombre}}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      
+        <!-------------------------->
+        <div class="products">
+            <div class="product-card">
+              
+              <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-bar me-1"></i>
+                    <strong style="font-size: larger;">Situation Consommable</strong>
+                </div>
+                <div class="card-body table-responsive" >
+                        <table class="table table-hover display  table-striped table-bordered table-responsive" id='SituationConsommable'>  
+                            <thead>
+                                <tr>
+                                    <th>Catégorie consommable </th>
+                                    <th>Type consommable</th>
+                                    <th>Référence </th>
+                                    <th>Stock actuel</th>
+                                    <th>Seuil limite</th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                            {% for row in consomTab %}
+                                <tr>
+                                    <td> {{row.modeleimprimante}}</td>
+                                    <td> {{row.produit}}</td>
+                                    <td> {{row.reference}}</td>
+                                    <td> {{row.stock}}</td>
+                                    <td> {{row.seuilLimite}}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                </div>
+              </div>
+           </div>
+            <!---->
+            {% comment %} <div class="container my-5">
+                <div class="row justify-content-center">
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4">
+                      <h1 class="text-danger">Montant facture</h1>
+                      <p class="text-secondary">
+                        Facture Mois -2
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <div class="card h-100 p-4">
+                      <h1 class="text-success">Montant facture</h1>
+                      <p class="text-secondary">
+                        Facture Mois -1
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4">
+                    <div class="row h-100">
+                      <div class="col-md-12 mb-4">
+                        <div class="card h-100 p-4">
+                          <h1 class="text-danger">Cout 1</h1>
+                          <p class="text-secondary">
+                            Coût consommable Mois -1
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-4">
+                        <div class="card h-100 p-4">
+                          <h1 class="text-primary">Cout 2</h1>
+                          <p class="text-secondary">
+                            Coût consommable Mois -2
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div> {% endcomment %}
+    </div>
+</main>
+
+
+
+
+
+<script src='https://code.jquery.com/jquery-3.7.1.js'></script>
+<script src='https://cdn.datatables.net/2.1.4/js/dataTables.js'></script>
+<script>
+        $('#id_savagg,#DetailImpremente, #DetailDepoiment, #SituationConsommable').DataTable({
+          lengthMenu: [5,10, 15,20],
+          order: [[3, 'desc']],
+          pageLength:10 
+       });
+    
+
+        new DataTable('#example', {
+            order: [[3, 'desc']]
+        });
+
+</script>

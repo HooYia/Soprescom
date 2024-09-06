@@ -1,0 +1,164 @@
+
+ 
+ <form   method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="_method" value = "PUT">
+          <div class="card mb-3" style="max-width: 1800px;">
+            <div class="row g-0">
+             
+              <div class="col-md-12">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="card ">
+                            <div class="card-header text center">
+                            <strong> Info du Client</strong>
+                            </div>
+                              <div class="card-body">
+                                <p class="card-text"><strong>Client Leasing:</strong> {{ form.clientleasing }}</p>
+                                  
+                                <p class="card-text"><strong>Imprimante:</strong> {{ form.listeimprimante }}</p>
+                                <p class="card-text"><strong>Site:</strong> {{ form.site }}</p>
+                                <p class="card-text"><strong>@IP de l'imprimante:</strong> {{ form.adresseip }}</p>
+                                <p class="card-text"><strong>Date déploiement:</strong> {{ form.date_deploiement }}</p>
+                              
+                            <div class="card-body">
+                                  
+                              <footer class="blockquote-footer">Observation: {{ form.observation }}</footer>
+                            
+                            </div>
+                              </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+         
+            <hr>
+      <div class="d-flex gap-1">      
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+        <button type="submit" class="btn btn-success " id="update-save-btn"
+        data-url="{% url 'serviceapresvente:savrequest-update' sav_request.idrequest %}">Update</button>
+      </div>
+  </form> 
+
+  {% block script %}
+
+<script>
+  /****** button radio*********/
+  $(document).ready(function() {
+    const radioButton = document.querySelector('input#id_bon_pour_accord');
+    const factureFournisseurInput = document.querySelector('input#id_facture_fournisseur');
+    const factureProformaInput = document.querySelector('input#id_facture_proforma');
+    const rapportTechniqueInput = document.querySelector('input#id_rapport_technique');
+      // initialisation des champs
+    const handleSavClick = (event) => {
+          // const {checked} = event.target 
+          const checked = event ? event.target.checked : radioButton.checked;
+           if (checked){
+             factureFournisseurInput.disabled = false;
+             factureProformaInput.disabled = false;
+             rapportTechniqueInput.disabled = false;
+             factureFournisseurInput.required = true;
+             factureProformaInput.required = true;
+             rapportTechniqueInput.required = true;
+             //console.log(checked)
+           }else{
+             factureFournisseurInput.disabled = true;
+             factureProformaInput.disabled = true;
+             rapportTechniqueInput.disabled = true;
+             factureFournisseurInput.required = false;
+             factureProformaInput.required = false;
+             rapportTechniqueInput.required = false;
+             //console.log(checked)
+           }
+         }
+           // Attach event listener
+    radioButton?.addEventListener('change', handleSavClick);
+         handleSavClick();
+
+   // gestion recouvrement_hp    
+  const idGarantieSelect = document.querySelector('input[name="garantie"]:checked');  // Changed from 'select' to handle radio buttons
+  const idTypeSAVSelect = document.querySelector('input[name="type_sav"]:checked');   // Similarly, handle radio buttons
+  const recouvrementHPDiv = document.querySelector('input#id_recouvrement_hp');
+
+  function updateRecouvrementHP() {
+      const selectedGarantie = document.querySelector('input[name="garantie"]:checked')?.value; // Get the currently checked radio button value
+      const selectedTypeSAV = document.querySelector('input[name="type_sav"]:checked')?.value;
+
+      if (selectedGarantie === 'Sous garantie' && selectedTypeSAV === 'DEVEA') {
+          recouvrementHPDiv.removeAttribute('disabled');
+          recouvrementHPDiv.setAttribute('checked', true);
+      } else {
+          recouvrementHPDiv.setAttribute('disabled', true);
+          recouvrementHPDiv.removeAttribute('checked');
+      }
+  }
+
+  // Event listeners for the radio buttons
+  document.querySelectorAll('input[name="garantie"]').forEach(radio => {
+      radio.addEventListener('change', updateRecouvrementHP);
+  });
+  
+  document.querySelectorAll('input[name="type_sav"]').forEach(radio => {
+      radio.addEventListener('change', updateRecouvrementHP);
+  });
+
+  // Initial call to set the correct state on page load
+  updateRecouvrementHP();
+
+
+    /************ update-save-btn  **********/
+  const btn_add_save = document.querySelector('button[type="submit"]#update-save-btn');
+  const UpdateSavRequest = (event) =>{
+    console.log("Update Sav request")
+    event.preventDefault(); // Prevent the default form submission
+    var url = $(event.target).data('url');
+    var form = $(event.target).closest('form')[0];
+    // Re-enable disabled fields for submission
+      $(form).find(':disabled').prop('disabled', false);
+      var formData = new FormData(form); // Create FormData object
+     
+    // Validation HTML5
+    const formValid = $(event.target).closest('form');
+    if (formValid[0].checkValidity() === false) {
+      event.stopPropagation();
+      formValid.addClass('was-validated');
+      return;
+    }
+      
+      // Perform an AJAX request to submit the form
+      $.ajax({
+          url: url,
+          type: 'POST',
+          //data: form.serialize(),
+          data: formData,
+          processData: false, // Prevent jQuery from automatically transforming the data into a query string
+          contentType: false, // Set content type to false to let jQuery set it as multipart/form-data
+          success: function(response) {
+            console.log('Form submitted successfully!');
+              // Handle the success response (e.g., close modal, show success message, etc.)
+              $('#SavResquestModal').modal('hide');
+              location.reload();
+              //alert('Form submitted successfully!');
+          },
+          error: function(xhr, status, error) {
+              // Handle the error response
+              alert('Error: ' + error);
+          }
+      });
+
+  }
+  btn_add_save?.addEventListener('click', UpdateSavRequest);
+
+ 
+  ////////////////Fin
+})
+   </script>
+
+
+
+{% endblock %}
