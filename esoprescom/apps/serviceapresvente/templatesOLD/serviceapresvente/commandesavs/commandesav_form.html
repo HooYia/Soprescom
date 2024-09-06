@@ -1,0 +1,130 @@
+<form action="" method="post">
+                            {% csrf_token %}
+
+                            {% if commandesav %}
+                                <input type="hidden" name="_method" value="PUT" >
+                            {% endif %}
+                                <div class='form-group'>
+        <label for='idCommandePiece'> Idcommandepiece: </label>
+        {{ form.idCommandePiece }}
+
+                    {% if form.idCommandePiece.errors %}
+                        {% for error in form.idCommandePiece.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='savrequest'> Savrequest: </label>
+        {{ form.savrequest }}
+
+                    {% if form.savrequest.errors %}
+                        {% for error in form.savrequest.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='fournisseur'> Fournisseur: </label>
+        {{ form.fournisseur }}
+
+                    {% if form.fournisseur.errors %}
+                        {% for error in form.fournisseur.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='nombre_jour'> Nombre_jour: </label>
+        {{ form.nombre_jour }}
+
+                    {% if form.nombre_jour.errors %}
+                        {% for error in form.nombre_jour.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='flag'> Flag: </label>
+        {{ form.flag }}
+
+                    {% if form.flag.errors %}
+                        {% for error in form.flag.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='commentaire'> Commentaire: </label>
+        {{ form.commentaire }}
+
+                    {% if form.commentaire.errors %}
+                        {% for error in form.commentaire.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='updated_at'> Updated_at: </label>
+        {{ form.updated_at }}
+
+                    {% if form.updated_at.errors %}
+                        {% for error in form.updated_at.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>    <div class='form-group'>
+        <label for='created_at'> Created_at: </label>
+        {{ form.created_at }}
+
+                    {% if form.created_at.errors %}
+                        {% for error in form.created_at.errors %}
+                            <span class="text-danger">
+                                {{error}}
+                            </span>
+                        {% endfor %}
+                    {% endif %}
+            </div>
+                            
+                            <div>
+                            {% if commandesav %}
+                                <button class="btn btn-success my-2">Update</button>
+                            {% else %}
+                                <button class="btn btn-success my-2">Create</button>
+                            {% endif %}
+                                
+                            <a href="{% url commandesav_index %}" class="btn btn-danger my-2">Cancel</a>
+                        </div>
+                        </form>
+                        {% block scripts %}
+                        <script src="https://cdn.ckeditor.com/ckeditor5/40.2.0/classic/ckeditor.js"></script>
+
+                        <script>
+                            $(document).ready(function() {
+                                $('select').select2();
+                            });
+
+                        </script>
+                        <script>
+                            const editors = document.querySelectorAll('textarea')
+
+                            editors.forEach(editor => {
+                                editor.removeAttribute('required')
+                                ClassicEditor
+                                    .create(editor)
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                                
+                            });
+                        </script>
+                        {% endblock %}
+                        

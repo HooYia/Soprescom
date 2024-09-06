@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
+from datetime import timedelta
 from pathlib import Path
+from decouple import config
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,9 +33,9 @@ SECRET_KEY = 'django-insecure-+#lai2!oa!-2_#6wpl)75dy_o4aco&z&w8*9o^9#3sh_vua^xh
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'e-soprescom.net',
+    # 'e-soprescom.net',
     '127.0.0.1',
-    '*'
+    # 'localhost'
 ]
 DEFAULT_APPS = [
     'django.contrib.admin',
@@ -54,6 +57,13 @@ THIRD_PARTY_APPS = [
     'livereload',
     'ckeditor',
     #'django-select2',
+    'rest_framework',
+    'rest_framework_simplejwt',
+    'corsheaders',
+    'django_filters',
+    'rest_registration',
+    'drf_yasg',
+    'rest_framework.authtoken',
  ]
 LOCAL_APPS = [
     'apps.shop',
@@ -64,6 +74,75 @@ LOCAL_APPS = [
  ]
 # Application definition
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
+
+SUPPORT_EMAIL = 'no-reply@soprescom.com'
+
+FRONTEND_HOST = 'https://soprescom.com'
+
+REST_REGISTRATION = {
+    'REGISTER_VERIFICATION_ENABLED': True,
+    'REGISTER_EMAIL_VERIFICATION_ENABLED': True,
+    'RESET_PASSWORD_VERIFICATION_ENABLED': True,
+    'REGISTER_VERIFICATION_PERIOD': timedelta(days=3),
+
+    'REGISTER_VERIFICATION_URL': f'{FRONTEND_HOST}/verify-user/',
+    'RESET_PASSWORD_VERIFICATION_URL': f'{FRONTEND_HOST}/reset-password/',
+    'REGISTER_EMAIL_VERIFICATION_URL': f'{FRONTEND_HOST}/verify-email/',
+
+
+    'VERIFICATION_FROM_EMAIL': SUPPORT_EMAIL,
+
+    "REGISTER_VERIFICATION_EMAIL_TEMPLATES": {
+        'subject': 'register/subject.txt',
+        'text_body': 'register/body.txt',
+        'html_body': 'register/body.html',
+    },
+
+    "RESET_PASSWORD_VERIFICATION_EMAIL_TEMPLATES": {
+        'subject': 'reset_password/subject.txt',
+        'text_body': 'reset_password/body.txt',
+        'html_body': 'reset_password/body.html',
+    },
+    "USER_HIDDEN_FIELDS": ('last_login',
+                           'user_permissions',
+                           'groups',
+                           'date_joined',
+                           'created',
+                           'modified',
+                           'metadata',
+                           'ip_address',
+                           'fullname',
+                           'is_deleted',
+                           'status',
+                           )
+}
+
+#Rest Framework
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES":[
+        "rest_framework.authentication.TokenAuthentication",
+        'rest_framework.authentication.SessionAuthentication',
+
+        
+    ],
+    "DEFAULT_PERMISSION_CLASSES":[
+         "rest_framework.permissions.IsAuthenticatedOrReadOnly",
+       
+    ],
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend"
+    ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 10
+}
+
+
+
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -167,7 +246,7 @@ EMAIL_HOST ='ssl0.ovh.net'  # 'smtp.mail.ovh.net'  #'proX.mail.ovh.net'
 EMAIL_PORT = 587  
 EMAIL_HOST_USER = 'souleymane@soprescom.net'  
 EMAIL_HOST_PASSWORD = 'Donse@2000'
-EMAIL_USE_SSL = True
+EMAIL_USE_SSL = False
 EMAIL_USE_TLS = True
 
 # Configuration Celery

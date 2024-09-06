@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from apps.shop.models.Collection import Collection
 from apps.shop.models.Slider import Slider
-from apps.shop.models.Product import Product
+from apps.shop.models.Product import Product, Stock
 from apps.shop.models.Category import Category
 from apps.shop.models.Image import Image
 from apps.shop.models.Setting import Setting
@@ -16,14 +16,15 @@ from apps.shop.models.Orderdetails import Orderdetails
 from ckeditor.widgets import CKEditorWidget
 from django.db import models
 
+admin.site.register(Stock)
+
 
 class SliderAdmin(admin.ModelAdmin):
      list_display =('id','title','description','display_image')
      list_display_links = ('title',)
-     
      def display_image(self,obj):
       return format_html(f'<img src="{obj.image.url}" width=100')
-     display_image.short_description = 'image'
+
 
 
 class CollectionAdmin(admin.ModelAdmin):
@@ -114,9 +115,9 @@ class CarrierAdmin(admin.ModelAdmin):
 
 
 class OrderAdmin(admin.ModelAdmin):
-     list_display =('id','client_name','status','billing_address','shipping_address','quantity','taxe','order_cost_ttc','is_paid','carrier_name','carrier_price','payment_method')
+     list_display =('id','client_name','status','billing_address','shipping_address','quantity','taxe','order_cost_ttc','is_paid','carrier_name','carrier_price','payment_method','created_at')
      list_display_links = ('client_name',)
-     list_editable = ('status',)
+     list_editable = ('status')
      list_filter = ('is_paid','updated_at','created_at')
      search_fields=('client_name','carrier_name')
      

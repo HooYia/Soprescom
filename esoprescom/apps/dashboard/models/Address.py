@@ -12,7 +12,7 @@ class Address(models.Model):
   country = models.CharField(max_length=255)
   more_details = models.CharField(max_length=255,null=True,blank=True)
   address_type = models.CharField(max_length=255, choices=ADDRESS_TYPE_CHOICES)
-  author = models.ForeignKey(Customer,on_delete=models.CASCADE,related_name='addresses', null=True,blank=True)
+  author = models.ForeignKey(Customer,on_delete=models.PROTECT,related_name='addresses', null=True,blank=True)
 
   updated_at = models.DateTimeField(auto_now=True)
   created_at = models.DateTimeField(auto_now_add=True)

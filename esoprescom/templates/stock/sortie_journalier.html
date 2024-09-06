@@ -1,0 +1,101 @@
+
+
+<main class='my-5'>
+        <h2>Daily Sales from {{ start_date }} to {{ end_date }}</h2>
+        
+        <!-- Sales Summary Table -->
+        <h4>Sales Summary</h4>
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Total Sales</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in daily_sales_summary %}
+                    <tr>
+                        <td>{{ data.created_at__date }}</td>
+                        <td>${{ data.total_sales|floatformat:2 }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2">No sales data available</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Detailed Sales Table -->
+        <h4>Sales Details</h4>
+        <table class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Client</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal (TT)</th>
+                    <th>Billing Address</th>
+                    <th>Shipping Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in sales_data %}
+                    <tr>
+                        <td>{{ item.created_at__date }}</td>
+                        <td>{{ item.order__author__username }}</td>
+                        <td>{{ item.product_name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>${{ item.sub_total_ttc|floatformat:2 }}</td>
+                        <td>{{ item.order__billing_address }}</td>
+                        <td>{{ item.order__shipping_address }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="7">No detailed sales data available</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+       
+
+            <div class="mt-5">
+                <canvas id="myChart"></canvas>
+            </div>
+</main> 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        // Assuming these variables are passed from the Django context
+        const labels = {{ chart_labels|safe }};
+        const data = {{ chart_data|safe }};
+    
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '#Sales ($)',
+                    data: data,
+                    borderWidth: 1,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+      </script>
+
+
+   

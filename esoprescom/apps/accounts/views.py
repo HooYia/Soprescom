@@ -51,3 +51,7 @@ def logout_user(request):
   if request.user.is_authenticated:
     logout(request)
   return redirect('shop:home')
+
+
+def homeviewapi(request):
+    return render(request, 'index.html')

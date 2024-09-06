@@ -1,0 +1,95 @@
+{% extends "serviceapresvente/admin.html" %}
+    {% load static %}
+
+    {% block content %}
+
+    {% include "serviceapresvente/admin/paginator.html" with datas=sav_requests %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="d-flex my-2 justify-content-end">
+        <a href="{% url sav_request %}" class="btn btn-success">Create Sav_request</a>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td scope="col">#</td>
+                    <th scope='col'>idrequest</td>
+    <th scope='col'>type_sav</td>
+    <th scope='col'>numero_dossier</td>
+    <th scope='col'>marque</td>
+    <th scope='col'>client_sav</td>
+    <th scope='col'>resp_sav</td>
+    <th scope='col'>numero_serie</td>
+    <th scope='col'>reference</td>
+    <th scope='col'>designation</td>
+    <th scope='col'>garantie</td>
+    <th scope='col'>description_piece</td>
+    <th scope='col'>reference_piece</td>
+    <th scope='col'>pop</td>
+    <th scope='col'>status</td>
+    <th scope='col'>observation</td>
+    <th scope='col'>validation_client</td>
+    <th scope='col'>rapport_technique</td>
+    <th scope='col'>facture_fornisseur</td>
+    <th scope='col'>facture_proforma</td>
+    <th scope='col'>bon_pour_accord</td>
+    <th scope='col'>date_cloture</td>
+    <th scope='col'>userLog</td>
+    <th scope='col'>flag</td>
+    <th scope='col'>updated_at</td>
+    <th scope='col'>created_at</td>
+
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for sav_request in sav_requests %}
+                <td scope="col">{{ sav_request.id }}</td>
+                    <td scope='col'>{{ sav_request.idrequest}}</td>
+    <td scope='col'>{{ sav_request.type_sav}}</td>
+    <td scope='col'>{{ sav_request.numero_dossier}}</td>
+    <td scope='col'>{{ sav_request.marque}}</td>
+    <td scope='col'>{{ sav_request.client_sav}}</td>
+    <td scope='col'>{{ sav_request.resp_sav}}</td>
+    <td scope='col'>{{ sav_request.numero_serie}}</td>
+    <td scope='col'>{{ sav_request.reference}}</td>
+    <td scope='col'>{{ sav_request.designation}}</td>
+    <td scope='col'>{{ sav_request.garantie}}</td>
+    <td scope='col'>{{ sav_request.description_piece}}</td>
+    <td scope='col'>{{ sav_request.reference_piece}}</td>
+    <td scope='col'>{{ sav_request.pop}}</td>
+    <td scope='col'>{{ sav_request.status}}</td>
+    <td scope='col'>{{ sav_request.observation}}</td>
+    <td scope='col'>{{ sav_request.validation_client}}</td>
+    <td scope='col'>{{ sav_request.rapport_technique}}</td>
+    <td scope='col'>{{ sav_request.facture_fornisseur}}</td>
+    <td scope='col'>{{ sav_request.facture_proforma}}</td>
+    <td scope='col'>{{ sav_request.bon_pour_accord}}</td>
+    <td scope='col'>{{ sav_request.date_cloture}}</td>
+    <td scope='col'>{{ sav_request.userLog}}</td>
+    <td scope='col'>{{ sav_request.flag}}</td>
+    <td scope='col'>{{ sav_request.updated_at}}</td>
+    <td scope='col'>{{ sav_request.created_at}}</td>
+<td>
+                        <a href="{% url 'sav_request_view' sav_request.id %}" class="btn btn-success">View</a>
+                        <a href="{% url 'sav_request_edit' sav_request.id %}" class="btn btn-primary">Edit</a>
+                        <form action="{% url 'sav_request_delete' sav_request.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    {% include "blog/components/paginator.html" with datas=sav_requests %}
+
+
+    {% endblock %}

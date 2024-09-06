@@ -1,14 +1,16 @@
 from django.db import models
 from apps.shop.models.Category import Category
 from django.utils.text import slugify
+from django.core.validators import MinValueValidator
+
+
 
 class Product(models.Model):
     name = models.CharField(max_length=50, blank=False, null=False)
-    slug = models.SlugField(max_length=255, blank=False, null=False)
+    slug = models.SlugField(max_length=255, blank=False, null=False, unique=True)
     description = models.CharField(max_length=120, blank=False, null=False)
     more_description = models.TextField(max_length=120, blank=True, null=True)
     additional_infos = models.TextField(max_length=120, blank=True, null=True)
-    stock = models.IntegerField( blank=False, null=False)
     solde_price = models.FloatField( blank=False, null=False)
     regular_price = models.FloatField( blank=False, null=False)
     brand = models.CharField(max_length=60, blank=True, null=True)
@@ -29,3 +31,20 @@ class Product(models.Model):
         return self.name
 
     
+class Stock(models.Model):
+    stock_produit = models.OneToOneField(Product, on_delete=models.CASCADE)
+    quantite = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
+    initial_quantite = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
+    stockLimite = models.PositiveIntegerField(default=10, validators=[MinValueValidator(0)])
+    date_mvt = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"{self.stock_produit.name} - Quantite: {self.quantite} - Threshold: {self.stockLimite}"
+
+    def is_below_threshold(self):
+        #TODO: Signal -> send a message
+        return self.quantite <= self.stockLimite
+    
+    def calculate_difference(self):
+        result  = int(self.initial_quantite - self.quantite)
+        return result

@@ -1,12 +1,18 @@
 from django.urls import path
 
 #from .views.sav import Commandesav_views, Savrequest_views,Suivicommandesav_views
+from .views.leasing import Leasing_views
 
 from .views.sav import dashboard
+from apps.serviceapresvente.api.sav_api.api import *
+
 
 from .views.sav import Sav_requestView,CommandeSavView, \
                    SuiviCommandeSavView,AssemblageReparationView, \
                    LivraisonView,RecouvrementView,ClotureDossierView
+                   
+from .views.stock import sortie_journalier, stock
+                       
 
 from .views.instance import InstanceViews,InstancerecouvViews
 
@@ -38,7 +44,7 @@ urlpatterns = [
     path('add', Sav_requestView.create, name='savrequest-create'),
     path('<int:id>/edit', Sav_requestView.update, name='savrequest-update'),
     path('<int:id>/detail', Sav_requestView.show, name='savrequest-show'),
-    path('<int:id>/detele', Sav_requestView.delete, name='savrequest-delete'),
+    path('<int:id>/detele', Sav_requestView.index, name='savrequest-delete'),
     path('<int:id>/print', Sav_requestView.telecharger_fiche_dentree_pdf, name='savrequest-download'),
     
     ## Commande sav

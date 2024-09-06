@@ -1,0 +1,21 @@
+{% extends "serviceapresvente/admin.html" %}
+    {% load static %}
+
+    {% block content %}
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+    <div class="d-flex my-2 justify-content-end">
+        <a href="{% url commandesav %}" class="btn btn-success">Create CommandeSav</a>
+    </div>
+    
+    {% include "commandesav_form.html" with commandesav=commandesav %}
+
+
+    {% endblock %}

@@ -65,6 +65,9 @@
                           <a class="nav-link {% if page == 'instance' %}active{% endif %}" id="instance-tab"  href="{% url 'serviceapresvente:instance' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-location-pin"></i>Instance DSI</a>
                         </li>
                         <li class="nav-item">
+                          <a class="nav-link {% if page == 'stock' %}active{% endif %}" id="stock-tab"  href="{% url 'serviceapresvente:stock' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-layout-grid3"></i>Gestion de Stock</a>
+                        </li>
+                        <li class="nav-item">
                           <a class="nav-link {% if page == 'users' %}active{% endif %}" id="users-tab"  href="{% url 'serviceapresvente:users' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-user"></i>Users</a>
                         </li>
                         <li class="nav-item">
@@ -118,7 +121,7 @@
                               {% endif %}
                           </ul>
                       </div>
-                  {% elif page == 'dashboard' %}
+                      {% elif page == 'dashboard' %}
                       <div class="sub-menu">
                         <ul class="nav nav-tabs " role="tablist">
                             <li class="nav-item">
@@ -133,7 +136,7 @@
                             
                         </ul>
                       </div>
-                  {% elif page == 'users' %}
+                      {% elif page == 'users' %}
                       <div class="sub-menu">
                         <ul class="nav nav-tabs " role="tablist">
                             <li class="nav-item">
@@ -141,7 +144,7 @@
                             </li>
                         </ul>
                       </div>
-                  {% elif page == 'clients' %}
+                      {% elif page == 'clients' %}
                       <div class="sub-menu">
                         <ul class="nav nav-tabs " role="tablist">
                             <li class="nav-item">
@@ -268,6 +271,15 @@
                       <div class="tab-pane fade {% if subpage == 'client_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
                         {% include "servicedsi/dashboard/client_sav.html" %}
                       </div>
+                      <div class="tab-pane fade {% if subpage == 'stock_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
+                        {% include "stock/stock.html" %}
+                      </div>
+
+                    </div>
+                      <!-- Stock -->
+                    <div class="tab-content dashboard_content"> 
+                      
+                     
                     </div>
 
                     

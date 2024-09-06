@@ -12,7 +12,7 @@ from django.db.models import Max
 from django.db.models import Count, Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from .tasks import Send_Email,send_email_with_template,send_instance_email_with_template_task,send_email_with_template_task
+from .tasks import Send_Email,send_email_with_template, send_email_with_template_customer,send_instance_email_with_template_task,send_email_with_template_task
 
 from django.utils import timezone
 from dateutil.relativedelta import relativedelta
@@ -306,3 +306,37 @@ def send_email_on_instance_created(sender, instance, created, **kwargs):
 
         
 """
+
+
+
+@receiver(post_save,sender=Client_sav)
+def send_email_on_client_sav_created(sender, instance, created, **kwargs):
+    if created:  # Vérifie si une nouvelle instance a été créée
+        subject = _('client Created')
+         # sav client acount creation email
+        template_name = 'email/user_created.html'
+        context = {
+            'client_name': instance.client_name,
+            'username': instance.customer.username ,
+        }
+        to_email = [instance.customer.email]
+        from_email = settings.EMAIL_HOST_USER
+        send_email_with_template_customer.delay(subject, template_name, context, to_email, from_email)
+       
+       
+
+@receiver(post_save,sender=Customer)
+def send_email_on_customer_created(sender, instance, created, **kwargs):
+    if created:  # Vérifie si une nouvelle instance a été créée
+        template = 'email/customer_created.html'
+        context = {
+            'First_name': instance.first_name,
+            'Last_name': instance.last_name,
+            'password': instance.password,
+            'username': instance.username ,
+        }
+        recievers = [instance.email]
+        subject = _('Customer Created')
+        from_email = settings.EMAIL_HOST_USER
+        
+        send_email_with_template_customer.delay(subject, template, context, recievers, from_email) 
