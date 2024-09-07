@@ -104,8 +104,12 @@
                     </div>
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="quantite" class="form-label">Quantity</label>
-                            <input type="number" class="form-control" id="quantite" name="quantite" value="{{ stock.quantite }}" required min="0">
+                            <label for="quantite" class="form-label">Actual Quantity</label>
+                            <input type="number" class="form-control" id="quantite" name="quantite" value="{{ stock.quantite }}" required disabled>
+                        </div>
+                        <div class="mb-3">
+                            <label for="added_quantite" class="form-label">Quantity to add</label>
+                            <input type="number" class="form-control" id="added_quantite" name="added_quantite" required min="0">
                         </div>
                         <div class="mb-3">
                             <label for="stockLimite" class="form-label">Stock Limit</label>
