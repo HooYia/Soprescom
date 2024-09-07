@@ -55,12 +55,13 @@ def add_stock(request):
 def update_stock(request, stock_id):
     stock = get_object_or_404(Stock, id=stock_id)
     if request.method == 'POST':
-        new_quantite = int(request.POST.get('quantite'))
+        new_quantite = int(request.POST.get('added_quantite'))
         stockLimite = int(request.POST.get('stockLimite'))
         
-        difference = new_quantite - stock.quantite
+        difference = new_quantite
+        actual_quantity = new_quantite + stock.quantite
         stock.initial_quantite += difference
-        stock.quantite = new_quantite
+        stock.quantite = actual_quantity
         stock.stockLimite = stockLimite
         stock.save()
         

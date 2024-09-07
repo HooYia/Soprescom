@@ -3,7 +3,7 @@
         <!-- Button to trigger Add Client Modal -->
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h2 class="mb-0">Client SAV List</h2>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addClientModal">
+            <button type="button" class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#addClientModal">
                 Add New Client
             </button>
         </div>
@@ -30,9 +30,9 @@
                     <td>{{ client.adresse }}</td>
                     <td>
                         <!-- Edit Button -->
-                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editClientModal{{ client.idclient }}">Edit</button>
+                        <button class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#editClientModal{{ client.idclient }}">Edit</button>
                         <!-- Delete Button -->
-                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteClientModal{{ client.idclient }}">Delete</button>
+                        <button class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#deleteClientModal{{ client.idclient }}">Delete</button>
                     </td>
                 </tr>
                 {% endfor %}
