@@ -263,6 +263,10 @@
                       <div class="tab-pane fade {% if subpage == 'instance_recouvrement' %}active show{% endif %}"  id="commandesav" role="tabpanel" aria-labelledby="savrequest_tab2">
                           {% include "servicedsi/instance_recouvrement/instance_recouvrement.html" %}
                       </div>
+                      <div class="tab-pane fade {% if subpage == 'journalier_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
+                        {% include "stock/sortie_journalier.html" %}
+                      </div>
+                    
                     </div>
 
                     <!-- Dashboard -->
@@ -290,15 +294,10 @@
                       <!-- Stock -->
                     <div class="tab-content dashboard_content"> 
                       <div class="tab-content dashboard_content"> 
-                        <div class="tab-pane fade {% if subpage == 'journalier_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
-                          {% include "stock/sortie_journalier.html" %}
-                        </div>
-                        <div class="tab-pane fade {% if subpage == 'stock_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
-                          {% include "stock/sortie_journalier.html" %}
-                        </div>
-                        <div class="tab-pane fade {% if subpage == 'stock_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
+                       
+                        {% comment %} <div class="tab-pane fade {% if subpage == 'stock_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
                           {% include "stock/stock.html" %}
-                        </div>
+                        </div> {% endcomment %}
                        
                       </div>
                     </div>
