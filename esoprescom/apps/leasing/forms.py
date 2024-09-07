@@ -119,14 +119,21 @@ class ExploitationForm(ModelForm):
 """
 
 class ConsommableExploitationForm(forms.ModelForm):
-    consommable = forms.ModelChoiceField(
-        queryset=Consommable.objects.all(),
-        widget=forms.Select,
-        label="Consommable"
+    consommable = forms.ModelMultipleChoiceField(
+        queryset=Consommable.objects.all(),  
+        widget=forms.SelectMultiple(
+            attrs={
+                'style': 'width: 50%;', 
+                'class': 'form-control'  
+            }
+        ),
+        label="Consommable"  
     )
+
     class Meta:
         model = ConsommableExploitation
-        fields = ['consommable', 'quantite']
+        fields = ['consommable', 'quantite']  
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
