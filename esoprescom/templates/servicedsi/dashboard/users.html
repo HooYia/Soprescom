@@ -6,7 +6,7 @@
                     <i class="fas fa-users me-1"></i>
                     <strong style="font-size: larger;">Users List</strong>
                     <!-- Button to Open the Modal -->
-                    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
+                    <button type="button" class="btn btn-fill-out btn-sm ms-auto float-end" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
                         Add New User
                     </button>
                 </div>
@@ -38,11 +38,11 @@
                                     <td>{{ customer.is_recouvrement|yesno:"Yes,No" }}</td>
                                     <td>
                                         <!-- Update Button -->
-                                        <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updateCustomerModal-{{ customer.id }}">
+                                        <button type="button" class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#updateCustomerModal-{{ customer.id }}">
                                             Update
                                         </button>
                                         <!-- Delete Button -->
-                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal-{{ customer.id }}">
+                                        <button type="button" class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#deleteCustomerModal-{{ customer.id }}">
                                             Delete
                                         </button>
                                     </td>
