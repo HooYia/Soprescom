@@ -3,6 +3,7 @@ from rest_framework.routers import DefaultRouter
 from apps.shop.api.api import *
 from apps.serviceapresvente.api.instance.api import *
 from apps.serviceapresvente.api.sav_api.api import *
+from apps.leasing.api.api import *
 
 
 router = DefaultRouter()
@@ -34,6 +35,12 @@ router.register(r'recouvrements', RecouvrementViewSet)
 router.register(r'livraisonclient', LivraisonClientViewSet, basename='livraisonclient')
 
 
+#leasing
+router.register(r'clients', ClientleasingViewSet, basename='clientleasing')
+router.register(r'consommables', ConsommableViewSet, basename='consommable')
+router.register(r'deploiements', DeploiementViewSet, basename='deploiement')
+router.register(r'exploitations', ExploitationViewSet, basename='exploitation')
+router.register(r'listeimprimantes', ListeimprimanteViewSet, basename='listeimprimante')
 
 
 #personnel
