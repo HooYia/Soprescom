@@ -243,30 +243,28 @@
                         <div class="card-body table-responsive">
                             <table class="table table-hover display table-striped table-bordered responsive" style="width:100%" id="id_clientagg">
                                 <thead>
-                                <tr>
-                                    <th>Client</th>
-                                    <th>Resp SAV</th>
-                                    <th>Status</th>
-                                    <th>Nombre</th>
-                                </tr>
+                                    <tr>
+                                        <th>Client</th>
+                                        
+                                        <th>Nombre SAV</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                {% if client_agg %} 
-                                    {% for item in client_agg %}
-                                    <tr class="detailsavstatus" data-status='{{item.status}}'  data-resp='{{item.resp_sav}}'  
-                                    onclick="funcDetail.call(this)">
-                                        <td>{{ item.client_sav.nom }}</td>
-                                        <td>{{ item.resp_sav}}</td>
-                                        <td>{{ item.statut }}</td>
-                                        <td>{{ item.status_count }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                {% endif %}
+                                    {% if client_agg %} 
+                                        {% for item in client_agg %}
+                                        <tr class="detailsavstatus" data-status='{{ item.statut }}' data-resp='{{ item.resp_sav_name }}' onclick="funcDetail.call(this)">
+                                            <td>{{ item.client_name }}</td>
+                                           
+                                            <td>{{ item.sav_count }}</td> <!-- Display SAV count -->
+                                        </tr>
+                                        {% endfor %}
+                                    {% endif %}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
+                
                 {% comment %} <div class="hidden col-xl-6">
                     <div class="card mb-4">
                         <div class="card-header">
