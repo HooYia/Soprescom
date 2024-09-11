@@ -70,7 +70,7 @@ class Listeimprimante(models.Model):
           DEGRADE ="ETAT Dégradé","ETAT Dégradé"
           NONOK ="Non fonctionnel","Non fonctionnel"
     idlisteimprimante = models.BigAutoField(primary_key=True)
-    numero_serie = models.CharField(verbose_name =_('Numeoro Série'),unique=True,max_length=50)
+    numero_serie = models.CharField(verbose_name =_('Numero Série'),unique=True,max_length=50)
     reference = models.CharField(verbose_name =_('Référence'),max_length=50,null=False, blank=False,db_index=True)
     designation = models.CharField(verbose_name =_('Désignation'),max_length=50,null=False, blank=False,db_index=True)
     description = models.CharField(verbose_name =_('Description'),max_length=50,blank=True, null=True)

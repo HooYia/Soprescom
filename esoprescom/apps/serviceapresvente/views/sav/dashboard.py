@@ -74,21 +74,22 @@ def dashboard(request):
         agg_status_SAV,detail_status_sav = Sav_request.sav_query_instance()
         agg_status_SAV = (
             Sav_request.objects
+            .filter(created_at__gte=date_old_days_ago)  # Added time filter
             .values('statut')
             .annotate(status_count=Count('idrequest'))
             .union(
-                CommandeSav.objects.values('statut').annotate(status_count=Count('idcommandesav')),
-                SuiviCommandeSav.objects.values('statut').annotate(status_count=Count('idsuivicommandesav')),
-                AssemblageReparation.objects.values('statut').annotate(status_count=Count('idassemblage')),
-                Recouvrement.objects.values('statut').annotate(status_count=Count('idrecouvrement')),
-                ClotureDossier.objects.values('statut').annotate(status_count=Count('idcloturedossier'))
+                CommandeSav.objects.filter(created_at__gte=date_old_days_ago).values('statut').annotate(status_count=Count('idcommandesav')),
+                SuiviCommandeSav.objects.filter(created_at__gte=date_old_days_ago).values('statut').annotate(status_count=Count('idsuivicommandesav')),
+                AssemblageReparation.objects.filter(created_at__gte=date_old_days_ago).values('statut').annotate(status_count=Count('idassemblage')),
+                Recouvrement.objects.filter(created_at__gte=date_old_days_ago).values('statut').annotate(status_count=Count('idrecouvrement')),
+                ClotureDossier.objects.filter(created_at__gte=date_old_days_ago).values('statut').annotate(status_count=Count('idcloturedossier'))
             )
         )
         client_agg = Sav_request.sav_query_client()
       
         for line in detail_status_sav:
                 # Assuming line['resp_sav'] contains the `Sav_request` instance ID or some identifier related to `Sav_request`
-            sav_request = Sav_request.objects.select_related('client_sav').get(idrequest=line['idrequest'])  # or line['resp_sav'] if it's the ID
+            sav_request = Sav_request.objects.filter(created_at__gte=date_old_days_ago).select_related('client_sav').get(idrequest=line['idrequest'])
                         
             if sav_request.client_sav:  # Check if client_sav is not None
                 line['resp_sav_name'] = f"{sav_request.client_sav.nom} {sav_request.client_sav.prenom}"
@@ -172,27 +173,32 @@ def dashboard(request):
         }
 
         
+        # Aggregate SAV requests per client and count them
+        client_agg = Client_sav.objects.annotate(
+            sav_count=Count('sav_request')
+        ).filter(created_at__gte=date_old_days_ago)
+
+        # Now iterate over client_agg to add any additional data
         for row in client_agg:
-            client = Client_sav.objects.filter(idclient = row['client_sav']).values('nom','prenom','raison_sociale','est_personne_morale')  
-            for line in client:
-                #print('est_personnemorale:',line['est_personne_morale'])
-                if line['est_personne_morale']:
-                    row['client_name']= line['raison_sociale']
-                else:
-                    row['client_name']= line['nom']+' '+line['prenom']
-                    
-            Name = Sav_request.objects.filter(idrequest=row['resp_sav']).select_related('client_sav').values('client_sav')
-            # print('Name', Name)
-            if Name:
-                for line in Name:
-                    client = Client_sav.objects.filter(idclient=line['client_sav']).first()
-                    row['resp_sav_name'] = f'{client.nom}  {client.prenom}'
-                      
+            # Get the responsible SAV name (resp_sav) for each SAV request
+            resp_sav = Sav_request.objects.filter(client_sav=row.idclient).select_related('resp_sav').values('resp_sav__nom', 'resp_sav__prenom', 'statut')
+            
+            if resp_sav.exists():
+                # Assuming the latest responsible SAV is what you want to display
+                row.resp_sav_name = f"{resp_sav[0]['resp_sav__nom']} {resp_sav[0]['resp_sav__prenom']}"
+            else:
+                row.resp_sav_name = "N/A"
+
+            # Determine the client name based on whether it's a company or an individual
+            if row.est_personne_morale:
+                row.client_name = row.raison_sociale
+            else:
+                row.client_name = f"{row.nom} {row.prenom}"
             
     except Exception as e:
         print(f"Error: {e}")
         
-    all_sav_details = Sav_request.objects.select_related('client_sav', 'resp_sav').all()
+    all_sav_details = Sav_request.objects.filter(created_at__gte=date_old_days_ago).select_related('client_sav', 'resp_sav')
     
     context = {
         'nbr_sav': nbr_sav,
@@ -594,6 +600,19 @@ def dashboard_leasing(request):
     
 @login_required
 def dashboard_instance(request):
+    
+     # Query for paid and unpaid invoices based on their status
+    paid_invoices = Instance.objects.filter(statut=Instance.STATUS.CLOTURE)
+    unpaid_invoices = Instance.objects.filter(statut__in=[Instance.STATUS.EN_COURS, Instance.STATUS.NON_RESOLU])
+
+    # Calculate the number of paid and unpaid invoices
+    nbr_facture_paye = paid_invoices.count()
+    nbr_facture_non_paye = unpaid_invoices.count()
+
+    # Calculate the total amount of paid and unpaid invoices (assuming you store the amount somewhere)
+    # Here, assuming `montant` is a field in the `Instance` model:
+    nbr_facture_paye_montant = sum(instance.rapport_technique.amount for instance in paid_invoices if instance.rapport_technique)  # Replace rapport_technique.amount with actual amount field if any
+    nbr_facture_non_paye_montant = sum(instance.rapport_technique.amount for instance in unpaid_invoices if instance.rapport_technique)
 
 
     context ={
@@ -606,6 +625,10 @@ def dashboard_instance(request):
                             ).values_list('idinstance', flat=True).count(),
         'Instance_Interne': Instance.objects.filter(type_instance='Interne'), 
         'Instance_Externe': Instance.objects.filter(type_instance='Externe'), 
+        'nbr_facture_paye': nbr_facture_paye,
+        'nbr_facture_paye_montant': nbr_facture_paye_montant,
+        'nbr_facture_non_paye': nbr_facture_non_paye,
+        'nbr_facture_non_paye_montant': nbr_facture_non_paye_montant,
         'page':'dashboard',
         'subpage':'instance_tab',
 

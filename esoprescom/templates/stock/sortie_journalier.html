@@ -1,10 +1,10 @@
 
 
 <main class='my-5'>
-        <h2>Daily Sales from {{ start_date }} to {{ end_date }}</h2>
+        <h2 class=''>Daily Sales from {{ start_date }} to {{ end_date }}</h2>
         
         <!-- Sales Summary Table -->
-        <h4>Sales Summary</h4>
+        <h4 class=' mt-5'>Sales Summary</h4>
         <table class="table table-hover table-striped table-bordered">
             <thead>
                 <tr>
@@ -27,8 +27,8 @@
         </table>
 
         <!-- Detailed Sales Table -->
-        <h4>Sales Details</h4>
-        <table class="table table-hover table-striped table-bordered">
+        <h4 class="  mt-5">Sales Details</h4>
+        <table class="table table-hover table-striped table-bordered responsive" width="100%" cellspacing="0" id=''>
             <thead>
                 <tr>
                     <th>Date</th>
@@ -68,6 +68,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
+
+    
+
         const ctx = document.getElementById('myChart');
 
         // Assuming these variables are passed from the Django context
@@ -75,7 +78,7 @@
         const data = {{ chart_data|safe }};
     
         new Chart(ctx, {
-            type: 'pie',
+            type: 'bar',
             data: {
                 labels: labels,
                 datasets: [{
@@ -96,6 +99,15 @@
             }
         });
       </script>
+    
+      <script>
 
+        $('#').DataTable({
+            lengthMenu: [5,10, 15,20],
+            order: [[3, 'desc']],
+            pageLength:10,
+    
+         });
+      </script>
 
    
