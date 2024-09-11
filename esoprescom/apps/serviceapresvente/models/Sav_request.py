@@ -12,7 +12,10 @@ from django.db.models import Max
 from django.db.models import Count, Q
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from .tasks import Send_Email,send_email_with_template, send_email_with_template_customer,send_instance_email_with_template_task,send_email_with_template_task
+from .tasks import Send_Email,send_email_with_template, \
+                                                send_email_with_template_customer, \
+                                                send_instance_email_with_template_task, \
+                                                send_email_with_template_task
 
 from django.utils import timezone
 from dateutil.relativedelta import relativedelta

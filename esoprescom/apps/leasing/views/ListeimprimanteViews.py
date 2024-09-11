@@ -31,9 +31,9 @@ def index(request):
 # Les autres fonctions comme show, create, update, delete... 
 
 def show(request, id):
-    sav_request = get_object_or_404(Listeimprimante, idrequest=id)
-    form_detail = ListeimprimanteForm(sav_request)
-    return render(request, 'servicedsi/leasing/liste_imprimante.html', {'form_detail': form_detail})
+    get_listimprimante_obj = get_object_or_404(Listeimprimante, idlisteimprimante=id)
+    form_detail = ListeimprimanteForm(instance=get_listimprimante_obj)
+    return render(request, 'servicedsi/leasing/listeimprimante/details.html', {'form_detail': form_detail})
 
 
 def create(request):
@@ -41,31 +41,31 @@ def create(request):
         form = ListeimprimanteForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'LeasingListeimprimante has been saved !')
+            messages.success(request, 'Listeimprimante has been saved !')
             return redirect('leasing:imp-list')
     else:
         form = ListeimprimanteForm()
-    return render(request, 'serviceapresvente/leasing/listeimprimante_new.html', {'form': form})
+    return render(request, 'servicedsi/leasing/listeimprimante/formAdd.html', {'form': form})
 
 def update(request, id):
-    leasinglisteimprimante = get_object_or_404(Listeimprimante, id=id)
+    get_listimprimante_obj = get_object_or_404(Listeimprimante, idlisteimprimante=id)
 
     if request.method == 'POST':
         if request.POST.get('_method') == 'PUT':
-            form = ListeimprimanteForm(request.POST, request.FILES, instance=leasinglisteimprimante)
+            form = ListeimprimanteForm(request.POST, request.FILES, instance=get_listimprimante_obj)
             if form.is_valid():
                 form.save()
-                messages.success(request, 'LeasingListeimprimante has been updated !')
+                messages.success(request, 'Listeimprimante has been updated !')
                 return redirect('leasing:imp-list')
         else:
-            form = ListeimprimanteForm(instance=leasinglisteimprimante)
+            form = ListeimprimanteForm(instance=get_listimprimante_obj)
     else:
-        form = ListeimprimanteForm(instance=leasinglisteimprimante)
-    return render(request, 'serviceapresvente/leasing/leasinglisteimprimante_new.html', {'form': form, 'leasinglisteimprimante': leasinglisteimprimante})
+        form = ListeimprimanteForm(instance=get_listimprimante_obj)
+    return render(request, 'servicedsi/leasing/listeimprimante/formUpd.html', {'form': form})
 
 """
 def delete(request, id):
-    leasinglisteimprimante = get_object_or_404(LeasingListeimprimante, id=id)
+    leasinglisteimprimante = get_object_or_404(idlisteimprimante, idlisteimprimante=id)
     if request.method == 'POST':
         if request.POST.get('_method') == 'DELETE':
             leasinglisteimprimante.delete()

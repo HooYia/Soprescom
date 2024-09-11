@@ -1,0 +1,93 @@
+{% load crispy_forms_tags %}
+{% block css %}
+<style>
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-text {
+        white-space: pre-line;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .card-body {
+            padding: 10px;
+        }
+    }
+</style>
+
+{% endblock %}
+
+ <a href="#" class="btn btn-fill-out btn-sm " 
+          data-bs-toggle="modal" 
+          data-bs-target="#LeasingDetailModal{{form_detail.idconsommable}}" >
+           View
+</a>
+
+<!-- Modal -->
+<div class="modal fade Leasingdetail" id="LeasingDetailModal{{form_detail.idconsommable}}" tabindex="-1" aria-labelledby="LeasingDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="LeasingDetailModalLabel">Info Consommable </h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card mb-6" style="max-width: 100%;">
+          <div class="form_detail g-0">
+            <div class="col-md-12">
+              <div class="card-body">
+                
+                    <div class="row ">
+              
+                      <div class="card col-md-6 ">
+                        <div class="card-header text center">
+                            <strong> Info du Imprimante</strong>
+                        </div>
+                        <div class="card-body">
+                            
+                          <p class="card-text"><strong>Date creation:</strong> {{ form_detail.bordereausortie }}</p>
+                          <p class="card-text"><strong>Marque:</strong> {{ form_detail.marque }}</p>
+                          <p class="card-text"><strong>Modèle:</strong> {{ form_detail.modeleimprimante }}</p>
+                          <p class="card-text"><strong>Type Imprimante:</strong> {{ form_detail.produit }}</p>
+                           <p class="card-text"><strong>Désignation:</strong>{{form_detail.designation }} -
+                           <p class="card-text"><strong>Description:</strong>  {{ incident.description }}
+                           <p class="card-text"><strong> Quantite  </strong>:{{form_detail.quantite}}
+                           <p class="card-text"><strong>Seuil Limite  :</strong>{{form_detail.seuilLimite}}
+                                                      
+                        </div>
+                      </div>
+                      <div class="card col-md-6 ">
+                        <div class="card-header text center">
+                            <strong> Image correspondant</strong>
+                        </div>
+                        <div class="card-body">
+                            
+                              {% if form_detail.image %}
+                              <img src="{{ form_detail.image.url }}" alt="Image du consommable" class="img-fluid">
+                            {% else %}
+                              <p>Aucune image disponible pour cette imprimante.</p>
+                            {% endif %}
+                                                      
+                        </div>
+                      </div>
+                    </div>
+               
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="modal-footer">
+        <button data-url="{% url 'leasing:consommable-update' form_detail.idconsommable %}" id="" class="btn btn-primary leasing">Modifier</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" >Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+

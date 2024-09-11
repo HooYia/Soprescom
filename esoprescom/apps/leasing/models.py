@@ -1,4 +1,5 @@
 from django.db import models
+import os
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 import django.db
 import requests
@@ -11,6 +12,16 @@ from django.core.exceptions import ObjectDoesNotExist
 from urllib.parse import urlencode
 from django.core.files.base import ContentFile
 from django.utils.timezone import now
+from googleapiclient.discovery import build
+from django.utils import timezone
+from django.core.validators import MaxLengthValidator
+from apps.serviceapresvente.models.tasks import Send_Email,send_email_with_template, \
+                                                send_email_with_template_customer, \
+                                                send_instance_email_with_template_task, \
+                                                send_email_with_template_task
+
+
+from apps.accounts.models.Customer import Customer
 
 User = get_user_model()
 
@@ -54,6 +65,10 @@ class Clientleasing(models.Model):
     
 ##Gestion Imprimante
 class Listeimprimante(models.Model):
+    class ETATIMPRIMANTE(models.TextChoices):
+          OK ="ETAT CORRECT","ETAT CORRECT"
+          DEGRADE ="ETAT Dégradé","ETAT Dégradé"
+          NONOK ="Non fonctionnel","Non fonctionnel"
     idlisteimprimante = models.BigAutoField(primary_key=True)
     numero_serie = models.CharField(verbose_name =_('Numeoro Série'),unique=True,max_length=50)
     reference = models.CharField(verbose_name =_('Référence'),max_length=50,null=False, blank=False,db_index=True)
@@ -64,39 +79,15 @@ class Listeimprimante(models.Model):
     endoflife = models.DateField(verbose_name =_('End of Life'), blank=True, null=True)
     image = models.ImageField(upload_to='leasing/', null=True, blank=True)
     flag = models.BooleanField(default=False)
-    #userLog = models.ForeignKey(User, on_delete = models.SET_NULL, null=True)
-    """
-    def save(self, *args, **kwargs):
-        if not self.image:
-            # API Google Custom Search
-            api_key = 'AIzaSyBlMFLj7P1mZB_TiNADvqQJ8Lm8mVfoop4'
-            cx = 'gen-lang-client-0767018349'
-
-            query = f"{self.numero_serie} {self.reference}"
-            search_params = {
-                'q': query,
-                'cx': cx,
-                'searchType': 'image',
-                'key': api_key,
-                'num': 1  # Nombre d'images à retourner
-            }
-
-            url = f"https://www.googleapis.com/customsearch/v1?{urlencode(search_params)}"
-
-            # Faire la requête à l'API
-            response = requests.get(url)
-            if response.status_code == 200:
-                items = response.json().get('items')
-                if items:
-                    print('imageurl:',image_url)
-                    image_url = items[0].get('link')  # Lien de la première image
-
-                    # Télécharger l'image et l'assigner au champ image
-                    image_response = requests.get(image_url)
-                    if image_response.status_code == 200:
-                        self.image.save(f"{self.reference}.jpg", ContentFile(image_response.content), save=False)
-    """
-
+    ## Fiel dpour la maintenance
+    niveau_toner = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
+    niveau_photoconducteur = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
+    niveau_hit_maintenance = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
+    ancien_index = models.IntegerField(blank=True, null=True)
+    nouvel_index = models.IntegerField(blank=True, null=True)
+    moyenne_impression =models.FloatField(blank=True, null=True)
+    etat = models.CharField(max_length=15, verbose_name=_('Intervention'), choices=ETATIMPRIMANTE.choices, default=ETATIMPRIMANTE.OK)
+    
     class Meta:
         managed = True
         db_table = 'leasing_listeimprimante'
@@ -106,7 +97,48 @@ class Listeimprimante(models.Model):
     
     def __str__(self) -> str:
       return "{}".format(self.reference)
+    
+    def maintenance_due(self):
+        derniere_maintenance = Maintenance.objects.filter(imprimante=self).order_by('-date_maintenance').first()
+        if derniere_maintenance and derniere_maintenance.prochaine_maintenance <= timezone.now().date():
+            return True
+        return False
 
+    
+    def save(self, *args, **kwargs):
+        # Appel à l'API Google pour récupérer les informations si elles ne sont pas fournies
+        if not self.endoflife or not self.image:
+            search_results = self.search_google_info()
+            if search_results:
+                self.endoflife = search_results.get('end_of_warranty')
+                self.image = search_results.get('image_url')
+        super().save(*args, **kwargs)
+
+    def search_google_info(self):
+        """Utilise l'API Google pour rechercher la date de fin de garantie et l'image."""
+        api_key = os.getenv('AIzaSyBoAi6Jr6zeiklXsybwEjQjjIecJB6_gac')  # Clé API Google
+        cse_id = os.getenv('gen-lang-client-0767018349')  # ID du moteur de recherche personnalisé
+
+        service = build("customsearch", "v1", developerKey=api_key)
+        query = f"{self.reference} {self.designation} {self.numero_serie}"
+
+        try:
+            res = service.cse().list(q=query, cx=cse_id).execute()
+            items = res.get('items', [])
+            for item in items:
+                # Logique pour extraire les informations d'intérêt
+                if 'warranty' in item['snippet'].lower():
+                    end_of_warranty = "logique pour extraire la date de fin de garantie"
+                if 'pagemap' in item and 'cse_image' in item['pagemap']:
+                    image_url = item['pagemap']['cse_image'][0]['src']
+                    return {
+                        'end_of_warranty': end_of_warranty,
+                        'image_url': image_url
+                    }
+        except Exception as e:
+            print(f"Erreur lors de la recherche Google: {e}")
+        return None
+    
     @classmethod
     def LeasingStatImprimante(cls): 
         queryset_countAll = Listeimprimante.objects.count() 
@@ -140,7 +172,7 @@ class Deploiement(models.Model):
         ordering = ["iddeploiement"]
     
     def __str__(self):
-        return "{} - {} - {} - {}".format(self.site,self.clientleasing,self.listeimprimante,self.adresseip)
+        return "{}-{}-{} ({})".format(self.clientleasing,self.site,self.listeimprimante,self.adresseip)
     @property
     def listeimprimante_free(self):
         return self.get_liste_imprimantes()
@@ -186,7 +218,7 @@ class Consommable(models.Model):
     
     produit = models.CharField(max_length=20, choices=TYPE_PRODUIT,default=TYPE_PRODUIT.TONER, verbose_name=_('Produit'), null=False, blank=False)
     reference = models.CharField(verbose_name =_('Référence'),unique=True, max_length=30,null=False, blank=False,db_index=True)
-    designation = models.CharField(verbose_name =_('Désignation'),max_length=50,null=False, blank=False)
+    designation = models.CharField(verbose_name =_('Désignation'),unique=True,max_length=50,null=False, blank=False)
     description = models.CharField(verbose_name =_('Description'),max_length=100,null=True, blank=True)
     quantite = models.IntegerField(verbose_name =_('Quantité'),default=0,null=False, blank=False)
     seuilLimite = models.IntegerField(verbose_name =_('Seuil'),default=5,null=False, blank=False)
@@ -225,6 +257,7 @@ class Exploitation(models.Model):
           remplacement ="Remplacement consommable","Remplacement consommable"
           releve = "Releve fin du mois","Releve fin du mois"
           papier = "Fourniture Carton Papier","Fourniture Carton Papier"
+          maintennace = "Maintenance","Maintenance"
     class ETATIMPRIMANTE(models.TextChoices):
           OK ="ETAT CORRECT","ETAT CORRECT"
           DEGRADE ="ETAT Dégradé","ETAT Dégradé"
@@ -235,9 +268,12 @@ class Exploitation(models.Model):
     intervention = models.CharField(max_length=30, verbose_name=_('Intervention'), choices=Typeintervention.choices, default=Typeintervention.papier)
     consommables = models.ManyToManyField(Consommable, through=ConsommableExploitation)
     deploiement = models.ForeignKey(Deploiement, on_delete=models.SET_NULL, null=True)
-    pourcentage_toner = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
+    niveau_toner = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
+    niveau_photoconducteur = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
+    niveau_hit_maintenance = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
     ancien_index = models.IntegerField(blank=True, null=True)
     nouvel_index = models.IntegerField(blank=True, null=True)
+    moyenne_impression =models.FloatField(blank=True, null=True)
     etat = models.CharField(max_length=15, verbose_name=_('Intervention'), choices=ETATIMPRIMANTE.choices, default=ETATIMPRIMANTE.OK)
     observation = models.TextField(verbose_name =_('Observation'),max_length=100,null=False, blank=False)
     
@@ -311,11 +347,47 @@ class GestionIncident(models.Model):
     idincident = models.BigAutoField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    userDSI = models.CharField(verbose_name =_('Leasing User'), max_length=30,null=False, blank=False, default='Leasing Team DSI')
+    client_leasing = models.CharField(verbose_name =_('Leasing User'), max_length=30,null=False, blank=False, default='Leasing Team DSI')
+    resp_dossier = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
     deploiement = models.ForeignKey(Deploiement, on_delete=models.SET_NULL, null=True)
-    incident = models.CharField(max_length=25, verbose_name=_('Statut ticket'), choices=NATUREINCIDENT.choices, default=NATUREINCIDENT.INCIDENT_0)
-    Statut = models.CharField(max_length=15, verbose_name=_('Statut ticket'), choices=STATUT.choices, default=STATUT.NON_OK)
+    incident = models.CharField(max_length=25, verbose_name=_('Type incident'), choices=NATUREINCIDENT.choices, default=NATUREINCIDENT.INCIDENT_0)
+    statut = models.CharField(max_length=15, verbose_name=_('Statut incident'), choices=STATUT.choices, default=STATUT.NON_OK)
+    observation = models.TextField(verbose_name =_('Observation'),null=True,blank=True,
+                  validators=[MaxLengthValidator(limit_value=100)])
 
+class Maintenance(models.Model):
+    class STATUT(models.TextChoices):
+          maintenance_0 ="OKAY","OKAY"
+          maintenance_1 ="NON OK","NON OK"
+          
+
+    idmaintenance = models.BigAutoField(primary_key=True)
+    imprimante = models.ForeignKey(Listeimprimante, on_delete=models.CASCADE)
+    date_maintenance = models.DateField(auto_now_add=True)
+    maintenue_par = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
+    statut = models.CharField(max_length=15,  verbose_name=_('Statut'), choices=STATUT.choices, default=STATUT.maintenance_0)
+    description = models.TextField(verbose_name=_('Description'), max_length=255, null=True, blank=True)
+    prochaine_maintenance = models.DateField(verbose_name=_('Prochaine maintenance'), blank=True, null=True)
+
+    class Meta:
+        db_table = 'leasing_maintenance'
+        verbose_name = 'Maintenance'
+        verbose_name_plural = 'Maintenances'
+        ordering = ['date_maintenance']
+
+    def save(self, *args, **kwargs):
+        if self.statut == self.STATUT.maintenance_0:  # Vérifie si le statut est "OKAY"
+            if not self.prochaine_maintenance:
+                # La prochaine maintenance est fixée automatiquement à 1 mois après la date de maintenance actuelle
+                self.prochaine_maintenance = datetime.now().date() + timedelta(days=30)
+        else:
+            # Si le statut n'est pas "OKAY", on ne met pas à jour prochaine_maintenance
+            self.prochaine_maintenance = None
+
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.imprimante.numero_serie} - {self.date_maintenance}"
 
 """
 

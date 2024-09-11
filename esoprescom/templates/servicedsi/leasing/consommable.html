@@ -1,8 +1,8 @@
 <div class="card">
   <div class="card-header d-flex gap-1">
     <h3>Instances</h3>
-    <button id="id_instancecreate" class="btn btn-fill-out btn-sm btn-sm ms-auto " 
-    data-url="{% url 'serviceapresvente:instance-create' %}" >
+    <button id="id_consommablecreate" class="btn btn-fill-out btn-sm btn-sm ms-auto NewleasingCreate" 
+    data-url="{% url 'leasing:consommable-create' %}" >
       ADD New Consommable
     </button>
     </div>
@@ -44,9 +44,9 @@
                     {{ row.seuilLimite }} </div>
                   </td>
                   <td >
-                        <button id="id_consommableDetail{{row.idconsommable}}" 
-                              data-url="{% url 'leasing:consommable-show' row.idconsommable %}" 
-                              class="btn btn-fill-out btn-sm instance" >View</button>
+                        <button data-url="{% url 'leasing:consommable-update' row.idconsommable %}" 
+                              class="btn btn-fill-out btn-sm leasing" >Upd</button>
+                          {% include "servicedsi/leasing/consommable/details.html" with form_detail=row %}
                   </td>
                 </tr>
                 {% endfor %}

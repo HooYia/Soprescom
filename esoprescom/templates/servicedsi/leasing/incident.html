@@ -1,0 +1,70 @@
+<div class="card">
+  <div class="card-header d-flex gap-1">
+    <h3>Instances</h3>
+    <button id="id_incidentcreate" class="btn btn-fill-out btn-sm btn-sm ms-auto NewleasingCreate " 
+    data-url="{% url 'leasing:incident-create' %}" >
+      ADD incident
+    </button>
+  </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+       
+                <thead>
+                    <tr>
+                      <th>Date creation</th>
+                      <th>Date update</th>
+                      <th>User distant</th>
+                      <th>Resp ticket</th>
+                      <th>Imprimante</th>
+                      <th>Description incident</th>
+                      <th>Statut </th>
+                      <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for row in incident_lists %}
+                <tr>
+                  <td>
+                    {{ row.created_at|date:"d M Y" }}
+                  </td>
+                 
+                  <td>
+                    {{ row.updated_at|date:"d M Y" }}
+                  </td>
+                  <td>
+                    {{ row.client_leasing }}
+                  </td>
+                  <td>
+                    {{ row.resp_dossier  }}
+                  </td>
+                  <td>
+                    {{ row.deploiement }}
+                  </td>
+                  <td>
+                    {{ row.incident }}
+                  </td>
+                  <td class="{% if row.statut == 'Résolu' %}text-success {% else %} text-warning {% endif %}"> 
+                         <div class="badge text-white rounded-pill status-cell" >
+                            {{ row.statut }} </div>
+                  </td>
+                  <td class="{% if row.statut == 'Résolu' %}disabled-cell{% endif %}">
+                      {#  {% include "servicedsi/leasing/listeimprimante/details.html" with row=row %}  #}
+                      <button class="btn btn-fill-out btn-sm leasing"
+                              data-url="{% url 'leasing:incident-update' row.idincident %}" 
+                               >View</button> 
+                  </td>
+                </tr>
+                {% endfor %}
+                  
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination-->
+        <div class="row">
+          <div class="col-12">
+              {% include "partials/pagination.html" with datas=incident_lists %}
+          </div>
+        </div> <!-- Fin Pagination-->
+    </div>
+</div>

@@ -45,9 +45,9 @@
     </div>
   </div>
   
-  <form id="LeasingConsommationForm" method="POST"  enctype="multipart/form-data">
+  <form id="MaintenanceForm" method="POST"  enctype="multipart/form-data">
           {% csrf_token %}
-          <input type="hidden" name="_method" value = "PUT">
+          
     <div class="card mb-3" style="max-width: 1800px;">
         <div class="row g-0">
            
@@ -56,31 +56,23 @@
                 <div class="row">
                   <div class="card">
                     <div class="card-header text center">
-                      <strong> Update imprimante Leasing</strong>
+                      <strong> Update Maintenance Leasing</strong>
                     </div>
 
                     <div class="card-body">
+                      <input type="hidden" name="_method" value = "PUT">
+                        
                       <div class="form-group row">
-                         <div class="col-md-4">{{ form.bordereausortie|as_crispy_field }}</div>
-                         <div class="col-md-4">{{ form.marque|as_crispy_field }}</div>
-                         <div class="col-md-4">{{ form.modeleimprimante|as_crispy_field }}</div>
+                         <div class="col-md-6">{{ form.imprimante|as_crispy_field }}</div>
+                         <div class="col-md-6">{{ form.maintenue_par|as_crispy_field }}</div>
                         
                       </div>
                       <div class="form-group row">
-                         <div class="col-md-4">{{ form.produit|as_crispy_field }}</div>
-                         <div class="col-md-4">{{ form.reference|as_crispy_field }}</div>
-                         <div class="col-md-4">{{ form.designation|as_crispy_field }}</div>
+                         <div class="col-md-6">{{ form.statut|as_crispy_field }}</div>
+                         <div class="col-md-6">{{ form.description|as_crispy_field }}</div>
                       </div>
-                      <div class="form-group row">
-                          <div class="col-md-4">{{ form.description|as_crispy_field }}</div>
-                          <div class="col-md-4">{{ form.quantite|as_crispy_field }}</div>
-                          <div class="col-md-4">{{ form.seuilLimite|as_crispy_field }}</div>
-                       </div>
-                       <div class="form-group row">
-                           <div class="col-md-4">{{ form.image|as_crispy_field }}</div>
-                      </div>
+                      
                     </div>
-
                   </div>
             </div>
         </div>
@@ -89,37 +81,30 @@
     </div>
             <hr>
         <div class="d-flex gap-1">   
-          <button type="submit" class="btn btn-success" id="update-LeasingConsommable-btn" 
-                 data-url="{% url 'leasing:consommable-update' form.instance.idconsommable %}">Update</button>
+          <button type="submit" class="btn btn-success update-LeasingForm-btn" id="update-LeasingForm-btn11"
+          data-url="{% url 'leasing:maintenance-update' form.instance.idmaintenance %}">Modifier</button>
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+          
         </div>
   </form> 
    
-{% block script %}
+  {% block script %}
 
-<script>
-  const inputmarqueBtn = document.querySelector('#id_marque');
-  const inputmodeleimprimanteBtn = document.querySelector('#id_modeleimprimante');
-  const inputproduitBtn = document.querySelector('select#id_typeproduit');
-  const inputreferenceBtn = document.querySelector('#id_reference');
-  inputmarqueBtn.disabled = true;
-  inputmodeleimprimanteBtn.disabled = true;
-  inputproduitBtn.disabled = true;
-  inputreferenceBtn.disabled = true;
+  <script>
 
   /************ update  **********/
+  const inputButton = document.querySelector('select#id_imprimante');
+  inputButton.disabled = true;
  
-  const btn_consommable_save = document.querySelector('#update-LeasingConsommable-btn');
-  const UpdateLeasingConsommableRequest = (event) => {
-    console.log(btn_consommable_save);
-    console.log("Update leasing  request");
+  const btn_add_save = document.querySelector('button[type="submit"].update-LeasingForm-btn');
+  const UpdateLeasingRequest = (event) =>{
+    console.log("Update leasing  request")
     event.preventDefault(); // Prevent the default form submission
     var url = $(event.target).data('url');
     var form = $(event.target).closest('form')[0];
     // Re-enable disabled fields for submission
       $(form).find(':disabled').prop('disabled', false);
       var formData = new FormData(form); // Create FormData object
-      console.log('formData:',formData);
      
     // Validation HTML5
     const formValid = $(event.target).closest('form');
@@ -148,9 +133,9 @@
               alert('Error: ' + error);
           }
       });
-     
+
   }
-  btn_consommable_save?.addEventListener('click', UpdateLeasingConsommableRequest);
+  btn_add_save?.addEventListener('click', UpdateLeasingRequest);
   
 </script>
 {% endblock %}

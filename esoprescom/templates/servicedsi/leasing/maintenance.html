@@ -1,0 +1,68 @@
+<div class="card">
+  <div class="card-header d-flex gap-1">
+    <h3>Instances</h3>
+    <button id="id_maintenancecreate" class="btn btn-fill-out btn-sm btn-sm ms-auto NewleasingCreate " 
+    data-url="{% url 'leasing:maintenance-create' %}" >
+      Maintenance
+    </button>
+  </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+       
+                <thead>
+                    <tr>
+                      <th>Date maintenance</th>
+                      <th>Prochaine maintenance</th>
+                      <th>Imprimante</th>
+                      <th>Site</th>
+                      <th>Effectué par</th>
+                      <th>Statut</th>
+                      <th>Action</th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                 
+                {% for row in maintenance_lists %}
+               
+                <tr>
+                  <td>
+                    {{row.idmaintenance}} -- {{ row.date_maintenance|date:"d M Y" }}
+                  </td>
+                 
+                  <td>
+                    {{ row.prochaine_maintenance|date:"d M Y" }}
+                  </td>
+                  <td>
+                    {{ row.imprimante }}
+                  </td>
+                  <td>
+                    {{ row.imprimante.deploiement.clientleasing.nom }} - {{ row.imprimante.deploiement.site }} ({{ row.imprimante.deploiement.adresseip }})
+                  </td>
+                  <td>
+                    {{ row.maintenue_par }}
+                  </td>
+                  <td>
+                    {{ row.statut  }}
+                  </td>
+                  <td >
+                    {# {% include "servicedsi/leasing/maintenance/details.html" with row=row %} #}
+                    <button class="btn btn-fill-out btn-sm leasing"
+                            data-url="{% url 'leasing:maintenance-update' row.idmaintenance %}" 
+                             >View</button>
+                  </td>
+                </tr>
+                {% endfor %}
+                  
+                </tbody>
+            </table>
+        </div>
+        <!-- Pagination-->
+        <div class="row">
+          <div class="col-12">
+              {% include "partials/pagination.html" with datas=imprimante_lists %}
+          </div>
+        </div> <!-- Fin Pagination-->
+    </div>
+</div>

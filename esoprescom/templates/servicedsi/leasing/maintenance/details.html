@@ -1,0 +1,75 @@
+
+{% block css %}
+<style>
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-text {
+        white-space: pre-line;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .card-body {
+            padding: 10px;
+        }
+    }
+</style>
+
+{% endblock %}
+
+ <a href="#" class="btn btn-fill-out btn-sm " 
+          data-bs-toggle="modal" 
+          data-bs-target="#LeasingDetailModal{{form_detail.idmaintenance}}" >
+           View
+</a>
+
+<!-- Modal -->
+<div class="modal fade Leasingdetail" id="LeasingDetailModal{{form_detail.idmaintenance}}" tabindex="-1" aria-labelledby="LeasingDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="LeasingDetailModalLabel">Info maintenence imprimante</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card mb-6" style="max-width: 100%;">
+          <div class="form_detail g-0">
+            <div class="col-md-12">
+              <div class="card-body">
+                <div class="form_detail">
+                  
+                    <div class="card ">
+                      <div class="card-header text center">
+                          <strong> Info maintenance imprimante</strong>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text"><strong>Imprimante:</strong> {{ form_detail.imprimante }}</p>
+                        <br>      {{ row.imprimante.deploiement.clientleasing.nom }} - {{ row.imprimante.deploiement.site }} ({{ row.imprimante.deploiement.adresseip }})
+                        <p class="card-text"><strong>Date maintenance:</strong> {{ form_detail.date_maintenance }}</p>
+                        <p class="card-text"><strong>Fait par:</strong> {{ form_detail.maintenue_par }}</p>
+                        <p class="card-text"><strong>Statut:</strong> {{ form_detail.statut }}</p>
+                        <p class="card-text"><strong>Description:</strong> {{ form_detail.description }}</p>
+                        <p class="card-text"><strong>Prochaine maintenance:</strong> {{ form_detail.prochaine_maintenance }}</p>
+                      </div>
+                    </div>
+                 
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="modal-footer">
+        <button data-url="{% url 'leasing:maintenance-update' form_detail.idmaintenance %}"  class="btn btn-primary update-LeasingForm-btn2">Modifier</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" >Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+

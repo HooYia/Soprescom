@@ -32,9 +32,10 @@ def index(request):
 # Les autres fonctions comme show, create, update, delete... 
 
 def show(request, id):
-    sav_request = get_object_or_404(Clientleasing, id=id)
+    sav_request = get_object_or_404(Clientleasing, idclientleasing=id)
     form_detail = ClientleasingForm(sav_request)
-    return render(request, 'servicedsi/leasing/client_show.html', {'form_detail': form_detail})
+    return render(request, 'servicedsi/leasing/client/details.html', {'row': form_detail,
+                                                                      'modal_header':'Détails Client Leasing'})
 
 
 def create(request):
@@ -46,11 +47,10 @@ def create(request):
             return redirect('leasing:Client')
     else:
         form = ClientleasingForm()
-    return render(request, 'serviceapresvente/leasing/client/client_new.html', {'form': form,
-                                                                         'subpage':'addclient'})
+    return render(request, 'servicedsi/leasing/client/formAdd.html', {'form': form})
 
 def update(request, id):
-    get_one_Client = get_object_or_404(Clientleasing, id=id)
+    get_one_Client = get_object_or_404(Clientleasing, idclientleasing=id)
 
     if request.method == 'POST':
         if request.POST.get('_method') == 'PUT':
@@ -63,12 +63,11 @@ def update(request, id):
             form = ClientleasingForm(instance=get_one_Client)
     else:
         form = ClientleasingForm(instance=get_one_Client)
-    return render(request, 'serviceapresvente/leasing/client/client_new.html', {'form': form,
-                                                                                'subpage':'addclient',
-                                                                                 'get_one_Client': get_one_Client})
+    return render(request, 'servicedsi/leasing/client/formUpd.html', {'form': form,
+                                                                      'get_one_Client': get_one_Client})
 """
 def delete(request, id):
-    leasinglisteimprimante = get_object_or_404(LeasingListeimprimante, id=id)
+    leasinglisteimprimante = get_object_or_404(LeasingListeimprimante, idclientleasing=id)
     if request.method == 'POST':
         if request.POST.get('_method') == 'DELETE':
             leasinglisteimprimante.delete()

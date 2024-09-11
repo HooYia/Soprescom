@@ -73,6 +73,9 @@ LOCAL_APPS = [
     'apps.leasing',
  ]
 # Application definition
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
 INSTALLED_APPS = DEFAULT_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 SUPPORT_EMAIL = 'no-reply@soprescom.com'

@@ -11,7 +11,8 @@ from crispy_forms.bootstrap import FormActions
 from django.forms import inlineformset_factory,modelformset_factory
 
 
-from .models import Clientleasing,Listeimprimante,Deploiement,Consommable,Exploitation, ConsommableExploitation
+from .models import Clientleasing,Listeimprimante,Deploiement,Consommable,Exploitation,\
+                    ConsommableExploitation,GestionIncident,Maintenance
 
 class ClientleasingForm(forms.ModelForm):
     class Meta:
@@ -23,6 +24,7 @@ class ClientleasingForm(forms.ModelForm):
     contact = forms.CharField(label=_('Contact'))
     localite = forms.CharField(label=_('Région'))
     refcontrat = forms.CharField(label=_('N° Contrat'))
+    duree_contrat = forms.CharField(label=_('Durée Contrat'))
     email = forms.EmailField(label=_('Email'))
     date = forms.DateField(label=_('Date Contrat'),
                            widget=forms.DateInput(
@@ -46,8 +48,8 @@ class ListeimprimanteForm(forms.ModelForm):
 class DeploiementForm(forms.ModelForm):
     class Meta:
         model = Deploiement
-        exclude= ['userLog']
-        #fields = '__all__'
+        
+        fields = '__all__'
         #fields = ['site', 'adresseip', 'date_deploiement', 'clientleasing', 'listeimprimante']
     date_deploiement = forms.DateField(
               widget=forms.DateInput(
@@ -57,6 +59,9 @@ class DeploiementForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         # Filtrer les imprimantes avec flag=0
         self.fields['listeimprimante'].queryset = Listeimprimante.objects.filter(flag=False)
+        if self.instance and self.instance.pk:
+            # Inclure l'imprimante actuellement associée si elle est déployée
+            self.fields['listeimprimante'].queryset |= Listeimprimante.objects.filter(pk=self.instance.listeimprimante.pk)
 
 class ConsommableForm(forms.ModelForm):
     class Meta:
@@ -145,3 +150,16 @@ ConsommableExploitationFormset = inlineformset_factory(
     form=ConsommableExploitationForm,
     extra=1,
     can_delete=True)
+
+
+
+class GestionIncidentForm(forms.ModelForm):
+    class Meta:
+        model = GestionIncident
+        fields = "__all__"
+
+
+class MaintenanceForm(forms.ModelForm):
+    class Meta:
+        model = Maintenance
+        fields = "__all__"

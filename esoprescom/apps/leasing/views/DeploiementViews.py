@@ -31,8 +31,8 @@ def index(request):
 # Les autres fonctions comme show, create, update, delete... 
 
 def show(request, id):
-    get_deploiement = get_object_or_404(Deploiement, idrequest=id)
-    form_detail = DeploiementForm(get_deploiement)
+    get_deploiement_obj = get_object_or_404(Deploiement, idrequest=id)
+    form_detail = DeploiementForm(instance=get_deploiement_obj)
     return render(request, 'servicedsi/leasing/liste_imprimante.html', {'form_detail': form_detail})
 
 
@@ -57,11 +57,11 @@ def create(request):
     return render(request, 'servicedsi/leasing/deploiement/formAdd.html', {'form': form})
 
 def update(request, id):
-    get_deploiement = get_object_or_404(Deploiement, id=id)
+    get_deploiement_obj = get_object_or_404(Deploiement, iddeploiement=id)
 
     if request.method == 'POST':
         if request.POST.get('_method') == 'PUT':
-            form = DeploiementForm(request.POST,instance=get_deploiement)
+            form = DeploiementForm(request.POST,instance=get_deploiement_obj)
             if form.is_valid():
                 data = form.save(commit=False) 
                 try:
@@ -76,22 +76,21 @@ def update(request, id):
             
                 return redirect('leasing:deploiement-list')
             else:
-                form = DeploiementForm(instance=get_deploiement)
+                form = DeploiementForm(instance=get_deploiement_obj)
         else:
-            form = DeploiementForm(instance=get_deploiement)
+            form = DeploiementForm(instance=get_deploiement_obj)
     else:
-        form = DeploiementForm(instance=get_deploiement)
-    return render(request, 'servicedsi/leasing/deploiement/formUpd.html', {'form': form, 
-                                                                           'get_deploiement': get_deploiement})
+        form = DeploiementForm(instance=get_deploiement_obj)
+    return render(request, 'servicedsi/leasing/deploiement/formUpd.html', {'form': form})
 
 """
 def delete(request, id):
-    leasinglisteimprimante = get_object_or_404(LeasingListeimprimante, id=id)
+    get_deploiement_obj = get_object_or_404(Deploiement, iddeploiement=id)
     if request.method == 'POST':
         if request.POST.get('_method') == 'DELETE':
-            leasinglisteimprimante.delete()
-            messages.success(request, 'LeasingListeimprimante has been deleted !')
-    return redirect('leasinglisteimprimante_index')
+            get_deploiement_obj.delete()
+            messages.success(request, 'Deploiement has been deleted !')
+    return redirect('leasing:deploiement-list')
 
 
 """

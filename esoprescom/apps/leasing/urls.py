@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from .views import LeasingClientViews,ListeimprimanteViews,DeploiementViews, \
-                   ConsommableViews,ExploitationViews
+                   ConsommableViews,ExploitationViews,IncidentViews,MaintenanceViews
 
 app_name = 'leasing'
 
@@ -32,6 +32,17 @@ urlpatterns = [
     path('exploitation/add', ExploitationViews.create, name='exploitation-create'),
     path('exploitation/upd/<int:id>/', ExploitationViews.update, name='exploitation-update'),
     path('exploitation/detail/<int:id>', ExploitationViews.show, name='exploitation-show'),
+    #Liste Incident
+    path('incident', IncidentViews.index, name='incident-list'),
+    path('incident/add', IncidentViews.create, name='incident-create'),
+    path('incident/upd/<int:id>/', IncidentViews.update, name='incident-update'),
+    path('incident/detail/<int:id>/', IncidentViews.show, name='incident-show'),
+
+    #Liste Maintenance
+    path('maintenance', MaintenanceViews.index, name='maintenance-list'),
+    path('maintenance/add', MaintenanceViews.create, name='maintenance-create'),
+    path('maintenance/upd/<int:id>/', MaintenanceViews.update, name='maintenance-update'),
+    path('maintenance/detail/<int:id>/', MaintenanceViews.show, name='maintenance-show'),
 
    
     

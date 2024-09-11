@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header d-flex gap-1">
     <h3>Instances</h3>
-    <button id="id_deploiement_create" class="btn btn-fill-out btn-sm btn-sm ms-auto " 
+    <button id="id_deploiement_create" class="btn btn-fill-out btn-sm btn-sm ms-auto NewleasingCreate " 
     data-url="{% url 'leasing:deploiement-create' %}" >
       Ajout Déploiement
     </button>
@@ -30,7 +30,7 @@
                     {{ row.site }}
                   </td>
                   <td>
-                    {{ row.listeimprimante.reference }}
+                    {{ row.listeimprimante }}
                   </td>
                   <td>
                     {{ row.adresseip}}
@@ -40,9 +40,8 @@
                   </td>
                   
                   <td >
-                      <button id="id_instanceDetail{{row.iddeploiement}}" 
-                              data-url="{% url 'leasing:deploiement-show' row.iddeploiement %}" 
-                              class="btn btn-fill-out btn-sm instance" >View</button>
+                    <button  class="btn btn-fill-out btn-sm leasing" 
+                             data-url="{% url 'leasing:deploiement-update' row.iddeploiement %}" >Upd</button>
                   </td>
                 </tr>
                 {% endfor %}

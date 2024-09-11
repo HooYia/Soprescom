@@ -1,0 +1,78 @@
+{% load crispy_forms_tags %}
+{% block css %}
+<style>
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-text {
+        white-space: pre-line;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .card-body {
+            padding: 10px;
+        }
+    }
+</style>
+
+{% endblock %}
+
+ <a href="#" class="btn btn-fill-out btn-sm " 
+          data-bs-toggle="modal" 
+          data-bs-target="#LeasingDetailModal{{form_detail.idincident}}" >
+           View
+</a>
+
+<!-- Modal -->
+<div class="modal fade Leasingdetail" id="LeasingDetailModal{{form_detail.incident.idincident}}" tabindex="-1" aria-labelledby="LeasingDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="LeasingDetailModalLabel">Info Incident  imprimante</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card mb-6" style="max-width: 100%;">
+          <div class="form_detail g-0">
+            <div class="col-md-12">
+              <div class="card-body">
+                <div class="form_detail">
+                  
+                    <div class="card ">
+                      <div class="card-header text center">
+                          <strong> Info du Imprimante</strong>
+                      </div>
+                      <div class="card-body">
+                          
+                        <p class="card-text"><strong>Date creation:</strong> {{ form_detail.numero_serie }}</p>
+                        <p class="card-text"><strong>Derniere mise  jour:</strong> {{ form_detail.reference }}</p>
+                        <p class="card-text"><strong>Client Leasing:</strong> {{ form_detail.client_leasing }}</p>
+                        <p class="card-text"><strong>Resp ticket:</strong> {{ form_detail.resp_dossier }}</p>
+                                     <br>Imprimante:{{form_detail.deploiement.listeimprimante.reference }} -
+                                     <br>br  Incident declaré:  {{ incident.garatntie }}
+                                     <br> statut  :{{form_detail.statut}}
+                                     <br>Observation  :{{form_detail.observation}}
+                                                    
+                      </div>
+                    </div>
+                 
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="modal-footer">
+        <button data-url="{% url 'leasing:incident-update' form_detail.instance.idincident %}" id="savDisplayForUpdate" class="btn btn-primary">Modifier</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" >Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+

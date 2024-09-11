@@ -1,0 +1,87 @@
+
+{% block css %}
+<style>
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .card-text {
+        white-space: pre-line;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .card-body {
+            padding: 10px;
+        }
+    }
+</style>
+
+{% endblock %}
+
+ <a href="#" class="btn btn-fill-out btn-sm " 
+          data-bs-toggle="modal" 
+          data-bs-target="#LeasingDetailModal{{row.idlisteimprimante}}" >
+           View
+</a>
+
+<!-- Modal -->
+<div class="modal fade Leasingdetail" id="LeasingDetailModal{{row.idlisteimprimante}}" tabindex="-1" aria-labelledby="LeasingDetailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="LeasingDetailModalLabel">{{ row.modal_header }}</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card mb-6" style="max-width: 100%;">
+          <div class="row g-0">
+            <div class="col-md-12">
+              <div class="card-body">
+                <div class="row">
+                  
+                    <div class="card col-md-6">
+                      <div class="card-header text center">
+                          <strong> Info du Imprimante</strong>
+                      </div>
+                      <div class="card-body">
+
+                        <p class="card-text"><strong>S/N:</strong> {{ row.numero_serie }}</p>
+                        <p class="card-text"><strong>Référence:</strong> {{ row.reference }}</p>
+                        <p class="card-text"><strong>Désignation:</strong> {{ row.designation }}</p>
+                        <p class="card-text"><strong>Description:</strong> {{ row.description }}</p>
+                                     <br>Date acquisition:{{row.date_acquisition}} - Sous garantie: {{ row.garatntie }} -- End Of life:{{row.endoflife}}
+                                                 
+                      </div>
+                    </div>
+                    
+                    <div class="card col-md-6">
+                      <div class="card-header text center">
+                          <strong> Image Imprimante</strong>
+                      </div>
+                      <div class="card-body">
+                        {% if row.image %}
+                            <img src="{{ row.image.url }}" alt="Image de l'imprimante" class="img-fluid">
+                          {% else %}
+                            <p>Aucune image disponible pour cette imprimante.</p>
+                          {% endif %}
+                       </div>
+                    </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+      <div class="modal-footer">
+        <button class="btn btn-primary leasing" data-url="{% url 'leasing:imp-update' row.idlisteimprimante %}" id="" >Modifier</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" >Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+

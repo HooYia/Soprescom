@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header d-flex gap-1">
     <h3>Instances</h3>
-    <button id="id_instancecreate" class="btn btn-fill-out btn-sm btn-sm ms-auto " 
+    <button id="id_imprimantecreate" class="btn btn-fill-out btn-sm btn-sm ms-auto NewleasingCreate " 
     data-url="{% url 'leasing:imp-create' %}" >
       ADD New Printer
     </button>
@@ -47,10 +47,11 @@
                   <td> <div class="badge text-white rounded-pill status-cell" >
                     {{ row.flag }} </div>
                   </td>
-                  <td class="{% if row.flag == 1 %}disabled-cell{% endif %}">
-                      <button id="id_instanceDetail{{row.idlisteimprimante}}" 
+                  <td class="{% if row.flag == 1 %}text-warning{% endif %}">
+                    {% include "servicedsi/leasing/listeimprimante/details.html" with row=row %}
+                    <!--  <button id="id_instanceDetail{{row.idlisteimprimante}}" 
                               data-url="{% url 'leasing:imp-show' row.idlisteimprimante %}" 
-                              class="btn btn-fill-out btn-sm instance" >View</button>
+                              class="btn btn-fill-out btn-sm instance" >View</button>  -->
                   </td>
                 </tr>
                 {% endfor %}

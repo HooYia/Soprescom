@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Clientleasing, Listeimprimante,Consommable,Deploiement,Exploitation
+from .models import Clientleasing, Listeimprimante,Consommable,Deploiement,Exploitation,GestionIncident,Maintenance
 from django.utils.html import format_html
 from ckeditor.widgets import CKEditorWidget
 #from .models.Client import Client
@@ -67,3 +67,21 @@ class ExploitationAdmin(admin.ModelAdmin):
         return ", ".join([consommable.reference for consommable in obj.consommables.all()])
 
    display_consommables.short_description = "Consommables"
+
+
+@admin.register(GestionIncident)
+class GestionIncidentAdmin(admin.ModelAdmin):
+   list_display=("idincident","client_leasing","resp_dossier","deploiement",'incident',
+                 "statut",)
+   list_display_links = ("client_leasing",)
+   
+   list_editable = ("incident","statut")
+
+
+@admin.register(Maintenance)
+class MaintenancetAdmin(admin.ModelAdmin):
+   list_display=("idmaintenance","imprimante","date_maintenance","maintenue_par",'statut',
+                 "prochaine_maintenance",)
+   list_display_links = ("imprimante",)
+   empty_value_display = "Inconnu"
+   list_editable = ("statut",)

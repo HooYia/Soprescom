@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header d-flex gap-1">
     <h3>Instances</h3>
-    <button id="id_leasingclientcreate" class="btn btn-fill-out btn-sm btn-sm ms-auto " 
+    <button id="id_leasingclientcreate" class="btn btn-fill-out btn-sm btn-sm ms-auto NewleasingCreate" 
     data-url="{% url 'leasing:client-create' %}" >
       New Agreement
     </button>
@@ -48,9 +48,8 @@
                     {{ row.email }}
                   </td>
                   <td>                      
-                      <button id="id_leasngclientDetail{{row.idclientleasing}}" 
-                              data-url="{% url 'leasing:client-show' row.idclientleasing %}" 
-                              class="btn btn-fill-out btn-sm instance" >View</button>
+                    {% include "servicedsi/leasing/client/details.html" with row=row %}
+                              
                   </td>
                   
                 </tr>
@@ -61,3 +60,5 @@
         </div>
     </div>
 </div>
+
+

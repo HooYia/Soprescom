@@ -45,41 +45,51 @@
     </div>
   </div>
   
-  <form id="form_deploiement_create"  method="POST" action="{% url 'leasing:deploiement-create' %}" >
+  <form id="ListeImprimanteForm" action="{% url 'leasing:imp-create' %}" 
+  method="POST"  enctype="multipart/form-data">
           {% csrf_token %}
    
     <div class="card mb-3" style="max-width: 1800px;">
           <div class="row g-0">
              
               <div class="col-md-12">
-                 
+                  <div class="card-body">
                       <div class="row">
                         <div class="card">
-                           <div class="card-header text center">
-                              <strong> Déploiement Imprimante</strong>
-                           </div>
-                           <div class="card-body">
-                              <div class="form-group row">
-                                <div class="col-md-4">{{ form.clientleasing|as_crispy_field }}</div>
-                                <div class="col-md-4">{{ form.listeimprimante|as_crispy_field }}</div>
+                          <div class="card-header text center">
+                            <strong> Nouvel imprimante Leasing</strong>
+                          </div>
+
+                          <div class="card-body">
+                            <div class="form-group row">
+                               <div class="col-md-6">{{ form.numero_serie|as_crispy_field }}</div>
+                               <div class="col-md-6">{{ form.reference|as_crispy_field }}</div>
                               
-                              </div>
-                              <div class="form-group row">
-                                <div class="col-md-4">{{ form.site|as_crispy_field }}</div>
-                                <div class="col-md-4">{{ form.adresseip|as_crispy_field }}</div>
-                                <div class="col-md-4">{{ form.date_deploiement|as_crispy_field }}</div>
-                              </div>  
                             </div>
+                            <div class="form-group row">
+                               <div class="col-md-6">{{ form.designation|as_crispy_field }}</div>
+                               <div class="col-md-6">{{ form.description|as_crispy_field }}</div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-3">{{ form.date_acquisition|as_crispy_field }}</div>
+                                <div class="col-md-3">{{ form.garantie|as_crispy_field }}</div>
+                                <div class="col-md-3">{{ form.endoflife|as_crispy_field }}</div>
+                             </div>
+                             <div class="form-group row">
+                                 <div class="col-md-3">{{ form.image|as_crispy_field }}</div>
+                            </div>
+                          </div>
+
                         </div>
-                      </div>
+                  </div>
               </div>
-            </div>
+          </div>
+     </div>
+            <hr>
         <div class="d-flex gap-1">   
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
           <button type="submit" class="btn btn-success " id="save-btn" >Add</button>
         </div>
-     </div>
+      
   </form> 
    
-{% block script %}
-{% endblock script %}

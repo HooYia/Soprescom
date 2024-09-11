@@ -31,14 +31,14 @@ def index(request):
 # Les autres fonctions comme show, create, update, delete... 
 
 def show(request, id):
-    sav_request = get_object_or_404(Consommable, id=id)
-    form_detail = ConsommableForm(sav_request)
-    return render(request, 'servicedsi/leasing/consommable/detail.html', {'form_detail': form_detail})
+    get_consommable_obj = get_object_or_404(Consommable, idconsommable=id)
+    form_detail = ConsommableForm(instance=get_consommable_obj)
+    return render(request, 'servicedsi/leasing/consommable/details.html', {'form_detail': form_detail})
 
 
 def create(request):
     if request.method == 'POST':
-        form = ConsommableForm(request.POST)
+        form = ConsommableForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Consommable has been saved !')
@@ -48,24 +48,24 @@ def create(request):
     return render(request, 'servicedsi/leasing/consommable/formAdd.html', {'form': form})
 
 def update(request, id):
-    get_consommable = get_object_or_404(Consommable, id=id)
+    get_consommable_obj = get_object_or_404(Consommable, idconsommable=id)
 
     if request.method == 'POST':
         if request.POST.get('_method') == 'PUT':
-            form = ConsommableForm(request.POST,instance=get_consommable)
+            form = ConsommableForm(request.POST,request.FILES,instance=get_consommable_obj)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Consommable has been updated !')
                 return redirect('leasing:consommable-list')
         else:
-            form = ConsommableForm(instance=get_consommable)
+            form = ConsommableForm(instance=get_consommable_obj)
     else:
-        form = ConsommableForm(instance=get_consommable)
-    return render(request, 'servicedsi/leasing/consommable/formUpd.html', {'form': form, 'get_consommable': get_consommable})
+        form = ConsommableForm(instance=get_consommable_obj)
+    return render(request, 'servicedsi/leasing/consommable/formUpd.html', {'form': form})
 
 """
 def delete(request, id):
-    leasinglisteimprimante = get_object_or_404(LeasingListeimprimante, id=id)
+    leasinglisteimprimante = get_object_or_404(LeasingListeimprimante, idconsommable=id)
     if request.method == 'POST':
         if request.POST.get('_method') == 'DELETE':
             leasinglisteimprimante.delete()
