@@ -33,7 +33,7 @@ def show(request, id):
     instance = get_object_or_404(Instance, idinstance=id)
     form_instance_detail = InstanceForm(instance=instance)
     #instancerecouvrement_detail = Instance_recouvrementForm(instance)
-    return render(request, 'instance/instance_detail.html',
+    return render(request, 'servicedsi/instance/instance_detail.html',
                   {'instance':instance,
                    'form_instance_detail': form_instance_detail})
 

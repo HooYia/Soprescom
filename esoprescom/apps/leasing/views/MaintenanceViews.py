@@ -64,6 +64,9 @@ def create(request):
 
 def update(request, id):
     get_maintenance_obj = get_object_or_404(Maintenance, idmaintenance=id)
+    ## get detail
+    get_imprimante_obj = Maintenance.objects.select_related('imprimante', 'imprimante__deploiement').get(idmaintenance=id)
+    
     if request.POST.get('_method') == 'PUT':
         form = MaintenanceForm(request.POST,instance=get_maintenance_obj)
         if form.is_valid():
@@ -75,7 +78,9 @@ def update(request, id):
     else:
         form = MaintenanceForm(instance=get_maintenance_obj)
     #print('form:',form.instance.idmaintenance)
-    return render(request, 'servicedsi/leasing/maintenance/formUpd.html', {'form': form})
+    
+    return render(request, 'servicedsi/leasing/maintenance/formUpd.html', {'form': form,
+                                                                           'get_imprimante_obj':get_imprimante_obj})
 
 """
 def delete(request, id):

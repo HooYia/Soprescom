@@ -1,0 +1,1501 @@
+[
+{
+  "model": "shop.stock",
+  "pk": 2,
+  "fields": {
+    "stock_produit": 273,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:46.094Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 3,
+  "fields": {
+    "stock_produit": 274,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:49.760Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 4,
+  "fields": {
+    "stock_produit": 275,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:53.041Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 5,
+  "fields": {
+    "stock_produit": 276,
+    "quantite": 5,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:56.415Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 6,
+  "fields": {
+    "stock_produit": 277,
+    "quantite": 7,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:59.583Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 7,
+  "fields": {
+    "stock_produit": 278,
+    "quantite": 14,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:00.411Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 8,
+  "fields": {
+    "stock_produit": 279,
+    "quantite": 26,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:04.191Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 9,
+  "fields": {
+    "stock_produit": 280,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:07.905Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 10,
+  "fields": {
+    "stock_produit": 281,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:12.666Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 11,
+  "fields": {
+    "stock_produit": 282,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:16.713Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 12,
+  "fields": {
+    "stock_produit": 283,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:17.712Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 13,
+  "fields": {
+    "stock_produit": 284,
+    "quantite": 23,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:20.838Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 14,
+  "fields": {
+    "stock_produit": 285,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:23.507Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 15,
+  "fields": {
+    "stock_produit": 286,
+    "quantite": 32,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:26.909Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 16,
+  "fields": {
+    "stock_produit": 287,
+    "quantite": 32,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:30.401Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 17,
+  "fields": {
+    "stock_produit": 288,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:34.263Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 18,
+  "fields": {
+    "stock_produit": 289,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:37.334Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 19,
+  "fields": {
+    "stock_produit": 290,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:41.228Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 20,
+  "fields": {
+    "stock_produit": 291,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:45.290Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 21,
+  "fields": {
+    "stock_produit": 292,
+    "quantite": 24,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:49.118Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 22,
+  "fields": {
+    "stock_produit": 293,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:53.112Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 23,
+  "fields": {
+    "stock_produit": 294,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:57.117Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 24,
+  "fields": {
+    "stock_produit": 295,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:00.407Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 25,
+  "fields": {
+    "stock_produit": 296,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:03.403Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 26,
+  "fields": {
+    "stock_produit": 297,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:06.653Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 27,
+  "fields": {
+    "stock_produit": 298,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:09.780Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 28,
+  "fields": {
+    "stock_produit": 299,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:13.630Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 29,
+  "fields": {
+    "stock_produit": 300,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:17.042Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 30,
+  "fields": {
+    "stock_produit": 301,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:20.820Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 31,
+  "fields": {
+    "stock_produit": 302,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:21.841Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 32,
+  "fields": {
+    "stock_produit": 303,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:22.890Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 33,
+  "fields": {
+    "stock_produit": 304,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:26.295Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 34,
+  "fields": {
+    "stock_produit": 305,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:30.317Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 35,
+  "fields": {
+    "stock_produit": 306,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:33.698Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 36,
+  "fields": {
+    "stock_produit": 307,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:38.570Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 37,
+  "fields": {
+    "stock_produit": 308,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:42.720Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 38,
+  "fields": {
+    "stock_produit": 309,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:47.104Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 39,
+  "fields": {
+    "stock_produit": 310,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:50.659Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 40,
+  "fields": {
+    "stock_produit": 311,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:55.004Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 41,
+  "fields": {
+    "stock_produit": 312,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:58.503Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 42,
+  "fields": {
+    "stock_produit": 313,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:39:03.536Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 43,
+  "fields": {
+    "stock_produit": 314,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:39:08.576Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 44,
+  "fields": {
+    "stock_produit": 315,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:28.602Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 45,
+  "fields": {
+    "stock_produit": 316,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:32.779Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 46,
+  "fields": {
+    "stock_produit": 317,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:35.960Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 47,
+  "fields": {
+    "stock_produit": 318,
+    "quantite": 5,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:39.862Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 48,
+  "fields": {
+    "stock_produit": 319,
+    "quantite": 7,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:43.869Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 49,
+  "fields": {
+    "stock_produit": 320,
+    "quantite": 14,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:45.022Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 50,
+  "fields": {
+    "stock_produit": 321,
+    "quantite": 26,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:51.561Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 51,
+  "fields": {
+    "stock_produit": 322,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:55.858Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 52,
+  "fields": {
+    "stock_produit": 323,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:05.367Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 53,
+  "fields": {
+    "stock_produit": 324,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:11.161Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 54,
+  "fields": {
+    "stock_produit": 325,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:11.949Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 55,
+  "fields": {
+    "stock_produit": 326,
+    "quantite": 23,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:16.753Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 56,
+  "fields": {
+    "stock_produit": 327,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:21.154Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 57,
+  "fields": {
+    "stock_produit": 328,
+    "quantite": 32,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:25.035Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 58,
+  "fields": {
+    "stock_produit": 329,
+    "quantite": 32,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:28.648Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 59,
+  "fields": {
+    "stock_produit": 330,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:32.295Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 60,
+  "fields": {
+    "stock_produit": 331,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:36.292Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 61,
+  "fields": {
+    "stock_produit": 332,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:40.038Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 62,
+  "fields": {
+    "stock_produit": 333,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:44.662Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 63,
+  "fields": {
+    "stock_produit": 334,
+    "quantite": 24,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:47.778Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 64,
+  "fields": {
+    "stock_produit": 335,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:51.339Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 65,
+  "fields": {
+    "stock_produit": 336,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:55.169Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 66,
+  "fields": {
+    "stock_produit": 337,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:58.881Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 67,
+  "fields": {
+    "stock_produit": 338,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:02.511Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 68,
+  "fields": {
+    "stock_produit": 339,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:06.229Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 69,
+  "fields": {
+    "stock_produit": 340,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:09.474Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 70,
+  "fields": {
+    "stock_produit": 341,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:13.270Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 71,
+  "fields": {
+    "stock_produit": 342,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:18.980Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 72,
+  "fields": {
+    "stock_produit": 343,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:22.762Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 73,
+  "fields": {
+    "stock_produit": 344,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:23.793Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 74,
+  "fields": {
+    "stock_produit": 345,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:25.061Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 75,
+  "fields": {
+    "stock_produit": 346,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:29.089Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 76,
+  "fields": {
+    "stock_produit": 347,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:40.378Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 77,
+  "fields": {
+    "stock_produit": 348,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:51.643Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 78,
+  "fields": {
+    "stock_produit": 349,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:02.905Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 79,
+  "fields": {
+    "stock_produit": 350,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:14.195Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 80,
+  "fields": {
+    "stock_produit": 351,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:25.486Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 81,
+  "fields": {
+    "stock_produit": 352,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:36.760Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 82,
+  "fields": {
+    "stock_produit": 353,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:48.030Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 83,
+  "fields": {
+    "stock_produit": 354,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:59.304Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 84,
+  "fields": {
+    "stock_produit": 355,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:10.579Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 85,
+  "fields": {
+    "stock_produit": 356,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:21.855Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 86,
+  "fields": {
+    "stock_produit": 357,
+    "quantite": 8,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:33.124Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 87,
+  "fields": {
+    "stock_produit": 358,
+    "quantite": 45,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:44.417Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 88,
+  "fields": {
+    "stock_produit": 359,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:55.685Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 89,
+  "fields": {
+    "stock_produit": 360,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:06.944Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 90,
+  "fields": {
+    "stock_produit": 361,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:18.239Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 91,
+  "fields": {
+    "stock_produit": 362,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:29.536Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 92,
+  "fields": {
+    "stock_produit": 363,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:40.755Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 93,
+  "fields": {
+    "stock_produit": 364,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:50.752Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 94,
+  "fields": {
+    "stock_produit": 365,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:57.202Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 95,
+  "fields": {
+    "stock_produit": 366,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:04.619Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 96,
+  "fields": {
+    "stock_produit": 367,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:20.154Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 97,
+  "fields": {
+    "stock_produit": 368,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:22.305Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 98,
+  "fields": {
+    "stock_produit": 369,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:23.600Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 99,
+  "fields": {
+    "stock_produit": 370,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:24.518Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 100,
+  "fields": {
+    "stock_produit": 371,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:25.431Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 101,
+  "fields": {
+    "stock_produit": 372,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:26.528Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 102,
+  "fields": {
+    "stock_produit": 373,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:27.344Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 103,
+  "fields": {
+    "stock_produit": 374,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:28.429Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 104,
+  "fields": {
+    "stock_produit": 375,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:29.533Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 105,
+  "fields": {
+    "stock_produit": 376,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:30.640Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 106,
+  "fields": {
+    "stock_produit": 377,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:31.692Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 107,
+  "fields": {
+    "stock_produit": 378,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:32.518Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 108,
+  "fields": {
+    "stock_produit": 379,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:33.547Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 109,
+  "fields": {
+    "stock_produit": 380,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:34.379Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 110,
+  "fields": {
+    "stock_produit": 381,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:35.429Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 111,
+  "fields": {
+    "stock_produit": 382,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:36.296Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 112,
+  "fields": {
+    "stock_produit": 383,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:37.193Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 113,
+  "fields": {
+    "stock_produit": 384,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:38.266Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 114,
+  "fields": {
+    "stock_produit": 385,
+    "quantite": 96,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:39.368Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 115,
+  "fields": {
+    "stock_produit": 386,
+    "quantite": 48,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:40.407Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 116,
+  "fields": {
+    "stock_produit": 387,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:41.292Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 117,
+  "fields": {
+    "stock_produit": 388,
+    "quantite": 65,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:42.374Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 118,
+  "fields": {
+    "stock_produit": 389,
+    "quantite": 14,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:43.295Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 119,
+  "fields": {
+    "stock_produit": 390,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:44.177Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 120,
+  "fields": {
+    "stock_produit": 391,
+    "quantite": 65,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:45.546Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 121,
+  "fields": {
+    "stock_produit": 392,
+    "quantite": 13,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:47.046Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 122,
+  "fields": {
+    "stock_produit": 393,
+    "quantite": 14,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:48.109Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 123,
+  "fields": {
+    "stock_produit": 394,
+    "quantite": 17,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:49.336Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 124,
+  "fields": {
+    "stock_produit": 395,
+    "quantite": 65,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:50.216Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 125,
+  "fields": {
+    "stock_produit": 396,
+    "quantite": 65,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:51.282Z"
+  }
+},
+{
+  "model": "shop.collection",
+  "pk": 1,
+  "fields": {
+    "title": "New Collection",
+    "description": "50% off",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "collection/2024/05/19/cc83b177a201fbc5f2bfd363969c4ae7fe1ea818.png",
+    "updated_at": "2024-05-24T13:16:03.212Z",
+    "created_at": "2024-05-24T13:16:03.212Z"
+  }
+},
+{
+  "model": "shop.collection",
+  "pk": 2,
+  "fields": {
+    "title": "New Collection",
+    "description": "75% off",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "collection/2024/05/19/a590a3a73ffed7904280f3f6c4f15da2e1702ec6.png",
+    "updated_at": "2024-05-24T13:16:03.224Z",
+    "created_at": "2024-05-24T13:16:03.224Z"
+  }
+},
+{
+  "model": "shop.navcollection",
+  "pk": 1,
+  "fields": {
+    "title": "New Arrival",
+    "description": "10% off",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "navcollection/2024/09/27/4A7F5EA_img3_oenm9yz.jpg",
+    "updated_at": "2024-09-27T15:17:50.022Z",
+    "created_at": "2024-05-24T13:18:44.747Z"
+  }
+},
+{
+  "model": "shop.navcollection",
+  "pk": 2,
+  "fields": {
+    "title": "Best seller",
+    "description": "15% off",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "navcollection/2024/09/27/20TLS3BJ03_img4_PELgj7B.jpg",
+    "updated_at": "2024-09-27T15:15:38.396Z",
+    "created_at": "2024-05-24T13:18:44.760Z"
+  }
+},
+{
+  "model": "shop.navcollection",
+  "pk": 3,
+  "fields": {
+    "title": "for Kids",
+    "description": "20% off",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "navcollection/2024/09/27/82H8015QFE_img1_28lZjG6.jpg",
+    "updated_at": "2024-09-27T15:18:44.467Z",
+    "created_at": "2024-05-24T13:18:44.765Z"
+  }
+},
+{
+  "model": "shop.page",
+  "pk": 1,
+  "fields": {
+    "name": "About",
+    "slug": "about",
+    "content": "<p><strong>Bienvenue chez SoPresCom,</strong></p>\r\n\r\n<p>votre destination en ligne ultime pour d&eacute;couvrir les derni&egrave;res tendances en mati&egrave;re de produits &eacute;lectroniques. Chez JStore, nous sommes passionn&eacute;s par la technologie et nous nous engageons &agrave; vous fournir une exp&eacute;rience d&#39;achat exceptionnelle tout en vous offrant une gamme soigneusement s&eacute;lectionn&eacute;e de produits de haute qualit&eacute;. Notre mission est de rendre la technologie accessible &agrave; tous et de vous aider &agrave; trouver les solutions &eacute;lectroniques les plus adapt&eacute;es &agrave; vos besoins.</p>\r\n\r\n<p><br />\r\nNotre Histoire</p>\r\n\r\n<p><br />\r\nJStore a &eacute;t&eacute; fond&eacute; en 2010 par un groupe d&#39;enthousiastes de la technologie qui croyaient en la puissance de l&#39;innovation pour transformer nos vies. Ce qui a commenc&eacute; comme une petite boutique en ligne sp&eacute;cialis&eacute;e dans les gadgets &eacute;lectroniques est maintenant devenu un acteur majeur du commerce &eacute;lectronique, offrant une vaste gamme de produits allant des smartphones aux gadgets de maison intelligente et aux accessoires high-tech.</p>\r\n\r\n<p><br />\r\nNotre Engagement envers la Qualit&eacute;</p>\r\n\r\n<p><br />\r\nNous comprenons &agrave; quel point il est important pour nos clients de faire des achats &eacute;clair&eacute;s. C&#39;est pourquoi nous nous engageons &agrave; ne proposer que des produits de la plus haute qualit&eacute;, provenant de fabricants r&eacute;put&eacute;s et fiables. Chaque produit pr&eacute;sent sur JStore est minutieusement &eacute;valu&eacute; pour garantir qu&#39;il r&eacute;pond aux normes de qualit&eacute; et de performance que nos clients m&eacute;ritent.</p>\r\n\r\n<p><br />\r\nL&#39;&Eacute;quipe SoPresCom</p>\r\n\r\n<p><br />\r\nNotre &eacute;quipe est compos&eacute;e d&#39;experts passionn&eacute;s par la technologie et le commerce &eacute;lectronique. Nous travaillons sans rel&acirc;che pour vous offrir une exp&eacute;rience de magasinage en ligne fluide et agr&eacute;able. Que vous ayez des questions sur nos produits, besoin de conseils d&#39;achat ou d&#39;une assistance apr&egrave;s-vente, notre &eacute;quipe amicale est l&agrave; pour vous aider &agrave; chaque &eacute;tape du processus.</p>\r\n\r\n<p><br />\r\nNotre Engagement envers la Satisfaction Client</p>\r\n\r\n<p><br />\r\nVotre satisfaction est notre priorit&eacute; num&eacute;ro un. Nous nous effor&ccedil;ons constamment de d&eacute;passer vos attentes en mati&egrave;re de service client. Si vous avez des pr&eacute;occupations, des commentaires ou des suggestions, n&#39;h&eacute;sitez pas &agrave; nous contacter. Nous sommes l&agrave; pour vous &eacute;couter et nous nous engageons &agrave; r&eacute;soudre tout probl&egrave;me de mani&egrave;re rapide et efficace.</p>\r\n\r\n<p><br />\r\nRejoignez-Nous dans l&#39;Aventure Technologique</p>\r\n\r\n<p><br />\r\nNous vous invitons &agrave; parcourir notre collection soigneusement choisie de produits &eacute;lectroniques et &agrave; vous joindre &agrave; nous dans cette aventure technologique passionnante. Que vous soyez un passionn&eacute; de gadgets, un amateur de nouvelles technologies ou simplement &agrave; la recherche des derni&egrave;res tendances, JStore est l&#39;endroit o&ugrave; vous pouvez trouver tout cela et plus encore.</p>\r\n\r\n<p><br />\r\nMerci de faire partie de la famille SoPresCom&nbsp;et de nous permettre de vous servir avec les meilleures solutions &eacute;lectroniques et le meilleur service possible.</p>\r\n\r\n<p><br />\r\nL&#39;&eacute;quipe <strong>SoPresCom</strong></p>",
+    "is_head": true,
+    "is_foot": true,
+    "is_checkout": true,
+    "updated_at": "2024-05-24T13:18:44.774Z",
+    "created_at": "2024-05-24T13:18:44.774Z"
+  }
+},
+{
+  "model": "shop.page",
+  "pk": 2,
+  "fields": {
+    "name": "Contact",
+    "slug": "contact",
+    "content": "<p>Contactez-Nous</p>\r\n\r\n<p>Nous sommes l&agrave; pour vous aider et r&eacute;pondre &agrave; toutes vos questions. Que vous ayez besoin d&#39;aide pour passer une commande, des informations sur nos produits ou des pr&eacute;occupations concernant votre achat, n&#39;h&eacute;sitez pas &agrave; nous contacter. Voici comment vous pouvez entrer en contact avec nous :</p>\r\n\r\n<p>Service Client&egrave;le :</p>\r\n\r\n<p>Notre &eacute;quipe de service client&egrave;le est disponible pour r&eacute;pondre &agrave; toutes vos questions du lundi au vendredi, de 9h00 &agrave; 18h00.</p>\r\n\r\n<p>T&eacute;l&eacute;phone : [Num&eacute;ro de t&eacute;l&eacute;phone]<br />\r\nChat en Direct : [Lien vers le chat en direct]<br />\r\nE-mail : [Adresse e-mail]<br />\r\nN&#39;h&eacute;sitez pas &agrave; nous contacter par t&eacute;l&eacute;phone pour obtenir une assistance imm&eacute;diate. Si vous pr&eacute;f&eacute;rez une interaction en ligne, notre chat en direct est l&agrave; pour vous connecter directement &agrave; l&#39;un de nos repr&eacute;sentants du service client.</p>\r\n\r\n<p>Assistance Technique :</p>\r\n\r\n<p>Si vous avez des probl&egrave;mes techniques avec l&#39;un de nos produits ou si vous avez besoin d&#39;aide pour l&#39;installation et la configuration, notre &eacute;quipe d&#39;assistance technique est pr&ecirc;te &agrave; vous aider.</p>\r\n\r\n<p>T&eacute;l&eacute;phone : [Num&eacute;ro de t&eacute;l&eacute;phone]<br />\r\nChat en Direct : [Lien vers le chat en direct]<br />\r\nE-mail : [Adresse e-mail]<br />\r\nN&#39;ayez pas peur de nous contacter en cas de difficult&eacute;s techniques. Nous sommes l&agrave; pour vous guider &agrave; travers chaque &eacute;tape.</p>\r\n\r\n<p>Questions G&eacute;n&eacute;rales :</p>\r\n\r\n<p>Pour toutes les questions g&eacute;n&eacute;rales, les commentaires ou les suggestions, vous pouvez nous joindre via l&#39;e-mail suivant :</p>\r\n\r\n<p>E-mail : [Adresse e-mail]<br />\r\nNous appr&eacute;cions vos retours et sommes ouverts &agrave; toutes les suggestions pour am&eacute;liorer votre exp&eacute;rience chez JStore.</p>\r\n\r\n<p>Adresse :</p>\r\n\r\n<p>Si vous pr&eacute;f&eacute;rez nous rendre visite en personne ou envoyer des documents par courrier, voici notre adresse physique :</p>\r\n\r\n<p>[JStore Adresse]<br />\r\n[Code Postal, Ville]<br />\r\n[Pays]</p>\r\n\r\n<p>Suivez-Nous :</p>\r\n\r\n<p>Restez connect&eacute; avec nous sur les r&eacute;seaux sociaux pour les derni&egrave;res mises &agrave; jour, les offres sp&eacute;ciales et les nouvelles technologies passionnantes.</p>\r\n\r\n<p>Facebook : [Lien vers la page Facebook]<br />\r\nTwitter : [Lien vers la page Twitter]<br />\r\nInstagram : [Lien vers la page Instagram]<br />\r\nN&#39;h&eacute;sitez pas &agrave; nous contacter &agrave; tout moment. Votre satisfaction est notre priorit&eacute;, et nous sommes l&agrave; pour vous offrir le meilleur service possible.</p>\r\n\r\n<p>L&#39;&eacute;quipe SoPresCom</p>",
+    "is_head": false,
+    "is_foot": true,
+    "is_checkout": false,
+    "updated_at": "2024-05-24T13:18:44.783Z",
+    "created_at": "2024-05-24T13:18:44.783Z"
+  }
+},
+{
+  "model": "shop.page",
+  "pk": 3,
+  "fields": {
+    "name": "Legales_menstions",
+    "slug": "legales-menstions",
+    "content": "<p>Mentions L&eacute;gales</p>\r\n\r\n<p>1. &Eacute;diteur du Site</p>\r\n\r\n<p>Le site web &quot;www.jstore.fr&quot; est &eacute;dit&eacute; par JStore, une soci&eacute;t&eacute; enregistr&eacute;e sous le num&eacute;ro [num&eacute;ro d&#39;enregistrement] et dont le si&egrave;ge social est situ&eacute; &agrave; [adresse du si&egrave;ge social]. Pour toute question ou demande, veuillez nous contacter &agrave; l&#39;adresse e-mail suivante : [adresse e-mail de contact].</p>\r\n\r\n<p>2. Directeur de la Publication</p>\r\n\r\n<p>Le Directeur de la Publication du site &quot;www.jstore.fr&quot; est [Nom du Directeur de la Publication], en qualit&eacute; de [poste du Directeur de la Publication].</p>\r\n\r\n<p>3. H&eacute;bergement</p>\r\n\r\n<p>Le site est h&eacute;berg&eacute; par [Nom de l&#39;h&eacute;bergeur], dont le si&egrave;ge social est situ&eacute; &agrave; [adresse de l&#39;h&eacute;bergeur]. Pour toute question concernant l&#39;h&eacute;bergement du site, veuillez contacter : [adresse e-mail de contact de l&#39;h&eacute;bergeur].</p>\r\n\r\n<p>4. Propri&eacute;t&eacute; Intellectuelle</p>\r\n\r\n<p>Tous les &eacute;l&eacute;ments pr&eacute;sents sur le site &quot;www.jstore.fr&quot;, tels que les textes, images, graphiques, logos, ic&ocirc;nes, vid&eacute;os, clips audio, ainsi que leur mise en forme, sont la propri&eacute;t&eacute; exclusive de JStore, &agrave; moins qu&#39;une mention contraire ne soit sp&eacute;cifi&eacute;e. Toute reproduction, distribution, modification, adaptation, ou repr&eacute;sentation de tout ou partie de ces &eacute;l&eacute;ments, sans l&#39;autorisation &eacute;crite pr&eacute;alable de JStore, est strictement interdite et constitue une violation des droits de propri&eacute;t&eacute; intellectuelle.</p>\r\n\r\n<p>5. Protection des Donn&eacute;es Personnelles</p>\r\n\r\n<p>Pour plus d&#39;informations sur la collecte, le traitement et la protection de vos donn&eacute;es personnelles, veuillez consulter notre Politique de Confidentialit&eacute; [lien vers la Politique de Confidentialit&eacute;].</p>\r\n\r\n<p>6. Liens Externes</p>\r\n\r\n<p>Le site &quot;www.jstore.fr&quot; peut contenir des liens vers des sites externes. JStore ne peut &ecirc;tre tenu responsable du contenu de ces sites externes ni des pratiques en mati&egrave;re de confidentialit&eacute; et de s&eacute;curit&eacute; qu&#39;ils appliquent. L&#39;utilisation de ces liens externes se fait sous votre propre responsabilit&eacute;.</p>\r\n\r\n<p>7. Cookies</p>\r\n\r\n<p>Le site peut utiliser des cookies pour am&eacute;liorer votre exp&eacute;rience de navigation. Pour en savoir plus sur l&#39;utilisation des cookies sur notre site, veuillez consulter notre Politique de Cookies [lien vers la Politique de Cookies].</p>\r\n\r\n<p>8. Limitation de Responsabilit&eacute;</p>\r\n\r\n<p>JStore s&#39;efforce de fournir des informations exactes et &agrave; jour sur son site. Cependant, JStore ne peut garantir l&#39;exactitude, la compl&eacute;tude ou la pertinence des informations fournies. En cons&eacute;quence, JStore d&eacute;cline toute responsabilit&eacute; en cas d&#39;erreur, d&#39;omission ou de retard dans la mise &agrave; jour des informations pr&eacute;sentes sur le site.</p>\r\n\r\n<p>9. Juridiction Applicable</p>\r\n\r\n<p>Les pr&eacute;sentes mentions l&eacute;gales sont r&eacute;gies par les lois en vigueur du [pays ou r&eacute;gion] et tout litige d&eacute;coulant de l&#39;utilisation du site &quot;www.jstore.fr&quot; sera soumis &agrave; la comp&eacute;tence exclusive des tribunaux de [ville, pays ou r&eacute;gion].</p>\r\n\r\n<p>Pour toute question relative aux mentions l&eacute;gales du site, veuillez nous contacter &agrave; l&#39;adresse e-mail suivante : [adresse e-mail de contact].</p>\r\n\r\n<p>Derni&egrave;re mise &agrave; jour : [date de la derni&egrave;re mise &agrave; jour].</p>",
+    "is_head": false,
+    "is_foot": true,
+    "is_checkout": true,
+    "updated_at": "2024-05-24T13:18:44.793Z",
+    "created_at": "2024-05-24T13:18:44.793Z"
+  }
+},
+{
+  "model": "shop.page",
+  "pk": 4,
+  "fields": {
+    "name": "Partenaire",
+    "slug": "Partenaire",
+    "content": "<p>Nos Partenaires</p>\r\n\r\n<p>Chez JStore, nous croyons en la puissance de la collaboration pour offrir &agrave; nos clients les meilleures solutions technologiques. Nous sommes fiers de travailler avec des partenaires de confiance qui partagent notre engagement envers la qualit&eacute;, l&#39;innovation et le service exceptionnel. D&eacute;couvrez nos partenaires qui contribuent &agrave; faire de JStore votre destination privil&eacute;gi&eacute;e pour tous vos besoins technologiques.</p>\r\n\r\n<p>Partenaire 1 : [Nom du Partenaire]</p>\r\n\r\n<p>Description du partenariat avec le Partenaire 1. Expliquez comment ce partenariat contribue &agrave; enrichir l&#39;offre de produits de JStore, et comment il b&eacute;n&eacute;ficie &agrave; nos clients. Mettez en avant les produits ou les domaines dans lesquels ce partenaire excelle.</p>\r\n\r\n<p>Partenaire 2 : [Nom du Partenaire]</p>\r\n\r\n<p>Description du partenariat avec le Partenaire 2. Mettez en &eacute;vidence les avantages que ce partenaire apporte &agrave; JStore et &agrave; nos clients. Cela pourrait inclure des avantages tels que des offres sp&eacute;ciales, des produits exclusifs ou des synergies dans certains domaines technologiques.</p>\r\n\r\n<p>Partenaire 3 : [Nom du Partenaire]</p>\r\n\r\n<p>Description du partenariat avec le Partenaire 3. Parlez des domaines de collaboration avec ce partenaire, que ce soit en termes d&#39;approvisionnement en produits, de support technique ou d&#39;autres aspects qui contribuent &agrave; l&#39;exp&eacute;rience globale de nos clients.</p>\r\n\r\n<p>Partenaire 4 : [Nom du Partenaire]</p>\r\n\r\n<p>Description du partenariat avec le Partenaire 4. Mettez en avant les raisons pour lesquelles ce partenariat est pr&eacute;cieux pour JStore et comment il renforce notre position en tant que fournisseur de confiance dans le domaine des produits &eacute;lectroniques.</p>\r\n\r\n<p>Chez JStore, nous choisissons soigneusement nos partenaires pour garantir que nos clients b&eacute;n&eacute;ficient des meilleures solutions et du meilleur service. Chaque partenariat que nous entretenons est bas&eacute; sur la confiance, l&#39;int&eacute;grit&eacute; et la poursuite de l&#39;excellence. Nous sommes ravis de collaborer avec des leaders de l&#39;industrie pour vous offrir une gamme diversifi&eacute;e de produits technologiques de haute qualit&eacute;.</p>\r\n\r\n<p>Si vous souhaitez en savoir plus sur nos partenaires ou sur la possibilit&eacute; de devenir un partenaire de JStore, n&#39;h&eacute;sitez pas &agrave; nous contacter.</p>\r\n\r\n<p>L&#39;&eacute;quipe JStore</p>",
+    "is_head": true,
+    "is_foot": true,
+    "is_checkout": false,
+    "updated_at": "2024-05-24T13:18:44.803Z",
+    "created_at": "2024-05-24T13:18:44.803Z"
+  }
+},
+{
+  "model": "shop.page",
+  "pk": 5,
+  "fields": {
+    "name": "Service",
+    "slug": "service",
+    "content": "<p><strong>Nos Services</strong></p>\r\n\r\n<p><br />\r\n<strong>Chez SopresCom, notre objectif est de vous offrir bien plus qu&#39;une simple exp&eacute;rience d&#39;achat en ligne. Nous nous engageons &agrave; vous fournir une gamme compl&egrave;te de services pour rendre votre exp&eacute;rience avec nous inoubliable. D&eacute;couvrez ci-dessous les services que nous proposons pour r&eacute;pondre &agrave; vos besoins technologiques.</strong></p>\r\n\r\n<p><br />\r\n<strong>1. Livraison Rapide et Fiable</strong></p>\r\n\r\n<p><br />\r\n<strong>Nous comprenons que vous &ecirc;tes impatient de recevoir vos nouveaux produits &eacute;lectroniques. C&#39;est pourquoi nous offrons une livraison rapide et fiable pour que vos achats vous parviennent en temps voulu et en parfait &eacute;tat. Avec des options de livraison flexibles, choisissez ce qui vous convient le mieux.</strong></p>\r\n\r\n<p><br />\r\n<strong>2. Service Client D&eacute;di&eacute;</strong></p>\r\n\r\n<p><br />\r\n<strong>Notre &eacute;quipe de service client d&eacute;vou&eacute;e est l&agrave; pour r&eacute;pondre &agrave; toutes vos questions et pr&eacute;occupations. Que vous ayez besoin d&#39;assistance pour passer une commande, des informations sur un produit ou de l&#39;aide pour r&eacute;soudre un probl&egrave;me, notre &eacute;quipe amicale et comp&eacute;tente est &agrave; votre disposition par t&eacute;l&eacute;phone, chat en direct ou e-mail.</strong></p>\r\n\r\n<p><br />\r\n<strong>3. Installation et Configuration</strong></p>\r\n\r\n<p><br />\r\n<strong>Certains produits &eacute;lectroniques peuvent &ecirc;tre complexes &agrave; installer et &agrave; configurer. C&#39;est pourquoi nous offrons des services d&#39;installation et de configuration pour vous assurer que vos nouveaux gadgets fonctionnent parfaitement d&egrave;s leur sortie de la bo&icirc;te. Notre &eacute;quipe technique peut vous guider &agrave; travers les &eacute;tapes n&eacute;cessaires pour vous simplifier la vie.</strong></p>\r\n\r\n<p><br />\r\n<strong>4. Garantie et Support Apr&egrave;s-Vente</strong></p>\r\n\r\n<p><br />\r\n<strong>Votre tranquillit&eacute; d&#39;esprit est importante pour nous. Tous nos produits sont couverts par des garanties pour vous prot&eacute;ger contre les d&eacute;fauts de fabrication et les probl&egrave;mes techniques. En cas de besoin, notre &eacute;quipe de support apr&egrave;s-vente est pr&ecirc;te &agrave; vous assister pour r&eacute;soudre tout probl&egrave;me que vous pourriez rencontrer.</strong></p>\r\n\r\n<p><br />\r\n<strong>5. Conseils d&#39;Expert</strong></p>\r\n\r\n<p><br />\r\n<strong>Choisir le bon produit &eacute;lectronique peut parfois &ecirc;tre difficile avec toutes les options disponibles. Nos experts en technologie sont l&agrave; pour vous fournir des conseils personnalis&eacute;s en fonction de vos besoins et de vos pr&eacute;f&eacute;rences. Que vous recherchiez le dernier smartphone, une enceinte Bluetooth de qualit&eacute; ou des accessoires innovants, nous sommes l&agrave; pour vous guider.</strong></p>\r\n\r\n<p><br />\r\n<strong>6. Programme de Fid&eacute;lit&eacute;</strong></p>\r\n\r\n<p><br />\r\n<strong>Nous appr&eacute;cions la confiance que vous nous accordez en choisissant JStore pour vos achats. C&#39;est pourquoi nous avons mis en place un programme de fid&eacute;lit&eacute; pour r&eacute;compenser nos clients fid&egrave;les. Gagnez des points &agrave; chaque achat et profitez de r&eacute;ductions sp&eacute;ciales et d&#39;offres exclusives r&eacute;serv&eacute;es aux membres.</strong></p>\r\n\r\n<p><br />\r\n<strong>Chez SopresCom, nous ne consid&eacute;rons pas seulement vos achats comme des transactions, mais comme le d&eacute;but d&#39;une relation &agrave; long terme. Explorez nos services pour une exp&eacute;rience d&#39;achat compl&egrave;te et satisfaisante.</strong></p>\r\n\r\n<p><br />\r\n<strong>L&#39;&eacute;quipe SopresCom</strong><br />\r\n&nbsp;</p>",
+    "is_head": false,
+    "is_foot": true,
+    "is_checkout": false,
+    "updated_at": "2024-05-24T13:18:44.814Z",
+    "created_at": "2024-05-24T13:18:44.814Z"
+  }
+}
+]

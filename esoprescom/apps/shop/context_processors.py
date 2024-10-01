@@ -75,6 +75,7 @@ def site_settings(request):
         })     
     context = {
         'name':site_settings.name,
+        'currency':site_settings.currency,
         'description':site_settings.description,
         'email':site_settings.email,
         'phone':site_settings.phone,

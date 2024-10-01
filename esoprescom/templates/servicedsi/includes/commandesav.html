@@ -46,6 +46,7 @@
                       {#   {% include "servicedsi/includes/sav_details_commande.html" with commandesav=row %} #}
                       <button id="id_CommandeDetail{{row.idcommandesav}}" 
                               data-url="{% url 'serviceapresvente:commandesav-show' row.idcommandesav %}" 
+                              data-modalname="Commande SAV"
                               class="btn btn-fill-out btn-sm commandesav" >View</button>
                       </td>
                   </tr>

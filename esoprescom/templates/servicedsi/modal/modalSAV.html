@@ -3,7 +3,7 @@
   <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="SavResquestModalLabel">New SAV</h5>
+        <h5 class="modal-title" id="SavResquestModalLabel"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="form-container" >
@@ -24,8 +24,24 @@
  
 {% block script %}
 <script>
+$(document).ready(function() {
 
-    </script>
-{% endblock  %}
+function resetModal() {
+  var commandesavField = document.querySelector('#BtnInstanceUpd');
+  commandesavField.removeAttribute('disabled'); 
+  commandesavField.classList.remove('grayed-out');
+  
+  
+}
+
+$('#SavResquestModal').on('shown.bs.modal', function() {
+  resetModal();
+});
+})
+
+
+</script>
+{% endblock %}
+
 
 

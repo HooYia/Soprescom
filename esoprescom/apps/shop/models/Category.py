@@ -2,11 +2,11 @@ from django.db import models
 from django.utils.text import slugify
 
 class Category(models.Model):
-    name = models.CharField(max_length=50, blank=False, null=False)
+    name = models.CharField(max_length=50,unique=True, blank=False, null=False)
     description = models.CharField(max_length=120, blank=False, null=False)
     slug = models.SlugField(max_length=255, blank=False, null=False)
     image = models.ImageField(upload_to="category_images/%Y/%m/%d/", blank=False, null=False)
-    is_mega = models.BooleanField(blank=False, null=False)
+    is_mega = models.BooleanField(default=False,blank=False, null=False)
     updated_at = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

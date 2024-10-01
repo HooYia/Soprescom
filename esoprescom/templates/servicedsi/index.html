@@ -323,14 +323,15 @@
   Launch demo modal
 </button>
 -->
- 
+{% include "servicedsi/modal/modal.html" %}  
+
 {% include "servicedsi/modal/modalSAV.html" %}  
 {% include "servicedsi/modal/modalCommande.html" %}
-
+<!--
 {% include "servicedsi/modal/modalInstanceCreate.html" %}
 {% include "servicedsi/modal/modalInstance.html" %}
 {% include "servicedsi/leasing/modalLeasing.html" %}
-
+-->
 {% endblock  %}
 
 {% block script %}
@@ -345,6 +346,7 @@ $(document).on('click', '#savcreate,#id_instancecreate', function() {
     //$('#id_recouvrement_hp input:disabled').prop('disabled', false);
     
     var url = $(this).data('url');
+    var modalname = $(this).data('modalname');
     console.log('url:',url);
     
     $.ajax({
@@ -354,6 +356,8 @@ $(document).on('click', '#savcreate,#id_instancecreate', function() {
     success: function(data) {
         //$('#form-container').html(data);
         $('#form-container').html(data);
+        // Change le titre de la modale avec la valeur de modalname
+        $('#SavResquestModal .modal-title').text(modalname);
         $('#SavResquestModal').modal('show');
     },
     error: function(data) {
@@ -433,6 +437,7 @@ $(document).on('click', '.commandesav', function(e) {
   
       var specificUrl = currentElement.attr('href');
       var url = $(currentElement).data('url');
+      var modalname = $(currentElement).data('modalname');
       console.log('specificUrl:',specificUrl)
       console.log('url:',url)
   
@@ -442,6 +447,7 @@ $(document).on('click', '.commandesav', function(e) {
         dataType: 'html',
         success: function(data) {
           $('#commande-container').html(data);
+          $('#CommandeDetailModal .modal-title').text(modalname);
           $('#CommandeDetailModal').modal('show');
           
         },  
@@ -536,6 +542,7 @@ $(document).ready(function(event) {
     e.preventDefault();
     var currentElement = $(this);
     var url = $(currentElement).data('url');
+    var modalname = $(currentElement).data('modalname');
     console.log('url:',url);
     
     $.ajax({
@@ -544,8 +551,11 @@ $(document).ready(function(event) {
     dataType: 'html',
     success: function(data) {
         //$('#form-container').html(data);
-        $('#container').html(data);
-        $('#InstanceDetailModal').modal('show');
+        $('#ModalData').html(data);
+        // Change le titre de la modale avec la valeur de modalname
+        $('#ModalWindows .modal-title').text(modalname);
+
+        $('#ModalWindows').modal('show');
     },
     error: function(data) {
         alert('error');
@@ -592,16 +602,22 @@ $(document).on('click', '.commandesav', function(e) {
     //$('#id_recouvrement_hp input:disabled').prop('disabled', false);
     
     var url = $(this).data('url');
+    var modalname = $(this).data('modalname');
     console.log('url:',url);
+    console.log('modalname:',modalname);
     
     $.ajax({
     url: url,
     type: 'get',
     dataType: 'html',
     success: function(data) {
+        $('#ModalData').html(data);
+         // Change le titre de la modale avec la valeur de modalname
+        $('#ModalWindows .modal-title').text(modalname);
+        $('#ModalWindows').modal('show');
         //$('#form-container').html(data);
-        $('#form-container2').html(data);
-        $('#LeasingDetailModal').modal('show');
+        //$('#form-container2').html(data);
+        //$('#LeasingDetailModal').modal('show');
     },
     error: function(data) {
         alert('error');

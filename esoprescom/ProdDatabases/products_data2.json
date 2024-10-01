@@ -1,0 +1,2978 @@
+[
+{
+  "model": "shop.product",
+  "pk": 273,
+  "fields": {
+    "name": "LENOVO ThinkPad T14 Gen2 Intel Core i5-1135G7 14p FHD 16Go 512Go SSD M.2 2280 Intel UHD Graphics W10",
+    "slug": "lenovo-thinkpad-t14-gen2-intel-core-i5-1135g7-14p-fhd-16go-512go-ssd-m2-2280-intel-uhd-graphics-w10",
+    "description": "LENOVO ThinkPad T14 Gen2 Intel Core i5-1135G7 14p FHD 16Go 512Go SSD M.2 2280 Intel UHD Graphics W10 10 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadt/t14-g2-(intel)/22tpt14t4n2",
+    "solde_price": 926400.0,
+    "regular_price": 965000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:36:47.158Z",
+    "created_at": "2024-09-27T14:36:46.064Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 274,
+  "fields": {
+    "name": "Lenovo ThinkPad E14 Gen 5 (Intel) Intel Core i5-1335U 16 GB DDR4 / Disque SSD M.2  512GB 14.0”, WUXGA",
+    "slug": "lenovo-thinkpad-e14-gen-5-intel-intel-core-i5-1335u-16-gb-ddr4-disque-ssd-m2-512gb-140-wuxga",
+    "description": "Lenovo ThinkPad E14 Gen 5 (Intel) Intel Core i5-1335U 16 GB DDR4 / Disque SSD M.2  512GB 14.0”, WUXGA 25 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.cdw.com/product/lenovo-thinkpad-e14-gen-5-14-intel-core-i5-1335u-16-gb-ram-512-g/7520161",
+    "solde_price": 667200.0,
+    "regular_price": 695000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:36:50.677Z",
+    "created_at": "2024-09-27T14:36:49.724Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 275,
+  "fields": {
+    "name": "Lenovo ThinkPad E14-G5 14FHD Ci5-1335U 16 GB 512SSD Window 11 pro",
+    "slug": "lenovo-thinkpad-e14-g5-14fhd-ci5-1335u-16-gb-512ssd-window-11-pro",
+    "description": "Lenovo ThinkPad E14-G5 14FHD Ci5-1335U 16 GB 512SSD Window 11 pro 10 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-i5-1335U-1920x1200-Fingerprint/dp/B0CYCQ8Y6J",
+    "solde_price": 667200.0,
+    "regular_price": 695000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:36:53.807Z",
+    "created_at": "2024-09-27T14:36:53.019Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 276,
+  "fields": {
+    "name": "Lenovo ThinkPad E16-G1 16FHD Ci5-1335U 16 GB 512SSD FPR Free Dos 1Y",
+    "slug": "lenovo-thinkpad-e16-g1-16fhd-ci5-1335u-16-gb-512ssd-fpr-free-dos-1y",
+    "description": "Lenovo ThinkPad E16-G1 16FHD Ci5-1335U 16 GB 512SSD FPR Free Dos 1Y 5 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.cdw.com/product/lenovo-thinkpad-e16-gen-1-16-intel-core-i5-1335u-16-gb-ram-256-g/7520168",
+    "solde_price": 643200.0,
+    "regular_price": 670000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:36:57.311Z",
+    "created_at": "2024-09-27T14:36:56.388Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 277,
+  "fields": {
+    "name": "Lenovo ThinkPad L14 Gen 2 20X1 -Core i5 1145G7 -  16 Go RAM - 512 Go SSD ,Win 10 Pro 64, NVMe, FR",
+    "slug": "lenovo-thinkpad-l14-gen-2-20x1-core-i5-1145g7-16-go-ram-512-go-ssd-win-10-pro-64-nvme-fr",
+    "description": "Lenovo ThinkPad L14 Gen 2 20X1 -Core i5 1145G7 -  16 Go RAM - 512 Go SSD ,Win 10 Pro 64, NVMe, FR 7 unités disponibles.",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 624000.0,
+    "regular_price": 650000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:37:00.360Z",
+    "created_at": "2024-09-27T14:36:59.565Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 278,
+  "fields": {
+    "name": "Lenovo ThinkPad T14 Gen 2 20W1 Core i5 1135G7/2.4 GHz-Win10 Pro 64-bit 16 GB RAM-512GB SSD 14\" Wi-Fi",
+    "slug": "lenovo-thinkpad-t14-gen-2-20w1-core-i5-1135g724-ghz-win10-pro-64-bit-16-gb-ram-512gb-ssd-14-wi-fi",
+    "description": "Lenovo ThinkPad T14 Gen 2 20W1 Core i5 1135G7/2.4 GHz-Win10 Pro 64-bit 16 GB RAM-512GB SSD 14\" Wi-Fi 14 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/ThinkPad-T14-i5-1135G7-Fingerprint-Thunderbolt/dp/B09YLYM6VV",
+    "solde_price": 979200.0,
+    "regular_price": 1020000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:01.661Z",
+    "created_at": "2024-09-27T14:37:00.378Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 279,
+  "fields": {
+    "name": "Lenovo ThinkPad T14s Gen 2 20WM - Core i5 1135G7/2,4 GHz -Win10Pro/ 16  Go 512GB SSD M2.2280 NVME",
+    "slug": "lenovo-thinkpad-t14s-gen-2-20wm-core-i5-1135g724-ghz-win10pro-16-go-512gb-ssd-m22280-nvme",
+    "description": "Lenovo ThinkPad T14s Gen 2 20WM - Core i5 1135G7/2,4 GHz -Win10Pro/ 16  Go 512GB SSD M2.2280 NVME 26 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.lenovo.com/us/outletus/en/p/laptops/thinkpad/thinkpadt/thinkpad-t14s-g2/20wmx052us",
+    "solde_price": 1147200.0,
+    "regular_price": 1195000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:05.303Z",
+    "created_at": "2024-09-27T14:37:04.161Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 280,
+  "fields": {
+    "name": "Dell Latitude 5440 - Intel Core i5 1335U / 16 Go RAM - 512 Go SSD NVMe  Win 11 Pro,Carte graphique I",
+    "slug": "dell-latitude-5440-intel-core-i5-1335u-16-go-ram-512-go-ssd-nvme-win-11-procarte-graphique-i",
+    "description": "Dell Latitude 5440 - Intel Core i5 1335U / 16 Go RAM - 512 Go SSD NVMe  Win 11 Pro,Carte graphique I 15 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.dell.com/en-us/shop/dell-computer-laptops/latitude-5440-laptop/spd/latitude-14-5440-laptop",
+    "solde_price": 936000.0,
+    "regular_price": 975000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:37:09.032Z",
+    "created_at": "2024-09-27T14:37:07.878Z",
+    "categories": [
+      21
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 281,
+  "fields": {
+    "name": "Dell Inspiron 3520 - Intel Core i5-1135G7 - 16 Go RAM - 1 To SSD - 15,6\" FHD - Win 11 F - Clavier FR",
+    "slug": "dell-inspiron-3520-intel-core-i5-1135g7-16-go-ram-1-to-ssd-156-fhd-win-11-f-clavier-fr",
+    "description": "Dell Inspiron 3520 - Intel Core i5-1135G7 - 16 Go RAM - 1 To SSD - 15,6\" FHD - Win 11 F - Clavier FR 10 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Dell-Inspiron-Touchscreen-Computer-i5-1135G7/dp/B0CCS8CDTP",
+    "solde_price": 528000.0,
+    "regular_price": 550000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:37:13.669Z",
+    "created_at": "2024-09-27T14:37:12.635Z",
+    "categories": [
+      21
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 282,
+  "fields": {
+    "name": "HP EliteBook 450 Home G8 Intel core i5-1135G7 15.6p FHD AG 16 Go 512 Go SSD Intel Iri",
+    "slug": "hp-elitebook-450-home-g8-intel-core-i5-1135g7-156p-fhd-ag-16-go-512-go-ssd-intel-iri",
+    "description": "HP EliteBook 450 Home G8 Intel core i5-1135G7 15.6p FHD AG 16 Go 512 Go SSD Intel Iri 10 unités disponibles.",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 777600.0,
+    "regular_price": 810000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:17.662Z",
+    "created_at": "2024-09-27T14:37:16.686Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 283,
+  "fields": {
+    "name": "HP Portable 440 G10 Notebook - Intel Core i5 - 1335U / jusqu'à 4.6 GHz - Win 11 Pro - Carte graphique Intel Iris Xe - 16 Go RAM - 512 Go SSD NVMe - 14\" IPS 1920 x 1080 (Full HD) - 802.11a/b/g/n/ac/ax (Wi-Fi 6E) - brochet argent aluminium, clavier : Français ",
+    "slug": "hp-portable-440-g10-notebook-intel-core-i5-1335u-jusqua-46-ghz-win-11-pro-carte-graphique-intel-iris-xe-16-go-ram-512-go-ssd-nvme-14-ips-1920-x-1080-full-hd-80211abgnacax-wi-fi-6e-brochet-argent-aluminium-clavier-francais",
+    "description": "HP Portable 440 G10 Notebook - Intel Core i5 - 1335U / jusqu'à 4.6 GHz - Win 11 Pro - Carte graphique Intel Iris Xe - 16 Go RAM - 512 Go SSD NVMe - 14\" IPS 1920 x 1080 (Full HD) - 802.11a/b/g/n/ac/ax (Wi-Fi 6E) - brochet argent aluminium, clavier : Français  10 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-ProBook-440-Touchscreen-Notebook/dp/B0C4FTWJLN",
+    "solde_price": 816000.0,
+    "regular_price": 850000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:37:18.678Z",
+    "created_at": "2024-09-27T14:37:17.679Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 284,
+  "fields": {
+    "name": "HP Envy x360 13 2-en-1 Écran tactile FHD IPS 13,3\" i5-1135G7 de 11eG 16 Go de RAM 512 Go SSD Win10",
+    "slug": "hp-envy-x360-13-2-en-1-ecran-tactile-fhd-ips-133-i5-1135g7-de-11eg-16-go-de-ram-512-go-ssd-win10",
+    "description": "HP Envy x360 13 2-en-1 Écran tactile FHD IPS 13,3\" i5-1135G7 de 11eG 16 Go de RAM 512 Go SSD Win10 23 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Envy-Touch-Screen-Generation-Fingerprint/dp/B09CT2KP8F",
+    "solde_price": 748800.0,
+    "regular_price": 780000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:21.476Z",
+    "created_at": "2024-09-27T14:37:20.803Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 285,
+  "fields": {
+    "name": "HP Envy X360 13-Bd0026nf Core i5-1135G7 16 Go 512 Go Écran tactile - CLAVIER rétro éclairé Win11 home",
+    "slug": "hp-envy-x360-13-bd0026nf-core-i5-1135g7-16-go-512-go-ecran-tactile-clavier-retro-eclaire-win11-home",
+    "description": "HP Envy X360 13-Bd0026nf Core i5-1135G7 16 Go 512 Go Écran tactile - CLAVIER rétro éclairé Win11 home 21 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Touchscreen-i5-1135G7-Keyboard-Bluetooth/dp/B0CNJYXLP9",
+    "solde_price": 744000.0,
+    "regular_price": 775000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:24.604Z",
+    "created_at": "2024-09-27T14:37:23.479Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 286,
+  "fields": {
+    "name": "Hp Elitebook 840 G8 336d8ea 14 pouces intel core i5-1135G7 16 Go Ram DDR4 512 Go ssd win 10 pro argent",
+    "slug": "hp-elitebook-840-g8-336d8ea-14-pouces-intel-core-i5-1135g7-16-go-ram-ddr4-512-go-ssd-win-10-pro-argent",
+    "description": "Hp Elitebook 840 G8 336d8ea 14 pouces intel core i5-1135G7 16 Go Ram DDR4 512 Go ssd win 10 pro argent 32 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-EliteBook-Business-i5-1135G7-Fingerprint/dp/B0CRR35CS4",
+    "solde_price": 1017600.0,
+    "regular_price": 1060000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:37:27.818Z",
+    "created_at": "2024-09-27T14:37:26.880Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 287,
+  "fields": {
+    "name": "HP Elitebook 840 G5 Core i5 8250U 16 Go RAM, 512 Go SSD NVMe,14' Win 10Pro",
+    "slug": "hp-elitebook-840-g5-core-i5-8250u-16-go-ram-512-go-ssd-nvme14-win-10pro",
+    "description": "HP Elitebook 840 G5 Core i5 8250U 16 Go RAM, 512 Go SSD NVMe,14' Win 10Pro 32 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Elitebook-840-G5-1920x1080/dp/B0B2GG45ZM",
+    "solde_price": 571200.0,
+    "regular_price": 595000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:31.582Z",
+    "created_at": "2024-09-27T14:37:30.370Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 288,
+  "fields": {
+    "name": "HP ProBook 450 G8 i5-1135G7 16 Go SDRAM DDR4-3200 (2 x 4 Go)  512 GB SSD PCIe NVMe M.2 TLC Wifi AX+BT",
+    "slug": "hp-probook-450-g8-i5-1135g7-16-go-sdram-ddr4-3200-2-x-4-go-512-gb-ssd-pcie-nvme-m2-tlc-wifi-axbt",
+    "description": "HP ProBook 450 G8 i5-1135G7 16 Go SDRAM DDR4-3200 (2 x 4 Go)  512 GB SSD PCIe NVMe M.2 TLC Wifi AX+BT 12 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-ProBook-450-G8-i5-1135G7/dp/B09LMD3DY7",
+    "solde_price": 710400.0,
+    "regular_price": 740000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:35.102Z",
+    "created_at": "2024-09-27T14:37:34.239Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 289,
+  "fields": {
+    "name": "HP EliteBook 840 G8 Brand New 11th Gen. | i5-1135G7 | 16 GB | 512GB SSD | Integrated | Fingerprint Rea",
+    "slug": "hp-elitebook-840-g8-brand-new-11th-gen-i5-1135g7-16-gb-512gb-ssd-integrated-fingerprint-rea",
+    "description": "HP EliteBook 840 G8 Brand New 11th Gen. | i5-1135G7 | 16 GB | 512GB SSD | Integrated | Fingerprint Rea 12 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-EliteBook-840-Fingerprint-Thunderbolt/dp/B08GC299XN",
+    "solde_price": 960000.0,
+    "regular_price": 1000000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:37.962Z",
+    "created_at": "2024-09-27T14:37:37.300Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 290,
+  "fields": {
+    "name": "HP Pavilion Laptop 14-dv1041nf Core™ i5-1155G7/16 GB DDR4-3200 MHz RAM/ 512GB/Wi-Fi/Bluet/Win11home",
+    "slug": "hp-pavilion-laptop-14-dv1041nf-coretm-i5-1155g716-gb-ddr4-3200-mhz-ram-512gbwi-fibluetwin11home",
+    "description": "HP Pavilion Laptop 14-dv1041nf Core™ i5-1155G7/16 GB DDR4-3200 MHz RAM/ 512GB/Wi-Fi/Bluet/Win11home 12 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Pavilion-Touchscreen-i5-1155G7-Bluetooth/dp/B09S6F8427",
+    "solde_price": 648000.0,
+    "regular_price": 675000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:42.156Z",
+    "created_at": "2024-09-27T14:37:41.208Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 291,
+  "fields": {
+    "name": "Lenovo ThinkPad E15 Gen 2 Core i7 1165G7 16 Go RAM, 512 Go SSD NVMe Win 11 Pro 64bit Garantie 1 An",
+    "slug": "lenovo-thinkpad-e15-gen-2-core-i7-1165g7-16-go-ram-512-go-ssd-nvme-win-11-pro-64bit-garantie-1-an",
+    "description": "Lenovo ThinkPad E15 Gen 2 Core i7 1165G7 16 Go RAM, 512 Go SSD NVMe Win 11 Pro 64bit Garantie 1 An 25 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://us.amazon.com/Lenovo-ThinkPad-E15-i7-1165G7-M-2-NVMe/dp/B0BFBXD1MP",
+    "solde_price": 912000.0,
+    "regular_price": 950000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:46.451Z",
+    "created_at": "2024-09-27T14:37:44.926Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 292,
+  "fields": {
+    "name": "Lenovo Thinkbook 14s Yoga-G3 14'' Ci7-1355U 16GB 512SSD Win11Pro",
+    "slug": "lenovo-thinkbook-14s-yoga-g3-14-ci7-1355u-16gb-512ssd-win11pro",
+    "description": "Lenovo Thinkbook 14s Yoga-G3 14'' Ci7-1355U 16GB 512SSD Win11Pro 24 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.lenovo.com/us/en/p/laptops/thinkbook/thinkbook-yoga/thinkbook-14s-yoga-gen-3-(14-inch-intel)/len101b0027",
+    "solde_price": 1147200.0,
+    "regular_price": 1195000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:50.159Z",
+    "created_at": "2024-09-27T14:37:49.089Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 293,
+  "fields": {
+    "name": "LENOVO THINKPAD T14  i7-1355U 32 GB RAM 1TB SSD Dos 3 Years Warranty",
+    "slug": "lenovo-thinkpad-t14-i7-1355u-32-gb-ram-1tb-ssd-dos-3-years-warranty",
+    "description": "LENOVO THINKPAD T14  i7-1355U 32 GB RAM 1TB SSD Dos 3 Years Warranty 21 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-Thinkpad-Touchscreen-Thunderbolt-Fingerprint/dp/B0CBT62DG6",
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:37:54.265Z",
+    "created_at": "2024-09-27T14:37:53.084Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 294,
+  "fields": {
+    "name": "Lenovo ThinkPad E16-G1 16FHD Ci7-13700H 16GB 512SSD FPR Free Dos 1Y",
+    "slug": "lenovo-thinkpad-e16-g1-16fhd-ci7-13700h-16gb-512ssd-fpr-free-dos-1y",
+    "description": "Lenovo ThinkPad E16-G1 16FHD Ci7-13700H 16GB 512SSD FPR Free Dos 1Y 21 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-i7-13700H-Fingerprint-Thunderbolt/dp/B0CWNYLZHK",
+    "solde_price": 720000.0,
+    "regular_price": 750000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:37:58.054Z",
+    "created_at": "2024-09-27T14:37:57.076Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 295,
+  "fields": {
+    "name": "Lenovo ThinkPad T14-G4 14FHD Ci7-1355U 16GB 512SSD Win11 Pro 3Y",
+    "slug": "lenovo-thinkpad-t14-g4-14fhd-ci7-1355u-16gb-512ssd-win11-pro-3y",
+    "description": "Lenovo ThinkPad T14-G4 14FHD Ci7-1355U 16GB 512SSD Win11 Pro 3Y 21 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-i7-1355U-300nits-Fingerprint/dp/B0CPG6L6R7",
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:01.113Z",
+    "created_at": "2024-09-27T14:38:00.372Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 296,
+  "fields": {
+    "name": "Lenovo ThinkPad T14s-G4 14FHD Ci7-1355U 16GB 1T-SSD Win11 Pro 3Y",
+    "slug": "lenovo-thinkpad-t14s-g4-14fhd-ci7-1355u-16gb-1t-ssd-win11-pro-3y",
+    "description": "Lenovo ThinkPad T14s-G4 14FHD Ci7-1355U 16GB 1T-SSD Win11 Pro 3Y 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.cdw.com/product/lenovo-thinkpad-t14s-gen-4-14-intel-core-i7-1355u-16-gb-ram-512/7450430",
+    "solde_price": 1296000.0,
+    "regular_price": 1350000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:04.367Z",
+    "created_at": "2024-09-27T14:38:03.375Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 297,
+  "fields": {
+    "name": "Lenovo ThinkPad L13 Yoga Gen 4, i7 1355U, 16Go, 512 Go SSD  NVMe,  13.3\" IPS  Win 11 Pro, tactile  I",
+    "slug": "lenovo-thinkpad-l13-yoga-gen-4-i7-1355u-16go-512-go-ssd-nvme-133-ips-win-11-pro-tactile-i",
+    "description": "Lenovo ThinkPad L13 Yoga Gen 4, i7 1355U, 16Go, 512 Go SSD  NVMe,  13.3\" IPS  Win 11 Pro, tactile  I 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-Touchscreen-i7-1355U-Windows/dp/B0CH76T5ZB",
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:38:07.447Z",
+    "created_at": "2024-09-27T14:38:06.623Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 298,
+  "fields": {
+    "name": "\"\"Lenovo ThinkPad T14 Gen4, Intel Core i7-1355U, 16Go RAM, 512 SSD Carte IrisXe, NVMe,Win 11 Pro,",
+    "slug": "lenovo-thinkpad-t14-gen4-intel-core-i7-1355u-16go-ram-512-ssd-carte-irisxe-nvmewin-11-pro",
+    "description": "\"\"Lenovo ThinkPad T14 Gen4, Intel Core i7-1355U, 16Go RAM, 512 SSD Carte IrisXe, NVMe,Win 11 Pro, 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-i7-1355U-300nits-Fingerprint/dp/B0CPG6L6R7",
+    "solde_price": 1243200.0,
+    "regular_price": 1295000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:10.983Z",
+    "created_at": "2024-09-27T14:38:09.756Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 299,
+  "fields": {
+    "name": "Lenovo ThinkPad P14s Gen 2 20VX\nCore i7 1185G7 / 3 GHz (vPro) : Win 10 Pro 64 bits (comprend Licence Win 11 Pro), Quadro T500 , 16 Go RAM, 512 Go SSD TCG Opal Encryption 2, NVMe, 14\" IPS 1920 x 1080 (Full HD), Wi-Fi 6, noir, clavier : Français",
+    "slug": "lenovo-thinkpad-p14s-gen-2-20vx-core-i7-1185g7-3-ghz-vpro-win-10-pro-64-bits-comprend-licence-win-11-pro-quadro-t500-16-go-ram-512-go-ssd-tcg-opal-encryption-2-nvme-14-ips-1920-x-1080-full-hd-wi-fi-6-noir-clavier-francais",
+    "description": "Lenovo ThinkPad P14s Gen 2 20VX\nCore i7 1185G7 / 3 GHz (vPro) : Win 10 Pro 64 bits (comprend Licence Win 11 Pro), Quadro T500 , 16 Go RAM, 512 Go SSD TCG Opal Encryption 2, NVMe, 14\" IPS 1920 x 1080 (Full HD), Wi-Fi 6, noir, clavier : Français 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.walmart.com/ip/Lenovo-ThinkPad-P14s-Gen-2-20VX-Intel-Core-i7-1185G7-3-GHz-vPro-Win-10-Pro-64-bit-includes-11-License-Quadro-T500-16-GB-RAM-512-SSD-TCG-Opal-Encrypti/675006072",
+    "solde_price": 1243200.0,
+    "regular_price": 1295000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:38:14.788Z",
+    "created_at": "2024-09-27T14:38:13.599Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 300,
+  "fields": {
+    "name": "Lenovo ThinkPad E15 Gen 2 20TD PC Portable - Core i7 1165G7 / 2.8 GHz : Windows 11 Pro 64-bit, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Iris Xe Graphics, Wifi 802.11ax, Bluetooth 5.2, Gigabit Ethernet, Noir Garantie 1 An constructeur",
+    "slug": "lenovo-thinkpad-e15-gen-2-20td-pc-portable-core-i7-1165g7-28-ghz-windows-11-pro-64-bit-16-go-ram-512-go-ssd-nvme-ecran-156-ips-1920-x-1080-full-hd-iris-xe-graphics-wifi-80211ax-bluetooth-52-gigabit-ethernet-noir-garantie-1-an-constructeur",
+    "description": "Lenovo ThinkPad E15 Gen 2 20TD PC Portable - Core i7 1165G7 / 2.8 GHz : Windows 11 Pro 64-bit, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Iris Xe Graphics, Wifi 802.11ax, Bluetooth 5.2, Gigabit Ethernet, Noir Garantie 1 An constructeur 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-E15-i7-1165G7-Processor-Fingerprint/dp/B0B38DMWJY",
+    "solde_price": 912000.0,
+    "regular_price": 950000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:38:18.219Z",
+    "created_at": "2024-09-27T14:38:17.012Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 301,
+  "fields": {
+    "name": "Lenovo Think Pad T14 G1 - intel Core i7 - 10610 - 16  Go RAM - 1To SSD -Win 10 Pro , NVMe - 14\" IPS 3840 x 2160 (Ultra HD 4K) - GF MX330 / UHD Graphics - Bluetooth, Wi-Fi 6 - 4G - black - kbd: FR, FR international, AZERTY, -Windows 10 Pro 64 Bit ",
+    "slug": "lenovo-think-pad-t14-g1-intel-core-i7-10610-16-go-ram-1to-ssd-win-10-pro-nvme-14-ips-3840-x-2160-ultra-hd-4k-gf-mx330-uhd-graphics-bluetooth-wi-fi-6-4g-black-kbd-fr-fr-international-azerty-windows-10-pro-64-bit",
+    "description": "Lenovo Think Pad T14 G1 - intel Core i7 - 10610 - 16  Go RAM - 1To SSD -Win 10 Pro , NVMe - 14\" IPS 3840 x 2160 (Ultra HD 4K) - GF MX330 / UHD Graphics - Bluetooth, Wi-Fi 6 - 4G - black - kbd: FR, FR international, AZERTY, -Windows 10 Pro 64 Bit  20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:38:21.802Z",
+    "created_at": "2024-09-27T14:38:20.802Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 302,
+  "fields": {
+    "name": "Ordinateur Portable Lenovo ThinkPad E14 Gen 4 (21E3009BFE) Intel® Core™ i7-1255U, 10C (2P + 8E) / 12T, P-core 1.7 / 4.7GHz, E-core 1.2 / 3.5GHz, 12MB RAM: 8GB Soldered DDR4-3200 Disque dur: 512GB SSD M.2 2242 PCIe® 4.0x4 NVMe® Opal2 Écran: 14\" FHD (1920x1080) IPS 300nits Anti-glare, 1 45% NTSC Carte graphique: Integrated Intel Iris® Xe Graphics functions as UHD Graphics FreeDOS Clavier: Non-backlit, Français (AZERTY) Produit neuf dans son emballage d’origine +  Sac de transport  Garantie : 2 ans\n",
+    "slug": "ordinateur-portable-lenovo-thinkpad-e14-gen-4-21e3009bfe-intel-coretm-i7-1255u-10c-2p-8e-12t-p-core-17-47ghz-e-core-12-35ghz-12mb-ram-8gb-soldered-ddr4-3200-disque-dur-512gb-ssd-m2-2242-pcie-40x4-nvme-opal2-ecran-14-fhd-1920x1080-ips-300nits-anti-glare-1-45-ntsc-carte-graphique-integrated-intel-iris-xe-graphics-functions-as-uhd-graphics-freedos-clavier-non-backlit-francais-azerty-produit-neuf-dans-son-emballage-dorigine-sac-de-transport-garantie-2-ans",
+    "description": "Ordinateur Portable Lenovo ThinkPad E14 Gen 4 (21E3009BFE) Intel® Core™ i7-1255U, 10C (2P + 8E) / 12T, P-core 1.7 / 4.7GHz, E-core 1.2 / 3.5GHz, 12MB RAM: 8GB Soldered DDR4-3200 Disque dur: 512GB SSD M.2 2242 PCIe® 4.0x4 NVMe® Opal2 Écran: 14\" FHD (1920x1080) IPS 300nits Anti-glare, 1 45% NTSC Carte graphique: Integrated Intel Iris® Xe Graphics functions as UHD Graphics FreeDOS Clavier: Non-backlit, Français (AZERTY) Produit neuf dans son emballage d’origine +  Sac de transport  Garantie : 2 ans\n 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 720000.0,
+    "regular_price": 750000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:21.819Z",
+    "created_at": "2024-09-27T14:38:21.819Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 303,
+  "fields": {
+    "name": "Lenovo ThinkPad X1 Carbon Gen 10 Ultrabook Laptop, 14.0\" FHD+ Touchscreen, 12th Gen Intel Core i7-1260P 12Cores, 16GB LPDDR5 RAM 1TB SSD, Backlit KEYBOARD, Long Battery Life Rapid Charge, Win11 Pro",
+    "slug": "lenovo-thinkpad-x1-carbon-gen-10-ultrabook-laptop-140-fhd-touchscreen-12th-gen-intel-core-i7-1260p-12cores-16gb-lpddr5-ram-1tb-ssd-backlit-keyboard-long-battery-life-rapid-charge-win11-pro",
+    "description": "Lenovo ThinkPad X1 Carbon Gen 10 Ultrabook Laptop, 14.0\" FHD+ Touchscreen, 12th Gen Intel Core i7-1260P 12Cores, 16GB LPDDR5 RAM 1TB SSD, Backlit KEYBOARD, Long Battery Life Rapid Charge, Win11 Pro 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx1/thinkpad-x1-carbon-gen-10-(14-inch-intel)/len101t0009",
+    "solde_price": 1392000.0,
+    "regular_price": 1450000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:24.075Z",
+    "created_at": "2024-09-27T14:38:22.853Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 304,
+  "fields": {
+    "name": "Lenovo Thinkpad X1 Carbon Gen11 Intel (Core™ i7-1365U vPro®) Processor 32GB Ram LPDDR5 6000MHz 2To SSD M.2 NVMe PCIe 14\" WUXGA TouchScreen AG Intel Iris Xe Grapics Backligt EngKB, Windows 11 Pro Manufacturer Warranty   ",
+    "slug": "lenovo-thinkpad-x1-carbon-gen11-intel-coretm-i7-1365u-vpro-processor-32gb-ram-lpddr5-6000mhz-2to-ssd-m2-nvme-pcie-14-wuxga-touchscreen-ag-intel-iris-xe-grapics-backligt-engkb-windows-11-pro-manufacturer-warranty",
+    "description": "Lenovo Thinkpad X1 Carbon Gen11 Intel (Core™ i7-1365U vPro®) Processor 32GB Ram LPDDR5 6000MHz 2To SSD M.2 NVMe PCIe 14\" WUXGA TouchScreen AG Intel Iris Xe Grapics Backligt EngKB, Windows 11 Pro Manufacturer Warranty    20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-Anti-Glare-Touchscreen-Performance-Thunderbolt/dp/B0CCLLYFFQ",
+    "solde_price": 2064000.0,
+    "regular_price": 2150000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:27.496Z",
+    "created_at": "2024-09-27T14:38:26.220Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 305,
+  "fields": {
+    "name": "Lenovo ThinkPad E15 G2 Core i7/8GB/512GB SSD/WIFI/CAM/BT/ DOS ENG",
+    "slug": "lenovo-thinkpad-e15-g2-core-i78gb512gb-ssdwificambt-dos-eng",
+    "description": "Lenovo ThinkPad E15 G2 Core i7/8GB/512GB SSD/WIFI/CAM/BT/ DOS ENG 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-Business-i7-1165G7-Fingerprint/dp/B09WJR8TJ5",
+    "solde_price": 729600.0,
+    "regular_price": 760000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:31.029Z",
+    "created_at": "2024-09-27T14:38:30.290Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 306,
+  "fields": {
+    "name": "LENOVO IdeaPad 3 15ITL6/ Intel Core i7-1165G7 (4C / 8T, 2.8 / 4.7GHz, 12MB)/ Integrated Intel Iris Xe Graphics/ Intel SoC Platform/ 4GB Soldered DDR4-3200 + 4GB SO-DIMM DDR4-3200 (8GB RAM)/ 1TB HDD 5400rpm 2.5\\\"/ 15.6\\\" FHD (1920x1080) TN 250nits Anti-glare/ 4-in-1 Card Reader/ 11ac, 2x2 + BT5.0/ 720p with Privacy Shutter/ Arctic Grey/ IMR (In-Mold Decoration by Roller)/ PC + ABS (Top), PC + ABS (Bottom)/ 1-y",
+    "slug": "lenovo-ideapad-3-15itl6-intel-core-i7-1165g7-4c-8t-28-47ghz-12mb-integrated-intel-iris-xe-graphics-intel-soc-platform-4gb-soldered-ddr4-3200-4gb-so-dimm-ddr4-3200-8gb-ram-1tb-hdd-5400rpm-25-156-fhd-1920x1080-tn-250nits-anti-glare-4-in-1-card-reader-11ac-2x2-bt50-720p-with-privacy-shutter-arctic-grey-imr-in-mold-decoration-by-roller-pc-abs-top-pc-abs-bottom-1-y",
+    "description": "LENOVO IdeaPad 3 15ITL6/ Intel Core i7-1165G7 (4C / 8T, 2.8 / 4.7GHz, 12MB)/ Integrated Intel Iris Xe Graphics/ Intel SoC Platform/ 4GB Soldered DDR4-3200 + 4GB SO-DIMM DDR4-3200 (8GB RAM)/ 1TB HDD 5400rpm 2.5\\\"/ 15.6\\\" FHD (1920x1080) TN 250nits Anti-glare/ 4-in-1 Card Reader/ 11ac, 2x2 + BT5.0/ 720p with Privacy Shutter/ Arctic Grey/ IMR (In-Mold Decoration by Roller)/ PC + ABS (Top), PC + ABS (Bottom)/ 1-y 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://orbata-techsupplies.co.ke/product-category/computers-accessories/?add-to-cart=5311&products-per-page=all",
+    "solde_price": 528000.0,
+    "regular_price": 550000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:34.487Z",
+    "created_at": "2024-09-27T14:38:33.664Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 307,
+  "fields": {
+    "name": "Lenovo Think Pad P15S G2 - Intel Core i7-1165G7-Ecran 15.6\" FHD - 16 Go RAM - 512GB SSD - Ubuntu Linux - NVIDIA Quadro T500 - Clavier FR",
+    "slug": "lenovo-think-pad-p15s-g2-intel-core-i7-1165g7-ecran-156-fhd-16-go-ram-512gb-ssd-ubuntu-linux-nvidia-quadro-t500-clavier-fr",
+    "description": "Lenovo Think Pad P15S G2 - Intel Core i7-1165G7-Ecran 15.6\" FHD - 16 Go RAM - 512GB SSD - Ubuntu Linux - NVIDIA Quadro T500 - Clavier FR 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-Anti-Glare-i7-1165G7-Fingerprint/dp/B098HG1XWW",
+    "solde_price": 1200000.0,
+    "regular_price": 1250000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:39.714Z",
+    "created_at": "2024-09-27T14:38:38.543Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 308,
+  "fields": {
+    "name": "LENOVO THINKBOOK 14\" FHD I7 8GB 1TB FREEDOS  Intel Core i7-1165G7 (4C / 8T, 2.8 / 4.7GHz, 12MB) RAM: 8",
+    "slug": "lenovo-thinkbook-14-fhd-i7-8gb-1tb-freedos-intel-core-i7-1165g7-4c-8t-28-47ghz-12mb-ram-8",
+    "description": "LENOVO THINKBOOK 14\" FHD I7 8GB 1TB FREEDOS  Intel Core i7-1165G7 (4C / 8T, 2.8 / 4.7GHz, 12MB) RAM: 8 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://dual-link-int.com/product/lenovo-thinkbook-14-intel-core-i7-1165g7/",
+    "solde_price": 571200.0,
+    "regular_price": 595000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:43.612Z",
+    "created_at": "2024-09-27T14:38:42.689Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 309,
+  "fields": {
+    "name": "Lenovo X1 extreme G3 - Intel Core i7- 10850H - 16 Go RAM - 512 Go SSD -  1920 x 1080 pixels  Windows 10 Pro",
+    "slug": "lenovo-x1-extreme-g3-intel-core-i7-10850h-16-go-ram-512-go-ssd-1920-x-1080-pixels-windows-10-pro",
+    "description": "Lenovo X1 extreme G3 - Intel Core i7- 10850H - 16 Go RAM - 512 Go SSD -  1920 x 1080 pixels  Windows 10 Pro 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-X1-Extreme-Gen/dp/B0B34Y1MKZ",
+    "solde_price": 1339200.0,
+    "regular_price": 1395000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:48.283Z",
+    "created_at": "2024-09-27T14:38:47.070Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 310,
+  "fields": {
+    "name": "HP Spectre x360 16-f1013nf Core i7-1260 16GB 1To Win 11",
+    "slug": "hp-spectre-x360-16-f1013nf-core-i7-1260-16gb-1to-win-11",
+    "description": "HP Spectre x360 16-f1013nf Core i7-1260 16GB 1To Win 11 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Spectre-x360-Touchscreen-Convertible-Fingerprint/dp/B0B8G1JSQP",
+    "solde_price": 1512000.0,
+    "regular_price": 1575000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:51.690Z",
+    "created_at": "2024-09-27T14:38:50.616Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 311,
+  "fields": {
+    "name": "HP Spectre x360 14-ef0000nf Intel Core i7-1255U 32GB 2To SSD Win 11H",
+    "slug": "hp-spectre-x360-14-ef0000nf-intel-core-i7-1255u-32gb-2to-ssd-win-11h",
+    "description": "HP Spectre x360 14-ef0000nf Intel Core i7-1255U 32GB 2To SSD Win 11H 20 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Convertible-Processor-Keyboard-14-EF000-Renewed/dp/B0CN5152JF",
+    "solde_price": 1512000.0,
+    "regular_price": 1575000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:38:55.902Z",
+    "created_at": "2024-09-27T14:38:54.960Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 312,
+  "fields": {
+    "name": "Ordinateur portable HP ProBook 450 15,6 pouces G9 IDS UMA i7-1255U RTK USBC 450  G9BNBPC/FreeDOS/DM HD USB2 IR WFOV Intgrtd Cam/15.6AG 16GO/1TO SSD",
+    "slug": "ordinateur-portable-hp-probook-450-156-pouces-g9-ids-uma-i7-1255u-rtk-usbc-450-g9bnbpcfreedosdm-hd-usb2-ir-wfov-intgrtd-cam156ag-16go1to-ssd",
+    "description": "Ordinateur portable HP ProBook 450 15,6 pouces G9 IDS UMA i7-1255U RTK USBC 450  G9BNBPC/FreeDOS/DM HD USB2 IR WFOV Intgrtd Cam/15.6AG 16GO/1TO SSD 15 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://support.hp.com/us-en/document/ish_5999155-5999207-16",
+    "solde_price": 816000.0,
+    "regular_price": 850000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:38:59.751Z",
+    "created_at": "2024-09-27T14:38:58.471Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 313,
+  "fields": {
+    "name": "HP EB 830 G10 Notebook  Intel Core i7-1355U, 16 Go, 512 Go SSD NVMe, 13.3\" IPS  tactile, Win11 Pro,",
+    "slug": "hp-eb-830-g10-notebook-intel-core-i7-1355u-16-go-512-go-ssd-nvme-133-ips-tactile-win11-pro",
+    "description": "HP EB 830 G10 Notebook  Intel Core i7-1355U, 16 Go, 512 Go SSD NVMe, 13.3\" IPS  tactile, Win11 Pro, 15 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-EliteBook-Touchscreen-Notebook-Board/dp/B0C7LWGJ2S",
+    "solde_price": 1339200.0,
+    "regular_price": 1395000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T14:39:04.777Z",
+    "created_at": "2024-09-27T14:39:03.514Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 314,
+  "fields": {
+    "name": "HP EliteBook 840 G10 Notebook Intel Core i7 - 1355U 16 Go RAM, 512 Go SSD NVMe : Win 11 Pro,",
+    "slug": "hp-elitebook-840-g10-notebook-intel-core-i7-1355u-16-go-ram-512-go-ssd-nvme-win-11-pro",
+    "description": "HP EliteBook 840 G10 Notebook Intel Core i7 - 1355U 16 Go RAM, 512 Go SSD NVMe : Win 11 Pro, 15 unités disponibles.",
+    "more_description": "",
+    "additional_infos": "https://www.cdw.com/product/hp-elitebook-840-g10-notebook-14-in-core-i7-16-gb-ram-512-gb-ssd/7445481",
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T14:39:09.275Z",
+    "created_at": "2024-09-27T14:39:08.544Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 315,
+  "fields": {
+    "name": "LENOVO ThinkPad T14 Gen2 Intel Core i5-1135G7 14p FHD 16Go 512Go SSD M.2 2280 Intel UHD Graphics W10",
+    "slug": "lenovo-thinkpad-t14-gen2-intel-core-i5-1135g7-14p-fhd-16go-512go-ssd-m2-2280-intel-uhd-graphics-w10-1",
+    "description": "LENOVO ThinkPad T14 Gen2 Intel Core i5-1135G7 14p FHD 16Go 512Go SSD M.2 2280 Intel UHD Graphics W10 (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadt/t14-g2-(intel)/22tpt14t4n2",
+    "solde_price": 926400.0,
+    "regular_price": 965000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:02:29.998Z",
+    "created_at": "2024-09-27T15:02:28.568Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 316,
+  "fields": {
+    "name": "Lenovo ThinkPad E14 Gen 5 (Intel) Intel Core i5-1335U 16 GB DDR4 / Disque SSD M.2  512GB 14.0”, WUXGA",
+    "slug": "lenovo-thinkpad-e14-gen-5-intel-intel-core-i5-1335u-16-gb-ddr4-disque-ssd-m2-512gb-140-wuxga-1",
+    "description": "Lenovo ThinkPad E14 Gen 5 (Intel) Intel Core i5-1335U 16 GB DDR4 / Disque SSD M.2  512GB 14.0”, WUXGA (25 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.cdw.com/product/lenovo-thinkpad-e14-gen-5-14-intel-core-i5-1335u-16-gb-ram-512-g/7520161",
+    "solde_price": 667200.0,
+    "regular_price": 695000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:02:33.468Z",
+    "created_at": "2024-09-27T15:02:32.762Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 317,
+  "fields": {
+    "name": "Lenovo ThinkPad E14-G5 14FHD Ci5-1335U 16 GB 512SSD Window 11 pro",
+    "slug": "lenovo-thinkpad-e14-g5-14fhd-ci5-1335u-16-gb-512ssd-window-11-pro-1",
+    "description": "Lenovo ThinkPad E14-G5 14FHD Ci5-1335U 16 GB 512SSD Window 11 pro (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-i5-1335U-1920x1200-Fingerprint/dp/B0CYCQ8Y6J",
+    "solde_price": 667200.0,
+    "regular_price": 695000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:02:36.807Z",
+    "created_at": "2024-09-27T15:02:35.941Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 318,
+  "fields": {
+    "name": "Lenovo ThinkPad E16-G1 16FHD Ci5-1335U 16 GB 512SSD FPR Free Dos 1Y",
+    "slug": "lenovo-thinkpad-e16-g1-16fhd-ci5-1335u-16-gb-512ssd-fpr-free-dos-1y-1",
+    "description": "Lenovo ThinkPad E16-G1 16FHD Ci5-1335U 16 GB 512SSD FPR Free Dos 1Y (5 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.cdw.com/product/lenovo-thinkpad-e16-gen-1-16-intel-core-i5-1335u-16-gb-ram-256-g/7520168",
+    "solde_price": 643200.0,
+    "regular_price": 670000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:02:41.145Z",
+    "created_at": "2024-09-27T15:02:39.839Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 319,
+  "fields": {
+    "name": "Lenovo ThinkPad L14 Gen 2 20X1 -Core i5 1145G7 -  16 Go RAM - 512 Go SSD ,Win 10 Pro 64, NVMe, FR",
+    "slug": "lenovo-thinkpad-l14-gen-2-20x1-core-i5-1145g7-16-go-ram-512-go-ssd-win-10-pro-64-nvme-fr-1",
+    "description": "Lenovo ThinkPad L14 Gen 2 20X1 -Core i5 1145G7 -  16 Go RAM - 512 Go SSD ,Win 10 Pro 64, NVMe, FR (7 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 624000.0,
+    "regular_price": 650000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:02:44.980Z",
+    "created_at": "2024-09-27T15:02:43.852Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 320,
+  "fields": {
+    "name": "Lenovo ThinkPad T14 Gen 2 20W1 Core i5 1135G7/2.4 GHz-Win10 Pro 64-bit 16 GB RAM-512GB SSD 14\" Wi-Fi",
+    "slug": "lenovo-thinkpad-t14-gen-2-20w1-core-i5-1135g724-ghz-win10-pro-64-bit-16-gb-ram-512gb-ssd-14-wi-fi-1",
+    "description": "Lenovo ThinkPad T14 Gen 2 20W1 Core i5 1135G7/2.4 GHz-Win10 Pro 64-bit 16 GB RAM-512GB SSD 14\" Wi-Fi (14 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/ThinkPad-T14-i5-1135G7-Fingerprint-Thunderbolt/dp/B09YLYM6VV",
+    "solde_price": 979200.0,
+    "regular_price": 1020000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:02:46.030Z",
+    "created_at": "2024-09-27T15:02:44.995Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 321,
+  "fields": {
+    "name": "Lenovo ThinkPad T14s Gen 2 20WM - Core i5 1135G7/2,4 GHz -Win10Pro/ 16  Go 512GB SSD M2.2280 NVME",
+    "slug": "lenovo-thinkpad-t14s-gen-2-20wm-core-i5-1135g724-ghz-win10pro-16-go-512gb-ssd-m22280-nvme-1",
+    "description": "Lenovo ThinkPad T14s Gen 2 20WM - Core i5 1135G7/2,4 GHz -Win10Pro/ 16  Go 512GB SSD M2.2280 NVME (26 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.lenovo.com/us/outletus/en/p/laptops/thinkpad/thinkpadt/thinkpad-t14s-g2/20wmx052us",
+    "solde_price": 1147200.0,
+    "regular_price": 1195000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:02:52.455Z",
+    "created_at": "2024-09-27T15:02:51.523Z",
+    "categories": [
+      20
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 322,
+  "fields": {
+    "name": "Dell Latitude 5440 - Intel Core i5 1335U / 16 Go RAM - 512 Go SSD NVMe  Win 11 Pro,Carte graphique I",
+    "slug": "dell-latitude-5440-intel-core-i5-1335u-16-go-ram-512-go-ssd-nvme-win-11-procarte-graphique-i-1",
+    "description": "Dell Latitude 5440 - Intel Core i5 1335U / 16 Go RAM - 512 Go SSD NVMe  Win 11 Pro,Carte graphique I (15 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.dell.com/en-us/shop/dell-computer-laptops/latitude-5440-laptop/spd/latitude-14-5440-laptop",
+    "solde_price": 936000.0,
+    "regular_price": 975000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:02:57.266Z",
+    "created_at": "2024-09-27T15:02:55.825Z",
+    "categories": [
+      21
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 323,
+  "fields": {
+    "name": "Dell Inspiron 3520 - Intel Core i5-1135G7 - 16 Go RAM - 1 To SSD - 15,6\" FHD - Win 11 F - Clavier FR",
+    "slug": "dell-inspiron-3520-intel-core-i5-1135g7-16-go-ram-1-to-ssd-156-fhd-win-11-f-clavier-fr-1",
+    "description": "Dell Inspiron 3520 - Intel Core i5-1135G7 - 16 Go RAM - 1 To SSD - 15,6\" FHD - Win 11 F - Clavier FR (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Dell-Inspiron-Touchscreen-Computer-i5-1135G7/dp/B0CCS8CDTP",
+    "solde_price": 528000.0,
+    "regular_price": 550000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:03:06.741Z",
+    "created_at": "2024-09-27T15:03:05.334Z",
+    "categories": [
+      21
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 324,
+  "fields": {
+    "name": "HP EliteBook 450 Home G8 Intel core i5-1135G7 15.6p FHD AG 16 Go 512 Go SSD Intel Iri",
+    "slug": "hp-elitebook-450-home-g8-intel-core-i5-1135g7-156p-fhd-ag-16-go-512-go-ssd-intel-iri-1",
+    "description": "HP EliteBook 450 Home G8 Intel core i5-1135G7 15.6p FHD AG 16 Go 512 Go SSD Intel Iri (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 777600.0,
+    "regular_price": 810000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:03:11.898Z",
+    "created_at": "2024-09-27T15:03:11.130Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 325,
+  "fields": {
+    "name": "HP Portable 440 G10 Notebook - Intel Core i5 - 1335U / jusqu'à 4.6 GHz - Win 11 Pro - Carte graphique Intel Iris Xe - 16 Go RAM - 512 Go SSD NVMe - 14\" IPS 1920 x 1080 (Full HD) - 802.11a/b/g/n/ac/ax (Wi-Fi 6E) - brochet argent aluminium, clavier : Français ",
+    "slug": "hp-portable-440-g10-notebook-intel-core-i5-1335u-jusqua-46-ghz-win-11-pro-carte-graphique-intel-iris-xe-16-go-ram-512-go-ssd-nvme-14-ips-1920-x-1080-full-hd-80211abgnacax-wi-fi-6e-brochet-argent-aluminium-clavier-francais-1",
+    "description": "HP Portable 440 G10 Notebook - Intel Core i5 - 1335U / jusqu'à 4.6 GHz - Win 11 Pro - Carte graphique Intel Iris Xe - 16 Go RAM - 512 Go SSD NVMe - 14\" IPS 1920 x 1080 (Full HD) - 802.11a/b/g/n/ac/ax (Wi-Fi 6E) - brochet argent aluminium, clavier : Français  (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-ProBook-440-Touchscreen-Notebook/dp/B0C4FTWJLN",
+    "solde_price": 816000.0,
+    "regular_price": 850000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:03:12.950Z",
+    "created_at": "2024-09-27T15:03:11.918Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 326,
+  "fields": {
+    "name": "HP Envy x360 13 2-en-1 Écran tactile FHD IPS 13,3\" i5-1135G7 de 11eG 16 Go de RAM 512 Go SSD Win10",
+    "slug": "hp-envy-x360-13-2-en-1-ecran-tactile-fhd-ips-133-i5-1135g7-de-11eg-16-go-de-ram-512-go-ssd-win10-1",
+    "description": "HP Envy x360 13 2-en-1 Écran tactile FHD IPS 13,3\" i5-1135G7 de 11eG 16 Go de RAM 512 Go SSD Win10 (23 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Envy-Touch-Screen-Generation-Fingerprint/dp/B09CT2KP8F",
+    "solde_price": 748800.0,
+    "regular_price": 780000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:03:18.101Z",
+    "created_at": "2024-09-27T15:03:16.726Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 327,
+  "fields": {
+    "name": "HP Envy X360 13-Bd0026nf Core i5-1135G7 16 Go 512 Go Écran tactile - CLAVIER rétro éclairé Win11 home",
+    "slug": "hp-envy-x360-13-bd0026nf-core-i5-1135g7-16-go-512-go-ecran-tactile-clavier-retro-eclaire-win11-home-1",
+    "description": "HP Envy X360 13-Bd0026nf Core i5-1135G7 16 Go 512 Go Écran tactile - CLAVIER rétro éclairé Win11 home (21 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Touchscreen-i5-1135G7-Keyboard-Bluetooth/dp/B0CNJYXLP9",
+    "solde_price": 744000.0,
+    "regular_price": 775000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:03:22.285Z",
+    "created_at": "2024-09-27T15:03:21.124Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 328,
+  "fields": {
+    "name": "Hp Elitebook 840 G8 336d8ea 14 pouces intel core i5-1135G7 16 Go Ram DDR4 512 Go ssd win 10 pro argent",
+    "slug": "hp-elitebook-840-g8-336d8ea-14-pouces-intel-core-i5-1135g7-16-go-ram-ddr4-512-go-ssd-win-10-pro-argent-1",
+    "description": "Hp Elitebook 840 G8 336d8ea 14 pouces intel core i5-1135G7 16 Go Ram DDR4 512 Go ssd win 10 pro argent (32 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-EliteBook-Business-i5-1135G7-Fingerprint/dp/B0CRR35CS4",
+    "solde_price": 1017600.0,
+    "regular_price": 1060000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:03:25.995Z",
+    "created_at": "2024-09-27T15:03:25.002Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 329,
+  "fields": {
+    "name": "HP Elitebook 840 G5 Core i5 8250U 16 Go RAM, 512 Go SSD NVMe,14' Win 10Pro",
+    "slug": "hp-elitebook-840-g5-core-i5-8250u-16-go-ram-512-go-ssd-nvme14-win-10pro-1",
+    "description": "HP Elitebook 840 G5 Core i5 8250U 16 Go RAM, 512 Go SSD NVMe,14' Win 10Pro (32 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Elitebook-840-G5-1920x1080/dp/B0B2GG45ZM",
+    "solde_price": 571200.0,
+    "regular_price": 595000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:03:29.600Z",
+    "created_at": "2024-09-27T15:03:28.615Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 330,
+  "fields": {
+    "name": "HP ProBook 450 G8 i5-1135G7 16 Go SDRAM DDR4-3200 (2 x 4 Go)  512 GB SSD PCIe NVMe M.2 TLC Wifi AX+BT",
+    "slug": "hp-probook-450-g8-i5-1135g7-16-go-sdram-ddr4-3200-2-x-4-go-512-gb-ssd-pcie-nvme-m2-tlc-wifi-axbt-1",
+    "description": "HP ProBook 450 G8 i5-1135G7 16 Go SDRAM DDR4-3200 (2 x 4 Go)  512 GB SSD PCIe NVMe M.2 TLC Wifi AX+BT (12 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-ProBook-450-G8-i5-1135G7/dp/B09LMD3DY7",
+    "solde_price": 710400.0,
+    "regular_price": 740000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:03:33.034Z",
+    "created_at": "2024-09-27T15:03:32.277Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 331,
+  "fields": {
+    "name": "HP EliteBook 840 G8 Brand New 11th Gen. | i5-1135G7 | 16 GB | 512GB SSD | Integrated | Fingerprint Rea",
+    "slug": "hp-elitebook-840-g8-brand-new-11th-gen-i5-1135g7-16-gb-512gb-ssd-integrated-fingerprint-rea-1",
+    "description": "HP EliteBook 840 G8 Brand New 11th Gen. | i5-1135G7 | 16 GB | 512GB SSD | Integrated | Fingerprint Rea (12 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-EliteBook-840-Fingerprint-Thunderbolt/dp/B08GC299XN",
+    "solde_price": 960000.0,
+    "regular_price": 1000000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:03:37.089Z",
+    "created_at": "2024-09-27T15:03:36.259Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 332,
+  "fields": {
+    "name": "HP Pavilion Laptop 14-dv1041nf Core™ i5-1155G7/16 GB DDR4-3200 MHz RAM/ 512GB/Wi-Fi/Bluet/Win11home",
+    "slug": "hp-pavilion-laptop-14-dv1041nf-coretm-i5-1155g716-gb-ddr4-3200-mhz-ram-512gbwi-fibluetwin11home-1",
+    "description": "HP Pavilion Laptop 14-dv1041nf Core™ i5-1155G7/16 GB DDR4-3200 MHz RAM/ 512GB/Wi-Fi/Bluet/Win11home (12 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Pavilion-Touchscreen-i5-1155G7-Bluetooth/dp/B09S6F8427",
+    "solde_price": 648000.0,
+    "regular_price": 675000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:03:41.104Z",
+    "created_at": "2024-09-27T15:03:40.015Z",
+    "categories": [
+      22
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 333,
+  "fields": {
+    "name": "Lenovo ThinkPad E15 Gen 2 Core i7 1165G7 16 Go RAM, 512 Go SSD NVMe Win 11 Pro 64bit Garantie 1 An",
+    "slug": "lenovo-thinkpad-e15-gen-2-core-i7-1165g7-16-go-ram-512-go-ssd-nvme-win-11-pro-64bit-garantie-1-an-1",
+    "description": "Lenovo ThinkPad E15 Gen 2 Core i7 1165G7 16 Go RAM, 512 Go SSD NVMe Win 11 Pro 64bit Garantie 1 An (25 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://us.amazon.com/Lenovo-ThinkPad-E15-i7-1165G7-M-2-NVMe/dp/B0BFBXD1MP",
+    "solde_price": 912000.0,
+    "regular_price": 950000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:03:45.372Z",
+    "created_at": "2024-09-27T15:03:44.632Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 334,
+  "fields": {
+    "name": "Lenovo Thinkbook 14s Yoga-G3 14'' Ci7-1355U 16GB 512SSD Win11Pro",
+    "slug": "lenovo-thinkbook-14s-yoga-g3-14-ci7-1355u-16gb-512ssd-win11pro-1",
+    "description": "Lenovo Thinkbook 14s Yoga-G3 14'' Ci7-1355U 16GB 512SSD Win11Pro (24 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.lenovo.com/us/en/p/laptops/thinkbook/thinkbook-yoga/thinkbook-14s-yoga-gen-3-(14-inch-intel)/len101b0027",
+    "solde_price": 1147200.0,
+    "regular_price": 1195000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:03:48.950Z",
+    "created_at": "2024-09-27T15:03:47.746Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 335,
+  "fields": {
+    "name": "LENOVO THINKPAD T14  i7-1355U 32 GB RAM 1TB SSD Dos 3 Years Warranty",
+    "slug": "lenovo-thinkpad-t14-i7-1355u-32-gb-ram-1tb-ssd-dos-3-years-warranty-1",
+    "description": "LENOVO THINKPAD T14  i7-1355U 32 GB RAM 1TB SSD Dos 3 Years Warranty (21 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-Thinkpad-Touchscreen-Thunderbolt-Fingerprint/dp/B0CBT62DG6",
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:03:52.220Z",
+    "created_at": "2024-09-27T15:03:51.308Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 336,
+  "fields": {
+    "name": "Lenovo ThinkPad E16-G1 16FHD Ci7-13700H 16GB 512SSD FPR Free Dos 1Y",
+    "slug": "lenovo-thinkpad-e16-g1-16fhd-ci7-13700h-16gb-512ssd-fpr-free-dos-1y-1",
+    "description": "Lenovo ThinkPad E16-G1 16FHD Ci7-13700H 16GB 512SSD FPR Free Dos 1Y (21 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-i7-13700H-Fingerprint-Thunderbolt/dp/B0CWNYLZHK",
+    "solde_price": 720000.0,
+    "regular_price": 750000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:03:56.077Z",
+    "created_at": "2024-09-27T15:03:55.145Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 337,
+  "fields": {
+    "name": "Lenovo ThinkPad T14-G4 14FHD Ci7-1355U 16GB 512SSD Win11 Pro 3Y",
+    "slug": "lenovo-thinkpad-t14-g4-14fhd-ci7-1355u-16gb-512ssd-win11-pro-3y-1",
+    "description": "Lenovo ThinkPad T14-G4 14FHD Ci7-1355U 16GB 512SSD Win11 Pro 3Y (21 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-i7-1355U-300nits-Fingerprint/dp/B0CPG6L6R7",
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:03:59.993Z",
+    "created_at": "2024-09-27T15:03:58.850Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 338,
+  "fields": {
+    "name": "Lenovo ThinkPad T14s-G4 14FHD Ci7-1355U 16GB 1T-SSD Win11 Pro 3Y",
+    "slug": "lenovo-thinkpad-t14s-g4-14fhd-ci7-1355u-16gb-1t-ssd-win11-pro-3y-1",
+    "description": "Lenovo ThinkPad T14s-G4 14FHD Ci7-1355U 16GB 1T-SSD Win11 Pro 3Y (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.cdw.com/product/lenovo-thinkpad-t14s-gen-4-14-intel-core-i7-1355u-16-gb-ram-512/7450430",
+    "solde_price": 1296000.0,
+    "regular_price": 1350000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:04:03.207Z",
+    "created_at": "2024-09-27T15:04:02.481Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 339,
+  "fields": {
+    "name": "Lenovo ThinkPad L13 Yoga Gen 4, i7 1355U, 16Go, 512 Go SSD  NVMe,  13.3\" IPS  Win 11 Pro, tactile  I",
+    "slug": "lenovo-thinkpad-l13-yoga-gen-4-i7-1355u-16go-512-go-ssd-nvme-133-ips-win-11-pro-tactile-i-1",
+    "description": "Lenovo ThinkPad L13 Yoga Gen 4, i7 1355U, 16Go, 512 Go SSD  NVMe,  13.3\" IPS  Win 11 Pro, tactile  I (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-Touchscreen-i7-1355U-Windows/dp/B0CH76T5ZB",
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:04:07.110Z",
+    "created_at": "2024-09-27T15:04:06.183Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 340,
+  "fields": {
+    "name": "\"\"Lenovo ThinkPad T14 Gen4, Intel Core i7-1355U, 16Go RAM, 512 SSD Carte IrisXe, NVMe,Win 11 Pro,",
+    "slug": "lenovo-thinkpad-t14-gen4-intel-core-i7-1355u-16go-ram-512-ssd-carte-irisxe-nvmewin-11-pro-1",
+    "description": "\"\"Lenovo ThinkPad T14 Gen4, Intel Core i7-1355U, 16Go RAM, 512 SSD Carte IrisXe, NVMe,Win 11 Pro, (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-ThinkPad-i7-1355U-300nits-Fingerprint/dp/B0CPG6L6R7",
+    "solde_price": 1243200.0,
+    "regular_price": 1295000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:04:10.509Z",
+    "created_at": "2024-09-27T15:04:09.441Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 341,
+  "fields": {
+    "name": "Lenovo ThinkPad P14s Gen 2 20VX\nCore i7 1185G7 / 3 GHz (vPro) : Win 10 Pro 64 bits (comprend Licence Win 11 Pro), Quadro T500 , 16 Go RAM, 512 Go SSD TCG Opal Encryption 2, NVMe, 14\" IPS 1920 x 1080 (Full HD), Wi-Fi 6, noir, clavier : Français",
+    "slug": "lenovo-thinkpad-p14s-gen-2-20vx-core-i7-1185g7-3-ghz-vpro-win-10-pro-64-bits-comprend-licence-win-11-pro-quadro-t500-16-go-ram-512-go-ssd-tcg-opal-encryption-2-nvme-14-ips-1920-x-1080-full-hd-wi-fi-6-noir-clavier-francais-1",
+    "description": "Lenovo ThinkPad P14s Gen 2 20VX\nCore i7 1185G7 / 3 GHz (vPro) : Win 10 Pro 64 bits (comprend Licence Win 11 Pro), Quadro T500 , 16 Go RAM, 512 Go SSD TCG Opal Encryption 2, NVMe, 14\" IPS 1920 x 1080 (Full HD), Wi-Fi 6, noir, clavier : Français (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.walmart.com/ip/Lenovo-ThinkPad-P14s-Gen-2-20VX-Intel-Core-i7-1185G7-3-GHz-vPro-Win-10-Pro-64-bit-includes-11-License-Quadro-T500-16-GB-RAM-512-SSD-TCG-Opal-Encrypti/675006072",
+    "solde_price": 1243200.0,
+    "regular_price": 1295000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:04:14.345Z",
+    "created_at": "2024-09-27T15:04:13.244Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 342,
+  "fields": {
+    "name": "Lenovo ThinkPad E15 Gen 2 20TD PC Portable - Core i7 1165G7 / 2.8 GHz : Windows 11 Pro 64-bit, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Iris Xe Graphics, Wifi 802.11ax, Bluetooth 5.2, Gigabit Ethernet, Noir Garantie 1 An constructeur",
+    "slug": "lenovo-thinkpad-e15-gen-2-20td-pc-portable-core-i7-1165g7-28-ghz-windows-11-pro-64-bit-16-go-ram-512-go-ssd-nvme-ecran-156-ips-1920-x-1080-full-hd-iris-xe-graphics-wifi-80211ax-bluetooth-52-gigabit-ethernet-noir-garantie-1-an-constructeur-1",
+    "description": "Lenovo ThinkPad E15 Gen 2 20TD PC Portable - Core i7 1165G7 / 2.8 GHz : Windows 11 Pro 64-bit, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Iris Xe Graphics, Wifi 802.11ax, Bluetooth 5.2, Gigabit Ethernet, Noir Garantie 1 An constructeur (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/Lenovo-E15-i7-1165G7-Processor-Fingerprint/dp/B0B38DMWJY",
+    "solde_price": 912000.0,
+    "regular_price": 950000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:04:20.173Z",
+    "created_at": "2024-09-27T15:04:18.952Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 343,
+  "fields": {
+    "name": "Lenovo Think Pad T14 G1 - intel Core i7 - 10610 - 16  Go RAM - 1To SSD -Win 10 Pro , NVMe - 14\" IPS 3840 x 2160 (Ultra HD 4K) - GF MX330 / UHD Graphics - Bluetooth, Wi-Fi 6 - 4G - black - kbd: FR, FR international, AZERTY, -Windows 10 Pro 64 Bit ",
+    "slug": "lenovo-think-pad-t14-g1-intel-core-i7-10610-16-go-ram-1to-ssd-win-10-pro-nvme-14-ips-3840-x-2160-ultra-hd-4k-gf-mx330-uhd-graphics-bluetooth-wi-fi-6-4g-black-kbd-fr-fr-international-azerty-windows-10-pro-64-bit-1",
+    "description": "Lenovo Think Pad T14 G1 - intel Core i7 - 10610 - 16  Go RAM - 1To SSD -Win 10 Pro , NVMe - 14\" IPS 3840 x 2160 (Ultra HD 4K) - GF MX330 / UHD Graphics - Bluetooth, Wi-Fi 6 - 4G - black - kbd: FR, FR international, AZERTY, -Windows 10 Pro 64 Bit  (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:04:23.743Z",
+    "created_at": "2024-09-27T15:04:22.727Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 344,
+  "fields": {
+    "name": "Ordinateur Portable Lenovo ThinkPad E14 Gen 4 (21E3009BFE) Intel® Core™ i7-1255U, 10C (2P + 8E) / 12T, P-core 1.7 / 4.7GHz, E-core 1.2 / 3.5GHz, 12MB RAM: 8GB Soldered DDR4-3200 Disque dur: 512GB SSD M.2 2242 PCIe® 4.0x4 NVMe® Opal2 Écran: 14\" FHD (1920x1080) IPS 300nits Anti-glare, 1 45% NTSC Carte graphique: Integrated Intel Iris® Xe Graphics functions as UHD Graphics FreeDOS Clavier: Non-backlit, Français (AZERTY) Produit neuf dans son emballage d’origine +  Sac de transport  Garantie : 2 ans\n",
+    "slug": "ordinateur-portable-lenovo-thinkpad-e14-gen-4-21e3009bfe-intel-coretm-i7-1255u-10c-2p-8e-12t-p-core-17-47ghz-e-core-12-35ghz-12mb-ram-8gb-soldered-ddr4-3200-disque-dur-512gb-ssd-m2-2242-pcie-40x4-nvme-opal2-ecran-14-fhd-1920x1080-ips-300nits-anti-glare-1-45-ntsc-carte-graphique-integrated-intel-iris-xe-graphics-functions-as-uhd-graphics-freedos-clavier-non-backlit-francais-azerty-produit-neuf-dans-son-emballage-dorigine-sac-de-transport-garantie-2-ans-1",
+    "description": "Ordinateur Portable Lenovo ThinkPad E14 Gen 4 (21E3009BFE) Intel® Core™ i7-1255U, 10C (2P + 8E) / 12T, P-core 1.7 / 4.7GHz, E-core 1.2 / 3.5GHz, 12MB RAM: 8GB Soldered DDR4-3200 Disque dur: 512GB SSD M.2 2242 PCIe® 4.0x4 NVMe® Opal2 Écran: 14\" FHD (1920x1080) IPS 300nits Anti-glare, 1 45% NTSC Carte graphique: Integrated Intel Iris® Xe Graphics functions as UHD Graphics FreeDOS Clavier: Non-backlit, Français (AZERTY) Produit neuf dans son emballage d’origine +  Sac de transport  Garantie : 2 ans\n (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 720000.0,
+    "regular_price": 750000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:04:23.759Z",
+    "created_at": "2024-09-27T15:04:23.759Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 345,
+  "fields": {
+    "name": "Lenovo ThinkPad X1 Carbon Gen 10 Ultrabook Laptop, 14.0\" FHD+ Touchscreen, 12th Gen Intel Core i7-1260P 12Cores, 16GB LPDDR5 RAM 1TB SSD, Backlit KEYBOARD, Long Battery Life Rapid Charge, Win11 Pro",
+    "slug": "lenovo-thinkpad-x1-carbon-gen-10-ultrabook-laptop-140-fhd-touchscreen-12th-gen-intel-core-i7-1260p-12cores-16gb-lpddr5-ram-1tb-ssd-backlit-keyboard-long-battery-life-rapid-charge-win11-pro-1",
+    "description": "Lenovo ThinkPad X1 Carbon Gen 10 Ultrabook Laptop, 14.0\" FHD+ Touchscreen, 12th Gen Intel Core i7-1260P 12Cores, 16GB LPDDR5 RAM 1TB SSD, Backlit KEYBOARD, Long Battery Life Rapid Charge, Win11 Pro (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx1/thinkpad-x1-carbon-gen-10-(14-inch-intel)/len101t0009",
+    "solde_price": 1392000.0,
+    "regular_price": 1450000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:04:26.373Z",
+    "created_at": "2024-09-27T15:04:25.029Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 346,
+  "fields": {
+    "name": "Lenovo Thinkpad X1 Carbon Gen11 Intel (Core™ i7-1365U vPro®) Processor 32GB Ram LPDDR5 6000MHz 2To SSD M.2 NVMe PCIe 14\" WUXGA TouchScreen AG Intel Iris Xe Grapics Backligt EngKB, Windows 11 Pro Manufacturer Warranty   ",
+    "slug": "lenovo-thinkpad-x1-carbon-gen11-intel-coretm-i7-1365u-vpro-processor-32gb-ram-lpddr5-6000mhz-2to-ssd-m2-nvme-pcie-14-wuxga-touchscreen-ag-intel-iris-xe-grapics-backligt-engkb-windows-11-pro-manufacturer-warranty-1",
+    "description": "Lenovo Thinkpad X1 Carbon Gen11 Intel (Core™ i7-1365U vPro®) Processor 32GB Ram LPDDR5 6000MHz 2To SSD M.2 NVMe PCIe 14\" WUXGA TouchScreen AG Intel Iris Xe Grapics Backligt EngKB, Windows 11 Pro Manufacturer Warranty    (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 2064000.0,
+    "regular_price": 2150000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:04:29.059Z",
+    "created_at": "2024-09-27T15:04:29.059Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 347,
+  "fields": {
+    "name": "Lenovo ThinkPad E15 G2 Core i7/8GB/512GB SSD/WIFI/CAM/BT/ DOS ENG",
+    "slug": "lenovo-thinkpad-e15-g2-core-i78gb512gb-ssdwificambt-dos-eng-1",
+    "description": "Lenovo ThinkPad E15 G2 Core i7/8GB/512GB SSD/WIFI/CAM/BT/ DOS ENG (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 729600.0,
+    "regular_price": 760000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:04:40.339Z",
+    "created_at": "2024-09-27T15:04:40.339Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 348,
+  "fields": {
+    "name": "LENOVO IdeaPad 3 15ITL6/ Intel Core i7-1165G7 (4C / 8T, 2.8 / 4.7GHz, 12MB)/ Integrated Intel Iris Xe Graphics/ Intel SoC Platform/ 4GB Soldered DDR4-3200 + 4GB SO-DIMM DDR4-3200 (8GB RAM)/ 1TB HDD 5400rpm 2.5\\\"/ 15.6\\\" FHD (1920x1080) TN 250nits Anti-glare/ 4-in-1 Card Reader/ 11ac, 2x2 + BT5.0/ 720p with Privacy Shutter/ Arctic Grey/ IMR (In-Mold Decoration by Roller)/ PC + ABS (Top), PC + ABS (Bottom)/ 1-y",
+    "slug": "lenovo-ideapad-3-15itl6-intel-core-i7-1165g7-4c-8t-28-47ghz-12mb-integrated-intel-iris-xe-graphics-intel-soc-platform-4gb-soldered-ddr4-3200-4gb-so-dimm-ddr4-3200-8gb-ram-1tb-hdd-5400rpm-25-156-fhd-1920x1080-tn-250nits-anti-glare-4-in-1-card-reader-11ac-2x2-bt50-720p-with-privacy-shutter-arctic-grey-imr-in-mold-decoration-by-roller-pc-abs-top-pc-abs-bottom-1-y-1",
+    "description": "LENOVO IdeaPad 3 15ITL6/ Intel Core i7-1165G7 (4C / 8T, 2.8 / 4.7GHz, 12MB)/ Integrated Intel Iris Xe Graphics/ Intel SoC Platform/ 4GB Soldered DDR4-3200 + 4GB SO-DIMM DDR4-3200 (8GB RAM)/ 1TB HDD 5400rpm 2.5\\\"/ 15.6\\\" FHD (1920x1080) TN 250nits Anti-glare/ 4-in-1 Card Reader/ 11ac, 2x2 + BT5.0/ 720p with Privacy Shutter/ Arctic Grey/ IMR (In-Mold Decoration by Roller)/ PC + ABS (Top), PC + ABS (Bottom)/ 1-y (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 528000.0,
+    "regular_price": 550000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:04:51.614Z",
+    "created_at": "2024-09-27T15:04:51.614Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 349,
+  "fields": {
+    "name": "Lenovo Think Pad P15S G2 - Intel Core i7-1165G7-Ecran 15.6\" FHD - 16 Go RAM - 512GB SSD - Ubuntu Linux - NVIDIA Quadro T500 - Clavier FR",
+    "slug": "lenovo-think-pad-p15s-g2-intel-core-i7-1165g7-ecran-156-fhd-16-go-ram-512gb-ssd-ubuntu-linux-nvidia-quadro-t500-clavier-fr-1",
+    "description": "Lenovo Think Pad P15S G2 - Intel Core i7-1165G7-Ecran 15.6\" FHD - 16 Go RAM - 512GB SSD - Ubuntu Linux - NVIDIA Quadro T500 - Clavier FR (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1200000.0,
+    "regular_price": 1250000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:05:02.870Z",
+    "created_at": "2024-09-27T15:05:02.870Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 350,
+  "fields": {
+    "name": "LENOVO THINKBOOK 14\" FHD I7 8GB 1TB FREEDOS  Intel Core i7-1165G7 (4C / 8T, 2.8 / 4.7GHz, 12MB) RAM: 8",
+    "slug": "lenovo-thinkbook-14-fhd-i7-8gb-1tb-freedos-intel-core-i7-1165g7-4c-8t-28-47ghz-12mb-ram-8-1",
+    "description": "LENOVO THINKBOOK 14\" FHD I7 8GB 1TB FREEDOS  Intel Core i7-1165G7 (4C / 8T, 2.8 / 4.7GHz, 12MB) RAM: 8 (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 571200.0,
+    "regular_price": 595000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:05:14.159Z",
+    "created_at": "2024-09-27T15:05:14.159Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 351,
+  "fields": {
+    "name": "Lenovo X1 extreme G3 - Intel Core i7- 10850H - 16 Go RAM - 512 Go SSD -  1920 x 1080 pixels  Windows 10 Pro",
+    "slug": "lenovo-x1-extreme-g3-intel-core-i7-10850h-16-go-ram-512-go-ssd-1920-x-1080-pixels-windows-10-pro-1",
+    "description": "Lenovo X1 extreme G3 - Intel Core i7- 10850H - 16 Go RAM - 512 Go SSD -  1920 x 1080 pixels  Windows 10 Pro (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1339200.0,
+    "regular_price": 1395000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:05:25.443Z",
+    "created_at": "2024-09-27T15:05:25.443Z",
+    "categories": [
+      23
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 352,
+  "fields": {
+    "name": "HP Spectre x360 16-f1013nf Core i7-1260 16GB 1To Win 11",
+    "slug": "hp-spectre-x360-16-f1013nf-core-i7-1260-16gb-1to-win-11-1",
+    "description": "HP Spectre x360 16-f1013nf Core i7-1260 16GB 1To Win 11 (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1512000.0,
+    "regular_price": 1575000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:05:36.734Z",
+    "created_at": "2024-09-27T15:05:36.734Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 353,
+  "fields": {
+    "name": "HP Spectre x360 14-ef0000nf Intel Core i7-1255U 32GB 2To SSD Win 11H",
+    "slug": "hp-spectre-x360-14-ef0000nf-intel-core-i7-1255u-32gb-2to-ssd-win-11h-1",
+    "description": "HP Spectre x360 14-ef0000nf Intel Core i7-1255U 32GB 2To SSD Win 11H (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1512000.0,
+    "regular_price": 1575000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:05:48.002Z",
+    "created_at": "2024-09-27T15:05:48.002Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 354,
+  "fields": {
+    "name": "Ordinateur portable HP ProBook 450 15,6 pouces G9 IDS UMA i7-1255U RTK USBC 450  G9BNBPC/FreeDOS/DM HD USB2 IR WFOV Intgrtd Cam/15.6AG 16GO/1TO SSD",
+    "slug": "ordinateur-portable-hp-probook-450-156-pouces-g9-ids-uma-i7-1255u-rtk-usbc-450-g9bnbpcfreedosdm-hd-usb2-ir-wfov-intgrtd-cam156ag-16go1to-ssd-1",
+    "description": "Ordinateur portable HP ProBook 450 15,6 pouces G9 IDS UMA i7-1255U RTK USBC 450  G9BNBPC/FreeDOS/DM HD USB2 IR WFOV Intgrtd Cam/15.6AG 16GO/1TO SSD (15 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 816000.0,
+    "regular_price": 850000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:05:59.269Z",
+    "created_at": "2024-09-27T15:05:59.269Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 355,
+  "fields": {
+    "name": "HP EB 830 G10 Notebook  Intel Core i7-1355U, 16 Go, 512 Go SSD NVMe, 13.3\" IPS  tactile, Win11 Pro,",
+    "slug": "hp-eb-830-g10-notebook-intel-core-i7-1355u-16-go-512-go-ssd-nvme-133-ips-tactile-win11-pro-1",
+    "description": "HP EB 830 G10 Notebook  Intel Core i7-1355U, 16 Go, 512 Go SSD NVMe, 13.3\" IPS  tactile, Win11 Pro, (15 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1339200.0,
+    "regular_price": 1395000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:06:10.545Z",
+    "created_at": "2024-09-27T15:06:10.545Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 356,
+  "fields": {
+    "name": "HP EliteBook 840 G10 Notebook Intel Core i7 - 1355U 16 Go RAM, 512 Go SSD NVMe : Win 11 Pro,",
+    "slug": "hp-elitebook-840-g10-notebook-intel-core-i7-1355u-16-go-ram-512-go-ssd-nvme-win-11-pro-1",
+    "description": "HP EliteBook 840 G10 Notebook Intel Core i7 - 1355U 16 Go RAM, 512 Go SSD NVMe : Win 11 Pro, (15 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:06:21.822Z",
+    "created_at": "2024-09-27T15:06:21.822Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 357,
+  "fields": {
+    "name": "HP Spectre x360 13-aw2003nk | Core i7 1165G7 quad | 16GB DDR4 on-board | 512TB PCIe | Intel Iris X",
+    "slug": "hp-spectre-x360-13-aw2003nk-core-i7-1165g7-quad-16gb-ddr4-on-board-512tb-pcie-intel-iris-x",
+    "description": "HP Spectre x360 13-aw2003nk | Core i7 1165G7 quad | 16GB DDR4 on-board | 512TB PCIe | Intel Iris X (8 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1339200.0,
+    "regular_price": 1395000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:06:33.090Z",
+    "created_at": "2024-09-27T15:06:33.090Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 358,
+  "fields": {
+    "name": "HP Probook 430 G8 NB PC/ UMA i7-1165G7 430 G8 / 13.3 HD AG SVA 250 HD / 8GB 1D DDR4 3200 / 512GB PCI",
+    "slug": "hp-probook-430-g8-nb-pc-uma-i7-1165g7-430-g8-133-hd-ag-sva-250-hd-8gb-1d-ddr4-3200-512gb-pci",
+    "description": "HP Probook 430 G8 NB PC/ UMA i7-1165G7 430 G8 / 13.3 HD AG SVA 250 HD / 8GB 1D DDR4 3200 / 512GB PCI (45 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 720000.0,
+    "regular_price": 750000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:06:44.387Z",
+    "created_at": "2024-09-27T15:06:44.387Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 359,
+  "fields": {
+    "name": "HP ELITE BOOK 840 G9 NB PC / UMA i7-1255U 840 G9 / 14.0 WUXGA UWVA 250 WWAN 5MP IR bnt Panel / 16GB (1x16GB) DDR5 4800 SODIMM MEMORY / 512GB Pcle NVMe Value / W11p64 / 1yw / Dual AryMic 5MP USB2 IR NFOV.Camera / Clickpad Backlit Prenium kbd / Intel AX211 Wi-Fi 6e 160 MHz +BT 5.2 /A",
+    "slug": "hp-elite-book-840-g9-nb-pc-uma-i7-1255u-840-g9-140-wuxga-uwva-250-wwan-5mp-ir-bnt-panel-16gb-1x16gb-ddr5-4800-sodimm-memory-512gb-pcle-nvme-value-w11p64-1yw-dual-arymic-5mp-usb2-ir-nfovcamera-clickpad-backlit-prenium-kbd-intel-ax211-wi-fi-6e-160-mhz-bt-52-a",
+    "description": "HP ELITE BOOK 840 G9 NB PC / UMA i7-1255U 840 G9 / 14.0 WUXGA UWVA 250 WWAN 5MP IR bnt Panel / 16GB (1x16GB) DDR5 4800 SODIMM MEMORY / 512GB Pcle NVMe Value / W11p64 / 1yw / Dual AryMic 5MP USB2 IR NFOV.Camera / Clickpad Backlit Prenium kbd / Intel AX211 Wi-Fi 6e 160 MHz +BT 5.2 /A (21 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1147200.0,
+    "regular_price": 1195000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:06:55.646Z",
+    "created_at": "2024-09-27T15:06:55.646Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 360,
+  "fields": {
+    "name": "HP ProBook 450 G8 Intel Core i7-1165G7 16 Go SSD 512 Go 15.6\" LED Full HD Wi-Fi/WIN 10Pro 64bits",
+    "slug": "hp-probook-450-g8-intel-core-i7-1165g7-16-go-ssd-512-go-156-led-full-hd-wi-fiwin-10pro-64bits",
+    "description": "HP ProBook 450 G8 Intel Core i7-1165G7 16 Go SSD 512 Go 15.6\" LED Full HD Wi-Fi/WIN 10Pro 64bits (21 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1056000.0,
+    "regular_price": 1100000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:07:06.922Z",
+    "created_at": "2024-09-27T15:07:06.922Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 361,
+  "fields": {
+    "name": "HP ZBook 15 G6 Core i7 9750H / 2.6 GHz hexacore : Windows 10 Pro 64 bits, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Quadro T1000, Wifi 6, Bluetooth 5.0, Gigabit Ethernet Garantie 3 Ans Retour Atelier constructeur",
+    "slug": "hp-zbook-15-g6-core-i7-9750h-26-ghz-hexacore-windows-10-pro-64-bits-16-go-ram-512-go-ssd-nvme-ecran-156-ips-1920-x-1080-full-hd-quadro-t1000-wifi-6-bluetooth-50-gigabit-ethernet-garantie-3-ans-retour-atelier-constructeur",
+    "description": "HP ZBook 15 G6 Core i7 9750H / 2.6 GHz hexacore : Windows 10 Pro 64 bits, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Quadro T1000, Wifi 6, Bluetooth 5.0, Gigabit Ethernet Garantie 3 Ans Retour Atelier constructeur (15 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1416000.0,
+    "regular_price": 1475000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:07:18.208Z",
+    "created_at": "2024-09-27T15:07:18.208Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 362,
+  "fields": {
+    "name": "HP ZBOOK Firefly 15 G8-1165G7 15 G8 / 1TB PCIe-3x4 2280 NVMe TLC / 32GB (2x16GB) DDR4 3200 / W11p64DongradeWin10p64 / 15.6 FHD AG LED 400 for WWAN for HD Webcam+ IR  bent Low Power ALS / WLAN Intel Wi-Fi 6 AX201 ax 2x2  MU-MIMO nvP 160MHz BT 5 with 2Antennas / 3yw / ",
+    "slug": "hp-zbook-firefly-15-g8-1165g7-15-g8-1tb-pcie-3x4-2280-nvme-tlc-32gb-2x16gb-ddr4-3200-w11p64dongradewin10p64-156-fhd-ag-led-400-for-wwan-for-hd-webcam-ir-bent-low-power-als-wlan-intel-wi-fi-6-ax201-ax-2x2-mu-mimo-nvp-160mhz-bt-5-with-2antennas-3yw",
+    "description": "HP ZBOOK Firefly 15 G8-1165G7 15 G8 / 1TB PCIe-3x4 2280 NVMe TLC / 32GB (2x16GB) DDR4 3200 / W11p64DongradeWin10p64 / 15.6 FHD AG LED 400 for WWAN for HD Webcam+ IR  bent Low Power ALS / WLAN Intel Wi-Fi 6 AX201 ax 2x2  MU-MIMO nvP 160MHz BT 5 with 2Antennas / 3yw /  (15 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "",
+    "solde_price": 1680000.0,
+    "regular_price": 1750000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:07:29.501Z",
+    "created_at": "2024-09-27T15:07:29.501Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 363,
+  "fields": {
+    "name": "HP ZBook 15 G6 Core i7 9750H / 2.6 GHz hexacore : Windows 10 Pro 64 bits, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Quadro T1000, Wifi 6, Bluetooth 5.0, Gigabit Ethernet Garantie 3 Ans Retour Atelier constructeur",
+    "slug": "hp-zbook-15-g6-core-i7-9750h-26-ghz-hexacore-windows-10-pro-64-bits-16-go-ram-512-go-ssd-nvme-ecran-156-ips-1920-x-1080-full-hd-quadro-t1000-wifi-6-bluetooth-50-gigabit-ethernet-garantie-3-ans-retour-atelier-constructeur-1",
+    "description": "HP ZBook 15 G6 Core i7 9750H / 2.6 GHz hexacore : Windows 10 Pro 64 bits, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Quadro T1000, Wifi 6, Bluetooth 5.0, Gigabit Ethernet Garantie 3 Ans Retour Atelier constructeur (15 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-15-6-ZBook-Mobile-Workstation/dp/B081B4SJ5C",
+    "solde_price": 1416000.0,
+    "regular_price": 1475000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:07:45.685Z",
+    "created_at": "2024-09-27T15:07:40.724Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 364,
+  "fields": {
+    "name": "HP Pavilion Gaming - Core i7-9750H hexa/16GB DDR4 2DM 2666/1TB",
+    "slug": "hp-pavilion-gaming-core-i7-9750h-hexa16gb-ddr4-2dm-26661tb",
+    "description": "HP Pavilion Gaming - Core i7-9750H hexa/16GB DDR4 2DM 2666/1TB (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-Pavilion-Gaming-Computer-i7-9750H/dp/B09QS49YVK",
+    "solde_price": 984000.0,
+    "regular_price": 1025000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:07:53.696Z",
+    "created_at": "2024-09-27T15:07:50.705Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 365,
+  "fields": {
+    "name": "HP EliteBook 820 G2 Ci7-5600U 4GB DDR3L , 500GB HDD+32GB SSD W7p64W8p64",
+    "slug": "hp-elitebook-820-g2-ci7-5600u-4gb-ddr3l-500gb-hdd32gb-ssd-w7p64w8p64",
+    "description": "HP EliteBook 820 G2 Ci7-5600U 4GB DDR3L , 500GB HDD+32GB SSD W7p64W8p64 (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.shi.com/product/30062636/HP-EliteBook-820-G2-Core-i7-5600U-2.6-GHz",
+    "solde_price": 1152000.0,
+    "regular_price": 1200000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:00.626Z",
+    "created_at": "2024-09-27T15:07:57.172Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 366,
+  "fields": {
+    "name": "HP ProBook 450 G9 - PC Portable - Core i7 1255U / 1.7 GHz : Windows 11 Pro, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Iris Xe Graphics, Wifi 802.11ax, Bluetooth 5.2, Gigabit Ethernet, Argent, Garantie 1 An constructeur",
+    "slug": "hp-probook-450-g9-pc-portable-core-i7-1255u-17-ghz-windows-11-pro-16-go-ram-512-go-ssd-nvme-ecran-156-ips-1920-x-1080-full-hd-iris-xe-graphics-wifi-80211ax-bluetooth-52-gigabit-ethernet-argent-garantie-1-an-constructeur",
+    "description": "HP ProBook 450 G9 - PC Portable - Core i7 1255U / 1.7 GHz : Windows 11 Pro, 16 Go RAM, 512 Go SSD NVMe, Ecran 15.6\" IPS 1920 x 1080 (Full HD), Iris Xe Graphics, Wifi 802.11ax, Bluetooth 5.2, Gigabit Ethernet, Argent, Garantie 1 An constructeur (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": "https://www.amazon.com/HP-i7-1255U-Keyboard-Bluetooth-Platinum/dp/B0CNGSJ3VF",
+    "solde_price": 763200.0,
+    "regular_price": 795000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:08:16.539Z",
+    "created_at": "2024-09-27T15:08:04.541Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 367,
+  "fields": {
+    "name": "HP Elite Dragonfly G2 Intel Core i7-1165G7 13.3p 16Go 512Go Touch inclinable Win 10 Pro",
+    "slug": "hp-elite-dragonfly-g2-intel-core-i7-1165g7-133p-16go-512go-touch-inclinable-win-10-pro",
+    "description": "HP Elite Dragonfly G2 Intel Core i7-1165G7 13.3p 16Go 512Go Touch inclinable Win 10 Pro (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 2064000.0,
+    "regular_price": 2150000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:22.249Z",
+    "created_at": "2024-09-27T15:08:20.091Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 368,
+  "fields": {
+    "name": "HP Elite Dragonfly (8MK75EA) 2u1 laptop 13.3\" FHD Intel® Quad Core™ i7 8565U 16GB 512GB SSD+32GB Optane Intel® UHD 620 Win10 Pro plavi 2-cell",
+    "slug": "hp-elite-dragonfly-8mk75ea-2u1-laptop-133-fhd-intel-quad-coretm-i7-8565u-16gb-512gb-ssd32gb-optane-intel-uhd-620-win10-pro-plavi-2-cell",
+    "description": "HP Elite Dragonfly (8MK75EA) 2u1 laptop 13.3\" FHD Intel® Quad Core™ i7 8565U 16GB 512GB SSD+32GB Optane Intel® UHD 620 Win10 Pro plavi 2-cell (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1224000.0,
+    "regular_price": 1275000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:23.534Z",
+    "created_at": "2024-09-27T15:08:22.274Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 369,
+  "fields": {
+    "name": "HP ENVY 13-ba1024nf Core™ i7-1165G7 8go NVMe™ M.2 512 Go FHD Win10Home, Pas de Lecteur Optique Ecran 13.3 Pouces avec Faible Puissance BANG&OLUFSEN, lecteur d'empreinte Digitale. ",
+    "slug": "hp-envy-13-ba1024nf-coretm-i7-1165g7-8go-nvmetm-m2-512-go-fhd-win10home-pas-de-lecteur-optique-ecran-133-pouces-avec-faible-puissance-bangolufsen-lecteur-dempreinte-digitale",
+    "description": "HP ENVY 13-ba1024nf Core™ i7-1165G7 8go NVMe™ M.2 512 Go FHD Win10Home, Pas de Lecteur Optique Ecran 13.3 Pouces avec Faible Puissance BANG&OLUFSEN, lecteur d'empreinte Digitale.  (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 912000.0,
+    "regular_price": 950000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:24.443Z",
+    "created_at": "2024-09-27T15:08:23.548Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 370,
+  "fields": {
+    "name": "HP ENVY x360 13-bf0003nf Core i7 1250U 16go 512go écran tactile WinH",
+    "slug": "hp-envy-x360-13-bf0003nf-core-i7-1250u-16go-512go-ecran-tactile-winh",
+    "description": "HP ENVY x360 13-bf0003nf Core i7 1250U 16go 512go écran tactile WinH (10 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1224000.0,
+    "regular_price": 1275000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:25.366Z",
+    "created_at": "2024-09-27T15:08:24.472Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 371,
+  "fields": {
+    "name": "Lenovo ThinkBook 15 G2 ITL (20VE000KFE) : Intel Core i5-1135G7 – Mémoire 8GB Soldered DDR4-3200 – Stockage 1TB HDD 5400rpm 2.5″ – Ecran 15.6″ FHD (1920×1080) TN 220nits Anti-glare – Integrated Intel Iris Xe Graphics functions as UHD Graphics – 11ax, 2×2 + BT5.1 – Free Dos Wifi AX+Bluetooth",
+    "slug": "lenovo-thinkbook-15-g2-itl-20ve000kfe-intel-core-i5-1135g7-memoire-8gb-soldered-ddr4-3200-stockage-1tb-hdd-5400rpm-25-ecran-156-fhd-19201080-tn-220nits-anti-glare-integrated-intel-iris-xe-graphics-functions-as-uhd-graphics-11ax-22-bt51-free-dos-wifi-axbluetooth",
+    "description": "Lenovo ThinkBook 15 G2 ITL (20VE000KFE) : Intel Core i5-1135G7 – Mémoire 8GB Soldered DDR4-3200 – Stockage 1TB HDD 5400rpm 2.5″ – Ecran 15.6″ FHD (1920×1080) TN 220nits Anti-glare – Integrated Intel Iris Xe Graphics functions as UHD Graphics – 11ax, 2×2 + BT5.1 – Free Dos Wifi AX+Bluetooth (15 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 672000.0,
+    "regular_price": 700000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:08:26.446Z",
+    "created_at": "2024-09-27T15:08:25.399Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 372,
+  "fields": {
+    "name": "HP ENVY x360 Convert 15-Core i7 1165G7 quad-16GB DDR4 2DM 3200-512GB PCIe value-Intel Iris Xe-65 watt-Natural silver - fingerprint reader-Touch/15.6 FHD Antiglare IPS 250 nits Narrow Border-KBD NSV ISK CP BL AFRC-F-Intel Harrison Peak 2 Wifi 6 ax 2x2 MU-MIMO 160 MHz + BT 5-WARRANTY 1AN",
+    "slug": "hp-envy-x360-convert-15-core-i7-1165g7-quad-16gb-ddr4-2dm-3200-512gb-pcie-value-intel-iris-xe-65-watt-natural-silver-fingerprint-reader-touch156-fhd-antiglare-ips-250-nits-narrow-border-kbd-nsv-isk-cp-bl-afrc-f-intel-harrison-peak-2-wifi-6-ax-2x2-mu-mimo-160-mhz-bt-5-warranty-1an",
+    "description": "HP ENVY x360 Convert 15-Core i7 1165G7 quad-16GB DDR4 2DM 3200-512GB PCIe value-Intel Iris Xe-65 watt-Natural silver - fingerprint reader-Touch/15.6 FHD Antiglare IPS 250 nits Narrow Border-KBD NSV ISK CP BL AFRC-F-Intel Harrison Peak 2 Wifi 6 ax 2x2 MU-MIMO 160 MHz + BT 5-WARRANTY 1AN (9 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 936000.0,
+    "regular_price": 975000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:27.256Z",
+    "created_at": "2024-09-27T15:08:26.486Z",
+    "categories": [
+      24
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 373,
+  "fields": {
+    "name": "DELL LATITUDE 3520-N 15.6\" CI7-1165G7 4C 4.7GHz 8GB 512GB WIFIBT LX 1Y",
+    "slug": "dell-latitude-3520-n-156-ci7-1165g7-4c-47ghz-8gb-512gb-wifibt-lx-1y",
+    "description": "DELL LATITUDE 3520-N 15.6\" CI7-1165G7 4C 4.7GHz 8GB 512GB WIFIBT LX 1Y (9 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 720000.0,
+    "regular_price": 750000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:08:28.334Z",
+    "created_at": "2024-09-27T15:08:27.308Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 374,
+  "fields": {
+    "name": "Dell Latitude 7420 Processeur Intel® Core™ i7-1145G7 vPro® de 11e Gen (8 Mo, 4 coeurs, 8 threads, 2,60 GHz à 4,40 GHz Turbo) laptop Win11 Pro 16 Go de mémoire non ECC intégrée\nDisque SSD M.2 PCIe NVMe 256 Go, classe 35",
+    "slug": "dell-latitude-7420-processeur-intel-coretm-i7-1145g7-vpro-de-11e-gen-8-mo-4-coeurs-8-threads-260-ghz-a-440-ghz-turbo-laptop-win11-pro-16-go-de-memoire-non-ecc-integree-disque-ssd-m2-pcie-nvme-256-go-classe-35",
+    "description": "Dell Latitude 7420 Processeur Intel® Core™ i7-1145G7 vPro® de 11e Gen (8 Mo, 4 coeurs, 8 threads, 2,60 GHz à 4,40 GHz Turbo) laptop Win11 Pro 16 Go de mémoire non ECC intégrée\nDisque SSD M.2 PCIe NVMe 256 Go, classe 35 (9 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1147200.0,
+    "regular_price": 1195000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:29.470Z",
+    "created_at": "2024-09-27T15:08:28.384Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 375,
+  "fields": {
+    "name": "DELL VOSTRO 3510-N 15.6\" CI7- 1165G7 4.7GHz 8GB 1TB 2GB WIFIBT LX 1Y",
+    "slug": "dell-vostro-3510-n-156-ci7-1165g7-47ghz-8gb-1tb-2gb-wifibt-lx-1y",
+    "description": "DELL VOSTRO 3510-N 15.6\" CI7- 1165G7 4.7GHz 8GB 1TB 2GB WIFIBT LX 1Y (9 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 633600.0,
+    "regular_price": 660000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:30.572Z",
+    "created_at": "2024-09-27T15:08:29.495Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 376,
+  "fields": {
+    "name": "Dell Vostro 5391-N Core i7-10510U 4.9GHz 8GB/1TB WIFIBT 2GB ",
+    "slug": "dell-vostro-5391-n-core-i7-10510u-49ghz-8gb1tb-wifibt-2gb",
+    "description": "Dell Vostro 5391-N Core i7-10510U 4.9GHz 8GB/1TB WIFIBT 2GB  (9 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 720000.0,
+    "regular_price": 750000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:31.628Z",
+    "created_at": "2024-09-27T15:08:30.597Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 377,
+  "fields": {
+    "name": "Dell Gaming G15 Core™ i7-13650HX 16go 1Tossd NVIDIA® GeForce 3070 8go 15' Win11H",
+    "slug": "dell-gaming-g15-coretm-i7-13650hx-16go-1tossd-nvidia-geforce-3070-8go-15-win11h",
+    "description": "Dell Gaming G15 Core™ i7-13650HX 16go 1Tossd NVIDIA® GeForce 3070 8go 15' Win11H (9 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1512000.0,
+    "regular_price": 1575000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:08:32.457Z",
+    "created_at": "2024-09-27T15:08:31.653Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 378,
+  "fields": {
+    "name": "Dell Latitude 5430 Intel Core i7-1255U 16GB (2x8GB 3200Mhz DDR4 512GB SSD PCIe NVMe M.2 14.0\" FHD (",
+    "slug": "dell-latitude-5430-intel-core-i7-1255u-16gb-2x8gb-3200mhz-ddr4-512gb-ssd-pcie-nvme-m2-140-fhd",
+    "description": "Dell Latitude 5430 Intel Core i7-1255U 16GB (2x8GB 3200Mhz DDR4 512GB SSD PCIe NVMe M.2 14.0\" FHD ( (9 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1104000.0,
+    "regular_price": 1150000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:33.493Z",
+    "created_at": "2024-09-27T15:08:32.486Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 379,
+  "fields": {
+    "name": "DELL LATITUDE 5520 15,6\" FHD, INTEL CORE I7-1165G7 (4,7 GHZ), 16 GO, SSD 512 GO wifi bluetooth",
+    "slug": "dell-latitude-5520-156-fhd-intel-core-i7-1165g7-47-ghz-16-go-ssd-512-go-wifi-bluetooth",
+    "description": "DELL LATITUDE 5520 15,6\" FHD, INTEL CORE I7-1165G7 (4,7 GHZ), 16 GO, SSD 512 GO wifi bluetooth (9 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 763200.0,
+    "regular_price": 795000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:34.316Z",
+    "created_at": "2024-09-27T15:08:33.504Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 380,
+  "fields": {
+    "name": "Dell XPS13-7390 Core TM-i7-1051 ou16Go Win10 pro: écran Full HD de 13 pouces avec lunette nette,",
+    "slug": "dell-xps13-7390-core-tm-i7-1051-ou16go-win10-pro-ecran-full-hd-de-13-pouces-avec-lunette-nette",
+    "description": "Dell XPS13-7390 Core TM-i7-1051 ou16Go Win10 pro: écran Full HD de 13 pouces avec lunette nette, (15 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1536000.0,
+    "regular_price": 1600000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:35.361Z",
+    "created_at": "2024-09-27T15:08:34.334Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 381,
+  "fields": {
+    "name": "Dell Vostro 5391-N Core i7-10510U 4.9GHz 8GB/1TB WIN10P64  WIFIBT 2GB ",
+    "slug": "dell-vostro-5391-n-core-i7-10510u-49ghz-8gb1tb-win10p64-wifibt-2gb",
+    "description": "Dell Vostro 5391-N Core i7-10510U 4.9GHz 8GB/1TB WIN10P64  WIFIBT 2GB  (9 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 720000.0,
+    "regular_price": 750000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:36.233Z",
+    "created_at": "2024-09-27T15:08:35.398Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 382,
+  "fields": {
+    "name": "Ordinateur Portable ASUS VivoBook 15 X512JA-EJ197T Ordinateur Portable - Ecran 15,6 Pouces Full HD IPS - Intel Core I7-10065G - RAM 8 Go - SSD 512 Go - Windows 10 - Poids 1,7 Kg",
+    "slug": "ordinateur-portable-asus-vivobook-15-x512ja-ej197t-ordinateur-portable-ecran-156-pouces-full-hd-ips-intel-core-i7-10065g-ram-8-go-ssd-512-go-windows-10-poids-17-kg",
+    "description": "Ordinateur Portable ASUS VivoBook 15 X512JA-EJ197T Ordinateur Portable - Ecran 15,6 Pouces Full HD IPS - Intel Core I7-10065G - RAM 8 Go - SSD 512 Go - Windows 10 - Poids 1,7 Kg (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 624000.0,
+    "regular_price": 650000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:37.130Z",
+    "created_at": "2024-09-27T15:08:36.265Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 383,
+  "fields": {
+    "name": "Dell Latitude 5420 - Core i7 1165G7 / 32Go - 1Go SSD - 15,6'' Full HD",
+    "slug": "dell-latitude-5420-core-i7-1165g7-32go-1go-ssd-156-full-hd",
+    "description": "Dell Latitude 5420 - Core i7 1165G7 / 32Go - 1Go SSD - 15,6'' Full HD (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 955200.0,
+    "regular_price": 995000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:38.172Z",
+    "created_at": "2024-09-27T15:08:37.164Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 384,
+  "fields": {
+    "name": "Dell Latitude 7430 Core i7 1265U 16Go RAM/512 Go SSD NVMe Ecran 14\" Tactile Win 10 Pro 64 bits US",
+    "slug": "dell-latitude-7430-core-i7-1265u-16go-ram512-go-ssd-nvme-ecran-14-tactile-win-10-pro-64-bits-us",
+    "description": "Dell Latitude 7430 Core i7 1265U 16Go RAM/512 Go SSD NVMe Ecran 14\" Tactile Win 10 Pro 64 bits US (20 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1310400.0,
+    "regular_price": 1365000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:39.303Z",
+    "created_at": "2024-09-27T15:08:38.202Z",
+    "categories": [
+      25
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 385,
+  "fields": {
+    "name": "APC ONDULEUR BATTERY BACKUP 700VA",
+    "slug": "apc-onduleur-battery-backup-700va",
+    "description": "APC ONDULEUR BATTERY BACKUP 700VA (96 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 43200.0,
+    "regular_price": 45000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:40.347Z",
+    "created_at": "2024-09-27T15:08:39.334Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 386,
+  "fields": {
+    "name": "EATON ONDULEUR 5E ESSENTIAL UPS 1100VA",
+    "slug": "eaton-onduleur-5e-essential-ups-1100va",
+    "description": "EATON ONDULEUR 5E ESSENTIAL UPS 1100VA (48 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 46080.0,
+    "regular_price": 48000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:08:41.244Z",
+    "created_at": "2024-09-27T15:08:40.370Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 387,
+  "fields": {
+    "name": "EOS ONDULEUR LINE INTERACTIF 650 VA",
+    "slug": "eos-onduleur-line-interactif-650-va",
+    "description": "EOS ONDULEUR LINE INTERACTIF 650 VA (25 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 36000.0,
+    "regular_price": 37500.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:42.313Z",
+    "created_at": "2024-09-27T15:08:41.260Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 388,
+  "fields": {
+    "name": "EMERSON AC POWER SYSTEM LIEBERT ITON 600 VA",
+    "slug": "emerson-ac-power-system-liebert-iton-600-va",
+    "description": "EMERSON AC POWER SYSTEM LIEBERT ITON 600 VA (65 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 38400.0,
+    "regular_price": 40000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:43.217Z",
+    "created_at": "2024-09-27T15:08:42.334Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 389,
+  "fields": {
+    "name": "EATON ONDULEUR PROTECTION NOVA AVR 625 BATTERY BACKUP",
+    "slug": "eaton-onduleur-protection-nova-avr-625-battery-backup",
+    "description": "EATON ONDULEUR PROTECTION NOVA AVR 625 BATTERY BACKUP (14 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 52800.0,
+    "regular_price": 55000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:08:44.122Z",
+    "created_at": "2024-09-27T15:08:43.248Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 390,
+  "fields": {
+    "name": "APC REPLACEMENT BATTERY CARTRIDGE RBC55_2(2x12V/17AH)",
+    "slug": "apc-replacement-battery-cartridge-rbc55_22x12v17ah",
+    "description": "APC REPLACEMENT BATTERY CARTRIDGE RBC55_2(2x12V/17AH) (25 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 57600.0,
+    "regular_price": 60000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:45.484Z",
+    "created_at": "2024-09-27T15:08:44.137Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 391,
+  "fields": {
+    "name": "APC EASY UPS ON-LINE SRV 10KVA ( SRVPM10KIL)",
+    "slug": "apc-easy-ups-on-line-srv-10kva-srvpm10kil",
+    "description": "APC EASY UPS ON-LINE SRV 10KVA ( SRVPM10KIL) (65 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 4320000.0,
+    "regular_price": 4500000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:46.999Z",
+    "created_at": "2024-09-27T15:08:45.515Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 392,
+  "fields": {
+    "name": "APC 36V BATTERY PACK FOR 1KVA TOWER (SRV36BP-9A)",
+    "slug": "apc-36v-battery-pack-for-1kva-tower-srv36bp-9a",
+    "description": "APC 36V BATTERY PACK FOR 1KVA TOWER (SRV36BP-9A) (13 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 1440000.0,
+    "regular_price": 1500000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": false,
+    "is_new_arrival": false,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:08:48.046Z",
+    "created_at": "2024-09-27T15:08:47.015Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 393,
+  "fields": {
+    "name": "APC SMART UPS RC 10KVA (SRCPM10KI)",
+    "slug": "apc-smart-ups-rc-10kva-srcpm10ki",
+    "description": "APC SMART UPS RC 10KVA (SRCPM10KI) (14 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 3840000.0,
+    "regular_price": 4000000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:08:49.286Z",
+    "created_at": "2024-09-27T15:08:48.062Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 394,
+  "fields": {
+    "name": "APC REPLACEMENT BATTERY CARTRIDGE RBC43",
+    "slug": "apc-replacement-battery-cartridge-rbc43",
+    "description": "APC REPLACEMENT BATTERY CARTRIDGE RBC43 (17 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 3360000.0,
+    "regular_price": 3500000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:50.153Z",
+    "created_at": "2024-09-27T15:08:49.305Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 395,
+  "fields": {
+    "name": "APC SMART UPS RC 10KVA (SRCPM10KI)",
+    "slug": "apc-smart-ups-rc-10kva-srcpm10ki-1",
+    "description": "APC SMART UPS RC 10KVA (SRCPM10KI) (65 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 2400000.0,
+    "regular_price": 2500000.0,
+    "brand": "Brand ",
+    "is_available": false,
+    "is_best_seller": true,
+    "is_new_arrival": true,
+    "is_featured": false,
+    "is_special_offer": false,
+    "updated_at": "2024-09-27T15:08:51.221Z",
+    "created_at": "2024-09-27T15:08:50.188Z",
+    "categories": [
+      26
+    ]
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 396,
+  "fields": {
+    "name": "APC ONDUELEUR UNINTERRUPTIBLE POWER SUPPLY (SRV10KI)",
+    "slug": "apc-ondueleur-uninterruptible-power-supply-srv10ki",
+    "description": "APC ONDUELEUR UNINTERRUPTIBLE POWER SUPPLY (SRV10KI) (65 unités disponibles.)",
+    "more_description": "",
+    "additional_infos": null,
+    "solde_price": 3840000.0,
+    "regular_price": 4000000.0,
+    "brand": "Brand ",
+    "is_available": true,
+    "is_best_seller": false,
+    "is_new_arrival": true,
+    "is_featured": true,
+    "is_special_offer": true,
+    "updated_at": "2024-09-27T15:08:52.100Z",
+    "created_at": "2024-09-27T15:08:51.244Z",
+    "categories": [
+      26
+    ]
+  }
+}
+]

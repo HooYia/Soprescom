@@ -1,0 +1,93 @@
+[
+{
+  "model": "shop.category",
+  "pk": 20,
+  "fields": {
+    "name": "GAME LENOVO ( CORE I5)",
+    "description": "",
+    "slug": "game-lenovo-core-i5",
+    "image": "category_images/2024/09/27/game_i5_lenovo.jpg",
+    "is_mega": false,
+    "updated_at": "2024-09-27T14:36:46.046Z",
+    "created_at": "2024-09-27T14:36:46.046Z"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 21,
+  "fields": {
+    "name": "GAME DELL ( CORE I5 )",
+    "description": "GAME DELL ( CORE I5 )",
+    "slug": "game-dell-core-i5",
+    "image": "category_images/2024/09/27/game_i5_dell.jpg",
+    "is_mega": false,
+    "updated_at": "2024-09-27T15:47:01.171Z",
+    "created_at": "2024-09-27T14:37:07.855Z"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 22,
+  "fields": {
+    "name": "GAME HP   ( CORE I5 )",
+    "description": "GAME HP   ( CORE I5 )",
+    "slug": "game-hp-core-i5",
+    "image": "category_images/2024/09/27/game_i5_hp.jpeg",
+    "is_mega": true,
+    "updated_at": "2024-09-27T15:46:51.833Z",
+    "created_at": "2024-09-27T14:37:16.667Z"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 23,
+  "fields": {
+    "name": "GAME LENOVO (CORE I7)",
+    "description": "GAME LENOVO (CORE I7)",
+    "slug": "game-lenovo-core-i7",
+    "image": "category_images/2024/09/27/game_i7_lenovo.jpg",
+    "is_mega": true,
+    "updated_at": "2024-09-27T15:46:41.201Z",
+    "created_at": "2024-09-27T14:37:44.909Z"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 24,
+  "fields": {
+    "name": "GAME HP (CORE I7)",
+    "description": "GAME HP (CORE I7)",
+    "slug": "game-hp-core-i7",
+    "image": "category_images/2024/09/27/game_hp_i7_ZOrrmA3.jpg",
+    "is_mega": true,
+    "updated_at": "2024-09-27T15:45:43.109Z",
+    "created_at": "2024-09-27T14:38:50.600Z"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 25,
+  "fields": {
+    "name": "GAME DELL (CORE I7)",
+    "description": "GAME DELL (CORE I7)",
+    "slug": "game-dell-core-i7",
+    "image": "category_images/2024/09/27/game_dell_I7_TgBSHIu.jpeg",
+    "is_mega": true,
+    "updated_at": "2024-09-27T15:46:08.021Z",
+    "created_at": "2024-09-27T15:08:27.277Z"
+  }
+},
+{
+  "model": "shop.category",
+  "pk": 26,
+  "fields": {
+    "name": "ONDULEUR",
+    "description": "ONDULEUR",
+    "slug": "onduleur",
+    "image": "category_images/2024/09/27/5E1500I_img4.jpg",
+    "is_mega": false,
+    "updated_at": "2024-09-27T15:46:29.566Z",
+    "created_at": "2024-09-27T15:08:39.318Z"
+  }
+}
+]

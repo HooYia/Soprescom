@@ -45,6 +45,7 @@
                      <td class="{% if row.flag == 1 %}disabled-cell{% endif %}"> 
                          <button id="id_SuiviCommandeDetail{{row.idsuivicommandesav}}"  
                          data-url="{% url 'serviceapresvente:suivicommandesav-show' row.idsuivicommandesav %}" 
+                         data-modalname="Suivi Comamnde SAV"
                          class="btn btn-fill-out btn-sm commandesav" >View
                          </button>
                       </td>

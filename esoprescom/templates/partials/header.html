@@ -8,7 +8,9 @@
              <div  class="col-md-6">
                  <div 
                      class="d-flex align-items-center justify-content-center justify-content-md-start">
-                     <div  class="me-3">
+                    <!--
+                    <div  class="me-3">
+                       
                          <div class="ddOutOfVision" id="msdrpdd20_msddHolder"
                              style="height: 0px; overflow: hidden; position: absolute;"><select
                                   name="countries" class="custome_select" id="msdrpdd20"
@@ -19,35 +21,46 @@
                                      ng-reflect-value="EUR">EUR</option>
                                  <option  value="GBR" data-title="GBR"
                                      ng-reflect-value="GBR">GBR</option>
-                             </select></div>
-                         <div class="dd ddcommon borderRadius" id="msdrpdd20_msdd" tabindex="0" style="width: 52px;">
-                             <div class="ddTitle borderRadiusTp"><span class="divider"></span><span
-                                     class="ddArrow arrowoff"></span><span class="ddTitleText "
-                                     id="msdrpdd20_title"><span class="ddlabel">USD</span><span class="description"
-                                         style="display: none;"></span></span></div><input id="msdrpdd20_titleText"
-                                 type="text" autocomplete="off" class="text shadow borderRadius"
-                                 style="display: none;">
-                             <div class="ddChild ddchild_ border shadow" id="msdrpdd20_child"
-                                 style="z-index: 9999; display: none; position: absolute; visibility: visible; height: 99px;">
-                                 <ul>
-                                     <li class="enabled _msddli_ selected" title="{{request.session.currency}}"><span
-                                             class="ddlabel">{{request.session.currency}}</span>
-                                         <div class="clear"></div>
-                                     </li>
-                                     <li class="enabled _msddli_" title="EUR"><span class="ddlabel">EUR</span>
-                                         <div class="clear"></div>
-                                     </li>
-                                     <li class="enabled _msddli_" title="GBR"><span class="ddlabel">GBR</span>
-                                         <div class="clear"></div>
-                                     </li>
-                                 </ul>
-                             </div>
-                         </div>
-                     </div>
+                             </select>
+                        </div>
+                           <div class="dd ddcommon borderRadius" id="msdrpdd20_msdd" tabindex="0" style="width: 52px;">
+                                <div class="ddTitle borderRadiusTp"><span class="divider"></span><span
+                                        class="ddArrow arrowoff"></span><span class="ddTitleText "
+                                        id="msdrpdd20_title"><span class="ddlabel">USD</span><span class="description"
+                                            style="display: none;"></span></span>
+                                </div>
+                                <input id="msdrpdd20_titleText"
+                                   type="text" autocomplete="off" class="text shadow borderRadius"
+                                    style="display: none;">
+                                <div class="ddChild ddchild_ border shadow" id="msdrpdd20_child"
+                                        style="z-index: 9999; display: none; position: absolute; visibility: visible; height: 99px;">
+                                        <ul>
+                                            <li class="enabled _msddli_ selected" title="{{request.session.currency}}"><span
+                                                    class="ddlabel">{{request.session.currency}}</span>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li class="enabled _msddli_" title="EUR"><span class="ddlabel">EUR</span>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li class="enabled _msddli_" title="GBR"><span class="ddlabel">GBR</span>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                </div>
+                          </div>
+                     </div> 
+                        -->    
+                        
+                    
+                   
                      <ul  class="contact_detail text-center text-lg-start">
+                        <li ><i  class="ti-credit-card"></i> <span
+                                >{{request.session.currency}}</span></li>
+                    </ul>  
+                    <ul  class="contact_detail text-center text-lg-start">
                          <li ><i  class="ti-mobile"></i><span
                                  >{{request.session.phone}}</span></li>
-                     </ul>
+                    </ul>
                  </div>
              </div>
              <div  class="col-md-6">
@@ -69,7 +82,11 @@
                          </li>
                          <li>
                             <a href="{% url 'serviceapresvente:savrequest' %}">
-                                <i class="fas fa-toolbox"></i><span >SAV/leasing</span>
+                                <!--
+                                    <i class="fas fa-toolbox"></i><span >SAV/leasing</span>
+                                -->
+                                <i class="ti-menu"></i><span >SAV/leasing</span>
+                            </a>
                             </a>
                          </li>
                          <li>
@@ -114,7 +131,7 @@
                  class="navbar-collapse justify-content-end collapse" style="">
                  <ul  class="navbar-nav">
                      <li  class="dropdown"><a  routerlink="/"
-                             class="nav-link" ng-reflect-router-link="/" href="/">Home</a></li>
+                             class="nav-link" href="/">Home</a></li>
                      <li  class="dropdown"><a  href="#"
                              data-bs-toggle="dropdown" class="dropdown-toggle nav-link active"
                              aria-expanded="false">Pages</a>

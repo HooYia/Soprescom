@@ -1,0 +1,1366 @@
+[
+{
+  "model": "shop.stock",
+  "pk": 2,
+  "fields": {
+    "stock_produit": 273,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:46.094Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 3,
+  "fields": {
+    "stock_produit": 274,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:49.760Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 4,
+  "fields": {
+    "stock_produit": 275,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:53.041Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 5,
+  "fields": {
+    "stock_produit": 276,
+    "quantite": 5,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:56.415Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 6,
+  "fields": {
+    "stock_produit": 277,
+    "quantite": 7,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:36:59.583Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 7,
+  "fields": {
+    "stock_produit": 278,
+    "quantite": 14,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:00.411Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 8,
+  "fields": {
+    "stock_produit": 279,
+    "quantite": 26,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:04.191Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 9,
+  "fields": {
+    "stock_produit": 280,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:07.905Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 10,
+  "fields": {
+    "stock_produit": 281,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:12.666Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 11,
+  "fields": {
+    "stock_produit": 282,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:16.713Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 12,
+  "fields": {
+    "stock_produit": 283,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:17.712Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 13,
+  "fields": {
+    "stock_produit": 284,
+    "quantite": 23,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:20.838Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 14,
+  "fields": {
+    "stock_produit": 285,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:23.507Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 15,
+  "fields": {
+    "stock_produit": 286,
+    "quantite": 32,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:26.909Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 16,
+  "fields": {
+    "stock_produit": 287,
+    "quantite": 32,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:30.401Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 17,
+  "fields": {
+    "stock_produit": 288,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:34.263Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 18,
+  "fields": {
+    "stock_produit": 289,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:37.334Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 19,
+  "fields": {
+    "stock_produit": 290,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:41.228Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 20,
+  "fields": {
+    "stock_produit": 291,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:45.290Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 21,
+  "fields": {
+    "stock_produit": 292,
+    "quantite": 24,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:49.118Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 22,
+  "fields": {
+    "stock_produit": 293,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:53.112Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 23,
+  "fields": {
+    "stock_produit": 294,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:37:57.117Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 24,
+  "fields": {
+    "stock_produit": 295,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:00.407Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 25,
+  "fields": {
+    "stock_produit": 296,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:03.403Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 26,
+  "fields": {
+    "stock_produit": 297,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:06.653Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 27,
+  "fields": {
+    "stock_produit": 298,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:09.780Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 28,
+  "fields": {
+    "stock_produit": 299,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:13.630Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 29,
+  "fields": {
+    "stock_produit": 300,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:17.042Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 30,
+  "fields": {
+    "stock_produit": 301,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:20.820Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 31,
+  "fields": {
+    "stock_produit": 302,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:21.841Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 32,
+  "fields": {
+    "stock_produit": 303,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:22.890Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 33,
+  "fields": {
+    "stock_produit": 304,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:26.295Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 34,
+  "fields": {
+    "stock_produit": 305,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:30.317Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 35,
+  "fields": {
+    "stock_produit": 306,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:33.698Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 36,
+  "fields": {
+    "stock_produit": 307,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:38.570Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 37,
+  "fields": {
+    "stock_produit": 308,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:42.720Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 38,
+  "fields": {
+    "stock_produit": 309,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:47.104Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 39,
+  "fields": {
+    "stock_produit": 310,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:50.659Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 40,
+  "fields": {
+    "stock_produit": 311,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:55.004Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 41,
+  "fields": {
+    "stock_produit": 312,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:38:58.503Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 42,
+  "fields": {
+    "stock_produit": 313,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:39:03.536Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 43,
+  "fields": {
+    "stock_produit": 314,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T14:39:08.576Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 44,
+  "fields": {
+    "stock_produit": 315,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:28.602Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 45,
+  "fields": {
+    "stock_produit": 316,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:32.779Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 46,
+  "fields": {
+    "stock_produit": 317,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:35.960Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 47,
+  "fields": {
+    "stock_produit": 318,
+    "quantite": 5,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:39.862Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 48,
+  "fields": {
+    "stock_produit": 319,
+    "quantite": 7,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:43.869Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 49,
+  "fields": {
+    "stock_produit": 320,
+    "quantite": 14,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:45.022Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 50,
+  "fields": {
+    "stock_produit": 321,
+    "quantite": 26,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:51.561Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 51,
+  "fields": {
+    "stock_produit": 322,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:02:55.858Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 52,
+  "fields": {
+    "stock_produit": 323,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:05.367Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 53,
+  "fields": {
+    "stock_produit": 324,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:11.161Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 54,
+  "fields": {
+    "stock_produit": 325,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:11.949Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 55,
+  "fields": {
+    "stock_produit": 326,
+    "quantite": 23,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:16.753Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 56,
+  "fields": {
+    "stock_produit": 327,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:21.154Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 57,
+  "fields": {
+    "stock_produit": 328,
+    "quantite": 32,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:25.035Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 58,
+  "fields": {
+    "stock_produit": 329,
+    "quantite": 32,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:28.648Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 59,
+  "fields": {
+    "stock_produit": 330,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:32.295Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 60,
+  "fields": {
+    "stock_produit": 331,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:36.292Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 61,
+  "fields": {
+    "stock_produit": 332,
+    "quantite": 12,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:40.038Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 62,
+  "fields": {
+    "stock_produit": 333,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:44.662Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 63,
+  "fields": {
+    "stock_produit": 334,
+    "quantite": 24,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:47.778Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 64,
+  "fields": {
+    "stock_produit": 335,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:51.339Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 65,
+  "fields": {
+    "stock_produit": 336,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:55.169Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 66,
+  "fields": {
+    "stock_produit": 337,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:03:58.881Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 67,
+  "fields": {
+    "stock_produit": 338,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:02.511Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 68,
+  "fields": {
+    "stock_produit": 339,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:06.229Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 69,
+  "fields": {
+    "stock_produit": 340,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:09.474Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 70,
+  "fields": {
+    "stock_produit": 341,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:13.270Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 71,
+  "fields": {
+    "stock_produit": 342,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:18.980Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 72,
+  "fields": {
+    "stock_produit": 343,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:22.762Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 73,
+  "fields": {
+    "stock_produit": 344,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:23.793Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 74,
+  "fields": {
+    "stock_produit": 345,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:25.061Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 75,
+  "fields": {
+    "stock_produit": 346,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:29.089Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 76,
+  "fields": {
+    "stock_produit": 347,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:40.378Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 77,
+  "fields": {
+    "stock_produit": 348,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:04:51.643Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 78,
+  "fields": {
+    "stock_produit": 349,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:02.905Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 79,
+  "fields": {
+    "stock_produit": 350,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:14.195Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 80,
+  "fields": {
+    "stock_produit": 351,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:25.486Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 81,
+  "fields": {
+    "stock_produit": 352,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:36.760Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 82,
+  "fields": {
+    "stock_produit": 353,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:48.030Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 83,
+  "fields": {
+    "stock_produit": 354,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:05:59.304Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 84,
+  "fields": {
+    "stock_produit": 355,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:10.579Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 85,
+  "fields": {
+    "stock_produit": 356,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:21.855Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 86,
+  "fields": {
+    "stock_produit": 357,
+    "quantite": 8,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:33.124Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 87,
+  "fields": {
+    "stock_produit": 358,
+    "quantite": 45,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:44.417Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 88,
+  "fields": {
+    "stock_produit": 359,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:06:55.685Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 89,
+  "fields": {
+    "stock_produit": 360,
+    "quantite": 21,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:06.944Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 90,
+  "fields": {
+    "stock_produit": 361,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:18.239Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 91,
+  "fields": {
+    "stock_produit": 362,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:29.536Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 92,
+  "fields": {
+    "stock_produit": 363,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:40.755Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 93,
+  "fields": {
+    "stock_produit": 364,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:50.752Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 94,
+  "fields": {
+    "stock_produit": 365,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:07:57.202Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 95,
+  "fields": {
+    "stock_produit": 366,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:04.619Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 96,
+  "fields": {
+    "stock_produit": 367,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:20.154Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 97,
+  "fields": {
+    "stock_produit": 368,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:22.305Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 98,
+  "fields": {
+    "stock_produit": 369,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:23.600Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 99,
+  "fields": {
+    "stock_produit": 370,
+    "quantite": 10,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:24.518Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 100,
+  "fields": {
+    "stock_produit": 371,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:25.431Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 101,
+  "fields": {
+    "stock_produit": 372,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:26.528Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 102,
+  "fields": {
+    "stock_produit": 373,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:27.344Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 103,
+  "fields": {
+    "stock_produit": 374,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:28.429Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 104,
+  "fields": {
+    "stock_produit": 375,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:29.533Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 105,
+  "fields": {
+    "stock_produit": 376,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:30.640Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 106,
+  "fields": {
+    "stock_produit": 377,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:31.692Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 107,
+  "fields": {
+    "stock_produit": 378,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:32.518Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 108,
+  "fields": {
+    "stock_produit": 379,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:33.547Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 109,
+  "fields": {
+    "stock_produit": 380,
+    "quantite": 15,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:34.379Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 110,
+  "fields": {
+    "stock_produit": 381,
+    "quantite": 9,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:35.429Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 111,
+  "fields": {
+    "stock_produit": 382,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:36.296Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 112,
+  "fields": {
+    "stock_produit": 383,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:37.193Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 113,
+  "fields": {
+    "stock_produit": 384,
+    "quantite": 20,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:38.266Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 114,
+  "fields": {
+    "stock_produit": 385,
+    "quantite": 96,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:39.368Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 115,
+  "fields": {
+    "stock_produit": 386,
+    "quantite": 48,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:40.407Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 116,
+  "fields": {
+    "stock_produit": 387,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:41.292Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 117,
+  "fields": {
+    "stock_produit": 388,
+    "quantite": 65,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:42.374Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 118,
+  "fields": {
+    "stock_produit": 389,
+    "quantite": 14,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:43.295Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 119,
+  "fields": {
+    "stock_produit": 390,
+    "quantite": 25,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:44.177Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 120,
+  "fields": {
+    "stock_produit": 391,
+    "quantite": 65,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:45.546Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 121,
+  "fields": {
+    "stock_produit": 392,
+    "quantite": 13,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:47.046Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 122,
+  "fields": {
+    "stock_produit": 393,
+    "quantite": 14,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:48.109Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 123,
+  "fields": {
+    "stock_produit": 394,
+    "quantite": 17,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:49.336Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 124,
+  "fields": {
+    "stock_produit": 395,
+    "quantite": 65,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:50.216Z"
+  }
+},
+{
+  "model": "shop.stock",
+  "pk": 125,
+  "fields": {
+    "stock_produit": 396,
+    "quantite": 65,
+    "initial_quantite": 0,
+    "stockLimite": 10,
+    "date_mvt": "2024-09-27T15:08:51.282Z"
+  }
+}
+]

@@ -65,10 +65,7 @@ class Clientleasing(models.Model):
     
 ##Gestion Imprimante
 class Listeimprimante(models.Model):
-    class ETATIMPRIMANTE(models.TextChoices):
-          OK ="ETAT CORRECT","ETAT CORRECT"
-          DEGRADE ="ETAT Dégradé","ETAT Dégradé"
-          NONOK ="Non fonctionnel","Non fonctionnel"
+    
     idlisteimprimante = models.BigAutoField(primary_key=True)
     numero_serie = models.CharField(verbose_name =_('Numero Série'),unique=True,max_length=50)
     reference = models.CharField(verbose_name =_('Référence'),max_length=50,null=False, blank=False,db_index=True)
@@ -78,15 +75,9 @@ class Listeimprimante(models.Model):
     garantie = models.CharField(max_length=10,verbose_name =_('Garantie'), blank=True, null=True)
     endoflife = models.DateField(verbose_name =_('End of Life'), blank=True, null=True)
     image = models.ImageField(upload_to='leasing/', null=True, blank=True)
+    more_detail = models.URLField(verbose_name =_('More details'),max_length=100,blank=True, null=True)
     flag = models.BooleanField(default=False)
-    ## Fiel dpour la maintenance
-    niveau_toner = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
-    niveau_photoconducteur = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
-    niveau_hit_maintenance = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
-    ancien_index = models.IntegerField(blank=True, null=True)
-    nouvel_index = models.IntegerField(blank=True, null=True)
-    moyenne_impression =models.FloatField(blank=True, null=True)
-    etat = models.CharField(max_length=15, verbose_name=_('Intervention'), choices=ETATIMPRIMANTE.choices, default=ETATIMPRIMANTE.OK)
+    
     
     class Meta:
         managed = True
@@ -106,35 +97,48 @@ class Listeimprimante(models.Model):
 
     
     def save(self, *args, **kwargs):
-        # Appel à l'API Google pour récupérer les informations si elles ne sont pas fournies
-        if not self.endoflife or not self.image:
-            search_results = self.search_google_info()
-            if search_results:
-                self.endoflife = search_results.get('end_of_warranty')
-                self.image = search_results.get('image_url')
-        super().save(*args, **kwargs)
+        # Si l'objet est en cours de création (self._state.adding == True)
+        if self._state.adding:
+            # Appel à l'API Google pour récupérer les informations si elles ne sont pas fournies
+            if not self.endoflife or not self.image:
+                search_results = self.search_google_info()
+                if search_results:
+                    self.endoflife = search_results.get('end_of_warranty')
+                    self.image = search_results.get('image_url')
+                    self.more_detail = search_results.get('link ')
+                    self.description = search_results.get('titre ')
+            super().save(*args, **kwargs)
 
     def search_google_info(self):
         """Utilise l'API Google pour rechercher la date de fin de garantie et l'image."""
-        api_key = os.getenv('AIzaSyBoAi6Jr6zeiklXsybwEjQjjIecJB6_gac')  # Clé API Google
-        cse_id = os.getenv('gen-lang-client-0767018349')  # ID du moteur de recherche personnalisé
-
+        #api_key = os.getenv('AIzaSyBaVCxR04xT9Si06o7x7g09DfyseFzUQEI')  # Clé API Google
+        #cse_id = os.getenv('5744104a0b81e46cb')  # ID du moteur de recherche personnalisé
+        api_key = 'AIzaSyC_R0BcteLidkinIrNqMHOjjoPgv1nhJro'  # Clé API Google
+        cse_id = '5744104a0b81e46cb'  # ID du moteur de recherche personnalisé
         service = build("customsearch", "v1", developerKey=api_key)
-        query = f"{self.reference} {self.designation} {self.numero_serie}"
-
+        query = f"{self.reference} {self.designation}"
         try:
             res = service.cse().list(q=query, cx=cse_id).execute()
+            #print('Res:',res)
             items = res.get('items', [])
             for item in items:
                 # Logique pour extraire les informations d'intérêt
+                #print('item:',item)
+                end_of_warranty=''
+                image_url=None
+                link=item['link']
+                titre=item['title']
                 if 'warranty' in item['snippet'].lower():
                     end_of_warranty = "logique pour extraire la date de fin de garantie"
                 if 'pagemap' in item and 'cse_image' in item['pagemap']:
                     image_url = item['pagemap']['cse_image'][0]['src']
-                    return {
+                return {
                         'end_of_warranty': end_of_warranty,
-                        'image_url': image_url
+                        'image_url': image_url,
+                        'link':link,
+                        'titre': titre
                     }
+                print('image_url:',image_url)
         except Exception as e:
             print(f"Erreur lors de la recherche Google: {e}")
         return None
@@ -366,9 +370,17 @@ class Maintenance(models.Model):
     date_maintenance = models.DateField(auto_now_add=True)
     maintenue_par = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)
     statut = models.CharField(max_length=15,  verbose_name=_('Statut'), choices=STATUT.choices, default=STATUT.maintenance_0)
-    description = models.TextField(verbose_name=_('Description'), max_length=255, null=True, blank=True)
+    description = models.TextField(verbose_name=_('Description'), max_length=100, null=True, blank=True)
     prochaine_maintenance = models.DateField(verbose_name=_('Prochaine maintenance'), blank=True, null=True)
-
+    
+    ## Fiel dpour la maintenance
+    niveau_toner = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
+    niveau_photoconducteur = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
+    niveau_hit_maintenance = models.CharField(max_length=5, verbose_name=_('Toner (%)'), blank=True, null=True)
+    ancien_index = models.IntegerField(blank=True, null=True)
+    nouvel_index = models.IntegerField(blank=True, null=True)
+    moyenne_impression =models.FloatField(blank=True, null=True)
+    
     class Meta:
         db_table = 'leasing_maintenance'
         verbose_name = 'Maintenance'

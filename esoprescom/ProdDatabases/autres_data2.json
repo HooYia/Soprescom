@@ -1,0 +1,271 @@
+[
+{
+  "model": "shop.setting",
+  "pk": 1,
+  "fields": {
+    "name": "SoPesCom",
+    "description": "SociÃ©tÃ© de Prestation et de Commerce",
+    "currency": "FCFA",
+    "taxe_rate": 18.0,
+    "logo": "setting_image/logo.png",
+    "street": "ACI2000 IMM BABIN",
+    "city": "Bamako",
+    "code_postal": "E73",
+    "state": "MALI",
+    "phone": "+22320238091",
+    "email": "info@soprescom.net",
+    "copyright": "Copyright SDT",
+    "updated_at": "2024-06-12T21:58:16.404Z",
+    "created_at": "2024-05-24T13:18:44.822Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 1,
+  "fields": {
+    "title": "Lenovo Axe",
+    "description": "50% off in all products",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/LD0005776428_1_0005778918.jpg",
+    "updated_at": "2024-05-24T13:21:03.580Z",
+    "created_at": "2024-05-24T13:21:03.580Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 2,
+  "fields": {
+    "title": "Lenovo  Yoga 12th",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/tÃƒÂ©lÃƒÂ©chargement_1.jpeg",
+    "updated_at": "2024-05-24T13:21:03.587Z",
+    "created_at": "2024-05-24T13:21:03.587Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 3,
+  "fields": {
+    "title": "HP Pavillon",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/tÃƒÂ©lÃƒÂ©chargement_4.jpeg",
+    "updated_at": "2024-05-24T13:21:03.591Z",
+    "created_at": "2024-05-24T13:21:03.591Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 4,
+  "fields": {
+    "title": "ASUS",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/assus.jpeg",
+    "updated_at": "2024-05-24T13:21:03.594Z",
+    "created_at": "2024-05-24T13:21:03.594Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 5,
+  "fields": {
+    "title": "DELL",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/dell_001.jpeg",
+    "updated_at": "2024-05-24T13:21:03.599Z",
+    "created_at": "2024-05-24T13:21:03.599Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 6,
+  "fields": {
+    "title": "Lenovo Axe",
+    "description": "50% off in all products",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/LD0005776428_1_0005778918.jpg",
+    "updated_at": "2024-05-24T13:22:36.408Z",
+    "created_at": "2024-05-24T13:22:36.408Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 7,
+  "fields": {
+    "title": "Lenovo  Yoga 12th",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/tÃƒÂ©lÃƒÂ©chargement_1.jpeg",
+    "updated_at": "2024-05-24T13:22:36.419Z",
+    "created_at": "2024-05-24T13:22:36.419Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 8,
+  "fields": {
+    "title": "HP Pavillon",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/tÃƒÂ©lÃƒÂ©chargement_4.jpeg",
+    "updated_at": "2024-05-24T13:22:36.425Z",
+    "created_at": "2024-05-24T13:22:36.425Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 9,
+  "fields": {
+    "title": "ASUS",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/assus.jpeg",
+    "updated_at": "2024-05-24T13:22:36.430Z",
+    "created_at": "2024-05-24T13:22:36.430Z"
+  }
+},
+{
+  "model": "shop.slider",
+  "pk": 10,
+  "fields": {
+    "title": "DELL",
+    "description": "Get up to 50% off Today Only!",
+    "button_text": "Shop Now",
+    "button_link": "https://mudey.fr/",
+    "image": "sliders/2024/05/17/dell_001.jpeg",
+    "updated_at": "2024-05-24T13:22:36.437Z",
+    "created_at": "2024-05-24T13:22:36.437Z"
+  }
+},
+{
+  "model": "shop.social",
+  "pk": 1,
+  "fields": {
+    "name": "FaceBook",
+    "icon": "ion-social-facebook",
+    "link": "https://facebook.com",
+    "updated_at": "2024-05-24T13:20:19.606Z",
+    "created_at": "2024-05-24T13:20:19.606Z"
+  }
+},
+{
+  "model": "shop.social",
+  "pk": 2,
+  "fields": {
+    "name": "Youtube",
+    "icon": "ion-social-youtube-outline",
+    "link": "ttps://www.youtube.com/channel/UCkqALrIVPEyGnnbmiFl3lQA/?sub_confirmation=1",
+    "updated_at": "2024-05-24T13:20:19.618Z",
+    "created_at": "2024-05-24T13:20:19.618Z"
+  }
+},
+{
+  "model": "shop.social",
+  "pk": 3,
+  "fields": {
+    "name": "Instagram",
+    "icon": "ion-social-instagram-outline",
+    "link": "https://www.instagram.com/mudey_formation/",
+    "updated_at": "2024-05-24T13:20:19.623Z",
+    "created_at": "2024-05-24T13:20:19.623Z"
+  }
+},
+{
+  "model": "shop.method",
+  "pk": 1,
+  "fields": {
+    "name": "Stripe",
+    "description": "Paiement par carte bancaire",
+    "more_description": "",
+    "logo": "payment_methodes/2024/05/27/70ad864965ec7e5686bd72c1e9aea2617c2220d2.jpg",
+    "test_public_key": "pk_test_51PL4EwEuPf0ooxPYIXyXwI8f2clxejkRkCQfwoDhkmfHwkXQhRTmuSPS2kGsUDLJnbXP1Oz3vf7MSxiF6xHwKSNM00G1SubIiY",
+    "test_private_key": "sk_test_51PL4EwEuPf0ooxPYlKQPdN8nTcP4t0USyxK3eMJy1kkqJj6BqTIuYJiSFJQBrCm1lmcKInQTWsioTVc9M3abUb3W00zQwx0ltA",
+    "prod_public_key": null,
+    "prod_private_key": null,
+    "is_available": false,
+    "updated_at": "2024-05-29T09:10:17.501Z",
+    "created_at": "2024-05-27T14:34:01.266Z"
+  }
+},
+{
+  "model": "shop.method",
+  "pk": 3,
+  "fields": {
+    "name": "Paypal",
+    "description": "Paiement Paypal",
+    "more_description": "",
+    "logo": "payment_methodes/2024/05/27/b86b5da0e802be917c2c877296c6b1451aa852f0.png",
+    "test_public_key": "AVsFQT78YxGIvceRLBg3wAB8cIEgHZzOi542Q7tuP2HS3KJWz_GRGR_qugplTLMygYhVDUX9L8_2EFC_",
+    "test_private_key": "ELzGPb9MkrNXaKYMDiDdcSQSnH3JfWnXWbY_QwZKo-aKW6DUbKGlYpKtsOGauEt08cZ4P_wTEUEkxD6h",
+    "prod_public_key": null,
+    "prod_private_key": null,
+    "is_available": false,
+    "updated_at": "2024-05-27T14:38:43.823Z",
+    "created_at": "2024-05-27T14:38:43.823Z"
+  }
+},
+{
+  "model": "shop.carrier",
+  "pk": 1,
+  "fields": {
+    "name": "Service Livraison",
+    "description": "Service Livraison",
+    "details": "<p><strong>Service Livraison</strong></p>\r\n\r\n<p><strong>Nos principe:</strong></p>\r\n\r\n<p><strong>1. Ponctualit&eacute;</strong></p>\r\n\r\n<p><strong>2. Rapidit&eacute;</strong></p>\r\n\r\n<p><strong>3. Responsable de la marchandise du d&eacute;p&ocirc;t &agrave; la livraison</strong></p>\r\n\r\n<p><strong>4. Prix concurentiel&nbsp;</strong></p>\r\n\r\n<p>&nbsp;</p>",
+    "price": 5000.0,
+    "image": "carrier_images/2024/05/22/livraison1.png",
+    "updated_at": "2024-05-24T12:30:38.117Z",
+    "created_at": "2024-05-24T12:30:38.117Z"
+  }
+},
+{
+  "model": "shop.carrier",
+  "pk": 2,
+  "fields": {
+    "name": "Speed delivery",
+    "description": "Speed delivery",
+    "details": "<p>Speed delivery</p>",
+    "price": 6000.0,
+    "image": "carrier_images/2024/05/22/livraison4.jpeg",
+    "updated_at": "2024-05-24T12:30:38.129Z",
+    "created_at": "2024-05-24T12:30:38.129Z"
+  }
+},
+{
+  "model": "shop.carrier",
+  "pk": 3,
+  "fields": {
+    "name": "FedEx MALI",
+    "description": "FedEx MALI",
+    "details": "<p>FedEx MALI</p>",
+    "price": 6500.0,
+    "image": "carrier_images/2024/05/22/fedEx.jpeg",
+    "updated_at": "2024-05-24T12:30:38.138Z",
+    "created_at": "2024-05-24T12:30:38.139Z"
+  }
+},
+{
+  "model": "shop.carrier",
+  "pk": 4,
+  "fields": {
+    "name": "Chap Chap Mali",
+    "description": "Chap Chap Mali",
+    "details": "<p>Chap Chap Mali</p>",
+    "price": 4500.0,
+    "image": "carrier_images/2024/05/22/chapchap.png",
+    "updated_at": "2024-05-24T12:30:38.143Z",
+    "created_at": "2024-05-24T12:30:38.144Z"
+  }
+}
+]

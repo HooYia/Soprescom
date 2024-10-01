@@ -34,7 +34,9 @@
                         {{ row.statut}} </div>
                       </td>
                       <td class="{% if row.flag == 1 %}disabled-cell{% endif %}">  
-                        <button id="id_assemblage"  data-url="{% url 'serviceapresvente:assemblage-show' row.idassemblage %}" class="btn btn-fill-out btn-sm commandesav" >View
+                        <button id="id_assemblage"  data-url="{% url 'serviceapresvente:assemblage-show' row.idassemblage %}" 
+                        data-modalname="Assemblage DSI"
+                        class="btn btn-fill-out btn-sm commandesav" >View
                         </button>
                      </td>
                   <tr>

@@ -1,0 +1,61 @@
+{% load price_filter %}
+
+
+<!-- Modal -->
+<div class="modal fade savdetail" id="ModalWindows" tabindex="-1" aria-labelledby="ModalWindowsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="ModalWindowsModalLabel"> </h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div  id="ModalData">     </div>
+        <!-- Modal for Zoom Image -->
+        <div class="modal fade" id="zoomModal" tabindex="-1" aria-labelledby="zoomModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-body">
+                <img id="zoomImage" src="" class="img-fluid" alt="Zoom Image">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        
+      </div>
+     
+      <div class="modal-footer">
+          <button id="BtnInstanceUpd" class="btn btn-primary"
+              data-url="#" >Modifier</button> 
+          <button  id="BtnInstanceCancel" class="btn btn-secondary" data-bs-dismiss="modal">cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% block script %}
+<script>
+$(document).ready(function() {
+
+function resetModal() {
+  var commandesavField = document.querySelector('#BtnInstanceUpd');
+  commandesavField.removeAttribute('disabled'); 
+  commandesavField.classList.remove('grayed-out');
+  
+  
+}
+
+$('#ModalWindows').on('shown.bs.modal', function() {
+  resetModal();
+});
+})
+
+
+</script>
+{% endblock %}
+
