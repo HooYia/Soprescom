@@ -154,6 +154,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     #'livereload.middleware.LiveReloadScript',
 ]
 
@@ -254,3 +255,7 @@ EMAIL_USE_TLS = True
 # Configuration Celery
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+
+
+#time tracking
+SESSION_COOKIE_AGE = 1 * 60  # 15 minutes
