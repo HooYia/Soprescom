@@ -1,11 +1,14 @@
 from django.shortcuts import render,get_object_or_404
 from django.core.paginator import Paginator,PageNotAnInteger,EmptyPage
+from django.urls import reverse
 from apps.shop.models.Page import Page
 from apps.shop.models.Slider import Slider
 from apps.shop.models.Collection import Collection
 from apps.shop.models.Product import Product
 from apps.shop.models.Category import Category
 from apps.shop.models.Setting import Setting
+from django.http import JsonResponse
+
 
 # def index(request):
 #    sliders = Slider.objects.all()
@@ -118,3 +121,35 @@ def shop(request):
                   'categories':categories,
                   'default_category_id':int(category_id) if category_id.isdigit() else category_id,
                   })
+   
+   
+   
+
+def search_products(request):
+    query = request.GET.get('q', '')
+    if query:
+        products = Product.objects.filter(name__icontains=query)  # Adjust filter as needed
+        products_data = [
+            {
+                'id': product.id,
+                'name': product.name,
+                'slug': product.slug,
+                'solde_price': product.solde_price,
+                'regular_price': product.regular_price,
+                'description': product.description,
+                'image': product.images.first().image.url if product.images.exists() else '',  # Assuming Product has a related images model
+                'url': reverse('shop:single_product', kwargs={'slug': product.slug}),
+                'add_to_cart_url': reverse('shop:add_to_cart', kwargs={'product_id': product.id}),
+                'add_to_compare_url': reverse('shop:add_to_compare', kwargs={'product_id': product.id}),
+                'add_to_wishlist_url': reverse('shop:add_to_wishlist', kwargs={'product_id': product.id}),
+                'is_best_seller': product.is_best_seller,  # Include additional product properties if needed
+                'is_new_arrival': product.is_new_arrival,
+                'is_featured': product.is_featured,
+                'is_special_offer': product.is_special_offer,
+            } for product in products
+        ]
+    else:
+        products_data = []
+
+    return JsonResponse({'products': products_data})
+

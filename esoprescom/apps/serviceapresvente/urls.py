@@ -91,6 +91,7 @@ urlpatterns = [
     path('stock/update/<int:stock_id>', stock.update_stock, name='update_stock'),
     path('stock/delete/<int:stock_id>', stock.delete_stock, name='delete_stock'),
     path('sortie-journalier', sortie_journalier.sortie_journalier, name='sotie_journalier'),
+    path('product', stock.product_view, name='product'),
     
 
    

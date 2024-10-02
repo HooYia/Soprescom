@@ -74,24 +74,35 @@ $(document).ready(function() {
   
   // initialisation des champs
   const handleInstanceClick = (event) => {
-    // const {checked} = event.target 
-        const selectedradioButtonTypeInstance = radioButtonTypeInstance.value;
-        const radioButtonIsFacturable = document.querySelector('input[type="checkbox"]#id_is_facturable');
-         console.log('selectedradioButtonTypeInstance:',selectedradioButtonTypeInstance)
-         if (selectedradioButtonTypeInstance === 'Interne'){
-              radioButtonIsFacturable.setAttribute('disabled', false);
-              radioButtonIsFacturable.classList.add('grayed-out');
+      // Get the selected value from the radio buttons
+      const selectedradioButtonTypeInstance = document.querySelector('input[name="type_instance"]:checked');
+      
+      // Check if a radio button is selected
+      if (selectedradioButtonTypeInstance) {
+          const selectedValue = selectedradioButtonTypeInstance.value;
+          const radioButtonIsFacturable = document.querySelector('input[type="checkbox"]#id_is_facturable');
           
-           //console.log(checked)
-         } else{
-          radioButtonIsFacturable.removeAttribute('disabled', true);
-          radioButtonIsFacturable.classList.remove('grayed-out');
-           //console.log(checked)
-         }
-       }
+          console.log('selectedValue:', selectedValue); // Debugging log
+          
+          if (selectedValue === 'Interne') {
+              radioButtonIsFacturable.setAttribute('disabled', 'true'); // Disable
+              radioButtonIsFacturable.classList.add('grayed-out');
+          } else {
+              radioButtonIsFacturable.removeAttribute('disabled'); // Enable
+              radioButtonIsFacturable.classList.remove('grayed-out');
+          }
+      }
+  };
 
-  radioButtonTypeInstance?.addEventListener('change', handleInstanceClick);
+  // Attach event listeners to radio buttons
+  const radioButtonsTypeInstance = document.querySelectorAll('input[name="type_instance"]');
+  radioButtonsTypeInstance.forEach(radioButton => {
+      radioButton.addEventListener('change', handleInstanceClick);
+  });
+
+  // Call the function initially to set the state based on the default selection
   handleInstanceClick();
+
   
 
   // gestion recouvrement_hp    

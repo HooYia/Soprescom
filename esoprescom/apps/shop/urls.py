@@ -30,4 +30,7 @@ urlpatterns = [
     # create-payment-intent
     path('create-payment-intent/<str:order_id>', payment_views.index, name='create-payment-intent'),
     path('payment-success', payment_views.payment_success, name='payment_succes'),
+    
+    # product search
+    path('search_products/', shop_views.search_products, name='search_products'),
 ]
