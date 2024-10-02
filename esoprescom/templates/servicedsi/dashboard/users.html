@@ -22,6 +22,10 @@
                                 <th>Is Compta</th>
                                 <th>Is Logistic</th>
                                 <th>Is Recouvrement</th>
+                                <th>Is Instance</th>
+                                <th>Is Leasing</th>
+                                <th>Is Leasisng 2</th>
+                                <th>Is Stock</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -34,8 +38,12 @@
                                     <td>{{ customer.email }}</td>
                                     <td>{{ customer.agree_terms|yesno:"Yes,No" }}</td>
                                     <td>{{ customer.is_compta|yesno:"Yes,No" }}</td>
-                                    <td>{{ customer.is_logistic|yesno:"Yes,No" }}</td>
+                                    <td>{{ customer.is_losgistic|yesno:"Yes,No" }}</td>
                                     <td>{{ customer.is_recouvrement|yesno:"Yes,No" }}</td>
+                                    <td>{{ customer.is_instance|yesno:"Yes,No" }}</td>
+                                    <td>{{ customer.is_leasing|yesno:"Yes,No" }}</td>
+                                    <td>{{ customer.is_leasing2|yesno:"Yes,No" }}</td>
+                                    <td>{{ customer.is_stock|yesno:"Yes,No" }}</td>
                                     <td>
                                         <!-- Update Button -->
                                         <button type="button" class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#updateCustomerModal-{{ customer.id }}">
@@ -111,8 +119,29 @@
                                                         <label class="form-check-label" for="is_logistic-{{ customer.id }}">Is Logistic</label>
                                                     </div>
                                                     <div class="mb-3 form-check">
-                                                        <input type="checkbox" class="form-check-input" id="is_recouvrement-{{ customer.id }}" name="is_recouvrement" {% if customer.is_recouvrement %}checked{% endif %}>
+                                                        <input type="checkbox" class="form-check-input" id="is_recouvrement-{{ customer.id }}" name="is_recouvrement"
+                                                               {% if customer.is_recouvrement %} checked {% endif %}>
                                                         <label class="form-check-label" for="is_recouvrement-{{ customer.id }}">Is Recouvrement</label>
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="is_leasing" name="is_leasing"
+                                                               {% if customer.is_leasing %} checked {% endif %}>
+                                                        <label class="form-check-label" for="is_leasing">Is Leasing</label>
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="is_leasing2" name="is_leasing2"
+                                                               {% if customer.is_leasing2 %} checked {% endif %}>
+                                                        <label class="form-check-label" for="is_leasing2">Is Leasing 2</label>
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="is_instance" name="is_instance"
+                                                               {% if customer.is_instance %} checked {% endif %}>
+                                                        <label class="form-check-label" for="is_instance">Is Instance</label>
+                                                    </div>
+                                                    <div class="mb-3 form-check">
+                                                        <input type="checkbox" class="form-check-input" id="is_stock" name="is_stock"
+                                                               {% if customer.is_stock %} checked {% endif %}>
+                                                        <label class="form-check-label" for="is_stock">Is Stock</label>
                                                     </div>
                                                     <button type="submit" class="btn btn-primary">Save changes</button>
                                                 </form>
@@ -172,6 +201,21 @@
                             <input type="checkbox" class="form-check-input" id="is_recouvrement" name="is_recouvrement">
                             <label class="form-check-label" for="is_recouvrement">Is Recouvrement</label>
                         </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_leasing" name="is_leasing">
+                            <label class="form-check-label" for="is_leasing">Is Leasing</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_instance" name="is_instance">
+                            <label class="form-check-label" for="is_instance">Is Instance</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_leasing" name="is_leasing">
+                            <label class="form-check-label" for="is_leasing">Is Leasing 2</label>
+                        </div><div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="is_stock" name="is_stock">
+                            <label class="form-check-label" for="is_stock">Is Stock</label>
+                        </div>
                         <button type="submit" class="btn btn-primary">Add Customer</button>
                     </form>
                 </div>
@@ -179,7 +223,7 @@
         </div>
     </div>
 </main>
-
+{% comment %} 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const checkboxes = document.querySelectorAll('.form-check-input');
@@ -196,4 +240,4 @@
             });
         });
     });
-</script>
+</script> {% endcomment %}

@@ -258,6 +258,10 @@ def users(request):
         is_compta = request.POST.get('is_compta', 'off') == 'on'
         is_logistic = request.POST.get('is_logistic', 'off') == 'on'
         is_recouvrement = request.POST.get('is_recouvrement', 'off') == 'on'
+        is_instance = request.POST.get('is_instance', 'off') == 'on'
+        is_leasing = request.POST.get('is_leasing', 'off') == 'on'
+        is_stock = request.POST.get('is_stock', 'off') == 'on'
+        is_leasing2 = request.POST.get('is_leasing2', 'off') == 'on'
         
         # Check if username or email already exists
         if Customer.objects.filter(username=username).exists():
@@ -272,7 +276,7 @@ def users(request):
 
             
             # Create and save new customer
-            customer = Customer(
+            customer = Customer.objects.create_user(
                 username=username,
                 email=email,
                 first_name=first_name,
@@ -281,11 +285,12 @@ def users(request):
                 is_compta=is_compta,
                 is_losgistic=is_logistic,
                 is_recouvrement=is_recouvrement,
+                is_instance = is_instance,
+                is_leasing=is_leasing,
+                is_stock=is_stock,
                 password=password,
+                is_leasing2=is_leasing2,
             )
-            # customer.set_password("defaultpassword")  # Set a default password, can be updated later
-            customer.save()
-
 
             template = 'email/customer_created.html'
             context = {
@@ -308,8 +313,6 @@ def users(request):
         'subpage': 'users_tab',
         'customers': customers,
     })
-    
-    # S.X*r3#>    qehekat
 
 @login_required
 def update_customer(request, customer_id):
@@ -326,6 +329,10 @@ def update_customer(request, customer_id):
         customer.is_compta = request.POST.get('is_compta', 'off') == 'on'
         customer.is_losgistic = request.POST.get('is_logistic', 'off') == 'on'
         customer.is_recouvrement = request.POST.get('is_recouvrement', 'off') == 'on'
+        customer.is_instance = request.POST.get('is_instance', 'off') == 'on'
+        customer.is_leasing = request.POST.get('is_leasing', 'off') == 'on'
+        customer.is_stock = request.POST.get('is_stock', 'off') == 'on'
+        customer.is_leasing2 = request.POST.get('is_leasing2', 'off') == 'on'
         
         customer.save()
         messages.info(request, "Customer updated successfully!")
@@ -373,7 +380,7 @@ def is_staff_or_superuser(user):
     return user.is_staff or user.is_superuser
 
 @login_required
-@user_passes_test(is_staff_or_superuser)
+# @user_passes_test(is_staff_or_superuser)
 def client_sav(request):
     clients = Client_sav.objects.filter(is_active=True, is_deleted=False).select_related('customer')
 
