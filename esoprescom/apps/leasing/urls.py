@@ -44,7 +44,4 @@ urlpatterns = [
     path('maintenance/upd/<int:id>/', MaintenanceViews.update, name='maintenance-update'),
     path('maintenance/detail/<int:id>/', MaintenanceViews.show, name='maintenance-show'),
 
-   
-    
-
 ]

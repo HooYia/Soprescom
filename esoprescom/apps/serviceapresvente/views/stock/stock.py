@@ -10,7 +10,7 @@ def stock(request):
     
     #write your code logic here
     stocks = Stock.objects.all().select_related('stock_produit')
-    products = Product.objects.exclude(stock__isnull=False)
+    products = Product.objects.exclude(produit_stock__isnull=False)
 
     
     context = {

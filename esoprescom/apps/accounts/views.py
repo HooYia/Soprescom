@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate,login,logout
 from apps.accounts.forms.CustomUserRegisterForm import CustomUserRegisterForm
 from apps.accounts.forms.CustomUserLoginForm import CustomUserLoginForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
 
 def sign_in(request):
   if request.user.is_authenticated:
@@ -55,3 +57,23 @@ def logout_user(request):
 
 def homeviewapi(request):
     return render(request, 'index.html')
+
+########## Update profile 
+from apps.accounts.forms.ProfileForm import ProfileForm
+
+@login_required
+def update_profile(request):
+    if request.method == 'POST':
+        print('Request.user.profile:',request.user.profile)
+        form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'User Updated !')
+            return redirect('shop:home')
+        else:
+           messages.info(request, 'Updated form Invalid!')
+           form = ProfileForm(instance=request.user.profile) 
+    else:
+        #messages.info(request, 'Error Updated !')
+        form = ProfileForm(instance=request.user.profile)
+    return render(request, 'accounts/update_profile.html', {'form': form})

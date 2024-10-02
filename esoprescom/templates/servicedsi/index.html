@@ -341,7 +341,7 @@ $(document).ready(function() {
 
     var Mypath;
 /********** Ajout **************/
-$(document).on('click', '#savcreate,#id_instancecreate', function() {
+$(document).on('click', '#savcreate', function() {
     //e.preventDefault();
     //$('#id_recouvrement_hp input:disabled').prop('disabled', false);
     
@@ -368,11 +368,11 @@ $(document).on('click', '#savcreate,#id_instancecreate', function() {
 
 
 /********** Edit **************/
-$(document).on('click', '#savDisplayForUpdate', function(e) {
+$(document).on('click', '#savDisplayForUpdate,#idForUpdate', function(e) {
   //e.preventDefault(); 
   var url = $(this).data('url');
   
-  //console.log('URL btn savDisplayForUpdate:', url);
+   console.log('URL btn id_updateprofile:', url);
     $.ajax({
     url: url,
     type: 'get',

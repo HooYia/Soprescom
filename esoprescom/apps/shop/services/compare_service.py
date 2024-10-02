@@ -31,6 +31,7 @@ class CompareService:
             product = Product.objects.filter(id=product_id).first()
 
             if product:
+                print('product.produit_stock:',product.produit_stock.quantite)
                 compared_details.append({
                     'id': product.id,
                     'slug': product.slug,
@@ -39,7 +40,7 @@ class CompareService:
                     'solde_price': product.solde_price,
                     'regular_price': product.regular_price,  
                     'images': product.images,
-                    'stock': product.stock,
+                    'stock': product.produit_stock.quantite,
                     # Ajoutez d'autres attributs du produit ici
                 })
 

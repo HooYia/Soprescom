@@ -42,7 +42,7 @@ class Product(models.Model):
 
     
 class Stock(models.Model):
-    stock_produit = models.OneToOneField(Product, on_delete=models.CASCADE)
+    stock_produit = models.OneToOneField(Product, on_delete=models.CASCADE,related_name='produit_stock')
     quantite = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     initial_quantite = models.PositiveIntegerField(default=0, validators=[MinValueValidator(0)])
     stockLimite = models.PositiveIntegerField(default=10, validators=[MinValueValidator(0)])
