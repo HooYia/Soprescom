@@ -15,3 +15,10 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user.username}'s profile"
+    
+    @property
+    def photoUrl(self):
+        if self.photo:
+            return self.photo.url
+        return ''  # ou vous pouvez renvoyer une URL d'image par défaut ici si nécessaire
+

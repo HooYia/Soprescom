@@ -40,7 +40,7 @@ def show(request, id):
 
 def create(request):
     if request.method == 'POST':
-        form = Clientleasing(request.POST, request.FILES)
+        form = ClientleasingForm(request.POST)
         if form.is_valid():
             form.save()
             messages.success(request, 'Client has been saved !')
