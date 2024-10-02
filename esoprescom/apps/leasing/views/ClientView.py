@@ -4,6 +4,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.contrib import messages
 from apps.leasing.forms import ClientleasingForm
 
+@login_required
 def index(request):
     clients_list = Client.objects.all()
     paginator = Paginator(clients_list, 8)

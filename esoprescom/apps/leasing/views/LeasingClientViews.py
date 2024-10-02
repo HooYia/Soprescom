@@ -8,7 +8,7 @@ from apps.leasing.forms import ClientleasingForm, ListeimprimanteForm, Deploieme
                                ConsommableForm, ExploitationForm
 
 
-#@login_required
+@login_required
 def index(request):
     leasingClient_list = Clientleasing.objects.all()
     paginator = Paginator(leasingClient_list, 8)

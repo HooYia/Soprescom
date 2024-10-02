@@ -258,4 +258,4 @@ CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
 
 #time tracking
-SESSION_COOKIE_AGE = 1 * 60  # 15 minutes
+SESSION_COOKIE_AGE = 15 * 60  # 15 minutes

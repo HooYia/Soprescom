@@ -8,7 +8,7 @@ from django.http import Http404
                                
 from django.contrib import messages
 
-#@login_required
+@login_required
 def index(request):
     incident_list = GestionIncident.objects.all()
     paginator = Paginator(incident_list, 8)
