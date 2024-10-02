@@ -7,7 +7,7 @@ from apps.leasing.forms import  ConsommableForm
                                
 from django.contrib import messages
 
-#@login_required
+@login_required
 def index(request):
     consommable_list = Consommable.objects.all()
     paginator = Paginator(consommable_list, 5)

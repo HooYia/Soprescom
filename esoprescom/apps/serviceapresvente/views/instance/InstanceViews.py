@@ -8,6 +8,8 @@ from apps.serviceapresvente.forms.Instance_recouvrementForm import Instance_reco
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 
+
+@login_required
 def index(request):
     instance_list = Instance.objects.all()
     paginator = Paginator(instance_list, 8)

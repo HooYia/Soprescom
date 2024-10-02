@@ -2,9 +2,11 @@ from django.shortcuts import render
 from django.db.models import Sum
 from django.utils import timezone
 from datetime import timedelta
+from django.contrib.auth.decorators import login_required
 
 from apps.shop.models import Orderdetails
 
+@login_required
 def sortie_journalier(request):
     
     today = timezone.now().date()

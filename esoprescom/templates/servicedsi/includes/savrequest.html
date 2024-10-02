@@ -2,14 +2,17 @@
 
   <div class="card-header d-flex gap-1">
     <h3>Demande SAV</h3>
-    <button id="savcreate" class="btn btn-fill-out btn-sm btn-sm ms-auto" 
-    data-url="{% url 'serviceapresvente:savrequest-create' %}" data-modalname="New SAV">
-      ADD New SAV
-    </button>
+    {% if request.user.is_staff %}
+      <button id="savcreate" class="btn btn-fill-out btn-sm btn-sm ms-auto" 
+        data-url="{% url 'serviceapresvente:savrequest-create' %}" data-modalname="New SAV">
+          ADD New SAV
+      </button>
+    {% endif %}
+     
     </div>
     <div class="card-body">
   <div class="table-responsive">
-            <table class="table">
+            <table class="table" id='sav'>
        
                 <thead>
                     <tr>
@@ -58,10 +61,22 @@
                   </td>
                   
                 </tr>
-                {% endfor %}
+                {% endfor %} 
                   
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+
+<script src='https://code.jquery.com/jquery-3.7.1.js'></script>
+<script src='https://cdn.datatables.net/2.1.4/js/dataTables.js'></script>
+<script>
+
+  $('#sav').DataTable({
+    lengthMenu: [5,10, 15,20],
+    order: [[3, 'desc']],
+    pageLength:10 
+ });
+
+</script>

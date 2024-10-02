@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
-    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_logistic) :
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_losgistic) :
         return redirect('dashboard:dashboard')
     #commandesavs_list = CommandeSav.objects.prefetch_related('savrequest').all()
     commandesavs_list = CommandeSav.objects.all()   #prefetch_related('savrequest').all()
