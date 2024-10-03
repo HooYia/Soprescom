@@ -1,4 +1,4 @@
-<main class='my-5'>
+<div class="container-fluid px-4">
 
     <!-- Button to trigger Add Client Modal -->
     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -10,76 +10,71 @@
     
 
     <!-- Clients Table -->
-    <table class="table table-hover table-striped table-bordered responsive" id="datatable" width="100%" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col">Product Name</th>
-                <th scope="col">Brand</th>
-                <th scope="col">Sale Price</th>
-                <th scope="col">Regular Price</th>
-                <th scope="col">Availability</th>
-                <th scope="col">Categories</th>
-                <th scope="col">Featured</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for product in products %}
+    <div class="table-responsive">
+
+        <table class="table table-hover table-striped table-bordered responsive" id="datatable" width="100%" cellspacing="0">
+            <thead>
                 <tr>
-                    <!-- Product Name -->
-                    <td>{{ product.name }}</td>
-    
-                    <!-- Brand -->
-                    <td>{{ product.brand }}</td>
-    
-                    <!-- Sale Price -->
-                    <td>{{ product.solde_price }}</td>
-    
-                    <!-- Regular Price -->
-                    <td>{{ product.regular_price }}</td>
-    
-                    <!-- Availability -->
-                    <td>
-                        {% if product.is_available %}
-                            <span class="badge bg-success">Available</span>
-                        {% else %}
-                            <span class="badge bg-danger">Not Available</span>
-                        {% endif %}
-                    </td>
-    
-                    <!-- Categories -->
-                    <td>
-                        {% for category in product.categories.all %}
-                            <span class="badge bg-primary">{{ category.name }}</span>
-                        {% empty %}
-                            <span>No Categories</span>
-                        {% endfor %}
-                    </td>
-    
-                    <!-- Featured Status -->
-                    <td>
-                        {% if product.is_featured %}
-                            <i class="fa-solid fa-star text-warning"></i>
-                        {% else %}
-                            <i class="fa-regular fa-star"></i>
-                        {% endif %}
-                    </td>
-    
-                    <!-- Action Buttons -->
-                    <td class="text-center">
-                       
-                        <button type="button" class="btn btn-fill-out btn-sm" data-bs-toggle="modal" data-bs-target="#editProductModal{{ product.id }}">
-                            Edit
-                        </button>
-                        <button type="button" class="btn btn-fill-out btn-sm" data-bs-toggle="modal" data-bs-target="#deleteProductModal{{ product.id }}">
-                            Delete
-                        </button>
-                        
-                    </td>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Sale Price</th>
+                    <th scope="col">Regular Price</th>
+                    <th scope="col">Availability</th>
+                    <th scope="col">Categories</th>
+                    <th scope="col">Action</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <!-- Product Name -->
+                        <td>{{ product.name }}</td>
+        
+                        <!-- Brand -->
+                        <td>{{ product.brand }}</td>
+        
+                        <!-- Sale Price -->
+                        <td>{{ product.solde_price }}</td>
+        
+                        <!-- Regular Price -->
+                        <td>{{ product.regular_price }}</td>
+        
+                        <!-- Availability -->
+                        <td>
+                            {% if product.is_available %}
+                                <span class="badge bg-success">Available</span>
+                            {% else %}
+                                <span class="badge bg-danger">Not Available</span>
+                            {% endif %}
+                        </td>
+        
+                        <!-- Categories -->
+                        <td>
+                            {% for category in product.categories.all %}
+                                <span class="badge bg-primary">{{ category.name }}</span>
+                            {% empty %}
+                                <span>No Categories</span>
+                            {% endfor %}
+                        </td>
+        
+                       
+        
+                        <!-- Action Buttons -->
+                        <td class="text-center">
+                        
+                            <button type="button" class="btn btn-fill-out btn-sm" data-bs-toggle="modal" data-bs-target="#editProductModal{{ product.id }}">
+                                Edit
+                            </button>
+                            <button type="button" class="btn btn-fill-out btn-sm" data-bs-toggle="modal" data-bs-target="#deleteProductModal{{ product.id }}">
+                                Delete
+                            </button>
+                            
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     
     
     
@@ -310,9 +305,6 @@
 
     
 </div>
-
-</main>
-
 <script>
 
     $('#datatable').DataTable({
@@ -320,16 +312,7 @@
         order: [[3, 'desc']],
         pageLength:10,
         destroy: true ,
-     });
-
-
-    $(document).ready(function() {
-       
-        $('.newproduct').select2({
-            dropdownParent: $('#addProductModal')
-        });
-    });  
-
+    });
 
 </script>
 
