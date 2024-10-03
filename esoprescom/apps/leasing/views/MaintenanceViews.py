@@ -9,7 +9,7 @@ from apps.leasing.forms import  MaintenanceForm
                                
 from django.contrib import messages
 
-#@login_required
+@login_required
 def index(request):
     #maintenance_list = Maintenance.objects.all()
     #imprimante_site_list = Deploiement.objects.all()
@@ -37,7 +37,7 @@ def index(request):
 
 
 # Les autres fonctions comme show, create, update, delete... 
-
+@login_required
 def show(request, id):
     #get_maintenance_obj = get_object_or_404(Maintenance, idmaintenance=id)
     #get_maintenance_obj = Maintenance.objects.select_related('imprimante', 'imprimante__deploiement').filter(idmaintenance=id).first()
@@ -50,7 +50,7 @@ def show(request, id):
     form_detail = MaintenanceForm(instance=get_maintenance_obj)
     return render(request, 'servicedsi/leasing/maintenance/details.html', {'form_detail': form_detail})
 
-
+@login_required
 def create(request):
     if request.method == 'POST':
         form = MaintenanceForm(request.POST, request.FILES)
@@ -61,7 +61,7 @@ def create(request):
     else:
         form = MaintenanceForm()
     return render(request, 'servicedsi/leasing/maintenance/formAdd.html', {'form': form})
-
+@login_required
 def update(request, id):
     get_maintenance_obj = get_object_or_404(Maintenance, idmaintenance=id)
     ## get detail

@@ -7,7 +7,7 @@ from apps.leasing.forms import  ListeimprimanteForm
                                
 from django.contrib import messages
 
-#@login_required
+@login_required
 def index(request):
     imprimante_list = Listeimprimante.objects.all()
     paginator = Paginator(imprimante_list, 8)

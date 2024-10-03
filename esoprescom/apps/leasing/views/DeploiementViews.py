@@ -7,7 +7,7 @@ from apps.leasing.forms import  DeploiementForm
                                
 from django.contrib import messages
 
-#@login_required
+@login_required
 def index(request):
     deploiement_list = Deploiement.objects.all()
     paginator = Paginator(deploiement_list, 5)

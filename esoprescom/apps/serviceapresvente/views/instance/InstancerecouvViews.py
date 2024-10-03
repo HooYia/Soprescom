@@ -8,7 +8,7 @@ from django.contrib import messages
 from apps.serviceapresvente.forms.Instance_recouvrementForm import Instance_recouvrementForm
 from django.db import IntegrityError
 
-#@login_required
+@login_required
 def index(request):
     instancerevouv_list = Instance_recouvrement.objects.all()
     paginator = Paginator(instancerevouv_list, 8)

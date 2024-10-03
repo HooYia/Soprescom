@@ -1,0 +1,318 @@
+<div class="container-fluid px-4">
+
+    <!-- Button to trigger Add Client Modal -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="mb-0">Product</h2>
+        <button type="button" class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#addProductModal">
+            Add New prduct
+        </button>
+    </div>
+    
+
+    <!-- Clients Table -->
+    <div class="table-responsive">
+
+        <table class="table table-hover table-striped table-bordered responsive" id="datatable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Sale Price</th>
+                    <th scope="col">Regular Price</th>
+                    <th scope="col">Availability</th>
+                    <th scope="col">Categories</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <!-- Product Name -->
+                        <td>{{ product.name }}</td>
+        
+                        <!-- Brand -->
+                        <td>{{ product.brand }}</td>
+        
+                        <!-- Sale Price -->
+                        <td>{{ product.solde_price }}</td>
+        
+                        <!-- Regular Price -->
+                        <td>{{ product.regular_price }}</td>
+        
+                        <!-- Availability -->
+                        <td>
+                            {% if product.is_available %}
+                                <span class="badge bg-success">Available</span>
+                            {% else %}
+                                <span class="badge bg-danger">Not Available</span>
+                            {% endif %}
+                        </td>
+        
+                        <!-- Categories -->
+                        <td>
+                            {% for category in product.categories.all %}
+                                <span class="badge bg-primary">{{ category.name }}</span>
+                            {% empty %}
+                                <span>No Categories</span>
+                            {% endfor %}
+                        </td>
+        
+                       
+        
+                        <!-- Action Buttons -->
+                        <td class="text-center">
+                        
+                            <button type="button" class="btn btn-fill-out btn-sm" data-bs-toggle="modal" data-bs-target="#editProductModal{{ product.id }}">
+                                Edit
+                            </button>
+                            <button type="button" class="btn btn-fill-out btn-sm" data-bs-toggle="modal" data-bs-target="#deleteProductModal{{ product.id }}">
+                                Delete
+                            </button>
+                            
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    
+    
+
+    <!-- Add Stock Modal -->
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form method="POST" action="{% url 'serviceapresvente:product' %}" enctype="multipart/form-data">  <!-- Adjust action URL -->
+                    {% csrf_token %}
+                    <input type="hidden" name='action' value="create">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        {% comment %} <div class="mb-3">
+                            <label for="slug" class="form-label">Slug</label>
+                            <input type="text" class="form-control" id="slug" name="slug" required>
+                        </div> {% endcomment %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="description" class="form-label">Description</label>
+                                <textarea class="form-control" id="description" name="description" required></textarea>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="more_description" class="form-label">More Description</label>
+                                <textarea class="form-control" id="more_description" name="more_description"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="additional_infos" class="form-label">Additional Infos</label>
+                                <textarea class="form-control" id="additional_infos" name="additional_infos"></textarea>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="solde_price" class="form-label">Sale Price</label>
+                                <input type="number" class="form-control" id="solde_price" name="solde_price" required step="0.01" min="0">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="regular_price" class="form-label">Regular Price</label>
+                                <input type="number" class="form-control" id="regular_price" name="regular_price" required step="0.01" min="0">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="brand" class="form-label">Brand</label>
+                                <input type="text" class="form-control" id="brand" name="brand">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="categories" class="form-label">Categories</label>
+                            <select class="form-select" id="categories" name="categories" multiple>
+                                {% for category in categories %}
+                                    <option value="{{ category.id }}">{{ category.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        {% comment %} <div class="mb-3">
+                            <label for="images" class="form-label">Product Images</label>
+                            <input type="file" class="form-control" id="images" name="images" multiple required>
+                        </div> {% endcomment %}
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="is_available" class="form-label">Is Available</label>
+                                <input type="checkbox" id="is_available" name="is_available">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="is_best_seller" class="form-label">Is Best Seller</label>
+                                <input type="checkbox" id="is_best_seller" name="is_best_seller">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="is_new_arrival" class="form-label">Is New Arrival</label>
+                                <input type="checkbox" id="is_new_arrival" name="is_new_arrival">
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="is_featured" class="form-label">Is Featured</label>
+                                <input type="checkbox" id="is_featured" name="is_featured">
+                            </div>
+                          
+                        </div>
+                        <div class="row">
+                           
+                            <div class="col-md-3 mb-3">
+                                <label for="is_special_offer" class="form-label">Is Special Offer</label>
+                                <input type="checkbox" id="is_special_offer" name="is_special_offer">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="add_product" class="btn btn-primary btn-sm">Save changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Edit Stock Modal -->
+    {% for product in products %}
+    <div class="modal fade" id="editProductModal{{ product.id }}" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form method="POST" action="{% url 'serviceapresvente:product'%}" enctype="multipart/form-data">  <!-- Adjust action URL -->
+                    {% csrf_token %}
+                    <input type="hidden" name='action' value="update">
+                    <input type="hidden" name='id' value="{{ product.id }}">
+                   
+    
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editProductModalLabel">Update Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="name{{ product.id }}" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="name{{ product.id }}" name="name" value="{{ product.name }}" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="description{{ product.id }}" class="form-label">Description</label>
+                                <textarea class="form-control" id="description{{ product.id }}" name="description" required>{{ product.description }}</textarea>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="more_description{{ product.id }}" class="form-label">More Description</label>
+                                <textarea class="form-control" id="more_description{{ product.id }}" name="more_description">{{ product.more_description }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="additional_infos{{ product.id }}" class="form-label">Additional Infos</label>
+                                <textarea class="form-control" id="additional_infos{{ product.id }}" name="additional_infos">{{ product.additional_infos }}</textarea>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="solde_price{{ product.id }}" class="form-label">Sale Price</label>
+                                <input type="number" class="form-control" id="solde_price{{ product.id }}" name="solde_price" value="{{ product.solde_price }}" required step="0.01" min="0">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="regular_price{{ product.id }}" class="form-label">Regular Price</label>
+                                <input type="number" class="form-control" id="regular_price{{ product.id }}" name="regular_price" value="{{ product.regular_price }}" required step="0.01" min="0">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="brand{{ product.id }}" class="form-label">Brand</label>
+                                <input type="text" class="form-control" id="brand{{ product.id }}" name="brand" value="{{ product.brand }}">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="categories{{ product.id }}" class="form-label">Categories</label>
+                            <select class="form-select" id="categories{{ product.id }}" name="categories" multiple>
+                                {% for category in categories %}
+                                    <option value="{{ category.id }}" {% if category in product.categories.all %}selected{% endif %}>{{ category.name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="images{{ product.id }}" class="form-label">Product Images</label>
+                            <input type="file" class="form-control" id="images{{ product.id }}" name="images" multiple>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="is_available{{ product.id }}" class="form-label">Is Available</label>
+                                <input type="checkbox" id="is_available{{ product.id }}" name="is_available" {% if product.is_available %}checked{% endif %}>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="is_best_seller{{ product.id }}" class="form-label">Is Best Seller</label>
+                                <input type="checkbox" id="is_best_seller{{ product.id }}" name="is_best_seller" {% if product.is_best_seller %}checked{% endif %}>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="is_new_arrival{{ product.id }}" class="form-label">Is New Arrival</label>
+                                <input type="checkbox" id="is_new_arrival{{ product.id }}" name="is_new_arrival" {% if product.is_new_arrival %}checked{% endif %}>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="is_featured{{ product.id }}" class="form-label">Is Featured</label>
+                                <input type="checkbox" id="is_featured{{ product.id }}" name="is_featured" {% if product.is_featured %}checked{% endif %}>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="is_special_offer{{ product.id }}" class="form-label">Is Special Offer</label>
+                                <input type="checkbox" id="is_special_offer{{ product.id }}" name="is_special_offer" {% if product.is_special_offer %}checked{% endif %}>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" name="update_product" class="btn btn-primary btn-sm">update changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% for product in products %}
+
+    <!-- Delete Client Modal -->
+    <div class="modal fade" id="deleteProductModal{{ product.id }}" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="POST" action="{% url 'serviceapresvente:product' %}">  <!-- Adjust action URL -->
+                    {% csrf_token %}
+                    <input type="hidden" name='id' value="{{ product.id }}">
+                    <input type="hidden" name='action' value="delete">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteProductModalLabel">Delete Product</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete the product <strong>{{ product.name }}</strong>?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" name="delete_product" class="btn btn-danger btn-sm">Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    
+</div>
+<script>
+
+    $('#datatable').DataTable({
+        lengthMenu: [5,10, 15,20],
+        order: [[3, 'desc']],
+        pageLength:10,
+        destroy: true ,
+    });
+
+</script>
+

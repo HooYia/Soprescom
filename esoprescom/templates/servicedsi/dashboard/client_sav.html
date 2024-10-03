@@ -1,4 +1,4 @@
-<main class='my-5'>
+    <div class="container-fluid px-4">
 
         <!-- Button to trigger Add Client Modal -->
         <div class="d-flex justify-content-between align-items-center mb-3">
@@ -9,35 +9,37 @@
         </div>
 
         <!-- Clients Table -->
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Client Type</th>
-                    <th>Client Name</th>
-                    <th>Company Name</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for client in clients %}
-                <tr>
-                    <td>{% if client.est_personne_morale %}Company{% else %}Individual{% endif %}</td>
-                    <td>{{ client.client_name }}</td>
-                    <td>{% if client.est_personne_morale %}{{ client.raison_sociale }}{% else %}N/A{% endif %}</td>
-                    <td>{{ client.telephone }}</td>
-                    <td>{{ client.adresse }}</td>
-                    <td>
-                        <!-- Edit Button -->
-                        <button class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#editClientModal{{ client.idclient }}">Edit</button>
-                        <!-- Delete Button -->
-                        <button class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#deleteClientModal{{ client.idclient }}">Delete</button>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped" id='client_sav'>
+                <thead>
+                    <tr>
+                        <th>Client Type</th>
+                        <th>Client Name</th>
+                        <th>Company Name</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                    <tr>
+                        <td>{% if client.est_personne_morale %}Company{% else %}Individual{% endif %}</td>
+                        <td>{{ client.client_name }}</td>
+                        <td>{% if client.est_personne_morale %}{{ client.raison_sociale }}{% else %}N/A{% endif %}</td>
+                        <td>{{ client.telephone }}</td>
+                        <td>{{ client.adresse }}</td>
+                        <td>
+                            <!-- Edit Button -->
+                            <button class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#editClientModal{{ client.idclient }}">Edit</button>
+                            <!-- Delete Button -->
+                            <button class="btn btn-fill-out btn-sm btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#deleteClientModal{{ client.idclient }}">Delete</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
         
 
         <!-- Add Client Modal -->
@@ -171,7 +173,6 @@
         {% endfor %}
     </div>
 
-</main>
 
 <script>
 
@@ -197,5 +198,19 @@
             }
         });
     });
+
+</script>
+
+
+
+<script src='https://code.jquery.com/jquery-3.7.1.js'></script>
+<script src='https://cdn.datatables.net/2.1.4/js/dataTables.js'></script>
+<script>
+
+  $('#client_sav').DataTable({
+    lengthMenu: [5,10, 15,20],
+    order: [[3, 'desc']],
+    pageLength:10 
+ });
 
 </script>

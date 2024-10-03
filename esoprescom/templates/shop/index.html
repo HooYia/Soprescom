@@ -12,6 +12,10 @@
  </div>
  <div  class="section small_pt pb_70">
      <div  class="container">
+        <div class="mb-2">
+            <input type="text" placeholder="Search" id="search_input" class="form-control" onkeyup="performSearch(this.value)">
+
+         </div>
          <div  class="row justify-content-center">
              <div  class="col-md-6">
                  <div  class="heading_s1 text-center">
@@ -19,6 +23,7 @@
                  </div>
              </div>
          </div>
+         
          <div  class="row">
              <div  class="col-12">
                  <div  class="tab-style1">
@@ -50,6 +55,9 @@
                                     {% include "partials/product.html" with product=product %}
                                 </div>
                             {% endfor %}
+                        </div>
+                        <div id="no-products-message" class="text-center" style="display: none;">
+                            <p> No products available</p>
                         </div>
                         <!-- Pagination controls for new arrivals -->
                         {% include "partials/pagination-index.html" with page_obj=new_arrival page_type='new_arrival' %}
@@ -105,3 +113,102 @@
 
 {% endblock %}
 
+{% block script %}
+<script>
+    function performSearch(query) {
+        if (query.length === 0) {
+            console.log("Search query is empty");
+            return;
+        }
+    
+        fetch(`/search_products?q=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+                const productList = document.querySelector(".shop_container");
+                productList.innerHTML = ""; // Clear current products
+    
+                let productHTML = "";
+                if (data.products.length === 0) {
+                    productHTML = `<p>No products available.</p>`;
+                } else {
+                    data.products.forEach(product => {
+                        productHTML += `
+                            <div class="col-lg-3 col-md-4 col-6">
+                                <div class="product">
+                                    <div class="product_img">
+                                        <a href="${product.url}">
+                                            <img alt="${product.name}" width="150" src="${product.image}">
+                                        </a>
+                                        <div class="product_action_box">
+                                            <ul class="list_none pr_action_btn">
+                                                <li class="add-to-cart">
+                                                    <a href="${product.add_to_cart_url}">
+                                                        <i class="icon-basket-loaded"></i> Add To Cart
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="${product.add_to_compare_url}">
+                                                        <i class="icon-shuffle"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="${product.add_to_wishlist_url}">
+                                                        <i class="icon-heart"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="product_info">
+                                        <h6 class="product_title">
+                                            <a href="${product.url}">${product.name}</a>
+                                        </h6>
+                                        <div class="product_price">
+                                            <span class="price">${product.solde_price ? `$${product.solde_price}` : ''}</span>
+                                            ${product.regular_price ? `<del>$${product.regular_price}</del>` : ''}
+                                            <div class="on_sale">
+                                                <span>${calculateSoldeRate(product.solde_price, product.regular_price)}</span>
+                                            </div>
+                                        </div>
+                                        <div class="rating_wrap">
+                                            <div class="rating">
+                                                <div class="product_rate" style="width: 80%;"></div>
+                                            </div>
+                                            <span class="rating_num">(21)</span>
+                                        </div>
+                                        <div class="pr_desc">
+                                            <p>${product.description}</p>
+                                        </div>
+                                        <div class="pr_switch_wrap">
+                                            <div class="product_color_switch">
+                                                <span data-color="#87554B" class="active"></span>
+                                                <span data-color="#333333"></span>
+                                                <span data-color="#DA323F"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+                    });
+                }
+    
+                productList.innerHTML = productHTML; // Insert the new products
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    
+    function calculateSoldeRate(soldePrice, regularPrice) {
+        if (soldePrice && regularPrice) {
+            const discount = ((regularPrice - soldePrice) / regularPrice) * 100;
+            return `${Math.round(discount)}% Off`;
+        }
+        return '';
+    }
+    
+  </script>
+  
+  
+
+{% endblock %}

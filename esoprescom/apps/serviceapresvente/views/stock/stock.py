@@ -1,9 +1,22 @@
-from apps.shop.models.Product import Stock, Product
+import logging
+
+from apps.shop.models.Product import Stock, Product, Category
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.db.models import Sum
 from django.utils import timezone
+from django.contrib import messages
+from django.db import transaction
+from apps.shop.models.Image import Image
+from django.utils.translation import gettext as _
+
+
+from django.utils.text import slugify
+from load_task_in_production import search_serpapi_images, save_images_for_product
+
+
+logger = logging.getLogger(__name__)
 
 @login_required
 def stock(request):

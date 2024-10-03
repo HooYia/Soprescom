@@ -8,6 +8,50 @@
     margin-right: 5px;
 }
 </style>
+<!-- Hidden form for new client -->
+<div class="card">
+  <div class="container">
+    <div id="new-client-form-container" class="mt-2" style="display: none;">
+      <form id="new-client-form" method="POST" action="{% url 'serviceapresvente:create_client' %}">
+          {% csrf_token %}
+          <div class="row">
+            <div class="mb-3 col-md-12">
+                <label for="userLog" class="form-label">Select Customer</label>
+                <select class="form-control" id="userLog" name="userLog" required>
+                    <option value="">Select Customer</option>
+                    {% for customer in customers %}
+                    <option value="{{ customer.id }}">{{ customer.username }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+           
+          </div>
+          <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" id="nom" name="nom" required>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="prenom" class="form-label">Prenom</label>
+                <input type="text" class="form-control" id="prenom" name="prenom" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="telephone" class="form-label">Phone</label>
+                <input type="number" class="form-control" id="telephone" name="telephone" required>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="adresse" class="form-label">Address</label>
+                <input type="text" class="form-control" id="adresse" name="adresse" required>
+            </div>
+          </div>
+
+          <button type="submit" id="newClient" class="btn btn-sm btn-success my-3">Add client</button>
+      </form>
+    </div>
+  </div>
+</div>
   
   <form id="savrequestForm" action="{% url 'serviceapresvente:instance-create' %}" 
   method="POST"  enctype="multipart/form-data">
@@ -27,7 +71,18 @@
                           <div class="card-body">
                             <p class="card-text "  ><strong>Type Instance:</strong> {{ form.type_instance  }}</p>
                             <p class="card-text "  ><strong>Numero dossier:</strong> {{ form.numero_dossier  }}</p>
-                            <p class="card-text"  ><strong>Nom du client:</strong> {{ form.client  }}</p>
+                            <p class="card-text d-flex justify-content-between align-items-center">
+                              <strong>Nom du client:</strong>
+                              <button type="button" id="new-client-btn" class="btn btn-sm btn-primary">New Client</button>
+                            </p>
+
+                            <select id="id_client" class="form-control custom-text-input" name="client">
+                                <option value="" {% if form.client.value == "" or form.client.value == None %}selected{% endif %}>Select a Client</option>
+                                {% for client in form.client.field.queryset %}
+                                <option value="{{ client.idclient }}" {% if client.idclient == form.client.value %}selected{% endif %}>{{ client.client_name }}</option>
+                                {% endfor %}
+                            </select>
+                            {% comment %} <p class="card-text"  ><strong>Nom du client:</strong> {{ form.client  }}</p> {% endcomment %}
                             <p class="card-text"><strong>Resp du dossier:</strong> {{ form.responsable }}</p>
                             <p class="card-text"><strong>Rapport technique:</strong> {{ form.rapport_technique }}</p>
                           </div>
@@ -68,30 +123,97 @@
 {% block script %}
 
 <script>
+  $(document).ready(function() {
+      // Show/hide the form when the button is clicked
+    $(".btn-primary").click(function() {
+        $("#new-client-form-container").toggle();
+    });
+
+    // Handle form submission for adding a new client
+    $("#new-client-form").submit(function(event) {
+        event.preventDefault();  // Prevent the default form submission
+
+        var formData = new FormData(this); // Collect form data
+
+        $.ajax({
+            url: '{% url "serviceapresvente:create_client" %}',  // URL to send the request
+            type: 'POST',
+            data: formData,
+            processData: false, // Prevent jQuery from automatically transforming the data into a query string
+            contentType: false, // Set content type to false to let jQuery set it as multipart/form-data
+            success: function(response) {
+                if (response.success) {
+                    // Close the form
+                    $('#new-client-form-container').hide();
+                    
+                    // Update the client_sav dropdown in the form
+                    var clientSelect = $('#id_client');
+                    
+                    // Add the new client to the dropdown list
+                    clientSelect.append($('<option>', {
+                      value: response.client_id,  // Use the client ID from the response
+                      text: response.client_name  // Use the client name from the response
+                    }));
+
+                    // Select the newly added client in the dropdown
+                    clientSelect.val(response.client_id).trigger('change');
+                            
+
+
+                    alert('Client added successfully!');
+                } else {
+                    alert('Error: ' + response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle error - show error message
+                alert('Error: ' + error);
+            }
+        });
+    });
+
+  });
+
+</script>
+
+<script>
 
 $(document).ready(function() {
+  // Select the radio button instance and the switch container
   const radioButtonTypeInstance = document.querySelector('input#id_type_instance');
-  
-  // initialisation des champs
-  const handleInstanceClick = (event) => {
-    // const {checked} = event.target 
-        const selectedradioButtonTypeInstance = radioButtonTypeInstance.value;
-        const radioButtonIsFacturable = document.querySelector('input[type="checkbox"]#id_is_facturable');
-         console.log('selectedradioButtonTypeInstance:',selectedradioButtonTypeInstance)
-         if (selectedradioButtonTypeInstance === 'Interne'){
-              radioButtonIsFacturable.setAttribute('disabled', false);
-              radioButtonIsFacturable.classList.add('grayed-out');
-          
-           //console.log(checked)
-         } else{
-          radioButtonIsFacturable.removeAttribute('disabled', true);
-          radioButtonIsFacturable.classList.remove('grayed-out');
-           //console.log(checked)
-         }
-       }
 
-  radioButtonTypeInstance?.addEventListener('change', handleInstanceClick);
+  // Function to handle changes in the radio button selection
+  const handleInstanceClick = (event) => {
+      // Get the selected value from the radio buttons
+      const selectedradioButtonTypeInstance = document.querySelector('input[name="type_instance"]:checked');
+
+      // Check if a radio button is selected
+      if (selectedradioButtonTypeInstance) {
+          const selectedValue = selectedradioButtonTypeInstance.value;
+          const switchElement = document.querySelector('input[type="checkbox"]#id_is_facturable');
+          
+          console.log('selectedValue:', selectedValue); // Debugging log
+          
+          if (selectedValue === 'Interne') {
+              switchElement.setAttribute('disabled', 'true'); // Disable the switch
+              switchElement.checked = false; // Set the switch to off
+          } else if (selectedValue === 'Externe') {
+              switchElement.removeAttribute('disabled'); // Enable the switch
+              switchElement.checked = true; // Set the switch to on
+          }
+      }
+  };
+
+  // Attach event listeners to radio buttons
+  const radioButtonsTypeInstance = document.querySelectorAll('input[name="type_instance"]');
+  radioButtonsTypeInstance.forEach(radioButton => {
+      radioButton.addEventListener('change', handleInstanceClick);
+  });
+
+  // Call the function initially to set the state based on the default selection
   handleInstanceClick();
+
+
   
 
   // gestion recouvrement_hp    

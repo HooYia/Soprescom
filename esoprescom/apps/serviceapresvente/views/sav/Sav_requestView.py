@@ -23,18 +23,23 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.translation import gettext as _
 from django.conf import settings
 from apps.serviceapresvente.models.tasks import send_email_with_template_customer
+from apps.serviceapresvente.forms.CommandeSavForm import CommandeSavForm
 
 from_email = settings.EMAIL_HOST_USER
 
 
 @login_required
 def index(request):
-    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_losgistic) :
+    if not (request.user.is_superuser or request.user.is_staff or request.user.is_compta or request.user.is_recouvrement or request.user.is_losgistic or request.user.is_stock or request.user.is_leasing or request.user.is_leasing2 or request.user.is_instance) :
         return redirect('dashboard:dashboard')
     sav_requests_list = Sav_request.objects.all()
     paginator = Paginator(sav_requests_list, 5)
     page = request.GET.get('page', 1)
     #sav_requests_list = Sav_requestForm(sav_requests_list)
+
+
+    
+    
     try:
         savrequest = paginator.page(page)
     except PageNotAnInteger:
@@ -43,8 +48,33 @@ def index(request):
         savrequest = paginator.page(paginator.num_pages)
     except:
         savrequest = paginator.page(1)
-    #print('savrequest:',savrequest)
-    #return render(request, 'serviceapresvente/sav_requests/sav_request_index.html', {'sav_requests': sav_requests})
+        
+    if request.user.is_staff:
+        return render(request,"servicedsi/index.html",{
+            'page':'savrequest',
+            'subpage':'savrequest',
+            #'savrequest':sav_requests_list
+            'savrequest':savrequest
+            })
+    
+    if request.user.is_losgistic:
+        return redirect('serviceapresvente:commandesav')    
+    
+    if request.user.is_recouvrement:
+        return redirect('serviceapresvente:recouvrement')
+        
+    if request.user.is_stock:
+        return redirect('serviceapresvente:stock')    
+    
+    if request.user.is_leasing2:
+        return redirect('serviceapresvente:clients')
+    
+    if request.user.is_leasing:
+        return redirect("serviceapresvente:clients")
+    
+    if request.user.is_instance:
+        return redirect("serviceapresvente:clients")
+    
     return render(request,"servicedsi/index.html",{
     'page':'savrequest',
     'subpage':'savrequest',

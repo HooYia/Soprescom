@@ -302,56 +302,56 @@ $(document).ready(function() {
 </script>
 
 <script>
-$(document).ready(function() {
-    // Show/hide the form when the button is clicked
-  $(".btn-primary").click(function() {
-      $("#new-client-form-container").toggle();
+  $(document).ready(function() {
+      // Show/hide the form when the button is clicked
+    $(".btn-primary").click(function() {
+        $("#new-client-form-container").toggle();
+    });
+
+    // Handle form submission for adding a new client
+    $("#new-client-form").submit(function(event) {
+        event.preventDefault();  // Prevent the default form submission
+
+        var formData = new FormData(this); // Collect form data
+
+        $.ajax({
+            url: '{% url "serviceapresvente:create_client" %}',  // URL to send the request
+            type: 'POST',
+            data: formData,
+            processData: false, // Prevent jQuery from automatically transforming the data into a query string
+            contentType: false, // Set content type to false to let jQuery set it as multipart/form-data
+            success: function(response) {
+                if (response.success) {
+                    // Close the form
+                    $('#new-client-form-container').hide();
+                    
+                    // Update the client_sav dropdown in the form
+                    var clientSelect = $('#id_client_sav');
+                    
+                    // Add the new client to the dropdown list
+                    clientSelect.append($('<option>', {
+                      value: response.client_id,  // Use the client ID from the response
+                      text: response.client_name  // Use the client name from the response
+                    }));
+
+                    // Select the newly added client in the dropdown
+                    clientSelect.val(response.client_id).trigger('change');
+                            
+
+
+                    alert('Client added successfully!');
+                } else {
+                    alert('Error: ' + response.message);
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle error - show error message
+                alert('Error: ' + error);
+            }
+        });
+    });
+
   });
-
-  // Handle form submission for adding a new client
-  $("#new-client-form").submit(function(event) {
-      event.preventDefault();  // Prevent the default form submission
-
-      var formData = new FormData(this); // Collect form data
-
-      $.ajax({
-          url: '{% url "serviceapresvente:create_client" %}',  // URL to send the request
-          type: 'POST',
-          data: formData,
-          processData: false, // Prevent jQuery from automatically transforming the data into a query string
-          contentType: false, // Set content type to false to let jQuery set it as multipart/form-data
-          success: function(response) {
-              if (response.success) {
-                  // Close the form
-                  $('#new-client-form-container').hide();
-                  
-                  // Update the client_sav dropdown in the form
-                  var clientSelect = $('#id_client_sav');
-                  
-                  // Add the new client to the dropdown list
-                  clientSelect.append($('<option>', {
-                    value: response.client_id,  // Use the client ID from the response
-                    text: response.client_name  // Use the client name from the response
-                  }));
-
-                  // Select the newly added client in the dropdown
-                  clientSelect.val(response.client_id).trigger('change');
-                          
-
-
-                  alert('Client added successfully!');
-              } else {
-                  alert('Error: ' + response.message);
-              }
-          },
-          error: function(xhr, status, error) {
-              // Handle error - show error message
-              alert('Error: ' + error);
-          }
-      });
-  });
-
-});
 
 </script>
 

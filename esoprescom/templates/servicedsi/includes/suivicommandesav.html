@@ -4,7 +4,7 @@
     </div>
     <div class="card-body">
   <div class="table-responsive">
-            <table class="table">
+            <table class="table" id="logistique">
                 <thead>
                     <tr>
                       <th>Date création</th>
@@ -57,3 +57,15 @@
         </div>
     </div>
 </div>
+
+<script src='https://code.jquery.com/jquery-3.7.1.js'></script>
+<script src='https://cdn.datatables.net/2.1.4/js/dataTables.js'></script>
+<script>
+
+  $('#logistique').DataTable({
+    lengthMenu: [5,10, 15,20],
+    order: [[3, 'desc']],
+    pageLength:10 
+ });
+
+</script>

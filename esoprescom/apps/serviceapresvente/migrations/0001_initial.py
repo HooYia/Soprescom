@@ -199,22 +199,22 @@ class Migration(migrations.Migration):
                 ('userLog', models.ForeignKey(null=True, on_delete=django.db.models.deletion.PROTECT, to=settings.AUTH_USER_MODEL)),
             ],
         ),
-        migrations.CreateModel(
-            name='Facturation',
-            fields=[
-                ('idfacturation', models.BigAutoField(primary_key=True, serialize=False)),
-                ('reference_facture', models.CharField(blank=True, max_length=20, null=True)),
-                ('montant', models.DecimalField(decimal_places=2, default=Decimal('0.00'), max_digits=10)),
-                ('facture_proforma', models.ImageField(blank=True, null=True, upload_to='sav/factures/%Y/%m/%d/')),
-                ('bon_pour_accord', models.BooleanField(blank=True, default=False, null=True, verbose_name='Bon Pour Accord')),
-                ('est_paye', models.BooleanField(blank=True, default=False, null=True)),
-                ('commentaire', models.TextField(blank=True, null=True, validators=[django.core.validators.MaxLengthValidator(limit_value=200)])),
-                ('flag', models.BooleanField(blank=True, default=False, null=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('savrequest', models.OneToOneField(on_delete=django.db.models.deletion.PROTECT, to='serviceapresvente.sav_request')),
-            ],
-        ),
+        #migrations.CreateModel(
+        #    name='Facturation',
+        #    fields=[
+        #        ('idfacturation', models.BigAutoField(primary_key=True, serialize=False)),
+        #        ('reference_facture', models.CharField(blank=True, max_length=20, null=True)),
+        #        ('montant', models.DecimalField(decimal_places=2, default=Decimal('0.00'), max_digits=10)),
+        #        ('facture_proforma', models.ImageField(blank=True, null=True, upload_to='sav/factures/%Y/%m/%d/')),
+        #        ('bon_pour_accord', models.BooleanField(blank=True, default=False, null=True, verbose_name='Bon Pour Accord')),
+        #        ('est_paye', models.BooleanField(blank=True, default=False, null=True)),
+        #        ('commentaire', models.TextField(blank=True, null=True, validators=[django.core.validators.MaxLengthValidator(limit_value=200)])),
+        #        ('flag', models.BooleanField(blank=True, default=False, null=True)),
+        #        ('updated_at', models.DateTimeField(auto_now=True)),
+        #        ('created_at', models.DateTimeField(auto_now_add=True)),
+        #        ('savrequest', models.OneToOneField(on_delete=django.db.models.deletion.PROTECT, to='serviceapresvente.sav_request')),
+        #    ],
+        #),
         migrations.CreateModel(
             name='CommandeSav',
             fields=[
