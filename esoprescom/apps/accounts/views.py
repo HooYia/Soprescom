@@ -68,7 +68,7 @@ def update_profile(request):
         form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
         if form.is_valid():
             form.save()
-            messages.success(request, 'User Updated !')
+            messages.success(request, f"{request.user.profile} updated!!!")
             return redirect('shop:home')
         else:
            messages.info(request, 'Updated form Invalid!')
