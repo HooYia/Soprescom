@@ -8,6 +8,9 @@ from apps.serviceapresvente.forms.Instance_recouvrementForm import Instance_reco
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 
+from apps.accounts.models import Customer
+from apps.serviceapresvente.models import Client_sav
+
 
 @login_required
 def index(request):
@@ -77,7 +80,18 @@ def create(request):
     else:
         print("No Post form add")
         form = InstanceForm()
-        return render(request, 'servicedsi/instance/formInstanceAdd.html', {'form': form})
+        associated_customer_ids = Client_sav.objects.filter(
+            is_active=True,
+            is_deleted=False
+        ).values_list('customer_id', flat=True).distinct()
+
+        # Exclude customers who are already associated with a client
+        customers = Customer.objects.filter(
+            is_active=True,
+            is_deleted=False
+        ).exclude(id__in=associated_customer_ids)
+        print('customer: ', customers)
+        return render(request, 'servicedsi/instance/formInstanceAdd.html', {'form': form, 'customers':customers})
     
 
 def update(request, id):
