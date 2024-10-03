@@ -12,6 +12,10 @@ from apps.shop.models.Image import Image
 from django.utils.translation import gettext as _
 
 
+from django.utils.text import slugify
+from load_task_in_production import search_serpapi_images, save_images_for_product
+
+
 logger = logging.getLogger(__name__)
 
 @login_required
@@ -200,60 +204,6 @@ def delete_stock(request, stock_id):
 #     }
 #     return render(request, 'servicedsi/index.html', context)    
 
-
-
-import requests
-from serpapi import GoogleSearch
-
-def search_serpapi_images(reference, designation):
-    params = {
-        "engine": "google_images",  # Use the Google Images search engine
-        "q": f"{reference} {designation}",  # Query string (e.g., product reference and name)
-        "num": "4",  # Number of images to fetch
-        "api_key": "df95d8db357af8f9d090b079b80ed0af7b6694a5f19ec8df8809d01d3f316fe6"  # Replace with your SerpAPI key
-    }
-
-    search = GoogleSearch(params)
-    data = search.get_dict()
-    results = {
-        'images_url': [],
-        'more_detail': None,
-    }
-
-    if 'images_results' in data and len(data['images_results']) > 0:
-        for result in data["images_results"][:4]:  # Limit to 4 images
-            results['images_url'].append(result["original"])
-
-        # Get the link for additional product information
-        if 'link' in data['images_results'][0]:
-            results['more_detail'] = data['images_results'][0]['link']
-
-    return results
-
-
-from django.core.files.base import ContentFile
-from apps.shop.models import Image
-
-def save_images_for_product(product, image_urls, name):
-    for index, image_url in enumerate(image_urls):
-        try:
-            # Fetch the image data from the URL
-            response = requests.get(image_url)
-            response.raise_for_status()
-
-            # Generate a filename for the image
-            file_name = f"{name}_image_{index + 1}.jpg"
-
-            # Create an Image instance and save it
-            image_instance = Image(product=product)
-            image_instance.image.save(file_name, ContentFile(response.content), save=True)
-
-            print(f"Image {file_name} saved for product: {product.name}")
-        except requests.RequestException as e:
-            print(f"Failed to fetch image from {image_url}: {e}")
-
-from django.utils.text import slugify
-# from load_task_in_production import search_serpapi_images, save_images_for_product
 
 def product_view(request):
     if request.method == 'POST':
