@@ -10,6 +10,7 @@ from django.contrib import messages
 from django.db import transaction
 from apps.shop.models.Image import Image
 from django.utils.translation import gettext as _
+from datetime import datetime, timedelta
 
 
 from django.utils.text import slugify
@@ -129,15 +130,70 @@ def delete_stock(request, stock_id):
 
 @login_required
 def action_log(request):
-    
     action_logs = ActionLog.objects.all()
+    filter_option = request.GET.get('filter', 'all')
+    today = datetime.now()
 
-    
+    if filter_option == 'today':
+        action_logs = action_logs.filter(
+            date_created__date=today
+        ) | action_logs.filter(
+            date_modified__date=today
+        ) | action_logs.filter(
+            date_deleted__date=today
+        )
+    elif filter_option == 'yesterday':
+        yesterday = today - timedelta(days=1)
+        action_logs = action_logs.filter(
+            date_created__date=yesterday
+        ) | action_logs.filter(
+            date_modified__date=yesterday
+        ) | action_logs.filter(
+            date_deleted__date=yesterday
+        )
+    elif filter_option == 'last_7_days':
+        last_7_days = today - timedelta(days=7)
+        action_logs = action_logs.filter(
+            date_created__date__gte=last_7_days
+        ) | action_logs.filter(
+            date_modified__date__gte=last_7_days
+        ) | action_logs.filter(
+            date_deleted__date__gte=last_7_days
+        )
+    elif filter_option == 'last_month':
+        last_month = today - timedelta(days=30)
+        action_logs = action_logs.filter(
+            date_created__date__gte=last_month
+        ) | action_logs.filter(
+            date_modified__date__gte=last_month
+        ) | action_logs.filter(
+            date_deleted__date__gte=last_month
+        )
+    elif filter_option == 'last_year':
+        last_year = today - timedelta(days=365)
+        action_logs = action_logs.filter(
+            date_created__date__gte=last_year
+        ) | action_logs.filter(
+            date_modified__date__gte=last_year
+        ) | action_logs.filter(
+            date_deleted__date__gte=last_year
+        )
+    elif filter_option == 'custom_date':
+        start_date = request.GET.get('start_date')
+        end_date = request.GET.get('end_date')
+        if start_date and end_date:
+            action_logs = action_logs.filter(
+                date_created__date__range=[start_date, end_date]
+            ) | action_logs.filter(
+                date_modified__date__range=[start_date, end_date]
+            ) | action_logs.filter(
+                date_deleted__date__range=[start_date, end_date]
+            )
+
     context = {
         'action_logs': action_logs,
-        'page':'stock',
-        'subpage':'log_tab',
+        'filter_option': filter_option,
+        'page': 'stock',
+        'subpage': 'log_tab',
     }
     return render(request, 'servicedsi/index.html', context)
-
-
