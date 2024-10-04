@@ -2,27 +2,27 @@
     <form method="GET" class="mb-3">
         <div class="row mt-3">
             <div class="col-md-4">
-                <select name="filter" class="form-control" onchange="this.form.submit()" style="height: 40px;">
+                <select id="filterSelect" name="filter" class="form-control" onchange="toggleCustomDateFields()" style="height: 40px;">
                     <option value="all">All</option>
                     <option value="today" {% if filter_option == 'today' %}selected{% endif %}>Today</option>
                     <option value="yesterday" {% if filter_option == 'yesterday' %}selected{% endif %}>Yesterday</option>
                     <option value="last_7_days" {% if filter_option == 'last_7_days' %}selected{% endif %}>Last 7 Days</option>
                     <option value="last_month" {% if filter_option == 'last_month' %}selected{% endif %}>Last Month</option>
                     <option value="last_year" {% if filter_option == 'last_year' %}selected{% endif %}>Last Year</option>
+                    <option value="custom_date" {% if filter_option == 'custom_date' %}selected{% endif %}>Custom</option>
                 </select>
             </div>
             
-            <div class="col-md-8 d-flex justify-content-end">
+            <div id="customDateFields" class="col-md-8 d-flex justify-content-end" style="display: {% if filter_option == 'custom_date' %}flex{% else %}none{% endif %};">
                 <div class="col-md-4 pr-1">
                     <input type="date" name="start_date" class="form-control" placeholder="Start Date" value="{{ request.GET.start_date }}" style="height: 40px;">
                 </div>
                 <div class="col-md-4 pr-1">
                     <input type="date" name="end_date" class="form-control" placeholder="End Date" value="{{ request.GET.end_date }}" style="height: 40px;">
                 </div>
-                <div class="col-md-1">
-                </div>
+                <div class="col-md-1"></div>
                 <div class="col-md-2">
-                    <button type="submit" class="btn btn-fill-out btn-sm btn-sm ms-auto" style="height: 40px; width: 100%;">Filter</button>
+                    <button type="submit" class="btn btn-fill-out btn-sm ms-auto" style="height: 40px; width: 100%;">Filter</button>
                 </div>
             </div>
         </div>
@@ -61,6 +61,8 @@
     </div>
 </div>
 
+{% block script %}
+
 
 <script>
 
@@ -73,4 +75,8 @@
 
 
 </script>
+
+{% endblock %}
+
+
 

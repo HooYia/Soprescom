@@ -181,6 +181,7 @@ def action_log(request):
     elif filter_option == 'custom_date':
         start_date = request.GET.get('start_date')
         end_date = request.GET.get('end_date')
+        
         if start_date and end_date:
             action_logs = action_logs.filter(
                 date_created__date__range=[start_date, end_date]
