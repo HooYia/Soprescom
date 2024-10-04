@@ -1,7 +1,9 @@
+from django.utils import timezone
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
 from apps.serviceapresvente.models import Client_sav
+from apps.shop.models.Product import ActionLog
 from ..forms.SortieLivraisonFrom import SortieLivraisonForm
 from ..models.SortieLivraison import SortieLivraison
 from django.db import IntegrityError, transaction
@@ -19,6 +21,14 @@ def create_sortie_livraison(request):
             try:
                 with transaction.atomic():  # Ensure all or nothing in the database
                     form.save()
+                    
+                    ActionLog.objects.create(
+                        product_name=form.cleaned_data['reference'],
+                        action_done_by=request.user.username,
+                        date_created=timezone.now(),  # Store the current timestamp as date_created
+                        type = 'Sortie Livraison',
+            
+                    )
                 messages.success(request, 'Sortie Livraison created successfully!')
                 return redirect('serviceapresvente:create_sortie_livraison')
             except Exception as e:
@@ -62,6 +72,8 @@ def update_sortie_livraison(request, id):
                 livraison.client = get_object_or_404(Client_sav, idclient=client_id)
                 
                 livraison.reference = request.POST.get('reference')
+                livraison.serial_number = request.POST.get('serial_number')
+                livraison.nature = request.POST.get('nature')
                 livraison.designation = request.POST.get('designation')
                 livraison.qte_dde = int(request.POST.get('qte_dde'))  # Convert to integer
                 livraison.stock_initial = int(request.POST.get('stock_initial'))  # Convert to integer
@@ -69,6 +81,14 @@ def update_sortie_livraison(request, id):
 
                 # Save the updated instance to the database
                 livraison.save()
+                
+                ActionLog.objects.create(
+                        product_name=livraison.reference,
+                        action_done_by=request.user.username,
+                        date_modified=timezone.now(),  # Store the current timestamp as date_modified
+                        type = 'Sortie Livraison',
+            
+                    )
                 
                 # Add a success message
                 messages.success(request, "Sortie Livraison updated successfully.")
@@ -100,8 +120,18 @@ def delete_sortie_livraison(request, id):
     if request.method == "POST":
         try:
             livraison = get_object_or_404(SortieLivraison, id=id)
+            
+            reference = livraison.reference
             livraison.is_deleted = True
             livraison.save()
+            
+            ActionLog.objects.create(
+                        product_name=reference,
+                        action_done_by=request.user.username,
+                        date_deleted=timezone.now(),  # Store the current timestamp as date_deleted
+                        type = 'Sortie Livraison',
+            
+                    )
 
             # Add a success message
             messages.success(request, "Sortie Livraison deleted successfully.")

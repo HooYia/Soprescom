@@ -10,6 +10,8 @@ class SortieLivraison(models.Model):
     bdc = models.CharField(max_length=255, null=True, blank=True)
     client = models.ForeignKey(Client_sav, on_delete=models.PROTECT, related_name='livraisons')
     reference = models.CharField(max_length=255, null=True, blank=True)
+    serial_number = models.CharField(max_length=255, null=True, blank=True)
+    nature = models.CharField(max_length=255, null=True, blank=True)
     designation = models.CharField(max_length=255, null=True, blank=True)
     qte_dde = models.PositiveIntegerField(default=0)  
     stock_initial = models.PositiveBigIntegerField(default=0)
