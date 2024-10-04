@@ -30,7 +30,11 @@
                                       <option {% if sort_by_price == 'desc' %} selected {% endif %} value="desc">Sort by price: high to low</option>
                                   </select>
                               </div>
+                              
                           </div>
+                          <div class="input-container d-flex flex">
+                            <input type="text" placeholder="Search" id="search_input" class="form-control custom-input" onkeyup="performSearch(this.value)" style="height: 45px;">
+                        </div>
                           <div class="product_header_right">
                               <div class="products_view">
                                   <a href="?display=grid" class="shorting_icon grid {% if display == 'grid' %}active{% endif %}"><i class="ti-view-grid"></i></a>

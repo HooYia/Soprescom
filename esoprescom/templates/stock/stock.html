@@ -9,46 +9,48 @@
     </div>
 
     <!-- Clients Table -->
-    <table class="table table-hover table-striped table-bordered responsive" id="datatable" width="100%" cellspacing="0">
-        <thead>
-            <tr>
-                <th scope="col">Categorie</th>
-                <th scope="col">Produit</th>
-                <th scope="col">Initial</th>
-                <th scope="col">Quantité</th>
-                <th scope="col">Sortie</th>
-                <th scope="col">Stock limite</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        
-        <tbody>
-            {% for stock in stocks %}
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered responsive" id="datatables" width="100%" cellspacing="0">
+            <thead>
                 <tr>
-                    <td>
-                        {% for category in stock.stock_produit.categories.all %}
-                            {{ category.name }}{% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    </td>
-                    <td>{{ stock.stock_produit.name }}</td>
-                    <td>{{ stock.initial_quantite }}</td>
-                    <td>{{ stock.quantite }}</td>
-                    <td>{{ stock.calculate_difference}}</td>
-                    <td>{{ stock.stockLimite }}</td>
-                    <td class="text-center">
-                        <!-- Edit Button -->
-                        <a class="btn btn-fill-out btn-sm btn-sm ms-auto edit" href="#" data-bs-toggle="modal" data-bs-target="#updateStockModal{{ stock.id }}">
-                            <i class="fa-solid fa-pen me-1"></i>Edit
-                        </a>
-                        <!-- Delete Button -->
-                        <a class="btn btn-fill-out btn-sm btn-sm ms-auto del" href="#" data-bs-toggle="modal" data-bs-target="#deleteStockModal{{ stock.id }}">
-                            <i class="fa-regular fa-trash-can me-1"></i>Delete
-                        </a>
-                    </td>
+                    <th scope="col">Categorie</th>
+                    <th scope="col">Produit</th>
+                    <th scope="col">Initial</th>
+                    <th scope="col">Quantité</th>
+                    <th scope="col">Sortie</th>
+                    <th scope="col">Stock limite</th>
+                    <th scope="col">Action</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            
+            <tbody>
+                {% for stock in stocks %}
+                    <tr>
+                        <td>
+                            {% for category in stock.stock_produit.categories.all %}
+                                {{ category.name }}{% if not forloop.last %}, {% endif %}
+                            {% endfor %}
+                        </td>
+                        <td>{{ stock.stock_produit.name }}</td>
+                        <td>{{ stock.initial_quantite }}</td>
+                        <td>{{ stock.quantite }}</td>
+                        <td>{{ stock.calculate_difference}}</td>
+                        <td>{{ stock.stockLimite }}</td>
+                        <td class="text-center">
+                            <!-- Edit Button -->
+                            <a class="btn btn-fill-out btn-sm btn-sm ms-auto edit" href="#" data-bs-toggle="modal" data-bs-target="#updateStockModal{{ stock.id }}">
+                                <i class="fa-solid fa-pen me-1"></i>Edit
+                            </a>
+                            <!-- Delete Button -->
+                            <a class="btn btn-fill-out btn-sm btn-sm ms-auto del" href="#" data-bs-toggle="modal" data-bs-target="#deleteStockModal{{ stock.id }}">
+                                <i class="fa-regular fa-trash-can me-1"></i>Delete
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     
     
 
@@ -156,7 +158,7 @@
 
 <script>
 
-    $('#datatable').DataTable({
+    $('#datatables').DataTable({
         lengthMenu: [5,10, 15,20],
         order: [[3, 'desc']],
         pageLength:10,

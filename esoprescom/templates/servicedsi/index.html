@@ -170,14 +170,21 @@
               <div class="sub-menu">
                 <ul class="nav nav-tabs " role="tablist">
                   <li class="nav-item">
+                    <a class="nav-link {% if subpage == 'product_tab' %}active{% endif %}" href="{% url "serviceapresvente:product" %}" role="tab" aria-controls="sub1" aria-selected="true">produit</a>
+                  </li>
+                  <li class="nav-item">
                       <a class="nav-link {% if subpage == 'stock_tab' %}active{% endif %}" href="{% url "serviceapresvente:stock" %}" role="tab" aria-controls="sub1" aria-selected="true">Stock</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link {% if subpage == 'journalier_tab' %}active{% endif %}" href="{% url "serviceapresvente:sotie_journalier" %}" role="tab" aria-controls="sub1" aria-selected="true">Sortie Journalier</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link {% if subpage == 'product_tab' %}active{% endif %}" href="{% url "serviceapresvente:product" %}" role="tab" aria-controls="sub1" aria-selected="true">produit</a>
+                    <a class="nav-link {% if subpage == 'log_tab' %}active{% endif %}" href="{% url "serviceapresvente:action_log" %}" role="tab" aria-controls="sub1" aria-selected="true">Journal des Actions</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if subpage == 'sortie_livraison_tab' %}active{% endif %}" href="{% url "serviceapresvente:create_sortie_livraison" %}" role="tab" aria-controls="sub1" aria-selected="true">Sortie Livraison</a>
+                </li>
+                 
                 </ul>
               </div>
             {% elif page == 'leasing' %}
@@ -307,7 +314,13 @@
             <div class="tab-pane fade {% if subpage == 'instance_tab' %}active show{% endif %}" id="instance" role="tabpanel" aria-labelledby="instance-tab">
               {% include "servicedsi/dashboard/instance.html" %}
             </div>
+            <div class="tab-pane fade {% if subpage == 'log_tab' %}active show{% endif %}" id="log" role="tabpanel" aria-labelledby="logs-tab">
+              {% include "stock/log.html" %}
+            </div>
             
+            <div class="tab-pane fade {% if subpage == 'sortie_livraison_tab' %}active show{% endif %}" id="livraison" role="tabpanel" aria-labelledby="livraison-tab">
+              {% include "stock/sortielivraison.html" %}
+            </div>
             
           </div>
           <!-- Stock -->
@@ -321,9 +334,8 @@
             <div class="tab-pane fade {% if subpage == 'journalier_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
               {% include "stock/sortie_journalier.html" %}
             </div>
-            
+           
           </div>
-        
         </div>
       </div>
     </div>

@@ -1,0 +1,82 @@
+<div class="container-fluid px-4">
+    <form method="GET" class="mb-3">
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <select id="filterSelect" name="filter" class="form-control" onchange="toggleCustomDateFields()" style="height: 40px;">
+                    <option value="all">All</option>
+                    <option value="today" {% if filter_option == 'today' %}selected{% endif %}>Today</option>
+                    <option value="yesterday" {% if filter_option == 'yesterday' %}selected{% endif %}>Yesterday</option>
+                    <option value="last_7_days" {% if filter_option == 'last_7_days' %}selected{% endif %}>Last 7 Days</option>
+                    <option value="last_month" {% if filter_option == 'last_month' %}selected{% endif %}>Last Month</option>
+                    <option value="last_year" {% if filter_option == 'last_year' %}selected{% endif %}>Last Year</option>
+                    <option value="custom_date" {% if filter_option == 'custom_date' %}selected{% endif %}>Custom</option>
+                </select>
+            </div>
+            
+            <div id="customDateFields" class="col-md-8 d-flex justify-content-end" style="display: {% if filter_option == 'custom_date' %}flex{% else %}none{% endif %};">
+                <div class="col-md-4 pr-1">
+                    <input type="date" name="start_date" class="form-control" placeholder="Start Date" value="{{ request.GET.start_date }}" style="height: 40px;">
+                </div>
+                <div class="col-md-4 pr-1">
+                    <input type="date" name="end_date" class="form-control" placeholder="End Date" value="{{ request.GET.end_date }}" style="height: 40px;">
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-fill-out btn-sm ms-auto" style="height: 40px; width: 100%;">Filter</button>
+                </div>
+            </div>
+        </div>
+        
+        
+    </form>
+
+    <div class="table-responsive">
+        <!-- Action Log Table -->
+        <table class="table table-hover table-striped table-bordered responsive" id="datatabless" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th scope="col">Produit</th>
+                    <th scope="col">Action réalisée par</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Date de création</th>
+                    <th scope="col">Date de modification</th>
+                    <th scope="col">Date de suppression</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for log in action_logs %}
+                    <tr>
+                        <td>{{ log.product_name }}</td>
+                        <td>{{ log.action_done_by }}</td>
+                        <td>{{ log.type }}</td>
+                        <td>{{ log.date_created|date:"d/m/Y H:i" }}</td>
+                        <td>{{ log.date_modified|date:"d/m/Y H:i" }}</td>
+                        <td>{{ log.date_deleted|date:"d/m/Y H:i" }}</td>
+                    </tr>
+                
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% block script %}
+
+
+<script>
+
+    $('#datatabless').DataTable({
+        lengthMenu: [5,10, 15,20],
+        order: [[3, 'desc']],
+        pageLength:10,
+        destroy: true ,
+     });
+
+
+</script>
+
+{% endblock %}
+
+
+

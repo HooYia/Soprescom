@@ -1,6 +1,7 @@
+from django.utils import timezone
 import logging
 
-from apps.shop.models.Product import Stock, Product, Category
+from apps.shop.models.Product import ActionLog, Stock, Product, Category
 from django.shortcuts import render, get_object_or_404
 
 from django.contrib import messages
@@ -12,6 +13,7 @@ from django.utils.translation import gettext as _
 from django.utils.text import slugify
 from load_task_in_production import search_serpapi_images, save_images_for_product
 
+from django.contrib.auth.decorators import login_required
 
 logger = logging.getLogger(__name__)
 
@@ -115,11 +117,12 @@ logger = logging.getLogger(__name__)
 #     }
 #     return render(request, 'servicedsi/index.html', context)    
 
-
+@login_required
 def product_view(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         description = request.POST.get('description')
+        reference = request.POST.get('reference')
         more_description = request.POST.get('more_description')
         additional_infos = request.POST.get('additional_infos')
         solde_price = request.POST.get('solde_price')
@@ -144,6 +147,7 @@ def product_view(request):
                         slug=slug,
                         description=description,
                         more_description=more_description,
+                        reference=reference,
                         additional_infos=additional_infos,
                         solde_price=solde_price,
                         regular_price=regular_price,
@@ -156,6 +160,9 @@ def product_view(request):
                     )
                     product.save()
                     product.categories.set(category_ids)  # Set the categories for the new product
+                    print("product:",product.name)
+                    
+                    
 
                     # Fetch and save images using search_serpapi_images
                     result = search_serpapi_images(name, name)  # Use name as both reference and designation here
@@ -163,6 +170,15 @@ def product_view(request):
                     if result['images_url']:
                         save_images_for_product(product, result['images_url'], name)
 
+                    
+                    # Create an action log for the product creation
+                    ActionLog.objects.create(
+                        product_name=product.name,
+                        date_created=timezone.now(),
+                        action_done_by=request.user.username,  # Assuming you're using the username of the logged-in user
+                        type = 'product',
+                        
+                    )
                     messages.success(request, _('Product added successfully'))
 
                 elif action == 'update':
@@ -179,8 +195,17 @@ def product_view(request):
                     product.is_new_arrival = is_new_arrival
                     product.is_featured = is_featured
                     product.is_special_offer = is_special_offer
+                    product.reference = reference
                     product.save()
                     product.categories.set(category_ids)  # Update categories for the existing product
+                    
+                    ActionLog.objects.create(
+                        product_name=product.name,
+                        action_done_by=request.user.username,
+                        date_modified=timezone.now(),  # Store the current timestamp as date_modified
+                        type = 'product',
+                        
+                    )
 
                     # Handling image uploads during update
                     images = request.FILES.getlist('images')  # New images uploaded
@@ -195,7 +220,16 @@ def product_view(request):
 
                 elif action == 'delete':
                     product = get_object_or_404(Product, id=product_id)
+                    product_name = product.name
                     product.delete()
+                    
+                    ActionLog.objects.create(
+                        product_name=product_name,
+                        action_done_by=request.user.username,
+                        date_deleted=timezone.now(),  # Store the current timestamp as date_deleted
+                        type = 'product',
+                        
+                    )
                     messages.success(request, _('Product deleted successfully'))
 
                 else:
