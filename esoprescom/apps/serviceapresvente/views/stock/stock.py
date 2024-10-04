@@ -57,7 +57,8 @@ def add_stock(request):
         ActionLog.objects.create(
             product_name=product.name,
             action_done_by=request.user.username,
-            date_created=timezone.now()  # Store the current timestamp as date_created
+            date_created=timezone.now(),  # Store the current timestamp as date_created
+            type = 'stock',
         )
         return redirect('serviceapresvente:stock')
     
@@ -88,7 +89,9 @@ def update_stock(request, stock_id):
         ActionLog.objects.create(
             product_name=stock.stock_produit.name,
             action_done_by=request.user.username,
-            date_modified=timezone.now()  # Store the current timestamp as date_modified
+            date_modified=timezone.now(),  # Store the current timestamp as date_modified
+            type = 'stock',
+            
         )
         
         return redirect('serviceapresvente:stock')
@@ -112,7 +115,9 @@ def delete_stock(request, stock_id):
     ActionLog.objects.create(
             product_name=product_name,
             action_done_by=request.user.username,
-            date_deleted=timezone.now()  # Store the current timestamp as date_deleted
+            date_deleted=timezone.now(),  # Store the current timestamp as date_deleted
+            type = 'stock',
+            
     )
     context = {
         'page':'stock',

@@ -68,6 +68,7 @@ class ActionLog(models.Model):
     date_created = models.DateTimeField(null=True, blank=True)
     date_modified = models.DateTimeField(null=True, blank=True) 
     date_deleted = models.DateTimeField(null=True, blank=True)
+    type = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
         return f"Action log for {self.product_name} by {self.action_done_by} on {self.date_created}"

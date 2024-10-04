@@ -7,6 +7,7 @@
                 <tr>
                     <th scope="col">Produit</th>
                     <th scope="col">Action réalisée par</th>
+                    <th scope="col">Type</th>
                     <th scope="col">Date de création</th>
                     <th scope="col">Date de modification</th>
                     <th scope="col">Date de suppression</th>
@@ -18,6 +19,7 @@
                     <tr>
                         <td>{{ log.product_name }}</td>
                         <td>{{ log.action_done_by }}</td>
+                        <td>{{ log.type }}</td>
                         <td>{{ log.date_created|date:"d/m/Y H:i" }}</td>
                         <td>{{ log.date_modified|date:"d/m/Y H:i" }}</td>
                         <td>{{ log.date_deleted|date:"d/m/Y H:i" }}</td>

@@ -176,6 +176,8 @@ def product_view(request):
                         product_name=product.name,
                         date_created=timezone.now(),
                         action_done_by=request.user.username,  # Assuming you're using the username of the logged-in user
+                        type = 'product',
+                        
                     )
                     messages.success(request, _('Product added successfully'))
 
@@ -200,7 +202,9 @@ def product_view(request):
                     ActionLog.objects.create(
                         product_name=product.name,
                         action_done_by=request.user.username,
-                        date_modified=timezone.now()  # Store the current timestamp as date_modified
+                        date_modified=timezone.now(),  # Store the current timestamp as date_modified
+                        type = 'product',
+                        
                     )
 
                     # Handling image uploads during update
@@ -222,7 +226,9 @@ def product_view(request):
                     ActionLog.objects.create(
                         product_name=product_name,
                         action_done_by=request.user.username,
-                        date_deleted=timezone.now()  # Store the current timestamp as date_deleted
+                        date_deleted=timezone.now(),  # Store the current timestamp as date_deleted
+                        type = 'product',
+                        
                     )
                     messages.success(request, _('Product deleted successfully'))
 
