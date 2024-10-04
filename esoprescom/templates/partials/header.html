@@ -118,11 +118,12 @@
                                     </div>
                                 </h6>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">
-                                    <div class="dropdown-item-icon"><i class="ti-themify-favicon"></i><span > SAV (5)</span></div>
+                                <a class="dropdown-item" href="{% url 'serviceapresvente:dashboard' %}">
+                                    <div class="dropdown-item-icon"><i class="ti-themify-favicon"></i><span >  SAV ({{sav_non_clotures_count}})
+                                    </span></div>
                                 </a>
                                 <a class="dropdown-item" href="#">
-                                    <div class="dropdown-item-icon"><i class="ti-themify-favicon"></i><span > Instance(1)</span></div>
+                                    <div class="dropdown-item-icon"> <i class="ti-themify-favicon"></i><span > Instance ( {{instance_non_clotures_count}} ) </span></div>
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <div class="dropdown-item-icon"><i class="ti-themify-favicon"></i><span > leasing (0)</span></div>

@@ -1,8 +1,6 @@
 from django.urls import path
 
 #from .views.sav import Commandesav_views, Savrequest_views,Suivicommandesav_views
-from .views.leasing import Leasing_views
-
 from .views.sav import dashboard
 from apps.serviceapresvente.api.sav_api.api import *
 
