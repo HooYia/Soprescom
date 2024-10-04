@@ -120,6 +120,7 @@ def product_view(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         description = request.POST.get('description')
+        reference = request.POST.get('reference')
         more_description = request.POST.get('more_description')
         additional_infos = request.POST.get('additional_infos')
         solde_price = request.POST.get('solde_price')
@@ -144,6 +145,7 @@ def product_view(request):
                         slug=slug,
                         description=description,
                         more_description=more_description,
+                        reference=reference,
                         additional_infos=additional_infos,
                         solde_price=solde_price,
                         regular_price=regular_price,
@@ -179,6 +181,7 @@ def product_view(request):
                     product.is_new_arrival = is_new_arrival
                     product.is_featured = is_featured
                     product.is_special_offer = is_special_offer
+                    product.reference = reference
                     product.save()
                     product.categories.set(category_ids)  # Update categories for the existing product
 

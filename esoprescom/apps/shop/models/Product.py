@@ -10,6 +10,7 @@ class Product(models.Model):
     slug = models.SlugField(max_length=255, blank=False, null=False, unique=True)
     description = models.CharField(max_length=255, blank=False, null=False)
     more_description = models.TextField(max_length=255, blank=True, null=True)
+    reference = models.CharField(max_length=255, blank=True, null=True)
     additional_infos = models.TextField(max_length=255, blank=True, null=True)
     solde_price = models.FloatField( blank=False, null=False)
     regular_price = models.FloatField( blank=False, null=False)

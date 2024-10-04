@@ -170,14 +170,15 @@
               <div class="sub-menu">
                 <ul class="nav nav-tabs " role="tablist">
                   <li class="nav-item">
+                    <a class="nav-link {% if subpage == 'product_tab' %}active{% endif %}" href="{% url "serviceapresvente:product" %}" role="tab" aria-controls="sub1" aria-selected="true">produit</a>
+                  </li>
+                  <li class="nav-item">
                       <a class="nav-link {% if subpage == 'stock_tab' %}active{% endif %}" href="{% url "serviceapresvente:stock" %}" role="tab" aria-controls="sub1" aria-selected="true">Stock</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link {% if subpage == 'journalier_tab' %}active{% endif %}" href="{% url "serviceapresvente:sotie_journalier" %}" role="tab" aria-controls="sub1" aria-selected="true">Sortie Journalier</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link {% if subpage == 'product_tab' %}active{% endif %}" href="{% url "serviceapresvente:product" %}" role="tab" aria-controls="sub1" aria-selected="true">produit</a>
-                  </li>
+                 
                 </ul>
               </div>
             {% elif page == 'leasing' %}

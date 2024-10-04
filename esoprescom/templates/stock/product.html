@@ -16,6 +16,7 @@
             <thead>
                 <tr>
                     <th scope="col">Product Name</th>
+                    <th scope="col">Referecne</th>
                     <th scope="col">Brand</th>
                     <th scope="col">Sale Price</th>
                     <th scope="col">Regular Price</th>
@@ -29,6 +30,7 @@
                     <tr>
                         <!-- Product Name -->
                         <td>{{ product.name }}</td>
+                        <td>{{ product.reference }}</td>
         
                         <!-- Brand -->
                         <td>{{ product.brand }}</td>
@@ -92,18 +94,24 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Product Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                        <div class="row">
+                                <div class="mb-3 col-md-7">
+                                <label for="name" class="form-label">Product Name</label>
+                                <input type="text" class="form-control" id="name" name="name" >
+                            </div>
+                            <div class="mb-3  col-md-5">
+                                <label for="reference" class="form-label">Referecne</label>
+                                <input type="text" class="form-control" id="reference" name="reference" >
+                            </div>
                         </div>
                         {% comment %} <div class="mb-3">
                             <label for="slug" class="form-label">Slug</label>
-                            <input type="text" class="form-control" id="slug" name="slug" required>
+                            <input type="text" class="form-control" id="slug" name="slug" >
                         </div> {% endcomment %}
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description" name="description" required></textarea>
+                                <textarea class="form-control" id="description" name="description" ></textarea>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="more_description" class="form-label">More Description</label>
@@ -117,13 +125,13 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="solde_price" class="form-label">Sale Price</label>
-                                <input type="number" class="form-control" id="solde_price" name="solde_price" required step="0.01" min="0">
+                                <input type="number" class="form-control" id="solde_price" name="solde_price"  step="0.01" min="0">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="regular_price" class="form-label">Regular Price</label>
-                                <input type="number" class="form-control" id="regular_price" name="regular_price" required step="0.01" min="0">
+                                <input type="number" class="form-control" id="regular_price" name="regular_price"  step="0.01" min="0">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="brand" class="form-label">Brand</label>
@@ -140,7 +148,7 @@
                         </div>
                         {% comment %} <div class="mb-3">
                             <label for="images" class="form-label">Product Images</label>
-                            <input type="file" class="form-control" id="images" name="images" multiple required>
+                            <input type="file" class="form-control" id="images" name="images" multiple >
                         </div> {% endcomment %}
                         <div class="row">
                             <div class="col-md-3 mb-3">
@@ -195,14 +203,20 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="mb-3">
-                            <label for="name{{ product.id }}" class="form-label">Product Name</label>
-                            <input type="text" class="form-control" id="name{{ product.id }}" name="name" value="{{ product.name }}" required>
+                        <div class="row">
+                            <div class="mb-3 col-md-7">
+                                <label for="name{{ product.id }}" class="form-label">Product Name</label>
+                                <input type="text" class="form-control" id="name{{ product.id }}" name="name" value="{{ product.name }}" >
+                            </div>
+                            <div class="mb-3 col-md-5">
+                                <label for="reference{{ product.id }}" class="form-label">Reference</label>
+                                <input type="text" class="form-control" id="reference{{ product.id }}" name="reference" value="{{ product.reference }}" >
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="description{{ product.id }}" class="form-label">Description</label>
-                                <textarea class="form-control" id="description{{ product.id }}" name="description" required>{{ product.description }}</textarea>
+                                <textarea class="form-control" id="description{{ product.id }}" name="description" >{{ product.description }}</textarea>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="more_description{{ product.id }}" class="form-label">More Description</label>
@@ -216,13 +230,13 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="solde_price{{ product.id }}" class="form-label">Sale Price</label>
-                                <input type="number" class="form-control" id="solde_price{{ product.id }}" name="solde_price" value="{{ product.solde_price }}" required step="0.01" min="0">
+                                <input type="number" class="form-control" id="solde_price{{ product.id }}" name="solde_price" value="{{ product.solde_price }}"  step="0.01" min="0">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="regular_price{{ product.id }}" class="form-label">Regular Price</label>
-                                <input type="number" class="form-control" id="regular_price{{ product.id }}" name="regular_price" value="{{ product.regular_price }}" required step="0.01" min="0">
+                                <input type="number" class="form-control" id="regular_price{{ product.id }}" name="regular_price" value="{{ product.regular_price }}"  step="0.01" min="0">
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="brand{{ product.id }}" class="form-label">Brand</label>
