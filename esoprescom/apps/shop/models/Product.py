@@ -59,3 +59,15 @@ class Stock(models.Model):
     def calculate_difference(self):
         result  = int(self.initial_quantite - self.quantite)
         return result
+
+
+
+class ActionLog(models.Model):
+    product_name = models.CharField(max_length=255, null=True, blank=True) 
+    action_done_by = models.CharField(max_length=255, null=True, blank=True)
+    date_created = models.DateTimeField(null=True, blank=True)
+    date_modified = models.DateTimeField(null=True, blank=True) 
+    date_deleted = models.DateTimeField(null=True, blank=True)
+
+    def __str__(self):
+        return f"Action log for {self.product_name} by {self.action_done_by} on {self.date_created}"

@@ -1,6 +1,7 @@
+from datetime import timezone
 import logging
 
-from apps.shop.models.Product import Stock, Product, Category
+from apps.shop.models.Product import ActionLog, Stock, Product, Category
 from django.shortcuts import render, get_object_or_404
 
 from django.contrib import messages
@@ -158,6 +159,13 @@ def product_view(request):
                     )
                     product.save()
                     product.categories.set(category_ids)  # Set the categories for the new product
+                    
+                    # Create an action log for the product creation
+                    ActionLog.objects.create(
+                        product_name=product.name,
+                        date_created=timezone.now(),
+                        action_done_by=request.user.username,  # Assuming you're using the username of the logged-in user
+                    )
 
                     # Fetch and save images using search_serpapi_images
                     result = search_serpapi_images(name, name)  # Use name as both reference and designation here
@@ -184,6 +192,12 @@ def product_view(request):
                     product.reference = reference
                     product.save()
                     product.categories.set(category_ids)  # Update categories for the existing product
+                    
+                    ActionLog.objects.create(
+                        product_name=product.name,
+                        action_done_by=request.user.username,
+                        date_modified=timezone.now()  # Store the current timestamp as date_modified
+                    )
 
                     # Handling image uploads during update
                     images = request.FILES.getlist('images')  # New images uploaded
@@ -198,7 +212,14 @@ def product_view(request):
 
                 elif action == 'delete':
                     product = get_object_or_404(Product, id=product_id)
+                    product_name = product.name
                     product.delete()
+                    
+                    ActionLog.objects.create(
+                        product_name=product_name,
+                        action_done_by=request.user.username,
+                        date_deleted=timezone.now()  # Store the current timestamp as date_deleted
+                    )
                     messages.success(request, _('Product deleted successfully'))
 
                 else:

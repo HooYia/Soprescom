@@ -1,6 +1,6 @@
 import logging
 
-from apps.shop.models.Product import Stock, Product, Category
+from apps.shop.models.Product import ActionLog, Stock, Product, Category
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
@@ -53,6 +53,12 @@ def add_stock(request):
         if not created:
             return JsonResponse({'error': 'Stock for this product already exists.'}, status=400)
         
+        # Create an action log for adding stock
+        ActionLog.objects.create(
+            product_name=product.name,
+            action_done_by=request.user.username,
+            date_created=timezone.now()  # Store the current timestamp as date_created
+        )
         return redirect('serviceapresvente:stock')
     
     products = Product.objects.exclude(stock__isnull=False)
@@ -78,6 +84,13 @@ def update_stock(request, stock_id):
         stock.stockLimite = stockLimite
         stock.save()
         
+        # Create an action log for updating stock
+        ActionLog.objects.create(
+            product_name=stock.stock_produit.name,
+            action_done_by=request.user.username,
+            date_modified=timezone.now()  # Store the current timestamp as date_modified
+        )
+        
         return redirect('serviceapresvente:stock')
      
     context = {
@@ -92,9 +105,15 @@ def update_stock(request, stock_id):
 def delete_stock(request, stock_id):
     stock = get_object_or_404(Stock, id=stock_id)
     if request.method == 'POST':
+        product_name = stock.stock_produit.name  # Store the product name for the log
         stock.delete()
         return redirect('serviceapresvente:stock')
     
+    ActionLog.objects.create(
+            product_name=product_name,
+            action_done_by=request.user.username,
+            date_deleted=timezone.now()  # Store the current timestamp as date_deleted
+    )
     context = {
         'page':'stock',
         'subpage':'stock_tab',
