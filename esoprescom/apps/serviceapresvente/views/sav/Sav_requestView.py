@@ -1,4 +1,6 @@
 import pdfkit
+import secrets
+
 from django.http import HttpResponse
 from datetime import date
 from apps.serviceapresvente.models import Sav_request
@@ -24,8 +26,12 @@ from django.utils.translation import gettext as _
 from django.conf import settings
 from apps.serviceapresvente.models.tasks import send_email_with_template_customer
 from apps.serviceapresvente.forms.CommandeSavForm import CommandeSavForm
+from django.contrib.auth.hashers import make_password
+from django.db import transaction
 
 from_email = settings.EMAIL_HOST_USER
+RANDOM_STRING_CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
 
 
 @login_required
@@ -284,40 +290,89 @@ def telecharger_fiche_dentree_pdf(request, id):
     response['Content-Disposition'] = f'attachment; filename="SAV_{fiche_dentree.client_sav}.pdf"'
     return response
 
+
+
+def get_random_string(length, allowed_chars=RANDOM_STRING_CHARS):
+    return "".join(secrets.choice(allowed_chars) for i in range(length))
+
+
 @csrf_exempt
 def create_client(request):
     if request.method == 'POST':
         try:
-            user_log_id = request.POST.get('userLog')
-            nom = request.POST.get('nom')
-            prenom = request.POST.get('prenom')
-            telephone = request.POST.get('telephone')
-            adresse = request.POST.get('adresse')
-            customer = get_object_or_404(Customer, id=user_log_id)
-        
+            with transaction.atomic():
+                # Extract user registration details from the POST request
+                email = request.POST.get('email')
+                username = request.POST.get('username')
+                raison_sociale = request.POST.get('raison_sociale', '')  # Get company name
+                first_name = request.POST.get('first_name', '')  # Get first name
+                last_name = request.POST.get('last_name', '')  # Get last name
+                telephone = request.POST.get('telephone', '')  # Get phone
+                adresse = request.POST.get('adresse', '')  # Get address
+                est_personne_morale = request.POST.get('est_personne_morale') == 'true'  # Convert to boolean
 
-            # Check if a client with the same attributes already exists
-            if Client_sav.objects.filter(customer=customer).exists():
-                return JsonResponse({'success': False, 'message': 'A client with the same details already exists!'})
+                # Generate a random password for the new user
+                password = get_random_string(12)
 
-            data = {
-                'client_name': f"{nom} {prenom}",
-                'telephone': telephone,
-                'adresse': adresse,
-                'customer': customer,
-                'nom': nom,
-                'prenom': prenom,
-                'userLog': request.user.email,
-            }
+                # Check if a customer with the same username or email already exists
+                if Customer.objects.filter(username=username).exists():
+                    return JsonResponse({'success': False, 'message': 'A user with this username already exists!'})
+                elif Customer.objects.filter(email=email).exists():
+                    return JsonResponse({'success': False, 'message': 'A user with this email already exists!'})
 
-            client = Client_sav(**data)
-            client.save()
+                # Create new customer (user)
+                customer_data = {
+                    'username': username,
+                    'email': email,
+                    'first_name': first_name,
+                    'last_name': last_name,
+                    'password': make_password(password),  # Hash the random password
+                }
+                customer = Customer(**customer_data)
+                customer.save()
+
+                # Check if a client with the same customer already exists
+                if Client_sav.objects.filter(customer=customer).exists():
+                    return JsonResponse({'success': False, 'message': 'A client with the same details already exists!'})
+
+                # Create new client associated with the newly created customer
+                client_data = {
+                    'client_name': raison_sociale if est_personne_morale else f"{first_name} {last_name}",
+                    'telephone': telephone,
+                    'adresse': adresse,
+                    'customer': customer,
+                    'nom': first_name if not est_personne_morale else None,
+                    'prenom': last_name if not est_personne_morale else None,
+                    'est_personne_morale': est_personne_morale,
+                    'raison_sociale': raison_sociale if est_personne_morale else None,  # Ensure this is only set for companies
+                    'userLog': request.user.email,
+                }
+
+                client = Client_sav(**client_data)
+                client.save()
+                
+                
+                # sav client acount creation email
+                template = 'email/user_created.html'
+                context = {
+                    'client_name': raison_sociale if est_personne_morale else f"{first_name} {last_name}",
+                    'password': password,
+                    'username': username ,
+                    'created_by': request.user.email
+                }
+                recievers = [customer.email]
+                subject = _('client Created')
+                
+                send_email_with_template_customer.delay(subject, template, context, recievers, from_email)
+                        
+              
 
             return JsonResponse({
                 'success': True,
                 'message': 'Client added successfully!',
                 'client_id': client.idclient,
-                'client_name': client.client_name
+                'client_name': client.client_name,
+                'password': password  # Return the generated password (consider sending it via email instead)
             })
 
         except Exception as e:
