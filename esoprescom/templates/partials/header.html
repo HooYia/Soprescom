@@ -272,8 +272,10 @@
              </div>
              <ul  class="navbar-nav attr-nav align-items-center">
                 <li>
-                    <input type="text" placeholder="Search" id="search_input" class="form-control" onkeyup="performSearch(this.value)">
-
+                    <div class="input-container d-flex flex">
+                        <input type="text" placeholder="Search" id="search_input" class="form-control custom-input" onkeyup="performSearch(this.value)" style="height: 30px;">
+                        <i class="fas fa-search search-icon mt-2" style='margin-left: 5px;'></i>
+                    </div>
                 </li>
                   
                  <li  class="dropdown cart_dropdown"><a 
