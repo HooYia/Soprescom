@@ -178,6 +178,9 @@
                   <li class="nav-item">
                     <a class="nav-link {% if subpage == 'journalier_tab' %}active{% endif %}" href="{% url "serviceapresvente:sotie_journalier" %}" role="tab" aria-controls="sub1" aria-selected="true">Sortie Journalier</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if subpage == 'log_tab' %}active{% endif %}" href="{% url "serviceapresvente:action_log" %}" role="tab" aria-controls="sub1" aria-selected="true">Journal des Actions</a>
+                  </li>
                  
                 </ul>
               </div>
@@ -308,6 +311,9 @@
             <div class="tab-pane fade {% if subpage == 'instance_tab' %}active show{% endif %}" id="instance" role="tabpanel" aria-labelledby="instance-tab">
               {% include "servicedsi/dashboard/instance.html" %}
             </div>
+            <div class="tab-pane fade {% if subpage == 'log_tab' %}active show{% endif %}" id="log" role="tabpanel" aria-labelledby="logs-tab">
+              {% include "stock/log.html" %}
+            </div>
             
             
           </div>
@@ -322,7 +328,7 @@
             <div class="tab-pane fade {% if subpage == 'journalier_tab' %}active show{% endif %}" id="client" role="tabpanel" aria-labelledby="clients-tab">
               {% include "stock/sortie_journalier.html" %}
             </div>
-            
+           
           </div>
         
         </div>

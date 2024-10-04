@@ -122,5 +122,17 @@ def delete_stock(request, stock_id):
     return render(request, 'servicedsi/index.html', context)
 
 
+@login_required
+def action_log(request):
+    
+    action_logs = ActionLog.objects.all()
+
+    
+    context = {
+        'action_logs': action_logs,
+        'page':'stock',
+        'subpage':'log_tab',
+    }
+    return render(request, 'servicedsi/index.html', context)
 
 

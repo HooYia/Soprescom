@@ -1,0 +1,46 @@
+<div class="container-fluid px-4">
+    <div class="table-responsive">
+
+        <!-- Clients Table -->
+        <table class="table table-hover table-striped table-bordered responsive" id="datatabless" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th scope="col">Produit</th>
+                    <th scope="col">Action réalisée par</th>
+                    <th scope="col">Date de création</th>
+                    <th scope="col">Date de modification</th>
+                    <th scope="col">Date de suppression</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for log in action_logs %}
+                    <tr>
+                        <td>{{ log.product_name }}</td>
+                        <td>{{ log.action_done_by }}</td>
+                        <td>{{ log.date_created|date:"d/m/Y H:i" }}</td>
+                        <td>{{ log.date_modified|date:"d/m/Y H:i" }}</td>
+                        <td>{{ log.date_deleted|date:"d/m/Y H:i" }}</td>
+                    </tr>
+               
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    
+    </div>
+
+</div>
+
+<script>
+
+    $('#datatabless').DataTable({
+        lengthMenu: [5,10, 15,20],
+        order: [[3, 'desc']],
+        pageLength:10,
+        destroy: true ,
+     });
+
+
+</script>
+

@@ -1,4 +1,4 @@
-from datetime import timezone
+from django.utils import timezone
 import logging
 
 from apps.shop.models.Product import ActionLog, Stock, Product, Category
@@ -13,6 +13,7 @@ from django.utils.translation import gettext as _
 from django.utils.text import slugify
 from load_task_in_production import search_serpapi_images, save_images_for_product
 
+from django.contrib.auth.decorators import login_required
 
 logger = logging.getLogger(__name__)
 
@@ -116,7 +117,7 @@ logger = logging.getLogger(__name__)
 #     }
 #     return render(request, 'servicedsi/index.html', context)    
 
-
+@login_required
 def product_view(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -159,13 +160,9 @@ def product_view(request):
                     )
                     product.save()
                     product.categories.set(category_ids)  # Set the categories for the new product
+                    print("product:",product.name)
                     
-                    # Create an action log for the product creation
-                    ActionLog.objects.create(
-                        product_name=product.name,
-                        date_created=timezone.now(),
-                        action_done_by=request.user.username,  # Assuming you're using the username of the logged-in user
-                    )
+                    
 
                     # Fetch and save images using search_serpapi_images
                     result = search_serpapi_images(name, name)  # Use name as both reference and designation here
@@ -173,6 +170,13 @@ def product_view(request):
                     if result['images_url']:
                         save_images_for_product(product, result['images_url'], name)
 
+                    
+                    # Create an action log for the product creation
+                    ActionLog.objects.create(
+                        product_name=product.name,
+                        date_created=timezone.now(),
+                        action_done_by=request.user.username,  # Assuming you're using the username of the logged-in user
+                    )
                     messages.success(request, _('Product added successfully'))
 
                 elif action == 'update':

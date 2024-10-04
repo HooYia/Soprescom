@@ -93,6 +93,9 @@ urlpatterns = [
     path('sortie-journalier', sortie_journalier.sortie_journalier, name='sotie_journalier'),
     path('product', product.product_view, name='product'),
     
+    #Action log
+    path('action-log', stock.action_log, name='action_log'),
+    
 
    
 ]
