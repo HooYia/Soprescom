@@ -181,6 +181,9 @@
                   <li class="nav-item">
                     <a class="nav-link {% if subpage == 'log_tab' %}active{% endif %}" href="{% url "serviceapresvente:action_log" %}" role="tab" aria-controls="sub1" aria-selected="true">Journal des Actions</a>
                   </li>
+                  <li class="nav-item">
+                    <a class="nav-link {% if subpage == 'sortie_livraison_tab' %}active{% endif %}" href="{% url "serviceapresvente:create_sortie_livraison" %}" role="tab" aria-controls="sub1" aria-selected="true">Sortie Livraison</a>
+                </li>
                  
                 </ul>
               </div>
@@ -315,6 +318,9 @@
               {% include "stock/log.html" %}
             </div>
             
+            <div class="tab-pane fade {% if subpage == 'sortie_livraison_tab' %}active show{% endif %}" id="livraison" role="tabpanel" aria-labelledby="livraison-tab">
+              {% include "stock/sortielivraison.html" %}
+            </div>
             
           </div>
           <!-- Stock -->
@@ -330,7 +336,6 @@
             </div>
            
           </div>
-        
         </div>
       </div>
     </div>

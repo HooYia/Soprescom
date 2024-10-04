@@ -1,7 +1,6 @@
 from django.db import models
 from apps.shop.models.Order import Order
 
-
 class Orderdetails(models.Model):
     product_name        = models.CharField(max_length=255)
     product_description = models.CharField(max_length=255)
