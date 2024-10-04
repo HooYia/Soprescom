@@ -413,35 +413,41 @@ def client_sav(request):
             messages.error(request, "A client with the same details already exists!")
             return redirect('serviceapresvente:clients')
         
+        try:
+            with transaction.atomic():
+                client = Client_sav(
+                    est_personne_morale=est_personne_morale,
+                    raison_sociale=raison_sociale,
+                    telephone=telephone,
+                    adresse=adresse,
+                    client_name=f"{nom} {prenom}",
+                    customer=customer,
+                    nom=nom,
+                    prenom=prenom,
+                    userLog=request.user.email,
+                )
+                client.save()
 
-        client = Client_sav(
-            est_personne_morale=est_personne_morale,
-            raison_sociale=raison_sociale,
-            telephone=telephone,
-            adresse=adresse,
-            client_name=f"{nom} {prenom}",
-            customer=customer,
-            nom=nom,
-            prenom=prenom,
-            userLog=request.user.email,
-        )
-        client.save()
-        
-        # sav client acount creation email
-        template = 'email/user_created.html'
-        context = {
-            'client_name': f"{nom} {prenom}",
-            'user': client,
-            'username': customer.username ,
-            'created_by': request.user.email
-        }
-        recievers = [customer.email]
-        subject = _('client Created')
-        
-        send_email_with_template_customer.delay(subject, template, context, recievers, from_email)
-            
-        messages.success(request, f"Client added successfully!")
-        return redirect('serviceapresvente:clients')
+                # SAV client account creation email
+                template = 'email/user_created.html'
+                context = {
+                    'client_name': f"{nom} {prenom}",
+                    'username': customer.username,
+                    'created_by': request.user.email,
+                }
+                recievers = [customer.email]
+                subject = _('client Created')
+
+                # Send email (only pass simple data to the email function)
+                send_email_with_template_customer.delay(subject, template, context, recievers, from_email)
+
+                messages.success(request, f"Client added successfully!")
+                return redirect('serviceapresvente:clients')
+
+        except Exception as e:
+            messages.error(request, f"An error occurred: {str(e)}")
+            return redirect('serviceapresvente:clients')
+
 
     return render(request, "servicedsi/index.html", {
         'page': 'clients',
