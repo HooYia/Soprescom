@@ -10,11 +10,17 @@ from ...models.SortieLivraison import SortieLivraison
 from django.db import IntegrityError, transaction
 from django.contrib import messages
 
+from django.utils import timezone
+from datetime import datetime, timedelta
+
 @login_required
 def  create_sortie_livraison(request):
     # Fetch all SortieLivraison instances to display in the template
     sortielivraison_list = SortieLivraison.objects.filter(is_deleted=False)
     clients = Customer.objects.all()
+    
+    sortielivraison_list, filter_option = get_filtered_sortielivraison_list(request)
+
 
     if request.method == 'POST':
         form = SortieLivraisonForm(request.POST)
@@ -45,7 +51,8 @@ def  create_sortie_livraison(request):
             'customers': clients,
             'page': 'stock',
             'subpage': 'sortie_livraison_tab',
-            'sortielivraison_list': sortielivraison_list  # Pass the list to the template
+            'sortielivraison_list': sortielivraison_list,  # Pass the list to the template
+            'filter_option': filter_option,
         }
     )
     
@@ -115,6 +122,37 @@ def update_sortie_livraison(request, id):
             'subpage': 'sortie_livraison_tab',
             'sortielivraison_list': sortielivraison_list  # Pass the list to the template
         })
+    
+    
+    
+def get_filtered_sortielivraison_list(request):
+    sortielivraison_list = SortieLivraison.objects.filter(is_deleted=False)
+    filter_option = request.GET.get('filter', 'all')
+    today = datetime.now().date()  # Get only the date part
+
+    if filter_option == 'today':
+        sortielivraison_list = sortielivraison_list.filter(date=today)
+    elif filter_option == 'yesterday':
+        yesterday = today - timedelta(days=1)
+        sortielivraison_list = sortielivraison_list.filter(date=yesterday)
+    elif filter_option == 'last_7_days':
+        last_7_days = today - timedelta(days=6)  # Include today
+        sortielivraison_list = sortielivraison_list.filter(date__range=[last_7_days, today])
+    elif filter_option == 'last_month':
+        last_month = today - timedelta(days=30)
+        sortielivraison_list = sortielivraison_list.filter(date__range=[last_month, today])
+    elif filter_option == 'last_year':
+        last_year = today - timedelta(days=365)
+        sortielivraison_list = sortielivraison_list.filter(date__range=[last_year, today])
+    elif filter_option == 'custom_date':
+        start_date = request.GET.get('start_date')
+        end_date = request.GET.get('end_date')
+        
+        if start_date and end_date:
+            sortielivraison_list = sortielivraison_list.filter(date__range=[start_date, end_date])
+
+    return sortielivraison_list, filter_option
+
     
 @login_required
 def delete_sortie_livraison(request, id):
