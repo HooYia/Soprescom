@@ -70,7 +70,7 @@
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                                                 <!-- Delete Form -->
-                                                <form action="{% url 'serviceapresvente:delete_customer' customer.id %}" method="post" style="display:inline;">
+                                                <form action="{% url 'accounts:delete_customer' customer.id %}" method="post" style="display:inline;">
                                                     {% csrf_token %}
                                                     <button type="submit" class="btn btn-danger">Delete</button>
                                                 </form>
@@ -88,7 +88,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{% url 'serviceapresvente:update_customer' customer.id %}" method="post">
+                                                <form action="{% url 'accounts:update_customer' customer.id %}" method="post">
                                                     {% csrf_token %}
                                                     <div class="mb-3">
                                                         <label for="username-{{ customer.id }}" class="form-label">Username</label>
@@ -166,7 +166,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{% url 'serviceapresvente:users' %}" method="post">
+                    <form action="{% url 'accounts:users' %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="add_customer" value="1">
                         <div class="mb-3">

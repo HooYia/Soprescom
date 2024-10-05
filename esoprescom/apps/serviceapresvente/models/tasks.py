@@ -190,7 +190,7 @@ def send_instance_email_with_template_task(subject, template_name,context,to_ema
 
 
 @app.task
-def send_email_with_template_customer(subject, template_name,context,to_email:list, from_email):
+def send_email_with_template_customer(subject, template_name, context, to_email:list, from_email):
     """
     Fonction pour envoyer un e-mail en utilisant smtplib.
     """

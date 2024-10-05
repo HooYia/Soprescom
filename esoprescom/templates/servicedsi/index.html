@@ -80,7 +80,7 @@
 
                   {% if request.user.is_staff or request.user.is_superuser %}
                   <li class="nav-item">
-                    <a class="nav-link {% if page == 'users' %}active{% endif %}" id="users-tab"  href="{% url 'serviceapresvente:users' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-user"></i>Users</a>
+                    <a class="nav-link {% if page == 'users' %}active{% endif %}" id="users-tab"  href="{% url 'accounts:users' %}" role="tab" aria-controls="address" aria-selected="true"><i class="ti-user"></i>Users</a>
                   </li>
                   {% endif %}
 
@@ -154,7 +154,7 @@
               <div class="sub-menu">
                 <ul class="nav nav-tabs " role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link {% if subpage == 'users_tab' %}active{% endif %}" href="{% url "serviceapresvente:users" %}#sav_tab" role="tab" aria-controls="sub1" aria-selected="true">Users</a>
+                        <a class="nav-link {% if subpage == 'users_tab' %}active{% endif %}" href="{% url "accounts:users" %}#sav_tab" role="tab" aria-controls="sub1" aria-selected="true">Users</a>
                     </li>
                 </ul>
               </div>

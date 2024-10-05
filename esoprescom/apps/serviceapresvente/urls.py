@@ -25,10 +25,6 @@ urlpatterns = [
     path('dashboard_leasing', dashboard.dashboard_leasing, name='dashboard_leasing'),
     path('dashboard_instance', dashboard.dashboard_instance, name='dashboard_instance'),
     
-    #users
-    path('users/', dashboard.users, name='users'),
-    path('users/update/<int:customer_id>/', dashboard.update_customer, name='update_customer'),
-    path('users/delete/<int:customer_id>/', dashboard.delete_customer, name='delete_customer'),
     
     #clients sav  
     path('client/', dashboard.client_sav, name='clients'),

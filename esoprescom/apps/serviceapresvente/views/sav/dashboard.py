@@ -13,6 +13,7 @@ from apps.serviceapresvente.models import Sav_request,Instance,Client_sav,Person
                             
 from apps.leasing.models import  Clientleasing,Listeimprimante,Deploiement, \
                                  Consommable, Exploitation
+from apps.serviceapresvente.views.sav.Sav_requestView import get_random_string
 from utlis.utils import generate_password
 from django.db.models import Count,Sum, Case, When, Sum,F,Q  
 from django.db.models import OuterRef, Subquery               
@@ -26,6 +27,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.db import transaction
 from apps.accounts.models import Customer
+from django.contrib.auth.hashers import make_password
+
 
 from django.utils.translation import gettext as _
 from django.conf import settings
@@ -242,144 +245,6 @@ def dashboard(request):
     
 
 @login_required
-def users(request):
-    # Fetch all customers
-    customers = Customer.objects.filter(is_active=True, is_deleted=False)
-    
-    # Handle new customer creation
-    if request.method == "POST" and 'add_customer' in request.POST:
-        username = request.POST['username']
-        email = request.POST['email']
-        first_name = request.POST.get('first_name', '')
-        last_name = request.POST.get('last_name', '')
-        
-        # Additional fields based on your model
-        is_staff = request.POST.get('is_staff', 'off') == 'on'
-        is_compta = request.POST.get('is_compta', 'off') == 'on'
-        is_logistic = request.POST.get('is_logistic', 'off') == 'on'
-        is_recouvrement = request.POST.get('is_recouvrement', 'off') == 'on'
-        is_instance = request.POST.get('is_instance', 'off') == 'on'
-        is_leasing = request.POST.get('is_leasing', 'off') == 'on'
-        is_stock = request.POST.get('is_stock', 'off') == 'on'
-        is_leasing2 = request.POST.get('is_leasing2', 'off') == 'on'
-        
-        # Check if username or email already exists
-        if Customer.objects.filter(username=username).exists():
-            messages.info(request, "Username already exists!")
-        elif Customer.objects.filter(email=email).exists():
-            messages.info(request, "Email already exists!")
-        else:
-            
-            #generate password
-            # password = generate_password()
-            password = generate_password(length=10)
-
-            
-            # Create and save new customer
-            customer = Customer.objects.create_user(
-                username=username,
-                email=email,
-                first_name=first_name,
-                last_name=last_name,
-                is_staff=is_staff,
-                is_compta=is_compta,
-                is_losgistic=is_logistic,
-                is_recouvrement=is_recouvrement,
-                is_instance = is_instance,
-                is_leasing=is_leasing,
-                is_stock=is_stock,
-                password=password,
-                is_leasing2=is_leasing2,
-            )
-
-            template = 'email/customer_created.html'
-            context = {
-                'First name': first_name,
-                'Last name': last_name,
-                'password': password,
-                'username': username ,
-                'created_by': request.user.email
-            }
-            recievers = [customer.email]
-            subject = _('Customer Created') , from_email
-            
-            send_email_with_template_customer.delay(subject, template, context, recievers, from_email) 
-            
-            messages.info(request, f"Customer added successfully!! The generated password is: {password}")
-            return redirect('serviceapresvente:users')
-
-    return render(request, "servicedsi/index.html", {
-        'page': 'users',
-        'subpage': 'users_tab',
-        'customers': customers,
-    })
-
-@login_required
-def update_customer(request, customer_id):
-    customer = get_object_or_404(Customer, id=customer_id)
-
-    if request.method == "POST":
-        customer.username = request.POST['username']
-        customer.email = request.POST['email']
-        customer.first_name = request.POST.get('first_name', '')
-        customer.last_name = request.POST.get('last_name', '')
-        
-        # Additional fields
-        customer.is_staff = request.POST.get('is_staff', 'off') == 'on'
-        customer.is_compta = request.POST.get('is_compta', 'off') == 'on'
-        customer.is_losgistic = request.POST.get('is_logistic', 'off') == 'on'
-        customer.is_recouvrement = request.POST.get('is_recouvrement', 'off') == 'on'
-        customer.is_instance = request.POST.get('is_instance', 'off') == 'on'
-        customer.is_leasing = request.POST.get('is_leasing', 'off') == 'on'
-        customer.is_stock = request.POST.get('is_stock', 'off') == 'on'
-        customer.is_leasing2 = request.POST.get('is_leasing2', 'off') == 'on'
-        
-        customer.save()
-        messages.info(request, "Customer updated successfully!")
-        return redirect('serviceapresvente:users')
-
-    return render(request, "servicedsi/index.html", {
-        'page': 'users',
-        'subpage': 'users_tab',
-        'customers': Customer.objects.all(),  # To reload the list in the background
-    })
-
-@login_required
-def delete_customer(request, customer_id):
-    customer = get_object_or_404(Customer, id=customer_id)
-    
-    if request.method == "POST":
-        customer.is_deleted = True
-        customer.save()
-
-        # desactivation email
-        template = 'email/customer_desactivation.html'
-        context = {
-            'First name': customer.first_name,
-            'Last name': customer.last_name,
-            'username': customer.username ,
-            'created_by': request.user.email
-        }
-        recievers = [customer.email]
-        subject = _('Account deactivated')
-        
-        send_email_with_template_customer.delay(subject, template, context, recievers, from_email)
-
-
-        messages.info(request, "Customer deleted successfully!")
-        return redirect('serviceapresvente:users')
-
-    return render(request, "servicedsi/index.html", {
-        'page': 'users',
-        'subpage': 'users_tab',
-        'customers': Customer.objects.filter(is_active=True, is_deleted=False),  # To reload the list in the background
-    })
-    
-    
-def is_staff_or_superuser(user):
-    return user.is_staff or user.is_superuser
-
-@login_required
 # @user_passes_test(is_staff_or_superuser)
 def client_sav(request):
     clients = Client_sav.objects.filter(is_active=True, is_deleted=False).select_related('customer')
@@ -455,6 +320,10 @@ def client_sav(request):
         'clients': clients,
         'customers': customers
     })
+    
+   
+def is_staff_or_superuser(user):
+    return user.is_staff or user.is_superuser
 
 @login_required
 @user_passes_test(is_staff_or_superuser)

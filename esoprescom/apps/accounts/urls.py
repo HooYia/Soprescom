@@ -11,6 +11,12 @@ urlpatterns = [
     #path('profile/<int:id>/', views.update_profile, name='profile'),
     path('profile/', views.update_profile, name='profile'),
     
+    #users
+    path('users/', views.users, name='users'),
+    path('users/update/<int:customer_id>/', views.update_customer, name='update_customer'),
+    path('users/delete/<int:customer_id>/', views.delete_customer, name='delete_customer'),
+    
+    
     
 
 ]
