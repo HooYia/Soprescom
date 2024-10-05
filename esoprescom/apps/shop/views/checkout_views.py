@@ -18,7 +18,7 @@ from django.http import JsonResponse
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
 from apps.shop.models.Product import Product, Stock
-from apps.shop.models.SortieLivraison import SortieLivraison
+from apps.serviceapresvente.models.SortieLivraison import SortieLivraison
 
 @login_required
 def index(request):

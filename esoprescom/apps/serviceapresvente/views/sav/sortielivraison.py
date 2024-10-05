@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 from apps.serviceapresvente.models import Client_sav
 from apps.shop.models.Product import ActionLog
 from apps.accounts.models import Customer
-from ..forms.SortieLivraisonFrom import SortieLivraisonForm
-from ..models.SortieLivraison import SortieLivraison
+from ...forms.SortieLivraisonFrom import SortieLivraisonForm
+from ...models.SortieLivraison import SortieLivraison
 from django.db import IntegrityError, transaction
 from django.contrib import messages
 

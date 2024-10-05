@@ -175,14 +175,14 @@
                   <li class="nav-item">
                       <a class="nav-link {% if subpage == 'stock_tab' %}active{% endif %}" href="{% url "serviceapresvente:stock" %}" role="tab" aria-controls="sub1" aria-selected="true">Stock</a>
                   </li>
-                  <li class="nav-item">
+                  {% comment %} <li class="nav-item">
                     <a class="nav-link {% if subpage == 'journalier_tab' %}active{% endif %}" href="{% url "serviceapresvente:sotie_journalier" %}" role="tab" aria-controls="sub1" aria-selected="true">Sortie Journalier</a>
-                  </li>
+                  </li> {% endcomment %}
                   <li class="nav-item">
                     <a class="nav-link {% if subpage == 'log_tab' %}active{% endif %}" href="{% url "serviceapresvente:action_log" %}" role="tab" aria-controls="sub1" aria-selected="true">Journal des Actions</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link {% if subpage == 'sortie_livraison_tab' %}active{% endif %}" href="{% url "serviceapresvente:create_sortie_livraison" %}" role="tab" aria-controls="sub1" aria-selected="true">Sortie Livraison</a>
+                    <a class="nav-link {% if subpage == 'sortie_livraison_tab' %}active{% endif %}" href="{% url "serviceapresvente:create_sortie_livraison" %}" role="tab" aria-controls="sub1" aria-selected="true">Sortie Journalier</a>
                 </li>
                  
                 </ul>

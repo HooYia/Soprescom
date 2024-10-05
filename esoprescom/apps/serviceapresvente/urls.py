@@ -11,7 +11,7 @@ from .views.sav import Sav_requestView,CommandeSavView, \
                    
 from .views.stock import sortie_journalier, stock, product
 
-from apps.shop.views.sortielivraison import create_sortie_livraison, delete_sortie_livraison, update_sortie_livraison
+from apps.serviceapresvente.views.sav.sortielivraison import create_sortie_livraison, delete_sortie_livraison, update_sortie_livraison
                        
 
 from .views.instance import InstanceViews,InstancerecouvViews
