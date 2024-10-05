@@ -97,55 +97,59 @@
                         <div class="row">
                                 <div class="mb-3 col-md-7">
                                 <label for="name" class="form-label">Product Name</label>
-                                <input type="text" class="form-control" id="name" name="name" >
+                                <input type="text" class="form-control" style="height: 40px;" id="name" name="name" >
                             </div>
                             <div class="mb-3  col-md-5">
                                 <label for="reference" class="form-label">Referecne</label>
-                                <input type="text" class="form-control" id="reference" name="reference" >
+                                <input type="text" class="form-control" style="height: 40px;" id="reference" name="reference" >
                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="categories" class="form-label">Categories</label>
+                            <select class="form-select  js-example-basic-multiples" style="width: 100%;" id="categories" placeholder="select categories" name="categories" multiple="multiple">
+                               
+                                {% for category in categories %}
+                                    <option value="{{ category.id }}">{{ category.name }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                         {% comment %} <div class="mb-3">
                             <label for="slug" class="form-label">Slug</label>
                             <input type="text" class="form-control" id="slug" name="slug" >
                         </div> {% endcomment %}
                         <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="solde_price" class="form-label">Sale Price</label>
+                                <input type="number" class="form-control" style="height: 40px;" id="solde_price" name="solde_price"  step="0.01" min="0">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="regular_price" class="form-label">Regular Price</label>
+                                <input type="number" class="form-control" style="height: 40px;" id="regular_price" name="regular_price"  step="0.01" min="0">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="brand" class="form-label">Brand</label>
+                                <input type="text" class="form-control" style="height: 40px;" id="brand" name="brand">
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description" name="description" ></textarea>
+                                <textarea class="form-control" style="height: 40px;" id="description" name="description" ></textarea>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="more_description" class="form-label">More Description</label>
-                                <textarea class="form-control" id="more_description" name="more_description"></textarea>
+                                <textarea class="form-control" style="height: 40px;" id="more_description" name="more_description"></textarea>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-12 mb-3">
                                 <label for="additional_infos" class="form-label">Additional Infos</label>
-                                <textarea class="form-control" id="additional_infos" name="additional_infos"></textarea>
+                                <textarea class="form-control" style="height: 40px;" id="additional_infos" name="additional_infos"></textarea>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="solde_price" class="form-label">Sale Price</label>
-                                <input type="number" class="form-control" id="solde_price" name="solde_price"  step="0.01" min="0">
-                            </div>
+                           
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="regular_price" class="form-label">Regular Price</label>
-                                <input type="number" class="form-control" id="regular_price" name="regular_price"  step="0.01" min="0">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="brand" class="form-label">Brand</label>
-                                <input type="text" class="form-control" id="brand" name="brand">
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="categories" class="form-label">Categories</label>
-                            <select class="form-select" id="categories" name="categories" multiple>
-                                {% for category in categories %}
-                                    <option value="{{ category.id }}">{{ category.name }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
+                       
+                        
                         {% comment %} <div class="mb-3">
                             <label for="images" class="form-label">Product Images</label>
                             <input type="file" class="form-control" id="images" name="images" multiple >
@@ -189,7 +193,7 @@
 
     <!-- Edit Stock Modal -->
     {% for product in products %}
-    <div class="modal fade" id="editProductModal{{ product.id }}" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+    <div class="modal fade editpruduct" id="editProductModal{{ product.id }}" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <form method="POST" action="{% url 'serviceapresvente:product'%}" enctype="multipart/form-data">  <!-- Adjust action URL -->
@@ -206,54 +210,57 @@
                         <div class="row">
                             <div class="mb-3 col-md-7">
                                 <label for="name{{ product.id }}" class="form-label">Product Name</label>
-                                <input type="text" class="form-control" id="name{{ product.id }}" name="name" value="{{ product.name }}" >
+                                <input type="text" class="form-control" style="height: 40px;" id="name{{ product.id }}" name="name" value="{{ product.name }}" >
                             </div>
                             <div class="mb-3 col-md-5">
                                 <label for="reference{{ product.id }}" class="form-label">Reference</label>
-                                <input type="text" class="form-control" id="reference{{ product.id }}" name="reference" value="{{ product.reference }}" >
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="description{{ product.id }}" class="form-label">Description</label>
-                                <textarea class="form-control" id="description{{ product.id }}" name="description" >{{ product.description }}</textarea>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="more_description{{ product.id }}" class="form-label">More Description</label>
-                                <textarea class="form-control" id="more_description{{ product.id }}" name="more_description">{{ product.more_description }}</textarea>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="additional_infos{{ product.id }}" class="form-label">Additional Infos</label>
-                                <textarea class="form-control" id="additional_infos{{ product.id }}" name="additional_infos">{{ product.additional_infos }}</textarea>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="solde_price{{ product.id }}" class="form-label">Sale Price</label>
-                                <input type="number" class="form-control" id="solde_price{{ product.id }}" name="solde_price" value="{{ product.solde_price }}"  step="0.01" min="0">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="regular_price{{ product.id }}" class="form-label">Regular Price</label>
-                                <input type="number" class="form-control" id="regular_price{{ product.id }}" name="regular_price" value="{{ product.regular_price }}"  step="0.01" min="0">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="brand{{ product.id }}" class="form-label">Brand</label>
-                                <input type="text" class="form-control" id="brand{{ product.id }}" name="brand" value="{{ product.brand }}">
+                                <input type="text" class="form-control" style="height: 40px;" id="reference{{ product.id }}" name="reference" value="{{ product.reference }}" >
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="categories{{ product.id }}" class="form-label">Categories</label>
-                            <select class="form-select" id="categories{{ product.id }}" name="categories" multiple>
+                            <select class="form-select editpruductcategory" style="height: 40px; width: 100%;" id="categories{{ product.id }}"  name="categories" multiple="multiple">
                                 {% for category in categories %}
                                     <option value="{{ category.id }}" {% if category in product.categories.all %}selected{% endif %}>{{ category.name }}</option>
                                 {% endfor %}
                             </select>
                         </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="regular_price{{ product.id }}" class="form-label">Regular Price</label>
+                                <input type="number" class="form-control" style="height: 40px;" id="regular_price{{ product.id }}" name="regular_price" value="{{ product.regular_price }}"  step="0.01" min="0">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="brand{{ product.id }}" class="form-label">Brand</label>
+                                <input type="text" class="form-control" style="height: 40px;" id="brand{{ product.id }}" name="brand" value="{{ product.brand }}">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="solde_price{{ product.id }}" class="form-label">Sale Price</label>
+                                <input type="number" class="form-control" style="height: 40px;" id="solde_price{{ product.id }}" name="solde_price" value="{{ product.solde_price }}"  step="0.01" min="0">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="description{{ product.id }}" class="form-label">Description</label>
+                                <textarea class="form-control" style="height: 40px;" id="description{{ product.id }}" name="description" >{{ product.description }}</textarea>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="more_description{{ product.id }}" class="form-label">More Description</label>
+                                <textarea class="form-control" style="height: 40px;" id="more_description{{ product.id }}" name="more_description">{{ product.more_description }}</textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <label for="additional_infos{{ product.id }}" class="form-label">Additional Infos</label>
+                                <textarea class="form-control" style="height: 40px;" id="additional_infos{{ product.id }}" name="additional_infos">{{ product.additional_infos }}</textarea>
+                            </div>
+                           
+                        </div>
+                        
+                        
                         <div class="mb-3">
                             <label for="images{{ product.id }}" class="form-label">Product Images</label>
-                            <input type="file" class="form-control" id="images{{ product.id }}" name="images" multiple>
+                            <input type="file" class="form-control" style="height: 40px;" id="images{{ product.id }}" name="images" multiple>
                         </div>
                         <div class="row">
                             <div class="col-md-3 mb-3">
@@ -326,6 +333,17 @@
         order: [[3, 'desc']],
         pageLength:10,
         destroy: true ,
+    });
+
+    $(document).ready(function() {
+       
+        $('.js-example-basic-multiples').select2({
+            dropdownParent: $('#addProductModal')
+        }); 
+
+        $('.editpruductcategory').select2({
+            dropdownParent: $('.editpruduct')
+        }); 
     });
 
 </script>
