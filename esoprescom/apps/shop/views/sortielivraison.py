@@ -4,16 +4,17 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib.auth.decorators import login_required
 from apps.serviceapresvente.models import Client_sav
 from apps.shop.models.Product import ActionLog
+from apps.accounts.models import Customer
 from ..forms.SortieLivraisonFrom import SortieLivraisonForm
 from ..models.SortieLivraison import SortieLivraison
 from django.db import IntegrityError, transaction
 from django.contrib import messages
 
 @login_required
-def create_sortie_livraison(request):
+def  create_sortie_livraison(request):
     # Fetch all SortieLivraison instances to display in the template
     sortielivraison_list = SortieLivraison.objects.filter(is_deleted=False)
-    clients = Client_sav.objects.all()
+    clients = Customer.objects.all()
 
     if request.method == 'POST':
         form = SortieLivraisonForm(request.POST)
@@ -41,7 +42,7 @@ def create_sortie_livraison(request):
         'servicedsi/index.html', 
         {
             'form': form, 
-            'clients': clients,
+            'customers': clients,
             'page': 'stock',
             'subpage': 'sortie_livraison_tab',
             'sortielivraison_list': sortielivraison_list  # Pass the list to the template
@@ -69,7 +70,7 @@ def update_sortie_livraison(request, id):
                 client_id = request.POST.get('client')
                 
                 # Ensure the client exists
-                livraison.client = get_object_or_404(Client_sav, idclient=client_id)
+                livraison.client = get_object_or_404(Customer, id=client_id)
                 
                 livraison.reference = request.POST.get('reference')
                 livraison.serial_number = request.POST.get('serial_number')

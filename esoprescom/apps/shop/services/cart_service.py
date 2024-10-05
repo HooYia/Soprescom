@@ -71,6 +71,7 @@ class CartService:
                             'slug': product.slug,
                             'name': product.name,
                             'description': product.description,
+                            'reference': product.reference,
                             #'images': product.images,
                             'image': product.images.first().image.url,
                             'solde_price': product.solde_price,

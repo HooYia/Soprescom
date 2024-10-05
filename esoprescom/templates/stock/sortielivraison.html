@@ -171,9 +171,9 @@
                                 <label for="id_client" class="form-label">Client</label>
                                 <select class="form-control" id="id_client" name="client" required>
                                     <option value="" disabled>Select clients</option>
-                                    {% for client in clients %}
-                                        <option value="{{ client.idclient }}" {% if client.idclient == livraison.client.idclient %}selected{% endif %}>
-                                            {{ client.name }} <!-- Adjust this based on your Client_sav model's display name -->
+                                    {% for client in customers %}
+                                        <option value="{{ client.id }}" {% if client.id == livraison.client.id %}selected{% endif %}>
+                                            {{ client.first_name }} {{ client.last_name }} <!-- Adjust this based on your Client_sav model's display name -->
                                         </option>
                                     {% endfor %}
                                 </select>

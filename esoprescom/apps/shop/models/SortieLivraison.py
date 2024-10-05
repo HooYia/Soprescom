@@ -1,5 +1,6 @@
 from django.db import models
 from apps.serviceapresvente.models.Client_sav import Client_sav
+from apps.accounts.models import Customer
 
 
 class SortieLivraison(models.Model):
@@ -8,7 +9,7 @@ class SortieLivraison(models.Model):
     ccial = models.CharField(max_length=255, null=True, blank=True)
     fact = models.CharField(max_length=255, null=True, blank=True)
     bdc = models.CharField(max_length=255, null=True, blank=True)
-    client = models.ForeignKey(Client_sav, on_delete=models.PROTECT, related_name='livraisons')
+    client = models.ForeignKey(Customer, on_delete=models.PROTECT, related_name='livraisons')
     reference = models.CharField(max_length=255, null=True, blank=True)
     serial_number = models.CharField(max_length=255, null=True, blank=True)
     nature = models.CharField(max_length=255, null=True, blank=True)

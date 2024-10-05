@@ -6,7 +6,7 @@ import requests
 from django.core.files import File
 from django.core.files.temp import NamedTemporaryFile
 from apps.shop.models import Product, Category, Image
-# from serpapi import GoogleSearch
+from serpapi import GoogleSearch
 
 def search_google_info(reference):
         """Utilise l'API Google pour rechercher la date de fin de garantie et l'image."""
@@ -97,7 +97,7 @@ def search_serpapi_images(reference,designation):
         "api_key": "df95d8db357af8f9d090b079b80ed0af7b6694a5f19ec8df8809d01d3f316fe6"
     }
   
-    search = " " #GoogleSearch(params2)
+    search = GoogleSearch(params2)
     data = search.get_dict()
     results = {
         'images_url': [],

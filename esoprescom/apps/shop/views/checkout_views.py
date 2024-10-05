@@ -1,4 +1,5 @@
 import random
+import datetime
 import string
 from django.shortcuts import render,get_object_or_404,redirect
 from apps.dashboard.models.Address import Address
@@ -16,8 +17,8 @@ from django.contrib.auth.hashers import make_password
 from django.http import JsonResponse
 from django.db import transaction
 from django.contrib.auth.decorators import login_required
-
 from apps.shop.models.Product import Product, Stock
+from apps.shop.models.SortieLivraison import SortieLivraison
 
 @login_required
 def index(request):
@@ -128,57 +129,86 @@ def login_form(request):
 
 @login_required
 def create_order(request,billing_address,shipping_address=None):
-    user = request.user
-    cart = CartService.get_cart_details(request)
-    carrier = request.session.get('carrier',Carrier.objects.first())
-    
-    order = Order()
-    order.client_name = user.username
-    order.billing_address =   billing_address                 
-    order.shipping_address =  shipping_address or billing_address                  
-    order.carrier_name =   carrier.name                 
-    order.carrier_price =   carrier.price                 
-    order.quantity =  cart['cart_count']                  
-    order.order_cost =   cart['sub_total_ht']                 
-    order.taxe =       cart['taxe_amount']              
-    order.order_cost_ttc =  cart['sub_total_with_shipping']  
-    order.payment_method ='Stripe'
-    order.author = user
-    order.save()
-    
+   try:
+      with transaction.atomic():
+         user = request.user
+         cart = CartService.get_cart_details(request)
+         carrier = request.session.get('carrier',Carrier.objects.first())
+         
+         order = Order()
+         order.client_name = user.username
+         order.billing_address =   billing_address                 
+         order.shipping_address =  shipping_address or billing_address 
+         
+         # Handle carrier whether it's a dictionary or a Carrier model instance
+         if isinstance(carrier, dict):
+            order.carrier_name = carrier.get('name', '')                 
+            order.carrier_price = carrier.get('price', 0)
+         else:
+            order.carrier_name = carrier.name                 
+            order.carrier_price = carrier.price
+         
+         order.quantity =  cart['cart_count']                  
+         order.order_cost =   cart['sub_total_ht']                 
+         order.taxe =       cart['taxe_amount']              
+         order.order_cost_ttc =  cart['sub_total_with_shipping']  
+         order.payment_method ='Stripe'
+         order.author = user
+         order.save()
+   
     #update the stock
     
 
     #order detail
-    with transaction.atomic():
-        for item in cart['items']:
-            product = Product.objects.get(id=item['product']['id'])
-            stock = Stock.objects.get(stock_produit=product)
+      for item in cart['items']:
+         product = Product.objects.get(id=item['product']['id'])
+         stock = Stock.objects.get(stock_produit=product)
 
-            # Update the stock quantities
-            if item['quantity'] <= stock.quantite:
-                stock.quantite -= item['quantity']
-            else:
-                # If the item quantity exceeds stock, set to zero and handle accordingly
-                stock.quantite = 0
-                
-            stock.save()
+         # Update the stock quantities
+         if item['quantity'] <= stock.quantite:
+               stock.quantite -= item['quantity']
+         else:
+               # If the item quantity exceeds stock, set to zero and handle accordingly
+               stock.quantite = 0
+               
+         stock.save()
+         
+         
+         # Create order detail
+         order_details = Orderdetails(
+               product_name=item['product']['name'],
+               product_description=item['product']['description'],
+               solde_price=item['product']['solde_price'],
+               regular_price=item['product']['regular_price'],
+               quantity=item['quantity'],
+               taxe=item['taxe_amount'],
+               sub_total_ht=item['sub_total_ht'],
+               sub_total_ttc=item['sub_total_ttc'],
+               order=order
+         )
+         
+         order_details.save()
+         print("order_details-------------------------------------:",order_details)
 
-            # Create order detail
-            order_details = Orderdetails(
-                product_name=item['product']['name'],
-                product_description=item['product']['description'],
-                solde_price=item['product']['solde_price'],
-                regular_price=item['product']['regular_price'],
-                quantity=item['quantity'],
-                taxe=item['taxe_amount'],
-                sub_total_ht=item['sub_total_ht'],
-                sub_total_ttc=item['sub_total_ttc'],
-                order=order
-            )
-            order_details.save()
-
-    return order.id
+         # Create SortieLivraison instance for each product
+         
+         sortie_livraison = SortieLivraison.objects.create(
+            date=datetime.date.today(),  # Use the current date
+            client_id=user.id,  # Assuming you have a reference to the client in the order
+            reference=item['product']['reference'],  # Use the order ID as reference
+            designation=item['product']['name'],
+            qte_dde=item['quantity'],
+            stock_initial=stock.quantite + item['quantity'],  # Previous stock before deduction
+            observation=f"Commande traitée pour {item['product']['name']}",
+         )
+         print("sortie_livraison---------------------------------------:",sortie_livraison)
+         # sortie_livraison.save()
+   except Exception as e:
+      print("Error creating order:",str(e))
+      return None
+    
+   return order.id
+ 
 
 
                 

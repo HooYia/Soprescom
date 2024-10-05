@@ -94,8 +94,8 @@ urlpatterns = [
     path('stock/delete/<int:stock_id>', stock.delete_stock, name='delete_stock'),
     path('sortie-journalier', sortie_journalier.sortie_journalier, name='sotie_journalier'),
     path('product', product.product_view, name='product'),
-    path('sorite/livraison/', create_sortie_livraison, name='create_sortie_livraison'),
-    path('update/sortie/livraison/<str:id>', update_sortie_livraison, name='update_sortie_livraison'),
+    path('sortie/livraison/', create_sortie_livraison, name='create_sortie_livraison'),
+    path('update/sortie/livraison/<int:id>', update_sortie_livraison, name='update_sortie_livraison'),
     path('delete-sortie-livraison/<int:id>/', delete_sortie_livraison, name='delete_sortie_livraison'),
     
     #Action log
