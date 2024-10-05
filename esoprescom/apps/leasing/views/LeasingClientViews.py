@@ -44,7 +44,7 @@ def create(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Client has been saved !')
-            return redirect('leasing:Client')
+            return redirect('leasing:client')
     else:
         form = ClientleasingForm()
     return render(request, 'servicedsi/leasing/client/formAdd.html', {'form': form})
