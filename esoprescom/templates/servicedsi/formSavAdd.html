@@ -1,5 +1,8 @@
 
   <!-- Hidden form for new client -->
+  {% block style  %}
+
+  {% endblock %}
   <div class="card">
     <div class="container">
       <div id="new-client-form-container" class="mt-2" style="display: none;">
@@ -8,18 +11,18 @@
             <div class="row">
               <div class="mb-3 col-md-6">
                   <label for="email" class="form-label">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
+                  <input type="email" class="form-control" id="email" name="email" style="height: 40px;" required>
               </div>
               <div class="mb-3 col-md-6">
                 <label for="username" class="form-label">username</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+                <input type="text" class="form-control" id="username" name="username" style="height: 40px;" required>
             </div>
           </div>
 
           <div class="row">
             <div class="mb-3 col-md-6">
                 <label for="est_personne_morale" class="form-label">Is this a company?</label>
-                <select class="form-control" id="est_personne_morale" name="est_personne_morale" required>
+                <select class="form-select" id="est_personne_morale" style="height: 40px;" name="est_personne_morale" required>
                     <option value="">Select an option</option> 
                     <option value="false">No (Individual)</option>
                     <option value="true">Yes (Company)</option>
@@ -27,29 +30,29 @@
             </div>
             <div class="mb-3 col-md-6">
                 <label for="raison_sociale" class="form-label">Company Name</label>
-                <input type="text" class="form-control" id="raison_sociale" name="raison_sociale" >
+                <input type="text" class="form-control" id="raison_sociale" style="height: 40px;" name="raison_sociale" >
             </div>
           </div>
 
           <div class="row" id="individual-fields">
               <div class="mb-3 col-md-6">
                   <label for="first_name" class="form-label">First Name</label>
-                  <input type="text" class="form-control" id="first_name" name="first_name">
+                  <input type="text" class="form-control" id="first_name" style="height: 40px;" name="first_name">
               </div>
               <div class="mb-3 col-md-6">
                   <label for="last_name" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" id="last_name" name="last_name">
+                  <input type="text" class="form-control" id="last_name" style="height: 40px;" name="last_name">
               </div>
           </div>
 
           <div class="row">
               <div class="mb-3 col-md-6">
                   <label for="telephone" class="form-label">Phone</label>
-                  <input type="number" class="form-control" id="telephone" name="telephone" required>
+                  <input type="number" class="form-control client" id="telephone" style="height: 40px;" name="telephone" >
               </div>
               <div class="mb-3 col-md-6">block
                   <label for="adresse" class="form-label">Address</label>
-                  <input type="text" class="form-control" id="adresse" name="adresse" required>
+                  <input type="text" class="form-control client" id="adresse" style="height: 40px;" name="adresse" >
               </div>
           </div>
 
